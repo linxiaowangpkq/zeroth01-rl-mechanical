@@ -1,0 +1,984 @@
+{
+  "schema": "zeroth01.rl_mechanical.release_manifest.v1",
+  "canonical_urdf": "generated/urdf/zeroth01_rl_round_v1.urdf",
+  "canonical_mjcf": "generated/mujoco/zeroth01_rl_round_v1.xml",
+  "file_count_excluding_manifest": 195,
+  "total_bytes_excluding_manifest": 103078481,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 104,
+      "sha256": "65086db8766c5256f627737a101d2e8d9cbab2b685eec7817c7134543f554916"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "bytes": 535,
+      "sha256": "94f42ffd3b8b01c355209f6a22df5d4e0cceaf62f7a056f91f46d5d454900d7f"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 124,
+      "sha256": "52d769f8f4608cee03296e12f223f5c2a0ed1befefac76853d6a0c64e94fab99"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_chest_back.py",
+      "bytes": 184,
+      "sha256": "3d0b5a21510c4fd2e9ef404ee1416b6d2c9ab33d45897cd4aac44939a5c2c980"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_chest_front.py",
+      "bytes": 185,
+      "sha256": "cf535ee2d817fbe5ff313a7f4a6866cb4aaea2602031bd78896725e0b610e941"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_head_back.py",
+      "bytes": 182,
+      "sha256": "5663a40b3b76e4bbcbe92dd6f37b395ce89ee8a8df60f3433a0ebc565f597209"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_head_front.py",
+      "bytes": 183,
+      "sha256": "65efe432344021f23fa55d5beed9730f3263e3485996870cb55d5bd5e3e76050"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_joint_ring.py",
+      "bytes": 176,
+      "sha256": "2208f596df5a42b03ce8cd4f50ce2c271d4abf4e934859b8131a4bfd0df0be55"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_left_sole.py",
+      "bytes": 170,
+      "sha256": "788c27ef03739ea05885543630090b44c7cea0befb09f5021886b70ee833bde1"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_muzzle_badge.py",
+      "bytes": 180,
+      "sha256": "e3715ef615266f0ebe541ed279724f63a76a7f068e0ae66d336af3ebb1869b59"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_pelvis_back.py",
+      "bytes": 186,
+      "sha256": "f80151420f5bccaafe3c1933b69cb0833180992ac8f93af58559714f596e8a37"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_pelvis_front.py",
+      "bytes": 187,
+      "sha256": "b81e20006cddf2b38ea5eea061b0a551cd3678d22333c8c3127c2bd34a6c722d"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_right_sole.py",
+      "bytes": 171,
+      "sha256": "7f35964f3dc85a44614785980fd30c4a68a5280d13d514fb7474db0a483e69e3"
+    },
+    {
+      "path": "cad/round_v1/gen_round_v1_visor_badge.py",
+      "bytes": 178,
+      "sha256": "5754b7b792e5130dc86f26cd08c2a07208e82ec02e7efc6d7121b39810b081ce"
+    },
+    {
+      "path": "cad/round_v1/gen_sts3250_vendor_reference.py",
+      "bytes": 335,
+      "sha256": "40b29e634d49d16ca4a9483c1deb34c22cef1bdb6343f42c22ce9b55819fbf55"
+    },
+    {
+      "path": "cad/round_v1/gen_zeroth01_round_v1_assembly.py",
+      "bytes": 339,
+      "sha256": "cc5a7a668ffe754239da0d6b27330eadb972a5015639ef24e176c78aef51157b"
+    },
+    {
+      "path": "cad/round_v1/round_v1_common.py",
+      "bytes": 19029,
+      "sha256": "de90e5eaec5ae818a2de26e76ea0bfe1a21077e88db3f7cd6eeed4409edad8e1"
+    },
+    {
+      "path": "CAD_PRINTABLE_ROUND_BRIEF_zh.md",
+      "bytes": 3514,
+      "sha256": "c044428278c7b49adb0c183218e25b9fc53a1f47bd91a89f55a5f4cca9b09fc9"
+    },
+    {
+      "path": "config/mesh_name_map.json",
+      "bytes": 1209,
+      "sha256": "9ae1650e21a86952c0644751d61c1e783c972900205ae9e24939f350d0865a56"
+    },
+    {
+      "path": "DESIGN_LEDGER.md",
+      "bytes": 3808,
+      "sha256": "e60ddbe9531269364547e0f7842629f42b0b008cf6ed0b9034865674a5c9cccc"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CHEST_BACK.step",
+      "bytes": 299724,
+      "sha256": "01655e47fe3138444e5f73c52ba997659ad19f2a5b978b9996b171e83981a72b"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CHEST_FRONT.step",
+      "bytes": 274192,
+      "sha256": "47c07f9d7017ffbdceff066cafd3a96ea51ffe2ce3ea4e6f28dab2c88dbf8ca8"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_HEAD_BACK.step",
+      "bytes": 362587,
+      "sha256": "24f192f5097ee609f63960a24213b2a5e26e1e547ad2e086fc2154ff5d6f1036"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_HEAD_FRONT.step",
+      "bytes": 344120,
+      "sha256": "48986acb4d04876c133eae93f56902855b611061b861b5d73bf97dd6d4940799"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_JOINT_RING.step",
+      "bytes": 10790,
+      "sha256": "7dbcfaf5231124f6194059b3c98aef0577ee8829b81bdf68bc98031defcf60f5"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_LEFT_SOLE.step",
+      "bytes": 202925,
+      "sha256": "4b89beda1dc838afaef6be6a5bd3e8961d44d843a4330d70283524e77e4f4f9b"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_MUZZLE_BADGE.step",
+      "bytes": 66657,
+      "sha256": "890549683ea90555cdcbae9813c6ac9766c8ae1c2257d720a259959b055cf33b"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_PELVIS_BACK.step",
+      "bytes": 345816,
+      "sha256": "c761fa365b994c0c549e911666b0c4503cf91b7f796bee9a80a91e2b2de1b5f6"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_PELVIS_FRONT.step",
+      "bytes": 363964,
+      "sha256": "8884b010d76771b676ccd5dfee8ff13bebf1814065d217b1250a004e3748e901"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_RIGHT_SOLE.step",
+      "bytes": 202951,
+      "sha256": "e3600c39081e0af28abf31802a19911cc0b271b59bf01d66d70310fdf55b7202"
+    },
+    {
+      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_VISOR_BADGE.step",
+      "bytes": 66955,
+      "sha256": "18763e7ac7001f42dd68dfc6cf3e44a2db036ff5244ed3a86ca457160b2dac15"
+    },
+    {
+      "path": "generated/config/round_v1_fastener_bom.csv",
+      "bytes": 2657,
+      "sha256": "9d6d51776ad1f835f76e4c56a535c2c8f57130f1efe196dcbd8aaa6b50d1970f"
+    },
+    {
+      "path": "generated/config/round_v1_mass_properties.json",
+      "bytes": 15256,
+      "sha256": "1afc87367cdec57bf39699562abb77fa311fc1abda4469896b031878e9a8505c"
+    },
+    {
+      "path": "generated/config/sts3250_round_v1_rl_profiles.json",
+      "bytes": 1483,
+      "sha256": "ea051d104288483a5823f3764fabe4a43182bf3045259606c56249b3f02170e4"
+    },
+    {
+      "path": "generated/config/zeroth01_actuator_metadata.json",
+      "bytes": 19880,
+      "sha256": "ff5af3f47f136b2835c4fb50181178afc7d747d5c6d47e5c064d0d7a9939889c"
+    },
+    {
+      "path": "generated/config/zeroth01_collision_policy.json",
+      "bytes": 2849,
+      "sha256": "65f6ff37d27d3735da9063b56184cb965bcf980bba0cca373cb7364489006578"
+    },
+    {
+      "path": "generated/config/zeroth01_hardware_calibration_template.csv",
+      "bytes": 1463,
+      "sha256": "f2ddb1076c810da9847b0b2fba8e14911f890b46309a8fcbc0d13f9600653685"
+    },
+    {
+      "path": "generated/config/zeroth01_sts3250_mount_phase.json",
+      "bytes": 5242,
+      "sha256": "f5686755a5b6d461c966dbf74d12267b345a1d96d002adc0016d7a3046dabbee"
+    },
+    {
+      "path": "generated/mujoco/zeroth01_rl_ready.xml",
+      "bytes": 17847,
+      "sha256": "a9332d38bafb39b392cacf82917651c757df034eeaf4fb6ca72c057c967b3925"
+    },
+    {
+      "path": "generated/mujoco/zeroth01_rl_round_v1.xml",
+      "bytes": 24255,
+      "sha256": "824acb47fe4041a1579f9fdcbe15c5924b4c58d72d7a6eec4e0f92bb4fb450a1"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_CHEST_BACK.stl",
+      "bytes": 358584,
+      "sha256": "ecf6a4aa5c7d47d787e38f93bb97f0a9c1a9160ccdac884354c7de77941bbd7a"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_CHEST_FRONT.stl",
+      "bytes": 317184,
+      "sha256": "8406371f85961e6c1d56b230894b96583d0a7115c087dfff4b581943ae381303"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_HEAD_BACK.stl",
+      "bytes": 599884,
+      "sha256": "ebdd909ae017f48cf64b1f63dc588dad5e4b80bfbf3025e1c6b8728ff85c9132"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_HEAD_FRONT.stl",
+      "bytes": 591484,
+      "sha256": "d277beaaa09ac3b7b958a23a5752c8c08caa5e82ef76a9b056d40398b7231839"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_JOINT_RING.stl",
+      "bytes": 42084,
+      "sha256": "1f10a0734e923dfe8de07972f606abd7e86a83a43404743518dc9b6c3d3885c0"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_LEFT_SOLE.stl",
+      "bytes": 359084,
+      "sha256": "479fc2944cc32cb0d9efd98fec22d6152a775c0770e6c2d774b893ed61b4c070"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_MUZZLE_BADGE.stl",
+      "bytes": 331084,
+      "sha256": "127ddf3fb8d5ddafbd60851e24e0a9b18b8c4382e8fec7c7dcd50356e125ba93"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_PELVIS_BACK.stl",
+      "bytes": 387584,
+      "sha256": "cf28bf64a98546878aec794dc2f7ec7e59999a0aa16f2b8d92fb1b1a76180f45"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_PELVIS_FRONT.stl",
+      "bytes": 439784,
+      "sha256": "9899f5db1e170924485b600200aa9e9ddf1557e0e39c4aed0826071b0a782d7b"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_RIGHT_SOLE.stl",
+      "bytes": 359084,
+      "sha256": "0872446e3d3c632e5112e2153d9bcd57f3513f5e34b96735901474a18531aaeb"
+    },
+    {
+      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_VISOR_BADGE.stl",
+      "bytes": 331084,
+      "sha256": "78dcb9488319ef4b0bf550c454fa25e490dc4704cf8dd977591eb63f2c24ba7b"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/FEETECH_STS3250.SLDPRT",
+      "bytes": 7788818,
+      "sha256": "9182989a34c5ef6d1aaa79b11e14764e611c0996f40930535a19fef70fe4414f"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM",
+      "bytes": 17640118,
+      "sha256": "fb735a2e6a40ad0c7f79a9e26611e3a377a96aaa4f14c4b4ee342b14325d3a12"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/previews/zeroth01_round_v1_isometric.png",
+      "bytes": 415129,
+      "sha256": "5112e065711f574677c9394615acc4c91987e58bde5e2aec7896320354de2fff"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/previews/zeroth01_round_v1_robot_front.png",
+      "bytes": 249813,
+      "sha256": "64744105822bb0238923376433389d0b33c5c89dad2dfb77de0c910ba5b7f7ca"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/previews/zeroth01_round_v1_robot_side.png",
+      "bytes": 238122,
+      "sha256": "cf8f73a99fc8cea559649f33647252ab65ce9137a041a9ed647f62e232b8ed8f"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/previews/zeroth01_round_v1_solidworks_motion.gif",
+      "bytes": 2721162,
+      "sha256": "2140444678ba9e35b0d506f26d670297737041c9be840688e600f19f931326bc"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/solidworks_portable_component_manifest.csv",
+      "bytes": 7683,
+      "sha256": "9ed79af586d59220fc61460b4ac12c60befa49c6d40d50d579c54f23562d07f9"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/solidworks_portable_gate.json",
+      "bytes": 1723,
+      "sha256": "6e3ff816e3281b057b0e42c63000d9ebfb3e705b94c31eabb736960edb856ee9"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/solidworks_portable_part_import.csv",
+      "bytes": 2903,
+      "sha256": "71e486526a08e9695015ee6ac810db15eb4cc1286c2973a8046955c251d4d459"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/solidworks_portable_trace.log",
+      "bytes": 3458,
+      "sha256": "4b54da3fea05314e37d6e52fb0fd56e759db7299ba93b1876d51e171321e003e"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_FOOT_LEFT.SLDPRT",
+      "bytes": 856344,
+      "sha256": "13e69bfd98397615196cd16d3dcbb3ae96e325ef0ff9835acd8f0c0864132540"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_FOOT_RIGHT.SLDPRT",
+      "bytes": 905904,
+      "sha256": "86221ea2170f81ed636cc26ed939a3c1a649b2207a710a3d2cf0f8830875d166"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_HIP_ROLL_LEFT.SLDPRT",
+      "bytes": 2297344,
+      "sha256": "fb21ca96c306830027430cb537d586fb81b393b3afe5dd66f0172de69c4666ce"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_HIP_ROLL_RIGHT.SLDPRT",
+      "bytes": 2279938,
+      "sha256": "ac8c8d7feae427cf07cd2520b7f0f9f76d71771c4cd69d85f915fc8ac08a9148"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_HIP_YAW_LEFT.SLDPRT",
+      "bytes": 2305846,
+      "sha256": "fa9e9069ada386cd8617a40e91c6e4d02922164e13b8517536b73d57dd8250c4"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_HIP_YAW_RIGHT.SLDPRT",
+      "bytes": 2290311,
+      "sha256": "56c9e951b22a99c446ed18fdaa4f201a994ff7507fc16b4d629cf773a407beef"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_KNEE_PITCH_LEFT.SLDPRT",
+      "bytes": 2475313,
+      "sha256": "034bb9ca31e4a04a84a9fc887736d323cda9badfb484afbc3aae657284ce3e33"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_KNEE_PITCH_RIGHT.SLDPRT",
+      "bytes": 2384882,
+      "sha256": "42a6759ae2386c288504989051dcd275ff8e1da938c3cbd5877abe627378a4f2"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_LEFT_HAND.SLDPRT",
+      "bytes": 946663,
+      "sha256": "3532b163d69ed4035f20e828a7366cb140e2125550fbffa60e398a704f4be7f9"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_LEFT_KNEE_PITCH_MOTOR.SLDPRT",
+      "bytes": 2429028,
+      "sha256": "8945fe9e186653c1afc1309629d83b821f492221e453554b01a6d08e25c8a48a"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_LEFT_SHOULDER_YAW_2.SLDPRT",
+      "bytes": 1382443,
+      "sha256": "47d47c90efd8480dc579620d0010f14f05e4934cf8415313c55c9f343a56ec5d"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_LEFT_SHOULDER_YAW_MOTOR.SLDPRT",
+      "bytes": 3309263,
+      "sha256": "fbe79e044741c50c2052c794cdcc641ed758360b7b0859378e3314405f307e00"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_RIGHT_HAND.SLDPRT",
+      "bytes": 948515,
+      "sha256": "b57c54feaa649544bbfaddfd002766c32632b9ab98405305a326317e9243d002"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_RIGHT_KNEE_PITCH_MOTOR.SLDPRT",
+      "bytes": 2392245,
+      "sha256": "39524e5c2e4ee865b01fff4e3b30db7347b3cd1e63dee32a0b06ab3fca87d820"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_RIGHT_SHOULDER_YAW_2.SLDPRT",
+      "bytes": 1375094,
+      "sha256": "73e9c42a21cb51355ae512351281d689dde6ea25485bca38586124ed11a2b296"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_RIGHT_SHOULDER_YAW_MOTOR.SLDPRT",
+      "bytes": 3324706,
+      "sha256": "4c53b6338ef08fcb0516ce2ea242fb2b2baf23ac961f6747f9c43182b2f4a2da"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_LINK_TORSO.SLDPRT",
+      "bytes": 10121300,
+      "sha256": "7e56a4d51b93d0ee8eecd77b5317a359dfae31a98b3438f168e0a47d2a5fcae6"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_CHEST_BACK.SLDPRT",
+      "bytes": 168042,
+      "sha256": "4afa18b658bbf45a8bfffc683d44793657804e7f8116220789a92b4e1b4ca64f"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_CHEST_FRONT.SLDPRT",
+      "bytes": 157469,
+      "sha256": "e9b0fa03f126d1b47feb921371f993e459e5aa41142bca541bc6886f519c6e3e"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_HEAD_BACK.SLDPRT",
+      "bytes": 254247,
+      "sha256": "29cb4bf5cf41bd38f7a2825eee179450e3e23843936cc0188d53cf48bd6eb012"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_HEAD_FRONT.SLDPRT",
+      "bytes": 209446,
+      "sha256": "68968c85339f3280a296ae524cb7377e1dc52d3b8b81f08c3abd07601910051b"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_LEFT_SOLE.SLDPRT",
+      "bytes": 143868,
+      "sha256": "a845e9f38384c16cd79c038f0f0e471cea4de2c5aec1b7aa0d91da6cb3b980b3"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_MUZZLE_BADGE.SLDPRT",
+      "bytes": 126437,
+      "sha256": "1662bd96cecf068cf2e40c41314ed344b8f2c8328fd3fe4b1e593a4753166527"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_PELVIS_BACK.SLDPRT",
+      "bytes": 186992,
+      "sha256": "efa6ccdc5d623f715f01837dca356c8a0bb2366bad5e7bfcfb4e02afeebde688"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_PELVIS_FRONT.SLDPRT",
+      "bytes": 208687,
+      "sha256": "7ee9a096e4158c4603d4fb3ed1f74872c134bdabed4bc4b32e51c65d6c97136d"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_RIGHT_SOLE.SLDPRT",
+      "bytes": 143655,
+      "sha256": "80ca4614850788242c47a447d5f134ca058c627d14d4f69e4578913d47683f29"
+    },
+    {
+      "path": "generated/solidworks/portable_flat_round_v1/ZEROTH01_ROUND_V1_VISOR_BADGE.SLDPRT",
+      "bytes": 98526,
+      "sha256": "5c22fbfe6c2162189f9bab2aafb6908fe29563f2e0c073d756b044cfeef55dcd"
+    },
+    {
+      "path": "generated/urdf/meshes/ankle_pitch_left.stl",
+      "bytes": 212384,
+      "sha256": "5e7200c973065b885cb15943c7e2d05617456a2ff4ea61f2dd744e4081cab306"
+    },
+    {
+      "path": "generated/urdf/meshes/ankle_pitch_right.stl",
+      "bytes": 209934,
+      "sha256": "d8f9993ced11f81ced127f77e0f591ee0f81fbbba5e448b0d04d72674e0b50bb"
+    },
+    {
+      "path": "generated/urdf/meshes/foot_left.stl",
+      "bytes": 73784,
+      "sha256": "870d7d5db2d84fb05140c421fbf33e11e3975761961fafb07edfffd5a890ad79"
+    },
+    {
+      "path": "generated/urdf/meshes/foot_right.stl",
+      "bytes": 78984,
+      "sha256": "caaf696f70fe86e0392067966b7cc1f1b44f9fed9a601488ffcf004705df037b"
+    },
+    {
+      "path": "generated/urdf/meshes/hand_right.stl",
+      "bytes": 81484,
+      "sha256": "d6d9a92c0abd441e9aab4618572b7f5aeaca3551082482e188e5a0f6cd567ed4"
+    },
+    {
+      "path": "generated/urdf/meshes/hip_roll_left.stl",
+      "bytes": 209634,
+      "sha256": "cbf6c0d4dbec27db55eb29c7248f09eaf92300f42f4187a70dcc65e54611e570"
+    },
+    {
+      "path": "generated/urdf/meshes/hip_roll_right.stl",
+      "bytes": 207084,
+      "sha256": "8b4c4d41d57204b254781dbddc56053988783ba597932e4f66dee9cb26864099"
+    },
+    {
+      "path": "generated/urdf/meshes/hip_yaw_left.stl",
+      "bytes": 199034,
+      "sha256": "df6c7bac1e9fe95ac3f5a9b8e8b563fc791f077441ad3fbbe77d9074db2a7a61"
+    },
+    {
+      "path": "generated/urdf/meshes/hip_yaw_right.stl",
+      "bytes": 198284,
+      "sha256": "00cc0c65ac1ba1238b43e8ec80ba041147ecf718a3c9033fd3e2ff64098e7670"
+    },
+    {
+      "path": "generated/urdf/meshes/knee_pitch_left.stl",
+      "bytes": 214984,
+      "sha256": "5bc816ac61e2d5bf357fd237e220c879c520d4b99371b51a041a5dd66d1a1662"
+    },
+    {
+      "path": "generated/urdf/meshes/knee_pitch_right.stl",
+      "bytes": 214984,
+      "sha256": "5bc816ac61e2d5bf357fd237e220c879c520d4b99371b51a041a5dd66d1a1662"
+    },
+    {
+      "path": "generated/urdf/meshes/knee_pitch_right_2.stl",
+      "bytes": 211784,
+      "sha256": "a23fe1c08fe4298c2ffa44a8bd209f9e9e879c5776d3c5ee013b1a01f074046e"
+    },
+    {
+      "path": "generated/urdf/meshes/Left_Hand.stl",
+      "bytes": 81684,
+      "sha256": "4bfae2b11634144d16a9c298ab6c91d0d6f4ed4f6e1b2e2771718934a33eb429"
+    },
+    {
+      "path": "generated/urdf/meshes/left_knee_pitch_motor.stl",
+      "bytes": 212384,
+      "sha256": "5e7200c973065b885cb15943c7e2d05617456a2ff4ea61f2dd744e4081cab306"
+    },
+    {
+      "path": "generated/urdf/meshes/left_shoulder_yaw.stl",
+      "bytes": 120834,
+      "sha256": "fc21d81f5ea399e1d2ce727c599f5372ec721769aa0fe01b9c22a467238800b5"
+    },
+    {
+      "path": "generated/urdf/meshes/left_shoulder_yaw_motor.stl",
+      "bytes": 286284,
+      "sha256": "1fd85e3587ee3c6dbe71ba11de471c9c7ee14aae7f36e29190675fe305a7d1cb"
+    },
+    {
+      "path": "generated/urdf/meshes/right_hand.stl",
+      "bytes": 81684,
+      "sha256": "4bfae2b11634144d16a9c298ab6c91d0d6f4ed4f6e1b2e2771718934a33eb429"
+    },
+    {
+      "path": "generated/urdf/meshes/right_knee_pitch_motor.stl",
+      "bytes": 209934,
+      "sha256": "d8f9993ced11f81ced127f77e0f591ee0f81fbbba5e448b0d04d72674e0b50bb"
+    },
+    {
+      "path": "generated/urdf/meshes/right_shoulder_yaw.stl",
+      "bytes": 121884,
+      "sha256": "541560e086b158d6b76f6bab8f8aae2eca6bcf9de31a76c8f848edcc5c7065a5"
+    },
+    {
+      "path": "generated/urdf/meshes/right_shoulder_yaw_motor.stl",
+      "bytes": 280634,
+      "sha256": "879d479d003c9877b389c775b416eecaa8f968594343c9dfb1c026efc02a44ea"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_CHEST_BACK.stl",
+      "bytes": 358584,
+      "sha256": "ecf6a4aa5c7d47d787e38f93bb97f0a9c1a9160ccdac884354c7de77941bbd7a"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_CHEST_FRONT.stl",
+      "bytes": 317184,
+      "sha256": "8406371f85961e6c1d56b230894b96583d0a7115c087dfff4b581943ae381303"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_HEAD_BACK.stl",
+      "bytes": 599884,
+      "sha256": "ebdd909ae017f48cf64b1f63dc588dad5e4b80bfbf3025e1c6b8728ff85c9132"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_HEAD_FRONT.stl",
+      "bytes": 591484,
+      "sha256": "d277beaaa09ac3b7b958a23a5752c8c08caa5e82ef76a9b056d40398b7231839"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_LEFT_SOLE.stl",
+      "bytes": 359084,
+      "sha256": "479fc2944cc32cb0d9efd98fec22d6152a775c0770e6c2d774b893ed61b4c070"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_MUZZLE_BADGE.stl",
+      "bytes": 331084,
+      "sha256": "127ddf3fb8d5ddafbd60851e24e0a9b18b8c4382e8fec7c7dcd50356e125ba93"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_PELVIS_BACK.stl",
+      "bytes": 387584,
+      "sha256": "cf28bf64a98546878aec794dc2f7ec7e59999a0aa16f2b8d92fb1b1a76180f45"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_PELVIS_FRONT.stl",
+      "bytes": 439784,
+      "sha256": "9899f5db1e170924485b600200aa9e9ddf1557e0e39c4aed0826071b0a782d7b"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_RIGHT_SOLE.stl",
+      "bytes": 359084,
+      "sha256": "0872446e3d3c632e5112e2153d9bcd57f3513f5e34b96735901474a18531aaeb"
+    },
+    {
+      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_VISOR_BADGE.stl",
+      "bytes": 331084,
+      "sha256": "78dcb9488319ef4b0bf550c454fa25e490dc4704cf8dd977591eb63f2c24ba7b"
+    },
+    {
+      "path": "generated/urdf/meshes/shoulder_yaw_left.stl",
+      "bytes": 120834,
+      "sha256": "fc21d81f5ea399e1d2ce727c599f5372ec721769aa0fe01b9c22a467238800b5"
+    },
+    {
+      "path": "generated/urdf/meshes/shoulder_yaw_right.stl",
+      "bytes": 121884,
+      "sha256": "541560e086b158d6b76f6bab8f8aae2eca6bcf9de31a76c8f848edcc5c7065a5"
+    },
+    {
+      "path": "generated/urdf/meshes/Torso.stl",
+      "bytes": 953984,
+      "sha256": "5aeb3948cf9c588794e529315f328ae28152343a216890b927800b6ea4aa6ee2"
+    },
+    {
+      "path": "generated/urdf/zeroth01_rl_audited.urdf",
+      "bytes": 20630,
+      "sha256": "5faba469c59055c4c68f2977741730396bcd759fca62a19c9f428adcfe24e01a"
+    },
+    {
+      "path": "generated/urdf/zeroth01_rl_ready.urdf",
+      "bytes": 22597,
+      "sha256": "f1cf7ca68a2eaf598cb57f918e758d0fe3e0e9f10644aeb9b4c71f5b45a42d89"
+    },
+    {
+      "path": "generated/urdf/zeroth01_rl_reference.urdf",
+      "bytes": 20266,
+      "sha256": "74d8848273a3dde4e340944bf463643cd15b319d086d78ce38b0952b94cf1e11"
+    },
+    {
+      "path": "generated/urdf/zeroth01_rl_round_v1.urdf",
+      "bytes": 27717,
+      "sha256": "38706f0e624c2631b389fc8ddd03c797587bc218a1cef63fca6d2e25dae15244"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1100,
+      "sha256": "6bf06d8d545a188c4e41c27fb6609251ca63a828940e1544ad9ffb4723f88f3a"
+    },
+    {
+      "path": "LICENSES/KSCALE_ONSHAPE_MIT.txt",
+      "bytes": 1071,
+      "sha256": "1c23766c8980cd439795d019648ec967d3d8aba3b03250c03ff3e95f51e7b8dd"
+    },
+    {
+      "path": "LICENSES/ZEROTH_BOT_MIT.txt",
+      "bytes": 1069,
+      "sha256": "d1de75df897a7864375c907adf9e8bd7bc49fd190a012653f3986d0b0e6af0ad"
+    },
+    {
+      "path": "LICENSES/ZEROTH_SIM_MIT.txt",
+      "bytes": 1068,
+      "sha256": "d38a12932adefab51ba92e4f3c8a1c7adb095e3d96c78e481ef754e0e2dfb3be"
+    },
+    {
+      "path": "PRINT_AND_ASSEMBLY_READINESS_zh.md",
+      "bytes": 3809,
+      "sha256": "342c9b751df7f96cb856e6fa7449c909432a005454869c117429e3aafbcfd7ef"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5309,
+      "sha256": "dfe9e59ee39ecebfb7e385ee8d0a6f4c3e7ad8bb11a0d55cc2e8304954663350"
+    },
+    {
+      "path": "README_zh.md",
+      "bytes": 5568,
+      "sha256": "70345461fd7be6ad901801c3752e1462fb7f5ae6a331727d0504ec0ffe5ae943"
+    },
+    {
+      "path": "reports/generated_urdf_manifest.csv",
+      "bytes": 4162,
+      "sha256": "22a0d8ef810cd824512a71f1eb1e64a2f6bf12ef6194917484712613593bd195"
+    },
+    {
+      "path": "reports/joint_servo_frames.csv",
+      "bytes": 8878,
+      "sha256": "210a40523b3a493c07045bda252719eb0aad1c782a640037fe96601d8865d34d"
+    },
+    {
+      "path": "reports/link_inertial_audit.csv",
+      "bytes": 5280,
+      "sha256": "882b5b9b1a595d7d7a86c3d1ed8447d6c1a36514151c6473c0aeecba3f2159fe"
+    },
+    {
+      "path": "reports/mesh_frame_audit.json",
+      "bytes": 2893,
+      "sha256": "6d7fa69b9099172bc90c1155a0d509931b2e36d4d6bca1929215bfad53ed00d1"
+    },
+    {
+      "path": "reports/mujoco_round_v1_gate.json",
+      "bytes": 1101,
+      "sha256": "7bcdb8e687392551112fd567c016989bbee8668c0d8dd5d1800cbc5c653efc65"
+    },
+    {
+      "path": "reports/mujoco_round_v1_gate.md",
+      "bytes": 523,
+      "sha256": "4df19b10f93399f782c6d69c752b477b3a61d33769af52c9fa0dab8d426f8202"
+    },
+    {
+      "path": "reports/mujoco_round_v1_gate_joint_gate.csv",
+      "bytes": 1746,
+      "sha256": "b8a3ef458a7d207ca55bdd11e9cc7688e92e91380b0c09b4f8aaace304d89b5f"
+    },
+    {
+      "path": "reports/printability_mesh_audit.json",
+      "bytes": 18877,
+      "sha256": "b900767b6c82c238715c8df662656db406179d66e403f4576ed125a2992c6143"
+    },
+    {
+      "path": "reports/release_gate.json",
+      "bytes": 1217,
+      "sha256": "5ebb3e213d4d5d887355df63c9960c65f057319567fbeaec6e23812c08962511"
+    },
+    {
+      "path": "reports/rl_mechanical_completeness.csv",
+      "bytes": 18736,
+      "sha256": "ae1eb478c96865212ff206b9c64911553fa3ba3bdb4b845438f1c10f7c4d97f3"
+    },
+    {
+      "path": "reports/rl_mechanical_completeness_summary.json",
+      "bytes": 664,
+      "sha256": "86db307e4d95eb8d4176644b281d142c781a8734fb343640c035eefa39383718"
+    },
+    {
+      "path": "reports/rl_package_portability_gate.json",
+      "bytes": 304,
+      "sha256": "94922444277e2b9721895481726850786256d7bb502cab8d7e8c1bd4a72da9be"
+    },
+    {
+      "path": "reports/round_v1_link_inertial_overlay.csv",
+      "bytes": 935,
+      "sha256": "fdbd1e9ab7153b7c70bb01d585d6de1e95b66e1562bf19daabcaef92ee35f003"
+    },
+    {
+      "path": "reports/round_v1_print_mesh_gate.csv",
+      "bytes": 4567,
+      "sha256": "3f45d78a58ac89762e30fcc8ce75d26f05b3f6c3a56dc88048b3a3e5528ea70e"
+    },
+    {
+      "path": "reports/round_v1_print_mesh_gate.json",
+      "bytes": 11990,
+      "sha256": "53e0d25832d4ca53ad546609f7b4ed4764c86cf7cd183bd567522fded33a2737"
+    },
+    {
+      "path": "reports/round_v1_printed_part_mass_properties.csv",
+      "bytes": 3904,
+      "sha256": "14e89b4baf6837463750fbd162d3d7eca753d70d071c2d0cdd4bb85401ce67fc"
+    },
+    {
+      "path": "reports/round_v1_servo_axis_alignment.csv",
+      "bytes": 4676,
+      "sha256": "b3bdc6cf9f3c00e86b6afa0b325e4e50504c9a1cea31ccfaf7811cc0fb5aead5"
+    },
+    {
+      "path": "reports/solidworks_portable_gate.json",
+      "bytes": 1723,
+      "sha256": "6e3ff816e3281b057b0e42c63000d9ebfb3e705b94c31eabb736960edb856ee9"
+    },
+    {
+      "path": "reports/solidworks_round_v1_kinematic_sweep.csv",
+      "bytes": 7818,
+      "sha256": "e0fc7b85282f21457b07776e227ab5db13141a1195293ad2851440f04e14e5f4"
+    },
+    {
+      "path": "reports/source_asset_manifest.csv",
+      "bytes": 3020,
+      "sha256": "a20a8f2df1f13708abe5de97b9f73628ed141e7bca5bc7fcb871878949f994da"
+    },
+    {
+      "path": "reports/source_lock.json",
+      "bytes": 728,
+      "sha256": "75ac051d56a981e88acb396da49e3a949fba2e6501c287af8eb496bdd82ae177"
+    },
+    {
+      "path": "reports/sts3250_mount_phase_fit.csv",
+      "bytes": 2758,
+      "sha256": "3c8251fe659bd835f1ee0f59fea402a392aefaa31eed8cc0ef892e78a3f2e232"
+    },
+    {
+      "path": "reports/sts3250_round_v1_feasibility.json",
+      "bytes": 15041,
+      "sha256": "b32baf37690f659d6bc51fe25edeb4dc9c2dbcd49ef990eabab07290512b2003"
+    },
+    {
+      "path": "reports/sts3250_round_v1_feasibility.md",
+      "bytes": 610,
+      "sha256": "9221b0b4ec0d89a9125c2552f3a5a21de216202d34c1ed1c14ea7e32e7a35106"
+    },
+    {
+      "path": "reports/sts3250_round_v1_static_torque.csv",
+      "bytes": 3864,
+      "sha256": "cfc95972b905715eeecdfa8f873cbb416d8af45059c45d195bb25977c2d2c28e"
+    },
+    {
+      "path": "requirements-validation.txt",
+      "bytes": 15,
+      "sha256": "5527930996d693324c9e2ccf26bfb0da789465178431596b964d042cb27dd9dc"
+    },
+    {
+      "path": "RL_PROMPT.txt",
+      "bytes": 542,
+      "sha256": "dff97f38db7f3d6a4742964eaed8f14312c11da80bef58a2ff1ecef441a23b7d"
+    },
+    {
+      "path": "RL_ROUND_V1_HANDOFF_zh.md",
+      "bytes": 4073,
+      "sha256": "6738cc2e21216683cde48b235f6d1b4c987458bd372d482a7ebfcb7764532866"
+    },
+    {
+      "path": "scripts/analyze_sts3250_round_v1.py",
+      "bytes": 13261,
+      "sha256": "897e5d00dfe8be3e2b16d4f6a93f640de0d1f4feb2fa399112afa5bde74475bd"
+    },
+    {
+      "path": "scripts/audit_fix_solidworks_display_state.py",
+      "bytes": 8170,
+      "sha256": "ef300190578a61f0deaed00a6bc61e46b740999d645db062b34e7d35b7398ea6"
+    },
+    {
+      "path": "scripts/audit_mesh_frames.py",
+      "bytes": 9392,
+      "sha256": "1aeccef523385ff2bb088d823c289ba7b78e298bd4b5449011f96d6766b9f9ac"
+    },
+    {
+      "path": "scripts/audit_solidworks_component_placement.py",
+      "bytes": 5881,
+      "sha256": "959e2a6fa3d0ccd45294f211b45a0bf595ae8bdffe390c99e502c18c0869502f"
+    },
+    {
+      "path": "scripts/audit_source_assets.py",
+      "bytes": 6663,
+      "sha256": "b9fbc693c3398dc96fe7d8ea2be4e3f3d2313c937c4d6a48d3d1c405a772897f"
+    },
+    {
+      "path": "scripts/build_rl_mechanical_package.py",
+      "bytes": 25541,
+      "sha256": "eaf8be67af9dfa4d8100caf238d88f84e66c1bccc658989a29638d4b30721466"
+    },
+    {
+      "path": "scripts/create_solidworks_kinematic_review.py",
+      "bytes": 31007,
+      "sha256": "2f80db15b8bbf93f85ac04610c334a7c7718d38ef45722b9efa63a30c4683194"
+    },
+    {
+      "path": "scripts/create_solidworks_round_v1_portable.py",
+      "bytes": 3888,
+      "sha256": "cac3011ca76f026eb95b25a1324972d09212b333f81da0f81198260d429c2827"
+    },
+    {
+      "path": "scripts/create_solidworks_round_v1_review.py",
+      "bytes": 27530,
+      "sha256": "80346a161be6ef03074932b6d159f4ff8aead87a6d51038211fb956691c3c75b"
+    },
+    {
+      "path": "scripts/export_round_v1_mass_properties.py",
+      "bytes": 14279,
+      "sha256": "ddcf6bf39dddd13458540a03d4f05012c1524997dc47154784ece05e286251b9"
+    },
+    {
+      "path": "scripts/fetch_kscale_zbot_metadata.py",
+      "bytes": 1376,
+      "sha256": "60cfaddddc35923a603a63bc7f751f6b153cdd7256c5077b4936ade6cf4b692a"
+    },
+    {
+      "path": "scripts/finalize_round_v1_print_meshes.py",
+      "bytes": 5791,
+      "sha256": "775f6cc94c8da260b015b087e6d42f1532c05b58c9a4b7e75510cf11c60b9edf"
+    },
+    {
+      "path": "scripts/fit_sts3250_mount_phase.py",
+      "bytes": 8547,
+      "sha256": "5dd7d9ccc51d8a450b01bb99ea7f7ea8022df2e871ca1a66b51619d0ba952ab3"
+    },
+    {
+      "path": "scripts/gen_zeroth01_rl_audited.py",
+      "bytes": 5927,
+      "sha256": "7a5a5f782da0eb9ff6aa1fcd4af75955d1cf78573dea0b2472421fdc756a10e8"
+    },
+    {
+      "path": "scripts/gen_zeroth01_rl_mjcf.py",
+      "bytes": 16122,
+      "sha256": "35baa3468904d37ebc12d24635fc88e59e73834365f21eb07d93dfdefc3fbe5b"
+    },
+    {
+      "path": "scripts/gen_zeroth01_rl_ready.py",
+      "bytes": 4103,
+      "sha256": "c1afeb7be4983dc789c8aa52a17519e9e3350f8df573a0e2c7488d3f01e279f6"
+    },
+    {
+      "path": "scripts/gen_zeroth01_rl_round_v1.py",
+      "bytes": 6620,
+      "sha256": "24aeb83aede11f533af243b518d519c0199bc58ae37d0fda8f9b98abdf5ec3b3"
+    },
+    {
+      "path": "scripts/gen_zeroth01_urdf.py",
+      "bytes": 7862,
+      "sha256": "302a83f816cf42c7015bbeb2784317fac3c8f63f4bf67545c2fae1f41f8e6b8b"
+    },
+    {
+      "path": "scripts/generate_release_manifest.py",
+      "bytes": 1635,
+      "sha256": "6066e04135083a57643f9012b187c35484b47184d6b31dec889f46ce2116afcd"
+    },
+    {
+      "path": "scripts/normalize_text_eol.py",
+      "bytes": 985,
+      "sha256": "657b25a05701df8ae218bc15d36067326d927d907765dccdd8b8812885cd0efb"
+    },
+    {
+      "path": "scripts/repair_visual_meshes_for_print.py",
+      "bytes": 6894,
+      "sha256": "8a222160ec68d4e40011c1e21ee173e42db3106f7942909ab5bb9a506920ac38"
+    },
+    {
+      "path": "scripts/run_mujoco_joint_sweep.py",
+      "bytes": 17853,
+      "sha256": "263e55e3188b4b0d6afc4a59ce740080b472c8ef8fc28dcc3feab08c437346a1"
+    },
+    {
+      "path": "scripts/search_global_collision_safe_box.py",
+      "bytes": 10020,
+      "sha256": "3a65a69f10485d3a6b152cebb4f20b92fd3b59c78101ea4e930842b9c662346f"
+    },
+    {
+      "path": "scripts/smoke_test_round_v1_mujoco.py",
+      "bytes": 1748,
+      "sha256": "01173631c0e1aad27cb737e73ecefd3ed45173908e8957a54b0205dbfd64eb05"
+    },
+    {
+      "path": "scripts/validate_release.py",
+      "bytes": 6139,
+      "sha256": "d184aa9003e8c7b527d0f32a35e22eae1553aad61138cb2ff921d5f4b703a97d"
+    },
+    {
+      "path": "scripts/validate_rl_package_portability.py",
+      "bytes": 3647,
+      "sha256": "3bb8956c685f8accbba815bdc4bded22fd99e0a9e0579ac79adbfcf730b1e7b2"
+    },
+    {
+      "path": "scripts/validate_rl_ready_mujoco.py",
+      "bytes": 13195,
+      "sha256": "8021f045bc6561d03fb23dc722420ebb209fd42e7bc386668647d684d4b7f9f4"
+    },
+    {
+      "path": "snapshots/round_v1/zeroth01_round_v1_left_sole_strap_20260729T172129Z.png",
+      "bytes": 207762,
+      "sha256": "c35c900be8a5a38da7d0a9db25447d11440aead165982205ca29bf18a7530ea6"
+    },
+    {
+      "path": "snapshots/solidworks/round_v1/zeroth01_round_v1_isometric.png",
+      "bytes": 413614,
+      "sha256": "2b101ca273b5fe96695c154ad2f922d443315f19a4609196105a935660086f08"
+    },
+    {
+      "path": "snapshots/solidworks/round_v1/zeroth01_round_v1_robot_front.png",
+      "bytes": 249813,
+      "sha256": "dd4fe1c53bda8728b2a90b1ebc6043bbd203bcd386e5afb57989a9998e0fa7cd"
+    },
+    {
+      "path": "snapshots/solidworks/round_v1/zeroth01_round_v1_robot_side.png",
+      "bytes": 237897,
+      "sha256": "08978f1d64661628588a3a9ef330b5d4bb5c129c11b745038069a5e375761ed9"
+    },
+    {
+      "path": "snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif",
+      "bytes": 2721162,
+      "sha256": "2140444678ba9e35b0d506f26d670297737041c9be840688e600f19f931326bc"
+    },
+    {
+      "path": "source_assets/vendor/sts3250/FEETECH_STS3250.step",
+      "bytes": 10390008,
+      "sha256": "cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf"
+    },
+    {
+      "path": "source_assets/vendor/sts3250/PROVENANCE.json",
+      "bytes": 831,
+      "sha256": "00fadbf4416c371d01caaa6519fa38e92f443fcca47f1a9e3e28dbeea5534fca"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2294,
+      "sha256": "0bb021ec7933e70207cb41005b00cf6129bb0991414a9f8b7eb75f9b98c49fe4"
+    }
+  ]
+}

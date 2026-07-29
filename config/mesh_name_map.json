@@ -1,0 +1,23 @@
+{
+  "evidence_commit": "33b0553bd085ff6360495497a8e86afaa801785d",
+  "description": "Geometry-compatible official URDF revision and exact Drive-bundle filenames. Commit 43c5baa changed joint frames, inertials, and mesh filenames without publishing the corresponding replacement STL bundle; those newer frames must not be paired with these files.",
+  "target_to_downloaded": {
+    "Torso.stl": "Torso.stl",
+    "shoulder_yaw_right.stl": "shoulder_yaw_right.stl",
+    "shoulder_yaw_left.stl": "shoulder_yaw_left.stl",
+    "right_shoulder_yaw_motor.stl": "right_shoulder_yaw_motor.stl",
+    "left_shoulder_yaw_motor.stl": "left_shoulder_yaw_motor.stl",
+    "hip_yaw_right.stl": "hip_yaw_right.stl",
+    "hip_yaw_left.stl": "hip_yaw_left.stl",
+    "hip_roll_right.stl": "hip_roll_right.stl",
+    "hip_roll_left.stl": "hip_roll_left.stl",
+    "Left_Hand.stl": "Left_Hand.stl",
+    "hand_right.stl": "hand_right.stl",
+    "knee_pitch_right.stl": "knee_pitch_right.stl",
+    "knee_pitch_right_2.stl": "knee_pitch_right_2.stl",
+    "ankle_pitch_right.stl": "ankle_pitch_right.stl",
+    "ankle_pitch_left.stl": "ankle_pitch_left.stl",
+    "foot_right.stl": "foot_right.stl",
+    "foot_left.stl": "foot_left.stl"
+  }
+}

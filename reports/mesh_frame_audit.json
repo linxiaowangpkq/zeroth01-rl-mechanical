@@ -1,0 +1,111 @@
+{
+  "urdf": ".\\generated\\urdf\\zeroth01_rl_ready.urdf",
+  "mesh_count": 17,
+  "closer_frame_counts": {
+    "LINK_LOCAL": 16,
+    "WORLD_BAKED": 1
+  },
+  "median_bbox_center_to_local_com_m": 0.01276229497604442,
+  "median_bbox_center_to_world_com_m": 0.1802149695056746,
+  "inertial_com_outside_mesh_bbox": [],
+  "neutral_parent_child_aabb_gaps_over_5mm": [],
+  "joint_aabb_gaps": [
+    {
+      "joint": "right_shoulder_pitch",
+      "parent": "Torso",
+      "child": "shoulder_yaw_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_shoulder_pitch",
+      "parent": "Torso",
+      "child": "shoulder_yaw_left",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_shoulder_yaw",
+      "parent": "shoulder_yaw_right",
+      "child": "right_shoulder_yaw_motor",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_hip_pitch",
+      "parent": "Torso",
+      "child": "hip_yaw_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_hip_pitch",
+      "parent": "Torso",
+      "child": "hip_yaw_left",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_shoulder_yaw",
+      "parent": "shoulder_yaw_left",
+      "child": "left_shoulder_yaw_motor",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_hip_yaw",
+      "parent": "hip_yaw_right",
+      "child": "hip_roll_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_hip_yaw",
+      "parent": "hip_yaw_left",
+      "child": "hip_roll_left",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_elbow_yaw",
+      "parent": "right_shoulder_yaw_motor",
+      "child": "Left_Hand",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_elbow_yaw",
+      "parent": "left_shoulder_yaw_motor",
+      "child": "hand_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_hip_roll",
+      "parent": "hip_roll_right",
+      "child": "knee_pitch_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_hip_roll",
+      "parent": "hip_roll_left",
+      "child": "knee_pitch_right_2",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_knee_pitch",
+      "parent": "knee_pitch_right",
+      "child": "ankle_pitch_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_knee_pitch",
+      "parent": "knee_pitch_right_2",
+      "child": "ankle_pitch_left",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "right_ankle_pitch",
+      "parent": "ankle_pitch_right",
+      "child": "foot_right",
+      "neutral_world_aabb_gap_m": 0.0
+    },
+    {
+      "joint": "left_ankle_pitch",
+      "parent": "ankle_pitch_left",
+      "child": "foot_left",
+      "neutral_world_aabb_gap_m": 0.0
+    }
+  ],
+  "report_csv": ".\\reports\\mesh_frame_audit.csv"
+}

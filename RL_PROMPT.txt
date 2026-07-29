@@ -1,0 +1,1 @@
+请克隆 https://github.com/linxiaowangpkq/zeroth01-rl-mechanical ，以 generated/urdf/zeroth01_rl_round_v1.urdf 和 generated/mujoco/zeroth01_rl_round_v1.xml 为机械真值，读取 generated/config/、reports/ 中的 STS3250、质量、惯量、限位、标定与验证门禁，先按 1.2552512 N·m 保守档训练 16DoF 步行，再以 1.569064 N·m 额定档复测并输出每关节扭矩-速度、RMS 电流/温升、足部冲击和跟踪裕量，禁止把 2.0 N·m 仿真上限或 4.903325 N·m 堵转值当作连续硬件能力。

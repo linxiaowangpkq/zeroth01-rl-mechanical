@@ -1,0 +1,33 @@
+{
+  "mjcf": ".\\generated\\mujoco\\zeroth01_rl_round_v1.xml",
+  "mujoco_version": "3.11.0",
+  "topology": {
+    "nq": 23,
+    "nv": 22,
+    "joint_count": 17,
+    "hinge_count": 16,
+    "body_count_including_world": 18,
+    "actuator_count": 16,
+    "sensor_count": 3,
+    "gate": "PASS"
+  },
+  "total_mass_kg": 4.151924609463999,
+  "expected_urdf_mass_kg": 4.151924609463999,
+  "mass_gate": "PASS",
+  "neutral_self_collision_pairs": [],
+  "neutral_self_collision_gate": "PASS",
+  "standing_self_collision_pairs": [],
+  "standing_self_collision_gate": "PASS",
+  "joint_motion_dynamic_and_axis_collision_gate": "PASS",
+  "axis_observed_self_collision_pairs": [],
+  "random_sample_count": 100000,
+  "random_self_collision_samples": 0,
+  "random_self_collision_pairs": [],
+  "random_gate": "PASS",
+  "corner_sample_count": 65536,
+  "corner_self_collision_samples": 0,
+  "corner_self_collision_pairs": [],
+  "corner_gate": "PASS",
+  "overall": "PASS",
+  "evidence_scope": "MuJoCo mesh kinematics/dynamics; not continuous collision proof or manufacturing tolerance/cable/fastener/flexible-cover signoff"
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "zeroth01.collision_policy.v1",
+  "geometry": "official open-surface STL used for visual and collision geometry",
+  "allowed_assembly_overlap_pairs": [
+    {
+      "body1": "Torso",
+      "body2": "hip_yaw_left"
+    },
+    {
+      "body1": "Torso",
+      "body2": "hip_yaw_right"
+    },
+    {
+      "body1": "Torso",
+      "body2": "shoulder_yaw_left"
+    },
+    {
+      "body1": "Torso",
+      "body2": "shoulder_yaw_right"
+    }
+  ],
+  "all_other_self_contacts": "prohibited",
+  "guarded_startup_box": {
+    "scale": 0.3,
+    "bounds": {
+      "right_shoulder_pitch": {
+        "lower_rad": -0.47123888999999997,
+        "upper_rad": 0.47123888999999997
+      },
+      "right_shoulder_yaw": {
+        "lower_rad": -0.47123888999999997,
+        "upper_rad": 0.141371667
+      },
+      "right_elbow_yaw": {
+        "lower_rad": -0.29321532,
+        "upper_rad": 0.36651915
+      },
+      "left_shoulder_pitch": {
+        "lower_rad": -0.47123888999999997,
+        "upper_rad": 0.47123888999999997
+      },
+      "left_shoulder_yaw": {
+        "lower_rad": -0.141371667,
+        "upper_rad": 0.47123888999999997
+      },
+      "left_elbow_yaw": {
+        "lower_rad": -0.36651915,
+        "upper_rad": 0.29321532
+      },
+      "right_hip_pitch": {
+        "lower_rad": -0.4123274081,
+        "upper_rad": 0.02749555599999995
+      },
+      "right_hip_yaw": {
+        "lower_rad": -0.0261799389,
+        "upper_rad": 0.3220132413
+      },
+      "right_hip_roll": {
+        "lower_rad": -0.23561944799999998,
+        "upper_rad": 0.23561944799999998
+      },
+      "right_knee_pitch": {
+        "lower_rad": 0.0,
+        "upper_rad": 0.83285928
+      },
+      "right_ankle_pitch": {
+        "lower_rad": 0.0,
+        "upper_rad": 0.66415928
+      },
+      "left_hip_pitch": {
+        "lower_rad": -0.02749555599999995,
+        "upper_rad": 0.4123274081
+      },
+      "left_hip_yaw": {
+        "lower_rad": -0.3220132413,
+        "upper_rad": 0.0261799389
+      },
+      "left_hip_roll": {
+        "lower_rad": -0.23561944799999998,
+        "upper_rad": 0.23561944799999998
+      },
+      "left_knee_pitch": {
+        "lower_rad": -0.83285928,
+        "upper_rad": 0.0
+      },
+      "left_ankle_pitch": {
+        "lower_rad": -0.66415928,
+        "upper_rad": 0.0
+      }
+    },
+    "random_samples": 20000,
+    "random_seed": 20260736,
+    "corner_samples": 65536
+  },
+  "validation": {
+    "contact_margin_mm": 1.0,
+    "penetration_epsilon_mm": 0.01,
+    "random_sample_count": 20000,
+    "corner_sample_count": 65536,
+    "result": "PASS",
+    "scope": "sampled mesh kinematics; excludes cables, fasteners, covers, print tolerance and deformation"
+  },
+  "full_audited_mechanical_range_policy": "allowed only with online self-collision query/action projection and collision termination; independent full-range sampling is unsafe"
+}

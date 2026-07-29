@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.venv*/
+reports/*.log
+generated/solidworks/portable_flat_round_v1/previews/motion_frames/
+~$*

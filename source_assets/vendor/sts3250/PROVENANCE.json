@@ -1,0 +1,16 @@
+{
+  "schema": "step.parts.provenance.v1",
+  "id": "feetech_sts3250",
+  "name": "Feetech STS3250",
+  "manufacturer": "Feetech",
+  "model": "STS3250",
+  "catalog_page": "https://www.step.parts/parts/feetech_sts3250",
+  "catalog_api": "https://api.step.parts/v1/parts/feetech_sts3250",
+  "source_repository": "https://github.com/earthtojake/step.parts",
+  "source_commit": "c6113328a5695b976a010a203a90fe86191769bf",
+  "source_path": "catalog/step/feetech_sts3250.step",
+  "byte_size": 10390008,
+  "sha256": "cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf",
+  "solidworks_conversion": "generated/solidworks/portable_flat_round_v1/FEETECH_STS3250.SLDPRT",
+  "notes": "Exact catalog STEP; SolidWorks SLDPRT is a neutral-format conversion. Used as a placement/reference body and not added as a second inertial mass."
+}

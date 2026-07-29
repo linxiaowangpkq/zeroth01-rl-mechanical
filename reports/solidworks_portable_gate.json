@@ -1,0 +1,37 @@
+{
+  "schema": "zeroth01.solidworks.round_v1.gate.v1",
+  "solidworks_revision": "33.0.0",
+  "assembly": ".\\generated\\solidworks\\portable_flat_round_v1\\OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM",
+  "assembly_bytes": 17640118,
+  "assembly_initial_save_code": 0,
+  "display_mode_command": "ViewDisplayShaded",
+  "native_brep_part_count": 11,
+  "component_count": 43,
+  "expected_component_count": 43,
+  "source_link_component_count": 17,
+  "round_overlay_component_count": 10,
+  "explicit_sts3250_component_count": 16,
+  "transform_gate": "PASS",
+  "servo_axis_gate": "PASS",
+  "mujoco_collision_motion_gate": "PASS",
+  "snapshots": {
+    "isometric": {
+      "path": ".\\generated\\solidworks\\portable_flat_round_v1\\previews\\zeroth01_round_v1_isometric.png",
+      "gate": "PASS"
+    },
+    "robot_front": {
+      "path": ".\\generated\\solidworks\\portable_flat_round_v1\\previews\\zeroth01_round_v1_robot_front.png",
+      "gate": "PASS"
+    },
+    "robot_side": {
+      "path": ".\\generated\\solidworks\\portable_flat_round_v1\\previews\\zeroth01_round_v1_robot_side.png",
+      "gate": "PASS"
+    }
+  },
+  "motion_gif": ".\\generated\\solidworks\\portable_flat_round_v1\\previews\\zeroth01_round_v1_solidworks_motion.gif",
+  "motion_gif_gate": "PASS",
+  "motion_evidence_reused_after_geometry_only_refresh": true,
+  "native_mate_motion_study": "NOT_CLAIMED: the 17 upstream link meshes are imported surface bodies without stable mate faces; CLI FK drives Transform2 while the new shells and STS3250 are native B-Rep components",
+  "hardware_interference_signoff": "BLOCKED_PENDING_PHYSICAL_SERVO_CLOCKING_CABLE_FASTENER_AND_TOLERANCE_VALIDATION",
+  "overall_review_gate": "PASS_WITH_HARDWARE_LIMITATIONS"
+}

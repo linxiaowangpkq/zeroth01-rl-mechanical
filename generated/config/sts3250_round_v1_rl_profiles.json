@@ -1,0 +1,45 @@
+{
+  "schema": "zeroth01.sts3250.rl_profiles.v1",
+  "servo_model": "FEETECH STS3250",
+  "nominal_voltage_v": 12.0,
+  "encoder_counts_per_revolution": 4096,
+  "neutral_count_nominal": 2048,
+  "no_load_speed_rad_s": 7.873665798470658,
+  "urdf_velocity_limit_rad_s": 5.0,
+  "profiles": {
+    "conservative_thermal_start": {
+      "torque_limit_nm": 1.2552512,
+      "derivation": "80% of manufacturer rated torque",
+      "hardware_claim": "engineering_starting_point_not_tested"
+    },
+    "manufacturer_rated_evaluation": {
+      "torque_limit_nm": 1.569064,
+      "hardware_claim": "manufacturer_rated_at_12V"
+    },
+    "legacy_official_sim": {
+      "torque_limit_nm": 2.0,
+      "ratio_to_rated": 1.2746452662224104,
+      "hardware_claim": "simulation_parameter_not_continuous_hardware_rating"
+    },
+    "manufacturer_stall_boundary": {
+      "torque_limit_nm": 4.903325,
+      "hardware_claim": "stall_boundary_never_use_as_continuous_RL_limit"
+    }
+  },
+  "simulation_dynamics": {
+    "joint_damping_nm_s_rad": 0.53,
+    "joint_frictionloss_nm": 0.001,
+    "armature_kg_m2": 0.008793405204572328,
+    "source": "official_stompymicro_simulation_baseline",
+    "physical_identification_status": "NOT_IDENTIFIED"
+  },
+  "hardware_calibration_required": [
+    "bus_id_scan",
+    "joint_zero_offset_counts",
+    "urdf_to_servo_direction_sign",
+    "backlash_and_deadband",
+    "loaded_torque_speed_curve",
+    "current_and_temperature_limits",
+    "command_latency_and_rate"
+  ]
+}

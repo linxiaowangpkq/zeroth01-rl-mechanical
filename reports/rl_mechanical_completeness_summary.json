@@ -1,0 +1,16 @@
+{
+  "urdf": ".\\generated\\urdf\\zeroth01_rl_ready.urdf",
+  "link_count": 18,
+  "joint_count": 17,
+  "moving_joint_count": 16,
+  "total_mass_kg": 3.0954718281999996,
+  "inertia_gate": "PASS",
+  "connected_tree_gate": "PASS",
+  "guarded_collision_gate": "PASS",
+  "hardware_calibration_block_count": 16,
+  "hard_fail_count": 0,
+  "rl_simulation_ready": true,
+  "hardware_deployment_ready": false,
+  "reason_hardware_not_ready": "per-unit servo ID, zero, direction, backlash and SysID remain physical calibration tasks",
+  "aggregate_link_inertia_warning": "Link inertias already include servos/structure; do not add 16 separate 74.5 g servo masses to this URDF."
+}

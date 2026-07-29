@@ -1,0 +1,105 @@
+{
+  "servo_model": "Feetech STS3250",
+  "vendor_mesh": ".\\generated\\print\\round_v1\\FEETECH_STS3250_VENDOR_REFERENCE.stl",
+  "phase_is_hardware_verified": false,
+  "phase_semantics": "Best geometric fit only. The URDF does not encode housing phase; confirm each phase against native Onshape/SolidWorks source or hardware.",
+  "joint_mount_phase": {
+    "right_shoulder_pitch": {
+      "phase_deg": 155,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_shoulder_pitch": {
+      "phase_deg": 160,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_shoulder_yaw": {
+      "phase_deg": 95,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_hip_pitch": {
+      "phase_deg": 265,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_hip_pitch": {
+      "phase_deg": 265,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_shoulder_yaw": {
+      "phase_deg": 275,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_hip_yaw": {
+      "phase_deg": 75,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_hip_yaw": {
+      "phase_deg": 255,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_elbow_yaw": {
+      "phase_deg": 245,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_elbow_yaw": {
+      "phase_deg": 245,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_hip_roll": {
+      "phase_deg": 255,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_hip_roll": {
+      "phase_deg": 255,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_knee_pitch": {
+      "phase_deg": 255,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_knee_pitch": {
+      "phase_deg": 255,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "right_ankle_pitch": {
+      "phase_deg": 255,
+      "output_axis_sign": -1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    },
+    "left_ankle_pitch": {
+      "phase_deg": 255,
+      "output_axis_sign": 1,
+      "confidence": "LOW_REQUIRES_HARDWARE_OR_SOURCE_CAD_CONFIRMATION",
+      "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
+    }
+  },
+  "report": ".\\reports\\sts3250_mount_phase_fit.csv"
+}
