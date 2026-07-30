@@ -8,8 +8,8 @@
   "nv": 22,
   "nu": 16,
   "nsensor": 8,
-  "total_mass_kg": 4.586857125473999,
-  "expected_urdf_mass_kg": 4.586857125474,
+  "total_mass_kg": 4.997342616724,
+  "expected_urdf_mass_kg": 4.997342616723998,
   "checks": {
     "actuator_count_16": true,
     "body_count_matches_urdf_tree": true,

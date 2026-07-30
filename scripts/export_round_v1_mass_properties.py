@@ -16,6 +16,12 @@ BASE_URDF = ROOT / "generated" / "urdf" / "zeroth01_rl_ready.urdf"
 JSON_OUTPUT = (
     ROOT / "generated" / "config" / "round_v1_mass_properties.json"
 )
+ELECTRONICS_LAYOUT = (
+    ROOT
+    / "generated"
+    / "config"
+    / "round_v1_electronics_sensor_layout.json"
+)
 PART_REPORT = ROOT / "reports" / "round_v1_printed_part_mass_properties.csv"
 LINK_REPORT = ROOT / "reports" / "round_v1_link_inertial_overlay.csv"
 
@@ -40,17 +46,17 @@ PARTS = [
     },
     {
         "name": "head_front",
-        "file": "ZEROTH01_ROUND_V1_HEAD_FRONT.step",
+        "file": "ZEROTH01_ROUND_V3_HEAD_FRONT.step",
         "installed_link": "Torso",
         "installed_quantity": 1,
-        "classification": "cosmetic_non_load_bearing_shell",
+        "classification": "poppy_eva_derived_cosmetic_non_load_bearing_shell",
     },
     {
         "name": "head_back",
-        "file": "ZEROTH01_ROUND_V1_HEAD_BACK.step",
+        "file": "ZEROTH01_ROUND_V3_HEAD_BACK.step",
         "installed_link": "Torso",
         "installed_quantity": 1,
-        "classification": "cosmetic_non_load_bearing_shell",
+        "classification": "poppy_eva_derived_cosmetic_non_load_bearing_shell",
     },
     {
         "name": "pelvis_front",
@@ -67,18 +73,60 @@ PARTS = [
         "classification": "cosmetic_non_load_bearing_shell",
     },
     {
-        "name": "muzzle_badge",
-        "file": "ZEROTH01_ROUND_V1_MUZZLE_BADGE.step",
-        "installed_link": "Torso",
-        "installed_quantity": 1,
-        "classification": "cosmetic_non_load_bearing_badge",
+        "name": "screen_ui_reference",
+        "file": "ZEROTH01_ROUND_V3_FACE_UI.step",
+        "installed_link": None,
+        "installed_quantity": 0,
+        "classification": "nonphysical_screen_pixels_visual_only",
     },
     {
         "name": "visor_badge",
-        "file": "ZEROTH01_ROUND_V1_VISOR_BADGE.step",
+        "file": "ZEROTH01_ROUND_V3_VISOR.step",
         "installed_link": "Torso",
         "installed_quantity": 1,
-        "classification": "cosmetic_non_load_bearing_badge",
+        "classification": "continuous_black_screen_cosmetic_overlay",
+    },
+    {
+        "name": "right_upper_arm_sleeve",
+        "file": "ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.step",
+        "installed_link": "right_shoulder_yaw_motor",
+        "installed_quantity": 1,
+        "classification": "cosmetic_non_load_bearing_printed_sleeve",
+    },
+    {
+        "name": "left_upper_arm_sleeve",
+        "file": "ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.step",
+        "installed_link": "left_shoulder_yaw_motor",
+        "installed_quantity": 1,
+        "classification": "cosmetic_non_load_bearing_printed_sleeve",
+    },
+    {
+        "name": "right_forearm_sleeve",
+        "file": "ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.step",
+        "installed_link": "Left_Hand",
+        "installed_quantity": 1,
+        "classification": "cosmetic_non_load_bearing_printed_sleeve",
+    },
+    {
+        "name": "left_forearm_sleeve",
+        "file": "ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.step",
+        "installed_link": "hand_right",
+        "installed_quantity": 1,
+        "classification": "cosmetic_non_load_bearing_printed_sleeve",
+    },
+    {
+        "name": "right_chibi_hand",
+        "file": "ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.step",
+        "installed_link": "Left_Hand",
+        "installed_quantity": 1,
+        "classification": "fixed_chibi_palm_cap_no_dexterous_fingers",
+    },
+    {
+        "name": "left_chibi_hand",
+        "file": "ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.step",
+        "installed_link": "hand_right",
+        "installed_quantity": 1,
+        "classification": "fixed_chibi_palm_cap_no_dexterous_fingers",
     },
     {
         "name": "left_sole",
@@ -95,11 +143,11 @@ PARTS = [
         "classification": "contact_prototype_not_structural_signoff",
     },
     {
-        "name": "generic_joint_ring",
-        "file": "ZEROTH01_ROUND_V1_JOINT_RING.step",
+        "name": "sts3250_c001_blue_diagnostic",
+        "file": "ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.step",
         "installed_link": None,
         "installed_quantity": 0,
-        "classification": "appearance_fit_check_coupon_not_installed",
+        "classification": "solidworks_visibility_overlay_not_installed",
     },
 ]
 
@@ -337,6 +385,12 @@ def main() -> None:
         * int(value["installed_quantity"])
         for value in part_payload.values()
     )
+    electronics_payload = json.loads(
+        ELECTRONICS_LAYOUT.read_text(encoding="utf-8")
+    )
+    nominal_electronics_mass = float(
+        electronics_payload["nominal_electronics_mass_kg"]
+    )
     payload = {
         "schema": "zeroth01.round_v1.mass_properties.v1",
         "source_urdf": BASE_URDF.relative_to(ROOT).as_posix(),
@@ -353,12 +407,19 @@ def main() -> None:
         "round_v1_nominal_total_mass_kg": (
             baseline_total + installed_overlay_mass
         ),
+        "nominal_electronics_mass_kg": nominal_electronics_mass,
+        "nominal_total_mass_with_electronics_kg": (
+            baseline_total
+            + installed_overlay_mass
+            + nominal_electronics_mass
+        ),
         "parts": part_payload,
         "link_overlays": overlays,
         "servo_mass_policy": (
             "Do not add 16 x 0.0745 kg: the baseline aggregate link inertials "
-            "already represent the source assemblies. The vendor servo STEP is "
-            "a placement/reference model, not an extra mass overlay."
+            "already represent the source assemblies. The separate blue "
+            "dimension-controlled SLDPRT is a visibility/reference overlay, "
+            "not an extra mass or collision body."
         ),
         "hardware_override_required": True,
         "hardware_gate": (

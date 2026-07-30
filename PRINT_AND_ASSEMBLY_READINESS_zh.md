@@ -1,83 +1,69 @@
-# Zeroth-01 圆润版打印与整机可装配性
+# Zeroth-01 Round v3 打印与整机可装配性
 
 ## 结论
 
-当前 11 个 STL 已达到**外壳/试装件打印网格就绪**，但整机仍未达到“打印后直接拼装并行走”的硬件门禁。
+当前 15 个选定 STL 达到外观/试装件的网格门禁，但整机仍不是“打印后直接拼装并行走”的硬件成品。
 
-原因不是运动仿真失败。原 17-link 机构的离散运动/碰撞门禁已通过；缺口在真实承载接口、紧固件、轴承、线束、电气选型、公差和实物舵机标定。
+原 17-link / 16DoF 机构的离散运动、URDF 与 MuJoCo 门禁已经通过；缺口在真实舵机安装、紧固件/轴承、屏幕夹具、线束、电气选型、公差和实物标定。
 
-## 已生成打印件
+## 选定打印件
 
 目录：`generated/print/round_v1/final/`
 
-| 类别 | 文件 | 用途 |
-|---|---|---|
-| 胸部 | `CHEST_FRONT`、`CHEST_BACK` | 非承载圆角前后壳 |
-| 骨盆 | `PELVIS_FRONT`、`PELVIS_BACK` | 非承载圆角前后壳 |
-| 头部 | `HEAD_FRONT`、`HEAD_BACK` | 椭球头壳 |
-| 面部 | `VISOR_BADGE`、`MUZZLE_BADGE` | 曲面面罩与口鼻装饰/器件窗 |
-| 足部 | `LEFT_SOLE`、`RIGHT_SOLE` | 加厚脚底试装件 |
-| 标识 | `JOINT_RING` | 通用颜色标记样件；不得装入传动夹层 |
+- `ZEROTH01_ROUND_V1_CHEST_FRONT/BACK.stl`
+- `ZEROTH01_ROUND_V3_HEAD_FRONT/BACK.stl`
+- `ZEROTH01_ROUND_V1_PELVIS_FRONT/BACK.stl`
+- `ZEROTH01_ROUND_V3_VISOR.stl`
+- `ZEROTH01_ROUND_V1_LEFT/RIGHT_SOLE.stl`
+- `ZEROTH01_ROUND_V3_LEFT/RIGHT_UPPER_ARM_SLEEVE.stl`
+- `ZEROTH01_ROUND_V3_LEFT/RIGHT_FOREARM_SLEEVE.stl`
+- `ZEROTH01_ROUND_V3_LEFT/RIGHT_CHIBI_HAND.stl`
 
-文件名均带完整前缀 `ZEROTH01_ROUND_V1_`。
+`ZEROTH01_ROUND_V3_FACE_UI` 是屏幕像素参考，不打印；蓝色 STS3250 诊断件也不打印。Q 版手掌是固定连指外壳，不是灵巧手或承载抓手。
 
 ## 网格门禁
 
-`reports/round_v1_print_mesh_gate.json` 的结果：
+`reports/round_v1_print_mesh_gate.json`：
 
-- 11/11 水密。
-- 11/11 绕向一致。
-- 边界边为 0。
-- 非流形边为 0。
-- STEP 与 STL 体积误差均不超过 0.5%。
-- 网格拓扑总门禁：`PASS`。
+- 15/15 水密、绕向一致。
+- 边界边 0，非流形边 0。
+- STEP/STL 体积误差均 ≤0.5%。
+- 6/6 手臂套/手掌对原 link 保守凸包的几何交集为 `0 mm³`。
+- 总门禁：`PASS`。
 
-尚未选择具体打印机和切片配置，因此 slicer profile gate 保持 `BLOCKED_EXPLICIT_PROFILE_REQUIRED`。这不是错误，而是避免用错误喷嘴、材料和支撑参数生成看似可打印的 G-code。
+尚未指定打印机/材料/喷嘴/层高/支撑，因此切片门禁保持 `BLOCKED_EXPLICIT_PROFILE_REQUIRED`。
 
-## 为什么不能直接打印整机
+## 名义质量
 
-当前打印件不构成关节承载路径，以下信息仍未工程冻结：
+- 打印叠加件 CAD/PETG 名义质量：`1.234870788525 kg`。
+- 电子模块名义质量：`0.667 kg`。
+- URDF/MuJoCo 名义总质量：`4.997342616724 kg`。
 
-1. STS3250-C001 实物安装面、输出盘、反侧支撑/轴承和支架公差。
-2. 螺钉规格、有效啮合长度、热熔螺母/嵌件、垫片、螺纹锁固剂和紧固扭矩。
-3. 外壳与原骨架的可重复定位接口、拆装顺序和维修空间。
-4. 电池、BMS、主控、稳压器、IMU、连接器与线束的最终型号和散热。
-5. 相机/ToF 排线弯曲半径、关节扫掠空间和防夹线设计。
-6. 脚底压力传感器、弹性层、防滑层及其载荷传递路径。
-7. 打印材料方向性、长期蠕变、跌落和关节峰值冲击。
-
-`generated/config/round_v1_fastener_bom.csv` 只能作为待确认清单，不能直接采购。
-
-## 名义打印质量
-
-按 PETG `1270 kg/m³`、CAD 实体体积估计：
-
-- 外壳/脚底叠加件：`0.9423852973 kg`。
-- 这是 100% CAD 实体等效质量，不等同于某个壁厚/填充率切片后的实际质量。
-- 最终样件必须逐件称重，并更新 `generated/config/round_v1_mass_properties.json`。
+这些数值供 RL 初始域随机化；最终打印件和整机必须逐 link 称重并更新 COM/惯性。
 
 ## 建议试打顺序
 
-1. 先打印一个 `JOINT_RING` 检查尺寸缩放和颜色。
-2. 打印左右脚底，检查站立平面、压力位和踝部扫掠。
-3. 打印头部前壳与面罩，实装 Waveshare 屏、相机和 ToF 假板。
-4. 打印胸部后壳，验证电池/主控托盘与维修开口。
-5. 最后打印全套前后壳。
+1. 4.3 屏夹具/排线出口试装券。
+2. 左右加厚脚底，检查踝部扫掠和压力位。
+3. 前头壳 + 黑色屏幕面板，实装屏/相机/ToF 假板。
+4. 后胸壳，验证电池/主控托盘、散热和维修开口。
+5. 左右手臂套和 Q 版手掌，先做单侧低填充试装再成对打印。
+6. 最后打印其余外壳。
 
-每一步先做静态试装和全关节手动扫掠；发现干涉时修改可拆外壳，不修改冻结的原始骨架。
+发现干涉时修改可拆外壳或夹具，不修改冻结的原机构运动树。
 
-## 硬件就绪门禁
+## 门禁状态
 
-| 门禁 | 当前状态 |
+| 门禁 | 状态 |
 |---|---|
-| 原机构 URDF/MJCF 运动与离散自碰撞 | PASS |
-| SolidWorks 组件/变换/运动 GIF | PASS |
-| 11 个外壳 STL 网格 | PASS |
-| 指定打印机的切片与材料配置 | BLOCKED |
-| 承载接口与紧固件工程图 | BLOCKED |
-| 线束扫掠与散热 | BLOCKED |
-| 16 舵机 ID/方向/零位/背隙/温升标定 | BLOCKED |
-| 实物静态站立、吊架单腿、双腿低速 | BLOCKED |
+| URDF/MuJoCo 16DoF、1000 步有限性与质量一致性 | PASS |
+| 16 个蓝色审图件轴线/轴心映射 | PASS |
+| 15 个外观 STL 网格 | PASS |
+| 6 个手臂套/手掌静态包络检查 | PASS |
+| SolidWorks v3 总装/截图/Motion GIF | 见 `reports/solidworks_round_v1_gate.json` |
+| 指定打印机切片 | BLOCKED |
+| C001 精确安装、紧固件与轴承工程图 | BLOCKED |
+| 屏幕夹具、线束扫掠、散热 | BLOCKED |
+| ID/方向/零位/背隙/温升标定 | BLOCKED |
+| 实物静态、吊架单腿、双腿低速 | BLOCKED |
 | 无保护真实步行 | NOT AUTHORIZED |
-
-因此正确表述是：“可用于 RL 和外壳试装”，不是“已经是一套可直接 3D 打印并行走的机器人”。

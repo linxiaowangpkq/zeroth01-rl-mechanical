@@ -1,0 +1,28 @@
+{
+  "schema": "zeroth01_solidworks_round_v3_motion_only_gate_v1",
+  "status": "PASS",
+  "assembly": "generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM",
+  "motion_gif": "snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_motion.gif",
+  "frame_count": 8,
+  "frame_seconds": [
+    6.924717799993232,
+    6.568460699985735,
+    6.528558299993165,
+    6.529661999986274,
+    6.594236500008265,
+    6.592984899994917,
+    6.602406399993924,
+    6.600479900022037
+  ],
+  "elapsed_seconds": 67.22642659998382,
+  "component_count": 57,
+  "source_link_component_count": 17,
+  "round_overlay_component_count": 24,
+  "diagnostic_blue_servo_component_count": 16,
+  "transform_readback_max_abs_error": 5.551115123125783e-16,
+  "reused_unchanged_mechanism_sweep": "reports/solidworks_round_v1_kinematic_sweep.csv",
+  "reused_unchanged_transmission_sweep": "reports/solidworks_round_v1_transmission_semantics.csv",
+  "collision_evidence": "reports/mujoco_round_v3_gate.json",
+  "native_motion_study": false,
+  "motion_method": "SOLIDWORKS IComponent2.Transform2 FK visualization; collision truth remains the validated URDF/MuJoCo chain"
+}

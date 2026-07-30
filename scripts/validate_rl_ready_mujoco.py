@@ -54,6 +54,38 @@ def self_collision_pairs(
     return pairs
 
 
+def self_collision_geom_pairs(
+    model: mujoco.MjModel,
+    data: mujoco.MjData,
+    epsilon_m: float,
+) -> set[str]:
+    pairs: set[str] = set()
+    for index in range(data.ncon):
+        contact = data.contact[index]
+        if float(contact.dist) >= -epsilon_m:
+            continue
+        body1 = int(model.geom_bodyid[int(contact.geom1)])
+        body2 = int(model.geom_bodyid[int(contact.geom2)])
+        if body1 == 0 or body2 == 0 or body1 == body2:
+            continue
+        names = sorted(
+            [
+                name(
+                    model,
+                    mujoco.mjtObj.mjOBJ_GEOM,
+                    int(contact.geom1),
+                ),
+                name(
+                    model,
+                    mujoco.mjtObj.mjOBJ_GEOM,
+                    int(contact.geom2),
+                ),
+            ]
+        )
+        pairs.add(" :: ".join(names))
+    return pairs
+
+
 def rotation_distance(first: np.ndarray, second: np.ndarray) -> float:
     relative = first.T @ second
     cosine = float(
@@ -204,6 +236,8 @@ def main() -> None:
     rng = np.random.default_rng(args.seed)
     random_collision_samples = 0
     random_pairs: set[str] = set()
+    random_geom_pairs: set[str] = set()
+    first_random_collision_pose: dict[str, float] | None = None
     for _ in range(args.random_samples):
         reset_neutral(model, data)
         for joint_id in hinges:
@@ -218,6 +252,16 @@ def main() -> None:
         if pairs:
             random_collision_samples += 1
             random_pairs.update(pairs)
+            random_geom_pairs.update(
+                self_collision_geom_pairs(model, data, epsilon_m)
+            )
+            if first_random_collision_pose is None:
+                first_random_collision_pose = {
+                    name(model, mujoco.mjtObj.mjOBJ_JOINT, joint_id): float(
+                        data.qpos[int(model.jnt_qposadr[joint_id])]
+                    )
+                    for joint_id in hinges
+                }
 
     corner_collision_samples = 0
     corner_pairs: set[str] = set()
@@ -306,6 +350,8 @@ def main() -> None:
         "random_sample_count": args.random_samples,
         "random_self_collision_samples": random_collision_samples,
         "random_self_collision_pairs": sorted(random_pairs),
+        "random_self_collision_geom_pairs": sorted(random_geom_pairs),
+        "first_random_collision_pose_rad": first_random_collision_pose,
         "random_gate": "PASS" if random_pass else "FAIL",
         "corner_sample_count": 2 ** len(hinges),
         "corner_self_collision_samples": corner_collision_samples,

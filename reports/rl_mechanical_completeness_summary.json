@@ -1,5 +1,5 @@
 {
-  "urdf": "generated\\urdf\\zeroth01_rl_ready.urdf",
+  "urdf": "generated/urdf/zeroth01_rl_ready.urdf",
   "link_count": 18,
   "joint_count": 17,
   "moving_joint_count": 16,

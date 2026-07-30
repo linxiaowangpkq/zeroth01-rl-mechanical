@@ -1,98 +1,61 @@
-# Zeroth-01 最小可靠圆润版机械与 RL 交付
+# Zeroth-01 白色 Eva 风格 16DoF RL 机械交付
 
-## 结论
+本版保留已经验证的 Zeroth-01 17-link / 16 运动关节机构，只做可逆的最小外观改动：白色圆润身体、加厚脚底、带小耳朵的 Poppy-Eva 衍生屏幕头、圆润加粗手臂套和固定式 Q 版手掌。
 
-本版本采用已经装配并通过运动/碰撞检查的 Zeroth-01 17-link 机构作为唯一机械基线，只做四类低风险改动：
-
-1. 头部改为三轴椭球外壳、复合曲面面罩，并布置 Waveshare 双圆屏、广角相机和 ToF。
-2. 胸部、骨盆外壳的锋利边缘改为圆角。
-3. 左右脚底加厚。
-4. 用稳定颜色标识 16 个原始关节位置及电池、主控、IMU、相机、ToF、屏幕和足底压力位。
-
-没有向原机构内强行加入新的 STS3250 实体、舵机笼、齿轮或输出盘，也没有改变 16 个关节的父子关系、轴线或零位。SolidWorks 中的 S01–S16 彩色圆片是**非物理标注**，不是舵机、齿轮、碰撞体或质量体。
-
-## 权威产物
+## 先打开这些文件
 
 | 用途 | 文件 |
 |---|---|
-| SolidWorks 总装 | `generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM` |
-| 便携 SolidWorks 总装 | `generated/solidworks/portable_flat_round_v2/OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM` |
-| RL/ROS 机械描述 | `generated/urdf/zeroth01_rl_round_v1.urdf` |
-| MuJoCo 训练模型 | `generated/mujoco/zeroth01_rl_round_v1.xml` |
-| 执行器元数据 | `generated/config/zeroth01_actuator_metadata.json` |
-| 质量/惯量 | `generated/config/round_v1_mass_properties.json`、`reports/link_inertial_audit.csv`、`reports/round_v1_link_inertial_overlay.csv` |
-| 电子舱与传感器 | `generated/config/round_v1_electronics_sensor_layout.json` |
-| 舵机位置/轴线 | `reports/joint_servo_frames.csv` |
-| 硬件标定模板 | `generated/config/zeroth01_hardware_calibration_template.csv` |
-| 碰撞策略 | `generated/config/zeroth01_collision_policy.json` |
-| 运动 GIF | `snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif` |
-| 验证报告 | `reports/solidworks_round_v1_gate.json`、`reports/mujoco_round_v1_gate.json` |
+| 白色不透明 SolidWorks 总装 | `generated/solidworks/round_v1/ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM` |
+| 打开即见 16 电机的 X-ray 总装 | `generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM` |
+| 单独蓝色舵机零件 | `generated/solidworks/round_v1/parts/ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.SLDPRT` |
+| STEP 审图总装 | `generated/cad/round_v1/ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_ASSEMBLY.step` |
+| RL URDF | `generated/urdf/zeroth01_rl_round_v1.urdf` |
+| MuJoCo | `generated/mujoco/zeroth01_rl_round_v1.xml` |
+| RL 一句话提示词 | `one-seq.md` |
 
-不要使用文件名中带有 installation audit、replacement servo、cage 或 hub 的实验产物作为当前机械基线；它们是已否决方案的分析证据。
+## 本版改变
 
-## 视觉证据
+- 将之前夸张的熊耳方案改成两个小型实心耳片，并保留白色蛋形前后头壳。
+- 使用一体圆角黑屏和屏幕内青色眼睛，不再使用凸眼或嘴套实体。
+- 选择 Waveshare 4.3-inch DSI/QLED 800×480 受控包络；摄像头和 ToF 位于额头光学窗之后。
+- 保留圆角胸/骨盆与 8 mm 加厚脚底。
+- 新增可拆卸圆角上臂套、前臂套和固定式 Q 版连指手掌；手掌不是灵巧手。
+- 删除旧彩色关节圆片；生成一个独立蓝色 STS3250-C001 `.SLDPRT`，在 S01–S16 复用 16 次。
 
-![S01-S16 关节身份与颜色](snapshots/solidworks/round_v1/zeroth01_round_v2_joint_identity_front.png)
+蓝色舵机审图件总包络严格为 `45.22 × 24.72 × 36.5 mm`。每个实例的本地 +Z 输出轴与 canonical URDF 关节轴共线，轴心与关节原点重合。
 
-![电子件位置与颜色](snapshots/solidworks/round_v1/zeroth01_round_v2_electronics_annotated_front.png)
+## 必须理解的语义
 
-![SolidWorks 12 帧运动验证](snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif)
+16 个蓝色舵机是可见性叠加件，不是 16 个新增机器人刚体；它们不进入 URDF visual/collision/inertial，也不重复增加质量。原始聚合 link 网格仍是机械基线。
 
-## 当前模型数字
+蓝色件不能证明已经有可制造的舵机安装：C001 精确安装耳、连接器避让、紧固件、轴承、线束、公差与真实干涉仍需可追溯原生 CAD 或实物测量。
 
-- 17 个运动树关节，其中 16 个转动关节。
-- MuJoCo：26 bodies（含 world）、17 joints、16 actuators、8 sensors。
-- 名义总质量：`4.586857125474 kg`。
-  - 原始 Zeroth-01 聚合 link 质量：`3.0954718282 kg`。
-  - PETG 名义外壳/脚底叠加质量：`0.9423852973 kg`。
-  - 电子件名义质量：`0.549 kg`。
-- 外壳、电子件和线束的最终实测质量尚未回填，因此这些惯量适合 RL 初始训练和域随机化，不是量产质检数据。
+## 当前验证结果
 
-原始 link 惯量已经聚合了机构内部结构；不得再把 16 个 `74.5 g` 舵机质量重复叠加到 URDF。
+- URDF：26 links、25 joints、16 个运动关节。
+- MuJoCo：16 actuators、8 sensors、1 个头部相机。
+- 名义总质量：`4.997342616724 kg`。
+- MuJoCo 1000 步有限性/质量一致性烟雾测试：`PASS`。
+- 15 个选定打印网格：水密、绕向一致、0 边界边、0 非流形边、STEP/STL 体积误差 ≤0.5%：`PASS`。
+- 6 个手臂套/手掌对原 link 保守凸包的安装检查：交集均为 `0 mm³`，`PASS`。
+- 100,000 个随机姿态与全部 65,536 个关节极限角组合：报告自碰撞样本为 0。
+- 16 个蓝色舵机轴心误差 `0 mm`，轴线误差小于 `0.000002°`：`PASS`。
 
-## 头部方案
+边界与未决假设见 `DESIGN_LEDGER.md` 和 `reports/`。
 
-- 显示：Waveshare 0.71inch DualEye LCD Module，双 160×160 圆形 IPS，供应商 STEP 已归档。
-- 相机：Raspberry Pi Camera Module 3 Wide，IMX708 自动对焦，120° 对角视场；精确供应商 STEP 已归档。由于该模型含 631 个实体并会使 SolidWorks 自动导入长时间无响应，工作总装使用官方实测包络，精确 STEP 保留作接口复核。
-- 距离传感器：ST VL53L5CX，8×8 多区 ToF，65°，最高 4 m/60 Hz；当前 12×10 mm 载板包络是假设，PCB 和排线出口尚未冻结。
-- 外观：屏幕本体仍是平面器件，安装在椭球头壳和复合曲面面罩之后；没有声称它是真正可弯曲显示屏。
+## 开源头部来源
 
-供应商资料：
+头部拓扑参考官方 [Poppy Eva head design](https://github.com/poppy-project/Poppy-eva-head-design)，固定 commit `844654a0b29fb771c23b7400997d1de3d42e0e2e`，许可证 CC BY-SA 4.0。本项目围绕 Zeroth-01 肩部避让重新参数化，没有直接缩放原 STL。
 
-- https://www.waveshare.com/wiki/0.71inch_DualEye_LCD_Module
-- https://www.raspberrypi.com/products/camera-module-3/
-- https://www.st.com/en/imaging-and-photonics-solutions/vl53l5cx.html
+屏幕参考为官方 [Waveshare 4.3inch DSI QLED](https://www.waveshare.com/product/4.3inch-dsi-qled.htm)。
 
-## STS3250 说明
+![带小耳朵和 Q 版手掌的白色 Eva 风格总装](snapshots/solidworks/round_v1/zeroth01_round_v3_white_front.png)
 
-当前官方 STS3250-C001 外形证据为约 `45.22 × 24.72 × 35 mm`、25T/OD5.9 输出、M3 输出螺纹、质量约 `74.5 g`。仓库中历史 STEP 的标题是 `ST-3235M-20211119-A_ASM`，包围盒约 `45.220049 × 37.400057 × 24.720050 mm`，且轴线为 `+Y`；它不是已确认的 C001 模型，已隔离，未装入最终总装。
+![16 个蓝色舵机](snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_annotated_front.png)
 
-因此本交付确认的是“原 Zeroth-01 已装配机构的关节位置、轴线和运动范围”，不是重新证明某个未知支架能装入一套新画的 C001 舵机。采购前仍需用实物或供应商 C001 原生 CAD 做接口量测。
+![运动检查](snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_motion.gif)
 
-## 已通过的验证
+## 实机门禁
 
-- SolidWorks：51 个组件 = 17 个原始 link + 18 个圆润/电子叠加件 + 16 个非物理颜色标记；替代 STS3250、笼体、输出 hub 数均为 0。
-- 16 关节 × 101 轴向采样、100,000 随机姿态、65,536 边界组合：无自碰撞样本。
-- 站立位、零位、动态响应、质量一致性：通过。
-- URDF/MJCF 共 27 个 mesh 引用，大小写和相对路径：通过。
-- 11 个打印 STL：水密、绕向一致、无非流形边，STEP/STL 体积误差不超过 0.5%。
-- 12 帧 SolidWorks 运动 GIF：通过。
-- 100,000 个守护姿态的准静态重力采样：最大 `0.339869 N·m`（right_hip_pitch），低于 `1.569064 N·m` 厂商额定点；这只证明静态重力裕量，不证明动态步行、热稳态或冲击可行。
-
-这些是离散网格/解析代理的运动证据，不是连续碰撞证明，也不覆盖线束、紧固件、公差、柔性外壳变形和真实跌落冲击。
-
-## 可用性边界
-
-- **RL 仿真：可用。** URDF/MJCF、质量惯量、执行器初始限制、传感器帧和碰撞策略已齐。
-- **外壳试打/装配空间验证：可用。** 11 个 STL 的网格门禁已通过。
-- **打印后直接拼装并行走：不可宣称。** 原机构的承载支架、轴承、舵盘、螺钉、热熔螺母、线束、BMS、主控和真实安装公差仍需冻结。
-- **真实 STS3250 可行性：待台架验证。** 必须完成每台舵机 ID、方向、零位、背隙、电流、温升和扭矩-速度标定。
-
-详细边界见 `PRINT_AND_ASSEMBLY_READINESS_zh.md` 和 `ASSEMBLY_GUIDE_zh.md`。
-
-## 最短使用路径
-
-1. RL 会话先读 `one-seq.md`。
-2. 训练以 URDF 与 MJCF 为唯一机械基线，不加载 S01–S16 彩色标注。
-3. 初始连续扭矩参考使用 `1.2552512 N·m`，不要用堵转扭矩作连续动作上限。
-4. 将真实样机称重、舵机标定和系统辨识结果回填到 `generated/config/` 后再做 sim-to-real。
+RL 初始连续扭矩参考使用 `1.2552512 N·m`，禁止把堵转扭矩作为 PPO 连续动作上限。Q 版手掌是固定外观壳，不具备抓取自由度。打印/屏幕试装、电子件冻结、逐 link 称重、舵机 ID/零位/方向标定、线束扫掠、双腿台架和热测试完成前，实机 walking gate 保持关闭。

@@ -18,12 +18,12 @@ ELECTRONICS_LAYOUT = (
     / "config"
     / "round_v1_electronics_sensor_layout.json"
 )
-ROBOT_NAME = "zeroth01_rl_round_v1_16dof"
+ROBOT_NAME = "zeroth01_rl_round_v3_white_eva_16dof"
 
-CREAM = "0.909804 0.823529 0.701961 1"
-TAN = "0.717647 0.529412 0.368627 1"
-DARK = "0.164706 0.176471 0.196078 1"
-TEAL = "0.333333 0.788235 0.776471 1"
+CREAM = "0.968627 0.972549 0.980392 1"
+TAN = "0.843137 0.858824 0.886275 1"
+DARK = "0.062745 0.094118 0.12549 1"
+TEAL = "0.321569 0.839216 1 1"
 MODULE_COLORS = {
     "eye_display_module": "0 0.721569 0.85098 1",
     "camera_module": "1 0.090196 0.266667 1",
@@ -36,12 +36,12 @@ MODULE_COLORS = {
 TORSO_VISUALS = [
     ("chest_front", "ZEROTH01_ROUND_V1_CHEST_FRONT.stl", CREAM),
     ("chest_back", "ZEROTH01_ROUND_V1_CHEST_BACK.stl", CREAM),
-    ("head_front", "ZEROTH01_ROUND_V1_HEAD_FRONT.stl", CREAM),
-    ("head_back", "ZEROTH01_ROUND_V1_HEAD_BACK.stl", CREAM),
+    ("head_front", "ZEROTH01_ROUND_V3_HEAD_FRONT.stl", CREAM),
+    ("head_back", "ZEROTH01_ROUND_V3_HEAD_BACK.stl", CREAM),
     ("pelvis_front", "ZEROTH01_ROUND_V1_PELVIS_FRONT.stl", CREAM),
     ("pelvis_back", "ZEROTH01_ROUND_V1_PELVIS_BACK.stl", CREAM),
-    ("muzzle_badge", "ZEROTH01_ROUND_V1_MUZZLE_BADGE.stl", TAN),
-    ("visor_badge", "ZEROTH01_ROUND_V1_VISOR_BADGE.stl", DARK),
+    ("screen_ui", "ZEROTH01_ROUND_V3_FACE_UI.stl", TEAL),
+    ("visor", "ZEROTH01_ROUND_V3_VISOR.stl", DARK),
 ]
 
 SOLE_VISUALS = {
@@ -53,6 +53,53 @@ SOLE_VISUALS = {
         "right_sole",
         "ZEROTH01_ROUND_V1_RIGHT_SOLE.stl",
     ),
+}
+
+ARM_COSMETICS = {
+    "right_shoulder_yaw_motor": [
+        (
+            "right_upper_arm_sleeve",
+            "ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.stl",
+            (-0.015, 0.032, 0.0197),
+            (0.070, 0.046, 0.057),
+        ),
+    ],
+    "left_shoulder_yaw_motor": [
+        (
+            "left_upper_arm_sleeve",
+            "ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.stl",
+            (0.015, -0.032, -0.0197),
+            (0.070, 0.046, 0.057),
+        ),
+    ],
+    "Left_Hand": [
+        (
+            "right_forearm_sleeve",
+            "ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.stl",
+            (0.0, 0.027, 0.0184),
+            (0.046, 0.049, 0.060),
+        ),
+        (
+            "right_chibi_hand",
+            "ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.stl",
+            (0.0035, 0.07746, 0.0184),
+            (0.060, 0.0451, 0.060),
+        ),
+    ],
+    "hand_right": [
+        (
+            "left_forearm_sleeve",
+            "ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.stl",
+            (0.0, 0.027, 0.0184),
+            (0.046, 0.049, 0.060),
+        ),
+        (
+            "left_chibi_hand",
+            "ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.stl",
+            (-0.0035, 0.07746, 0.0184),
+            (0.060, 0.0451, 0.060),
+        ),
+    ],
 }
 
 
@@ -143,6 +190,30 @@ def add_box_collision(
         geometry,
         "box",
         {"size": " ".join(f"{value:.9g}" for value in size)},
+    )
+
+
+def add_mesh_collision(
+    link: ET.Element,
+    name: str,
+    filename: str,
+) -> None:
+    collision = ET.SubElement(
+        link, "collision", {"name": f"round_v1_{name}_mesh"}
+    )
+    ET.SubElement(
+        collision,
+        "origin",
+        {"xyz": "0 0 0", "rpy": "0 0 0"},
+    )
+    geometry = ET.SubElement(collision, "geometry")
+    ET.SubElement(
+        geometry,
+        "mesh",
+        {
+            "filename": f"meshes/round_v1/{filename}",
+            "scale": "0.001 0.001 0.001",
+        },
     )
 
 
@@ -271,7 +342,12 @@ def gen_urdf() -> ET.Element:
     # shoulder and hip keep-outs open. Exact B-Rep/servo checks are reported
     # separately; URDF boxes are for stable RL collision/contact.
     add_box_collision(torso, "chest_center", (0.0, 0.005, -0.006), (0.108, 0.076, 0.130))
-    add_box_collision(torso, "head", (0.0, -0.003, 0.103), (0.120, 0.074, 0.090))
+    add_box_collision(
+        torso,
+        "head",
+        (0.0, -0.003, 0.108),
+        (0.124, 0.080, 0.110),
+    )
     # The exact shell has 21 mm spherical hip keep-outs centered at
     # x=+/-45.65 mm, leaving only 49.3 mm of uninterrupted center material.
     # Keep 1.65 mm extra margin per side in this conservative RL proxy.
@@ -288,13 +364,29 @@ def gen_urdf() -> ET.Element:
             (0.112, 0.016, 0.064),
         )
 
+    for link_name, cosmetics in ARM_COSMETICS.items():
+        link = find_link(root, link_name)
+        for name, filename, center, size in cosmetics:
+            add_mesh_visual(link, name, filename, CREAM)
+            if "chibi_hand" in name:
+                # The rounded mitten and thumb are materially smaller than
+                # their axis-aligned bounding box at the corners.  Use the
+                # printable mesh (MuJoCo convex hull) so rare hand/knee poses
+                # are not rejected by a fictitious rectangular corner.
+                add_mesh_collision(link, name, filename)
+            else:
+                add_box_collision(link, name, center, size)
+
     add_electronics_layout(root, electronics_layout)
 
     root.insert(
         4,
         ET.Comment(
-            "Round-v1 adds printable PETG cosmetic shells and 8 mm thicker "
-            "sole prototypes. Nominal CAD-volume mass/inertia is included; "
+            "Round-v3 keeps the frozen Zeroth-01 mechanism and adds white "
+            "Poppy-Eva-derived PETG shells with small ears, removable rounded "
+            "arm sleeves, fixed chibi palm caps, and 8 mm thicker sole "
+            "prototypes. "
+            "Nominal CAD-volume mass/inertia is included; "
             "hardware deployment remains blocked until every printed part and "
             "the final assembly are weighed and the inertials regenerated."
         ),
@@ -302,21 +394,23 @@ def gen_urdf() -> ET.Element:
     root.insert(
         5,
         ET.Comment(
-            "The quarantined ST-3235M STEP is not used as STS3250-C001 "
-            "installation geometry. The frozen Zeroth-01 source assemblies "
-            "remain authoritative, and servo mass is not added again because "
-            "their aggregate link inertials already include the actuators."
+            "The separate blue STS3250-C001 SolidWorks part is a diagnostic "
+            "visibility overlay only. It has no URDF visual/collision/inertial "
+            "body. The frozen Zeroth-01 source assemblies remain authoritative "
+            "and actuator mass is not added again."
         ),
     )
     root.insert(
         6,
         ET.Comment(
-            "Dual-eye display, camera, ToF, IMU, compute and 3S2P battery "
+            "Waveshare 4.3-inch DSI/QLED display, camera, ToF, IMU, compute "
+            "and 3S2P battery "
             "links use explicit box inertias from "
             "round_v1_electronics_sensor_layout.json. They have no collision "
             "geometry because they are internal payloads. The head display "
-            "and camera are vendor-selected; torso payloads and the ToF "
-            "carrier remain hardware overrides. Optical frames are massless."
+            "and camera are vendor-selected; display thickness/mount fit, "
+            "torso payloads and the ToF carrier remain hardware overrides. "
+            "Optical frames are massless."
         ),
     )
     ready.load_module(

@@ -17,4 +17,5 @@ jobs:
       - run: python scripts/validate_rl_package_portability.py --urdf generated/urdf/zeroth01_rl_round_v1.urdf --mjcf generated/mujoco/zeroth01_rl_round_v1.xml
       - run: python -m pip install -r requirements-validation.txt
       - run: python scripts/smoke_test_round_v1_mujoco.py
+      - run: python scripts/generate_release_manifest.py
       - run: python scripts/validate_release.py

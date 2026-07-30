@@ -17,7 +17,23 @@ STEP_DIR = ROOT / "generated" / "cad" / "round_v1" / "parts"
 REPORT_CSV = ROOT / "reports" / "round_v1_print_mesh_gate.csv"
 REPORT_JSON = ROOT / "reports" / "round_v1_print_mesh_gate.json"
 
-PREFIX = "ZEROTH01_ROUND_V1_"
+PRINTABLE_STEMS = [
+    "ZEROTH01_ROUND_V1_CHEST_FRONT",
+    "ZEROTH01_ROUND_V1_CHEST_BACK",
+    "ZEROTH01_ROUND_V3_HEAD_FRONT",
+    "ZEROTH01_ROUND_V3_HEAD_BACK",
+    "ZEROTH01_ROUND_V1_PELVIS_FRONT",
+    "ZEROTH01_ROUND_V1_PELVIS_BACK",
+    "ZEROTH01_ROUND_V3_VISOR",
+    "ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE",
+    "ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE",
+    "ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE",
+    "ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE",
+    "ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND",
+    "ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND",
+    "ZEROTH01_ROUND_V1_LEFT_SOLE",
+    "ZEROTH01_ROUND_V1_RIGHT_SOLE",
+]
 MIN_COMPONENT_VOLUME_MM3 = 1e-3
 MAX_STEP_VOLUME_ERROR_RATIO = 0.005
 
@@ -31,14 +47,21 @@ def edge_counts(mesh: trimesh.Trimesh) -> tuple[int, int]:
 
 
 def main() -> None:
-    sources = sorted(
-        path
-        for path in RAW_DIR.glob(f"{PREFIX}*.stl")
-        if path.parent == RAW_DIR
-    )
-    if not sources:
-        raise FileNotFoundError(f"no round-v1 STL files under {RAW_DIR}")
+    sources = [RAW_DIR / f"{stem}.stl" for stem in PRINTABLE_STEMS]
+    missing = [path for path in sources if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(
+            "missing selected printable STL files: "
+            + ", ".join(str(path) for path in missing)
+        )
     FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    selected_names = {path.name for path in sources}
+    # FINAL_DIR is a derived release directory.  Remove only superseded STL
+    # outputs there so an old muzzle/badge/head cannot be mistaken for a
+    # current printable part after a geometry revision.
+    for stale in FINAL_DIR.glob("*.stl"):
+        if stale.name not in selected_names:
+            stale.unlink()
     rows: list[dict[str, object]] = []
 
     for source in sources:
@@ -133,8 +156,9 @@ def main() -> None:
         "mesh_topology_gate": "PASS" if overall else "FAIL",
         "slicer_profile_gate": "BLOCKED_EXPLICIT_PROFILE_REQUIRED",
         "functional_load_path_gate": (
-            "FAIL: these outputs are cosmetic shells, badges, sole fit "
-            "prototypes and a ring coupon; they do not replace missing "
+            "FAIL: these outputs are cosmetic shells, arm sleeves, fixed "
+            "chibi palm caps and sole fit prototypes; they do not replace "
+            "the missing "
             "production servo brackets, horn interfaces, bearings, fasteners "
             "or cable management"
         ),

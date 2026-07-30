@@ -10,5 +10,5 @@
   "mesh_count": 17,
   "all_winding_consistent": false,
   "all_watertight": false,
-  "manifest": "reports\\source_asset_manifest.csv"
+  "manifest": "reports/source_asset_manifest.csv"
 }

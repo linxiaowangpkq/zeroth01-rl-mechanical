@@ -11,6 +11,6 @@ from round_v1_common import round_v1_assembly
 def gen_step():
     assembly = round_v1_assembly()
     return Compound(
-        label="ZEROTH01_ROUND_V1_ASSEMBLY",
+        label="ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_ASSEMBLY",
         children=list(assembly.children),
     )

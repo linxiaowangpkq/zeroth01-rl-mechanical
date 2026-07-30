@@ -1,5 +1,5 @@
 {
-  "urdf": "generated\\urdf\\zeroth01_rl_ready.urdf",
+  "urdf": "generated/urdf/zeroth01_rl_ready.urdf",
   "mesh_count": 17,
   "closer_frame_counts": {
     "LINK_LOCAL": 16,
@@ -107,5 +107,5 @@
       "neutral_world_aabb_gap_m": 0.0
     }
   ],
-  "report_csv": "reports\\mesh_frame_audit.csv"
+  "report_csv": "reports/mesh_frame_audit.csv"
 }

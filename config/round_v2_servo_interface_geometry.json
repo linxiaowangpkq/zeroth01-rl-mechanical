@@ -1,8 +1,16 @@
 {
-  "schema": "zeroth01.round_v2.servo_interface_geometry.v2",
+  "schema": "zeroth01.round_v3.servo_interface_geometry.v3",
   "units": "mm",
   "selected_geometry_policy": "PRESERVE_FROZEN_ZEROTH01_ASSEMBLY_NO_REPLACEMENT_SERVO_BODY",
-  "downstream_usage": "DIMENSION_AND_REJECTED_EXPERIMENT_EVIDENCE_ONLY; DO_NOT_GENERATE_CAGES_HUBS_OR_EXTRA_INERTIAL_BODIES",
+  "downstream_usage": "GENERATE_ONE_BLUE_DIAGNOSTIC_SLDPRT_AND_REUSE_IT_AT_S01_S16; DO_NOT_GENERATE_CAGES_HUBS_OR_EXTRA_INERTIAL_BODIES; DO_NOT_TREAT_OVERLAP_WITH_AGGREGATE_SOURCE_LINKS_AS_NEW_INTERFERENCE",
+  "solidworks_review_overlay": {
+    "part_color_hex": "#1677FF",
+    "instance_count": 16,
+    "attachment": "parent-side canonical joint frame",
+    "mass_in_urdf": false,
+    "collision_in_urdf": false,
+    "hardware_installation_signoff": false
+  },
   "canonical_local_frame": {
     "origin": "front/rear shaft centerline projected to the middle of the 35 mm case",
     "x_axis": "case long axis, positive toward the 12.5 mm short end",

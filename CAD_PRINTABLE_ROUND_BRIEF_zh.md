@@ -1,74 +1,83 @@
-# Zeroth-01 最小可靠圆润版 CAD/打印设计简报
+# Zeroth-01 Round V3 可打印外观设计简报
 
 ## 设计目标
 
-在不改变 Zeroth-01 原始 17-link 运动机构的前提下，完成更圆润的头部与身体、加厚脚底、电子件包装和可追溯颜色标识。
+在不改变 Zeroth-01 原始 17-link / 16DoF 机构的前提下，完成更圆润的白色外观、加厚脚底、带小耳朵的屏幕头、加粗圆润手臂、固定式 Q 版手掌和可追溯电子器件包络。所有新增外观件均为可拆卸、非承载件，不阻断未来替换外壳。
 
 优先级：
 
-1. 原关节连接、轴线、零位和守护运动范围不变。
-2. 新件可拆卸、非承载，不阻断未来更换外观。
-3. 外壳圆润但保留相机/ToF 视场、通风、线束和维修空间。
-4. CAD、SolidWorks、URDF/MJCF 和文档使用同一坐标与身份映射。
+1. 原关节连接、轴线、零位、限位和承载路径不变。
+2. 正常白色总装保持整洁；内部电子件和 16 个蓝色舵机只在 `OPEN_FIRST` 透视总装显示。
+3. 头壳保留屏幕、相机、ToF 视场、散热、线束和维护空间。
+4. CAD、SolidWorks、URDF/MJCF 与文档使用同一坐标和部件身份映射。
 
 ## 选定几何
 
-- 头部：三轴椭球壳体，不再用圆角长方体模拟。
-- 面罩：复合曲面 visor，内部容纳平面双眼屏、相机和 ToF。
-- 胸部/骨盆：原机构外侧增加大圆角壳，不修改原 link 网格。
-- 脚底：左右加厚、圆角、保持原踝关节轴和接地点语义。
-- 关节颜色：20 mm × 1.8 mm 圆片，仅作 SolidWorks 审阅标记。
+- 头部：Poppy Eva 开源拓扑衍生的白色蛋形前后壳，围绕 Zeroth-01 肩部避让重新参数化。
+- 面部：连续黑色圆角屏幕面板与青色屏幕 UI；两个小型耳片，无凸眼、无嘴套。
+- 胸部/骨盆：在原聚合 link 外增加大圆角白壳，不修改原 link 网格。
+- 手臂/手掌：左右各一件上臂套、一件前臂套和一件固定连指手掌，共 6 件；它们跟随原 link，不增加关节。
+- 脚底：左右加厚圆角鞋底，保持原踝关节轴和接地点语义。
+- 舵机审图：`45.22 × 24.72 × 36.5 mm` 蓝色 STS3250-C001 受控包络，一个 `.SLDPRT` 复用 16 次；不是安装签字模型。
 
-## 电子件几何层级
+## 电子器件几何层级
 
-- Waveshare 双眼屏：使用供应商精确 STEP。
-- Camera Module 3 Wide：供应商精确 STEP 归档；SolidWorks 自动总装使用 `25 × 23.862 × 11.4 mm` 官方测得简化包络，避免复杂 STEP 导入卡死。
-- VL53L5CX：传感器选型确定，当前 `12 × 10 × 3 mm` 载板包络是假设。
-- IMU、主控、电池：RL/包装包络，型号未冻结。
+| 器件 | 当前包络/状态 | 用途 |
+|---|---|---|
+| Waveshare 4.3-inch DSI/QLED | `105.5 × 8 × 67.2 mm`，供应商型号已选、包络受控 | 头部彩色屏 |
+| Camera Module 3 Wide | `25 × 23.862 × 11.4 mm`，测得包络 | 额头相机 |
+| VL53L5CX 载板 | `12 × 10 × 3 mm`，假设 | 额头 ToF |
+| IMU / 主控 / 电池 | 受控包装包络，具体料号未冻结 | RL 与整机布局 |
 
-电子件包络不可用于开模或 PCB 下单，除非 `confidence` 为供应商精确尺寸且接口已复核。
+除非 `confidence` 已升级为“供应商精确且接口复核”，电子包络不得直接用于开模、PCB 或夹具下单。
 
 ## CAD 产物
 
 - 参数化源：`cad/round_v1/`
-- STEP 零件：`generated/cad/round_v1/parts/`
-- 圆润外壳/电子件审阅 STEP：
-  `generated/cad/round_v1/ZEROTH01_ROUND_V2_COSMETIC_ELECTRONICS_ASSEMBLY.step`
-- SolidWorks 原生 B-Rep 零件：
-  `generated/solidworks/round_v1/parts/`
-- SolidWorks 总装：
-  `generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM`
-- 最终打印 STL：
-  `generated/print/round_v1/final/`
+- V3 完整审阅 STEP：`generated/cad/round_v1/ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_ASSEMBLY.step`
+- V3 STEP 零件：`generated/cad/round_v1/parts/`
+- 正常白色 SolidWorks 总装：`generated/solidworks/round_v1/ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM`
+- 透视/16 舵机 SolidWorks 总装：`generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM`
+- 独立蓝色舵机零件：`generated/solidworks/round_v1/parts/ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.SLDPRT`
+- 最终打印候选 STL：`generated/print/round_v1/final/`
 
-审阅 STEP 只包含圆润/电子叠加件，不是完整原始机械机构；完整机构请在 SolidWorks 总装、URDF 或 MJCF 中查看。
+## 当前 15 个打印候选件
 
-## 坐标和单位
+1. 胸前壳
+2. 胸后壳
+3. V3 头前壳
+4. V3 头后壳
+5. 骨盆前壳
+6. 骨盆后壳
+7. V3 黑色屏幕框/面罩
+8. 左脚底
+9. 右脚底
+10. 左上臂套
+11. 右上臂套
+12. 左前臂套
+13. 右前臂套
+14. 左 Q 版连指手掌
+15. 右 Q 版连指手掌
 
-- CAD/STEP/STL：mm。
-- URDF/MJCF/配置：m、kg、rad。
-- 机器人前方：`-Y`。
-- 上方：`+Z`。
-- 左侧：`+X`。
-- 电子件父 link：Torso。
+屏幕 UI、电子包络、蓝色舵机诊断件和原聚合 link 不属于这 15 个外壳打印件。Q 版手掌固定在原 hand link 上，不是灵巧手，也不承担抓取载荷。
 
 ## 接受标准
 
-- 原始 17 link 和 16 转动关节变换不变。
-- SolidWorks 总装 51 组件：17 原 link + 18 叠加件 + 16 非物理标记。
-- 新增替代舵机、笼体、输出 hub：均为 0。
-- 头、胸、骨盆、脚底外壳不进入 URDF 的关节树。
-- 质量/惯量只在相应 link 上聚合一次。
-- URDF/MJCF 的 motion/collision gate 通过。
-- STL 水密、无非流形边，STEP/STL 体积误差 ≤0.5%。
+- 原始 17 link 和 16 个运动关节的变换不变。
+- SolidWorks `57 = 17 + 24 + 16`，旧彩色关节标记为 `0`。
+- 新增替代舵机、承载笼体、输出 hub 数量均为 `0`。
+- 外壳不进入 URDF 关节树，质量/惯量只聚合到对应 link 一次。
+- URDF/MuJoCo motion、mass、collision 与 smoke gate 通过。
+- STL 水密、绕向一致、无非流形边，STEP/STL 体积误差不大于 `0.5%`。
+- 6 个手臂套/手掌对原 link 保守凸包的交集为 `0 mm³`。
 
-## 制造前未决项
+## 制造前必须补齐
 
-- 原骨架与外壳的定位柱、螺孔、嵌件和公差。
-- 头部视窗材料、透光率、反射和散热。
-- 电池/主控/IMU/ToF 载板和连接器。
-- 线束路径、应变消除和关节全范围扫掠。
-- 脚底材料、压力传感器载荷路径和防滑层。
-- 真实材料、切片参数、强度、蠕变和跌落测试。
+- 原骨架与外壳的定位柱、螺孔、热熔嵌件、公差和可达工具空间；
+- 头部屏幕夹具、透明窗材料、散热和连接器出线；
+- 电池、BMS、主控、IMU、ToF 的冻结料号与载板；
+- 线束路径、应变消除和关节全范围扫掠；
+- 脚底压力传感器载荷路径、防滑层和材料；
+- 指定打印机/喷嘴/材料/层高后完成切片与实物试装。
 
-未决项关闭前，本 revision 的定位是“RL 机械基线 + 外壳试装设计”，不是可直接量产的完整机器人 CAD。
+因此本 revision 是“RL 机械基线 + 外壳试装设计”，不是量产或直接行走装配包。

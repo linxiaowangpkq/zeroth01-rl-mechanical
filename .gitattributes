@@ -5,3 +5,4 @@
 *.SLDPRT binary
 *.step binary
 *.stl binary
+source_assets/open_source_head/Poppy-eva-head-design/** -text -diff

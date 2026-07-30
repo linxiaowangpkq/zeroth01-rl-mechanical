@@ -18,10 +18,10 @@ SOURCE_MOTION = (
     / "snapshots"
     / "solidworks"
     / "round_v1"
-    / "zeroth01_round_v1_solidworks_motion.gif"
+    / "zeroth01_round_v3_16_blue_servos_motion.gif"
 )
 DEFAULT_OUTPUT = (
-    ROOT / "generated" / "solidworks" / "portable_flat_round_v2"
+    ROOT / "generated" / "solidworks" / "portable_flat_round_v3"
 )
 
 
@@ -91,8 +91,11 @@ def main() -> int:
     sw = round_module.base.get_or_start_sw()
     generated_titles = [
         round_module.ASM_PATH.name,
+        round_module.NORMAL_ASM_PATH.name,
         "OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM",
         "OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM",
+        "OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM",
+        "ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM",
     ]
     generated_titles.extend(
         path.name
@@ -110,7 +113,7 @@ def main() -> int:
 
     source_round_names = {
         item[2] for item in round_module.OVERLAYS
-    } | {round_module.JOINT_MARKER_PART_NAME}
+    } | {round_module.SERVO_REVIEW_PART_NAME}
     expected_count = 17 + len(source_round_names)
     copied = copy_flat_parts(
         output,
@@ -122,10 +125,15 @@ def main() -> int:
     portable_motion = previews / SOURCE_MOTION.name
     shutil.copy2(SOURCE_MOTION, portable_motion)
 
-    assembly = output / "OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM"
+    assembly = (
+        output
+        / "OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM"
+    )
+    normal_assembly = output / "ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM"
     round_module.SW_ROOT = output
     round_module.SW_PART_DIR = output
     round_module.ASM_PATH = assembly
+    round_module.NORMAL_ASM_PATH = normal_assembly
     round_module.SNAP_DIR = previews
     round_module.FRAME_DIR = previews / "motion_frames"
     round_module.MOTION_GIF = portable_motion
@@ -151,8 +159,13 @@ def main() -> int:
 
     if not assembly.is_file() or assembly.stat().st_size < 1024:
         raise RuntimeError(f"portable assembly was not created: {assembly}")
+    if not normal_assembly.is_file() or normal_assembly.stat().st_size < 1024:
+        raise RuntimeError(
+            f"portable normal assembly was not created: {normal_assembly}"
+        )
     print(f"PORTABLE_PART_COUNT={copied}")
     print(f"PORTABLE_ASSEMBLY={assembly}")
+    print(f"PORTABLE_NORMAL_ASSEMBLY={normal_assembly}")
     return 0
 
 

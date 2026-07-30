@@ -65,11 +65,12 @@ CAMERA_WIDE_STEP = (
     / "Raspberry_Pi_Camera_Module_3_Wide.step"
 )
 
-CREAM = Color("#E8D2B3")
-TAN = Color("#B7875E")
-DARK = Color("#2A2D32")
-TEAL = Color("#55C9C6")
-SERVO_METAL = Color("#636B73")
+CREAM = Color("#F7F8FA")
+TAN = Color("#D7DBE2")
+DARK = Color("#101820")
+TEAL = Color("#52D6FF")
+SERVO_METAL = Color("#1677FF")
+SERVO_BLUE = Color("#1677FF")
 
 WALL_MM = 2.4
 SEAM_GAP_MM = 0.35
@@ -304,32 +305,52 @@ def chest_shell(side: str) -> Shape:
 
 
 def head_shell(side: str) -> Shape:
-    # A true triaxial ellipsoid replaces the former filleted cuboid. The
-    # bottom narrows naturally above the shoulder centers, preserving the
-    # frozen mechanism and its clearance while making the head genuinely
-    # rounded from every view.
-    center = (0.0, -3.0, 103.0)
-    outer = Sphere(1.0).scale((75.0, 44.0, 49.0)).moved(Location(center))
-    inner = Sphere(1.0).scale((71.8, 40.8, 45.8)).moved(Location(center))
+    # Poppy Eva head topology, rebuilt parametrically around Zeroth-01 rather
+    # than scaling its STL: a removable white egg shell, one continuous black
+    # screen aperture, and a separate internal display carrier.  The larger
+    # upper volume houses a 4.3-inch Waveshare display plus camera/ToF while
+    # the tapered underside preserves the frozen shoulder mechanism.
+    center = (0.0, -3.0, 108.0)
+    outer = Sphere(1.0).scale((78.0, 50.0, 60.0)).moved(Location(center))
+    inner = Sphere(1.0).scale((74.8, 46.8, 56.8)).moved(Location(center))
+    # Two small solid ear tabs make the silhouette friendlier without
+    # widening the existing shoulder envelope.  Keeping these low-volume
+    # cosmetic tabs solid avoids a fragile shell-within-shell intersection at
+    # the front/back seam and gives the printed halves a reliable watertight
+    # union.  They remain part of the removable head shell.
     shell = outer.cut(inner)
-    # Ellipsoidal visor aperture; the transparent visor is a separate
-    # removable part and the electronics remain behind it.
-    visor_opening = Sphere(1.0).scale((52.0, 12.0, 25.0)).moved(
-        Location((0.0, -43.0, 110.0))
-    )
-    shell = shell.cut(visor_opening)
     for x_pos in (-54.0, 54.0):
-        ear = Sphere(1.0).scale((21.0, 16.0, 20.0)).moved(
-            Location((x_pos, -1.0, 136.0))
+        ear_center = (x_pos, center[1], 154.0)
+        shell = shell.fuse(Sphere(14.0).moved(Location(ear_center)))
+    # Large continuous visor: no ears, muzzle, exposed eyeballs, or protruding
+    # sensor blocks remain in the exterior design.
+    visor_opening = Box(
+        112.0,
+        60.0,
+        70.0,
+        align=(Align.CENTER, Align.CENTER, Align.CENTER),
+    )
+    visor_depth_edges = [
+        edge
+        for edge in visor_opening.edges()
+        if abs(edge.length - 60.0) <= 1e-6
+    ]
+    visor_opening = visor_opening.fillet(
+        18.0, visor_depth_edges
+    ).moved(Location((0.0, -45.0, 105.0)))
+    shell = shell.cut(visor_opening)
+    # Underside keep-outs are centered on the frozen shoulder-pitch axes.
+    for x_pos in (-78.15, 78.15):
+        shell = shell.cut(
+            Sphere(32.0).moved(Location((x_pos, -0.34, 43.05)))
         )
-        shell = shell.fuse(ear)
     shell = _add_seam_bosses(
         shell,
         center[1],
-        [(-65.0, 82.0), (65.0, 82.0), (-58.0, 124.0), (58.0, 124.0)],
+        [(-66.0, 76.0), (66.0, 76.0), (-60.0, 139.0), (60.0, 139.0)],
     )
     piece = _half(shell, center[1], side)
-    piece.label = f"ROUND_V1_HEAD_{side.upper()}"
+    piece.label = f"ROUND_V3_POPPY_EVA_DERIVED_HEAD_{side.upper()}"
     piece.color = CREAM
     return piece
 
@@ -352,39 +373,121 @@ def pelvis_shell(side: str) -> Shape:
     return piece
 
 
-def muzzle_badge() -> Shape:
-    # Small convex camera pod; no rectangular muzzle remains.
-    shape = Sphere(1.0).scale((20.0, 5.0, 11.0)).moved(
-        Location((0.0, -48.0, 91.0))
+def arm_sleeve(side: str, segment: str) -> Shape:
+    """Printable, open-ended cosmetic sleeve in the source link frame."""
+
+    if side not in {"left", "right"}:
+        raise ValueError(side)
+    if segment == "upper":
+        center = (
+            (15.0, -32.0, -19.7)
+            if side == "left"
+            else (-15.0, 32.0, 19.7)
+        )
+        # The upstream shoulder mesh spans about 58 x 41 mm in this
+        # cross-section.  A 64 x 49 mm rounded keep-out leaves at least
+        # 3-4 mm nominal clearance before the printable wall.
+        outer_size = (70.0, 52.0, 57.0)
+        inner_size = (64.0, 64.0, 49.0)
+        outer_radius = 15.0
+        inner_radius = 12.0
+    elif segment == "forearm":
+        # Both mirrored hand-link meshes share the same local envelope.
+        center = (0.0, 27.0, 18.4)
+        outer_size = (46.0, 52.0, 60.0)
+        inner_size = (34.0, 64.0, 54.0)
+        outer_radius = 13.0
+        inner_radius = 8.0
+    else:
+        raise ValueError(segment)
+    shape = rounded_box(outer_size, center, outer_radius).cut(
+        rounded_box(inner_size, center, inner_radius)
     )
-    shape.label = "ROUND_V2_CAMERA_POD"
-    shape.color = TAN
+    shape.label = (
+        f"ROUND_V3_{side.upper()}_{segment.upper()}_ARM_PRINTED_SLEEVE"
+    )
+    shape.color = CREAM
     return shape
 
 
-def visor_badge() -> Shape:
-    shape = Sphere(1.0).scale((50.0, 4.2, 23.0)).moved(
-        Location((0.0, -46.5, 111.0))
+def chibi_hand(side: str) -> Shape:
+    """A printable rounded mitten/palm cap; no articulated fingers."""
+
+    if side not in {"left", "right"}:
+        raise ValueError(side)
+    center = (0.0, 77.0, 18.4)
+    outer = rounded_box((52.0, 46.0, 60.0), center, 14.0)
+    # A subtle solid thumb bump: local +X is inward on the right hand and
+    # local -X is inward on the left hand in the frozen neutral frames.
+    thumb_sign = -1.0 if side == "left" else 1.0
+    thumb = Sphere(1.0).scale((8.0, 10.0, 8.0)).moved(
+        Location((thumb_sign * 23.0, 76.0, 15.0))
     )
-    shape.label = "ROUND_V2_COMPOUND_CURVED_POLYCARBONATE_VISOR"
+    outer = outer.fuse(thumb)
+    # The cavity opens through the proximal end and captures the existing
+    # aggregate hand-link tip.  Its 34 x 54 mm cross-section provides a
+    # conservative 3-4 mm keep-out around the frozen 26 x 48 mm link while a
+    # 6 mm distal wall keeps the fixed mitten robust.
+    cavity = rounded_box((34.0, 48.0, 54.0), (0.0, 70.0, 18.4), 9.0)
+    shape = outer.cut(cavity)
+    shape.label = f"ROUND_V3_{side.upper()}_CHIBI_PRINTED_HAND"
+    shape.color = CREAM
+    return shape
+
+
+def face_graphics() -> Shape:
+    """Flat screen UI reference, not printed or mass-bearing geometry."""
+
+    eyes: list[Shape] = []
+    for x_pos in (-24.0, 24.0):
+        # A filled, shallow screen pixel avoids the deep Boolean eye rings
+        # that produced spoke-like reflections in SOLIDWORKS.  It reads as a
+        # friendly display graphic rather than a protruding mechanical eye.
+        eye = Sphere(1.0).scale((8.0, 0.55, 11.5)).moved(
+            Location((x_pos, -40.45, 109.0))
+        )
+        eye.label = (
+            f"ROUND_V3_SCREEN_EYE_"
+            f"{'LEFT' if x_pos < 0 else 'RIGHT'}"
+        )
+        eye.color = TEAL
+        eyes.append(eye)
+    shape = Compound(label="ROUND_V3_NONPHYSICAL_SCREEN_UI", children=eyes)
+    shape.color = TEAL
+    return shape
+
+
+def muzzle_badge() -> Shape:
+    # Backward-compatible source entry point.  The old bear muzzle is gone.
+    return face_graphics()
+
+
+def visor_badge() -> Shape:
+    # A manufacturable recessed screen carrier: round only the four edges
+    # parallel to Y so the 20 mm face radius does not violate the 4 mm depth.
+    # The head aperture crops this plate into a continuous curved-shell visor
+    # silhouette while the plate itself remains a robust printable solid.
+    panel = Box(
+        120.0,
+        4.0,
+        78.0,
+        align=(Align.CENTER, Align.CENTER, Align.CENTER),
+    )
+    depth_edges = [
+        edge for edge in panel.edges() if abs(edge.length - 4.0) <= 1e-6
+    ]
+    shape = panel.fillet(20.0, depth_edges).moved(
+        Location((0.0, -38.0, 105.0))
+    )
+    shape.label = "ROUND_V3_CONTINUOUS_BLACK_SCREEN_VISOR"
     shape.color = DARK
     return shape
 
 
 def camera_lenses() -> Shape:
     lenses: list[Shape] = []
-    for x_pos in (-16.0, 16.0):
-        lens = Sphere(1.0).scale((9.3, 2.2, 9.3)).moved(
-            Location((x_pos, -50.0, 115.0))
-        )
-        lens.label = (
-            f"WAVESHARE_CONVEX_EYE_LENS_"
-            f"{'LEFT' if x_pos < 0 else 'RIGHT'}"
-        )
-        lens.color = TEAL
-        lenses.append(lens)
     camera_plane = Plane(
-        origin=(0.0, -53.0, 91.0),
+        origin=(0.0, -39.5, 151.0),
         x_dir=(1.0, 0.0, 0.0),
         z_dir=(0.0, -1.0, 0.0),
     )
@@ -396,7 +499,7 @@ def camera_lenses() -> Shape:
     lenses.append(camera_ring)
     # Keep the edge radius below half of the 1.5 mm optical-window depth.
     # A 1.5 mm radius on every edge is geometrically impossible here.
-    tof_window = rounded_box((8.0, 1.5, 5.0), (31.0, -49.5, 92.0), 0.6)
+    tof_window = rounded_box((8.0, 1.5, 5.0), (26.0, -39.0, 151.0), 0.6)
     tof_window.label = "VL53L5CX_TOF_WINDOW"
     tof_window.color = Color("#AA00FF")
     lenses.append(tof_window)
@@ -441,19 +544,11 @@ def _recenter_step(shape: Shape) -> Shape:
 
 
 def eye_display_module() -> Shape:
-    if not DUAL_EYE_STEP.is_file():
-        return _electronics_module_box("eye_display_module", 1.0)
-    shape = _recenter_step(import_step(DUAL_EYE_STEP))
-    # Vendor PCB lies in XY; +90 deg about X maps its normal to robot -Y.
-    shape = shape.moved(Location((0.0, 0.0, 0.0), (90.0, 0.0, 0.0)))
-    center_mm = tuple(
-        1000.0 * float(value)
-        for value in json.loads(
-            ELECTRONICS_LAYOUT_SOURCE.read_text(encoding="utf-8")
-        )["modules"]["eye_display_module"]["center_xyz_m"]
-    )
-    shape = shape.moved(Location(center_mm))
-    shape.label = "WAVESHARE_0_71IN_DUALEYE_LCD_EXACT"
+    # step.parts has no exact 4.3-inch DSI/QLED module.  Use the documented
+    # envelope selected in round_v1_electronics_layout_source.json; the
+    # Poppy Eva source STL remains the open mounting-topology reference.
+    shape = _electronics_module_box("eye_display_module", 2.0)
+    shape.label = "WAVESHARE_4_3IN_DSI_QLED_CONTROLLED_ENVELOPE"
     shape.color = Color("#00B8D9")
     return shape
 
@@ -518,14 +613,25 @@ def sts3250_controlled_case() -> Shape:
         for index in range(3)
     )
     case = rounded_box(size, center, 2.0)
+    # Four drawing-visible M2 mounting locations make the review part
+    # recognisable while keeping the body envelope dimension-controlled.
+    for x_pos in (-28.5, 8.3):
+        for y_pos in (-9.5, 9.5):
+            case = case.cut(
+                Cylinder(1.1, 40.0).moved(
+                    Location((x_pos, y_pos, -20.0))
+                )
+            )
 
     # Shallow face bosses show the two-sided output location without claiming
     # an unverified internal bearing/gear tooth profile.
-    front_boss = Cylinder(8.0, 1.6).moved(Location((0.0, 0.0, 18.3)))
-    rear_boss = Cylinder(8.0, 1.6).moved(Location((0.0, 0.0, -18.3)))
+    # The drawing's complete two-sided depth is 36.5 mm.  Keep the 35 mm
+    # case body exact and constrain both review bosses to +/-18.25 mm.
+    front_boss = Cylinder(8.0, 1.5).moved(Location((0.0, 0.0, 17.5)))
+    rear_boss = Cylinder(8.0, 1.5).moved(Location((0.0, 0.0, -17.5)))
     shape = case.fuse(front_boss, rear_boss)
-    shape.label = "FEETECH_STS3250_C001_DIMENSION_CONTROLLED_CASE"
-    shape.color = SERVO_METAL
+    shape.label = "FEETECH_STS3250_C001_BLUE_DIAGNOSTIC_ENVELOPE"
+    shape.color = SERVO_BLUE
     return shape
 
 
@@ -895,7 +1001,6 @@ def servo_instances() -> tuple[list[Shape], list[dict[str, object]]]:
     for name, joint in moving.items():
         identity = identities[name]
         servo_id = str(identity["id"])
-        identity_color = Color(str(identity["color_hex"]))
         joint_frame_rotation, translation = _joint_frame(joint, transforms)
         axis_local = [float(value) for value in joint["axis"]]
         joint_axis_world = _mat_vec(joint_frame_rotation, axis_local)
@@ -924,15 +1029,16 @@ def servo_instances() -> tuple[list[Shape], list[dict[str, object]]]:
         instance = copy.copy(source).moved(
             location_from_transform((servo_rotation, translation))
         )
-        instance.label = f"{servo_id}_STS3250_{name}"
-        instance.color = identity_color
+        instance.label = f"{servo_id}_STS3250_C001_BLUE_REVIEW_{name}"
+        instance.color = SERVO_BLUE
         instances.append(instance)
         rows.append(
             {
                 "joint": name,
                 "servo_id": servo_id,
-                "color_hex": identity["color_hex"],
-                "servo_model": "Feetech STS3250",
+                "id_color_hex": identity["color_hex"],
+                "visual_color_hex": "#1677FF",
+                "servo_model": "Feetech STS3250-C001",
                 "geometry_source": (
                     "dimension-controlled STS3250-C001 from current official "
                     "product size and supplied drawing"
@@ -957,8 +1063,8 @@ def servo_instances() -> tuple[list[Shape], list[dict[str, object]]]:
                 "housing_attachment": str(joint["parent"]),
                 "output_attachment": str(joint["child"]),
                 "transmission_semantics": (
-                    "housing_and_cage_follow_parent_joint_frame; "
-                    "output_hub_follows_child_link"
+                    "DIAGNOSTIC_HOUSING_ONLY_FOLLOWS_PARENT_JOINT_FRAME; "
+                    "NOT_A_PHYSICAL_REPLACEMENT_OR_EXTRA_URDF_BODY"
                 ),
                 "axis_collinearity_error_deg": f"{axis_error_deg:.9f}",
                 "shaft_origin_error_mm": "0.000000",
@@ -1112,8 +1218,8 @@ def concept_armor() -> list[Shape]:
 
 def round_v1_assembly() -> Compound:
     joints, transforms = load_neutral_kinematics()
-    marker_parts, marker_rows = joint_marker_instances()
-    write_servo_axis_report(marker_rows)
+    servo_parts, servo_rows = servo_instances()
+    write_servo_axis_report(servo_rows)
     parts: list[Shape] = [
         chest_shell("front"),
         chest_shell("back"),
@@ -1121,7 +1227,7 @@ def round_v1_assembly() -> Compound:
         head_shell("back"),
         pelvis_shell("front"),
         pelvis_shell("back"),
-        muzzle_badge(),
+        face_graphics(),
         visor_badge(),
         camera_lenses(),
         torso_spine(),
@@ -1136,8 +1242,28 @@ def round_v1_assembly() -> Compound:
         placed = copy.copy(sole(side)).moved(location_from_transform(transforms[link_name]))
         placed.label = f"ROUND_V1_{side.upper()}_THICK_SOLE"
         parts.append(placed)
-    parts.extend(concept_armor())
-    parts.extend(marker_parts)
+    moving_cosmetics = [
+        (
+            arm_sleeve("right", "upper"),
+            "right_shoulder_yaw_motor",
+        ),
+        (
+            arm_sleeve("left", "upper"),
+            "left_shoulder_yaw_motor",
+        ),
+        (arm_sleeve("right", "forearm"), "Left_Hand"),
+        (arm_sleeve("left", "forearm"), "hand_right"),
+        (chibi_hand("right"), "Left_Hand"),
+        (chibi_hand("left"), "hand_right"),
+    ]
+    for local_shape, link_name in moving_cosmetics:
+        placed = copy.copy(local_shape).moved(
+            location_from_transform(transforms[link_name])
+        )
+        placed.label = local_shape.label
+        placed.color = CREAM
+        parts.append(placed)
+    parts.extend(servo_parts)
     assembly = Compound(
         label="ZEROTH01_ROUND_V1_ASSEMBLY",
         children=parts,

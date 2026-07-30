@@ -1,53 +1,295 @@
 {
-  "schema": "zeroth01.rl_mechanical.minimal_cosmetic_release_gate.v2",
-  "canonical_urdf": "generated/urdf/zeroth01_rl_round_v1.urdf",
-  "canonical_mjcf": "generated/mujoco/zeroth01_rl_round_v1.xml",
-  "nominal_mass_kg": 4.586857125474,
-  "moving_joint_count": 16,
-  "file_count": 242,
-  "largest_file_bytes": 29900411,
-  "oversized_files": [],
-  "machine_local_path_files": [],
-  "missing_readme_links": [],
-  "checks": {
-    "canonical_urdf_exists": true,
-    "canonical_mjcf_exists": true,
-    "urdf_link_count_26": true,
-    "urdf_joint_count_25": true,
-    "urdf_moving_joint_count_16": true,
-    "urdf_head_and_torso_electronics_links_present": true,
-    "colored_markers_not_in_urdf": true,
-    "urdf_mass_matches_round_manifest": true,
-    "electronics_rl_layout_gate": true,
-    "component_identity_has_16_stable_ids": true,
-    "old_servo_step_is_quarantined": true,
-    "exact_head_vendor_assets_present": true,
-    "mjcf_sensor_count_8": true,
-    "mjcf_camera_count_1": true,
-    "mujoco_full_gate_pass": true,
-    "mujoco_smoke_1000_steps_pass": true,
-    "print_mesh_topology_pass_11": true,
-    "print_load_path_not_overclaimed": true,
-    "mesh_path_portability_pass": true,
-    "solidworks_portable_gate_pass": true,
-    "solidworks_minimal_component_accounting": true,
-    "solidworks_no_replacement_servo_cage_or_hub": true,
-    "solidworks_transform_and_motion_pass": true,
-    "solidworks_part_count_36": true,
-    "solidworks_assembly_present": true,
-    "selected_cad_step_part_set_19": true,
-    "cosmetic_electronics_step_present": true,
-    "final_print_stl_count_11": true,
-    "obsolete_replacement_servo_release_removed": true,
-    "vendor_step_checksum": true,
-    "static_torque_report_is_current": true,
-    "walking_is_not_overclaimed": true,
-    "readmes_do_not_claim_print_and_walk": true,
-    "no_git_blob_at_or_over_100_mib": true,
-    "no_machine_local_paths_in_release_data": true,
-    "single_line_rl_prompt": true,
-    "single_line_one_seq_prompt": true,
-    "readme_local_links_resolve": true
-  },
-  "overall": "PASS"
+  "schema": "zeroth01.release_gate.v3",
+  "release": "round_v3_white_eva_small_ears_round_arms_chibi_hands",
+  "check_count": 45,
+  "failure_count": 0,
+  "overall": "PASS",
+  "checks": [
+    {
+      "check": "required_release_files",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "solidworks_component_contract",
+      "status": "PASS",
+      "actual": {},
+      "expected": {
+        "component_count": 57,
+        "source_link_component_count": 17,
+        "round_overlay_component_count": 24,
+        "diagnostic_blue_sts3250_c001_component_count": 16,
+        "diagnostic_blue_servo_part_reuse_count": 1,
+        "nonphysical_colored_joint_marker_count": 0,
+        "explicit_replacement_sts3250_component_count": 0,
+        "new_servo_cage_component_count": 0,
+        "new_child_output_hub_component_count": 0
+      }
+    },
+    {
+      "check": "solidworks_review_gate",
+      "status": "PASS",
+      "actual": "PASS_WHITE_EVA_STYLE_AND_16_BLUE_SERVO_VISUALIZATION_WITH_HARDWARE_LIMITATIONS",
+      "expected": "PASS_*"
+    },
+    {
+      "check": "portable_solidworks_unique_parts",
+      "status": "PASS",
+      "actual": 42,
+      "expected": 42
+    },
+    {
+      "check": "portable_solidworks_assemblies",
+      "status": "PASS",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "check": "solidworks_motion_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "solidworks_motion_component_count",
+      "status": "PASS",
+      "actual": 57,
+      "expected": 57
+    },
+    {
+      "check": "printable_stl_count",
+      "status": "PASS",
+      "actual": 15,
+      "expected": 15
+    },
+    {
+      "check": "print_report_part_count",
+      "status": "PASS",
+      "actual": 15,
+      "expected": 15
+    },
+    {
+      "check": "print_mesh_topology_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "print_mesh_row_contract",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "arm_and_hand_fit_case_count",
+      "status": "PASS",
+      "actual": 6,
+      "expected": 6
+    },
+    {
+      "check": "arm_and_hand_fit_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "arm_and_hand_zero_intersection",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "urdf_link_count",
+      "status": "PASS",
+      "actual": 26,
+      "expected": 26
+    },
+    {
+      "check": "urdf_joint_count",
+      "status": "PASS",
+      "actual": 25,
+      "expected": 25
+    },
+    {
+      "check": "urdf_moving_joint_count",
+      "status": "PASS",
+      "actual": 16,
+      "expected": 16
+    },
+    {
+      "check": "urdf_total_mass",
+      "status": "PASS",
+      "actual": 4.9973426167240005,
+      "expected": 4.997342616724
+    },
+    {
+      "check": "mjcf_actuator_count",
+      "status": "PASS",
+      "actual": 16,
+      "expected": 16
+    },
+    {
+      "check": "mjcf_sensor_count",
+      "status": "PASS",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "check": "mjcf_camera_count",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "check": "printed_overlay_mass",
+      "status": "PASS",
+      "actual": 1.2348707885249097,
+      "expected": 1.2348707885249097
+    },
+    {
+      "check": "nominal_electronics_mass",
+      "status": "PASS",
+      "actual": 0.667,
+      "expected": 0.667
+    },
+    {
+      "check": "nominal_total_mass_with_electronics",
+      "status": "PASS",
+      "actual": 4.997342616724909,
+      "expected": 4.997342616724
+    },
+    {
+      "check": "mujoco_full_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "mujoco_random_samples",
+      "status": "PASS",
+      "actual": 100000,
+      "expected": 100000
+    },
+    {
+      "check": "mujoco_random_collisions",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "mujoco_corner_samples",
+      "status": "PASS",
+      "actual": 65536,
+      "expected": 65536
+    },
+    {
+      "check": "mujoco_corner_collisions",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "mujoco_report_mass",
+      "status": "PASS",
+      "actual": 4.997342616724,
+      "expected": 4.997342616724
+    },
+    {
+      "check": "mujoco_smoke_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "rl_mesh_portability_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "sts3250_static_gravity_gate",
+      "status": "PASS",
+      "actual": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "sts3250_walking_claim_boundary",
+      "status": "PASS",
+      "actual": "UNVERIFIED: static gravity margin passes, but no trained gait rollout, torque-speed envelope, bus-voltage sag, thermal model, impact load, backlash or physical endurance data exists",
+      "expected": "UNVERIFIED_*"
+    },
+    {
+      "check": "poppy_eva_pinned_commit",
+      "status": "PASS",
+      "actual": "Source: https://github.com/poppy-project/Poppy-eva-head-design\nPinned commit: 844654a0b29fb771c23b7400997d1de3d42e0e2e\nLicense: CC BY-SA 4.0",
+      "expected": "pinned commit present"
+    },
+    {
+      "check": "poppy_eva_license_notice",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "waveshare_selected_display_notice",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "one_line_prompt",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "check": "prompt_copy_matches",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "prompt_mentions_fixed_chibi_hand",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "rejected_assets_absent",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "no_machine_local_paths",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "no_file_over_100_mib",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "manifest_path_set",
+      "status": "PASS",
+      "actual": {
+        "missing": [],
+        "stale": []
+      },
+      "expected": {
+        "missing": [],
+        "stale": []
+      }
+    },
+    {
+      "check": "manifest_hashes",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ]
 }

@@ -1,30 +1,43 @@
 {
-  "schema": "zeroth01.head_electronics.vendor_cad.provenance.v1",
-  "assets": [
-    {
-      "local_file": "source_assets/vendor/head_electronics/Waveshare_DualEye_LCD_Module.step",
-      "product": "Waveshare 0.71inch DualEye LCD Module",
-      "source_url": "https://www.waveshare.com/wiki/0.71inch_DualEye_LCD_Module",
-      "measured_bbox_mm": [
-        51.0853,
-        20.1119,
-        1.8615
-      ],
-      "selected_assembly_usage": "EXACT_VENDOR_STEP"
-    },
-    {
-      "local_file": "source_assets/vendor/head_electronics/Raspberry_Pi_Camera_Module_3_Wide.step",
-      "product": "Raspberry Pi Camera Module 3 Wide",
-      "source_url": "https://www.raspberrypi.com/products/camera-module-3/",
-      "measured_bbox_mm": [
-        25.0,
-        23.862,
-        11.4
-      ],
-      "selected_assembly_usage": "OFFICIAL_MEASURED_ENVELOPE",
-      "exact_step_retained": true,
-      "simplification_reason": "The exact supplier model contains 631 solids and stalled automated SolidWorks import; the exact file remains available for interface review."
-    }
+  "schema": "zeroth01.head_electronics.vendor_cad.provenance.v2",
+  "selected_display": {
+    "product": "Waveshare 4.3inch DSI QLED",
+    "source_url": "https://www.waveshare.com/product/4.3inch-dsi-qled.htm",
+    "controlled_envelope_mm": [
+      105.5,
+      8.0,
+      67.2
+    ],
+    "resolution_px": [
+      800,
+      480
+    ],
+    "exact_supplier_step_claimed": false,
+    "selected_assembly_usage": "CONTROLLED_PACKAGING_ENVELOPE_REQUIRES_PRINT_FIT_TEST"
+  },
+  "camera": {
+    "local_file": "source_assets/vendor/head_electronics/Raspberry_Pi_Camera_Module_3_Wide.step",
+    "product": "Raspberry Pi Camera Module 3 Wide",
+    "source_url": "https://www.raspberrypi.com/products/camera-module-3/",
+    "measured_bbox_mm": [
+      25.0,
+      23.862,
+      11.4
+    ],
+    "selected_assembly_usage": "EXACT_REVIEW_STEP_AND_SIMPLIFIED_CONTROLLED_ENVELOPE"
+  },
+  "tof": {
+    "product": "ST VL53L5CX",
+    "source_url": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l5cx.html",
+    "carrier_envelope_mm": [
+      12.0,
+      10.0,
+      3.0
+    ],
+    "carrier_status": "ASSUMED_CUSTOM_CARRIER_NOT_YET_ROUTED"
+  },
+  "historical_not_selected": [
+    "Waveshare 0.71inch DualEye LCD Module"
   ],
   "rights_note": "Vendor CAD is redistributed for interface review with source attribution; vendor marks and third-party rights remain with their respective owners."
 }

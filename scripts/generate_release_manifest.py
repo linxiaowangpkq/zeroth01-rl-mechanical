@@ -7,51 +7,48 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "RELEASE_MANIFEST.json"
-EXCLUDED_PARTS = {".git", "__pycache__"}
+EXCLUDED = {
+    "RELEASE_MANIFEST.json",
+    "reports/release_gate.json",
+}
 
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
     return digest.hexdigest()
 
 
-def main() -> int:
-    files = []
+def main() -> None:
+    rows: list[dict[str, object]] = []
     for path in sorted(ROOT.rglob("*")):
-        if not path.is_file() or path == OUTPUT:
+        if not path.is_file() or ".git" in path.parts:
             continue
-        relative = path.relative_to(ROOT)
-        if any(part in EXCLUDED_PARTS for part in relative.parts):
+        relative = path.relative_to(ROOT).as_posix()
+        if relative in EXCLUDED:
             continue
-        files.append(
+        rows.append(
             {
-                "path": relative.as_posix(),
+                "path": relative,
                 "bytes": path.stat().st_size,
                 "sha256": sha256(path),
             }
         )
     payload = {
-        "schema": "zeroth01.rl_mechanical.release_manifest.v1",
-        "canonical_urdf": "generated/urdf/zeroth01_rl_round_v1.urdf",
-        "canonical_mjcf": "generated/mujoco/zeroth01_rl_round_v1.xml",
-        "file_count_excluding_manifest": len(files),
-        "total_bytes_excluding_manifest": sum(item["bytes"] for item in files),
-        "files": files,
+        "schema": "zeroth01.release_manifest.v3",
+        "release": "round_v3_white_eva_small_ears_round_arms_chibi_hands",
+        "excluded_generated_files": sorted(EXCLUDED),
+        "file_count": len(rows),
+        "files": rows,
     }
     OUTPUT.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
-        newline="\n",
     )
-    print(
-        f"MANIFEST={OUTPUT} FILES={len(files)} "
-        f"BYTES={payload['total_bytes_excluding_manifest']}"
-    )
-    return 0
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()

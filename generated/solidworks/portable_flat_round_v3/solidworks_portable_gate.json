@@ -1,0 +1,66 @@
+{
+  "schema": "zeroth01.solidworks.white_eva_visible_servo_round_v3.gate.v1",
+  "solidworks_revision": "33.0.0",
+  "open_first_xray_assembly": "generated/solidworks/portable_flat_round_v3/OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM",
+  "assembly_bytes": 13984407,
+  "opaque_white_assembly": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM",
+  "opaque_white_assembly_bytes": 13872020,
+  "opaque_white_assembly_save_code": 0,
+  "xray_assembly_save_code": 0,
+  "display_mode_command": "ViewDisplayShaded",
+  "native_brep_part_count": 25,
+  "component_count": 57,
+  "expected_component_count": 57,
+  "source_link_component_count": 17,
+  "round_overlay_component_count": 24,
+  "nonphysical_colored_joint_marker_count": 0,
+  "diagnostic_blue_sts3250_c001_component_count": 16,
+  "diagnostic_blue_servo_part_reuse_count": 1,
+  "explicit_replacement_sts3250_component_count": 0,
+  "new_servo_cage_component_count": 0,
+  "new_child_output_hub_component_count": 0,
+  "baseline_mechanism_policy": "PRESERVE_FROZEN_ASSEMBLED_ZEROTH01_LINK_GEOMETRY",
+  "transform_gate": "PASS",
+  "servo_visualization_axis_gate": "PASS",
+  "baseline_joint_transform_semantics_gate": "PASS",
+  "transmission_evidence": "reports/solidworks_round_v1_transmission_semantics.csv",
+  "transmission_angle_tolerance_deg": 1e-05,
+  "transmission_position_tolerance_mm": 1e-06,
+  "mujoco_collision_motion_gate": "PASS",
+  "snapshots": {
+    "isometric": {
+      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_white_isometric.png",
+      "gate": "PASS"
+    },
+    "robot_front": {
+      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_white_front.png",
+      "gate": "PASS"
+    },
+    "robot_side": {
+      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_white_side.png",
+      "gate": "PASS"
+    }
+  },
+  "blue_servo_xray_snapshots": {
+    "blue_servos_xray_front": {
+      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_xray_front.png",
+      "gate": "PASS"
+    },
+    "blue_servos_xray_isometric": {
+      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_xray_isometric.png",
+      "gate": "PASS"
+    },
+    "blue_servos_xray_side": {
+      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_xray_side.png",
+      "gate": "PASS"
+    }
+  },
+  "motion_gif": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_motion.gif",
+  "motion_gif_gate": "PASS",
+  "motion_evidence_reused_after_geometry_only_refresh": true,
+  "native_mate_motion_study": "NOT_CLAIMED: the 17 upstream link meshes are imported surface bodies without stable mate faces; CLI FK drives Transform2 while the cosmetic shells and 16 blue diagnostic servo bodies are native B-Rep components",
+  "head_design_provenance": "Poppy Eva head mounting/split topology, CC-BY-SA-4.0, rebuilt parametrically for the frozen Zeroth-01 neck and a Waveshare 4.3-inch DSI/QLED controlled envelope",
+  "blue_servo_semantics": "ONE_SEPARATE_DIMENSION_CONTROLLED_SLDPRT_REUSED_16_TIMES; PARENT_FRAME_VISUALIZATION_ONLY; MASS_AND_COLLISION_EXCLUDED",
+  "hardware_interference_signoff": "BASELINE_ASSEMBLED_GEOMETRY_MOTION_GATE_PASS; BLUE_DIAGNOSTIC_BODIES_INTENTIONALLY_OCCUPY_THE_EXISTING_AGGREGATE_LINK_VOLUME_AND_ARE_NOT_A_NEW_PHYSICAL_INSTALLATION; NO_CAGE_OR_OUTPUT_DISC_ADDED; PHYSICAL_MOUNT_TOLERANCE_AND_CABLE_SIGNOFF_STILL_REQUIRED",
+  "overall_review_gate": "PASS_WHITE_EVA_STYLE_AND_16_BLUE_SERVO_VISUALIZATION_WITH_HARDWARE_LIMITATIONS"
+}

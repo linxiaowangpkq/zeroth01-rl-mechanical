@@ -1,5 +1,5 @@
 {
-  "schema": "zeroth01.round_v2.electronics_layout.source.v2",
+  "schema": "zeroth01.round_v3.electronics_layout.source.v3",
   "coordinate_convention": {
     "reference_link": "Torso",
     "units": "m_kg_rad",
@@ -8,30 +8,32 @@
     "robot_left_axis": "+X",
     "camera_optical_convention": "REP-103 optical frame: +Z forward, +X image right, +Y image down"
   },
-  "status": "HEAD_VENDOR_SELECTED_TORSO_PACKAGING_ASSUMED",
+  "status": "POPPY_EVA_DERIVED_HEAD_WAVESHARE_SCREEN_SELECTED_TORSO_PACKAGING_ASSUMED",
   "modules": {
     "eye_display_module": {
       "parent_link": "Torso",
-      "center_xyz_m": [0.0, -0.042, 0.115],
+      "center_xyz_m": [0.0, -0.025, 0.105],
       "rpy_rad": [1.5707963267948966, 0.0, 0.0],
-      "size_xyz_m": [0.0510853, 0.0018615, 0.0201119],
-      "nominal_mass_kg": 0.011,
-      "mass_range_kg": [0.01, 0.012],
-      "placement": "behind the compound-curved face visor; two 160x160 round IPS displays and supplied convex lenses",
-      "function": "Waveshare 0.71inch DualEye LCD Module, GC9D01, 4-wire SPI",
+      "size_xyz_m": [0.1055, 0.008, 0.0672],
+      "nominal_mass_kg": 0.129,
+      "mass_range_kg": [0.11, 0.15],
+      "placement": "behind the continuous black visor in a removable Poppy-Eva-derived front shell and display clamp",
+      "function": "Waveshare 4.3inch DSI QLED, 800x480 capacitive display",
       "vendor_selected": true,
-      "source_url": "https://www.waveshare.com/wiki/0.71inch_DualEye_LCD_Module",
-      "cad_source": "source_assets/vendor/head_electronics/Waveshare_DualEye_LCD_Module.step",
-      "confidence": "VENDOR_DIMENSIONS_AND_EXACT_STEP"
+      "source_url": "https://www.waveshare.com/product/4.3inch-dsi-qled.htm",
+      "cad_source": "controlled envelope; open mounting topology reference at source_assets/open_source_head/Poppy-eva-head-design",
+      "open_cad_reference": "https://github.com/poppy-project/Poppy-eva-head-design",
+      "license": "CC-BY-SA-4.0",
+      "confidence": "VENDOR_PRODUCT_SELECTION_AND_MASS; THICKNESS_ENVELOPE_ASSUMED; MOUNT_REQUIRES_PRINT_FIT_TEST"
     },
     "camera_module": {
       "parent_link": "Torso",
-      "center_xyz_m": [0.0, -0.04, 0.091],
+      "center_xyz_m": [0.0, -0.03, 0.151],
       "rpy_rad": [-1.5707963267948966, 0.0, 0.0],
       "size_xyz_m": [0.025, 0.0114, 0.023862],
       "nominal_mass_kg": 0.004,
       "mass_range_kg": [0.0035, 0.0045],
-      "placement": "centered below the eye display behind the curved visor",
+      "placement": "centered in the white forehead above the screen, behind a 5.4 mm optical aperture",
       "function": "Raspberry Pi Camera Module 3 Wide, IMX708 autofocus, 120 degree diagonal FoV",
       "vendor_selected": true,
       "source_url": "https://www.raspberrypi.com/products/camera-module-3/",
@@ -40,12 +42,12 @@
     },
     "tof_module": {
       "parent_link": "Torso",
-      "center_xyz_m": [0.031, -0.042, 0.092],
+      "center_xyz_m": [0.026, -0.034, 0.151],
       "rpy_rad": [1.5707963267948966, 0.0, 0.0],
       "size_xyz_m": [0.012, 0.003, 0.01],
       "nominal_mass_kg": 0.002,
       "mass_range_kg": [0.001, 0.004],
-      "placement": "right side of the camera with a dedicated clear visor window",
+      "placement": "right side of the forehead camera with a dedicated 8x5 mm aperture",
       "function": "ST VL53L5CX 8x8 multi-zone ToF on a custom 12x10 mm carrier",
       "vendor_selected": "SENSOR_SELECTED_CARRIER_PCB_NOT_YET_ROUTED",
       "source_url": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l5cx.html",
@@ -125,6 +127,7 @@
     }
   },
   "required_hardware_overrides": [
+    "print one Poppy-Eva-derived head fit coupon and confirm the selected Waveshare 4.3inch DSI QLED outer dimensions, connector keep-outs and clamp preload",
     "freeze exact compute board, torso IMU, cells, BMS, regulator and connectors",
     "route and review the VL53L5CX carrier PCB and flex/cable exits",
     "weigh every installed module and identify its mounted center of mass",

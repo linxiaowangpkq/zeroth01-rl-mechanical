@@ -1,66 +1,61 @@
-# Zeroth-01 minimal-cosmetic RL mechanical package
+# Zeroth-01 white Eva-style 16-DoF RL mechanical package
 
-This revision preserves the assembled, collision-checked Zeroth-01 17-link mechanism as the only mechanical authority. It adds a rounded ellipsoid head, compound-curved visor, rounded torso/pelvis shells, thicker soles, head electronics envelopes, and stable colored annotations without altering any joint axis, parent/child relation, zero pose, or guarded limit.
+This revision keeps the previously validated Zeroth-01 17-link / 16-moving-joint mechanism and makes only reversible exterior changes: a white rounded body, thicker soles, a Poppy-Eva-derived screen head with two small ears, rounded arm sleeves, and fixed chibi mitten palms.
 
-## Canonical RL files
+## Open first
 
-- [URDF](generated/urdf/zeroth01_rl_round_v1.urdf)
-- [MuJoCo MJCF](generated/mujoco/zeroth01_rl_round_v1.xml)
-- [Actuator metadata](generated/config/zeroth01_actuator_metadata.json)
-- [Mass properties](generated/config/round_v1_mass_properties.json)
-- [Electronics and sensor layout](generated/config/round_v1_electronics_sensor_layout.json)
-- [Collision policy](generated/config/zeroth01_collision_policy.json)
-- [Joint/servo frames](reports/joint_servo_frames.csv)
-- [MuJoCo validation](reports/mujoco_round_v1_gate.json)
-- [SolidWorks validation](reports/solidworks_round_v1_gate.json)
-- [One-line RL handoff](one-seq.md)
+| Purpose | File |
+|---|---|
+| Opaque white SolidWorks assembly | `generated/solidworks/round_v1/ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM` |
+| X-ray SolidWorks assembly with all motors visible | `generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM` |
+| One reusable blue servo part | `generated/solidworks/round_v1/parts/ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.SLDPRT` |
+| STEP review assembly | `generated/cad/round_v1/ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_ASSEMBLY.step` |
+| RL URDF | `generated/urdf/zeroth01_rl_round_v1.urdf` |
+| MuJoCo model | `generated/mujoco/zeroth01_rl_round_v1.xml` |
+| One-line RL prompt | `one-seq.md` |
 
-The canonical model has 26 MuJoCo bodies including world, 17 joints, 16 actuators, 8 sensors, and a nominal mass of `4.586857125474 kg`.
+## What changed
 
-## Mechanical interpretation
+- Replaced the earlier large bear treatment with two small solid ear tabs on a white egg-shaped front/back head shell.
+- Added one continuous rounded black screen with filled cyan display eyes; there are no protruding eye or muzzle solids.
+- Selected a Waveshare 4.3-inch DSI/QLED 800×480 display envelope; camera and ToF sit behind forehead windows.
+- Kept the rounded chest/pelvis and 8 mm thicker sole concept.
+- Added removable rounded upper-arm and forearm sleeves plus fixed non-dexterous chibi mitten palms.
+- Replaced the old colored joint disks with one separate blue STS3250-C001 diagnostic `.SLDPRT`, reused at S01–S16.
 
-The SolidWorks review assembly contains 51 components:
+The servo review part is constrained to `45.22 × 24.72 × 36.5 mm`. Its local +Z output axis is collinear with each canonical URDF joint axis and its shaft origin is coincident with the joint origin.
 
-- 17 unchanged source links;
-- 18 cosmetic/electronics overlays;
-- 16 nonphysical S01–S16 colored joint-position markers.
+## Important semantics
 
-There are zero replacement STS3250 bodies, cages, gears, or output hubs in the selected assembly. The colored markers carry no mass, collision, or transmission semantics and must not be imported into RL.
+The 16 blue servo instances are visibility overlays, not sixteen extra robot bodies. They are excluded from URDF visual/collision/inertial data and their mass is not added again. The upstream aggregate link meshes remain the mechanical baseline.
 
-The archived vendor STEP identifies itself as `ST-3235M-20211119-A_ASM`, not the current STS3250-C001. It is quarantined as dimensional evidence only. Current official C001 dimensions and performance metadata are recorded in the package, but physical installation still requires a traceable C001 CAD model or real-part metrology.
+This repository does not claim that the blue bodies prove a manufacturable mount. Exact C001 mounting ears, connector keep-outs, fasteners, bearings, cable routing, tolerances, and physical interference still require a traceable native CAD model or measured hardware.
 
-## Visual evidence
+## Current validated model
 
-![S01-S16 joint identity and colors](snapshots/solidworks/round_v1/zeroth01_round_v2_joint_identity_front.png)
+- URDF: 26 links, 25 joints, 16 moving joints.
+- MuJoCo: 16 actuators, 8 sensors, one head camera.
+- Nominal total mass: `4.997342616724 kg`.
+- MuJoCo 1000-step finite-state / mass-consistency smoke test: `PASS`.
+- Fifteen selected printable meshes: watertight, winding-consistent, zero boundary/nonmanifold edges, STEP/STL volume error ≤0.5%: `PASS`.
+- Six arm-sleeve/palm fit checks against conservative source-link convex hulls: `0 mm³` intersection: `PASS`.
+- 100,000 random poses and all 65,536 joint-limit corner combinations: zero reported self-collision samples.
+- All 16 diagnostic servo axes: origin error `0 mm`; collinearity error below `0.000002°`: `PASS`.
 
-![Electronics locations and colors](snapshots/solidworks/round_v1/zeroth01_round_v2_electronics_annotated_front.png)
+See `DESIGN_LEDGER.md` and `reports/` for the assumption and gate boundary.
 
-![12-frame SolidWorks motion evidence](snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif)
+## Open-source head provenance
 
-## Validation status
+The head topology is derived from the official [Poppy Eva head design](https://github.com/poppy-project/Poppy-eva-head-design), commit `844654a0b29fb771c23b7400997d1de3d42e0e2e`, licensed CC BY-SA 4.0. It was rebuilt parametrically around Zeroth-01 shoulder keep-outs rather than scaling the source STL.
 
-- Neutral and standing pose: pass.
-- 16 joints × 101 axis samples: pass.
-- 100,000 random configurations: zero self-collision samples.
-- 65,536 limit-corner configurations: zero self-collision samples.
-- Finite dynamic response and URDF/MJCF mass agreement: pass.
-- 27 URDF and 27 MJCF mesh references, case-exact and portable: pass.
-- 11 printable shell/fit STL meshes: watertight and manifold, with STEP/STL volume error at or below 0.5%.
-- 12-frame SolidWorks motion GIF: pass.
-- 100,000 guarded quasi-static gravity samples: worst `0.339869 N·m` at `right_hip_pitch`, below the `1.569064 N·m` manufacturer-rated point; dynamic walking remains unverified.
+The selected display reference is the official [Waveshare 4.3inch DSI QLED](https://www.waveshare.com/product/4.3inch-dsi-qled.htm).
 
-This is discrete mesh/analytic-proxy evidence. It is not continuous collision proof and does not sign off cables, fasteners, tolerances, flexible-cover deformation, structural strength, or thermal endurance.
+![White Eva-style review assembly with small ears and chibi palms](snapshots/solidworks/round_v1/zeroth01_round_v3_white_front.png)
 
-## Hardware readiness
+![All 16 blue servo bodies](snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_annotated_front.png)
 
-The package is ready for RL simulation and cosmetic fit printing. It is **not** a claim that the entire robot can be printed, assembled, and walked immediately. Production load paths, bearings, screws/inserts, harnesses, final electronics, tolerances, and per-servo ID/zero/direction/backlash/thermal calibration remain open.
+![Motion review](snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_motion.gif)
 
-Use `1.2552512 N·m` as the initial continuous-torque reference. Do not use the manufacturer stall torque as a continuous PPO action limit. The original link inertias already aggregate the mechanism and servo mass; do not add sixteen extra 74.5 g servo bodies.
+## Hardware gate
 
-Chinese details:
-
-- [设计与结果](README_zh.md)
-- [装配指南](ASSEMBLY_GUIDE_zh.md)
-- [打印/整机边界](PRINT_AND_ASSEMBLY_READINESS_zh.md)
-- [RL 交接](RL_ROUND_V1_HANDOFF_zh.md)
-- [设计决策](DESIGN_LEDGER.md)
+Use `1.2552512 N·m` as the initial continuous-torque reference; never use stall torque as the PPO continuous action limit. The palms are fixed cosmetic shells, not dexterous hands. Hardware walking remains blocked until printed/display fit checks, exact electronics, per-link weighing, servo ID/zero/direction calibration, harness sweep, dual-leg rig, and thermal tests are complete.

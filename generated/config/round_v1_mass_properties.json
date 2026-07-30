@@ -7,8 +7,10 @@
     "scope": "CAD material volume at nominal density; excludes fasteners, adhesive, wiring and slicer/process variation"
   },
   "baseline_total_mass_kg": 3.0954718281999996,
-  "installed_printed_overlay_mass_kg": 0.942385297268903,
-  "round_v1_nominal_total_mass_kg": 4.037857125468903,
+  "installed_printed_overlay_mass_kg": 1.2348707885249097,
+  "round_v1_nominal_total_mass_kg": 4.330342616724909,
+  "nominal_electronics_mass_kg": 0.667,
+  "nominal_total_mass_with_electronics_kg": 4.997342616724909,
   "parts": {
     "chest_front": {
       "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CHEST_FRONT.step",
@@ -65,56 +67,56 @@
       "gate": "PASS"
     },
     "head_front": {
-      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_HEAD_FRONT.step",
-      "classification": "cosmetic_non_load_bearing_shell",
-      "volume_mm3": 67149.85750651144,
-      "nominal_mass_kg": 0.08528031903326952,
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_HEAD_FRONT.step",
+      "classification": "poppy_eva_derived_cosmetic_non_load_bearing_shell",
+      "volume_mm3": 57865.627770567546,
+      "nominal_mass_kg": 0.07348934726862077,
       "com_m": [
-        6.331706252217778e-07,
-        -0.017521093883541717,
-        0.11162138730193932
+        1.2481441514310526e-05,
+        -0.01789263249023276,
+        0.11728367581202975
       ],
       "inertia_kg_m2_at_com": {
-        "ixx": 8.802981566175634e-05,
-        "iyy": 0.00026651161322366524,
-        "izz": 0.00019861102979385785,
-        "ixy": -2.618687036254638e-09,
-        "ixz": -2.6869854330217294e-09,
-        "iyz": -9.0932150579369e-06
+        "ixx": 0.00012276471110771748,
+        "iyy": 0.00029028462191283387,
+        "izz": 0.00018320710603498348,
+        "ixy": 1.1352144130850589e-08,
+        "ixz": 4.800376886746599e-08,
+        "iyz": -3.175121812129547e-06
       },
       "installed_link": "Torso",
       "installed_quantity": 1,
       "inertia_eigenvalues_kg_m2": [
-        8.802981555109727e-05,
-        0.0001974143605901941,
-        0.00026770828253798814
+        0.00012276467183265218,
+        0.00018311307689037462,
+        0.00029037869033250827
       ],
       "gate": "PASS"
     },
     "head_back": {
-      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_HEAD_BACK.step",
-      "classification": "cosmetic_non_load_bearing_shell",
-      "volume_mm3": 87294.42913278667,
-      "nominal_mass_kg": 0.11086392499863906,
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_HEAD_BACK.step",
+      "classification": "poppy_eva_derived_cosmetic_non_load_bearing_shell",
+      "volume_mm3": 84928.26921758188,
+      "nominal_mass_kg": 0.10785890190632898,
       "com_m": [
-        -5.929336165276271e-05,
-        0.01410679876215289,
-        0.11384898390521031
+        7.4659665564909416e-06,
+        0.019824507888143317,
+        0.11317786224167962
       ],
       "inertia_kg_m2_at_com": {
-        "ixx": 0.00010579066332319723,
-        "iyy": 0.00031973165380451207,
-        "izz": 0.0002494410350020669,
-        "ixy": -6.462378844582733e-08,
-        "ixz": 8.350584778663565e-08,
-        "iyz": 1.2119895751343901e-05
+        "ixx": 0.00015674738267997942,
+        "iyy": 0.00034330370804552476,
+        "izz": 0.00023429890307002024,
+        "ixy": 2.1688855428284005e-08,
+        "ixz": -3.657406406003803e-08,
+        "iyz": 9.791304241214797e-06
       },
       "installed_link": "Torso",
       "installed_quantity": 1,
       "inertia_eigenvalues_kg_m2": [
-        0.00010579059065601587,
-        0.0002474100064810492,
-        0.0003217627549927114
+        0.00015674736169703408,
+        0.00023342640699406924,
+        0.00034417622510442107
       ],
       "gate": "PASS"
     },
@@ -172,57 +174,219 @@
       ],
       "gate": "PASS"
     },
-    "muzzle_badge": {
-      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_MUZZLE_BADGE.step",
-      "classification": "cosmetic_non_load_bearing_badge",
-      "volume_mm3": 4605.654076972033,
-      "nominal_mass_kg": 0.005849180677754482,
+    "screen_ui_reference": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_FACE_UI.step",
+      "classification": "nonphysical_screen_pixels_visual_only",
+      "volume_mm3": 423.72017508124344,
+      "nominal_mass_kg": 0.0005381246223531792,
       "com_m": [
-        -4.443761607543303e-06,
-        -0.04800000000000004,
-        0.091
+        -1.777504643165079e-05,
+        -0.040450000000000014,
+        0.10900000000000001
       ],
       "inertia_kg_m2_at_com": {
-        "ixx": 1.7030457909232495e-07,
-        "iyy": 6.123165305199972e-07,
-        "izz": 5.002556631311532e-07,
-        "ixy": -2.5770793854462676e-21,
-        "ixz": 1.5304522094083947e-23,
-        "iyz": 0.0
+        "ixx": 1.4228866331480712e-08,
+        "iyy": 3.3193888286909134e-07,
+        "izz": 3.177748534374775e-07,
+        "ixy": -1.2647888070205224e-22,
+        "ixz": 1.3499743545253294e-22,
+        "iyz": -2.956949174404144e-22
       },
-      "installed_link": "Torso",
-      "installed_quantity": 1,
+      "installed_link": null,
+      "installed_quantity": 0,
       "inertia_eigenvalues_kg_m2": [
-        1.7030457909232495e-07,
-        5.002556631311533e-07,
-        6.123165305199971e-07
+        1.4228866331480712e-08,
+        3.1777485343747753e-07,
+        3.319388828690914e-07
       ],
       "gate": "PASS"
     },
     "visor_badge": {
-      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_VISOR_BADGE.step",
-      "classification": "cosmetic_non_load_bearing_badge",
-      "volume_mm3": 20223.008356160717,
-      "nominal_mass_kg": 0.025683220612324108,
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_VISOR.step",
+      "classification": "continuous_black_screen_cosmetic_overlay",
+      "volume_mm3": 36066.548245744096,
+      "nominal_mass_kg": 0.045804516272094996,
       "com_m": [
-        -1.1109404019621593e-05,
-        -0.046500000000000034,
-        0.11100000000000002
+        -1.2419434695307254e-18,
+        -0.038,
+        0.10499999999999998
       ],
       "inertia_kg_m2_at_com": {
-        "ixx": 2.8004570342896327e-06,
-        "iyy": 1.5639641693068453e-05,
-        "izz": 1.3019636808945794e-05,
-        "ixy": -2.3581669665873046e-20,
-        "ixz": 3.4651748137548564e-22,
-        "iyz": -1.892447471618652e-20
+        "ixx": 2.206371948979911e-05,
+        "iyy": 7.365752446399737e-05,
+        "izz": 5.171595035092389e-05,
+        "ixy": 2.6982161216437815e-21,
+        "ixz": 1.3040607882430775e-21,
+        "iyz": 7.569789886474608e-20
       },
       "installed_link": "Torso",
       "installed_quantity": 1,
       "inertia_eigenvalues_kg_m2": [
-        2.8004570342896327e-06,
-        1.3019636808945794e-05,
-        1.563964169306845e-05
+        2.206371948979911e-05,
+        5.171595035092389e-05,
+        7.365752446399735e-05
+      ],
+      "gate": "PASS"
+    },
+    "right_upper_arm_sleeve": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.step",
+      "classification": "cosmetic_non_load_bearing_printed_sleeve",
+      "volume_mm3": 27697.24932007718,
+      "nominal_mass_kg": 0.035175506636498016,
+      "com_m": [
+        -0.014999999998850816,
+        0.03199999999910635,
+        0.01969999999895071
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 2.1269922679840974e-05,
+        "iyy": 3.812206423174484e-05,
+        "izz": 2.453286149559599e-05,
+        "ixy": -5.440029501914978e-16,
+        "ixz": -6.537152267992495e-16,
+        "iyz": 6.042490154504775e-16
+      },
+      "installed_link": "right_shoulder_yaw_motor",
+      "installed_quantity": 1,
+      "inertia_eigenvalues_kg_m2": [
+        2.1269922679840974e-05,
+        2.4532861495595993e-05,
+        3.812206423174484e-05
+      ],
+      "gate": "PASS"
+    },
+    "left_upper_arm_sleeve": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.step",
+      "classification": "cosmetic_non_load_bearing_printed_sleeve",
+      "volume_mm3": 27697.2493200727,
+      "nominal_mass_kg": 0.035175506636492326,
+      "com_m": [
+        0.015000000001149226,
+        -0.03200000000089254,
+        -0.019700000001048715
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 2.1269922679838304e-05,
+        "iyy": 3.8122064231740707e-05,
+        "izz": 2.4532861495591012e-05,
+        "ixy": -5.437190830707549e-16,
+        "ixz": -6.518712732940912e-16,
+        "iyz": 6.038894504308699e-16
+      },
+      "installed_link": "left_shoulder_yaw_motor",
+      "installed_quantity": 1,
+      "inertia_eigenvalues_kg_m2": [
+        2.1269922679838304e-05,
+        2.4532861495591012e-05,
+        3.812206423174072e-05
+      ],
+      "gate": "PASS"
+    },
+    "right_forearm_sleeve": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.step",
+      "classification": "cosmetic_non_load_bearing_printed_sleeve",
+      "volume_mm3": 33411.17247797697,
+      "nominal_mass_kg": 0.04243218904703075,
+      "com_m": [
+        1.0865116760137073e-11,
+        0.026999999997643936,
+        0.01839999999591956
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 2.109670839149556e-05,
+        "iyy": 2.8523582820835668e-05,
+        "izz": 1.930755632458349e-05,
+        "ixy": -6.759214559564779e-15,
+        "ixz": -9.81136496256332e-15,
+        "iyz": 1.3329548388719555e-15
+      },
+      "installed_link": "Left_Hand",
+      "installed_quantity": 1,
+      "inertia_eigenvalues_kg_m2": [
+        1.930755632458349e-05,
+        2.109670839149556e-05,
+        2.8523582820835665e-05
+      ],
+      "gate": "PASS"
+    },
+    "left_forearm_sleeve": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.step",
+      "classification": "cosmetic_non_load_bearing_printed_sleeve",
+      "volume_mm3": 33411.17247797697,
+      "nominal_mass_kg": 0.04243218904703075,
+      "com_m": [
+        1.0865116760137073e-11,
+        0.026999999997643936,
+        0.01839999999591956
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 2.109670839149556e-05,
+        "iyy": 2.8523582820835668e-05,
+        "izz": 1.930755632458349e-05,
+        "ixy": -6.759214559564779e-15,
+        "ixz": -9.81136496256332e-15,
+        "iyz": 1.3329548388719555e-15
+      },
+      "installed_link": "hand_right",
+      "installed_quantity": 1,
+      "inertia_eigenvalues_kg_m2": [
+        1.930755632458349e-05,
+        2.109670839149556e-05,
+        2.8523582820835665e-05
+      ],
+      "gate": "PASS"
+    },
+    "right_chibi_hand": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.step",
+      "classification": "fixed_chibi_palm_cap_no_dexterous_fingers",
+      "volume_mm3": 54248.95765438528,
+      "nominal_mass_kg": 0.0688961762210693,
+      "com_m": [
+        0.0003179829458383551,
+        0.08116151046718274,
+        0.018361075192413312
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 3.07645485652112e-05,
+        "iyy": 4.279015458352064e-05,
+        "izz": 3.245707753048085e-05,
+        "ixy": 1.1309972196207434e-07,
+        "ixz": 7.365177671053858e-08,
+        "iyz": -1.3844928329846411e-08
+      },
+      "installed_link": "Left_Hand",
+      "installed_quantity": 1,
+      "inertia_eigenvalues_kg_m2": [
+        3.0760276961806445e-05,
+        3.246026879722889e-05,
+        4.279123492017736e-05
+      ],
+      "gate": "PASS"
+    },
+    "left_chibi_hand": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.step",
+      "classification": "fixed_chibi_palm_cap_no_dexterous_fingers",
+      "volume_mm3": 54250.239010100915,
+      "nominal_mass_kg": 0.06889780354282815,
+      "com_m": [
+        -0.0003184923066404488,
+        0.08116138893081579,
+        0.018360999972492305
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 3.076464406484924e-05,
+        "iyy": 4.2790988225053826e-05,
+        "izz": 3.24579555233674e-05,
+        "ixy": -1.1327961112434719e-07,
+        "ixz": -7.37680204692768e-08,
+        "iyz": -1.3872950535209774e-08
+      },
+      "installed_link": "hand_right",
+      "installed_quantity": 1,
+      "inertia_eigenvalues_kg_m2": [
+        3.076036049127227e-05,
+        3.2461155374019274e-05,
+        4.2792071947978926e-05
       ],
       "gate": "PASS"
     },
@@ -280,35 +444,91 @@
       ],
       "gate": "PASS"
     },
-    "generic_joint_ring": {
-      "step_file": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_JOINT_RING.step",
-      "classification": "appearance_fit_check_coupon_not_installed",
-      "volume_mm3": 272.33838395439795,
-      "nominal_mass_kg": 0.0003458697476220854,
+    "sts3250_c001_blue_diagnostic": {
+      "step_file": "generated/cad/round_v1/parts/ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.step",
+      "classification": "solidworks_visibility_overlay_not_installed",
+      "volume_mm3": 38810.235819458554,
+      "nominal_mass_kg": 0.04928899949071236,
       "com_m": [
-        1.8972965541694096e-16,
-        7.132215362606372e-19,
-        -3.933378590017303e-20
+        -0.010031504128893158,
+        -1.4885347511546285e-12,
+        5.999087768386153e-05
       ],
       "inertia_kg_m2_at_com": {
-        "ixx": 1.3222600451592254e-08,
-        "iyy": 1.3222600451592562e-08,
-        "izz": 2.625843123946886e-08,
-        "ixy": -3.969340562181212e-24,
-        "ixz": -1.9563059791341565e-28,
-        "iyz": 1.2956559502977975e-27
+        "ixx": 7.512281823707867e-06,
+        "iyy": 1.3302370639575576e-05,
+        "izz": 1.0695226173919205e-05,
+        "ixy": 6.843857753864609e-18,
+        "ixz": 2.0253479883899801e-10,
+        "iyz": -1.0455313285638188e-15
       },
       "installed_link": null,
       "installed_quantity": 0,
       "inertia_eigenvalues_kg_m2": [
-        1.3222600451592254e-08,
-        1.3222600451592569e-08,
-        2.625843123946886e-08
+        7.51228181082032e-06,
+        1.0695226186806754e-05,
+        1.3302370639575576e-05
       ],
       "gate": "PASS"
     }
   },
   "link_overlays": {
+    "Left_Hand": {
+      "baseline": {
+        "mass_kg": 0.075184887,
+        "com_m": [
+          0.0011184952,
+          0.046132358,
+          0.018254412
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 5.6585944e-05,
+          "iyy": 1.4864722e-05,
+          "izz": 4.710315e-05,
+          "ixy": -2.4063655e-06,
+          "ixz": 0.0,
+          "iyz": 0.0
+        }
+      },
+      "printed_overlay_only": {
+        "mass_kg": 0.11132836526810005,
+        "com_m": [
+          0.0001967855135575424,
+          0.06051815110605568,
+          0.01837591116541101
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00012889242508465256,
+          "iyy": 7.131643236114109e-05,
+          "izz": 0.0001287984173664567,
+          "ixy": -3.3915104482783504e-07,
+          "ixz": 7.397679055189553e-08,
+          "iyz": 4.1515817350056294e-08
+        }
+      },
+      "combined": {
+        "mass_kg": 0.18651325226810006,
+        "com_m": [
+          0.0005683335820152708,
+          0.054719130307632965,
+          0.018326933943090686
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00019476643493982024,
+          "iyy": 8.621994229306157e-05,
+          "izz": 0.00018522709619200073,
+          "ixy": -2.150464913751939e-06,
+          "ixz": 7.900246247830103e-08,
+          "iyz": -3.692349777880296e-08
+        },
+        "inertia_eigenvalues_kg_m2": [
+          8.617734252627586e-05,
+          0.0001852264456301622,
+          0.00019480968526844436
+        ]
+      },
+      "gate": "PASS"
+    },
     "Torso": {
       "baseline": {
         "mass_kg": 1.5697539312,
@@ -327,40 +547,40 @@
         }
       },
       "printed_overlay_only": {
-        "mass_kg": 0.7713143265551599,
+        "mass_kg": 0.7707904466802176,
         "com_m": [
-          -8.855302056808293e-06,
-          0.002172600342447909,
-          0.011333607718975725
+          2.235520762418425e-06,
+          0.0028072711036832266,
+          0.011486420610894676
         ],
         "inertia_kg_m2_at_com": {
-          "ixx": 0.005385248295796442,
-          "iyy": 0.0064020079598395875,
-          "izz": 0.002068742552844142,
-          "ixy": -2.9173911723695458e-09,
-          "ixz": 7.798861001637375e-07,
-          "iyz": 0.0002592389594769154
+          "ixx": 0.005532860187329626,
+          "iyy": 0.0065372127194025425,
+          "izz": 0.0020887651055102917,
+          "ixy": 3.832885893163865e-08,
+          "ixz": -1.6741209180834435e-07,
+          "iyz": 0.0002168205776794146
         }
       },
       "combined": {
-        "mass_kg": 2.3410682577551603,
+        "mass_kg": 2.3405443778802173,
         "com_m": [
-          0.00042487838326642305,
-          0.003205207346992111,
-          0.0025244922171717304
+          0.00042862790611531543,
+          0.0034144488919097076,
+          0.0025728449849990874
         ],
         "inertia_kg_m2_at_com": {
-          "ixx": 0.011081832383759241,
-          "iyy": 0.013822565288419235,
-          "izz": 0.004625444149525579,
-          "ixy": 4.937829028280402e-06,
-          "ixz": -8.160804606247716e-05,
-          "iyz": 0.0006160389417577636
+          "ixx": 0.011230688491200585,
+          "iyy": 0.01395980966301912,
+          "izz": 0.004644656398329326,
+          "ixy": 5.196729758131371e-06,
+          "ixz": -8.25824463325177e-05,
+          "iyz": 0.0005693769433183531
         },
         "inertia_eigenvalues_kg_m2": [
-          0.00458333574637468,
-          0.01108286083873152,
-          0.013863645236597853
+          0.004608949023183415,
+          0.011231722474991147,
+          0.013994483054374476
         ]
       },
       "gate": "PASS"
@@ -476,9 +696,177 @@
         ]
       },
       "gate": "PASS"
+    },
+    "hand_right": {
+      "baseline": {
+        "mass_kg": 0.075183656,
+        "com_m": [
+          -0.0011185716,
+          0.046132566,
+          0.018254616
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 5.6585045e-05,
+          "iyy": 1.4864063e-05,
+          "izz": 4.7102936e-05,
+          "ixy": 2.4062028e-06,
+          "ixz": 0.0,
+          "iyz": 0.0
+        }
+      },
+      "printed_overlay_only": {
+        "mass_kg": 0.1113299925898589,
+        "com_m": [
+          -0.0001971025004252445,
+          0.060518377637995044,
+          0.01837586439786778
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00012889286849624928,
+          "iyy": 7.131727469447522e-05,
+          "izz": 0.0001287996516545449,
+          "ixy": 3.3969867212858876e-07,
+          "ixz": -7.409420662638336e-08,
+          "iyz": 4.159515144416845e-08
+        }
+      },
+      "combined": {
+        "mass_kg": 0.18651364858985892,
+        "com_m": [
+          -0.0005685467154778528,
+          0.054719456638652034,
+          0.018326989165922215
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00019476596450279982,
+          "iyy": 8.622010284353536e-05,
+          "izz": 0.00018522808431738235,
+          "ixy": 2.1510067051695484e-06,
+          "ixz": -7.910817728085805e-08,
+          "iyz": -3.668206634533161e-08
+        },
+        "inertia_eigenvalues_kg_m2": [
+          8.617748154962447e-05,
+          0.0001852274317993134,
+          0.00019480923831477964
+        ]
+      },
+      "gate": "PASS"
+    },
+    "left_shoulder_yaw_motor": {
+      "baseline": {
+        "mass_kg": 0.171459652,
+        "com_m": [
+          0.01495475586438801,
+          -0.03207058301892832,
+          -0.018101540546377845
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00013262990226591847,
+          "iyy": 6.071731649741009e-05,
+          "izz": 0.0001387561460545798,
+          "ixy": 4.2373954399027645e-05,
+          "ixz": 1.8300960471168456e-07,
+          "iyz": -3.9237987690711426e-07
+        }
+      },
+      "printed_overlay_only": {
+        "mass_kg": 0.035175506636492326,
+        "com_m": [
+          0.015000000001149226,
+          -0.03200000000089254,
+          -0.019700000001048715
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 2.1269922679838304e-05,
+          "iyy": 3.8122064231740707e-05,
+          "izz": 2.4532861495591012e-05,
+          "ixy": -5.437190830707549e-16,
+          "ixz": -6.518712732940912e-16,
+          "iyz": 6.038894504308699e-16
+        }
+      },
+      "combined": {
+        "mass_kg": 0.20663515863649232,
+        "com_m": [
+          0.014962457774573132,
+          -0.0320585676705446,
+          -0.018373646327054072
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00015397454674272805,
+          "iyy": 9.8914016862604e-05,
+          "izz": 0.00016328921270950233,
+          "ixy": 4.237386118889084e-05,
+          "ixz": 1.8512047661085783e-07,
+          "iyz": -3.8908681412971186e-07
+        },
+        "inertia_eigenvalues_kg_m2": [
+          7.59103948444416e-05,
+          0.0001632912930412013,
+          0.00017697608842919145
+        ]
+      },
+      "gate": "PASS"
+    },
+    "right_shoulder_yaw_motor": {
+      "baseline": {
+        "mass_kg": 0.17145988099999998,
+        "com_m": [
+          -0.014954779548987598,
+          0.03207058001285851,
+          0.01810151127113155
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00013262325307405754,
+          "iyy": 6.0724117002077606e-05,
+          "izz": 0.00013875614802904093,
+          "ixy": 4.288149187392555e-05,
+          "ixz": 1.8301480028463223e-07,
+          "iyz": -3.923791483229383e-07
+        }
+      },
+      "printed_overlay_only": {
+        "mass_kg": 0.035175506636498016,
+        "com_m": [
+          -0.014999999998850815,
+          0.03199999999910635,
+          0.01969999999895071
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 2.1269922679840974e-05,
+          "iyy": 3.812206423174484e-05,
+          "izz": 2.453286149559599e-05,
+          "ixy": -5.440029501914978e-16,
+          "ixz": -6.537152267992495e-16,
+          "iyz": 6.042490154504775e-16
+        }
+      },
+      "combined": {
+        "mass_kg": 0.206635387636498,
+        "com_m": [
+          -0.014962477418420626,
+          0.03205856518920928,
+          0.01837362173341443
+        ],
+        "inertia_kg_m2_at_com": {
+          "ixx": 0.00015396790028699269,
+          "iyy": 9.892082005321344e-05,
+          "izz": 0.0001632892146090929,
+          "ixy": 4.2881398716531056e-05,
+          "ixz": 1.8512460618247823e-07,
+          "iyz": -3.890861646573972e-07
+        },
+        "inertia_eigenvalues_kg_m2": [
+          7.548776652320745e-05,
+          0.00016329128131045234,
+          0.00017739888711563917
+        ]
+      },
+      "gate": "PASS"
     }
   },
-  "servo_mass_policy": "Do not add 16 x 0.0745 kg: the baseline aggregate link inertials already represent the source assemblies. The vendor servo STEP is a placement/reference model, not an extra mass overlay.",
+  "servo_mass_policy": "Do not add 16 x 0.0745 kg: the baseline aggregate link inertials already represent the source assemblies. The separate blue dimension-controlled SLDPRT is a visibility/reference overlay, not an extra mass or collision body.",
   "hardware_override_required": true,
   "hardware_gate": "FAIL_UNTIL_EACH_PRINTED_PART_AND_FINAL_ASSEMBLY_ARE_WEIGHED; replace nominal masses/COM/inertias before hardware deployment"
 }
