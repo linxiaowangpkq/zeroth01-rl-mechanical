@@ -1,0 +1,96 @@
+{
+  "schema": "zeroth01.round_v1.electronics_layout.source.v1",
+  "coordinate_convention": {
+    "reference_link": "Torso",
+    "units": "m_kg_rad",
+    "robot_forward_axis": "-Y",
+    "robot_up_axis": "+Z",
+    "robot_left_axis": "+X",
+    "camera_optical_convention": "REP-103 optical frame: +Z forward, +X image right, +Y image down"
+  },
+  "status": "ASSUMED_FOR_RL_AND_PACKAGING_NOT_VENDOR_SELECTED",
+  "modules": {
+    "camera_module": {
+      "parent_link": "Torso",
+      "center_xyz_m": [0.0, -0.03, 0.108],
+      "rpy_rad": [0.0, 0.0, 0.0],
+      "size_xyz_m": [0.065, 0.02, 0.018],
+      "nominal_mass_kg": 0.035,
+      "mass_range_kg": [0.02, 0.08],
+      "placement": "behind the black visor; two lens windows centered at X=+/-27 mm",
+      "function": "generic stereo or RGB-D camera envelope",
+      "confidence": "ASSUMED_FOR_RL"
+    },
+    "imu_module": {
+      "parent_link": "Torso",
+      "center_xyz_m": [0.0, 0.008, 0.01],
+      "rpy_rad": [0.0, 0.0, 0.0],
+      "size_xyz_m": [0.032, 0.025, 0.008],
+      "nominal_mass_kg": 0.012,
+      "mass_range_kg": [0.005, 0.025],
+      "placement": "near the torso center on the compute tray; axes aligned with Torso",
+      "function": "6-axis IMU envelope",
+      "confidence": "ASSUMED_FOR_RL"
+    },
+    "compute_module": {
+      "parent_link": "Torso",
+      "center_xyz_m": [0.0, 0.022, 0.015],
+      "rpy_rad": [0.0, 0.0, 0.0],
+      "size_xyz_m": [0.105, 0.02, 0.07],
+      "nominal_mass_kg": 0.18,
+      "mass_range_kg": [0.1, 0.3],
+      "placement": "rear chest service tray",
+      "function": "generic SBC, carrier, regulator and mounting tray envelope",
+      "confidence": "ASSUMED_FOR_RL"
+    },
+    "battery_pack": {
+      "parent_link": "Torso",
+      "center_xyz_m": [0.0, 0.0, -0.044],
+      "rpy_rad": [0.0, 0.0, 0.0],
+      "size_xyz_m": [0.075, 0.038, 0.038],
+      "nominal_mass_kg": 0.34,
+      "mass_range_kg": [0.28, 0.45],
+      "placement": "low and centered in the chest, below the compute tray",
+      "function": "3S2P 18650 plus BMS packaging envelope; cell and BMS selection not frozen",
+      "confidence": "ASSUMED_FOR_RL"
+    }
+  },
+  "frames": {
+    "camera_optical_frame": {
+      "parent_link": "camera_module",
+      "origin_xyz_m": [0.0, -0.011, 0.0],
+      "origin_rpy_rad": [-1.5707963267948966, 0.0, 3.141592653589793],
+      "physical_mass": false
+    }
+  },
+  "foot_contact_sites": {
+    "left_front_pressure": {
+      "link": "foot_left",
+      "center_xyz_m": [0.032, -0.029, 0.019025],
+      "half_size_xyz_m": [0.018, 0.002, 0.018]
+    },
+    "left_rear_pressure": {
+      "link": "foot_left",
+      "center_xyz_m": [-0.04, -0.029, 0.019025],
+      "half_size_xyz_m": [0.018, 0.002, 0.018]
+    },
+    "right_front_pressure": {
+      "link": "foot_right",
+      "center_xyz_m": [0.032, -0.029, -0.019025],
+      "half_size_xyz_m": [0.018, 0.002, 0.018]
+    },
+    "right_rear_pressure": {
+      "link": "foot_right",
+      "center_xyz_m": [-0.04, -0.029, -0.019025],
+      "half_size_xyz_m": [0.018, 0.002, 0.018]
+    }
+  },
+  "required_hardware_overrides": [
+    "select exact camera, compute board, IMU, cells, BMS, regulator and connectors",
+    "weigh each installed module and identify its mounted center of mass",
+    "verify camera intrinsics and camera-to-Torso extrinsics",
+    "identify IMU orientation, bias, noise and latency",
+    "identify battery state-of-charge mass change as negligible or model it",
+    "route and weigh the final harness, then regenerate aggregate inertias"
+  ]
+}

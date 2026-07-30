@@ -1,55 +1,102 @@
-2026-07-30 01:33:45 STEP import 1/11: ZEROTH01_ROUND_V1_CHEST_FRONT.step
-2026-07-30 01:33:45 STEP import 2/11: ZEROTH01_ROUND_V1_CHEST_BACK.step
-2026-07-30 01:33:46 STEP import 3/11: ZEROTH01_ROUND_V1_HEAD_FRONT.step
-2026-07-30 01:33:47 STEP import 4/11: ZEROTH01_ROUND_V1_HEAD_BACK.step
-2026-07-30 01:33:47 STEP import 5/11: ZEROTH01_ROUND_V1_PELVIS_FRONT.step
-2026-07-30 01:33:48 STEP import 6/11: ZEROTH01_ROUND_V1_PELVIS_BACK.step
-2026-07-30 01:33:49 STEP import 7/11: ZEROTH01_ROUND_V1_MUZZLE_BADGE.step
-2026-07-30 01:33:50 STEP import 8/11: ZEROTH01_ROUND_V1_VISOR_BADGE.step
-2026-07-30 01:33:50 STEP import 9/11: ZEROTH01_ROUND_V1_LEFT_SOLE.step
-2026-07-30 01:33:54 STEP import 10/11: ZEROTH01_ROUND_V1_RIGHT_SOLE.step
-2026-07-30 01:33:58 STEP import 11/11: STS3250
-2026-07-30 01:33:59 link component 1/17: Torso
-2026-07-30 01:34:03 link component 2/17: ankle_pitch_left
-2026-07-30 01:34:04 link component 3/17: ankle_pitch_right
-2026-07-30 01:34:06 link component 4/17: foot_left
-2026-07-30 01:34:07 link component 5/17: foot_right
-2026-07-30 01:34:09 link component 6/17: hand_right
-2026-07-30 01:34:10 link component 7/17: hip_roll_left
-2026-07-30 01:34:12 link component 8/17: hip_roll_right
-2026-07-30 01:34:14 link component 9/17: hip_yaw_left
-2026-07-30 01:34:15 link component 10/17: hip_yaw_right
-2026-07-30 01:34:17 link component 11/17: knee_pitch_right
-2026-07-30 01:34:19 link component 12/17: knee_pitch_right_2
-2026-07-30 01:34:20 link component 13/17: Left_Hand
-2026-07-30 01:34:22 link component 14/17: left_shoulder_yaw_motor
-2026-07-30 01:34:24 link component 15/17: right_shoulder_yaw_motor
-2026-07-30 01:34:26 link component 16/17: shoulder_yaw_left
-2026-07-30 01:34:28 link component 17/17: shoulder_yaw_right
-2026-07-30 01:34:29 round overlay 1/10: ROUND_CHEST_FRONT
-2026-07-30 01:34:31 round overlay 2/10: ROUND_CHEST_BACK
-2026-07-30 01:34:32 round overlay 3/10: ROUND_HEAD_FRONT
-2026-07-30 01:34:34 round overlay 4/10: ROUND_HEAD_BACK
-2026-07-30 01:34:35 round overlay 5/10: ROUND_PELVIS_FRONT
-2026-07-30 01:34:36 round overlay 6/10: ROUND_PELVIS_BACK
-2026-07-30 01:34:38 round overlay 7/10: ROUND_MUZZLE
-2026-07-30 01:34:39 round overlay 8/10: ROUND_VISOR
-2026-07-30 01:34:41 round overlay 9/10: ROUND_LEFT_SOLE
-2026-07-30 01:34:42 round overlay 10/10: ROUND_RIGHT_SOLE
-2026-07-30 01:34:44 STS3250 component 1/16: right_shoulder_pitch
-2026-07-30 01:34:45 STS3250 component 2/16: left_shoulder_pitch
-2026-07-30 01:34:46 STS3250 component 3/16: right_shoulder_yaw
-2026-07-30 01:34:46 STS3250 component 4/16: right_hip_pitch
-2026-07-30 01:34:47 STS3250 component 5/16: left_hip_pitch
-2026-07-30 01:34:47 STS3250 component 6/16: left_shoulder_yaw
-2026-07-30 01:34:48 STS3250 component 7/16: right_hip_yaw
-2026-07-30 01:34:48 STS3250 component 8/16: left_hip_yaw
-2026-07-30 01:34:48 STS3250 component 9/16: right_elbow_yaw
-2026-07-30 01:34:49 STS3250 component 10/16: left_elbow_yaw
-2026-07-30 01:34:49 STS3250 component 11/16: right_hip_roll
-2026-07-30 01:34:50 STS3250 component 12/16: left_hip_roll
-2026-07-30 01:34:50 STS3250 component 13/16: right_knee_pitch
-2026-07-30 01:34:51 STS3250 component 14/16: left_knee_pitch
-2026-07-30 01:34:51 STS3250 component 15/16: right_ankle_pitch
-2026-07-30 01:34:51 STS3250 component 16/16: left_ankle_pitch
-2026-07-30 01:35:32 refresh-only: reused 48-row transform sweep and motion GIF; attachment transforms/topology are unchanged
+2026-07-30 10:35:44 STEP import 1/19: ZEROTH01_ROUND_V1_CHEST_FRONT.step
+2026-07-30 10:36:18 STEP import 1/19: ZEROTH01_ROUND_V1_CHEST_FRONT.step
+2026-07-30 10:36:19 STEP import 2/19: ZEROTH01_ROUND_V1_CHEST_BACK.step
+2026-07-30 10:36:20 STEP import 3/19: ZEROTH01_ROUND_V1_HEAD_FRONT.step
+2026-07-30 10:36:21 STEP import 4/19: ZEROTH01_ROUND_V1_HEAD_BACK.step
+2026-07-30 10:36:22 STEP import 5/19: ZEROTH01_ROUND_V1_PELVIS_FRONT.step
+2026-07-30 10:36:23 STEP import 6/19: ZEROTH01_ROUND_V1_PELVIS_BACK.step
+2026-07-30 10:36:24 STEP import 7/19: ZEROTH01_ROUND_V1_MUZZLE_BADGE.step
+2026-07-30 10:36:25 STEP import 8/19: ZEROTH01_ROUND_V1_VISOR_BADGE.step
+2026-07-30 10:36:26 STEP import 9/19: ZEROTH01_ROUND_V1_CAMERA_LENSES.step
+2026-07-30 10:36:27 STEP import 10/19: ZEROTH01_ROUND_V1_TORSO_SPINE.step
+2026-07-30 10:36:28 STEP import 11/19: ZEROTH01_ROUND_V1_CAMERA_MODULE.step
+2026-07-30 10:36:29 STEP import 12/19: ZEROTH01_ROUND_V1_IMU_MODULE.step
+2026-07-30 10:36:30 STEP import 13/19: ZEROTH01_ROUND_V1_COMPUTE_MODULE.step
+2026-07-30 10:36:31 STEP import 14/19: ZEROTH01_ROUND_V1_BATTERY_PACK.step
+2026-07-30 10:36:32 STEP import 15/19: ZEROTH01_ROUND_V1_LEFT_SOLE.step
+2026-07-30 10:36:33 STEP import 16/19: ZEROTH01_ROUND_V1_RIGHT_SOLE.step
+2026-07-30 10:36:34 STEP import 17/19: parent servo cage
+2026-07-30 10:36:34 STEP import 18/19: child output hub
+2026-07-30 10:36:36 STEP import 19/19: STS3250
+2026-07-30 10:36:37 link component 1/17: Torso
+2026-07-30 10:36:41 link component 2/17: ankle_pitch_left
+2026-07-30 10:36:42 link component 3/17: ankle_pitch_right
+2026-07-30 10:36:43 link component 4/17: foot_left
+2026-07-30 10:36:44 link component 5/17: foot_right
+2026-07-30 10:36:46 link component 6/17: hand_right
+2026-07-30 10:36:47 link component 7/17: hip_roll_left
+2026-07-30 10:36:48 link component 8/17: hip_roll_right
+2026-07-30 10:36:49 link component 9/17: hip_yaw_left
+2026-07-30 10:36:51 link component 10/17: hip_yaw_right
+2026-07-30 10:36:52 link component 11/17: knee_pitch_right
+2026-07-30 10:36:54 link component 12/17: knee_pitch_right_2
+2026-07-30 10:36:55 link component 13/17: Left_Hand
+2026-07-30 10:36:56 link component 14/17: left_shoulder_yaw_motor
+2026-07-30 10:36:58 link component 15/17: right_shoulder_yaw_motor
+2026-07-30 10:37:00 link component 16/17: shoulder_yaw_left
+2026-07-30 10:37:01 link component 17/17: shoulder_yaw_right
+2026-07-30 10:37:02 round overlay 1/16: ROUND_CHEST_FRONT
+2026-07-30 10:37:03 round overlay 2/16: ROUND_CHEST_BACK
+2026-07-30 10:37:04 round overlay 3/16: ROUND_HEAD_FRONT
+2026-07-30 10:37:06 round overlay 4/16: ROUND_HEAD_BACK
+2026-07-30 10:37:07 round overlay 5/16: ROUND_PELVIS_FRONT
+2026-07-30 10:37:08 round overlay 6/16: ROUND_PELVIS_BACK
+2026-07-30 10:37:09 round overlay 7/16: ROUND_MUZZLE
+2026-07-30 10:37:10 round overlay 8/16: ROUND_VISOR
+2026-07-30 10:37:12 round overlay 9/16: ROUND_CAMERA_LENSES
+2026-07-30 10:37:13 round overlay 10/16: ROUND_TORSO_SPINE
+2026-07-30 10:37:14 round overlay 11/16: ROUND_CAMERA_MODULE
+2026-07-30 10:37:15 round overlay 12/16: ROUND_IMU_MODULE
+2026-07-30 10:37:16 round overlay 13/16: ROUND_COMPUTE_MODULE
+2026-07-30 10:37:17 round overlay 14/16: ROUND_BATTERY_PACK
+2026-07-30 10:37:19 round overlay 15/16: ROUND_LEFT_SOLE
+2026-07-30 10:37:20 round overlay 16/16: ROUND_RIGHT_SOLE
+2026-07-30 10:37:21 STS3250 component 1/16: right_shoulder_pitch
+2026-07-30 10:37:22 parent cage component 1/16: right_shoulder_pitch
+2026-07-30 10:37:23 child hub component 1/16: right_shoulder_pitch
+2026-07-30 10:37:25 STS3250 component 2/16: left_shoulder_pitch
+2026-07-30 10:37:25 parent cage component 2/16: left_shoulder_pitch
+2026-07-30 10:37:25 child hub component 2/16: left_shoulder_pitch
+2026-07-30 10:37:26 STS3250 component 3/16: right_shoulder_yaw
+2026-07-30 10:37:26 parent cage component 3/16: right_shoulder_yaw
+2026-07-30 10:37:27 child hub component 3/16: right_shoulder_yaw
+2026-07-30 10:37:27 STS3250 component 4/16: right_hip_pitch
+2026-07-30 10:37:27 parent cage component 4/16: right_hip_pitch
+2026-07-30 10:37:28 child hub component 4/16: right_hip_pitch
+2026-07-30 10:37:28 STS3250 component 5/16: left_hip_pitch
+2026-07-30 10:37:29 parent cage component 5/16: left_hip_pitch
+2026-07-30 10:37:29 child hub component 5/16: left_hip_pitch
+2026-07-30 10:37:29 STS3250 component 6/16: left_shoulder_yaw
+2026-07-30 10:37:30 parent cage component 6/16: left_shoulder_yaw
+2026-07-30 10:37:30 child hub component 6/16: left_shoulder_yaw
+2026-07-30 10:37:31 STS3250 component 7/16: right_hip_yaw
+2026-07-30 10:37:31 parent cage component 7/16: right_hip_yaw
+2026-07-30 10:37:31 child hub component 7/16: right_hip_yaw
+2026-07-30 10:37:32 STS3250 component 8/16: left_hip_yaw
+2026-07-30 10:37:32 parent cage component 8/16: left_hip_yaw
+2026-07-30 10:37:33 child hub component 8/16: left_hip_yaw
+2026-07-30 10:37:33 STS3250 component 9/16: right_elbow_yaw
+2026-07-30 10:37:34 parent cage component 9/16: right_elbow_yaw
+2026-07-30 10:37:34 child hub component 9/16: right_elbow_yaw
+2026-07-30 10:37:34 STS3250 component 10/16: left_elbow_yaw
+2026-07-30 10:37:35 parent cage component 10/16: left_elbow_yaw
+2026-07-30 10:37:35 child hub component 10/16: left_elbow_yaw
+2026-07-30 10:37:36 STS3250 component 11/16: right_hip_roll
+2026-07-30 10:37:36 parent cage component 11/16: right_hip_roll
+2026-07-30 10:37:37 child hub component 11/16: right_hip_roll
+2026-07-30 10:37:37 STS3250 component 12/16: left_hip_roll
+2026-07-30 10:37:38 parent cage component 12/16: left_hip_roll
+2026-07-30 10:37:38 child hub component 12/16: left_hip_roll
+2026-07-30 10:37:38 STS3250 component 13/16: right_knee_pitch
+2026-07-30 10:37:39 parent cage component 13/16: right_knee_pitch
+2026-07-30 10:37:39 child hub component 13/16: right_knee_pitch
+2026-07-30 10:37:40 STS3250 component 14/16: left_knee_pitch
+2026-07-30 10:37:40 parent cage component 14/16: left_knee_pitch
+2026-07-30 10:37:40 child hub component 14/16: left_knee_pitch
+2026-07-30 10:37:41 STS3250 component 15/16: right_ankle_pitch
+2026-07-30 10:37:41 parent cage component 15/16: right_ankle_pitch
+2026-07-30 10:37:42 child hub component 15/16: right_ankle_pitch
+2026-07-30 10:37:42 STS3250 component 16/16: left_ankle_pitch
+2026-07-30 10:37:43 parent cage component 16/16: left_ankle_pitch
+2026-07-30 10:37:43 child hub component 16/16: left_ankle_pitch
+2026-07-30 10:38:25 refresh-only: reused the current 48-row transform/transmission sweeps and motion GIF

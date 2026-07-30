@@ -1,6 +1,6 @@
 {
   "servo_model": "Feetech STS3250",
-  "vendor_mesh": ".\\generated\\print\\round_v1\\FEETECH_STS3250_VENDOR_REFERENCE.stl",
+  "vendor_mesh": "generated\\print\\round_v1\\FEETECH_STS3250_VENDOR_REFERENCE.stl",
   "phase_is_hardware_verified": false,
   "phase_semantics": "Best geometric fit only. The URDF does not encode housing phase; confirm each phase against native Onshape/SolidWorks source or hardware.",
   "joint_mount_phase": {
@@ -101,5 +101,5 @@
       "method": "5-degree exhaustive phase search against neutral parent+child aggregate STL vertex surfaces; shaft origin fixed to URDF joint"
     }
   },
-  "report": ".\\reports\\sts3250_mount_phase_fit.csv"
+  "report": "reports\\sts3250_mount_phase_fit.csv"
 }

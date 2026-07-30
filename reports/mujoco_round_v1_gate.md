@@ -1,6 +1,6 @@
 # Zeroth-01 RL-ready MuJoCo gate
 
-- Model: `.\generated\mujoco\zeroth01_rl_round_v1.xml`
+- Model: `generated\mujoco\zeroth01_rl_round_v1.xml`
 - MuJoCo: `3.11.0`
 - Topology: **PASS**
 - Mass/inertia import: **PASS**

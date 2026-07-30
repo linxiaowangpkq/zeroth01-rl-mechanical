@@ -10,6 +10,7 @@ import time
 
 import pythoncom
 import win32com.client as win32
+import win32com.client.dynamic as win32_dynamic
 from PIL import Image
 
 
@@ -44,6 +45,9 @@ REPORT_DIR = ROOT / "reports"
 PART_REPORT = REPORT_DIR / "solidworks_round_v1_part_import.csv"
 COMPONENT_REPORT = REPORT_DIR / "solidworks_round_v1_component_manifest.csv"
 SWEEP_REPORT = REPORT_DIR / "solidworks_round_v1_kinematic_sweep.csv"
+TRANSMISSION_REPORT = (
+    REPORT_DIR / "solidworks_round_v1_transmission_semantics.csv"
+)
 GATE_REPORT = REPORT_DIR / "solidworks_round_v1_gate.json"
 TRACE_LOG = REPORT_DIR / "solidworks_round_v1_trace.log"
 
@@ -57,6 +61,8 @@ SW_IMPORT_NEUTRAL_AS_MULTIBODY_PART = 2
 CREAM = (0.909804, 0.823529, 0.701961)
 TAN = (0.717647, 0.529412, 0.368627)
 DARK = (0.164706, 0.176471, 0.196078)
+TEAL = (0.333333, 0.788235, 0.776471)
+SERVO_METAL = (0.388235, 0.419608, 0.450980)
 
 OVERLAYS = [
     (
@@ -65,6 +71,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_CHEST_FRONT.SLDPRT",
         "Torso",
         CREAM,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_CHEST_BACK",
@@ -72,6 +79,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_CHEST_BACK.SLDPRT",
         "Torso",
         CREAM,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_HEAD_FRONT",
@@ -79,6 +87,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_HEAD_FRONT.SLDPRT",
         "Torso",
         CREAM,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_HEAD_BACK",
@@ -86,6 +95,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_HEAD_BACK.SLDPRT",
         "Torso",
         CREAM,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_PELVIS_FRONT",
@@ -93,6 +103,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_PELVIS_FRONT.SLDPRT",
         "Torso",
         CREAM,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_PELVIS_BACK",
@@ -100,6 +111,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_PELVIS_BACK.SLDPRT",
         "Torso",
         CREAM,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_MUZZLE",
@@ -107,6 +119,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_MUZZLE_BADGE.SLDPRT",
         "Torso",
         TAN,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_VISOR",
@@ -114,6 +127,55 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_VISOR_BADGE.SLDPRT",
         "Torso",
         DARK,
+        "round_v1_printed_overlay",
+    ),
+    (
+        "ROUND_CAMERA_LENSES",
+        "ZEROTH01_ROUND_V1_CAMERA_LENSES.step",
+        "ZEROTH01_ROUND_V1_CAMERA_LENSES.SLDPRT",
+        "Torso",
+        TEAL,
+        "sensor_window_visual",
+    ),
+    (
+        "ROUND_TORSO_SPINE",
+        "ZEROTH01_ROUND_V1_TORSO_SPINE.step",
+        "ZEROTH01_ROUND_V1_TORSO_SPINE.SLDPRT",
+        "Torso",
+        TAN,
+        "internal_parent_frame_structure",
+    ),
+    (
+        "ROUND_CAMERA_MODULE",
+        "ZEROTH01_ROUND_V1_CAMERA_MODULE.step",
+        "ZEROTH01_ROUND_V1_CAMERA_MODULE.SLDPRT",
+        "Torso",
+        SERVO_METAL,
+        "assumed_rl_electronics_envelope",
+    ),
+    (
+        "ROUND_IMU_MODULE",
+        "ZEROTH01_ROUND_V1_IMU_MODULE.step",
+        "ZEROTH01_ROUND_V1_IMU_MODULE.SLDPRT",
+        "Torso",
+        TEAL,
+        "assumed_rl_electronics_envelope",
+    ),
+    (
+        "ROUND_COMPUTE_MODULE",
+        "ZEROTH01_ROUND_V1_COMPUTE_MODULE.step",
+        "ZEROTH01_ROUND_V1_COMPUTE_MODULE.SLDPRT",
+        "Torso",
+        TEAL,
+        "assumed_rl_electronics_envelope",
+    ),
+    (
+        "ROUND_BATTERY_PACK",
+        "ZEROTH01_ROUND_V1_BATTERY_PACK.step",
+        "ZEROTH01_ROUND_V1_BATTERY_PACK.SLDPRT",
+        "Torso",
+        TAN,
+        "assumed_rl_electronics_envelope",
     ),
     (
         "ROUND_LEFT_SOLE",
@@ -121,6 +183,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_LEFT_SOLE.SLDPRT",
         "foot_left",
         DARK,
+        "round_v1_printed_overlay",
     ),
     (
         "ROUND_RIGHT_SOLE",
@@ -128,8 +191,16 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_RIGHT_SOLE.SLDPRT",
         "foot_right",
         DARK,
+        "round_v1_printed_overlay",
     ),
 ]
+
+SERVO_CAGE_STEP_NAME = "ZEROTH01_ROUND_V1_SERVO_CAGE.step"
+SERVO_CAGE_PART_NAME = "ZEROTH01_ROUND_V1_SERVO_CAGE.SLDPRT"
+OUTPUT_HUB_STEP_NAME = "ZEROTH01_ROUND_V1_OUTPUT_HUB.step"
+OUTPUT_HUB_PART_NAME = "ZEROTH01_ROUND_V1_OUTPUT_HUB.SLDPRT"
+TRANSMISSION_ANGLE_TOLERANCE_DEG = 1e-5
+TRANSMISSION_POSITION_TOLERANCE_MM = 1e-6
 
 
 def load_module(path: Path, name: str):
@@ -183,6 +254,10 @@ def close_target_if_open(sw, path: Path) -> None:
         pass
 
 
+def byref_i4(value: int = 0):
+    return win32.VARIANT(pythoncom.VT_BYREF | pythoncom.VT_I4, value)
+
+
 def import_step_part(
     sw,
     source: Path,
@@ -209,13 +284,13 @@ def import_step_part(
             raise RuntimeError(
                 f"SolidWorks GetImportFileData failed: {source}"
             )
-        result = sw.LoadFile4(str(source), "r", import_data, 0)
+        open_error = byref_i4(0)
+        dynamic_sw = win32_dynamic.Dispatch(sw._oleobj_)
+        result = dynamic_sw.LoadFile4(
+            str(source), "r", import_data, open_error
+        )
         raw_model = base.first(result)
-        if isinstance(result, tuple) and len(result) > 1:
-            try:
-                error = int(result[1])
-            except Exception:
-                error = 0
+        error = int(open_error.value)
         if raw_model is None:
             raise RuntimeError(f"SolidWorks STEP import failed: {source}")
         model = base.as_model_doc(raw_model)
@@ -269,10 +344,29 @@ def rotation_z(angle_rad: float) -> list[list[float]]:
     ]
 
 
-def servo_transforms(
+def transpose(matrix: list[list[float]]) -> list[list[float]]:
+    return [
+        [matrix[column][row] for column in range(3)]
+        for row in range(3)
+    ]
+
+
+def interface_transforms(
     joints: list[dict[str, object]],
     link_transforms: dict[str, tuple[list[list[float]], list[float]]],
-) -> dict[str, tuple[list[list[float]], list[float]]]:
+) -> dict[
+    str,
+    dict[str, tuple[list[list[float]], list[float]]],
+]:
+    """Resolve the parent housing/cage and child output transforms.
+
+    The previous round-v1 implementation attached the complete servo housing
+    to the child link.  That made the housing co-rotate with its own shaft and
+    could not represent a torque reaction path.  Here the housing and cage
+    stop at the pre-motion parent joint frame, while the output hub follows the
+    child link through the commanded revolute transform.
+    """
+
     phase_payload = json.loads(PHASE_CONFIG.read_text(encoding="utf-8"))
     phases = phase_payload.get("joint_mount_phase", {})
     flip_x = [[1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, -1.0]]
@@ -281,13 +375,17 @@ def servo_transforms(
         if joint["type"] not in {"revolute", "continuous"}:
             continue
         name = str(joint["name"])
+        parent = str(joint["parent"])
         child = str(joint["child"])
-        rotation, translation = link_transforms[child]
+        joint_rotation, joint_translation = base.tf_mul(
+            link_transforms[parent],
+            joint["origin"],
+        )
         axis_local = [float(value) for value in joint["axis"]]
         positive = (
-            base.mat_mul(rotation, flip_x)
+            base.mat_mul(joint_rotation, flip_x)
             if axis_local[2] < 0.0
-            else rotation
+            else joint_rotation
         )
         entry = phases.get(name, {})
         sign = int(entry.get("output_axis_sign", 1))
@@ -296,8 +394,38 @@ def servo_transforms(
         oriented = base.mat_mul(
             oriented, rotation_z(math.radians(phase_deg))
         )
-        result[name] = (oriented, translation)
+        relative_mount = base.mat_mul(
+            transpose(joint_rotation),
+            oriented,
+        )
+        child_rotation, child_translation = link_transforms[child]
+        output_rotation = base.mat_mul(child_rotation, relative_mount)
+        result[name] = {
+            "housing": (oriented, joint_translation),
+            "output": (output_rotation, child_translation),
+        }
     return result
+
+
+def servo_transforms(
+    joints: list[dict[str, object]],
+    link_transforms: dict[str, tuple[list[list[float]], list[float]]],
+) -> dict[str, tuple[list[list[float]], list[float]]]:
+    return {
+        name: transforms["housing"]
+        for name, transforms in interface_transforms(
+            joints, link_transforms
+        ).items()
+    }
+
+
+def translation_distance_mm(
+    first: list[float],
+    second: list[float],
+) -> float:
+    return 1000.0 * math.sqrt(
+        sum((first[index] - second[index]) ** 2 for index in range(3))
+    )
 
 
 def set_material(component, color: tuple[float, float, float]) -> bool:
@@ -372,6 +500,8 @@ def set_round_pose(
     link_components: dict[str, object],
     overlay_components: dict[str, object],
     servo_components: dict[str, object],
+    cage_components: dict[str, object],
+    hub_components: dict[str, object],
     q: dict[str, float],
 ) -> float:
     transforms = base.forward_kinematics(joints, q)
@@ -381,7 +511,7 @@ def set_round_pose(
             maximum_error,
             base.set_component_transform(sw, component, transforms[link]),
         )
-    for label, _, _, attachment, _ in OVERLAYS:
+    for label, _, _, attachment, _, _ in OVERLAYS:
         transform = (
             transforms[attachment]
             if attachment in {"foot_left", "foot_right"}
@@ -393,11 +523,19 @@ def set_round_pose(
                 sw, overlay_components[label], transform
             ),
         )
-    for name, transform in servo_transforms(joints, transforms).items():
+    for name, interface in interface_transforms(joints, transforms).items():
+        housing_transform = interface["housing"]
+        output_transform = interface["output"]
         maximum_error = max(
             maximum_error,
             base.set_component_transform(
-                sw, servo_components[name], transform
+                sw, servo_components[name], housing_transform
+            ),
+            base.set_component_transform(
+                sw, cage_components[name], housing_transform
+            ),
+            base.set_component_transform(
+                sw, hub_components[name], output_transform
             ),
         )
     base.refresh_assembly_display(model)
@@ -431,6 +569,10 @@ def main() -> None:
     SW_PART_DIR.mkdir(parents=True, exist_ok=True)
     SNAP_DIR.mkdir(parents=True, exist_ok=True)
     FRAME_DIR.mkdir(parents=True, exist_ok=True)
+    # Portable and canonical assemblies deliberately share the same filename.
+    # Close that task-owned assembly before inspecting same-named parts from a
+    # different directory; SolidWorks otherwise refuses the second path.
+    close_target_if_open(sw, ASM_PATH)
 
     part_rows: list[dict[str, object]] = []
     previous_structure_mapping = int(
@@ -443,20 +585,46 @@ def main() -> None:
         SW_IMPORT_NEUTRAL_AS_MULTIBODY_PART,
     )
     try:
-        for index, (_, step_name, part_name, _, _) in enumerate(
+        for index, (_, step_name, part_name, _, _, role) in enumerate(
             OVERLAYS, start=1
         ):
-            trace(f"STEP import {index}/{len(OVERLAYS) + 1}: {step_name}")
+            trace(f"STEP import {index}/{len(OVERLAYS) + 3}: {step_name}")
             row = import_step_part(
                 sw,
                 STEP_PART_DIR / step_name,
                 SW_PART_DIR / part_name,
                 force=bool(args.force_part_import),
             )
-            row["role"] = "round_v1_printed_overlay"
+            row["role"] = role
             part_rows.append(row)
         trace(
-            f"STEP import {len(OVERLAYS) + 1}/{len(OVERLAYS) + 1}: "
+            f"STEP import {len(OVERLAYS) + 1}/{len(OVERLAYS) + 3}: "
+            "parent servo cage"
+        )
+        servo_cage_part = SW_PART_DIR / SERVO_CAGE_PART_NAME
+        row = import_step_part(
+            sw,
+            STEP_PART_DIR / SERVO_CAGE_STEP_NAME,
+            servo_cage_part,
+            force=bool(args.force_part_import),
+        )
+        row["role"] = "parent_side_cnc_servo_cage"
+        part_rows.append(row)
+        trace(
+            f"STEP import {len(OVERLAYS) + 2}/{len(OVERLAYS) + 3}: "
+            "child output hub"
+        )
+        output_hub_part = SW_PART_DIR / OUTPUT_HUB_PART_NAME
+        row = import_step_part(
+            sw,
+            STEP_PART_DIR / OUTPUT_HUB_STEP_NAME,
+            output_hub_part,
+            force=bool(args.force_part_import),
+        )
+        row["role"] = "child_side_horn_and_bearing_interface"
+        part_rows.append(row)
+        trace(
+            f"STEP import {len(OVERLAYS) + 3}/{len(OVERLAYS) + 3}: "
             "STS3250"
         )
         servo_part = SW_PART_DIR / "FEETECH_STS3250.SLDPRT"
@@ -475,7 +643,6 @@ def main() -> None:
         )
     write_csv(PART_REPORT, part_rows)
 
-    close_target_if_open(sw, ASM_PATH)
     raw = base.first(sw.NewDocument(str(base.ASM_TEMPLATE), 0, 0, 0))
     if raw is None:
         raise RuntimeError(
@@ -513,7 +680,7 @@ def main() -> None:
         )
 
     overlay_components: dict[str, object] = {}
-    for index, (label, _, part_name, attachment, color) in enumerate(
+    for index, (label, _, part_name, attachment, color, role) in enumerate(
         OVERLAYS, start=1
     ):
         trace(f"round overlay {index}/{len(OVERLAYS)}: {label}")
@@ -534,7 +701,7 @@ def main() -> None:
         material_set = set_material(component, color)
         component_rows.append(
             {
-                "role": "round_v1_printed_overlay",
+                "role": role,
                 "name": label,
                 "component": str(base.call(component, "Name2", "")),
                 "part": str(SW_PART_DIR / part_name),
@@ -546,26 +713,116 @@ def main() -> None:
         )
 
     servo_components: dict[str, object] = {}
-    neutral_servos = servo_transforms(joints, neutral)
-    for index, (name, transform) in enumerate(
-        neutral_servos.items(), start=1
+    cage_components: dict[str, object] = {}
+    hub_components: dict[str, object] = {}
+    neutral_interfaces = interface_transforms(joints, neutral)
+    for index, (name, interface) in enumerate(
+        neutral_interfaces.items(), start=1
     ):
-        trace(f"STS3250 component {index}/{len(neutral_servos)}: {name}")
+        housing_transform = interface["housing"]
+        output_transform = interface["output"]
+        trace(
+            f"STS3250 component {index}/{len(neutral_interfaces)}: {name}"
+        )
         component, error = base.add_component(
-            sw, model, asm, f"STS3250_{name}", servo_part, transform
+            sw,
+            model,
+            asm,
+            f"STS3250_{name}",
+            servo_part,
+            housing_transform,
         )
         servo_components[name] = component
-        material_set = set_material(component, DARK)
+        material_set = set_material(component, SERVO_METAL)
         component_rows.append(
             {
                 "role": "vendor_servo_reference",
                 "name": name,
                 "component": str(base.call(component, "Name2", "")),
                 "part": str(servo_part),
-                "attachment": name,
+                "attachment": str(
+                    next(
+                        joint["parent"]
+                        for joint in joints
+                        if joint["name"] == name
+                    )
+                ),
+                "mechanical_semantics": "housing_fixed_to_parent_joint_frame",
                 "material_set": material_set,
                 "transform_readback_max_abs_error": f"{error:.3e}",
                 "status": "PASS" if error < 1e-8 else "FAIL",
+            }
+        )
+        trace(
+            f"parent cage component {index}/{len(neutral_interfaces)}: {name}"
+        )
+        cage_component, cage_error = base.add_component(
+            sw,
+            model,
+            asm,
+            f"PARENT_CAGE_{name}",
+            servo_cage_part,
+            housing_transform,
+        )
+        cage_components[name] = cage_component
+        cage_material_set = set_material(cage_component, CREAM)
+        component_rows.append(
+            {
+                "role": "parent_side_cnc_servo_cage",
+                "name": name,
+                "component": str(
+                    base.call(cage_component, "Name2", "")
+                ),
+                "part": str(servo_cage_part),
+                "attachment": str(
+                    next(
+                        joint["parent"]
+                        for joint in joints
+                        if joint["name"] == name
+                    )
+                ),
+                "mechanical_semantics": (
+                    "cage_fixed_to_parent_and_reacts_servo_torque"
+                ),
+                "material_set": cage_material_set,
+                "transform_readback_max_abs_error": f"{cage_error:.3e}",
+                "status": "PASS" if cage_error < 1e-8 else "FAIL",
+            }
+        )
+        trace(
+            f"child hub component {index}/{len(neutral_interfaces)}: {name}"
+        )
+        hub_component, hub_error = base.add_component(
+            sw,
+            model,
+            asm,
+            f"CHILD_HUB_{name}",
+            output_hub_part,
+            output_transform,
+        )
+        hub_components[name] = hub_component
+        hub_material_set = set_material(hub_component, TEAL)
+        component_rows.append(
+            {
+                "role": "child_side_horn_and_bearing_interface",
+                "name": name,
+                "component": str(
+                    base.call(hub_component, "Name2", "")
+                ),
+                "part": str(output_hub_part),
+                "attachment": str(
+                    next(
+                        joint["child"]
+                        for joint in joints
+                        if joint["name"] == name
+                    )
+                ),
+                "mechanical_semantics": (
+                    "hub_fixed_to_child_and_rotates_relative_to_housing"
+                ),
+                "material_set": hub_material_set,
+                "transform_readback_max_abs_error": f"{hub_error:.3e}",
+                "status": "PASS" if hub_error < 1e-8 else "FAIL",
             }
         )
 
@@ -599,6 +856,7 @@ def main() -> None:
         if joint["type"] in {"revolute", "continuous"}
     ]
     sweep_rows: list[dict[str, object]] = []
+    transmission_rows: list[dict[str, object]] = []
     if args.refresh_only:
         if not SWEEP_REPORT.is_file():
             raise FileNotFoundError(
@@ -615,10 +873,39 @@ def main() -> None:
             raise RuntimeError(
                 "--refresh-only found invalid prior transform evidence"
             )
+        if not TRANSMISSION_REPORT.is_file():
+            raise FileNotFoundError(
+                "--refresh-only requires transmission evidence: "
+                f"{TRANSMISSION_REPORT}"
+            )
+        with TRANSMISSION_REPORT.open(
+            "r", encoding="utf-8-sig", newline=""
+        ) as stream:
+            transmission_rows = list(csv.DictReader(stream))
+        for row in transmission_rows:
+            passed = (
+                float(row["housing_rotation_from_zero_deg"])
+                <= TRANSMISSION_ANGLE_TOLERANCE_DEG
+                and float(row["housing_translation_from_zero_mm"])
+                <= TRANSMISSION_POSITION_TOLERANCE_MM
+                and float(row["transmission_rotation_error_deg"])
+                <= TRANSMISSION_ANGLE_TOLERANCE_DEG
+                and float(row["shaft_origin_separation_mm"])
+                <= TRANSMISSION_POSITION_TOLERANCE_MM
+            )
+            row["status"] = "PASS" if passed else "FAIL"
+        write_csv(TRANSMISSION_REPORT, transmission_rows)
+        if len(transmission_rows) != 48 or not all(
+            row.get("status") == "PASS" for row in transmission_rows
+        ):
+            raise RuntimeError(
+                "--refresh-only found invalid parent/output transmission "
+                "evidence"
+            )
         gif_ok = MOTION_GIF.is_file() and MOTION_GIF.stat().st_size > 0
         trace(
-            "refresh-only: reused 48-row transform sweep and motion GIF; "
-            "attachment transforms/topology are unchanged"
+            "refresh-only: reused the current 48-row transform/transmission "
+            "sweeps and motion GIF"
         )
     else:
         for joint_index, joint in enumerate(moving, start=1):
@@ -637,7 +924,85 @@ def main() -> None:
                     link_components,
                     overlay_components,
                     servo_components,
+                    cage_components,
+                    hub_components,
                     q,
+                )
+                current_interface = interface_transforms(
+                    joints, transforms
+                )[str(joint["name"])]
+                neutral_interface = neutral_interfaces[str(joint["name"])]
+                housing_rotation, housing_translation = current_interface[
+                    "housing"
+                ]
+                output_rotation, output_translation = current_interface[
+                    "output"
+                ]
+                (
+                    neutral_housing_rotation,
+                    neutral_housing_translation,
+                ) = neutral_interface["housing"]
+                housing_rotation_drift_deg = math.degrees(
+                    base.rotation_distance(
+                        neutral_housing_rotation,
+                        housing_rotation,
+                    )
+                )
+                housing_translation_drift_mm = translation_distance_mm(
+                    neutral_housing_translation,
+                    housing_translation,
+                )
+                housing_to_output_deg = math.degrees(
+                    base.rotation_distance(
+                        housing_rotation,
+                        output_rotation,
+                    )
+                )
+                commanded_abs_deg = abs(math.degrees(angle))
+                transmission_error_deg = abs(
+                    housing_to_output_deg - commanded_abs_deg
+                )
+                shaft_origin_error_mm = translation_distance_mm(
+                    housing_translation,
+                    output_translation,
+                )
+                transmission_pass = (
+                    housing_rotation_drift_deg
+                    <= TRANSMISSION_ANGLE_TOLERANCE_DEG
+                    and housing_translation_drift_mm
+                    <= TRANSMISSION_POSITION_TOLERANCE_MM
+                    and transmission_error_deg
+                    <= TRANSMISSION_ANGLE_TOLERANCE_DEG
+                    and shaft_origin_error_mm
+                    <= TRANSMISSION_POSITION_TOLERANCE_MM
+                )
+                transmission_rows.append(
+                    {
+                        "joint": joint["name"],
+                        "sample": sample,
+                        "commanded_angle_rad": f"{angle:.9f}",
+                        "commanded_abs_rotation_deg": (
+                            f"{commanded_abs_deg:.9f}"
+                        ),
+                        "housing_parent_link": joint["parent"],
+                        "output_child_link": joint["child"],
+                        "housing_rotation_from_zero_deg": (
+                            f"{housing_rotation_drift_deg:.9f}"
+                        ),
+                        "housing_translation_from_zero_mm": (
+                            f"{housing_translation_drift_mm:.9f}"
+                        ),
+                        "housing_to_output_rotation_deg": (
+                            f"{housing_to_output_deg:.9f}"
+                        ),
+                        "transmission_rotation_error_deg": (
+                            f"{transmission_error_deg:.9f}"
+                        ),
+                        "shaft_origin_separation_mm": (
+                            f"{shaft_origin_error_mm:.9f}"
+                        ),
+                        "status": "PASS" if transmission_pass else "FAIL",
+                    }
                 )
                 rotation, translation = transforms[str(joint["child"])]
                 rotations.append(rotation)
@@ -670,6 +1035,7 @@ def main() -> None:
                 f"{joint['name']} {math.degrees(observed):.3f} deg"
             )
         write_csv(SWEEP_REPORT, sweep_rows)
+        write_csv(TRANSMISSION_REPORT, transmission_rows)
 
         for path in FRAME_DIR.glob("zeroth01_round_v1_motion_*.png"):
             path.unlink()
@@ -704,6 +1070,8 @@ def main() -> None:
                 link_components,
                 overlay_components,
                 servo_components,
+                cage_components,
+                hub_components,
                 q,
             )
             frame = (
@@ -722,6 +1090,8 @@ def main() -> None:
         link_components,
         overlay_components,
         servo_components,
+        cage_components,
+        hub_components,
         {},
     )
     try_shaded(model)
@@ -745,7 +1115,7 @@ def main() -> None:
         if MUJOCO_GATE.is_file()
         else {}
     )
-    expected_component_count = 17 + len(OVERLAYS) + len(moving)
+    expected_component_count = 17 + len(OVERLAYS) + 3 * len(moving)
     gate = {
         "schema": "zeroth01.solidworks.round_v1.gate.v1",
         "solidworks_revision": str(base.call(sw, "RevisionNumber", "")),
@@ -759,6 +1129,8 @@ def main() -> None:
         "source_link_component_count": len(link_components),
         "round_overlay_component_count": len(overlay_components),
         "explicit_sts3250_component_count": len(servo_components),
+        "parent_servo_cage_component_count": len(cage_components),
+        "child_output_hub_component_count": len(hub_components),
         "transform_gate": (
             "PASS"
             if all(row["status"] == "PASS" for row in component_rows)
@@ -771,6 +1143,22 @@ def main() -> None:
             if len(axis_rows) == 16
             and all(row.get("gate") == "PASS" for row in axis_rows)
             else "FAIL"
+        ),
+        "parent_housing_child_output_transmission_gate": (
+            "PASS"
+            if len(transmission_rows) == 48
+            and all(
+                row.get("status") == "PASS"
+                for row in transmission_rows
+            )
+            else "FAIL"
+        ),
+        "transmission_evidence": str(TRANSMISSION_REPORT),
+        "transmission_angle_tolerance_deg": (
+            TRANSMISSION_ANGLE_TOLERANCE_DEG
+        ),
+        "transmission_position_tolerance_mm": (
+            TRANSMISSION_POSITION_TOLERANCE_MM
         ),
         "mujoco_collision_motion_gate": mujoco_gate.get(
             "overall", "MISSING"
@@ -808,9 +1196,13 @@ def main() -> None:
         "PASS_WITH_HARDWARE_LIMITATIONS"
         if (
             gate["component_count"] == expected_component_count
-            and gate["native_brep_part_count"] == len(OVERLAYS) + 1
+            and gate["native_brep_part_count"] == len(OVERLAYS) + 3
             and gate["transform_gate"] == "PASS"
             and gate["servo_axis_gate"] == "PASS"
+            and gate[
+                "parent_housing_child_output_transmission_gate"
+            ]
+            == "PASS"
             and gate["mujoco_collision_motion_gate"] == "PASS"
             and gate["motion_gif_gate"] == "PASS"
             and all(

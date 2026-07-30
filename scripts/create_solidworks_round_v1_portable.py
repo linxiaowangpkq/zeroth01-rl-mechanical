@@ -36,11 +36,16 @@ def load_round_module():
     return module
 
 
-def copy_flat_parts(output: Path) -> int:
+def copy_flat_parts(output: Path, expected_count: int) -> int:
     output.mkdir(parents=True, exist_ok=True)
-    sources = sorted(SOURCE_BASE_PARTS.glob("*.SLDPRT")) + sorted(
-        SOURCE_ROUND_PARTS.glob("*.SLDPRT")
-    )
+    sources = [
+        path
+        for path in (
+            sorted(SOURCE_BASE_PARTS.glob("*.SLDPRT"))
+            + sorted(SOURCE_ROUND_PARTS.glob("*.SLDPRT"))
+        )
+        if not path.name.startswith("~$")
+    ]
     folded: dict[str, Path] = {}
     for source in sources:
         key = source.name.casefold()
@@ -51,8 +56,10 @@ def copy_flat_parts(output: Path) -> int:
             )
         folded[key] = source
         shutil.copy2(source, output / source.name)
-    if len(sources) != 28:
-        raise RuntimeError(f"expected 28 source part files, found {len(sources)}")
+    if len(sources) != expected_count:
+        raise RuntimeError(
+            f"expected {expected_count} source part files, found {len(sources)}"
+        )
     return len(sources)
 
 
@@ -67,13 +74,14 @@ def main() -> int:
     args = parser.parse_args()
     output = args.output_dir.resolve()
 
-    copied = copy_flat_parts(output)
+    round_module = load_round_module()
+    expected_count = 17 + len(round_module.OVERLAYS) + 3
+    copied = copy_flat_parts(output, expected_count)
     previews = output / "previews"
     previews.mkdir(parents=True, exist_ok=True)
     portable_motion = previews / SOURCE_MOTION.name
     shutil.copy2(SOURCE_MOTION, portable_motion)
 
-    round_module = load_round_module()
     assembly = output / "OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM"
     round_module.SW_ROOT = output
     round_module.SW_PART_DIR = output

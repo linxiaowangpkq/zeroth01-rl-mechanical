@@ -79,7 +79,7 @@ checked.
 
 The public open-surface STL files do not expose stable cylindrical B-Rep faces
 for robust mates. SolidWorks is driven through COM Transform2 using the same
-URDF FK. The final gate covers 17 connected components, 16 joints and 48
+URDF FK. The final round-v1 gate covers 81 components, 16 moving joints and 48
 lower/zero/upper poses. A native mate/motor Motion Study is explicitly
 `NOT_CLAIMED`.
 
@@ -88,3 +88,42 @@ lower/zero/upper poses. A native mate/motor Motion Study is explicitly
 Upstream repositories stay read-only under `upstream/`. Owned generators,
 overlays, reports and review artifacts remain in this directory; no change is
 required in `roboto_origin/`.
+
+## D-009 — Split the actuator into parent housing and child output semantics
+
+The servo housing and CNC-candidate cage are fixed to the parent joint frame.
+The front/rear purchased-horn adapters are fixed to the child link. SolidWorks
+FK checks all 48 lower/zero/upper samples for housing motion, output rotation
+and coincident shaft origins. This removes the earlier false representation in
+which the whole servo followed its own output.
+
+Evidence:
+
+- `reports/solidworks_round_v1_transmission_semantics.csv`
+- `reports/solidworks_round_v1_gate.json`
+- `reports/round_v1_integrated_interface_gate.json`
+
+## D-010 — Do not fabricate an undocumented STS3250 spline or horn pattern
+
+Vendor facts are limited to 25T, 5.9 mm spline OD, M3 retention and the
+published servo envelope. The exact tooth form and accessory-horn bolt circle
+were not found in the vendor package. The owned adapters therefore use radial
+M3 slots for measured horn PCD 11–20 mm and expose a separate owned 29 mm PCD
+to the child-side fork. Production geometry freezes only after measuring the
+purchased horn.
+
+## D-011 — Model electronics explicitly but label them as assumptions
+
+Camera, IMU, compute/regulator and 3S2P battery+BMS envelopes are fixed physical
+URDF links with analytic box inertias. Their nominal mass is 0.567 kg, bringing
+the round-v1 RL model to 4.750138802624 kg. Exact parts, measured mass/COM,
+camera calibration, IMU noise/orientation and harness mass remain hardware
+overrides.
+
+## D-012 — Separate simulation, fit-check and manufacturing claims
+
+The URDF/MJCF and SolidWorks FK gates are simulation/review evidence. Eleven
+cosmetic/sole STLs and three interface STLs pass topology and STEP-volume
+checks, but the interface STLs are fit-check only. Load-bearing cages and
+adapters are CNC 6061-T6 candidates pending horn, fastener, bearing, cable and
+tolerance RFQ. `complete_print_and_walk_kit_ready` remains false.

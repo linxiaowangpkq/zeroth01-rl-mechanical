@@ -1,0 +1,272 @@
+{
+  "schema": "zeroth01.round_v1.integrated_interface_gate.v1",
+  "servo_model": "FEETECH STS3250",
+  "servo_source_step": "source_assets/vendor/sts3250/FEETECH_STS3250.step",
+  "official_envelope_mm": [
+    45.22,
+    24.72,
+    35.0
+  ],
+  "official_35mm_semantics": "body length; imported total mounting-ear extent is 37.4 mm",
+  "imported_servo_bbox_size_mm": [
+    45.22004931826014,
+    37.40005749945668,
+    24.720049958970424
+  ],
+  "servo_envelope_gate": "PASS",
+  "nominal_servo_cage_clearance_mm_per_side": 0.6,
+  "parent_interface": "servo housing plus cage is rigidly attached to parent joint frame",
+  "child_interface": "front/rear adapters are rigidly attached to child link through owned 29 mm PCD; purchased 25T horns connect them to the servo",
+  "horn_interface": {
+    "official_known": "25T, output spline OD5.9 mm, M3 retention",
+    "unknown_not_invented": "spline tooth form and purchased-horn accessory hole pattern",
+    "adapter_strategy": "four radial M3 slots accept measured horn PCD 11-20 mm; freeze only after the supplied horn is measured"
+  },
+  "manufacturing": {
+    "production_candidate": "CNC 6061-T6 cage and output adapters",
+    "included_stl_scope": "fit check only; not load-bearing approval",
+    "hardware_gate": "BLOCKED_UNTIL_PURCHASED_HORN_FASTENER_BEARING_CABLE_AND_TOLERANCE_RFQ_ARE_CONFIRMED"
+  },
+  "parts": {
+    "parent_servo_cage": {
+      "step": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_SERVO_CAGE.step",
+      "role": "parent-side torque-reaction cage",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "volume_mm3": 27319.711826294075,
+      "solids": [
+        {
+          "volume_mm3": 27319.711826294075,
+          "bbox": {
+            "min_mm": [
+              -45.5,
+              -31.5,
+              -18.5000001
+            ],
+            "max_mm": [
+              14.5000001,
+              14.5000001,
+              16.0000001
+            ],
+            "size_mm": [
+              60.0000001,
+              46.0000001,
+              34.5000002
+            ]
+          }
+        }
+      ],
+      "bbox": {
+        "min_mm": [
+          -45.5,
+          -31.5,
+          -18.5000001
+        ],
+        "max_mm": [
+          14.5000001,
+          14.5000001,
+          16.0000001
+        ],
+        "size_mm": [
+          60.0000001,
+          46.0000001,
+          34.5000002
+        ]
+      },
+      "gate": "PASS"
+    },
+    "child_output_adapter_front": {
+      "step": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_OUTPUT_HUB_FRONT.step",
+      "role": "child-side purchased-horn adapter",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "volume_mm3": 3773.617235367542,
+      "solids": [
+        {
+          "volume_mm3": 3773.617235367542,
+          "bbox": {
+            "min_mm": [
+              -18.5,
+              -18.5,
+              11.0
+            ],
+            "max_mm": [
+              18.5,
+              18.5,
+              15.0
+            ],
+            "size_mm": [
+              37.0,
+              37.0,
+              4.0
+            ]
+          }
+        }
+      ],
+      "bbox": {
+        "min_mm": [
+          -18.5,
+          -18.5,
+          11.0
+        ],
+        "max_mm": [
+          18.5,
+          18.5,
+          15.0
+        ],
+        "size_mm": [
+          37.0,
+          37.0,
+          4.0
+        ]
+      },
+      "gate": "PASS"
+    },
+    "child_output_adapter_rear": {
+      "step": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_OUTPUT_HUB_REAR.step",
+      "role": "child-side purchased-horn adapter/opposite support",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "volume_mm3": 3949.5810279986586,
+      "solids": [
+        {
+          "volume_mm3": 3949.5810279986586,
+          "bbox": {
+            "min_mm": [
+              -18.5,
+              -18.5,
+              -19.0
+            ],
+            "max_mm": [
+              18.5,
+              18.5,
+              -15.0
+            ],
+            "size_mm": [
+              37.0,
+              37.0,
+              4.0
+            ]
+          }
+        }
+      ],
+      "bbox": {
+        "min_mm": [
+          -18.5,
+          -18.5,
+          -19.0
+        ],
+        "max_mm": [
+          18.5,
+          18.5,
+          -15.0
+        ],
+        "size_mm": [
+          37.0,
+          37.0,
+          4.0
+        ]
+      },
+      "gate": "PASS"
+    },
+    "child_output_adapter_pair": {
+      "step": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_OUTPUT_HUB.step",
+      "role": "SolidWorks placement pair; manufacture as two files above",
+      "solid_count": 2,
+      "expected_solid_count": 2,
+      "volume_mm3": 7723.198263366201,
+      "solids": [
+        {
+          "volume_mm3": 3773.617235367542,
+          "bbox": {
+            "min_mm": [
+              -18.5,
+              -18.5,
+              11.0
+            ],
+            "max_mm": [
+              18.5,
+              18.5,
+              15.0
+            ],
+            "size_mm": [
+              37.0,
+              37.0,
+              4.0
+            ]
+          }
+        },
+        {
+          "volume_mm3": 3949.5810279986586,
+          "bbox": {
+            "min_mm": [
+              -18.5,
+              -18.5,
+              -19.0
+            ],
+            "max_mm": [
+              18.5,
+              18.5,
+              -15.0
+            ],
+            "size_mm": [
+              37.0,
+              37.0,
+              4.0
+            ]
+          }
+        }
+      ],
+      "bbox": {
+        "min_mm": [
+          -18.5,
+          -18.5,
+          -19.0
+        ],
+        "max_mm": [
+          18.5,
+          18.5,
+          15.0
+        ],
+        "size_mm": [
+          37.0,
+          37.0,
+          34.0
+        ]
+      },
+      "gate": "PASS"
+    }
+  },
+  "fit_check_stl": {
+    "parent_servo_cage": {
+      "stl": "generated/print/round_v1/fit_check_non_load_bearing/final/ZEROTH01_ROUND_V1_SERVO_CAGE_FIT_CHECK_ONLY.stl",
+      "component_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "step_mesh_volume_error_ratio": 0.0005656750550520339,
+      "scope": "dimensional fit check only; not load-bearing approval",
+      "gate": "PASS"
+    },
+    "child_output_adapter_front": {
+      "stl": "generated/print/round_v1/fit_check_non_load_bearing/final/ZEROTH01_ROUND_V1_OUTPUT_HUB_FRONT_FIT_CHECK_ONLY.stl",
+      "component_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "step_mesh_volume_error_ratio": 0.001678292246624375,
+      "scope": "dimensional fit check only; not load-bearing approval",
+      "gate": "PASS"
+    },
+    "child_output_adapter_rear": {
+      "stl": "generated/print/round_v1/fit_check_non_load_bearing/final/ZEROTH01_ROUND_V1_OUTPUT_HUB_REAR_FIT_CHECK_ONLY.stl",
+      "component_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "step_mesh_volume_error_ratio": 0.0016321314709253714,
+      "scope": "dimensional fit check only; not load-bearing approval",
+      "gate": "PASS"
+    }
+  },
+  "fit_check_stl_gate": "PASS",
+  "geometry_gate": "PASS",
+  "overall": "PASS_WITH_HARDWARE_LIMITATIONS"
+}

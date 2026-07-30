@@ -7,17 +7,20 @@
 - 执行器元数据：`generated/config/zeroth01_actuator_metadata.json`
 - STS3250 扭矩档位：`generated/config/sts3250_round_v1_rl_profiles.json`
 - 圆润件质量/惯量：`generated/config/round_v1_mass_properties.json`
+- 摄像机/IMU/计算板/电池和足底传感器：`generated/config/round_v1_electronics_sensor_layout.json`
 - 碰撞策略：`generated/config/zeroth01_collision_policy.json`
 - 实机标定模板：`generated/config/zeroth01_hardware_calibration_template.csv`
 
 ## 冻结的机械事实
 
-- 18 links、17 joints、16 个转动关节。
-- 名义总质量：`4.151924609464 kg`。
-- 新增打印外观/鞋底名义质量：`1.056452781269 kg`。
+- 上游运动树为 18 links、17 joints；round-v1 再加入 4 个有质量电子模块和 1 个无质量相机光学 frame，最终为 23 links、22 joints、16 个转动关节。
+- 含电子舱名义总质量：`4.750138802624 kg`。
+- 新增外观/鞋底名义质量：`1.087666974428 kg`。
+- 电子舱名义质量：`0.567 kg`；均为 RL/布置假设，待实物选型称重。
 - 坐标/单位：URDF/MJCF 使用 m、kg、s、rad；打印 STEP/STL 使用 mm。
 - 鞋底比基线向下增加 8 mm，MuJoCo 初始浮动基座高度相应由 0.320 m 调为 0.328 m。
 - 16 个执行器按 FEETECH STS3250 建模；真实 STEP 和 SolidWorks 零件均已交付。
+- 相机位于面罩后、IMU 位于躯干中心、计算板位于后胸、电池位于胸腔下部；MuJoCo 包含固定相机、IMU 和 4 个足底压力触点。
 - 不能再把 `16 × 74.5 g` 加到 URDF：基线 link 惯量来自聚合装配，已包含源装配质量；本次只叠加新打印件质量。
 
 ## STS3250 参数与训练边界
@@ -43,6 +46,8 @@
 - 100,000 个确定性随机安全盒姿态：0 自碰撞。
 - 65,536 个安全盒角点：0 自碰撞。
 - 11 个打印 STL：单组件、闭合、流形、绕序一致，PASS。
+- 3 个舵机接口试装 STL：单组件、闭合、流形、绕序一致，PASS。
+- SolidWorks 48 个姿态的父壳体固定/子输出随动传动门禁：PASS。
 - 100,000 个安全盒准静态重力样本：最大关节重力矩 `0.339869 N·m`，低于额定扭矩，静态门禁 PASS。
 
 这不等于 STS3250 已通过步行。当前仍缺训练后轨迹的扭矩-速度散点、RMS 电流、温升、母线压降、足部冲击、回差和跟踪误差。
@@ -68,7 +73,7 @@
 
 - 实际 bus ID、零位 offset、URDF 到舵机方向符号；
 - 实测硬限位、回差、死区、延迟和带载扭矩-速度曲线；
-- 打印件实际质量/质心、线束/电池/控制板质量和位置；
+- 打印件实际质量/质心、线束及最终相机/IMU/电池/控制板质量和位置；
 - 鞋底绑带拉脱、冲击、疲劳和地面摩擦；
 - 承力舵机支架、舵盘、反侧轴承、金属紧固件和线束的完整生产 CAD。
 

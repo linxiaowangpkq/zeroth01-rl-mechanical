@@ -1,6 +1,6 @@
 # STS3250 / Zeroth-01 round-v1 feasibility
 
-- Round-v1 nominal mass: `4.151925 kg`
+- Round-v1 nominal mass: `4.750139 kg`
 - Baseline mass: `3.095472 kg`
 - Static samples: `100000`
 - Worst sampled quasi-static joint torque: `0.339869 N.m` at `right_hip_pitch`

@@ -240,20 +240,22 @@ def main() -> None:
     mujoco.mj_forward(model, data)
     standing_pairs = self_collision_pairs(model, data, epsilon_m)
 
+    reference_root = ET.parse(reference_urdf).getroot()
+    expected_body_count = len(reference_root.findall("link"))
+    expected_sensor_count = 7
     topology_pass = (
         model.nq == 23
         and model.nv == 22
         and model.njnt == 17
-        and model.nbody == 18
+        and model.nbody == expected_body_count
         and model.nu == 16
-        and model.nsensor == 3
+        and model.nsensor == expected_sensor_count
+        and model.ncam == 1
     )
     mass = float(np.sum(model.body_mass))
     expected_mass = sum(
         float(element.get("value", "0"))
-        for element in ET.parse(reference_urdf).getroot().findall(
-            "./link/inertial/mass"
-        )
+        for element in reference_root.findall("./link/inertial/mass")
     )
     mass_pass = abs(mass - expected_mass) < 1e-9
     joints_pass = all(row["status"] == "PASS" for row in joint_rows)
@@ -283,6 +285,9 @@ def main() -> None:
             "body_count_including_world": model.nbody,
             "actuator_count": model.nu,
             "sensor_count": model.nsensor,
+            "camera_count": model.ncam,
+            "expected_body_count_including_world": expected_body_count,
+            "expected_sensor_count": expected_sensor_count,
             "gate": "PASS" if topology_pass else "FAIL",
         },
         "total_mass_kg": mass,

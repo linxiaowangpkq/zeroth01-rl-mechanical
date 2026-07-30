@@ -12,11 +12,24 @@ READY_GENERATOR = THIS_FILE.with_name("gen_zeroth01_rl_ready.py")
 MASS_PROPERTIES = (
     ROOT / "generated" / "config" / "round_v1_mass_properties.json"
 )
+ELECTRONICS_LAYOUT = (
+    ROOT
+    / "generated"
+    / "config"
+    / "round_v1_electronics_sensor_layout.json"
+)
 ROBOT_NAME = "zeroth01_rl_round_v1_16dof"
 
 CREAM = "0.909804 0.823529 0.701961 1"
 TAN = "0.717647 0.529412 0.368627 1"
 DARK = "0.164706 0.176471 0.196078 1"
+TEAL = "0.333333 0.788235 0.776471 1"
+MODULE_COLORS = {
+    "camera_module": DARK,
+    "imu_module": TEAL,
+    "compute_module": TEAL,
+    "battery_pack": TAN,
+}
 
 TORSO_VISUALS = [
     ("chest_front", "ZEROTH01_ROUND_V1_CHEST_FRONT.stl", CREAM),
@@ -131,16 +144,119 @@ def add_box_collision(
     )
 
 
+def add_box_visual(
+    link: ET.Element,
+    name: str,
+    size: list[float],
+    rgba: str,
+) -> None:
+    visual = ET.SubElement(link, "visual", {"name": f"{name}_envelope"})
+    ET.SubElement(visual, "origin", {"xyz": "0 0 0", "rpy": "0 0 0"})
+    geometry = ET.SubElement(visual, "geometry")
+    ET.SubElement(
+        geometry,
+        "box",
+        {"size": " ".join(f"{float(value):.12g}" for value in size)},
+    )
+    material = ET.SubElement(visual, "material", {"name": f"{name}_material"})
+    ET.SubElement(material, "color", {"rgba": rgba})
+
+
+def add_electronics_layout(
+    root: ET.Element,
+    layout: dict[str, object],
+) -> None:
+    for name, module in layout["modules"].items():
+        link = ET.SubElement(root, "link", {"name": name})
+        add_box_visual(
+            link,
+            name,
+            module["size_xyz_m"],
+            MODULE_COLORS[name],
+        )
+        set_link_inertial(
+            link,
+            {
+                "mass_kg": module["nominal_mass_kg"],
+                "com_m": [0.0, 0.0, 0.0],
+                "inertia_kg_m2_at_com": (
+                    module["box_inertia_kg_m2_at_com"]
+                ),
+            },
+        )
+        joint = ET.SubElement(
+            root,
+            "joint",
+            {"name": f"{name}_mount", "type": "fixed"},
+        )
+        ET.SubElement(
+            joint,
+            "origin",
+            {
+                "xyz": " ".join(
+                    f"{float(value):.12g}"
+                    for value in module["center_xyz_m"]
+                ),
+                "rpy": " ".join(
+                    f"{float(value):.12g}"
+                    for value in module["rpy_rad"]
+                ),
+            },
+        )
+        ET.SubElement(
+            joint,
+            "parent",
+            {"link": str(module["parent_link"])},
+        )
+        ET.SubElement(joint, "child", {"link": name})
+
+    for name, frame in layout["frames"].items():
+        ET.SubElement(root, "link", {"name": name})
+        joint = ET.SubElement(
+            root,
+            "joint",
+            {"name": f"{name}_joint", "type": "fixed"},
+        )
+        ET.SubElement(
+            joint,
+            "origin",
+            {
+                "xyz": " ".join(
+                    f"{float(value):.12g}"
+                    for value in frame["origin_xyz_m"]
+                ),
+                "rpy": " ".join(
+                    f"{float(value):.12g}"
+                    for value in frame["origin_rpy_rad"]
+                ),
+            },
+        )
+        ET.SubElement(
+            joint,
+            "parent",
+            {"link": str(frame["parent_link"])},
+        )
+        ET.SubElement(joint, "child", {"link": name})
+
+
 def gen_urdf() -> ET.Element:
     if not MASS_PROPERTIES.is_file():
         raise FileNotFoundError(
             "run export_round_v1_mass_properties.py before generating "
             f"the round-v1 URDF: {MASS_PROPERTIES}"
         )
+    if not ELECTRONICS_LAYOUT.is_file():
+        raise FileNotFoundError(
+            "run build_round_v1_electronics_layout.py before generating "
+            f"the round-v1 URDF: {ELECTRONICS_LAYOUT}"
+        )
     ready = load_module(READY_GENERATOR, "zeroth01_ready_generator")
     root = ready.gen_urdf()
     root.set("name", ROBOT_NAME)
     properties = json.loads(MASS_PROPERTIES.read_text(encoding="utf-8"))
+    electronics_layout = json.loads(
+        ELECTRONICS_LAYOUT.read_text(encoding="utf-8")
+    )
 
     for link_name, overlay in properties["link_overlays"].items():
         set_link_inertial(find_link(root, link_name), overlay["combined"])
@@ -170,6 +286,8 @@ def gen_urdf() -> ET.Element:
             (0.112, 0.016, 0.064),
         )
 
+    add_electronics_layout(root, electronics_layout)
+
     root.insert(
         4,
         ET.Comment(
@@ -185,6 +303,17 @@ def gen_urdf() -> ET.Element:
             "The actual FEETECH STS3250 STEP is a SolidWorks/CAD placement "
             "reference. Servo mass is not added again because the baseline "
             "aggregate link inertials already represent the source assemblies."
+        ),
+    )
+    root.insert(
+        6,
+        ET.Comment(
+            "Camera, IMU, compute and 3S2P battery links use explicit "
+            "ASSUMED_FOR_RL box envelopes and masses from "
+            "round_v1_electronics_sensor_layout.json. They have no collision "
+            "geometry because they are internal payloads. Replace their "
+            "inertials and extrinsics after exact hardware selection and "
+            "weighing. camera_optical_frame is intentionally massless."
         ),
     )
     ready.load_module(

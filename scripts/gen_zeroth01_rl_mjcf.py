@@ -14,6 +14,12 @@ ROOT = THIS_FILE.parents[1]
 URDF = ROOT / "generated" / "urdf" / "zeroth01_rl_ready.urdf"
 DEFAULT_OUTPUT = ROOT / "generated" / "mujoco" / "zeroth01_rl_ready.xml"
 GLOBAL_BOX_REPORT = ROOT / "reports" / "global_collision_box_search.json"
+ELECTRONICS_LAYOUT = (
+    ROOT
+    / "generated"
+    / "config"
+    / "round_v1_electronics_sensor_layout.json"
+)
 DEFAULT_MODEL_NAME = "zeroth01_rl_ready_16dof"
 
 OFFICIAL_STANDING_POSE = {
@@ -216,6 +222,11 @@ def gen_mjcf(
     base_height_m: float = 0.32,
 ) -> ET.Element:
     urdf_root = ET.parse(urdf_path).getroot()
+    electronics_layout = (
+        json.loads(ELECTRONICS_LAYOUT.read_text(encoding="utf-8"))
+        if ELECTRONICS_LAYOUT.is_file()
+        else {}
+    )
     links = {
         link.get("name", ""): link for link in urdf_root.findall("link")
     }
@@ -358,12 +369,6 @@ def gen_mjcf(
     )
     add_inertial(torso_body, mass, com, inertia)
     add_link_geometries(torso_body, links["Torso"], mesh_names)
-    ET.SubElement(
-        torso_body,
-        "site",
-        {"name": "imu", "pos": "0 0 0", "size": "0.004", "rgba": "0 1 0 1"},
-    )
-
     qpos_order: list[str] = []
 
     def add_children(parent_link: str, parent_body: ET.Element) -> None:
@@ -384,10 +389,13 @@ def gen_mjcf(
                 },
             )
             child_link = links[child_name]
-            child_mass, child_com, child_inertia = inertia_data(child_link)
-            add_inertial(
-                child_body, child_mass, child_com, child_inertia
-            )
+            if child_link.find("inertial") is not None:
+                child_mass, child_com, child_inertia = inertia_data(
+                    child_link
+                )
+                add_inertial(
+                    child_body, child_mass, child_com, child_inertia
+                )
             if joint.get("type") in {"revolute", "continuous"}:
                 name = joint.get("name", "")
                 axis = joint.find("axis")
@@ -410,6 +418,52 @@ def gen_mjcf(
                 )
                 qpos_order.append(name)
             add_link_geometries(child_body, child_link, mesh_names)
+            if child_name == "imu_module":
+                ET.SubElement(
+                    child_body,
+                    "site",
+                    {
+                        "name": "imu",
+                        "pos": "0 0 0",
+                        "size": "0.004",
+                        "rgba": "0 1 0 1",
+                    },
+                )
+            if child_name == "camera_module":
+                camera_frame = electronics_layout.get("frames", {}).get(
+                    "camera_optical_frame", {}
+                )
+                camera_pos = camera_frame.get(
+                    "origin_xyz_m", [0.0, -0.011, 0.0]
+                )
+                ET.SubElement(
+                    child_body,
+                    "camera",
+                    {
+                        "name": "head_camera",
+                        "pos": fmt_vec(camera_pos),
+                        "xyaxes": "-1 0 0 0 0 1",
+                        "fovy": "75",
+                        "mode": "fixed",
+                    },
+                )
+            contact_sites = electronics_layout.get(
+                "foot_contact_sites", {}
+            )
+            for site_name, site in contact_sites.items():
+                if site.get("link") != child_name:
+                    continue
+                ET.SubElement(
+                    child_body,
+                    "site",
+                    {
+                        "name": site_name,
+                        "type": "box",
+                        "pos": fmt_vec(site["center_xyz_m"]),
+                        "size": fmt_vec(site["half_size_xyz_m"]),
+                        "rgba": "0.1 0.8 0.8 0.35",
+                    },
+                )
             add_children(child_name, child_body)
 
     add_children("Torso", torso_body)
@@ -442,6 +496,12 @@ def gen_mjcf(
         "accelerometer",
         {"name": "base_linear_acceleration", "site": "imu", "noise": "0.01"},
     )
+    for site_name in electronics_layout.get("foot_contact_sites", {}):
+        ET.SubElement(
+            sensors,
+            "touch",
+            {"name": f"{site_name}_touch", "site": site_name},
+        )
 
     contact = ET.SubElement(model, "contact")
     collision_audit = json.loads(GLOBAL_BOX_REPORT.read_text(encoding="utf-8"))
@@ -479,8 +539,11 @@ def gen_mjcf(
         ET.Comment(
             f"Generated from {urdf_path.name}. The floating base is "
             "attached to Torso; the 1 g URDF frame link is rigidly aggregated "
-            "into the Torso inertia. Seven source-mesh assembly overlaps are "
-            "explicit contact exclusions; all other self contacts remain enabled."
+            "into the Torso inertia. Four assumed electronics modules retain "
+            "their fixed-body masses, the camera optical frame is massless, "
+            "and four sole pressure sites plus the torso IMU are exposed. "
+            "Seven source-mesh assembly overlaps are explicit contact "
+            "exclusions; all other self contacts remain enabled."
         ),
     )
     return model
