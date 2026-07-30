@@ -1,108 +1,98 @@
-# Zeroth-01 机械模型与 RL 交付
+# Zeroth-01 最小可靠圆润版机械与 RL 交付
 
-本目录把 Zeroth-01 的公开机械资产整理成一套可复现的 16DoF 机器人描述，并增加了更高曲率的头/胸/骨盆外壳、8 mm 加厚鞋底、内部躯干主脊、电子舱包络和真实 STS3250 传动接口。当前结论：
+## 结论
 
-- `round_v1_rl_simulation_ready = true`：圆润版 URDF、MuJoCo MJCF、名义质量/质心/惯量、关节轴、限位、碰撞策略和执行器元数据已齐全。
-- SolidWorks CLI FK 复核通过：81 个组件包含 17 个上游 link、16 个外观/内部/电子件、16 个显式 STS3250、16 个父侧舵机笼和 16 个子侧输出转接组件；16 个转动关节、48 个 lower/zero/upper 姿态全部通过。
-- 传动语义已修复：舵机壳体和笼体固定在父 link，前/后输出转接盘跟随子 link，48/48 姿态的轴心和转角误差门禁通过。
-- MuJoCo 完整门禁通过：101 点/关节、100,000 个确定性随机姿态和 65,536 个安全盒角点均为零自碰撞。
-- Linux 大小写敏感路径门禁通过：URDF/MJCF 的 27 个网格引用均与磁盘文件名精确匹配。
-- `round_v1_nominal_mass = 4.750139 kg`：由上游聚合质量 `3.095472 kg`、安装外观/鞋底名义质量 `1.087667 kg` 和电子舱假设质量 `0.567 kg` 组成；实机必须称重后重生成惯量。
-- `hardware_deployment_ready = false`：每台实机的舵机 ID、正方向、零偏、硬限位、回差和系统辨识尚未实测，不能直接下发到真机。
-- `complete_print_and_walk_kit_ready = false`：公开的 17 个 link STL 是非流形聚合可视网格，不是生产 BOM；本次新增 11 个最终外观/鞋底 STL 和 3 个接口试装 STL，承力笼/转接盘仍须用 STEP 在实物舵盘、轴承、紧固件和公差确认后 CNC。
+本版本采用已经装配并通过运动/碰撞检查的 Zeroth-01 17-link 机构作为唯一机械基线，只做四类低风险改动：
 
-## 直接使用的文件
+1. 头部改为三轴椭球外壳、复合曲面面罩，并布置 Waveshare 双圆屏、广角相机和 ToF。
+2. 胸部、骨盆外壳的锋利边缘改为圆角。
+3. 左右脚底加厚。
+4. 用稳定颜色标识 16 个原始关节位置及电池、主控、IMU、相机、ToF、屏幕和足底压力位。
+
+没有向原机构内强行加入新的 STS3250 实体、舵机笼、齿轮或输出盘，也没有改变 16 个关节的父子关系、轴线或零位。SolidWorks 中的 S01–S16 彩色圆片是**非物理标注**，不是舵机、齿轮、碰撞体或质量体。
+
+## 权威产物
 
 | 用途 | 文件 |
 |---|---|
-| 圆润版 RL 首选 URDF | `generated/urdf/zeroth01_rl_round_v1.urdf` |
-| 圆润版 MuJoCo 首选模型 | `generated/mujoco/zeroth01_rl_round_v1.xml` |
-| 原始质量基线 URDF | `generated/urdf/zeroth01_rl_ready.urdf` |
-| 关节/电机/PD/随机化元数据 | `generated/config/zeroth01_actuator_metadata.json` |
-| STS3250 RL 扭矩档位 | `generated/config/sts3250_round_v1_rl_profiles.json` |
-| 舵机轴位置和方向 | `reports/joint_servo_frames.csv` |
-| 16 个 STS3250 放置/轴线核验 | `reports/round_v1_servo_axis_alignment.csv` |
-| 每个 link 的质量、质心和惯量 | `reports/link_inertial_audit.csv` |
-| 圆润打印件和合并后惯量 | `generated/config/round_v1_mass_properties.json` |
-| 摄像机/IMU/计算板/电池位置和惯量 | `generated/config/round_v1_electronics_sensor_layout.json` |
-| 碰撞白名单和安全启动关节盒 | `generated/config/zeroth01_collision_policy.json` |
-| 实机标定模板 | `generated/config/zeroth01_hardware_calibration_template.csv` |
-| 真实 STS3250 原始 STEP | `source_assets/vendor/sts3250/FEETECH_STS3250.step` |
-| 便携 SolidWorks 零件与装配体 | `generated/solidworks/portable_flat_round_v1/` |
-| 圆润版 SolidWorks 联动动画 | `snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif` |
-| 22 个 CAD STEP | `generated/cad/round_v1/parts/` |
-| 11 个最终外观/鞋底 STL | `generated/print/round_v1/final/` |
-| 3 个接口试装 STL | `generated/print/round_v1/fit_check_non_load_bearing/final/` |
-| 传动接口门禁 | `reports/round_v1_integrated_interface_gate.json` |
-| 完整装配指南 | `ASSEMBLY_GUIDE_zh.md` |
-| 打印/装配真实性说明 | `PRINT_AND_ASSEMBLY_READINESS_zh.md` |
-| 圆润版 RL 交接说明 | `RL_ROUND_V1_HANDOFF_zh.md` |
+| SolidWorks 总装 | `generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM` |
+| 便携 SolidWorks 总装 | `generated/solidworks/portable_flat_round_v2/OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM` |
+| RL/ROS 机械描述 | `generated/urdf/zeroth01_rl_round_v1.urdf` |
+| MuJoCo 训练模型 | `generated/mujoco/zeroth01_rl_round_v1.xml` |
+| 执行器元数据 | `generated/config/zeroth01_actuator_metadata.json` |
+| 质量/惯量 | `generated/config/round_v1_mass_properties.json`、`reports/link_inertial_audit.csv`、`reports/round_v1_link_inertial_overlay.csv` |
+| 电子舱与传感器 | `generated/config/round_v1_electronics_sensor_layout.json` |
+| 舵机位置/轴线 | `reports/joint_servo_frames.csv` |
+| 硬件标定模板 | `generated/config/zeroth01_hardware_calibration_template.csv` |
+| 碰撞策略 | `generated/config/zeroth01_collision_policy.json` |
+| 运动 GIF | `snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif` |
+| 验证报告 | `reports/solidworks_round_v1_gate.json`、`reports/mujoco_round_v1_gate.json` |
 
-`zeroth01_rl_reference.urdf` 仅用于追溯官方几何兼容模型；`zeroth01_rl_audited.urdf` 用于逐轴审计；新训练默认使用 `zeroth01_rl_round_v1.urdf`，若不安装圆润外壳/鞋底才退回 `zeroth01_rl_ready.urdf`。
+不要使用文件名中带有 installation audit、replacement servo、cage 或 hub 的实验产物作为当前机械基线；它们是已否决方案的分析证据。
 
-## 已通过的门禁
+## 视觉证据
 
-| 检查 | 结果 |
-|---|---|
-| 23 links、22 joints、16 moving joints 的连通树 | PASS |
-| 上游基线总质量 | 3.0954718282 kg |
-| round-v1 外观/结构名义质量 | 4.183138802628 kg |
-| 含电子舱 RL 名义总质量 | 4.750138802624 kg |
-| 所有惯量正定并满足三角不等式 | PASS |
-| MuJoCo 原生 MJCF 中立位/官方站立位 | 无非白名单碰撞 |
-| 16 个关节运动、动力学和轴向碰撞门禁 | PASS |
-| 100,000 个确定性随机姿态 | 0 个非白名单碰撞 |
-| 65,536 个安全盒角点 | 0 个非白名单碰撞 |
-| SolidWorks 48 个关节姿态 | 48/48 OK |
-| 父侧壳体固定、子侧输出随动 | PASS |
-| SolidWorks 最终组件位姿误差 | 最大 5.82e-17 m |
+![S01-S16 关节身份与颜色](snapshots/solidworks/round_v1/zeroth01_round_v2_joint_identity_front.png)
 
-安全启动盒是围绕官方站立姿态搜索得到的 30% 统一范围，并不是完整物理关节范围。它是离散采样证据，不是连续碰撞数学证明。
+![电子件位置与颜色](snapshots/solidworks/round_v1/zeroth01_round_v2_electronics_annotated_front.png)
 
-## 关键版本锁定
+![SolidWorks 12 帧运动验证](snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif)
 
-公开 Drive 中的 17 个 STL 与 `zeroth-sim` 提交
-`33b0553bd085ff6360495497a8e86afaa801785d` 几何兼容。
-提交 `43c5baa1287db078bef638308ef077445704be1d` 修改了 joint frame、惯量和 mesh 名称，但公开仓库没有同时提供对应的新 STL。把旧 STL 与新 frame 混用会造成脚部/组件分离，因此本交付明确锁定前者。
+## 当前模型数字
 
-完整提交和 SHA-256 记录在 `reports/source_lock.json` 与
-`reports/source_asset_manifest.csv`。
+- 17 个运动树关节，其中 16 个转动关节。
+- MuJoCo：26 bodies（含 world）、17 joints、16 actuators、8 sensors。
+- 名义总质量：`4.586857125474 kg`。
+  - 原始 Zeroth-01 聚合 link 质量：`3.0954718282 kg`。
+  - PETG 名义外壳/脚底叠加质量：`0.9423852973 kg`。
+  - 电子件名义质量：`0.549 kg`。
+- 外壳、电子件和线束的最终实测质量尚未回填，因此这些惯量适合 RL 初始训练和域随机化，不是量产质检数据。
 
-## 不能从当前公开资料推导的内容
+原始 link 惯量已经聚合了机构内部结构；不得再把 16 个 `74.5 g` 舵机质量重复叠加到 URDF。
 
-- 精确实机总线 ID 和线束拓扑；
-- URDF 正方向到每台舵机正方向的符号；
-- 每台舵机的零偏、硬限位、回差、死区和温升降额；
-- 电流到输出转矩的实测曲线；
-- 线束、螺钉、打印公差、柔性外壳和变形后的连续间隙；
-- 实际相机、IMU、计算板、电池/BMS/稳压器的型号、重量和标定值；
-- 采购 25T 舵盘附件孔距、对侧轴承、紧固扭矩和承力件 RFQ；
-- 可制造的原生 B-Rep 特征树。
+## 头部方案
 
-公开 STL 是开放/绕向不完全一致的三角面网格。它足够用于运动学、渲染和受控碰撞审计，但不是 CNC、打印公差或装配放行依据。
+- 显示：Waveshare 0.71inch DualEye LCD Module，双 160×160 圆形 IPS，供应商 STEP 已归档。
+- 相机：Raspberry Pi Camera Module 3 Wide，IMX708 自动对焦，120° 对角视场；精确供应商 STEP 已归档。由于该模型含 631 个实体并会使 SolidWorks 自动导入长时间无响应，工作总装使用官方实测包络，精确 STEP 保留作接口复核。
+- 距离传感器：ST VL53L5CX，8×8 多区 ToF，65°，最高 4 m/60 Hz；当前 12×10 mm 载板包络是假设，PCB 和排线出口尚未冻结。
+- 外观：屏幕本体仍是平面器件，安装在椭球头壳和复合曲面面罩之后；没有声称它是真正可弯曲显示屏。
 
-## 可复现
+供应商资料：
 
-在本目录使用 Python 3.12 环境：
+- https://www.waveshare.com/wiki/0.71inch_DualEye_LCD_Module
+- https://www.raspberrypi.com/products/camera-module-3/
+- https://www.st.com/en/imaging-and-photonics-solutions/vl53l5cx.html
 
-```powershell
-.\.venv312\Scripts\python.exe .\scripts\audit_source_assets.py
-.\.venv312\Scripts\python.exe .\scripts\gen_zeroth01_urdf.py
-.\.venv312\Scripts\python.exe .\scripts\audit_mesh_frames.py
-.\.venv312\Scripts\python.exe .\scripts\gen_zeroth01_rl_audited.py
-.\.venv312\Scripts\python.exe .\scripts\search_global_collision_safe_box.py
-.\.venv312\Scripts\python.exe .\scripts\gen_zeroth01_rl_ready.py
-.\.venv312\Scripts\python.exe .\scripts\build_rl_mechanical_package.py
-.\.venv312\Scripts\python.exe .\scripts\gen_zeroth01_rl_mjcf.py
-.\.venv312\Scripts\python.exe .\scripts\validate_rl_ready_mujoco.py
-.\.venv\python311_embed\python.exe .\scripts\validate_rl_package_portability.py --urdf .\generated\urdf\zeroth01_rl_round_v1.urdf --mjcf .\generated\mujoco\zeroth01_rl_round_v1.xml
-```
+## STS3250 说明
 
-SolidWorks 全量检查使用 CLI/COM：
+当前官方 STS3250-C001 外形证据为约 `45.22 × 24.72 × 35 mm`、25T/OD5.9 输出、M3 输出螺纹、质量约 `74.5 g`。仓库中历史 STEP 的标题是 `ST-3235M-20211119-A_ASM`，包围盒约 `45.220049 × 37.400057 × 24.720050 mm`，且轴线为 `+Y`；它不是已确认的 C001 模型，已隔离，未装入最终总装。
 
-```powershell
-.\.venv312\Scripts\python.exe .\scripts\create_solidworks_kinematic_review.py --frame-count 13
-```
+因此本交付确认的是“原 Zeroth-01 已装配机构的关节位置、轴线和运动范围”，不是重新证明某个未知支架能装入一套新画的 C001 舵机。采购前仍需用实物或供应商 C001 原生 CAD 做接口量测。
 
-本机实测约 12 分钟。应在后台运行并轮询
-`reports/solidworks_trace.log`；20 分钟没有完成时终止并诊断，不应无限等待。
+## 已通过的验证
+
+- SolidWorks：51 个组件 = 17 个原始 link + 18 个圆润/电子叠加件 + 16 个非物理颜色标记；替代 STS3250、笼体、输出 hub 数均为 0。
+- 16 关节 × 101 轴向采样、100,000 随机姿态、65,536 边界组合：无自碰撞样本。
+- 站立位、零位、动态响应、质量一致性：通过。
+- URDF/MJCF 共 27 个 mesh 引用，大小写和相对路径：通过。
+- 11 个打印 STL：水密、绕向一致、无非流形边，STEP/STL 体积误差不超过 0.5%。
+- 12 帧 SolidWorks 运动 GIF：通过。
+- 100,000 个守护姿态的准静态重力采样：最大 `0.339869 N·m`（right_hip_pitch），低于 `1.569064 N·m` 厂商额定点；这只证明静态重力裕量，不证明动态步行、热稳态或冲击可行。
+
+这些是离散网格/解析代理的运动证据，不是连续碰撞证明，也不覆盖线束、紧固件、公差、柔性外壳变形和真实跌落冲击。
+
+## 可用性边界
+
+- **RL 仿真：可用。** URDF/MJCF、质量惯量、执行器初始限制、传感器帧和碰撞策略已齐。
+- **外壳试打/装配空间验证：可用。** 11 个 STL 的网格门禁已通过。
+- **打印后直接拼装并行走：不可宣称。** 原机构的承载支架、轴承、舵盘、螺钉、热熔螺母、线束、BMS、主控和真实安装公差仍需冻结。
+- **真实 STS3250 可行性：待台架验证。** 必须完成每台舵机 ID、方向、零位、背隙、电流、温升和扭矩-速度标定。
+
+详细边界见 `PRINT_AND_ASSEMBLY_READINESS_zh.md` 和 `ASSEMBLY_GUIDE_zh.md`。
+
+## 最短使用路径
+
+1. RL 会话先读 `one-seq.md`。
+2. 训练以 URDF 与 MJCF 为唯一机械基线，不加载 S01–S16 彩色标注。
+3. 初始连续扭矩参考使用 `1.2552512 N·m`，不要用堵转扭矩作连续动作上限。
+4. 将真实样机称重、舵机标定和系统辨识结果回填到 `generated/config/` 后再做 sim-to-real。

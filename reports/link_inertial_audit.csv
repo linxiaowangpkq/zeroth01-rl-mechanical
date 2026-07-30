@@ -1,4 +1,4 @@
-link,mass_kg,com_xyz_link_m,ixx_kg_m2,ixy_kg_m2,ixz_kg_m2,iyy_kg_m2,iyz_kg_m2,izz_kg_m2,principal_moments_kg_m2,positive_definite,triangle_inequality,source,scope,mesh_watertight,status
+﻿link,mass_kg,com_xyz_link_m,ixx_kg_m2,ixy_kg_m2,ixz_kg_m2,iyy_kg_m2,iyz_kg_m2,izz_kg_m2,principal_moments_kg_m2,positive_definite,triangle_inequality,source,scope,mesh_watertight,status
 base,0.001000000000,0.000000000 0.000000000 0.000000000,0.0001,0,0,0.0001,0,0.0001,0.000100000 0.000100000 0.000100000,true,true,official_zeroth_sim_urdf,aggregate_link_including_servo_and_structure,not_applicable,PASS
 Torso,1.569753931200,0.000637998 0.003712589 -0.001803955,0.00560609309751,5.45594198263e-06,-8.67830381439e-05,0.00733107648319,0.000346336378979,0.00255525864868,0.002527817 0.005608549 0.007356062,true,true,official_zeroth_sim_urdf,aggregate_link_including_servo_and_structure,false,PASS
 shoulder_yaw_right,0.040362728000,-0.000376010 -0.003656648 -0.017432914,1.0226821e-05,0,0,2.2303144e-05,-1.8359103e-06,2.1988958e-05,0.000010227 0.000020303 0.000023989,true,true,official_zeroth_sim_urdf,aggregate_link_including_servo_and_structure,false,PASS

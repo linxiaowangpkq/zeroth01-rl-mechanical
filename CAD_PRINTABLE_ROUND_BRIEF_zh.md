@@ -1,64 +1,74 @@
-# Zeroth-01 圆润外观与可打印性 CAD brief
+# Zeroth-01 最小可靠圆润版 CAD/打印设计简报
 
-## 目标
+## 设计目标
 
-在不改变 Zeroth-01 的 18-link / 16-actuated-DoF 拓扑、关节轴线和已验证安全关节盒的前提下：
+在不改变 Zeroth-01 原始 17-link 运动机构的前提下，完成更圆润的头部与身体、加厚脚底、电子件包装和可追溯颜色标识。
 
-1. 在 SolidWorks 审核装配中加入真实 Feetech STS3250 STEP，而不是只用文字元数据代表舵机。
-2. 生成可逆的圆润外观件：躯干/头部外壳、关节盖与左右厚鞋底。
-3. 将现有米制、非流形 STL 转换为毫米制闭合网格，明确区分“展示代理”与“功能承力零件”。
-4. 生成与厚鞋底一致的 URDF/MJCF 接触几何、质量和惯量数据，供 RL 训练。
+优先级：
 
-## 坐标与单位
+1. 原关节连接、轴线、零位和守护运动范围不变。
+2. 新件可拆卸、非承载，不阻断未来更换外观。
+3. 外壳圆润但保留相机/ToF 视场、通风、线束和维修空间。
+4. CAD、SolidWorks、URDF/MJCF 和文档使用同一坐标与身份映射。
 
-- CAD 与打印输出：mm。
-- URDF/MJCF：m、kg、s、rad。
-- 根坐标：沿用 `zeroth01_rl_ready.urdf`；不重定义关节 frame。
-- STS3250 STEP 原点：按目录模型保留；其输出轴候选轴为 STEP 的 Z 轴，装配前必须与每个 URDF joint axis 对齐验证。
+## 选定几何
 
-## 已冻结的输入
+- 头部：三轴椭球壳体，不再用圆角长方体模拟。
+- 面罩：复合曲面 visor，内部容纳平面双眼屏、相机和 ToF。
+- 胸部/骨盆：原机构外侧增加大圆角壳，不修改原 link 网格。
+- 脚底：左右加厚、圆角、保持原踝关节轴和接地点语义。
+- 关节颜色：20 mm × 1.8 mm 圆片，仅作 SolidWorks 审阅标记。
 
-- 运动学/质量基线：`generated/urdf/zeroth01_rl_ready.urdf`
-- 关节/舵机 frame：`reports/joint_servo_frames.csv`
-- 原始视觉网格：`generated/urdf/meshes/*.stl`
-- 舵机：`source_assets/vendor/sts3250/FEETECH_STS3250.step`
-- 外观参考：用户提供的圆润奶油色机器人图片，仅提取圆角、深色关节圈与厚鞋底的设计语言。
+## 电子件几何层级
 
-## 外观参数
+- Waveshare 双眼屏：使用供应商精确 STEP。
+- Camera Module 3 Wide：供应商精确 STEP 归档；SolidWorks 自动总装使用 `25 × 23.862 × 11.4 mm` 官方测得简化包络，避免复杂 STEP 导入卡死。
+- VL53L5CX：传感器选型确定，当前 `12 × 10 × 3 mm` 载板包络是假设。
+- IMU、主控、电池：RL/包装包络，型号未冻结。
 
-- 外壳名义壁厚：2.4 mm。
-- 外壳与参考网格名义间隙：0.8 mm。
-- 分件装配间隙：0.35 mm/side；需要按实际打印机重新标定。
-- 关节动态 keep-out：从轴心起至少 3.0 mm 额外安全间隙。
-- 鞋底：在现有脚底下方增加 8.0 mm；前后/左右各扩展约 5–6 mm。
-- 外观圆角：主体 12–28 mm；鞋底 3–6 mm。
-- 默认打印材料质量估算：PETG，密度 1.27 g/cm³；此值是 RL 质量预算假设，不是采购锁定。
+电子件包络不可用于开模或 PCB 下单，除非 `confidence` 为供应商精确尺寸且接口已复核。
 
-## 结构边界
+## CAD 产物
 
-- 原始 17 个 STL 是 link 级聚合视觉网格，包含舵机/支架外表面，且不是独立的舵机、支架、紧固件 BOM。
-- 将聚合网格修复成闭合 STL 只能得到静态展示/碰撞代理，不能把它自动变成功能承力零件或舵机安装座。
-- 圆润外壳与鞋底必须可逆，不修改关节轴或不可逆地切削未来外壳接口。
-- 普通 FDM 外壳允许；双足行走的主承力路径、舵机耳座、输出盘连接和轴承支撑不得仅凭本 CAD 包宣称结构安全。
+- 参数化源：`cad/round_v1/`
+- STEP 零件：`generated/cad/round_v1/parts/`
+- 圆润外壳/电子件审阅 STEP：
+  `generated/cad/round_v1/ZEROTH01_ROUND_V2_COSMETIC_ELECTRONICS_ASSEMBLY.step`
+- SolidWorks 原生 B-Rep 零件：
+  `generated/solidworks/round_v1/parts/`
+- SolidWorks 总装：
+  `generated/solidworks/round_v1/OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM`
+- 最终打印 STL：
+  `generated/print/round_v1/final/`
 
-## 输出
+审阅 STEP 只包含圆润/电子叠加件，不是完整原始机械机构；完整机构请在 SolidWorks 总装、URDF 或 MJCF 中查看。
 
-- `generated/cad/round_v1/ZEROTH01_ROUND_V1_ASSEMBLY.step`
-- `generated/cad/round_v1/parts/*.step`
-- `generated/print/round_v1/final/*.stl`
-- `generated/urdf/zeroth01_rl_round_v1.urdf`
-- `generated/mujoco/zeroth01_rl_round_v1.xml`
-- `reports/printability_mesh_audit.csv`
-- `generated/config/round_v1_mass_properties.json`
-- `reports/round_v1_print_mesh_gate.json`
-- `reports/mujoco_round_v1_gate.json`
-- `reports/round_v1_servo_axis_alignment.csv`
+## 坐标和单位
 
-## 验证门槛
+- CAD/STEP/STL：mm。
+- URDF/MJCF/配置：m、kg、rad。
+- 机器人前方：`-Y`。
+- 上方：`+Z`。
+- 左侧：`+X`。
+- 电子件父 link：Torso。
 
-- STS3250：STEP 校验和通过；实体数、包围盒和输出轴方向有记录。
-- CAD：全部新增打印件为闭合正体积实体；STEP 与 STL 都以 mm 输出。
-- 装配：16 个舵机输出轴与 URDF joint axis 同向或反向共线，轴心误差不超过 0.05 mm。
-- 干涉：至少覆盖中立、全部单关节上下限、现有 30% guarded box 随机姿态；任何只验证视觉而未验证实体的部分不得标为通过。
-- RL：URDF 生成时校验通过；MuJoCo 加载、单关节动态、站立接触与随机姿态门槛通过。
-- 打印：只在已知真实打印机/喷嘴/材料/profile 后才能生成并声明可用 G-code。
+## 接受标准
+
+- 原始 17 link 和 16 转动关节变换不变。
+- SolidWorks 总装 51 组件：17 原 link + 18 叠加件 + 16 非物理标记。
+- 新增替代舵机、笼体、输出 hub：均为 0。
+- 头、胸、骨盆、脚底外壳不进入 URDF 的关节树。
+- 质量/惯量只在相应 link 上聚合一次。
+- URDF/MJCF 的 motion/collision gate 通过。
+- STL 水密、无非流形边，STEP/STL 体积误差 ≤0.5%。
+
+## 制造前未决项
+
+- 原骨架与外壳的定位柱、螺孔、嵌件和公差。
+- 头部视窗材料、透光率、反射和散热。
+- 电池/主控/IMU/ToF 载板和连接器。
+- 线束路径、应变消除和关节全范围扫掠。
+- 脚底材料、压力传感器载荷路径和防滑层。
+- 真实材料、切片参数、强度、蠕变和跌落测试。
+
+未决项关闭前，本 revision 的定位是“RL 机械基线 + 外壳试装设计”，不是可直接量产的完整机器人 CAD。

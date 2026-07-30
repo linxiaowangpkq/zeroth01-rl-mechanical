@@ -1,12 +1,12 @@
 {
   "schema": "zeroth01.sts3250.round_v1.feasibility.v1",
   "mujoco_version": "3.11.0",
-  "round_model": "generated\\mujoco\\zeroth01_rl_round_v1.xml",
-  "baseline_model": "generated\\mujoco\\zeroth01_rl_ready.xml",
+  "round_model": "generated/mujoco/zeroth01_rl_round_v1.xml",
+  "baseline_model": "generated/mujoco/zeroth01_rl_ready.xml",
   "sample_count": 100000,
   "seed": 20260729,
   "sampling_scope": "deterministic uniform poses inside the guarded 16-DoF joint box, qvel=qacc=0; qfrc_bias is a quasi-static gravity/coupling load with the floating base acceleration constrained to zero",
-  "round_v1_total_mass_kg": 4.750138802623999,
+  "round_v1_total_mass_kg": 4.586857125473999,
   "baseline_total_mass_kg": 3.0954718282,
   "manufacturer": {
     "model": "Feetech STS3250",
@@ -44,7 +44,7 @@
       "hardware_claim": "stall_boundary_never_use_as_continuous_RL_limit"
     }
   },
-  "overall_random_static_abs_max_nm": 0.3398686768093185,
+  "overall_random_static_abs_max_nm": 0.3398686768093184,
   "overall_random_static_abs_max_joint": "right_hip_pitch",
   "overall_static_gravity_rated_gate": "PASS",
   "walking_feasibility_gate": "UNVERIFIED: static gravity margin passes, but no trained gait rollout, torque-speed envelope, bus-voltage sag, thermal model, impact load, backlash or physical endurance data exists",
@@ -107,7 +107,7 @@
       "random_static_abs_p99_nm": "0.030489051",
       "random_static_abs_max_nm": "0.032242839",
       "baseline_random_static_abs_max_nm": "0.032242839",
-      "round_minus_baseline_max_nm": "-0.000000000",
+      "round_minus_baseline_max_nm": "0.000000000",
       "max_over_conservative_80pct_rated": "0.025686364",
       "max_over_manufacturer_rated": "0.020549091",
       "max_over_legacy_sim_limit": "0.016121419",

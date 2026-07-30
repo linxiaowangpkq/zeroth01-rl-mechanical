@@ -242,7 +242,9 @@ def main() -> None:
 
     reference_root = ET.parse(reference_urdf).getroot()
     expected_body_count = len(reference_root.findall("link"))
-    expected_sensor_count = 7
+    # Accelerometer + gyro + torso orientation, four foot-pressure sites,
+    # and one forward VL53L5CX range channel.
+    expected_sensor_count = 8
     topology_pass = (
         model.nq == 23
         and model.nv == 22

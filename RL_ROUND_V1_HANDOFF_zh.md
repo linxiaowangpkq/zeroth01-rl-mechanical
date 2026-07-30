@@ -1,80 +1,115 @@
-# Zeroth-01 round-v1：RL 机械交接
+# Zeroth-01 最小可靠圆润版 RL 机械交接
 
-## 训练入口
+## 唯一机械基线
 
-- URDF：`generated/urdf/zeroth01_rl_round_v1.urdf`
-- 原生 MuJoCo：`generated/mujoco/zeroth01_rl_round_v1.xml`
-- 执行器元数据：`generated/config/zeroth01_actuator_metadata.json`
-- STS3250 扭矩档位：`generated/config/sts3250_round_v1_rl_profiles.json`
-- 圆润件质量/惯量：`generated/config/round_v1_mass_properties.json`
-- 摄像机/IMU/计算板/电池和足底传感器：`generated/config/round_v1_electronics_sensor_layout.json`
-- 碰撞策略：`generated/config/zeroth01_collision_policy.json`
-- 实机标定模板：`generated/config/zeroth01_hardware_calibration_template.csv`
+RL 训练只加载：
 
-## 冻结的机械事实
+- `generated/urdf/zeroth01_rl_round_v1.urdf`
+- `generated/mujoco/zeroth01_rl_round_v1.xml`
 
-- 上游运动树为 18 links、17 joints；round-v1 再加入 4 个有质量电子模块和 1 个无质量相机光学 frame，最终为 23 links、22 joints、16 个转动关节。
-- 含电子舱名义总质量：`4.750138802624 kg`。
-- 新增外观/鞋底名义质量：`1.087666974428 kg`。
-- 电子舱名义质量：`0.567 kg`；均为 RL/布置假设，待实物选型称重。
-- 坐标/单位：URDF/MJCF 使用 m、kg、s、rad；打印 STEP/STL 使用 mm。
-- 鞋底比基线向下增加 8 mm，MuJoCo 初始浮动基座高度相应由 0.320 m 调为 0.328 m。
-- 16 个执行器按 FEETECH STS3250 建模；真实 STEP 和 SolidWorks 零件均已交付。
-- 相机位于面罩后、IMU 位于躯干中心、计算板位于后胸、电池位于胸腔下部；MuJoCo 包含固定相机、IMU 和 4 个足底压力触点。
-- 不能再把 `16 × 74.5 g` 加到 URDF：基线 link 惯量来自聚合装配，已包含源装配质量；本次只叠加新打印件质量。
+不要从 SolidWorks 彩色审阅标识重建动力学，也不要加载被否决的 replacement-servo/cage/hub 实验模型。S01–S16 只是 canonical joint 的视觉 ID。
 
-## STS3250 参数与训练边界
+## 拓扑和质量
 
-| 参数 | 值 | 使用方式 |
+- 自由基座：`nq=23`、`nv=22`。
+- 26 bodies（含 world）。
+- 17 joints，其中 16 个 hinge。
+- 16 actuators。
+- 8 sensors。
+- 名义总质量：`4.586857125474 kg`，与 URDF 一致。
+
+质量来源：
+
+- 原始聚合 link：`3.0954718282 kg`。
+- 圆润壳体/脚底：`0.9423852973 kg`。
+- 电子件：`0.549 kg`。
+
+原始 link 已聚合内部舵机/结构质量，不得再次叠加 16×74.5 g。
+
+## 传感器
+
+MJCF 中已定义：
+
+1. `base_orientation`
+2. `base_angular_velocity`
+3. `base_linear_acceleration`
+4. `left_front_pressure_touch`
+5. `left_rear_pressure_touch`
+6. `right_front_pressure_touch`
+7. `right_rear_pressure_touch`
+8. `tof_center_range`
+
+另有固定 `head_camera`。相机内参、畸变、曝光、延迟以及相机到 Torso 外参仍需实机标定。
+
+## 执行器初始模型
+
+模型：FEETECH STS3250，12 V，4096 counts/rev，名义中位 2048。
+
+| 配置 | 扭矩上限 | 用途 |
 |---|---:|---|
-| 额定电压 | 12 V | 名义供电 |
-| 厂商额定扭矩 | 1.569064 N·m | 额定评估上限 |
-| 建议初始连续训练上限 | 1.2552512 N·m | 额定扭矩的 80%，工程起点，非实测热限 |
-| 现有上游仿真上限 | 2.0 N·m | 仅仿真参数，是额定扭矩的 127.46% |
-| 厂商堵转扭矩 | 4.903325 N·m | 绝不能作为连续 RL 上限 |
-| 空载速度 | 7.873666 rad/s | 厂商 12 V 名义值 |
-| URDF 速度上限 | 5.0 rad/s | 训练限制 |
-| 编码器 | 4096 count/rev | 零位名义 2048 count |
+| conservative thermal start | `1.2552512 N·m` | 首轮 RL/台架连续参考 |
+| manufacturer rated | `1.569064 N·m` | 厂商额定点评估 |
+| legacy official sim | `2.0 N·m` | 仿真峰值；非连续硬件额定 |
+| manufacturer stall | `4.903325 N·m` | 堵转边界；禁止作连续动作上限 |
 
-推荐先以 `conservative_thermal_start` 档训练，再以 `manufacturer_rated_evaluation` 档评估。不得因为 2.0 N·m 的上游 MuJoCo 参数能够行走，就推断真机可持续输出 2.0 N·m。
+初始速度上限 `5 rad/s`。仿真 damping、frictionloss、armature 是官方基线参数，不是本机系统辨识结果。
 
-## 已通过的仿真门禁
+完整逐关节参数见：
 
-- MuJoCo 3.11 加载、拓扑和质量导入：PASS。
-- 中立位和官方站立位自碰撞：PASS。
-- 16 个关节各 101 点轴扫掠、运动响应和碰撞：PASS。
-- 100,000 个确定性随机安全盒姿态：0 自碰撞。
-- 65,536 个安全盒角点：0 自碰撞。
-- 11 个打印 STL：单组件、闭合、流形、绕序一致，PASS。
-- 3 个舵机接口试装 STL：单组件、闭合、流形、绕序一致，PASS。
-- SolidWorks 48 个姿态的父壳体固定/子输出随动传动门禁：PASS。
-- 100,000 个安全盒准静态重力样本：最大关节重力矩 `0.339869 N·m`，低于额定扭矩，静态门禁 PASS。
+- `generated/config/zeroth01_actuator_metadata.json`
+- `generated/config/sts3250_round_v1_rl_profiles.json`
+- `reports/joint_servo_frames.csv`
 
-这不等于 STS3250 已通过步行。当前仍缺训练后轨迹的扭矩-速度散点、RMS 电流、温升、母线压降、足部冲击、回差和跟踪误差。
+## 训练建议
 
-## 舵机位置与可信度
+1. 从 `1.2552512 N·m` 连续扭矩上限开始，保持 URDF 守护限位。
+2. 使用动作平滑、关节功率、足底滑移、足底冲击、姿态和温度代理惩罚。
+3. 对 link mass、damping、armature、frictionloss 和 ±2° 零位偏差做域随机化；范围见 actuator metadata。
+4. 记录逐关节扭矩/速度 p50、p90、p95、p99，RMS/峰值电流代理和机械功率。
+5. 把足底四点接触和 ToF 纳入 observation ablation，避免策略只依赖理想 base state。
+6. 先做站立和原地踏步，再做低速前进；真实硬件前必须通过 sim2sim 和吊架策略回放。
 
-- 轴心、轴线和关节名：`reports/joint_servo_frames.csv`。
-- 16 个 STEP 实例的轴线共线门禁：`reports/round_v1_servo_axis_alignment.csv`。
-- 壳体绕输出轴的 phase：`generated/config/zeroth01_sts3250_mount_phase.json`。
+## STS3250 可行性判据
 
-轴心/轴线来自 URDF，数值可用于仿真。壳体 phase 是用聚合表面拟合得到的候选值，16/16 的置信度仍为 `LOW`；真机布线、螺钉和壳体朝向必须根据支架 B-Rep 或实物重新锁定。
+当前 `reports/sts3250_round_v1_feasibility.json` 已用 100,000 个守护姿态做准静态重力采样；最坏值为 `0.339869 N·m`（right_hip_pitch），静态额定扭矩门禁通过。该结果不包含惯性、足底冲击、跟踪误差、供电压降或温升，所以 walking gate 仍为 `UNVERIFIED`。
 
-## 训练后必须输出
+训练不能单独证明舵机可行。需要将策略轨迹回放到台架并测量：
 
-1. 每关节扭矩的 p50/p95/p99/max、RMS 和持续超限时间。
-2. 每关节速度的 p50/p95/p99/max。
-3. 扭矩-速度散点与实测 STS3250 包络的对比。
-4. 足底接触冲量、滑移、离地高度和落脚速度。
-5. 12 V 母线电压/电流、舵机温度和跟踪误差。
-6. 在 1.2552512 N·m 和 1.569064 N·m 两个上限下的成功率与策略差异。
+- 每关节连续/峰值扭矩和速度分布。
+- RMS 电流、峰值电流、母线压降。
+- 线圈/壳体温升与热稳态。
+- 背隙、死区、跟踪误差和通信延迟。
+- 脚底冲击、滑移和跌倒恢复峰值。
 
-## 硬件阻塞项
+只有 p99 轨迹在额定/热/供电边界内且留有余量，才能判定 STS3250 对该关节可行。
 
-- 实际 bus ID、零位 offset、URDF 到舵机方向符号；
-- 实测硬限位、回差、死区、延迟和带载扭矩-速度曲线；
-- 打印件实际质量/质心、线束及最终相机/IMU/电池/控制板质量和位置；
-- 鞋底绑带拉脱、冲击、疲劳和地面摩擦；
-- 承力舵机支架、舵盘、反侧轴承、金属紧固件和线束的完整生产 CAD。
+## 验证证据
 
-在这些项完成前，只能声明 `simulation_ready=true`，不能声明 `hardware_walking_ready=true`。
+`reports/mujoco_round_v1_gate.json`：
+
+- 16 joints × 101 轴向样本。
+- 100,000 随机姿态。
+- 65,536 边界组合。
+- 零位、站立位和上述采样均无自碰撞样本。
+- 1,000 步有限动态响应通过。
+
+`reports/rl_package_portability_gate.json`：
+
+- URDF 27 个 mesh 引用。
+- MJCF 27 个 mesh 引用。
+- 相对路径和大小写一致。
+
+证据范围是离散网格运动学/动力学，不覆盖线束、紧固件、打印公差或结构变形。
+
+## sim-to-real 前必须回填
+
+`generated/config/zeroth01_hardware_calibration_template.csv` 中每个关节的：
+
+- confirmed bus ID
+- zero count / offset
+- URDF-to-servo direction
+- 实测软/硬限位
+- backlash/deadband
+- no-load current
+
+并更新实际电池、主控、IMU、线束和外壳的质量/质心/惯量。未完成前，`hardware_deployment_ready` 必须保持 false。

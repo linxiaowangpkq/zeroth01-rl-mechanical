@@ -25,10 +25,12 @@ TAN = "0.717647 0.529412 0.368627 1"
 DARK = "0.164706 0.176471 0.196078 1"
 TEAL = "0.333333 0.788235 0.776471 1"
 MODULE_COLORS = {
-    "camera_module": DARK,
-    "imu_module": TEAL,
-    "compute_module": TEAL,
-    "battery_pack": TAN,
+    "eye_display_module": "0 0.721569 0.85098 1",
+    "camera_module": "1 0.090196 0.266667 1",
+    "tof_module": "0.666667 0 1 1",
+    "imu_module": "0.392157 0.866667 0.090196 1",
+    "compute_module": "1 0.568627 0 1",
+    "battery_pack": "0.835294 0 0.976471 1",
 }
 
 TORSO_VISUALS = [
@@ -269,7 +271,7 @@ def gen_urdf() -> ET.Element:
     # shoulder and hip keep-outs open. Exact B-Rep/servo checks are reported
     # separately; URDF boxes are for stable RL collision/contact.
     add_box_collision(torso, "chest_center", (0.0, 0.005, -0.006), (0.108, 0.076, 0.130))
-    add_box_collision(torso, "head", (0.0, -0.003, 0.099), (0.132, 0.066, 0.078))
+    add_box_collision(torso, "head", (0.0, -0.003, 0.103), (0.120, 0.074, 0.090))
     # The exact shell has 21 mm spherical hip keep-outs centered at
     # x=+/-45.65 mm, leaving only 49.3 mm of uninterrupted center material.
     # Keep 1.65 mm extra margin per side in this conservative RL proxy.
@@ -300,20 +302,21 @@ def gen_urdf() -> ET.Element:
     root.insert(
         5,
         ET.Comment(
-            "The actual FEETECH STS3250 STEP is a SolidWorks/CAD placement "
-            "reference. Servo mass is not added again because the baseline "
-            "aggregate link inertials already represent the source assemblies."
+            "The quarantined ST-3235M STEP is not used as STS3250-C001 "
+            "installation geometry. The frozen Zeroth-01 source assemblies "
+            "remain authoritative, and servo mass is not added again because "
+            "their aggregate link inertials already include the actuators."
         ),
     )
     root.insert(
         6,
         ET.Comment(
-            "Camera, IMU, compute and 3S2P battery links use explicit "
-            "ASSUMED_FOR_RL box envelopes and masses from "
+            "Dual-eye display, camera, ToF, IMU, compute and 3S2P battery "
+            "links use explicit box inertias from "
             "round_v1_electronics_sensor_layout.json. They have no collision "
-            "geometry because they are internal payloads. Replace their "
-            "inertials and extrinsics after exact hardware selection and "
-            "weighing. camera_optical_frame is intentionally massless."
+            "geometry because they are internal payloads. The head display "
+            "and camera are vendor-selected; torso payloads and the ToF "
+            "carrier remain hardware overrides. Optical frames are massless."
         ),
     )
     ready.load_module(

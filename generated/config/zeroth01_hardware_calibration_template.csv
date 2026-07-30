@@ -1,4 +1,4 @@
-joint,servo_model,candidate_bus_id,confirmed_bus_id,nominal_zero_count,measured_zero_count,zero_offset_counts,urdf_to_servo_direction_sign,measured_hardstop_lower_count,measured_hardstop_upper_count,backlash_counts,no_load_current_a,notes
+﻿joint,servo_model,candidate_bus_id,confirmed_bus_id,nominal_zero_count,measured_zero_count,zero_offset_counts,urdf_to_servo_direction_sign,measured_hardstop_lower_count,measured_hardstop_upper_count,backlash_counts,no_load_current_a,notes
 right_shoulder_pitch,STS3250,21,,2048,,,,,,,,REQUIRED_BEFORE_HARDWARE_DEPLOYMENT
 left_shoulder_pitch,STS3250,11,,2048,,,,,,,,REQUIRED_BEFORE_HARDWARE_DEPLOYMENT
 right_shoulder_yaw,STS3250,22,,2048,,,,,,,,REQUIRED_BEFORE_HARDWARE_DEPLOYMENT

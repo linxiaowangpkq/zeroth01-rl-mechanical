@@ -34,13 +34,19 @@ def box_inertia(
 def main() -> int:
     payload = json.loads(SOURCE.read_text(encoding="utf-8"))
     modules = payload.get("modules", {})
-    if set(modules) != {
+    required_modules = {
+        "eye_display_module",
         "camera_module",
+        "tof_module",
         "imu_module",
         "compute_module",
         "battery_pack",
-    }:
-        raise ValueError("electronics source must define exactly four modules")
+    }
+    if set(modules) != required_modules:
+        raise ValueError(
+            "electronics source must define exactly: "
+            + ", ".join(sorted(required_modules))
+        )
 
     total_mass = 0.0
     for name, module in modules.items():
@@ -65,7 +71,9 @@ def main() -> int:
     payload["schema"] = "zeroth01.round_v1.electronics_layout.v1"
     payload["source_file"] = SOURCE.relative_to(ROOT).as_posix()
     payload["nominal_electronics_mass_kg"] = total_mass
-    payload["rl_use_gate"] = "PASS_WITH_ASSUMED_MASS_AND_SENSOR_PARAMETERS"
+    payload["rl_use_gate"] = (
+        "PASS_WITH_SELECTED_HEAD_MODULES_AND_ASSUMED_TORSO_PAYLOADS"
+    )
     payload["hardware_use_gate"] = (
         "BLOCKED_UNTIL_EXACT_COMPONENTS_ARE_SELECTED_WEIGHED_AND_CALIBRATED"
     )

@@ -1,0 +1,31 @@
+{
+  "schema": "zeroth01.round_v2.component_identity.v1",
+  "servo_order_semantics": "Stable S01-S16 identifiers follow the moving-joint order in the canonical URDF. IDs and colors must remain stable across CAD, SolidWorks, reports, assembly documentation and RL handoff files.",
+  "servos": [
+    {"id": "S01", "joint": "right_shoulder_pitch", "color_hex": "#E6194B"},
+    {"id": "S02", "joint": "left_shoulder_pitch", "color_hex": "#3CB44B"},
+    {"id": "S03", "joint": "right_shoulder_yaw", "color_hex": "#4363D8"},
+    {"id": "S04", "joint": "right_hip_pitch", "color_hex": "#F58231"},
+    {"id": "S05", "joint": "left_hip_pitch", "color_hex": "#911EB4"},
+    {"id": "S06", "joint": "left_shoulder_yaw", "color_hex": "#42D4F4"},
+    {"id": "S07", "joint": "right_hip_yaw", "color_hex": "#F032E6"},
+    {"id": "S08", "joint": "left_hip_yaw", "color_hex": "#BFEF45"},
+    {"id": "S09", "joint": "right_elbow_yaw", "color_hex": "#FABED4"},
+    {"id": "S10", "joint": "left_elbow_yaw", "color_hex": "#469990"},
+    {"id": "S11", "joint": "right_hip_roll", "color_hex": "#DCBEFF"},
+    {"id": "S12", "joint": "left_hip_roll", "color_hex": "#9A6324"},
+    {"id": "S13", "joint": "right_knee_pitch", "color_hex": "#FFE119"},
+    {"id": "S14", "joint": "left_knee_pitch", "color_hex": "#000075"},
+    {"id": "S15", "joint": "right_ankle_pitch", "color_hex": "#FF6F61"},
+    {"id": "S16", "joint": "left_ankle_pitch", "color_hex": "#006B3C"}
+  ],
+  "electronics": {
+    "eye_display_module": {"label": "D01 双彩色眼屏", "color_hex": "#00B8D9"},
+    "camera_module": {"label": "C01 广角摄像头", "color_hex": "#FF1744"},
+    "tof_module": {"label": "T01 8x8 ToF", "color_hex": "#AA00FF"},
+    "imu_module": {"label": "I01 躯干 IMU", "color_hex": "#64DD17"},
+    "compute_module": {"label": "P01 主控/电源托盘", "color_hex": "#FF9100"},
+    "battery_pack": {"label": "B01 3S2P 电池+BMS", "color_hex": "#D500F9"},
+    "foot_pressure_sites": {"label": "F01-F04 足底压力位", "color_hex": "#FFD600"}
+  }
+}

@@ -26,6 +26,13 @@ SAMPLES = 100_000
 SEED = 20260729
 
 
+def portable_path(path: Path) -> str:
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def joint_data(model: mujoco.MjModel) -> list[dict[str, object]]:
     result = []
     for joint_id in range(model.njnt):
@@ -203,8 +210,8 @@ def main() -> None:
     payload = {
         "schema": "zeroth01.sts3250.round_v1.feasibility.v1",
         "mujoco_version": mujoco.__version__,
-        "round_model": str(ROUND_MJCF),
-        "baseline_model": str(BASE_MJCF),
+        "round_model": portable_path(ROUND_MJCF),
+        "baseline_model": portable_path(BASE_MJCF),
         "sample_count": SAMPLES,
         "seed": SEED,
         "sampling_scope": (

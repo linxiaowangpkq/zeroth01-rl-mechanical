@@ -447,6 +447,25 @@ def gen_mjcf(
                         "mode": "fixed",
                     },
                 )
+            if child_name == "tof_module":
+                tof_frame = electronics_layout.get("frames", {}).get(
+                    "tof_optical_frame", {}
+                )
+                ET.SubElement(
+                    child_body,
+                    "site",
+                    {
+                        "name": "tof_center_ray",
+                        "type": "sphere",
+                        "pos": fmt_vec(
+                            tof_frame.get(
+                                "origin_xyz_m", [0.0, -0.002, 0.0]
+                            )
+                        ),
+                        "size": "0.002",
+                        "rgba": "0.666667 0 1 0.8",
+                    },
+                )
             contact_sites = electronics_layout.get(
                 "foot_contact_sites", {}
             )
@@ -502,6 +521,11 @@ def gen_mjcf(
             "touch",
             {"name": f"{site_name}_touch", "site": site_name},
         )
+    ET.SubElement(
+        sensors,
+        "rangefinder",
+        {"name": "tof_center_range", "site": "tof_center_ray"},
+    )
 
     contact = ET.SubElement(model, "contact")
     collision_audit = json.loads(GLOBAL_BOX_REPORT.read_text(encoding="utf-8"))
@@ -539,9 +563,10 @@ def gen_mjcf(
         ET.Comment(
             f"Generated from {urdf_path.name}. The floating base is "
             "attached to Torso; the 1 g URDF frame link is rigidly aggregated "
-            "into the Torso inertia. Four assumed electronics modules retain "
-            "their fixed-body masses, the camera optical frame is massless, "
-            "and four sole pressure sites plus the torso IMU are exposed. "
+            "into the Torso inertia. Six electronics modules retain their "
+            "fixed-body masses, camera/ToF optical frames are massless, and "
+            "four sole pressure sites plus torso IMU and one ToF center ray "
+            "are exposed. "
             "Seven source-mesh assembly overlaps are explicit contact "
             "exclusions; all other self contacts remain enabled."
         ),

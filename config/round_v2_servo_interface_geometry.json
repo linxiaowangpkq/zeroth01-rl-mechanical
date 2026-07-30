@@ -1,0 +1,100 @@
+{
+  "schema": "zeroth01.round_v2.servo_interface_geometry.v2",
+  "units": "mm",
+  "selected_geometry_policy": "PRESERVE_FROZEN_ZEROTH01_ASSEMBLY_NO_REPLACEMENT_SERVO_BODY",
+  "downstream_usage": "DIMENSION_AND_REJECTED_EXPERIMENT_EVIDENCE_ONLY; DO_NOT_GENERATE_CAGES_HUBS_OR_EXTRA_INERTIAL_BODIES",
+  "canonical_local_frame": {
+    "origin": "front/rear shaft centerline projected to the middle of the 35 mm case",
+    "x_axis": "case long axis, positive toward the 12.5 mm short end",
+    "y_axis": "case 24.72 mm width",
+    "z_axis": "servo output shaft; +Z is the front 25T output",
+    "source": "current FEETECH STS3250-C001 product page plus the dimensioned drawing supplied by the user"
+  },
+  "quarantined_step": {
+    "file": "source_assets/vendor/sts3250/FEETECH_STS3250.step",
+    "step_header_model": "ST-3235M-20211119-A_ASM",
+    "measured_bbox_xyz": [45.220049, 37.400057, 24.72005],
+    "detected_shaft_axis": "+Y",
+    "previous_incorrect_assumption": "+Z",
+    "gate": "REJECTED_AS_EXACT_STS3250_C001_INSTALLATION_REFERENCE",
+    "reason": "The file header names ST-3235M, not current ST-3250-C001; its 37.400 mm overall differs from the 36.5 mm dimensioned drawing and it was previously placed with the wrong shaft axis."
+  },
+  "controlled_servo_reference": {
+    "model": "FEETECH STS3250-C001",
+    "case_bounds_min_xyz": [-32.72, -12.36, -17.5],
+    "case_bounds_max_xyz": [12.5, 12.36, 17.5],
+    "case_size_xyz": [45.22, 24.72, 35.0],
+    "shaft_center_from_short_end_x": 12.5,
+    "front_spline": {
+      "diameter": 5.9,
+      "tooth_count": 25,
+      "axial_center_z": 19.2,
+      "axial_length": 3.4,
+      "retention": "M3x6 machine screw"
+    },
+    "rear_spline": {
+      "diameter": 5.9,
+      "tooth_count": 25,
+      "axial_center_z": -19.05,
+      "axial_length": 3.1,
+      "retention": "M3 machine screw"
+    },
+    "drawing_max_shaft_span": 36.5,
+    "product_page_size_xyz": [45.22, 24.72, 35.0],
+    "mass_kg": 0.0745,
+    "mass_tolerance_kg": 0.001
+  },
+  "purchased_horns": {
+    "outer_diameter": 19.95,
+    "bolt_count": 4,
+    "bolt_thread": "M3",
+    "bolt_circle_diameter": 14.0,
+    "center_spline_envelope_diameter": 6.05,
+    "front_center_z": 20.5,
+    "front_disc_thickness": 4.5,
+    "rear_center_z": -19.6,
+    "rear_disc_thickness": 2.1,
+    "manufacturing_policy": "Purchased FEETECH horns only; do not print or machine an unverified 25T tooth form."
+  },
+  "cage": {
+    "servo_clearance_per_side": 0.6,
+    "outer_box_size_xyz": [52.0, 31.5, 41.2],
+    "outer_box_center_xyz": [-10.11, 0.0, 0.0],
+    "inner_box_size_xyz": [46.42, 25.92, 36.2],
+    "inner_box_center_xyz": [-10.11, 0.0, 0.0],
+    "anchor_size_xyz": [13.0, 20.0, 20.0],
+    "anchor_center_xyz": [-42.0, 0.0, 0.0],
+    "rear_guard_center_z": -19.35,
+    "rear_guard_outer_radius": 15.75,
+    "rear_guard_inner_radius": 12.5,
+    "front_guard_center_z": 19.35,
+    "front_guard_outer_radius": 15.75,
+    "front_guard_inner_radius": 12.5
+  },
+  "child_output_adapters": {
+    "front_center_z": 24.25,
+    "rear_center_z": -22.15,
+    "disc_thickness": 3.0,
+    "disc_outer_radius": 13.5,
+    "bolt_count": 4,
+    "bolt_clearance_diameter": 3.4,
+    "bolt_circle_diameter": 14.0,
+    "minimum_axial_clearance_to_cage_mm": 0.5,
+    "interface_note": "Owned adapters bolt to the purchased horn's drawing-defined four M3 holes on a 14 mm PCD."
+  },
+  "child_fork": {
+    "plate_half_size_xyz": [10.0, 5.0, 1.5],
+    "plate_center_x": 17.0,
+    "front_center_z": 27.25,
+    "rear_center_z": -25.15,
+    "crossbar_half_size_xyz": [3.0, 6.0, 23.7],
+    "crossbar_center_xyz": [30.0, 0.0, 1.05],
+    "bridge_radius": 5.0
+  },
+  "audit_semantics": {
+    "case_and_cage_body": "parent link",
+    "splines_horns_adapters_and_fork_body": "child link",
+    "intended_same_body_overlap": "ignored only for parts fastened to the same rigid link",
+    "all_other_hardware_contacts": "fail when penetration exceeds 0.01 mm"
+  }
+}

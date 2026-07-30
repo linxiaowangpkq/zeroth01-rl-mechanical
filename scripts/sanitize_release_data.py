@@ -30,7 +30,7 @@ def main() -> int:
     for base in (
         ROOT / "reports",
         ROOT / "generated" / "config",
-        ROOT / "generated" / "solidworks" / "portable_flat_round_v1",
+        ROOT / "generated" / "solidworks" / "portable_flat_round_v2",
     ):
         for path in sorted(base.rglob("*")):
             if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:

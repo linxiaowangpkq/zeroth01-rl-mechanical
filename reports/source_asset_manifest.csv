@@ -1,4 +1,4 @@
-target_name,downloaded_name,sha256,bytes,vertices,faces,body_count,watertight,winding_consistent,extent_x_m,extent_y_m,extent_z_m
+﻿target_name,downloaded_name,sha256,bytes,vertices,faces,body_count,watertight,winding_consistent,extent_x_m,extent_y_m,extent_z_m
 Left_Hand.stl,Left_Hand.stl,4bfae2b11634144d16a9c298ab6c91d0d6f4ed4f6e1b2e2771718934a33eb429,81684,776,1632,1,false,true,0.025932103,0.105733847,0.048000000
 Torso.stl,Torso.stl,5aeb3948cf9c588794e529315f328ae28152343a216890b927800b6ea4aa6ee2,953984,8269,19078,4,false,false,0.156300008,0.063331826,0.243755005
 ankle_pitch_left.stl,ankle_pitch_left.stl,5e7200c973065b885cb15943c7e2d05617456a2ff4ea61f2dd744e4081cab306,212384,1861,4246,2,false,false,0.030719999,0.081301941,0.048049997

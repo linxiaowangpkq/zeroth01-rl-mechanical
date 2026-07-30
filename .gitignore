@@ -3,5 +3,5 @@ __pycache__/
 .venv/
 .venv*/
 reports/*.log
-generated/solidworks/portable_flat_round_v1/previews/motion_frames/
+generated/solidworks/portable_flat_round_v2/previews/motion_frames/
 ~$*

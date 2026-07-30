@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mujoco model="zeroth01_rl_round_v1_16dof">
-  <!--Generated from zeroth01_rl_round_v1.urdf. The floating base is attached to Torso; the 1 g URDF frame link is rigidly aggregated into the Torso inertia. Four assumed electronics modules retain their fixed-body masses, the camera optical frame is massless, and four sole pressure sites plus the torso IMU are exposed. Seven source-mesh assembly overlaps are explicit contact exclusions; all other self contacts remain enabled.-->
+<mujoco model="zeroth01_rl_round_v2_minimal_cosmetic_16dof">
+  <!--Generated from zeroth01_rl_round_v1.urdf. The floating base is attached to Torso; the 1 g URDF frame link is rigidly aggregated into the Torso inertia. Six electronics modules retain their fixed-body masses, camera/ToF optical frames are massless, and four sole pressure sites plus torso IMU and one ToF center ray are exposed. Seven source-mesh assembly overlaps are explicit contact exclusions; all other self contacts remain enabled.-->
   <compiler angle="radian" meshdir="../urdf/meshes" autolimits="true" inertiafromgeom="false" balanceinertia="false" />
   <option timestep="0.002" integrator="implicitfast" solver="Newton" iterations="50" gravity="0 0 -9.81" />
   <default>
@@ -64,7 +64,7 @@
     <light name="key_light" directional="true" pos="0 -1 2" dir="0 0 -1" />
     <body name="Torso" pos="0 0 0.32">
       <freejoint name="floating_base" />
-      <inertial pos="0.000402636320236 0.00201932501829 0.00731417123054" mass="2.48734993491" fullinertia="0.012131770791 0.0148682633027 0.00488319823529 3.76015856524e-06 -7.76508644307e-05 0.000864232684462" />
+      <inertial pos="0.000424696971652 0.00320383880987 0.00252341432706" mass="2.34206825776" fullinertia="0.0111818490231 0.0139225718392 0.00472545459894 4.93646778643e-06 -8.16091182067e-05 0.000616030853692" />
       <geom name="Torso_visual_0" class="visual" type="mesh" mesh="Torso_visual_0_mesh" pos="0 0 0" quat="1 0 0 0" rgba="0.97254902 0.52941176 0.0039215686 1" />
       <geom name="Torso_visual_1" class="visual" type="mesh" mesh="Torso_visual_1_mesh" pos="0 0 0" quat="1 0 0 0" rgba="0.909804 0.823529 0.701961 1" />
       <geom name="Torso_visual_2" class="visual" type="mesh" mesh="Torso_visual_2_mesh" pos="0 0 0" quat="1 0 0 0" rgba="0.909804 0.823529 0.701961 1" />
@@ -76,7 +76,7 @@
       <geom name="Torso_visual_8" class="visual" type="mesh" mesh="Torso_visual_8_mesh" pos="0 0 0" quat="1 0 0 0" rgba="0.164706 0.176471 0.196078 1" />
       <geom name="Torso_collision_0" class="collision" type="mesh" mesh="Torso_collision_9_mesh" pos="0 0 0" quat="1 0 0 0" />
       <geom name="Torso_collision_1" class="collision" type="box" size="0.054 0.038 0.065" pos="0 0.005 -0.006" quat="1 0 0 0" />
-      <geom name="Torso_collision_2" class="collision" type="box" size="0.066 0.033 0.039" pos="0 -0.003 0.099" quat="1 0 0 0" />
+      <geom name="Torso_collision_2" class="collision" type="box" size="0.06 0.037 0.045" pos="0 -0.003 0.103" quat="1 0 0 0" />
       <geom name="Torso_collision_3" class="collision" type="box" size="0.023 0.034 0.028" pos="0 0.005 -0.091" quat="1 0 0 0" />
       <body name="shoulder_yaw_right" pos="-0.0781364637517 -0.000335555918275 0.0430532899183" quat="0.500000013397 0.5 0.499999986603 0.5">
         <inertial pos="-0.00037600968 -0.0036566476 -0.017432914" mass="0.040362728" fullinertia="1.0226821e-05 2.2303144e-05 2.1988958e-05 0 0 -1.8359103e-06" />
@@ -182,24 +182,34 @@
           </body>
         </body>
       </body>
-      <body name="camera_module" pos="0 -0.03 0.108" quat="1 0 0 0">
-        <inertial pos="0 0 0" mass="0.035" fullinertia="2.11166666667e-06 1.32679166667e-05 1.34895833333e-05 0 0 0" />
-        <geom name="camera_module_visual_0" class="visual" type="box" size="0.0325 0.01 0.009" pos="0 0 0" quat="1 0 0 0" rgba="0.164706 0.176471 0.196078 1" />
-        <camera name="head_camera" pos="0 -0.011 0" xyaxes="-1 0 0 0 0 1" fovy="75" mode="fixed" />
-        <body name="camera_optical_frame" pos="0 -0.011 0" quat="-7.3123010772e-14 7.31230107717e-14 -0.707106781185 0.707106781188" />
+      <body name="eye_display_module" pos="0 -0.042 0.115" quat="0.707106781188 0.707106781185 0 0">
+        <inertial pos="0 0 0" mass="0.011" fullinertia="3.73957561872e-07 2.76301336456e-06 2.39540863681e-06 0 0 0" />
+        <geom name="eye_display_module_visual_0" class="visual" type="box" size="0.02554265 0.00093075 0.01005595" pos="0 0 0" quat="1 0 0 0" rgba="0 0.721569 0.85098 1" />
+      </body>
+      <body name="camera_module" pos="0 -0.04 0.091" quat="0.707106781188 -0.707106781185 0 0">
+        <inertial pos="0 0 0" mass="0.004" fullinertia="2.33118348e-07 3.98131681333e-07 2.51653333333e-07 0 0 0" />
+        <geom name="camera_module_visual_0" class="visual" type="box" size="0.0125 0.0057 0.011931" pos="0 0 0" quat="1 0 0 0" rgba="1 0.090196 0.266667 1" />
+        <camera name="head_camera" pos="0 -0.007 0" xyaxes="-1 0 0 0 0 1" fovy="75" mode="fixed" />
+        <body name="camera_optical_frame" pos="0 -0.007 0" quat="-7.3123010772e-14 7.31230107717e-14 -0.707106781185 0.707106781188" />
+      </body>
+      <body name="tof_module" pos="0.031 -0.042 0.092" quat="0.707106781188 0.707106781185 0 0">
+        <inertial pos="0 0 0" mass="0.002" fullinertia="1.81666666667e-08 4.06666666667e-08 2.55e-08 0 0 0" />
+        <geom name="tof_module_visual_0" class="visual" type="box" size="0.006 0.0015 0.005" pos="0 0 0" quat="1 0 0 0" rgba="0.666667 0 1 1" />
+        <site name="tof_center_ray" type="sphere" pos="0 -0.002 0" size="0.002" rgba="0.666667 0 1 0.8" />
+        <body name="tof_optical_frame" pos="0 -0.002 0" quat="-7.3123010772e-14 7.31230107717e-14 -0.707106781185 0.707106781188" />
       </body>
       <body name="imu_module" pos="0 0.008 0.01" quat="1 0 0 0">
         <inertial pos="0 0 0" mass="0.012" fullinertia="6.89e-07 1.088e-06 1.649e-06 0 0 0" />
-        <geom name="imu_module_visual_0" class="visual" type="box" size="0.016 0.0125 0.004" pos="0 0 0" quat="1 0 0 0" rgba="0.333333 0.788235 0.776471 1" />
+        <geom name="imu_module_visual_0" class="visual" type="box" size="0.016 0.0125 0.004" pos="0 0 0" quat="1 0 0 0" rgba="0.392157 0.866667 0.090196 1" />
         <site name="imu" pos="0 0 0" size="0.004" rgba="0 1 0 1" />
       </body>
       <body name="compute_module" pos="0 0.022 0.015" quat="1 0 0 0">
         <inertial pos="0 0 0" mass="0.18" fullinertia="7.95e-05 0.000238875 0.000171375 0 0 0" />
-        <geom name="compute_module_visual_0" class="visual" type="box" size="0.0525 0.01 0.035" pos="0 0 0" quat="1 0 0 0" rgba="0.333333 0.788235 0.776471 1" />
+        <geom name="compute_module_visual_0" class="visual" type="box" size="0.0525 0.01 0.035" pos="0 0 0" quat="1 0 0 0" rgba="1 0.568627 0 1" />
       </body>
       <body name="battery_pack" pos="0 0 -0.044" quat="1 0 0 0">
         <inertial pos="0 0 0" mass="0.34" fullinertia="8.18266666667e-05 0.000200288333333 0.000200288333333 0 0 0" />
-        <geom name="battery_pack_visual_0" class="visual" type="box" size="0.0375 0.019 0.019" pos="0 0 0" quat="1 0 0 0" rgba="0.717647 0.529412 0.368627 1" />
+        <geom name="battery_pack_visual_0" class="visual" type="box" size="0.0375 0.019 0.019" pos="0 0 0" quat="1 0 0 0" rgba="0.835294 0 0.976471 1" />
       </body>
     </body>
   </worldbody>
@@ -229,6 +239,7 @@
     <touch name="left_rear_pressure_touch" site="left_rear_pressure" />
     <touch name="right_front_pressure_touch" site="right_front_pressure" />
     <touch name="right_rear_pressure_touch" site="right_rear_pressure" />
+    <rangefinder name="tof_center_range" site="tof_center_ray" />
   </sensor>
   <contact>
     <exclude body1="Torso" body2="hip_yaw_left" />

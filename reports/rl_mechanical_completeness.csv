@@ -1,4 +1,4 @@
-object_type,object_name,field_group,status,source,confidence,remaining_action
+﻿object_type,object_name,field_group,status,source,confidence,remaining_action
 link,base,mass_com_inertia,PASS,official_zeroth_sim_urdf,official_aggregate_cad_export_unmeasured,weigh assembled links and update after first hardware build
 link,base,visual_geometry,PASS,official_drive_stl,official_open_surface_mesh,replace with native B-Rep only if released or reverse-modeled
 link,base,collision_geometry,PASS,official_drive_stl_plus_collision_policy,sampled_mesh_collision_not_tolerance_proof,keep online self-collision guard outside startup envelope

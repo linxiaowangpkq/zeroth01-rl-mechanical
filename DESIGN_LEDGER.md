@@ -1,129 +1,79 @@
-# Zeroth-01 derived mechanical model — decision ledger
+# Zeroth-01 最小可靠圆润版设计决策账本
 
-## Status
+本文件只记录会改变机械、RL 或采购决策的事实。
 
-- Primary consumer: RL simulation and mechanical reference.
-- Simulation readiness: `PASS`.
-- Hardware deployment readiness: `BLOCKED_BY_PHYSICAL_CALIBRATION`.
-- Manufacturing release: `NOT_CLAIMED`.
+## D-001：冻结原 17-link 装配为机械权威基线
 
-## D-001 — Freeze geometry to `zeroth-sim@33b0553`
+- 状态：接受。
+- 决策：保留原始 link 网格、16 个关节轴、父子关系、零位和守护运动范围。
+- 原因：它已经形成闭合运动树并通过离散碰撞门禁；重新布置 16 个舵机会同时改变安装、轴线、惯量和训练模型。
+- 证据：`reports/mujoco_round_v1_gate.json`、`reports/solidworks_round_v1_gate.json`。
+- 反转条件：取得完整原生 CAD、紧固件/BOM、公差和精确 C001 舵机装配后，建立独立新 revision，不能覆盖本基线。
 
-The published 17-file Drive mesh bundle matches commit
-`33b0553bd085ff6360495497a8e86afaa801785d`.
+## D-002：否决“在现有网格上叠加替代 STS3250/笼体/hub”
 
-Commit `43c5baa1287db078bef638308ef077445704be1d` changed joint frames,
-inertials and mesh names without publishing its replacement mesh bundle. Pairing
-those later frames with the older meshes caused detached feet and inconsistent
-COM-to-mesh placement. Therefore all generated descriptions read the historical
-URDF through `git show` and keep the exact matching STL payload.
+- 状态：否决。
+- 根因：历史供应商 STEP 实际标识为 ST-3235M，且输出轴方向为 +Y；旧实验按 +Z 解释，导致舵机、孔位和圆盘视觉冲突。
+- 最终总装：替代舵机实体 0、舵机笼 0、输出 hub 0。
+- 历史 installation audit/phase optimization 文件只保留为否决证据，不得交给 RL 当作真实几何。
 
-Evidence:
+## D-003：S01–S16 仅标识原关节位置
 
-- `reports/source_lock.json`
-- `reports/source_asset_manifest.csv`
-- `reports/mesh_frame_audit.json`
+- 状态：接受。
+- 决策：每个 ID 绑定一个 canonical URDF joint，颜色稳定；圆片厚 1.8 mm、直径 20 mm，仅供视图识别。
+- 物理语义：无质量、无惯量、无碰撞、无传动。
+- 映射源：`config/round_v2_component_identity.json`。
 
-## D-002 — Preserve upstream link frames and normalize only the joint typo
+## D-004：外观只做非承载、可拆换叠加
 
-No mesh recentering, axis permutation or silent scale is allowed. The public
-link vocabulary is preserved even where left/right mesh names are unintuitive.
-The interface typo `righ_elbow_yaw` is normalized to `right_elbow_yaw` because
-the official Python control interface already uses the corrected joint name.
+- 状态：接受。
+- 内容：椭球头壳、曲面面罩、圆角胸/骨盆壳、加厚左右脚底。
+- 原因：不切割原骨架、不改变关节、不阻断未来替换外壳。
+- 限制：生成 STL 仅通过网格门禁，不构成承载件制造签字。
 
-## D-003 — Use three robot-description layers
+## D-005：头部采用“曲面外壳 + 平面器件”
 
-1. `zeroth01_rl_reference.urdf`: frozen geometry-compatible upstream reference.
-2. `zeroth01_rl_audited.urdf`: source/control/per-axis audit intersection.
-3. `zeroth01_rl_ready.urdf`: recommended guarded multi-joint startup envelope.
+- 状态：接受。
+- 显示：Waveshare 0.71inch DualEye，精确 STEP。
+- 相机：Raspberry Pi Camera Module 3 Wide；精确 STEP 归档，SolidWorks 工作总装使用官方尺寸包络以避免 631-solid 导入卡死。
+- ToF：VL53L5CX 芯片选型已定，载板尺寸/排线未定。
+- 原因：现有小型量产方案中没有足够可靠的真正柔性曲面双眼屏；把平面显示藏在曲面面罩后更可制造。
 
-The third file is the training default. Full mechanical ranges may be explored
-only with online collision query/action projection and collision termination.
+## D-006：电子件颜色与安装区是包装基线，不是最终采购签字
 
-## D-004 — Treat four neutral overlaps as assembly exclusions
+- 状态：接受。
+- 已选供应商件：双眼屏、相机。
+- 传感器已选、载板未定：ToF。
+- 仅为 RL/包装假设：躯干 IMU、主控/电源托盘、3S2P 电池+BMS。
+- 后续必须回填：实际型号、连接器、线束、散热、质量、质心、惯量和维修空间。
 
-Only the Torso-to-left/right hip-yaw and Torso-to-left/right shoulder-yaw pairs
-are allowed assembly overlaps. They are present at neutral and are excluded
-from self-contact generation in the native MJCF. Every other self-contact is
-prohibited.
+## D-007：名义质量用于训练，实测质量用于硬件闭环
 
-The 30% startup box passed 20,000 random samples and every one of 65,536
-corners; native MJCF validation then passed 100,000 random samples. This is
-statistical mesh-level evidence, not continuous or manufacturing clearance
-proof.
+- 状态：接受。
+- 当前总质量：`4.586857125474 kg`。
+- 组成：原机构 `3.0954718282 kg` + PETG 叠加件 `0.9423852973 kg` + 电子件 `0.549 kg`。
+- 训练策略：围绕名义值做域随机化；样机完成后按 link 重新称重和摆锤/系统辨识。
+- 禁止：把 16×74.5 g 再加到已经聚合舵机质量的原始 link 惯量上。
 
-## D-005 — Keep aggregate inertias; do not double-count servos
+## D-008：RL 初始连续扭矩不取堵转值
 
-The official link inertias include structure and actuator mass. The total model
-mass is `3.0954718282 kg`. Adding 16 independent `0.0745 kg` servo bodies would
-double-count mass and invalidate COM and inertia.
+- 状态：接受。
+- 初始连续参考：`1.2552512 N·m`。
+- URDF/官方仿真峰值命令上限：`2.0 N·m`。
+- 堵转扭矩只作短时极限证据，不能作为 PPO 连续动作空间。
+- 最终限制必须由台架的电流、温升、母线压降和扭矩-速度曲线更新。
 
-## D-006 — Separate candidate actuator metadata from measured calibration
+## D-009：验证结论的边界
 
-All 16 joints use Feetech STS3250 metadata. Candidate IDs are retained to speed
-up wiring work, but are not declared as exact hardware truth. The following
-remain null until physical calibration:
+- 已通过：零位/站立位、自碰撞离散采样、动态有限性、URDF/MJCF 路径和质量一致性、打印网格拓扑。
+- 未证明：连续时间全空间无碰撞、线束扫掠、公差栈、紧固件强度、轴承寿命、跌落强度、热管理、真实舵机长期连续负载。
+- 硬件 walking gate：保持关闭，直到装配、线束、标定和双腿台架测试完成。
 
-- confirmed bus ID;
-- URDF-to-servo direction sign;
-- per-unit zero offset and hard stops;
-- backlash/deadband;
-- torque-current and thermal continuous-duty envelope;
-- identified damping, armature and friction.
+## 待关闭项目
 
-Hardware deployment remains false until
-`generated/config/zeroth01_hardware_calibration_template.csv` is completed and
-checked.
-
-## D-007 — SolidWorks is a geometric FK review, not native mate Motion
-
-The public open-surface STL files do not expose stable cylindrical B-Rep faces
-for robust mates. SolidWorks is driven through COM Transform2 using the same
-URDF FK. The final round-v1 gate covers 81 components, 16 moving joints and 48
-lower/zero/upper poses. A native mate/motor Motion Study is explicitly
-`NOT_CLAIMED`.
-
-## D-008 — Keep generated work under `roboto_xw`
-
-Upstream repositories stay read-only under `upstream/`. Owned generators,
-overlays, reports and review artifacts remain in this directory; no change is
-required in `roboto_origin/`.
-
-## D-009 — Split the actuator into parent housing and child output semantics
-
-The servo housing and CNC-candidate cage are fixed to the parent joint frame.
-The front/rear purchased-horn adapters are fixed to the child link. SolidWorks
-FK checks all 48 lower/zero/upper samples for housing motion, output rotation
-and coincident shaft origins. This removes the earlier false representation in
-which the whole servo followed its own output.
-
-Evidence:
-
-- `reports/solidworks_round_v1_transmission_semantics.csv`
-- `reports/solidworks_round_v1_gate.json`
-- `reports/round_v1_integrated_interface_gate.json`
-
-## D-010 — Do not fabricate an undocumented STS3250 spline or horn pattern
-
-Vendor facts are limited to 25T, 5.9 mm spline OD, M3 retention and the
-published servo envelope. The exact tooth form and accessory-horn bolt circle
-were not found in the vendor package. The owned adapters therefore use radial
-M3 slots for measured horn PCD 11–20 mm and expose a separate owned 29 mm PCD
-to the child-side fork. Production geometry freezes only after measuring the
-purchased horn.
-
-## D-011 — Model electronics explicitly but label them as assumptions
-
-Camera, IMU, compute/regulator and 3S2P battery+BMS envelopes are fixed physical
-URDF links with analytic box inertias. Their nominal mass is 0.567 kg, bringing
-the round-v1 RL model to 4.750138802624 kg. Exact parts, measured mass/COM,
-camera calibration, IMU noise/orientation and harness mass remain hardware
-overrides.
-
-## D-012 — Separate simulation, fit-check and manufacturing claims
-
-The URDF/MJCF and SolidWorks FK gates are simulation/review evidence. Eleven
-cosmetic/sole STLs and three interface STLs pass topology and STEP-volume
-checks, but the interface STLs are fit-check only. Load-bearing cages and
-adapters are CNC 6061-T6 candidates pending horn, fastener, bearing, cable and
-tolerance RFQ. `complete_print_and_walk_kit_ready` remains false.
+1. 获取 STS3250-C001 对应的可追溯原生 CAD 或实物 CMM 尺寸。
+2. 冻结主控、IMU、3S2P 单体、BMS、稳压器、连接器和线束。
+3. 对每个承载接口补齐材料、螺纹、轴承、紧固扭矩和公差图。
+4. 打印壳体试装，检查 0.5–1.0 mm 装配间隙、排线弯曲半径和维修可达性。
+5. 完成 16 舵机总线扫描、低扭矩点动、零位和方向标定。
+6. 完成静态站立、吊架单腿、双腿低速和热稳态试验后，才允许真实步行。

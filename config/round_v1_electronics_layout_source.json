@@ -1,5 +1,5 @@
 {
-  "schema": "zeroth01.round_v1.electronics_layout.source.v1",
+  "schema": "zeroth01.round_v2.electronics_layout.source.v2",
   "coordinate_convention": {
     "reference_link": "Torso",
     "units": "m_kg_rad",
@@ -8,18 +8,48 @@
     "robot_left_axis": "+X",
     "camera_optical_convention": "REP-103 optical frame: +Z forward, +X image right, +Y image down"
   },
-  "status": "ASSUMED_FOR_RL_AND_PACKAGING_NOT_VENDOR_SELECTED",
+  "status": "HEAD_VENDOR_SELECTED_TORSO_PACKAGING_ASSUMED",
   "modules": {
+    "eye_display_module": {
+      "parent_link": "Torso",
+      "center_xyz_m": [0.0, -0.042, 0.115],
+      "rpy_rad": [1.5707963267948966, 0.0, 0.0],
+      "size_xyz_m": [0.0510853, 0.0018615, 0.0201119],
+      "nominal_mass_kg": 0.011,
+      "mass_range_kg": [0.01, 0.012],
+      "placement": "behind the compound-curved face visor; two 160x160 round IPS displays and supplied convex lenses",
+      "function": "Waveshare 0.71inch DualEye LCD Module, GC9D01, 4-wire SPI",
+      "vendor_selected": true,
+      "source_url": "https://www.waveshare.com/wiki/0.71inch_DualEye_LCD_Module",
+      "cad_source": "source_assets/vendor/head_electronics/Waveshare_DualEye_LCD_Module.step",
+      "confidence": "VENDOR_DIMENSIONS_AND_EXACT_STEP"
+    },
     "camera_module": {
       "parent_link": "Torso",
-      "center_xyz_m": [0.0, -0.03, 0.108],
-      "rpy_rad": [0.0, 0.0, 0.0],
-      "size_xyz_m": [0.065, 0.02, 0.018],
-      "nominal_mass_kg": 0.035,
-      "mass_range_kg": [0.02, 0.08],
-      "placement": "behind the black visor; two lens windows centered at X=+/-27 mm",
-      "function": "generic stereo or RGB-D camera envelope",
-      "confidence": "ASSUMED_FOR_RL"
+      "center_xyz_m": [0.0, -0.04, 0.091],
+      "rpy_rad": [-1.5707963267948966, 0.0, 0.0],
+      "size_xyz_m": [0.025, 0.0114, 0.023862],
+      "nominal_mass_kg": 0.004,
+      "mass_range_kg": [0.0035, 0.0045],
+      "placement": "centered below the eye display behind the curved visor",
+      "function": "Raspberry Pi Camera Module 3 Wide, IMX708 autofocus, 120 degree diagonal FoV",
+      "vendor_selected": true,
+      "source_url": "https://www.raspberrypi.com/products/camera-module-3/",
+      "cad_source": "source_assets/vendor/head_electronics/Raspberry_Pi_Camera_Module_3_Wide.step",
+      "confidence": "VENDOR_DIMENSIONS_AND_EXACT_STEP"
+    },
+    "tof_module": {
+      "parent_link": "Torso",
+      "center_xyz_m": [0.031, -0.042, 0.092],
+      "rpy_rad": [1.5707963267948966, 0.0, 0.0],
+      "size_xyz_m": [0.012, 0.003, 0.01],
+      "nominal_mass_kg": 0.002,
+      "mass_range_kg": [0.001, 0.004],
+      "placement": "right side of the camera with a dedicated clear visor window",
+      "function": "ST VL53L5CX 8x8 multi-zone ToF on a custom 12x10 mm carrier",
+      "vendor_selected": "SENSOR_SELECTED_CARRIER_PCB_NOT_YET_ROUTED",
+      "source_url": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l5cx.html",
+      "confidence": "SENSOR_EXACT_CARRIER_ENVELOPE_ASSUMED"
     },
     "imu_module": {
       "parent_link": "Torso",
@@ -29,7 +59,8 @@
       "nominal_mass_kg": 0.012,
       "mass_range_kg": [0.005, 0.025],
       "placement": "near the torso center on the compute tray; axes aligned with Torso",
-      "function": "6-axis IMU envelope",
+      "function": "6-axis torso IMU envelope",
+      "vendor_selected": false,
       "confidence": "ASSUMED_FOR_RL"
     },
     "compute_module": {
@@ -41,6 +72,7 @@
       "mass_range_kg": [0.1, 0.3],
       "placement": "rear chest service tray",
       "function": "generic SBC, carrier, regulator and mounting tray envelope",
+      "vendor_selected": false,
       "confidence": "ASSUMED_FOR_RL"
     },
     "battery_pack": {
@@ -52,13 +84,20 @@
       "mass_range_kg": [0.28, 0.45],
       "placement": "low and centered in the chest, below the compute tray",
       "function": "3S2P 18650 plus BMS packaging envelope; cell and BMS selection not frozen",
+      "vendor_selected": false,
       "confidence": "ASSUMED_FOR_RL"
     }
   },
   "frames": {
     "camera_optical_frame": {
       "parent_link": "camera_module",
-      "origin_xyz_m": [0.0, -0.011, 0.0],
+      "origin_xyz_m": [0.0, -0.007, 0.0],
+      "origin_rpy_rad": [-1.5707963267948966, 0.0, 3.141592653589793],
+      "physical_mass": false
+    },
+    "tof_optical_frame": {
+      "parent_link": "tof_module",
+      "origin_xyz_m": [0.0, -0.002, 0.0],
       "origin_rpy_rad": [-1.5707963267948966, 0.0, 3.141592653589793],
       "physical_mass": false
     }
@@ -86,11 +125,11 @@
     }
   },
   "required_hardware_overrides": [
-    "select exact camera, compute board, IMU, cells, BMS, regulator and connectors",
-    "weigh each installed module and identify its mounted center of mass",
-    "verify camera intrinsics and camera-to-Torso extrinsics",
-    "identify IMU orientation, bias, noise and latency",
-    "identify battery state-of-charge mass change as negligible or model it",
+    "freeze exact compute board, torso IMU, cells, BMS, regulator and connectors",
+    "route and review the VL53L5CX carrier PCB and flex/cable exits",
+    "weigh every installed module and identify its mounted center of mass",
+    "calibrate camera intrinsics and camera-to-Torso extrinsics",
+    "identify torso IMU orientation, bias, noise and latency",
     "route and weigh the final harness, then regenerate aggregate inertias"
   ]
 }

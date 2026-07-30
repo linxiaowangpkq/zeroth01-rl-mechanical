@@ -21,7 +21,7 @@ SOURCE_MOTION = (
     / "zeroth01_round_v1_solidworks_motion.gif"
 )
 DEFAULT_OUTPUT = (
-    ROOT / "generated" / "solidworks" / "portable_flat_round_v1"
+    ROOT / "generated" / "solidworks" / "portable_flat_round_v2"
 )
 
 
@@ -36,13 +36,21 @@ def load_round_module():
     return module
 
 
-def copy_flat_parts(output: Path, expected_count: int) -> int:
+def copy_flat_parts(
+    output: Path,
+    source_round_names: set[str],
+    expected_count: int,
+) -> int:
     output.mkdir(parents=True, exist_ok=True)
     sources = [
         path
         for path in (
             sorted(SOURCE_BASE_PARTS.glob("*.SLDPRT"))
-            + sorted(SOURCE_ROUND_PARTS.glob("*.SLDPRT"))
+            + sorted(
+                path
+                for path in SOURCE_ROUND_PARTS.glob("*.SLDPRT")
+                if path.name in source_round_names
+            )
         )
         if not path.name.startswith("~$")
     ]
@@ -75,14 +83,46 @@ def main() -> int:
     output = args.output_dir.resolve()
 
     round_module = load_round_module()
-    expected_count = 17 + len(round_module.OVERLAYS) + 3
-    copied = copy_flat_parts(output, expected_count)
+    # SolidWorks keys open documents by title.  The canonical and portable
+    # packages intentionally reuse part filenames, so a still-open canonical
+    # assembly makes OpenDoc6 reject the same-titled copy in another folder.
+    # Close only task-owned generated documents before redirecting paths.
+    round_module.pythoncom.CoInitialize()
+    sw = round_module.base.get_or_start_sw()
+    generated_titles = [
+        round_module.ASM_PATH.name,
+        "OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM",
+        "OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM",
+    ]
+    generated_titles.extend(
+        path.name
+        for path in (
+            sorted(SOURCE_BASE_PARTS.glob("*.SLDPRT"))
+            + sorted(SOURCE_ROUND_PARTS.glob("*.SLDPRT"))
+        )
+        if not path.name.startswith("~$")
+    )
+    for title in dict.fromkeys(generated_titles):
+        try:
+            sw.CloseDoc(title)
+        except Exception:
+            pass
+
+    source_round_names = {
+        item[2] for item in round_module.OVERLAYS
+    } | {round_module.JOINT_MARKER_PART_NAME}
+    expected_count = 17 + len(source_round_names)
+    copied = copy_flat_parts(
+        output,
+        source_round_names,
+        expected_count,
+    )
     previews = output / "previews"
     previews.mkdir(parents=True, exist_ok=True)
     portable_motion = previews / SOURCE_MOTION.name
     shutil.copy2(SOURCE_MOTION, portable_motion)
 
-    assembly = output / "OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM"
+    assembly = output / "OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM"
     round_module.SW_ROOT = output
     round_module.SW_PART_DIR = output
     round_module.ASM_PATH = assembly

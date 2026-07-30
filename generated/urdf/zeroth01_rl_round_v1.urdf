@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!-- cadpy:sourcePath=../../scripts/gen_zeroth01_rl_round_v1.py -->
-<!-- cadpy:sourceHash=447af13e9baba5a8397e89dbfe300a242b5afc0c0ff8059024b39e7324e3c8b7 -->
+<!-- cadpy:sourceHash=f0bab3bbd84982b944ae681908246c73384dae8475a741c5d421c4b1f99705e9 -->
 <robot name="zeroth01_rl_round_v1_16dof">
   <!--Derived from official Zeroth stompymicro commit 33b0553, the last URDF revision geometrically compatible with the published Drive STL bundle. Frames, axes, masses and inertias are preserved. The later 43c5baa frames are intentionally not mixed with these older meshes.-->
   <!--RL audit overlay: lower-body bounds are intersected with the official stompymicro control limits; bounds with a one-axis new collision pair are moved one 61-sample step inside the observed collision-free interval. Multi-joint self-collision remains enabled and must be handled by termination/penalty logic.-->
   <!--RL-ready startup envelope: limits use the largest tested uniform box (scale 0.3) that retains neutral and the official standing pose while passing 20,000 deterministic random poses and all 65,536 box corners against non-allowed mesh collision pairs. This is sampled evidence, not a continuous mathematical proof.-->
   <!--Actuator overlay: effort=2 N.m, velocity=5 rad/s, damping=0.53 N.m.s/rad and Coulomb friction=0.001 N.m follow the official stompymicro simulation baseline. Manufacturer rated/peak torque, servo IDs, zero offsets and confidence labels live in the adjacent actuator metadata; do not infer them from URDF limits.-->
   <!--Round-v1 adds printable PETG cosmetic shells and 8 mm thicker sole prototypes. Nominal CAD-volume mass/inertia is included; hardware deployment remains blocked until every printed part and the final assembly are weighed and the inertials regenerated.-->
-  <!--The actual FEETECH STS3250 STEP is a SolidWorks/CAD placement reference. Servo mass is not added again because the baseline aggregate link inertials already represent the source assemblies.-->
-  <!--Camera, IMU, compute and 3S2P battery links use explicit ASSUMED_FOR_RL box envelopes and masses from round_v1_electronics_sensor_layout.json. They have no collision geometry because they are internal payloads. Replace their inertials and extrinsics after exact hardware selection and weighing. camera_optical_frame is intentionally massless.-->
+  <!--The quarantined ST-3235M STEP is not used as STS3250-C001 installation geometry. The frozen Zeroth-01 source assemblies remain authoritative, and servo mass is not added again because their aggregate link inertials already include the actuators.-->
+  <!--Dual-eye display, camera, ToF, IMU, compute and 3S2P battery links use explicit box inertias from round_v1_electronics_sensor_layout.json. They have no collision geometry because they are internal payloads. The head display and camera are vendor-selected; torso payloads and the ToF carrier remain hardware overrides. Optical frames are massless.-->
   <link name="base">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0" />
@@ -38,9 +38,9 @@
       </geometry>
     </collision>
     <inertial>
-      <mass value="2.48634993491" />
-      <inertia ixx="0.0120317131931" iyy="0.0147682096219" izz="0.0047831939938" ixy="3.76097194584e-06" ixz="-7.76479182953e-05" iyz="0.000864247460091" />
-      <origin xyz="0.000402798258954 0.00202013718274 0.00731711296096" rpy="0 0 0" />
+      <mass value="2.34106825776" />
+      <inertia ixx="0.0110818323838" iyy="0.0138225652884" izz="0.00462544414953" ixy="4.93782902828e-06" ixz="-8.16080460625e-05" iyz="0.000616038941758" />
+      <origin xyz="0.000424878383266 0.00320520734699 0.00252449221717" rpy="0 0 0" />
     </inertial>
     <visual name="round_v1_chest_front">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -121,9 +121,9 @@
       </geometry>
     </collision>
     <collision name="round_v1_head_proxy">
-      <origin xyz="0 -0.003 0.099" rpy="0 0 0" />
+      <origin xyz="0 -0.003 0.103" rpy="0 0 0" />
       <geometry>
-        <box size="0.132 0.066 0.078" />
+        <box size="0.12 0.074 0.09" />
       </geometry>
     </collision>
     <collision name="round_v1_pelvis_center_proxy">
@@ -643,26 +643,68 @@
       </geometry>
     </collision>
   </link>
-  <link name="camera_module">
-    <visual name="camera_module_envelope">
+  <link name="eye_display_module">
+    <visual name="eye_display_module_envelope">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.065 0.02 0.018" />
+        <box size="0.0510853 0.0018615 0.0201119" />
       </geometry>
-      <material name="camera_module_material">
-        <color rgba="0.164706 0.176471 0.196078 1" />
+      <material name="eye_display_module_material">
+        <color rgba="0 0.721569 0.85098 1" />
       </material>
     </visual>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.035" />
-      <inertia ixx="2.11166666667e-06" iyy="1.32679166667e-05" izz="1.34895833333e-05" ixy="0" ixz="0" iyz="0" />
+      <mass value="0.011" />
+      <inertia ixx="3.73957561872e-07" iyy="2.76301336456e-06" izz="2.39540863681e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="eye_display_module_mount" type="fixed">
+    <origin xyz="0 -0.042 0.115" rpy="1.57079632679 0 0" />
+    <parent link="Torso" />
+    <child link="eye_display_module" />
+  </joint>
+  <link name="camera_module">
+    <visual name="camera_module_envelope">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.0114 0.023862" />
+      </geometry>
+      <material name="camera_module_material">
+        <color rgba="1 0.090196 0.266667 1" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.004" />
+      <inertia ixx="2.33118348e-07" iyy="3.98131681333e-07" izz="2.51653333333e-07" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
   <joint name="camera_module_mount" type="fixed">
-    <origin xyz="0 -0.03 0.108" rpy="0 0 0" />
+    <origin xyz="0 -0.04 0.091" rpy="-1.57079632679 0 0" />
     <parent link="Torso" />
     <child link="camera_module" />
+  </joint>
+  <link name="tof_module">
+    <visual name="tof_module_envelope">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.012 0.003 0.01" />
+      </geometry>
+      <material name="tof_module_material">
+        <color rgba="0.666667 0 1 1" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.81666666667e-08" iyy="4.06666666667e-08" izz="2.55e-08" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="tof_module_mount" type="fixed">
+    <origin xyz="0.031 -0.042 0.092" rpy="1.57079632679 0 0" />
+    <parent link="Torso" />
+    <child link="tof_module" />
   </joint>
   <link name="imu_module">
     <visual name="imu_module_envelope">
@@ -671,7 +713,7 @@
         <box size="0.032 0.025 0.008" />
       </geometry>
       <material name="imu_module_material">
-        <color rgba="0.333333 0.788235 0.776471 1" />
+        <color rgba="0.392157 0.866667 0.090196 1" />
       </material>
     </visual>
     <inertial>
@@ -692,7 +734,7 @@
         <box size="0.105 0.02 0.07" />
       </geometry>
       <material name="compute_module_material">
-        <color rgba="0.333333 0.788235 0.776471 1" />
+        <color rgba="1 0.568627 0 1" />
       </material>
     </visual>
     <inertial>
@@ -713,7 +755,7 @@
         <box size="0.075 0.038 0.038" />
       </geometry>
       <material name="battery_pack_material">
-        <color rgba="0.717647 0.529412 0.368627 1" />
+        <color rgba="0.835294 0 0.976471 1" />
       </material>
     </visual>
     <inertial>
@@ -729,8 +771,14 @@
   </joint>
   <link name="camera_optical_frame" />
   <joint name="camera_optical_frame_joint" type="fixed">
-    <origin xyz="0 -0.011 0" rpy="-1.57079632679 0 3.14159265359" />
+    <origin xyz="0 -0.007 0" rpy="-1.57079632679 0 3.14159265359" />
     <parent link="camera_module" />
     <child link="camera_optical_frame" />
+  </joint>
+  <link name="tof_optical_frame" />
+  <joint name="tof_optical_frame_joint" type="fixed">
+    <origin xyz="0 -0.002 0" rpy="-1.57079632679 0 3.14159265359" />
+    <parent link="tof_module" />
+    <child link="tof_optical_frame" />
   </joint>
 </robot>

@@ -1,7 +1,7 @@
 {
   "schema": "zeroth01.rl_package_portability.v1",
-  "urdf": "generated\\urdf\\zeroth01_rl_round_v1.urdf",
-  "mjcf": "generated\\mujoco\\zeroth01_rl_round_v1.xml",
+  "urdf": "generated/urdf/zeroth01_rl_round_v1.urdf",
+  "mjcf": "generated/mujoco/zeroth01_rl_round_v1.xml",
   "urdf_mesh_reference_count": 27,
   "mjcf_mesh_reference_count": 27,
   "case_exact_mesh_paths": true,

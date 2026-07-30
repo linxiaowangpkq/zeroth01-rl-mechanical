@@ -26,13 +26,14 @@ from OCP.gp import gp_Trsf
 
 ROOT = Path(__file__).resolve().parents[2]
 URDF_PATH = ROOT / "generated" / "urdf" / "zeroth01_rl_ready.urdf"
-SERVO_STEP = (
+QUARANTINED_SERVO_STEP = (
     ROOT
     / "source_assets"
     / "vendor"
     / "sts3250"
     / "FEETECH_STS3250.step"
 )
+SERVO_STEP = QUARANTINED_SERVO_STEP
 SERVO_AXIS_REPORT = ROOT / "reports" / "round_v1_servo_axis_alignment.csv"
 SERVO_PHASE_CONFIG = (
     ROOT
@@ -42,6 +43,26 @@ SERVO_PHASE_CONFIG = (
 )
 ELECTRONICS_LAYOUT_SOURCE = (
     ROOT / "config" / "round_v1_electronics_layout_source.json"
+)
+SERVO_INTERFACE_CONFIG = (
+    ROOT / "config" / "round_v2_servo_interface_geometry.json"
+)
+COMPONENT_IDENTITY_CONFIG = (
+    ROOT / "config" / "round_v2_component_identity.json"
+)
+DUAL_EYE_STEP = (
+    ROOT
+    / "source_assets"
+    / "vendor"
+    / "head_electronics"
+    / "Waveshare_DualEye_LCD_Module.step"
+)
+CAMERA_WIDE_STEP = (
+    ROOT
+    / "source_assets"
+    / "vendor"
+    / "head_electronics"
+    / "Raspberry_Pi_Camera_Module_3_Wide.step"
 )
 
 CREAM = Color("#E8D2B3")
@@ -53,6 +74,19 @@ SERVO_METAL = Color("#636B73")
 WALL_MM = 2.4
 SEAM_GAP_MM = 0.35
 SOLE_THICKENING_MM = 8.0
+
+
+def servo_interface_config() -> dict[str, object]:
+    return json.loads(SERVO_INTERFACE_CONFIG.read_text(encoding="utf-8"))
+
+
+def servo_identity_map() -> dict[str, dict[str, object]]:
+    payload = json.loads(
+        COMPONENT_IDENTITY_CONFIG.read_text(encoding="utf-8")
+    )
+    return {
+        str(item["joint"]): item for item in payload["servos"]
+    }
 
 
 def _mat_mul(a: list[list[float]], b: list[list[float]]) -> list[list[float]]:
@@ -270,25 +304,29 @@ def chest_shell(side: str) -> Shape:
 
 
 def head_shell(side: str) -> Shape:
-    center = (0.0, -3.0, 99.0)
-    outer = rounded_box((132.0, 66.0, 78.0), center, 31.0)
-    inner = rounded_box((114.0, 48.0, 64.0), (0.0, -1.0, 99.0), 22.0)
+    # A true triaxial ellipsoid replaces the former filleted cuboid. The
+    # bottom narrows naturally above the shoulder centers, preserving the
+    # frozen mechanism and its clearance while making the head genuinely
+    # rounded from every view.
+    center = (0.0, -3.0, 103.0)
+    outer = Sphere(1.0).scale((75.0, 44.0, 49.0)).moved(Location(center))
+    inner = Sphere(1.0).scale((71.8, 40.8, 45.8)).moved(Location(center))
     shell = outer.cut(inner)
-    for x_pos in (-47.0, 47.0):
-        # Use a solid, low-profile rounded ear boss. The earlier hollow sphere
-        # produced a valid in-memory B-Rep whose rear-half inner-shell
-        # orientation changed during STEP round-trip, corrupting mass
-        # properties. This form preserves symmetry and exact STEP volume.
-        ear = rounded_box(
-            (42.0, 20.0, 30.0),
-            (x_pos, -3.0, 130.0),
-            9.0,
+    # Ellipsoidal visor aperture; the transparent visor is a separate
+    # removable part and the electronics remain behind it.
+    visor_opening = Sphere(1.0).scale((52.0, 12.0, 25.0)).moved(
+        Location((0.0, -43.0, 110.0))
+    )
+    shell = shell.cut(visor_opening)
+    for x_pos in (-54.0, 54.0):
+        ear = Sphere(1.0).scale((21.0, 16.0, 20.0)).moved(
+            Location((x_pos, -1.0, 136.0))
         )
         shell = shell.fuse(ear)
     shell = _add_seam_bosses(
         shell,
         center[1],
-        [(-62.0, 86.0), (62.0, 86.0), (-58.0, 119.0), (58.0, 119.0)],
+        [(-65.0, 82.0), (65.0, 82.0), (-58.0, 124.0), (58.0, 124.0)],
     )
     piece = _half(shell, center[1], side)
     piece.label = f"ROUND_V1_HEAD_{side.upper()}"
@@ -315,33 +353,53 @@ def pelvis_shell(side: str) -> Shape:
 
 
 def muzzle_badge() -> Shape:
-    shape = rounded_box((68.0, 12.0, 33.0), (0.0, -39.0, 86.0), 5.0)
-    shape.label = "ROUND_V1_MUZZLE_BADGE"
+    # Small convex camera pod; no rectangular muzzle remains.
+    shape = Sphere(1.0).scale((20.0, 5.0, 11.0)).moved(
+        Location((0.0, -48.0, 91.0))
+    )
+    shape.label = "ROUND_V2_CAMERA_POD"
     shape.color = TAN
     return shape
 
 
 def visor_badge() -> Shape:
-    shape = rounded_box((92.0, 8.0, 31.0), (0.0, -38.0, 107.0), 3.5)
-    shape.label = "ROUND_V1_VISOR_BADGE"
+    shape = Sphere(1.0).scale((50.0, 4.2, 23.0)).moved(
+        Location((0.0, -46.5, 111.0))
+    )
+    shape.label = "ROUND_V2_COMPOUND_CURVED_POLYCARBONATE_VISOR"
     shape.color = DARK
     return shape
 
 
 def camera_lenses() -> Shape:
     lenses: list[Shape] = []
-    for x_pos in (-27.0, 27.0):
-        plane = Plane(
-            origin=(x_pos, -43.0, 108.0),
-            x_dir=(1.0, 0.0, 0.0),
-            z_dir=(0.0, -1.0, 0.0),
+    for x_pos in (-16.0, 16.0):
+        lens = Sphere(1.0).scale((9.3, 2.2, 9.3)).moved(
+            Location((x_pos, -50.0, 115.0))
         )
-        lens = Solid.make_cylinder(9.5, 3.0, plane)
-        pupil = Solid.make_cylinder(5.8, 3.6, plane)
-        lens = lens.cut(pupil)
-        lens.label = f"ROUND_V1_CAMERA_LENS_{'LEFT' if x_pos < 0 else 'RIGHT'}"
+        lens.label = (
+            f"WAVESHARE_CONVEX_EYE_LENS_"
+            f"{'LEFT' if x_pos < 0 else 'RIGHT'}"
+        )
         lens.color = TEAL
         lenses.append(lens)
+    camera_plane = Plane(
+        origin=(0.0, -53.0, 91.0),
+        x_dir=(1.0, 0.0, 0.0),
+        z_dir=(0.0, -1.0, 0.0),
+    )
+    camera_ring = Solid.make_cylinder(4.5, 1.5, camera_plane).cut(
+        Solid.make_cylinder(2.7, 2.0, camera_plane)
+    )
+    camera_ring.label = "RPI_CAMERA_MODULE_3_WIDE_WINDOW"
+    camera_ring.color = TEAL
+    lenses.append(camera_ring)
+    # Keep the edge radius below half of the 1.5 mm optical-window depth.
+    # A 1.5 mm radius on every edge is geometrically impossible here.
+    tof_window = rounded_box((8.0, 1.5, 5.0), (31.0, -49.5, 92.0), 0.6)
+    tof_window.label = "VL53L5CX_TOF_WINDOW"
+    tof_window.color = Color("#AA00FF")
+    lenses.append(tof_window)
     shape = Compound(label="ROUND_V1_CAMERA_LENSES", children=lenses)
     shape.color = TEAL
     return shape
@@ -372,10 +430,49 @@ def _electronics_module_box(name: str, radius_mm: float) -> Shape:
     return rounded_box(size_mm, center_mm, radius_mm)
 
 
+def _recenter_step(shape: Shape) -> Shape:
+    bbox = shape.bounding_box()
+    center = (
+        (bbox.min.X + bbox.max.X) / 2.0,
+        (bbox.min.Y + bbox.max.Y) / 2.0,
+        (bbox.min.Z + bbox.max.Z) / 2.0,
+    )
+    return shape.moved(Location(tuple(-value for value in center)))
+
+
+def eye_display_module() -> Shape:
+    if not DUAL_EYE_STEP.is_file():
+        return _electronics_module_box("eye_display_module", 1.0)
+    shape = _recenter_step(import_step(DUAL_EYE_STEP))
+    # Vendor PCB lies in XY; +90 deg about X maps its normal to robot -Y.
+    shape = shape.moved(Location((0.0, 0.0, 0.0), (90.0, 0.0, 0.0)))
+    center_mm = tuple(
+        1000.0 * float(value)
+        for value in json.loads(
+            ELECTRONICS_LAYOUT_SOURCE.read_text(encoding="utf-8")
+        )["modules"]["eye_display_module"]["center_xyz_m"]
+    )
+    shape = shape.moved(Location(center_mm))
+    shape.label = "WAVESHARE_0_71IN_DUALEYE_LCD_EXACT"
+    shape.color = Color("#00B8D9")
+    return shape
+
+
 def camera_module() -> Shape:
-    shape = _electronics_module_box("camera_module", 4.0)
-    shape.label = "ROUND_V1_CAMERA_MODULE_ENVELOPE"
-    shape.color = DARK
+    # The official reference STEP contains 631 solids and stalls SolidWorks
+    # import without improving package-clearance evidence.  Use its measured
+    # 25 x 23.862 x 11.4 mm overall envelope in the working assembly; retain
+    # the untouched vendor STEP under source_assets/vendor/head_electronics.
+    shape = _electronics_module_box("camera_module", 2.0)
+    shape.label = "RASPBERRY_PI_CAMERA_MODULE_3_WIDE_VENDOR_ENVELOPE"
+    shape.color = Color("#FF1744")
+    return shape
+
+
+def tof_module() -> Shape:
+    shape = _electronics_module_box("tof_module", 1.0)
+    shape.label = "VL53L5CX_CUSTOM_CARRIER_ENVELOPE"
+    shape.color = Color("#AA00FF")
     return shape
 
 
@@ -400,6 +497,90 @@ def battery_pack() -> Shape:
     return shape
 
 
+def sts3250_controlled_case() -> Shape:
+    """Dimension-controlled STS3250-C001 case in the canonical shaft frame.
+
+    The previously downloaded STEP identifies itself as ST-3235M and its
+    shaft is +Y, while the assembly treated +Z as the shaft. It remains
+    quarantined for provenance only. This controlled reference instead uses
+    the current FEETECH 45.22 x 24.72 x 35 mm case and the drawing's 12.5 mm
+    shaft-center offset. Purchased splines and horns are child-side parts.
+    """
+
+    controlled = servo_interface_config()["controlled_servo_reference"]
+    bounds_min = [float(value) for value in controlled["case_bounds_min_xyz"]]
+    bounds_max = [float(value) for value in controlled["case_bounds_max_xyz"]]
+    size = tuple(
+        bounds_max[index] - bounds_min[index] for index in range(3)
+    )
+    center = tuple(
+        (bounds_max[index] + bounds_min[index]) / 2.0
+        for index in range(3)
+    )
+    case = rounded_box(size, center, 2.0)
+
+    # Shallow face bosses show the two-sided output location without claiming
+    # an unverified internal bearing/gear tooth profile.
+    front_boss = Cylinder(8.0, 1.6).moved(Location((0.0, 0.0, 18.3)))
+    rear_boss = Cylinder(8.0, 1.6).moved(Location((0.0, 0.0, -18.3)))
+    shape = case.fuse(front_boss, rear_boss)
+    shape.label = "FEETECH_STS3250_C001_DIMENSION_CONTROLLED_CASE"
+    shape.color = SERVO_METAL
+    return shape
+
+
+def _purchased_horn(
+    center_z: float,
+    thickness: float,
+    label: str,
+) -> Shape:
+    interface = servo_interface_config()
+    horn = interface["purchased_horns"]
+    radius = float(horn["outer_diameter"]) / 2.0
+    shape = Cylinder(radius, thickness).moved(Location((0.0, 0.0, center_z)))
+    spline_radius = float(horn["center_spline_envelope_diameter"]) / 2.0
+    shape = shape.cut(
+        Cylinder(spline_radius, thickness + 1.0).moved(
+            Location((0.0, 0.0, center_z))
+        )
+    )
+    bolt_radius = float(horn["bolt_circle_diameter"]) / 2.0
+    for angle_deg in (0.0, 90.0, 180.0, 270.0):
+        angle = math.radians(angle_deg)
+        shape = shape.cut(
+            Cylinder(1.6, thickness + 1.0).moved(
+                Location(
+                    (
+                        bolt_radius * math.cos(angle),
+                        bolt_radius * math.sin(angle),
+                        center_z,
+                    )
+                )
+            )
+        )
+    shape.label = label
+    shape.color = SERVO_METAL
+    return shape
+
+
+def purchased_horn_pair() -> Shape:
+    horn = servo_interface_config()["purchased_horns"]
+    front = _purchased_horn(
+        float(horn["front_center_z"]),
+        float(horn["front_disc_thickness"]),
+        "PURCHASED_STS3250_25T_FRONT_HORN_4XM3_PCD14",
+    )
+    rear = _purchased_horn(
+        float(horn["rear_center_z"]),
+        float(horn["rear_disc_thickness"]),
+        "PURCHASED_STS3250_25T_REAR_HORN_4XM3_PCD14",
+    )
+    return Compound(
+        label="PURCHASED_STS3250_25T_HORN_PAIR",
+        children=[front, rear],
+    )
+
+
 def servo_cage() -> Shape:
     """Parent-side CNC carrier around the exact STS3250 local envelope.
 
@@ -407,99 +588,132 @@ def servo_cage() -> Shape:
     25T horn serviceable; the rear ring supports the second shaft.
     """
 
-    center = (-13.0, -9.5, 0.0)
-    outer = rounded_box((52.0, 44.0, 31.0), center, 5.0)
-    inner = rounded_box((46.42, 38.60, 25.92), center, 3.6)
+    cage_config = servo_interface_config()["cage"]
+    center = tuple(
+        float(value) for value in cage_config["outer_box_center_xyz"]
+    )
+    outer = rounded_box(
+        tuple(float(value) for value in cage_config["outer_box_size_xyz"]),
+        center,
+        4.0,
+    )
+    inner = rounded_box(
+        tuple(float(value) for value in cage_config["inner_box_size_xyz"]),
+        tuple(float(value) for value in cage_config["inner_box_center_xyz"]),
+        3.0,
+    )
     cage = outer.cut(inner)
     service_opening = Box(
-        14.0,
-        34.0,
-        23.0,
+        18.0,
+        24.0,
+        29.0,
         align=(Align.CENTER, Align.CENTER, Align.CENTER),
-    ).moved(Location((12.0, -9.5, 0.0)))
+    ).moved(Location((13.0, 0.0, 0.0)))
     cage = cage.cut(service_opening)
 
-    # Overlap the rear ring 1 mm into the cage wall so STEP export preserves
-    # one connected torque-reaction solid rather than a visually touching
-    # second body.
-    rear_outer = Cylinder(14.5, 4.0).moved(Location((0.0, 0.0, -16.5)))
-    rear_inner = Cylinder(6.4, 5.0).moved(Location((0.0, 0.0, -16.5)))
+    rear_center = float(cage_config["rear_guard_center_z"])
+    front_center = float(cage_config["front_guard_center_z"])
+    rear_outer = Cylinder(
+        float(cage_config["rear_guard_outer_radius"]), 3.0
+    ).moved(Location((0.0, 0.0, rear_center)))
+    rear_inner = Cylinder(
+        float(cage_config["rear_guard_inner_radius"]), 4.0
+    ).moved(Location((0.0, 0.0, rear_center)))
     rear_seat = rear_outer.cut(rear_inner)
-    front_outer = Cylinder(14.5, 4.0).moved(Location((0.0, 0.0, 14.0)))
-    front_inner = Cylinder(11.8, 5.0).moved(Location((0.0, 0.0, 13.5)))
+    front_outer = Cylinder(
+        float(cage_config["front_guard_outer_radius"]), 3.0
+    ).moved(Location((0.0, 0.0, front_center)))
+    front_inner = Cylinder(
+        float(cage_config["front_guard_inner_radius"]), 4.0
+    ).moved(Location((0.0, 0.0, front_center)))
     front_guard = front_outer.cut(front_inner)
-    anchor = rounded_box((13.0, 24.0, 20.0), (-39.0, -9.5, 0.0), 4.0)
+    anchor = rounded_box(
+        tuple(float(value) for value in cage_config["anchor_size_xyz"]),
+        tuple(float(value) for value in cage_config["anchor_center_xyz"]),
+        3.0,
+    )
     shape = cage.fuse(rear_seat, front_guard, anchor)
     shape.label = "ROUND_V1_STS3250_PARENT_SERVO_CAGE"
     shape.color = CREAM
     return shape
 
 
-def _output_adapter_disc(z_start: float, recess_from_top: bool) -> Shape:
-    """Owned slotted adapter used with a purchased 25T servo horn."""
+def _output_adapter_disc(center_z: float) -> Shape:
+    """Owned adapter matching the purchased horn's drawing-defined M3 PCD."""
 
-    disc = Cylinder(18.5, 4.0).moved(Location((0.0, 0.0, z_start)))
+    adapter = servo_interface_config()["child_output_adapters"]
+    thickness = float(adapter["disc_thickness"])
+    disc = Cylinder(
+        float(adapter["disc_outer_radius"]), thickness
+    ).moved(Location((0.0, 0.0, center_z)))
     disc = disc.cut(
-        Cylinder(1.7, 6.0).moved(Location((0.0, 0.0, z_start - 1.0)))
+        Cylinder(3.1, thickness + 1.0).moved(
+            Location((0.0, 0.0, center_z))
+        )
     )
-    # Four radial M3 slots accept a measured horn PCD from 11 to 20 mm.
-    # They are deliberately slots, not a claimed vendor bolt pattern.
-    for x_pos in (-7.75, 7.75):
-        slot = rounded_box(
-            (4.5, 3.4, 6.0),
-            (x_pos, 0.0, z_start + 2.0),
-            1.65,
-        )
-        disc = disc.cut(slot)
-    for y_pos in (-7.75, 7.75):
-        slot = rounded_box(
-            (3.4, 4.5, 6.0),
-            (0.0, y_pos, z_start + 2.0),
-            1.65,
-        )
-        disc = disc.cut(slot)
-    # The owned child-bracket interface is a frozen 29 mm PCD at 45 degrees.
-    for angle_deg in (45.0, 135.0, 225.0, 315.0):
+    bolt_radius = float(adapter["bolt_circle_diameter"]) / 2.0
+    clearance_radius = float(adapter["bolt_clearance_diameter"]) / 2.0
+    for angle_deg in (0.0, 90.0, 180.0, 270.0):
         angle = math.radians(angle_deg)
-        x_pos = 14.5 * math.cos(angle)
-        y_pos = 14.5 * math.sin(angle)
+        x_pos = bolt_radius * math.cos(angle)
+        y_pos = bolt_radius * math.sin(angle)
         disc = disc.cut(
-            Cylinder(1.7, 6.0).moved(
-                Location((x_pos, y_pos, z_start - 1.0))
+            Cylinder(clearance_radius, thickness + 1.0).moved(
+                Location((x_pos, y_pos, center_z))
             )
         )
-    recess_start = z_start + 2.5 if recess_from_top else z_start - 0.1
-    return disc.cut(
-        Cylinder(7.0, 1.6).moved(Location((0.0, 0.0, recess_start)))
-    )
+    return disc
 
 
 def output_hub_front() -> Shape:
-    shape = _output_adapter_disc(13.0, False)
+    center_z = float(
+        servo_interface_config()["child_output_adapters"]["front_center_z"]
+    )
+    shape = _output_adapter_disc(center_z)
     shape.label = "ROUND_V1_STS3250_CHILD_OUTPUT_ADAPTER_FRONT"
     shape.color = TEAL
     return shape
 
 
 def output_hub_rear() -> Shape:
-    shape = _output_adapter_disc(-17.0, True)
+    center_z = float(
+        servo_interface_config()["child_output_adapters"]["rear_center_z"]
+    )
+    shape = _output_adapter_disc(center_z)
     shape.label = "ROUND_V1_STS3250_CHILD_OUTPUT_ADAPTER_REAR"
     shape.color = TEAL
     return shape
 
 
 def output_hub() -> Shape:
-    """Two child-side adapters around purchased front/rear 25T horns.
+    """Purchased 25T horn pair plus owned PCD14 child adapters.
 
-    The official spline is OD5.9 with M3 retention.  Tooth form and accessory
-    horn hole pattern are unavailable, so neither is fabricated here.  The
-    owned adapters clamp purchased horns through radial slots and expose a
-    frozen 29 mm PCD to the child-side fork.
+    The supplied drawing resolves the previous unknown interface: both horns
+    expose four M3 holes on a 14 mm bolt circle. The 25T tooth form remains a
+    purchased feature and is deliberately represented only by its envelope.
     """
 
+    interface = servo_interface_config()
+    controlled = interface["controlled_servo_reference"]
+    front_spline = controlled["front_spline"]
+    rear_spline = controlled["rear_spline"]
+    front_shaft = Cylinder(
+        float(front_spline["diameter"]) / 2.0,
+        float(front_spline["axial_length"]),
+    ).moved(Location((0.0, 0.0, float(front_spline["axial_center_z"]))))
+    rear_shaft = Cylinder(
+        float(rear_spline["diameter"]) / 2.0,
+        float(rear_spline["axial_length"]),
+    ).moved(Location((0.0, 0.0, float(rear_spline["axial_center_z"]))))
     shape = Compound(
-        label="ROUND_V1_STS3250_CHILD_OUTPUT_HUB_PAIR",
-        children=[output_hub_front(), output_hub_rear()],
+        label="ROUND_V2_STS3250_CHILD_OUTPUT_STACK",
+        children=[
+            front_shaft,
+            rear_shaft,
+            *list(purchased_horn_pair().children),
+            output_hub_front(),
+            output_hub_rear(),
+        ],
     )
     shape.color = TEAL
     return shape
@@ -545,10 +759,12 @@ def sole(side: str) -> Shape:
 
 
 def joint_ring() -> Shape:
-    outer = Cylinder(21.0, 8.0)
-    inner = Cylinder(14.5, 10.0)
+    # Review-only marker: deliberately smaller than a horn or cage so the
+    # colored annotation cannot be mistaken for physical transmission CAD.
+    outer = Cylinder(10.0, 1.8)
+    inner = Cylinder(7.2, 2.2)
     ring = outer.cut(inner)
-    ring.label = "ROUND_V1_GENERIC_JOINT_RING"
+    ring.label = "ROUND_V2_NONPHYSICAL_JOINT_POSITION_MARKER"
     ring.color = DARK
     return ring
 
@@ -583,6 +799,51 @@ def _joint_frame(
         link_transforms[str(joint["parent"])],
         joint["origin"],
     )
+
+
+def joint_marker_instances() -> tuple[list[Shape], list[dict[str, object]]]:
+    """Place 16 colored markers without altering the assembled mechanism."""
+
+    joints, transforms = load_neutral_kinematics()
+    moving = _moving_joint_map(joints)
+    identities = servo_identity_map()
+    source = joint_ring()
+    markers: list[Shape] = []
+    rows: list[dict[str, object]] = []
+    for name, joint in moving.items():
+        identity = identities[name]
+        servo_id = str(identity["id"])
+        frame_rotation, translation = _joint_frame(joint, transforms)
+        marker = copy.copy(source).moved(
+            location_from_transform((frame_rotation, translation))
+        )
+        marker.label = f"{servo_id}_JOINT_POSITION_{name}"
+        marker.color = Color(str(identity["color_hex"]))
+        markers.append(marker)
+        axis_world = _mat_vec(
+            frame_rotation,
+            [float(value) for value in joint["axis"]],
+        )
+        rows.append(
+            {
+                "joint": name,
+                "servo_id": servo_id,
+                "color_hex": identity["color_hex"],
+                "candidate_actuator": "Feetech STS3250",
+                "marker_semantics": (
+                    "NONPHYSICAL_POSITION_MARKER; frozen assembled Zeroth-01 "
+                    "link geometry remains authoritative"
+                ),
+                "shaft_xyz_world_mm": " ".join(
+                    f"{value * 1000.0:.6f}" for value in translation
+                ),
+                "joint_positive_axis_world": " ".join(
+                    f"{value:.9f}" for value in axis_world
+                ),
+                "gate": "PASS",
+            }
+        )
+    return markers, rows
 
 
 def _servo_mount_rotation(
@@ -621,7 +882,8 @@ def _servo_mount_rotation(
 def servo_instances() -> tuple[list[Shape], list[dict[str, object]]]:
     joints, transforms = load_neutral_kinematics()
     moving = _moving_joint_map(joints)
-    source = import_step(SERVO_STEP)
+    source = sts3250_controlled_case()
+    identities = servo_identity_map()
     instances: list[Shape] = []
     rows: list[dict[str, object]] = []
     phase_config: dict[str, dict[str, object]] = {}
@@ -631,6 +893,9 @@ def servo_instances() -> tuple[list[Shape], list[dict[str, object]]]:
         ).get("joint_mount_phase", {})
 
     for name, joint in moving.items():
+        identity = identities[name]
+        servo_id = str(identity["id"])
+        identity_color = Color(str(identity["color_hex"]))
         joint_frame_rotation, translation = _joint_frame(joint, transforms)
         axis_local = [float(value) for value in joint["axis"]]
         joint_axis_world = _mat_vec(joint_frame_rotation, axis_local)
@@ -659,14 +924,22 @@ def servo_instances() -> tuple[list[Shape], list[dict[str, object]]]:
         instance = copy.copy(source).moved(
             location_from_transform((servo_rotation, translation))
         )
-        instance.label = f"STS3250_{name}"
-        instance.color = SERVO_METAL
+        instance.label = f"{servo_id}_STS3250_{name}"
+        instance.color = identity_color
         instances.append(instance)
         rows.append(
             {
                 "joint": name,
+                "servo_id": servo_id,
+                "color_hex": identity["color_hex"],
                 "servo_model": "Feetech STS3250",
-                "source_step": SERVO_STEP.relative_to(ROOT).as_posix(),
+                "geometry_source": (
+                    "dimension-controlled STS3250-C001 from current official "
+                    "product size and supplied drawing"
+                ),
+                "quarantined_step": (
+                    QUARANTINED_SERVO_STEP.relative_to(ROOT).as_posix()
+                ),
                 "shaft_xyz_world_mm": " ".join(
                     f"{value * 1000.0:.6f}" for value in translation
                 ),
@@ -708,9 +981,13 @@ def joint_interface_instances() -> tuple[list[Shape], list[Shape]]:
 
     cage_source = servo_cage()
     hub_source = output_hub()
+    identities = servo_identity_map()
     cages: list[Shape] = []
     hubs: list[Shape] = []
     for name, joint in moving.items():
+        identity = identities[name]
+        servo_id = str(identity["id"])
+        identity_color = Color(str(identity["color_hex"]))
         frame_rotation, translation = _joint_frame(joint, transforms)
         housing_rotation, _, _ = _servo_mount_rotation(
             joint,
@@ -720,8 +997,8 @@ def joint_interface_instances() -> tuple[list[Shape], list[Shape]]:
         cage = copy.copy(cage_source).moved(
             location_from_transform((housing_rotation, translation))
         )
-        cage.label = f"STS3250_PARENT_CAGE_{name}"
-        cage.color = CREAM
+        cage.label = f"{servo_id}_STS3250_PARENT_CAGE_{name}"
+        cage.color = identity_color
         cages.append(cage)
 
         child_rotation, child_translation = transforms[str(joint["child"])]
@@ -739,8 +1016,8 @@ def joint_interface_instances() -> tuple[list[Shape], list[Shape]]:
         hub = copy.copy(hub_source).moved(
             location_from_transform((hub_rotation, child_translation))
         )
-        hub.label = f"STS3250_CHILD_HUB_{name}"
-        hub.color = TEAL
+        hub.label = f"{servo_id}_STS3250_CHILD_OUTPUT_STACK_{name}"
+        hub.color = identity_color
         hubs.append(hub)
     return cages, hubs
 
@@ -835,9 +1112,8 @@ def concept_armor() -> list[Shape]:
 
 def round_v1_assembly() -> Compound:
     joints, transforms = load_neutral_kinematics()
-    servo_parts, servo_rows = servo_instances()
-    cage_parts, hub_parts = joint_interface_instances()
-    write_servo_axis_report(servo_rows)
+    marker_parts, marker_rows = joint_marker_instances()
+    write_servo_axis_report(marker_rows)
     parts: list[Shape] = [
         chest_shell("front"),
         chest_shell("back"),
@@ -849,7 +1125,9 @@ def round_v1_assembly() -> Compound:
         visor_badge(),
         camera_lenses(),
         torso_spine(),
+        eye_display_module(),
         camera_module(),
+        tof_module(),
         imu_module(),
         compute_module(),
         battery_pack(),
@@ -859,9 +1137,7 @@ def round_v1_assembly() -> Compound:
         placed.label = f"ROUND_V1_{side.upper()}_THICK_SOLE"
         parts.append(placed)
     parts.extend(concept_armor())
-    parts.extend(servo_parts)
-    parts.extend(cage_parts)
-    parts.extend(hub_parts)
+    parts.extend(marker_parts)
     assembly = Compound(
         label="ZEROTH01_ROUND_V1_ASSEMBLY",
         children=parts,

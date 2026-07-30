@@ -18,26 +18,18 @@ THIS_FILE = Path(__file__).resolve()
 ROOT = THIS_FILE.parents[1]
 BASE_SCRIPT = THIS_FILE.with_name("create_solidworks_kinematic_review.py")
 ROUND_URDF = ROOT / "generated" / "urdf" / "zeroth01_rl_round_v1.urdf"
-PHASE_CONFIG = (
-    ROOT
-    / "generated"
-    / "config"
-    / "zeroth01_sts3250_mount_phase.json"
-)
 SERVO_AXIS_REPORT = ROOT / "reports" / "round_v1_servo_axis_alignment.csv"
 MUJOCO_GATE = ROOT / "reports" / "mujoco_round_v1_gate.json"
 STEP_PART_DIR = ROOT / "generated" / "cad" / "round_v1" / "parts"
-SERVO_STEP = (
-    ROOT
-    / "source_assets"
-    / "vendor"
-    / "sts3250"
-    / "FEETECH_STS3250.step"
+IDENTITY_CONFIG = (
+    ROOT / "config" / "round_v2_component_identity.json"
 )
 
 SW_ROOT = ROOT / "generated" / "solidworks" / "round_v1"
 SW_PART_DIR = SW_ROOT / "parts"
-ASM_PATH = SW_ROOT / "OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM"
+ASM_PATH = (
+    SW_ROOT / "OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM"
+)
 SNAP_DIR = ROOT / "snapshots" / "solidworks" / "round_v1"
 FRAME_DIR = SNAP_DIR / "motion_frames"
 MOTION_GIF = SNAP_DIR / "zeroth01_round_v1_solidworks_motion.gif"
@@ -63,6 +55,12 @@ TAN = (0.717647, 0.529412, 0.368627)
 DARK = (0.164706, 0.176471, 0.196078)
 TEAL = (0.333333, 0.788235, 0.776471)
 SERVO_METAL = (0.388235, 0.419608, 0.450980)
+DISPLAY_CYAN = (0.0, 0.721569, 0.850980)
+CAMERA_RED = (1.0, 0.090196, 0.266667)
+TOF_PURPLE = (0.666667, 0.0, 1.0)
+IMU_GREEN = (0.392157, 0.866667, 0.090196)
+COMPUTE_ORANGE = (1.0, 0.568627, 0.0)
+BATTERY_MAGENTA = (0.835294, 0.0, 0.976471)
 
 OVERLAYS = [
     (
@@ -146,19 +144,35 @@ OVERLAYS = [
         "internal_parent_frame_structure",
     ),
     (
+        "ROUND_EYE_DISPLAY_MODULE",
+        "ZEROTH01_ROUND_V2_EYE_DISPLAY_MODULE.step",
+        "ZEROTH01_ROUND_V2_EYE_DISPLAY_MODULE.SLDPRT",
+        "Torso",
+        DISPLAY_CYAN,
+        "selected_vendor_head_display_exact_step",
+    ),
+    (
         "ROUND_CAMERA_MODULE",
         "ZEROTH01_ROUND_V1_CAMERA_MODULE.step",
         "ZEROTH01_ROUND_V1_CAMERA_MODULE.SLDPRT",
         "Torso",
-        SERVO_METAL,
-        "assumed_rl_electronics_envelope",
+        CAMERA_RED,
+        "selected_vendor_camera_exact_step",
+    ),
+    (
+        "ROUND_TOF_MODULE",
+        "ZEROTH01_ROUND_V2_TOF_MODULE.step",
+        "ZEROTH01_ROUND_V2_TOF_MODULE.SLDPRT",
+        "Torso",
+        TOF_PURPLE,
+        "selected_sensor_assumed_carrier_envelope",
     ),
     (
         "ROUND_IMU_MODULE",
         "ZEROTH01_ROUND_V1_IMU_MODULE.step",
         "ZEROTH01_ROUND_V1_IMU_MODULE.SLDPRT",
         "Torso",
-        TEAL,
+        IMU_GREEN,
         "assumed_rl_electronics_envelope",
     ),
     (
@@ -166,7 +180,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_COMPUTE_MODULE.step",
         "ZEROTH01_ROUND_V1_COMPUTE_MODULE.SLDPRT",
         "Torso",
-        TEAL,
+        COMPUTE_ORANGE,
         "assumed_rl_electronics_envelope",
     ),
     (
@@ -174,7 +188,7 @@ OVERLAYS = [
         "ZEROTH01_ROUND_V1_BATTERY_PACK.step",
         "ZEROTH01_ROUND_V1_BATTERY_PACK.SLDPRT",
         "Torso",
-        TAN,
+        BATTERY_MAGENTA,
         "assumed_rl_electronics_envelope",
     ),
     (
@@ -195,10 +209,8 @@ OVERLAYS = [
     ),
 ]
 
-SERVO_CAGE_STEP_NAME = "ZEROTH01_ROUND_V1_SERVO_CAGE.step"
-SERVO_CAGE_PART_NAME = "ZEROTH01_ROUND_V1_SERVO_CAGE.SLDPRT"
-OUTPUT_HUB_STEP_NAME = "ZEROTH01_ROUND_V1_OUTPUT_HUB.step"
-OUTPUT_HUB_PART_NAME = "ZEROTH01_ROUND_V1_OUTPUT_HUB.SLDPRT"
+JOINT_MARKER_STEP_NAME = "ZEROTH01_ROUND_V1_JOINT_RING.step"
+JOINT_MARKER_PART_NAME = "ZEROTH01_ROUND_V1_JOINT_RING.SLDPRT"
 TRANSMISSION_ANGLE_TOLERANCE_DEG = 1e-5
 TRANSMISSION_POSITION_TOLERANCE_MM = 1e-6
 
@@ -266,6 +278,12 @@ def import_step_part(
     force: bool,
 ) -> dict[str, object]:
     target.parent.mkdir(parents=True, exist_ok=True)
+    if force:
+        # A prior interrupted LoadFile4 may leave the task-owned STEP or
+        # SLDPRT document open. Close only these exact artifact names before
+        # retrying; never close unrelated user documents.
+        close_target_if_open(sw, source)
+        close_target_if_open(sw, target)
     reuse = (
         target.is_file()
         and target.stat().st_size > 1024
@@ -334,16 +352,6 @@ def import_step_part(
     }
 
 
-def rotation_z(angle_rad: float) -> list[list[float]]:
-    cosine = math.cos(angle_rad)
-    sine = math.sin(angle_rad)
-    return [
-        [cosine, -sine, 0.0],
-        [sine, cosine, 0.0],
-        [0.0, 0.0, 1.0],
-    ]
-
-
 def transpose(matrix: list[list[float]]) -> list[list[float]]:
     return [
         [matrix[column][row] for column in range(3)]
@@ -358,18 +366,13 @@ def interface_transforms(
     str,
     dict[str, tuple[list[list[float]], list[float]]],
 ]:
-    """Resolve the parent housing/cage and child output transforms.
+    """Resolve the frozen parent joint frame and moving child frame.
 
-    The previous round-v1 implementation attached the complete servo housing
-    to the child link.  That made the housing co-rotate with its own shaft and
-    could not represent a torque reaction path.  Here the housing and cage
-    stop at the pre-motion parent joint frame, while the output hub follows the
-    child link through the commanded revolute transform.
+    This is mathematical evidence for the existing Zeroth-01 transmission
+    semantics only.  It intentionally has no replacement-servo phase,
+    horn, cage, gear, or output-disc model.
     """
 
-    phase_payload = json.loads(PHASE_CONFIG.read_text(encoding="utf-8"))
-    phases = phase_payload.get("joint_mount_phase", {})
-    flip_x = [[1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, -1.0]]
     result = {}
     for joint in joints:
         if joint["type"] not in {"revolute", "continuous"}:
@@ -381,19 +384,7 @@ def interface_transforms(
             link_transforms[parent],
             joint["origin"],
         )
-        axis_local = [float(value) for value in joint["axis"]]
-        positive = (
-            base.mat_mul(joint_rotation, flip_x)
-            if axis_local[2] < 0.0
-            else joint_rotation
-        )
-        entry = phases.get(name, {})
-        sign = int(entry.get("output_axis_sign", 1))
-        phase_deg = float(entry.get("phase_deg", 0.0))
-        oriented = positive if sign == 1 else base.mat_mul(positive, flip_x)
-        oriented = base.mat_mul(
-            oriented, rotation_z(math.radians(phase_deg))
-        )
+        oriented = joint_rotation
         relative_mount = base.mat_mul(
             transpose(joint_rotation),
             oriented,
@@ -419,6 +410,20 @@ def servo_transforms(
     }
 
 
+def marker_transforms(
+    joints: list[dict[str, object]],
+    link_transforms: dict[str, tuple[list[list[float]], list[float]]],
+) -> dict[str, tuple[list[list[float]], list[float]]]:
+    return {
+        str(joint["name"]): base.tf_mul(
+            link_transforms[str(joint["parent"])],
+            joint["origin"],
+        )
+        for joint in joints
+        if joint["type"] in {"revolute", "continuous"}
+    }
+
+
 def translation_distance_mm(
     first: list[float],
     second: list[float],
@@ -428,7 +433,11 @@ def translation_distance_mm(
     )
 
 
-def set_material(component, color: tuple[float, float, float]) -> bool:
+def set_material(
+    component,
+    color: tuple[float, float, float],
+    transparency: float = 0.0,
+) -> bool:
     payload = win32.VARIANT(
         pythoncom.VT_ARRAY | pythoncom.VT_R8,
         [
@@ -439,7 +448,7 @@ def set_material(component, color: tuple[float, float, float]) -> bool:
             0.75,
             0.25,
             0.35,
-            0.0,
+            max(0.0, min(1.0, float(transparency))),
             0.0,
         ],
     )
@@ -453,6 +462,16 @@ def set_material(component, color: tuple[float, float, float]) -> bool:
         except Exception:
             continue
     return False
+
+
+def color_from_hex(value: str) -> tuple[float, float, float]:
+    token = value.lstrip("#")
+    if len(token) != 6:
+        raise ValueError(value)
+    return tuple(
+        int(token[index : index + 2], 16) / 255.0
+        for index in (0, 2, 4)
+    )
 
 
 def try_shaded(model) -> str:
@@ -499,9 +518,7 @@ def set_round_pose(
     joints: list[dict[str, object]],
     link_components: dict[str, object],
     overlay_components: dict[str, object],
-    servo_components: dict[str, object],
-    cage_components: dict[str, object],
-    hub_components: dict[str, object],
+    marker_components: dict[str, object],
     q: dict[str, float],
 ) -> float:
     transforms = base.forward_kinematics(joints, q)
@@ -523,19 +540,11 @@ def set_round_pose(
                 sw, overlay_components[label], transform
             ),
         )
-    for name, interface in interface_transforms(joints, transforms).items():
-        housing_transform = interface["housing"]
-        output_transform = interface["output"]
+    for name, transform in marker_transforms(joints, transforms).items():
         maximum_error = max(
             maximum_error,
             base.set_component_transform(
-                sw, servo_components[name], housing_transform
-            ),
-            base.set_component_transform(
-                sw, cage_components[name], housing_transform
-            ),
-            base.set_component_transform(
-                sw, hub_components[name], output_transform
+                sw, marker_components[name], transform
             ),
         )
     base.refresh_assembly_display(model)
@@ -545,8 +554,8 @@ def set_round_pose(
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Create the native SolidWorks round-v1 review assembly with "
-            "explicit FEETECH STS3250 reference components."
+            "Create the native SolidWorks minimal-cosmetic review assembly "
+            "while preserving the frozen Zeroth-01 mechanism."
         )
     )
     parser.add_argument("--frame-count", type=int, default=12)
@@ -588,7 +597,7 @@ def main() -> None:
         for index, (_, step_name, part_name, _, _, role) in enumerate(
             OVERLAYS, start=1
         ):
-            trace(f"STEP import {index}/{len(OVERLAYS) + 3}: {step_name}")
+            trace(f"STEP import {index}/{len(OVERLAYS) + 1}: {step_name}")
             row = import_step_part(
                 sw,
                 STEP_PART_DIR / step_name,
@@ -598,43 +607,19 @@ def main() -> None:
             row["role"] = role
             part_rows.append(row)
         trace(
-            f"STEP import {len(OVERLAYS) + 1}/{len(OVERLAYS) + 3}: "
-            "parent servo cage"
+            f"STEP import {len(OVERLAYS) + 1}/{len(OVERLAYS) + 1}: "
+            "non-physical colored joint marker"
         )
-        servo_cage_part = SW_PART_DIR / SERVO_CAGE_PART_NAME
+        joint_marker_part = SW_PART_DIR / JOINT_MARKER_PART_NAME
         row = import_step_part(
             sw,
-            STEP_PART_DIR / SERVO_CAGE_STEP_NAME,
-            servo_cage_part,
+            STEP_PART_DIR / JOINT_MARKER_STEP_NAME,
+            joint_marker_part,
             force=bool(args.force_part_import),
         )
-        row["role"] = "parent_side_cnc_servo_cage"
-        part_rows.append(row)
-        trace(
-            f"STEP import {len(OVERLAYS) + 2}/{len(OVERLAYS) + 3}: "
-            "child output hub"
+        row["role"] = (
+            "nonphysical_S01_S16_position_marker_not_transmission_hardware"
         )
-        output_hub_part = SW_PART_DIR / OUTPUT_HUB_PART_NAME
-        row = import_step_part(
-            sw,
-            STEP_PART_DIR / OUTPUT_HUB_STEP_NAME,
-            output_hub_part,
-            force=bool(args.force_part_import),
-        )
-        row["role"] = "child_side_horn_and_bearing_interface"
-        part_rows.append(row)
-        trace(
-            f"STEP import {len(OVERLAYS) + 3}/{len(OVERLAYS) + 3}: "
-            "STS3250"
-        )
-        servo_part = SW_PART_DIR / "FEETECH_STS3250.SLDPRT"
-        row = import_step_part(
-            sw,
-            SERVO_STEP,
-            servo_part,
-            force=bool(args.force_part_import),
-        )
-        row["role"] = "vendor_reference_not_extra_inertial_mass"
         part_rows.append(row)
     finally:
         sw.SetUserPreferenceIntegerValue(
@@ -698,7 +683,11 @@ def main() -> None:
             transform,
         )
         overlay_components[label] = component
-        material_set = set_material(component, color)
+        material_set = set_material(
+            component,
+            color,
+            transparency=0.55 if label == "ROUND_VISOR" else 0.0,
+        )
         component_rows.append(
             {
                 "role": role,
@@ -712,34 +701,46 @@ def main() -> None:
             }
         )
 
-    servo_components: dict[str, object] = {}
-    cage_components: dict[str, object] = {}
-    hub_components: dict[str, object] = {}
-    neutral_interfaces = interface_transforms(joints, neutral)
-    for index, (name, interface) in enumerate(
-        neutral_interfaces.items(), start=1
+    identity_rows = json.loads(
+        IDENTITY_CONFIG.read_text(encoding="utf-8")
+    )["servos"]
+    identity_by_joint = {
+        str(item["joint"]): item for item in identity_rows
+    }
+    marker_components: dict[str, object] = {}
+    neutral_markers = marker_transforms(joints, neutral)
+    for index, (name, marker_transform) in enumerate(
+        neutral_markers.items(), start=1
     ):
-        housing_transform = interface["housing"]
-        output_transform = interface["output"]
+        identity = identity_by_joint[name]
+        servo_id = str(identity["id"])
         trace(
-            f"STS3250 component {index}/{len(neutral_interfaces)}: {name}"
+            f"colored joint marker {index}/{len(neutral_markers)}: "
+            f"{servo_id} {name}"
         )
         component, error = base.add_component(
             sw,
             model,
             asm,
-            f"STS3250_{name}",
-            servo_part,
-            housing_transform,
+            f"{servo_id}_JOINT_POSITION_{name}",
+            joint_marker_part,
+            marker_transform,
         )
-        servo_components[name] = component
-        material_set = set_material(component, SERVO_METAL)
+        marker_components[name] = component
+        material_set = set_material(
+            component, color_from_hex(str(identity["color_hex"]))
+        )
         component_rows.append(
             {
-                "role": "vendor_servo_reference",
+                "role": (
+                    "nonphysical_colored_joint_position_marker_"
+                    "original_mechanism_unchanged"
+                ),
+                "servo_id": servo_id,
                 "name": name,
+                "color_hex": identity["color_hex"],
                 "component": str(base.call(component, "Name2", "")),
-                "part": str(servo_part),
+                "part": str(joint_marker_part),
                 "attachment": str(
                     next(
                         joint["parent"]
@@ -747,84 +748,16 @@ def main() -> None:
                         if joint["name"] == name
                     )
                 ),
-                "mechanical_semantics": "housing_fixed_to_parent_joint_frame",
+                "mechanical_semantics": (
+                    "marker follows parent-side joint frame; it is not a "
+                    "servo, horn, gear, cage or printed part"
+                ),
                 "material_set": material_set,
                 "transform_readback_max_abs_error": f"{error:.3e}",
                 "status": "PASS" if error < 1e-8 else "FAIL",
             }
         )
-        trace(
-            f"parent cage component {index}/{len(neutral_interfaces)}: {name}"
-        )
-        cage_component, cage_error = base.add_component(
-            sw,
-            model,
-            asm,
-            f"PARENT_CAGE_{name}",
-            servo_cage_part,
-            housing_transform,
-        )
-        cage_components[name] = cage_component
-        cage_material_set = set_material(cage_component, CREAM)
-        component_rows.append(
-            {
-                "role": "parent_side_cnc_servo_cage",
-                "name": name,
-                "component": str(
-                    base.call(cage_component, "Name2", "")
-                ),
-                "part": str(servo_cage_part),
-                "attachment": str(
-                    next(
-                        joint["parent"]
-                        for joint in joints
-                        if joint["name"] == name
-                    )
-                ),
-                "mechanical_semantics": (
-                    "cage_fixed_to_parent_and_reacts_servo_torque"
-                ),
-                "material_set": cage_material_set,
-                "transform_readback_max_abs_error": f"{cage_error:.3e}",
-                "status": "PASS" if cage_error < 1e-8 else "FAIL",
-            }
-        )
-        trace(
-            f"child hub component {index}/{len(neutral_interfaces)}: {name}"
-        )
-        hub_component, hub_error = base.add_component(
-            sw,
-            model,
-            asm,
-            f"CHILD_HUB_{name}",
-            output_hub_part,
-            output_transform,
-        )
-        hub_components[name] = hub_component
-        hub_material_set = set_material(hub_component, TEAL)
-        component_rows.append(
-            {
-                "role": "child_side_horn_and_bearing_interface",
-                "name": name,
-                "component": str(
-                    base.call(hub_component, "Name2", "")
-                ),
-                "part": str(output_hub_part),
-                "attachment": str(
-                    next(
-                        joint["child"]
-                        for joint in joints
-                        if joint["name"] == name
-                    )
-                ),
-                "mechanical_semantics": (
-                    "hub_fixed_to_child_and_rotates_relative_to_housing"
-                ),
-                "material_set": hub_material_set,
-                "transform_readback_max_abs_error": f"{hub_error:.3e}",
-                "status": "PASS" if hub_error < 1e-8 else "FAIL",
-            }
-        )
+    neutral_interfaces = interface_transforms(joints, neutral)
 
     display_method = try_shaded(model)
     base.refresh_assembly_display(model)
@@ -849,6 +782,48 @@ def main() -> None:
             model, 4, SNAP_DIR / "zeroth01_round_v1_robot_side.png"
         ),
     }
+    transparent_shell_labels = {
+        "ROUND_CHEST_FRONT",
+        "ROUND_CHEST_BACK",
+        "ROUND_HEAD_FRONT",
+        "ROUND_HEAD_BACK",
+        "ROUND_PELVIS_FRONT",
+        "ROUND_PELVIS_BACK",
+        "ROUND_VISOR",
+    }
+    set_material(link_components["Torso"], CREAM, transparency=0.78)
+    for label, _, _, _, color, _ in OVERLAYS:
+        if label in transparent_shell_labels:
+            set_material(
+                overlay_components[label],
+                color,
+                transparency=0.78 if label != "ROUND_VISOR" else 0.88,
+            )
+    base.refresh_assembly_display(model)
+    model.ViewZoomtofit2()
+    transparent_snapshot_results = {
+        "electronics_transparent_front": save_view(
+            model,
+            6,
+            SNAP_DIR
+            / "zeroth01_round_v2_electronics_transparent_front.png",
+        ),
+        "electronics_transparent_isometric": save_view(
+            model,
+            7,
+            SNAP_DIR
+            / "zeroth01_round_v2_electronics_transparent_isometric.png",
+        ),
+    }
+    set_material(link_components["Torso"], CREAM)
+    for label, _, _, _, color, _ in OVERLAYS:
+        if label in transparent_shell_labels:
+            set_material(
+                overlay_components[label],
+                color,
+                transparency=0.55 if label == "ROUND_VISOR" else 0.0,
+            )
+    base.refresh_assembly_display(model)
 
     moving = [
         joint
@@ -923,9 +898,7 @@ def main() -> None:
                     joints,
                     link_components,
                     overlay_components,
-                    servo_components,
-                    cage_components,
-                    hub_components,
+                    marker_components,
                     q,
                 )
                 current_interface = interface_transforms(
@@ -1069,9 +1042,7 @@ def main() -> None:
                 joints,
                 link_components,
                 overlay_components,
-                servo_components,
-                cage_components,
-                hub_components,
+                marker_components,
                 q,
             )
             frame = (
@@ -1089,9 +1060,7 @@ def main() -> None:
         joints,
         link_components,
         overlay_components,
-        servo_components,
-        cage_components,
-        hub_components,
+        marker_components,
         {},
     )
     try_shaded(model)
@@ -1115,9 +1084,9 @@ def main() -> None:
         if MUJOCO_GATE.is_file()
         else {}
     )
-    expected_component_count = 17 + len(OVERLAYS) + 3 * len(moving)
+    expected_component_count = 17 + len(OVERLAYS) + len(moving)
     gate = {
-        "schema": "zeroth01.solidworks.round_v1.gate.v1",
+        "schema": "zeroth01.solidworks.minimal_cosmetic_round_v2.gate.v1",
         "solidworks_revision": str(base.call(sw, "RevisionNumber", "")),
         "assembly": str(ASM_PATH),
         "assembly_bytes": ASM_PATH.stat().st_size,
@@ -1128,9 +1097,13 @@ def main() -> None:
         "expected_component_count": expected_component_count,
         "source_link_component_count": len(link_components),
         "round_overlay_component_count": len(overlay_components),
-        "explicit_sts3250_component_count": len(servo_components),
-        "parent_servo_cage_component_count": len(cage_components),
-        "child_output_hub_component_count": len(hub_components),
+        "nonphysical_colored_joint_marker_count": len(marker_components),
+        "explicit_replacement_sts3250_component_count": 0,
+        "new_servo_cage_component_count": 0,
+        "new_child_output_hub_component_count": 0,
+        "baseline_mechanism_policy": (
+            "PRESERVE_FROZEN_ASSEMBLED_ZEROTH01_LINK_GEOMETRY"
+        ),
         "transform_gate": (
             "PASS"
             if all(row["status"] == "PASS" for row in component_rows)
@@ -1138,13 +1111,13 @@ def main() -> None:
             and final_error < 1e-8
             else "FAIL"
         ),
-        "servo_axis_gate": (
+        "servo_position_marker_gate": (
             "PASS"
             if len(axis_rows) == 16
             and all(row.get("gate") == "PASS" for row in axis_rows)
             else "FAIL"
         ),
-        "parent_housing_child_output_transmission_gate": (
+        "baseline_joint_transform_semantics_gate": (
             "PASS"
             if len(transmission_rows) == 48
             and all(
@@ -1177,6 +1150,23 @@ def main() -> None:
             }
             for key, value in snapshot_results.items()
         },
+        "transparent_electronics_snapshots": {
+            key: {
+                "path": str(
+                    SNAP_DIR
+                    / {
+                        "electronics_transparent_front": (
+                            "zeroth01_round_v2_electronics_transparent_front.png"
+                        ),
+                        "electronics_transparent_isometric": (
+                            "zeroth01_round_v2_electronics_transparent_isometric.png"
+                        ),
+                    }[key]
+                ),
+                "gate": "PASS" if value else "FAIL",
+            }
+            for key, value in transparent_snapshot_results.items()
+        },
         "motion_gif": str(MOTION_GIF),
         "motion_gif_gate": "PASS" if gif_ok else "FAIL",
         "motion_evidence_reused_after_geometry_only_refresh": bool(
@@ -1185,22 +1175,24 @@ def main() -> None:
         "native_mate_motion_study": (
             "NOT_CLAIMED: the 17 upstream link meshes are imported surface "
             "bodies without stable mate faces; CLI FK drives Transform2 while "
-            "the new shells and STS3250 are native B-Rep components"
+            "the cosmetic shells and colored position markers are native "
+            "B-Rep components"
         ),
         "hardware_interference_signoff": (
-            "BLOCKED_PENDING_PHYSICAL_SERVO_CLOCKING_CABLE_FASTENER_AND_"
-            "TOLERANCE_VALIDATION"
+            "BASELINE_ASSEMBLED_GEOMETRY_MOTION_GATE_PASS; NO_REPLACEMENT_"
+            "CAGE_OR_OUTPUT_DISC_ADDED; PHYSICAL_TOLERANCE_AND_CABLE_SIGNOFF_"
+            "STILL_REQUIRED"
         ),
     }
     gate["overall_review_gate"] = (
-        "PASS_WITH_HARDWARE_LIMITATIONS"
+        "PASS_MINIMAL_COSMETIC_OVERLAY_WITH_HARDWARE_LIMITATIONS"
         if (
             gate["component_count"] == expected_component_count
-            and gate["native_brep_part_count"] == len(OVERLAYS) + 3
+            and gate["native_brep_part_count"] == len(OVERLAYS) + 1
             and gate["transform_gate"] == "PASS"
-            and gate["servo_axis_gate"] == "PASS"
+            and gate["servo_position_marker_gate"] == "PASS"
             and gate[
-                "parent_housing_child_output_transmission_gate"
+                "baseline_joint_transform_semantics_gate"
             ]
             == "PASS"
             and gate["mujoco_collision_motion_gate"] == "PASS"
@@ -1208,6 +1200,12 @@ def main() -> None:
             and all(
                 value["gate"] == "PASS"
                 for value in gate["snapshots"].values()
+            )
+            and all(
+                value["gate"] == "PASS"
+                for value in gate[
+                    "transparent_electronics_snapshots"
+                ].values()
             )
         )
         else "FAIL"

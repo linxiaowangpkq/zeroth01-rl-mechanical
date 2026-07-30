@@ -1,85 +1,66 @@
-# Zeroth-01 Round-v1 RL Mechanical Package
+# Zeroth-01 minimal-cosmetic RL mechanical package
 
-面向强化学习与机械审阅的 Zeroth-01 16DoF 冻结模型：更高曲率的头/胸/骨盆外壳、8 mm 加厚鞋底、内部躯干主脊、摄像机/IMU/计算板/电池包络、真实 FEETECH STS3250 CAD、父侧舵机笼、子侧输出转接、URDF、原生 MuJoCo MJCF、质量/质心/惯量和便携 SolidWorks 装配均在本仓库内。
+This revision preserves the assembled, collision-checked Zeroth-01 17-link mechanism as the only mechanical authority. It adds a rounded ellipsoid head, compound-curved visor, rounded torso/pelvis shells, thicker soles, head electronics envelopes, and stable colored annotations without altering any joint axis, parent/child relation, zero pose, or guarded limit.
 
-![SolidWorks front view](snapshots/solidworks/round_v1/zeroth01_round_v1_robot_front.png)
+## Canonical RL files
 
-## 当前结论
+- [URDF](generated/urdf/zeroth01_rl_round_v1.urdf)
+- [MuJoCo MJCF](generated/mujoco/zeroth01_rl_round_v1.xml)
+- [Actuator metadata](generated/config/zeroth01_actuator_metadata.json)
+- [Mass properties](generated/config/round_v1_mass_properties.json)
+- [Electronics and sensor layout](generated/config/round_v1_electronics_sensor_layout.json)
+- [Collision policy](generated/config/zeroth01_collision_policy.json)
+- [Joint/servo frames](reports/joint_servo_frames.csv)
+- [MuJoCo validation](reports/mujoco_round_v1_gate.json)
+- [SolidWorks validation](reports/solidworks_round_v1_gate.json)
+- [One-line RL handoff](one-seq.md)
 
-| 状态 | 结论 |
-|---|---|
-| `rl_simulation_ready` | **PASS** |
-| `solidworks_fk_review` | **PASS_WITH_HARDWARE_LIMITATIONS** |
-| `round_shell_print_geometry_ready` | **PASS**，11/11 STL 为单组件、闭合、流形 |
-| `servo_interface_fit_mesh_ready` | **PASS**，3/3 STL 为单组件、闭合、流形，仅限试装 |
-| `complete_print_and_walk_kit_ready` | **FALSE**，公开 link STL 不是生产级承力零件/BOM |
-| `hardware_walking_ready` | **FALSE**，仍需真机标定、称重、热/电流/冲击测试 |
-| 运动自由度 | 16 个转动关节 |
-| 含电子舱圆润版名义质量 | 4.750138802624 kg |
-| 推荐初始连续扭矩上限 | 1.2552512 N·m（STS3250 额定值的 80%，工程起点） |
+The canonical model has 26 MuJoCo bodies including world, 17 joints, 16 actuators, 8 sensors, and a nominal mass of `4.586857125474 kg`.
 
-## RL 直接入口
+## Mechanical interpretation
 
-- URDF：[`generated/urdf/zeroth01_rl_round_v1.urdf`](generated/urdf/zeroth01_rl_round_v1.urdf)
-- MuJoCo：[`generated/mujoco/zeroth01_rl_round_v1.xml`](generated/mujoco/zeroth01_rl_round_v1.xml)
-- 执行器与 PD/随机化元数据：[`generated/config/zeroth01_actuator_metadata.json`](generated/config/zeroth01_actuator_metadata.json)
-- STS3250 三档扭矩配置：[`generated/config/sts3250_round_v1_rl_profiles.json`](generated/config/sts3250_round_v1_rl_profiles.json)
-- 质量、质心、惯量：[`generated/config/round_v1_mass_properties.json`](generated/config/round_v1_mass_properties.json)
-- 摄像机/IMU/计算板/电池和足底传感器：[`generated/config/round_v1_electronics_sensor_layout.json`](generated/config/round_v1_electronics_sensor_layout.json)
-- 关节轴心/轴线/候选总线 ID：[`reports/joint_servo_frames.csv`](reports/joint_servo_frames.csv)
-- 碰撞策略/安全启动关节盒：[`generated/config/zeroth01_collision_policy.json`](generated/config/zeroth01_collision_policy.json)
-- 实机标定模板：[`generated/config/zeroth01_hardware_calibration_template.csv`](generated/config/zeroth01_hardware_calibration_template.csv)
-- 完整 RL 交接：[`RL_ROUND_V1_HANDOFF_zh.md`](RL_ROUND_V1_HANDOFF_zh.md)
-- 完整装配说明：[`ASSEMBLY_GUIDE_zh.md`](ASSEMBLY_GUIDE_zh.md)
+The SolidWorks review assembly contains 51 components:
 
-## CAD、SolidWorks 与打印
+- 17 unchanged source links;
+- 18 cosmetic/electronics overlays;
+- 16 nonphysical S01–S16 colored joint-position markers.
 
-- 便携 SolidWorks 总装：[`generated/solidworks/portable_flat_round_v1/OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM`](generated/solidworks/portable_flat_round_v1/OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM)
-- 36 个依赖 SLDPRT 与总装在同一目录；总装共 81 个组件，其中 `FEETECH_STS3250.SLDPRT` 是真实舵机 B-Rep。
-- STS3250 原始 STEP：[`source_assets/vendor/sts3250/FEETECH_STS3250.step`](source_assets/vendor/sts3250/FEETECH_STS3250.step)
-- 22 个圆润/内部/电子/接口 STEP：[`generated/cad/round_v1/parts/`](generated/cad/round_v1/parts/)
-- 11 个最终打印 STL：[`generated/print/round_v1/final/`](generated/print/round_v1/final/)
-- 3 个非承力接口试装 STL：[`generated/print/round_v1/fit_check_non_load_bearing/final/`](generated/print/round_v1/fit_check_non_load_bearing/final/)
-- 打印与装配边界：[`PRINT_AND_ASSEMBLY_READINESS_zh.md`](PRINT_AND_ASSEMBLY_READINESS_zh.md)
+There are zero replacement STS3250 bodies, cages, gears, or output hubs in the selected assembly. The colored markers carry no mass, collision, or transmission semantics and must not be imported into RL.
 
-SolidWorks 中原模型看似“很多碎片”，是因为 17 个公开 link STL 被导入为三角面片/表面体；它们是按运动链聚合的可视网格，不代表已有完整生产 BOM。旧图中的黑色块就是按关节轴放置的真实 STS3250 外壳，不是干涉点；新装配将其改为金属灰，并增加奶油色父侧笼和青绿色子侧输出盘。运动审阅由 CLI/COM 前向运动学驱动组件变换，未声称上游表面网格具备可维护的原生 Mate/Motion Study。
+The archived vendor STEP identifies itself as `ST-3235M-20211119-A_ASM`, not the current STS3250-C001. It is quarantined as dimensional evidence only. Current official C001 dimensions and performance metadata are recorded in the package, but physical installation still requires a traceable C001 CAD model or real-part metrology.
 
-![SolidWorks motion](snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif)
+## Visual evidence
 
-## 已通过的门禁
+![S01-S16 joint identity and colors](snapshots/solidworks/round_v1/zeroth01_round_v2_joint_identity_front.png)
 
-- 16 关节 × 101 点运动/动力学/轴向碰撞扫描：PASS。
-- 100,000 个确定性随机安全盒姿态：0 个非白名单自碰撞。
-- 65,536 个安全盒角点：0 个非白名单自碰撞。
-- 48 个 SolidWorks lower/zero/upper 姿态：48/48 PASS。
-- 48 个姿态中父侧舵机壳体保持静止、子侧输出按命令转动且轴心重合：PASS。
-- 16 个 STS3250 轴线共线：PASS；壳体绕轴 phase 仍需实物/B-Rep 确认。
-- 11 个打印 STL：闭合、流形、绕序一致，STEP/STL 体积误差 < 0.5%。
-- 3 个接口试装 STL：闭合、流形、绕序一致，STEP/STL 体积误差 < 0.5%。
-- Linux 大小写敏感网格路径：27/27 URDF、27/27 MJCF 引用 PASS。
-- 100,000 个准静态姿态的最坏重力矩：0.3398686768 N·m（右髋 pitch）。
+![Electronics locations and colors](snapshots/solidworks/round_v1/zeroth01_round_v2_electronics_annotated_front.png)
 
-这些是离散采样与名义刚体证据，不是连续空间数学证明，也不覆盖线束、螺钉头、打印公差、壳体变形、落脚冲击和热饱和。
+![12-frame SolidWorks motion evidence](snapshots/solidworks/round_v1/zeroth01_round_v1_solidworks_motion.gif)
 
-## 快速验证
+## Validation status
 
-```bash
-python scripts/validate_rl_package_portability.py \
-  --urdf generated/urdf/zeroth01_rl_round_v1.urdf \
-  --mjcf generated/mujoco/zeroth01_rl_round_v1.xml
+- Neutral and standing pose: pass.
+- 16 joints × 101 axis samples: pass.
+- 100,000 random configurations: zero self-collision samples.
+- 65,536 limit-corner configurations: zero self-collision samples.
+- Finite dynamic response and URDF/MJCF mass agreement: pass.
+- 27 URDF and 27 MJCF mesh references, case-exact and portable: pass.
+- 11 printable shell/fit STL meshes: watertight and manifold, with STEP/STL volume error at or below 0.5%.
+- 12-frame SolidWorks motion GIF: pass.
+- 100,000 guarded quasi-static gravity samples: worst `0.339869 N·m` at `right_hip_pitch`, below the `1.569064 N·m` manufacturer-rated point; dynamic walking remains unverified.
 
-python -m pip install -r requirements-validation.txt
-python scripts/smoke_test_round_v1_mujoco.py
-```
+This is discrete mesh/analytic-proxy evidence. It is not continuous collision proof and does not sign off cables, fasteners, tolerances, flexible-cover deformation, structural strength, or thermal endurance.
 
-## STS3250 是否能走
+## Hardware readiness
 
-当前只能得出“静态重力矩有余量，值得进入 RL 动态验证”，不能得出“真机一定能走”。训练先限制在 1.2552512 N·m，再用 1.569064 N·m 额定档复测；2.0 N·m 是历史仿真上限，4.903325 N·m 是堵转值，二者都不能当连续硬件能力。策略训练后必须输出每关节扭矩-速度、RMS 电流、温升、母线压降、足部冲量、回差和跟踪误差。
+The package is ready for RL simulation and cosmetic fit printing. It is **not** a claim that the entire robot can be printed, assembled, and walked immediately. Production load paths, bearings, screws/inserts, harnesses, final electronics, tolerances, and per-servo ID/zero/direction/backlash/thermal calibration remain open.
 
-## 一句话交接
+Use `1.2552512 N·m` as the initial continuous-torque reference. Do not use the manufacturer stall torque as a continuous PPO action limit. The original link inertias already aggregate the mechanism and servo mass; do not add sixteen extra 74.5 g servo bodies.
 
-见 [`one-seq.md`](one-seq.md)；[`RL_PROMPT.txt`](RL_PROMPT.txt) 保留同一句兼容入口。
+Chinese details:
 
-## License / provenance
-
-本项目新增代码、文档和圆润 CAD 以 MIT 发布；Zeroth/KScale 与 step.parts 来源资产保留各自版权和许可证，详见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) 与 [`LICENSES/`](LICENSES/)。
+- [设计与结果](README_zh.md)
+- [装配指南](ASSEMBLY_GUIDE_zh.md)
+- [打印/整机边界](PRINT_AND_ASSEMBLY_READINESS_zh.md)
+- [RL 交接](RL_ROUND_V1_HANDOFF_zh.md)
+- [设计决策](DESIGN_LEDGER.md)

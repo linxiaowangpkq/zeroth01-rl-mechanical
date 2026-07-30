@@ -1,21 +1,23 @@
 {
-  "schema": "zeroth01.solidworks.round_v1.gate.v1",
+  "schema": "zeroth01.solidworks.minimal_cosmetic_round_v2.gate.v1",
   "solidworks_revision": "33.0.0",
-  "assembly": "generated\\solidworks\\round_v1\\OPEN_FIRST_ZEROTH01_ROUND_V1_WITH_STS3250.SLDASM",
-  "assembly_bytes": 18246836,
+  "assembly": "generated\\solidworks\\round_v1\\OPEN_FIRST_ZEROTH01_ROUND_V2_MINIMAL_COSMETIC.SLDASM",
+  "assembly_bytes": 14058695,
   "assembly_initial_save_code": 0,
   "display_mode_command": "ViewDisplayShaded",
   "native_brep_part_count": 19,
-  "component_count": 81,
-  "expected_component_count": 81,
+  "component_count": 51,
+  "expected_component_count": 51,
   "source_link_component_count": 17,
-  "round_overlay_component_count": 16,
-  "explicit_sts3250_component_count": 16,
-  "parent_servo_cage_component_count": 16,
-  "child_output_hub_component_count": 16,
+  "round_overlay_component_count": 18,
+  "nonphysical_colored_joint_marker_count": 16,
+  "explicit_replacement_sts3250_component_count": 0,
+  "new_servo_cage_component_count": 0,
+  "new_child_output_hub_component_count": 0,
+  "baseline_mechanism_policy": "PRESERVE_FROZEN_ASSEMBLED_ZEROTH01_LINK_GEOMETRY",
   "transform_gate": "PASS",
-  "servo_axis_gate": "PASS",
-  "parent_housing_child_output_transmission_gate": "PASS",
+  "servo_position_marker_gate": "PASS",
+  "baseline_joint_transform_semantics_gate": "PASS",
   "transmission_evidence": "reports\\solidworks_round_v1_transmission_semantics.csv",
   "transmission_angle_tolerance_deg": 1e-05,
   "transmission_position_tolerance_mm": 1e-06,
@@ -34,10 +36,20 @@
       "gate": "PASS"
     }
   },
+  "transparent_electronics_snapshots": {
+    "electronics_transparent_front": {
+      "path": "snapshots\\solidworks\\round_v1\\zeroth01_round_v2_electronics_transparent_front.png",
+      "gate": "PASS"
+    },
+    "electronics_transparent_isometric": {
+      "path": "snapshots\\solidworks\\round_v1\\zeroth01_round_v2_electronics_transparent_isometric.png",
+      "gate": "PASS"
+    }
+  },
   "motion_gif": "snapshots\\solidworks\\round_v1\\zeroth01_round_v1_solidworks_motion.gif",
   "motion_gif_gate": "PASS",
   "motion_evidence_reused_after_geometry_only_refresh": true,
-  "native_mate_motion_study": "NOT_CLAIMED: the 17 upstream link meshes are imported surface bodies without stable mate faces; CLI FK drives Transform2 while the new shells and STS3250 are native B-Rep components",
-  "hardware_interference_signoff": "BLOCKED_PENDING_PHYSICAL_SERVO_CLOCKING_CABLE_FASTENER_AND_TOLERANCE_VALIDATION",
-  "overall_review_gate": "PASS_WITH_HARDWARE_LIMITATIONS"
+  "native_mate_motion_study": "NOT_CLAIMED: the 17 upstream link meshes are imported surface bodies without stable mate faces; CLI FK drives Transform2 while the cosmetic shells and colored position markers are native B-Rep components",
+  "hardware_interference_signoff": "BASELINE_ASSEMBLED_GEOMETRY_MOTION_GATE_PASS; NO_REPLACEMENT_CAGE_OR_OUTPUT_DISC_ADDED; PHYSICAL_TOLERANCE_AND_CABLE_SIGNOFF_STILL_REQUIRED",
+  "overall_review_gate": "PASS_MINIMAL_COSMETIC_OVERLAY_WITH_HARDWARE_LIMITATIONS"
 }
