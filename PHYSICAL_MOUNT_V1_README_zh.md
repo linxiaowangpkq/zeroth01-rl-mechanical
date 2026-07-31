@@ -147,7 +147,7 @@ FEETECH 官方 STS3250 图纸给出：
 5. 修正承力件并重新跑轴线、干涉和 SolidWorks gate；
 6. 以上全部通过后才把整机打印状态从 HOLD 改为 RELEASED。
 
-详见 `ASSEMBLY_FIRST_ARTICLE_zh.md`。
+详见 `ASSEMBLY_GUIDE_zh.md`。
 
 ## 可审计门
 

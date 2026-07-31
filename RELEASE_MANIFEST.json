@@ -1,7 +1,7 @@
 {
   "schema": "zeroth01.physical_mount_v1.release_manifest.v1",
   "file_count": 237,
-  "total_bytes": 185598657,
+  "total_bytes": 185598641,
   "files": [
     {
       "path": ".gitattributes",
@@ -800,8 +800,8 @@
     },
     {
       "path": "PHYSICAL_MOUNT_V1_README_zh.md",
-      "bytes": 8323,
-      "sha256": "7b2021597d8646eb1601a4710b1d547437f6f8a8e8a30113143352589e79672e"
+      "bytes": 8315,
+      "sha256": "fb525b3a2c6fdc3e82ad4249d9f61a602f22b39563f477c1fabf0552cf3a53e3"
     },
     {
       "path": "README.md",
@@ -810,8 +810,8 @@
     },
     {
       "path": "README_zh.md",
-      "bytes": 8323,
-      "sha256": "7b2021597d8646eb1601a4710b1d547437f6f8a8e8a30113143352589e79672e"
+      "bytes": 8315,
+      "sha256": "fb525b3a2c6fdc3e82ad4249d9f61a602f22b39563f477c1fabf0552cf3a53e3"
     },
     {
       "path": "reports/physical_mount_v1/dynamic_collision_contacts.csv",
