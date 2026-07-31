@@ -1,7 +1,7 @@
 {
   "schema": "zeroth01.physical_mount_v1.release_manifest.v1",
   "file_count": 237,
-  "total_bytes": 185598596,
+  "total_bytes": 185598657,
   "files": [
     {
       "path": ".gitattributes",
@@ -10,8 +10,8 @@
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 457,
-      "sha256": "758d9b7f7c2aa0008458caaeef09aa809e34e6a0d3a797ab083b75ac539e25df"
+      "bytes": 518,
+      "sha256": "7edd94d89ab99e197308028c7774a89e601ad60d6d6b938fef1660a20f8a3800"
     },
     {
       "path": ".gitignore",
