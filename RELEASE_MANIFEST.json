@@ -1,956 +1,777 @@
 {
-  "schema": "zeroth01.release_manifest.v3",
-  "release": "round_v3_white_eva_small_ears_round_arms_chibi_hands",
-  "excluded_generated_files": [
-    "RELEASE_MANIFEST.json",
-    "reports/release_gate.json"
-  ],
-  "file_count": 315,
+  "schema": "zeroth01.physical_mount_v1.release_manifest.v1",
+  "file_count": 237,
+  "total_bytes": 185598596,
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 172,
-      "sha256": "a9912d1b3430eaf09f3c7bcb161418e7d8402c4678ad729dbcc5e87ffe5bf42d"
+      "bytes": 117,
+      "sha256": "ec6748e67a9faefb508ac1b03fbcef242bd13d891b45382b8c5d5e1152a9667e"
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 701,
-      "sha256": "1cc2520aa1d87d02b9a5d00d31be8baeeffda4b8b4fbe8804f6f0beeac0326ae"
+      "bytes": 457,
+      "sha256": "758d9b7f7c2aa0008458caaeef09aa809e34e6a0d3a797ab083b75ac539e25df"
     },
     {
       "path": ".gitignore",
-      "bytes": 124,
-      "sha256": "d90f0eec0b82f9cb7b6ae8b27e7e9e4db77535f6ada75e2139d462078e192876"
+      "bytes": 149,
+      "sha256": "2a5deff8a78cf5c8e9a30f22e97c137185ce9af936fae807466be5b742ecd529"
     },
     {
       "path": "ASSEMBLY_GUIDE_zh.md",
-      "bytes": 3975,
-      "sha256": "ed2c145a986ff11b4a4a954bf54df295bc8699ccd1b29ccebfa26b37622511df"
+      "bytes": 3004,
+      "sha256": "5f2d1beee11bee84558bca455ba8b4b0454a549958677878296f9dd211fb1928"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_battery_pack.py",
-      "bytes": 180,
-      "sha256": "00af339d10b4523f8e923670b5ef6b48c5bf533d8068f0baf0a76c8b4ff716ce"
+      "path": "cad/physical_mount_v1/analyze_source_mesh.py",
+      "bytes": 7512,
+      "sha256": "9cd1a9e9579f88f77f6d23c810c12b716b897d91ae099272cd414e69c9d3d3fa"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_camera_lenses.py",
-      "bytes": 182,
-      "sha256": "90585cfabb1fb13ab001f9dbda4b89d080da68e44704db6d7f1655b8ad3699be"
+      "path": "cad/physical_mount_v1/audit_physical_mount_kinematics.py",
+      "bytes": 14478,
+      "sha256": "3e7969ec8215684565338d69482c76339666ae7006d751783da10bc2b9c3ccf9"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_camera_module.py",
-      "bytes": 182,
-      "sha256": "69b81be5b267e5f917b070dcb662ef2837cf948c55fdb4c0f41d606795bb6714"
+      "path": "cad/physical_mount_v1/build_physical_mount_v1.py",
+      "bytes": 41145,
+      "sha256": "ad557942c5a4f5d8a457b2b3fe0104ad8a7571c6b6fb4c35901d748f33673246"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_chest_back.py",
-      "bytes": 184,
-      "sha256": "3d0b5a21510c4fd2e9ef404ee1416b6d2c9ab33d45897cd4aac44939a5c2c980"
+      "path": "cad/physical_mount_v1/build_sts3250_interface_gauge.py",
+      "bytes": 8033,
+      "sha256": "644f6fe7747e98854af9479d7f252ce838f3706f15708904ee3372d59e4c9c00"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_chest_front.py",
-      "bytes": 185,
-      "sha256": "cf535ee2d817fbe5ff313a7f4a6866cb4aaea2602031bd78896725e0b610e941"
+      "path": "cad/physical_mount_v1/close_task_solidworks_session.py",
+      "bytes": 2198,
+      "sha256": "a572893d97941a40e2aff8ba04b9c09c1fcee85ef264e6606cef3c0c8d7ba286"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_compute_module.py",
-      "bytes": 184,
-      "sha256": "133fffa06b722a49333897a637ac33aa1f423da9530ccc349df20365e17119e1"
+      "path": "cad/physical_mount_v1/convert_split_stl_to_step.py",
+      "bytes": 5132,
+      "sha256": "730db79ba6a9a150b6093b3dc5b780f1a47aa17104f89d14c926a8c9e88e046e"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_head_back.py",
-      "bytes": 182,
-      "sha256": "5663a40b3b76e4bbcbe92dd6f37b395ce89ee8a8df60f3433a0ebc565f597209"
+      "path": "cad/physical_mount_v1/create_solidworks_physical_mount_v1.py",
+      "bytes": 39659,
+      "sha256": "c470041fd27865c548357441cd6a7a48e1fee5cac21814b3fd266de986d79224"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_head_front.py",
-      "bytes": 183,
-      "sha256": "65efe432344021f23fa55d5beed9730f3263e3485996870cb55d5bd5e3e76050"
+      "path": "cad/physical_mount_v1/launch_solidworks_physical_mount_v1.py",
+      "bytes": 971,
+      "sha256": "e18334a4108d897d6a826beef16d48d92f14422336be69cae63c5fb0cc1ac318"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_imu_module.py",
-      "bytes": 176,
-      "sha256": "1e81b08b02ed320266d976d591d21d10ccd83056a47b4743742ab4a93e88c1e6"
+      "path": "cad/physical_mount_v1/sync_publish_repo.py",
+      "bytes": 12980,
+      "sha256": "2ff660c929f61d86d73e303420c135365847af25f755e27e5ffce00389259572"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_left_sole.py",
-      "bytes": 170,
-      "sha256": "788c27ef03739ea05885543630090b44c7cea0befb09f5021886b70ee833bde1"
+      "path": "cad/physical_mount_v1/validate_physical_mount_v1.py",
+      "bytes": 12259,
+      "sha256": "5a40494ec4dc072d2a3f873d8bcc561af5aaba8212107f7d2803060f4d529284"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_pelvis_back.py",
-      "bytes": 186,
-      "sha256": "f80151420f5bccaafe3c1933b69cb0833180992ac8f93af58559714f596e8a37"
+      "path": "cad/physical_mount_v1/validate_release_package.py",
+      "bytes": 13078,
+      "sha256": "c0aa86e5cdb0727469bc26e7d4ba29a80aef75efe8e821aa508c77baa41a9adf"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_pelvis_front.py",
-      "bytes": 187,
-      "sha256": "b81e20006cddf2b38ea5eea061b0a551cd3678d22333c8c3127c2bd34a6c722d"
+      "path": "config/physical_mount_v1_guarded_limits.json",
+      "bytes": 1297,
+      "sha256": "a6f2fd0c23e3b3ceae90284d6ba9182b8172ac5773061822d43219079a07713c"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_right_sole.py",
-      "bytes": 171,
-      "sha256": "7f35964f3dc85a44614785980fd30c4a68a5280d13d514fb7474db0a483e69e3"
+      "path": "config/physical_mount_v1_source_regions.json",
+      "bytes": 6509,
+      "sha256": "5cb01a201b7356a0e9c6b92bb8e42566e84fb00bcda9cc8f2748b5ae8d3f6e10"
     },
     {
-      "path": "cad/round_v1/gen_round_v1_torso_spine.py",
-      "bytes": 178,
-      "sha256": "f9a897c7dc5efd375c866f8d195d5d58da13c3fed6bf5c135e0d76e8b2358c7c"
+      "path": "generated/cad/physical_mount_v1/servos/S01_right_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 202884,
+      "sha256": "78b50e09ef4d09e21b0e62a67bb3fff62f34ca144fa18deeacbfd20bb671a51c"
     },
     {
-      "path": "cad/round_v1/gen_round_v2_tof_module.py",
-      "bytes": 176,
-      "sha256": "887387749dbadbefd667d692e24cb4ee73383dfe65d7b57c28fe4071a79ac3c7"
+      "path": "generated/cad/physical_mount_v1/servos/S02_left_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 202684,
+      "sha256": "11249af4c1173258a2e73d7de6f89a3e6d56db475396ad9bb80532736b9eb36d"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_face_graphics.py",
-      "bytes": 182,
-      "sha256": "be768f2eaead29053f5d69c9675f656e8e729861da774034fe33ad75eb6aa6f9"
+      "path": "generated/cad/physical_mount_v1/servos/S03_right_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 49784,
+      "sha256": "47bfd4aac4bf6f803303c85982d5e212da42a959aa238f320c9ac0489e48b508"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_left_chibi_hand.py",
-      "bytes": 182,
-      "sha256": "2377d6b4afa37cbf0021351069204fa3bb6d2db316df8d7c03b6d29b7584dc3f"
+      "path": "generated/cad/physical_mount_v1/servos/S04_right_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 378684,
+      "sha256": "9264993aff08cd444a44d349b0aa0ba40dd79cedba3e2bbfbca6394084f879ca"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_left_forearm_sleeve.py",
-      "bytes": 193,
-      "sha256": "72de80a64a1544a96c0ea0bc5103657bde9bed14d35e95da8c22c22ead79e2bb"
+      "path": "generated/cad/physical_mount_v1/servos/S05_left_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 379584,
+      "sha256": "6651fbc8521724ae1c0ec328c2607fec36762b6bfcd4bbbcf51f68ffe7c03c0b"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_left_upper_arm_sleeve.py",
-      "bytes": 191,
-      "sha256": "b4ea30a047efcc8f7d2a37292f3b8f523689aa7dfa9cfefb69c4360025d85892"
+      "path": "generated/cad/physical_mount_v1/servos/S06_left_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 49284,
+      "sha256": "155d1588f20a34d93d59f8c23b0296f217b2a419096439e9824a13dafa301f92"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_right_chibi_hand.py",
-      "bytes": 183,
-      "sha256": "241d5bed1885e5cddfa13928993732c1652aaf9da1a3daf94d36197e5bae81b4"
+      "path": "generated/cad/physical_mount_v1/servos/S07_right_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 38784,
+      "sha256": "00ad02586dbe94c8537503476a1598542f14bbcd58332c8cb198040e1073597f"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_right_forearm_sleeve.py",
-      "bytes": 194,
-      "sha256": "9aa50cb463773472940bd48b1a028141b1ad8df23906a97c0b6e8c5280b0760b"
+      "path": "generated/cad/physical_mount_v1/servos/S08_left_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 39284,
+      "sha256": "e89c57a95eff1582b07c6e4b698202ebc8e3d53b939132231bc98a1f146cce6e"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_right_upper_arm_sleeve.py",
-      "bytes": 192,
-      "sha256": "bf1449356e0db6e0c554f46a4fba5d9e249931964a2767e02314f846291cf5e3"
+      "path": "generated/cad/physical_mount_v1/servos/S09_right_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 242284,
+      "sha256": "777b92d5dfe35ede688a2186a821399696b65e7adb8c6d4048c5391f868e74fe"
     },
     {
-      "path": "cad/round_v1/gen_round_v3_waveshare_4_3_dsi_display.py",
-      "bytes": 192,
-      "sha256": "8532f4ae441afcd9b57635384ea3e14d2ae7c8e6c4fa6764555838c284e3e051"
+      "path": "generated/cad/physical_mount_v1/servos/S10_left_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 242384,
+      "sha256": "c94bb62302d7f701e7782eca49485b16e70775b73b3b1bccd27491ad841859fc"
     },
     {
-      "path": "cad/round_v1/gen_sts3250_c001_blue_diagnostic.py",
-      "bytes": 202,
-      "sha256": "fddc6d5864e4557cfdd62691c489b19a1d5de0c0144ea0a7a1fa40cf2cd52ac5"
+      "path": "generated/cad/physical_mount_v1/servos/S11_right_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 445084,
+      "sha256": "d478e5af6644fce52b504aa29c1fc7267a06ac767e364562195cb33baae0eca5"
     },
     {
-      "path": "cad/round_v1/gen_zeroth01_round_v1_assembly.py",
-      "bytes": 364,
-      "sha256": "040b17dd66926ec1c2d278a28c6a714397180a7af8a6eb83c5752e2958406b17"
+      "path": "generated/cad/physical_mount_v1/servos/S12_left_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 445084,
+      "sha256": "034db8e76390d2697e8ecdf0db482780e614ed7fcd743c86cb25f9d7a1634966"
     },
     {
-      "path": "cad/round_v1/round_v1_common.py",
-      "bytes": 43429,
-      "sha256": "0b7f48e262c7a198ed01430b42d06118453a57639f4cac73711c205a79385779"
+      "path": "generated/cad/physical_mount_v1/servos/S13_right_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 224984,
+      "sha256": "38d04ece2818f12dd9646698843cd6104eca7732d28cced3d263bace11c1a5ff"
     },
     {
-      "path": "CAD_BRIEF_zh.md",
-      "bytes": 3359,
-      "sha256": "230f41a1ee8ac4970c35ffd61c7b0ac970ec65ff1af6aba42bafe6e1b6fc27ff"
+      "path": "generated/cad/physical_mount_v1/servos/S14_left_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 224884,
+      "sha256": "068070e5e5696e8a276e470e8b715fe45de8b98682a089896d22fd34a57b1cf3"
     },
     {
-      "path": "CAD_INTEGRATED_REVISION_BRIEF_zh.md",
-      "bytes": 1821,
-      "sha256": "8f902a089db0420a90ca148d6a1a6f227997c6821155429cc79258671bb902d6"
+      "path": "generated/cad/physical_mount_v1/servos/S15_right_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 225084,
+      "sha256": "af5f4d28cbcb8a47ade8a072f1e663ba08c2f29dacf20125eedf66e1b08a3d82"
     },
     {
-      "path": "CAD_PRINTABLE_ROUND_BRIEF_zh.md",
-      "bytes": 4183,
-      "sha256": "ad940b1da8a69b60b04fec19cd3a0d6f4112bd161dba68cecf31cbb95c03db60"
+      "path": "generated/cad/physical_mount_v1/servos/S16_left_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 224984,
+      "sha256": "c5a840e2de40afa70aa26224600b18631c08196e6a98835351472c7591b46ff9"
     },
     {
-      "path": "config/mesh_name_map.json",
-      "bytes": 1209,
-      "sha256": "9ae1650e21a86952c0644751d61c1e783c972900205ae9e24939f350d0865a56"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_1Flange.stl",
+      "bytes": 55184,
+      "sha256": "e64b5a3a5035d8f83fefa0d1f35ddfb59dc5d0e1894658b6ccd456beb06e5f0b"
     },
     {
-      "path": "config/round_v1_electronics_layout_source.json",
-      "bytes": 5915,
-      "sha256": "117c2276d290f273b6869eb514293412118d7ab9c9bca05b1aef8debb09d58b9"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_1Flange_2.stl",
+      "bytes": 55084,
+      "sha256": "2f9d22857d9a9baefed435514c12e0f43ab15961eac49b6fb2f4539bf8b1ef5e"
     },
     {
-      "path": "config/round_v2_component_identity.json",
-      "bytes": 3254,
-      "sha256": "9c0dadb74fe61bf3e613bc1bcef7c3e695610470edd31f52c019b4af26439937"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_10.stl",
+      "bytes": 120084,
+      "sha256": "0d540fff0c3a52281f77979230d43010764c96983e7f9ba25118cc561a928f79"
     },
     {
-      "path": "config/round_v2_servo_interface_geometry.json",
-      "bytes": 4272,
-      "sha256": "a0da62e1cb6d568200c11710216a9579050d291ce784050dd7f10a32ceb22e54"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_13.stl",
+      "bytes": 50384,
+      "sha256": "583ab5bc16298d78285eae7102d20317c222b96c72afade5087ee8016fb4cc2f"
     },
     {
-      "path": "DESIGN_LEDGER.md",
-      "bytes": 6406,
-      "sha256": "d90a4b5fe789e89956bfad57814ceaf5dbe9fd5404e2d6a734e9d5b7bfb3ee9d"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_14.stl",
+      "bytes": 50184,
+      "sha256": "6be2d40ee96b82ce1237602e4c21ed9f0c43383236b0a7e31eb521a94b519d39"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_BATTERY_PACK.step",
-      "bytes": 66795,
-      "sha256": "cc843f0c946f6913c0da087896cc3661ca2fd98f0a9f9a636c504d4213825424"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_5.stl",
+      "bytes": 55084,
+      "sha256": "6c9cd77a348f1c6516600354e25c2d8515414a65428bb0dc7033b5d8e50c3de8"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CAMERA_LENSES.step",
-      "bytes": 89657,
-      "sha256": "79a483c53ca143724e8f06881eac75d5c0f73c618ef190a1e825359a43de054f"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_6.stl",
+      "bytes": 55084,
+      "sha256": "0921969312b9a024c1fb73cfe8f0b5e5a0adebd1f09510d9e4c131548ea1f9b0"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CAMERA_MODULE.step",
-      "bytes": 67197,
-      "sha256": "a7508770fad4ebce3d5609c20684cd96f1f1334e3900e6013e2d760d136593cc"
+      "path": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_9.stl",
+      "bytes": 120584,
+      "sha256": "a31db6cccff0df5f844c05ffa537c294b48e033f20a36a9b7a9f582ac01a3c41"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CHEST_BACK.step",
-      "bytes": 283539,
-      "sha256": "e2c1286490d7edc053923db10b5ac3360339b0b72f6794acc9a86e37c4ab269e"
+      "path": "generated/cad/physical_mount_v1/skeleton/FINGER_1.stl",
+      "bytes": 217884,
+      "sha256": "46ef5267f24de0c49b57b21b3256d56facb343c7e74898b4a11088b615005e62"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_CHEST_FRONT.step",
-      "bytes": 263439,
-      "sha256": "f7ebe49830e814ebcc7883bcf957ae80be8bdb38c8fbe93674961dd3c7088f6e"
+      "path": "generated/cad/physical_mount_v1/skeleton/FINGER_1_2.stl",
+      "bytes": 217584,
+      "sha256": "2b9ecef7db3f85ac5cc4a9d4add3ae45c7a3870b42bfb844b0d354b0b62c4205"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_COMPUTE_MODULE.step",
-      "bytes": 66861,
-      "sha256": "6e8e9a6cef69e0439e0c3345ad6914cbcf7f412de85d208ff500bfc390e2353e"
+      "path": "generated/cad/physical_mount_v1/skeleton/FOOT.stl",
+      "bytes": 120684,
+      "sha256": "0cf1a7fba7d5b1976f11c651d365603866a4810e1b7714110a470e9e22544ae4"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_IMU_MODULE.step",
-      "bytes": 66791,
-      "sha256": "90b3c292b08ca31a97bac29aa5ab6ae3986c408e1a2ba2af4b069a1eda5fb861"
+      "path": "generated/cad/physical_mount_v1/skeleton/FOOT_2.stl",
+      "bytes": 120684,
+      "sha256": "d0db4d117632591b82daf5fcaf8d407f97aebe98fe55f008f4588635390d0413"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_LEFT_SOLE.step",
-      "bytes": 202925,
-      "sha256": "289db8262708ddeb753b3819cb509b1fb46edc79a1fd891ad92858aa6913bfc2"
+      "path": "generated/cad/physical_mount_v1/skeleton/IMU.stl",
+      "bytes": 14384,
+      "sha256": "9f9669bca2776c47dd309ee9724ade030b4c0ea695b08faf8882a00728a39bc2"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_PELVIS_BACK.step",
-      "bytes": 416382,
-      "sha256": "2dc82bb950ccc82d22b03f045f4780f06661752c4968862a067714f57cbc6826"
+      "path": "generated/cad/physical_mount_v1/skeleton/L_ARM_MIRROR_1.stl",
+      "bytes": 499684,
+      "sha256": "8a4ea2c86c2177b25eb3aaca118b34defd223724744227a367f73cf90142da5d"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_PELVIS_FRONT.step",
-      "bytes": 579583,
-      "sha256": "51b6e46f862f2c018d2a920116f767a12da71f0376e6eb18b3cfa3af49144b91"
+      "path": "generated/cad/physical_mount_v1/skeleton/R_ARM_MIRROR_1.stl",
+      "bytes": 500084,
+      "sha256": "7042f7b3f3eeabd6e29e2724cca5f66232d9fd2efde5a52073a2fc28446932c1"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_RIGHT_SOLE.step",
-      "bytes": 202951,
-      "sha256": "e04678fcac4fa9e27fe433045264b7221af2ecec21e2d784627207e656d7605e"
+      "path": "generated/cad/physical_mount_v1/skeleton/U_HIP_L.stl",
+      "bytes": 71084,
+      "sha256": "05c8262faa706de1c0cab5ea3472e92062ab2e6503e5cf79c9dc77f34390c517"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V1_TORSO_SPINE.step",
-      "bytes": 335074,
-      "sha256": "41913dda8159a58e0ed705482ae90201c8559daba9de5f5fd3d8fcfaf9a7d733"
+      "path": "generated/cad/physical_mount_v1/skeleton/U_HIP_R.stl",
+      "bytes": 71384,
+      "sha256": "9359cab424b25a52d6c559496baee1c7dff482d400b00e1cb16cd0b63865cf08"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V2_TOF_MODULE.step",
-      "bytes": 66573,
-      "sha256": "b9ea79fc5e0c7e8e128c0f23e4a2cc033b9ce21d269de9832089dcd532c93024"
+      "path": "generated/cad/physical_mount_v1/skeleton/Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "bytes": 318484,
+      "sha256": "195e87233f5e997e33628bc24276520dafc93b5e43f6746ab944262e4837bdd8"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_CAMERA_SENSOR_WINDOWS.step",
-      "bytes": 78422,
-      "sha256": "b0f07b3369f615a24705f943864f59c670eec89083b6d82c213955d5969ab8b5"
+      "path": "generated/cad/physical_mount_v1/skeleton/Z_BOT2_MASTER_SHOULDER2.stl",
+      "bytes": 55784,
+      "sha256": "e4bd555196d7ebb0d9b50b1344eb992ffbd0dd886d130f2933d8dc9140919484"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_FACE_UI.step",
-      "bytes": 13463,
-      "sha256": "f8f611414fe5f0a6902cca0dbcb33ee031879ef01726d59eaa5c924c3e4df4bc"
+      "path": "generated/cad/physical_mount_v1/skeleton/Z_BOT2_MASTER_SHOULDER2_2.stl",
+      "bytes": 55684,
+      "sha256": "a2b55403fe97d789020d31c289c7bd94cbeac0326810040dca26ce1897b8c067"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_HEAD_BACK.step",
-      "bytes": 1530603,
-      "sha256": "f8c8ba44d47c751e0e6bbbbc2f22d11382bc73d6d0b9c66980c95643ddc6647a"
+      "path": "generated/cad/physical_mount_v1/sts3250_interface/FEETECH_STS3250_C001_DIMENSION_REFERENCE.step",
+      "bytes": 194618,
+      "sha256": "afe61a337e6667db8e8a92d4d698bf6833cbbf253253eeba4db56f25a6328970"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_HEAD_FRONT.step",
-      "bytes": 1758976,
-      "sha256": "0ff08cf52c107b15167082454e4114b5d2902bd63f5c2c76ac903f223e23dbe8"
+      "path": "generated/cad/physical_mount_v1/sts3250_interface/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.step",
+      "bytes": 33934,
+      "sha256": "02b6339918cbb3ae6f37a8685d3ba4e1bb222ab1dc1e0292833b40953afd9230"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.step",
-      "bytes": 219429,
-      "sha256": "3e8d77f30d84e29182b796e7b55c857406c8ac86c70fb4ca29806667bbd437d2"
+      "path": "generated/config/physical_mount_v1_actuators.json",
+      "bytes": 17462,
+      "sha256": "49d6dd42495b1c1dc2749c5384eb569d4dcdca2bbbbc8e6c290dcf61717085be"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.step",
-      "bytes": 175991,
-      "sha256": "74726815e6ba902ed5d77f811f1bc603bc3434a19fe0e239a064b662b68c3271"
+      "path": "generated/config/physical_mount_v1_hardware_calibration_template.csv",
+      "bytes": 1647,
+      "sha256": "cf5be165afc1b226834c40a97b0aefda53158e1401e2a436870a4caf6ac848a2"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.step",
-      "bytes": 173750,
-      "sha256": "e4a339414eb3d4932d749b9b166d897d1a9c74c9efe449b041ef2bf057edbd27"
+      "path": "generated/config/physical_mount_v1_rl_handoff.json",
+      "bytes": 3175,
+      "sha256": "a14ca53c858d762db8c4616b6a859af655b093755402f0d7cbcce50ff2fc8704"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.step",
-      "bytes": 196495,
-      "sha256": "338b2b9369904599cfef38c2f5d91930fb43fe760f8115c2a24363766faabdfc"
+      "path": "generated/print/physical_mount_v1/first_article/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.stl",
+      "bytes": 127684,
+      "sha256": "b79ca3bf538fc25fcc4e49919d0607e1993bdcb8654e71f45e4283b618e40dfd"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.step",
-      "bytes": 175994,
-      "sha256": "5a81c20e892e6959ac0753cf9d2ef62655efc49f2e4b14e9efea02cb1dcb5387"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_1FLANGE.SLDASM",
+      "bytes": 1798418,
+      "sha256": "4cb8af99f04471efb25a79995b6ed3e5b15800e21361a5d6d6e5b398c30794cb"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.step",
-      "bytes": 173397,
-      "sha256": "56f9e7c52049793b4e9c1c4fb2bb577263173a34fb05e444950fe0684ff4172c"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_1FLANGE_2.SLDASM",
+      "bytes": 1783430,
+      "sha256": "58e0951a04c5c49d77de4dddb6887296cb2523798874e281fad4a781880ce01a"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_VISOR.step",
-      "bytes": 34874,
-      "sha256": "0d9378a09a02da71bd0b136be1169911ce39bdf6c1b7e8e307f74a62349deef8"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_BOTHFLANGE_10.SLDASM",
+      "bytes": 1801829,
+      "sha256": "5765f4a8401173a05f0d9e13e973607f8f527e321993f2861bb5e014d16bfa29"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_ROUND_V3_WAVESHARE_4_3_DSI_DISPLAY.step",
-      "bytes": 67058,
-      "sha256": "b41db7da683c9f9f12ca668a5d045be973b7fdd0b7fb9aba5982f0d5bbfbb4ff"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_BOTHFLANGE_13.SLDASM",
+      "bytes": 1813515,
+      "sha256": "11d83c9b4fe596adf6e3d433793beb004b1c38e1c464a085ea3a911167a20da3"
     },
     {
-      "path": "generated/cad/round_v1/parts/ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.step",
-      "bytes": 127285,
-      "sha256": "d78ab1a01e71d4dd5bc9d83efe098a0e86c76d17f46e99665b59f046a9e10323"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_BOTHFLANGE_14.SLDASM",
+      "bytes": 1813334,
+      "sha256": "f3ef6801cb9c0341883915439af3c887433ff6cb8ce36c78a43c6f82abb4b27e"
     },
     {
-      "path": "generated/cad/round_v1/ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_ASSEMBLY.step",
-      "bytes": 7619761,
-      "sha256": "bd2e360dffb54437dad4d3a4ccf11ebaa82ed73c1007ae67c81b1386a0a90ab3"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_BOTHFLANGE_5.SLDASM",
+      "bytes": 1787891,
+      "sha256": "d60399086381f942ecb16e9594f84c3a6039772db80b35e55dcf45c50887e8a0"
     },
     {
-      "path": "generated/config/round_v1_electronics_sensor_layout.json",
-      "bytes": 9099,
-      "sha256": "db1ddaee7c0a327c70420b2e60925aba794b4f44dc47d53cc9a8d4b224389f45"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_BOTHFLANGE_6.SLDASM",
+      "bytes": 1782434,
+      "sha256": "25155224e0fd9f3f4c4b34751b5a943221b6c58aad06bc15571a89e59658da63"
     },
     {
-      "path": "generated/config/round_v1_fastener_bom.csv",
-      "bytes": 2657,
-      "sha256": "9d6d51776ad1f835f76e4c56a535c2c8f57130f1efe196dcbd8aaa6b50d1970f"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_3215_BOTHFLANGE_9.SLDASM",
+      "bytes": 1832576,
+      "sha256": "c2d3a8935cfac02a423f296ed96b8b8ff09324e94da7dd870365e6021d5feba9"
     },
     {
-      "path": "generated/config/round_v1_mass_properties.json",
-      "bytes": 28177,
-      "sha256": "d73b438301c0f24214a1fe1a98a1426b71a88548c29340979fff393df55f7168"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_FINGER_1.SLDASM",
+      "bytes": 879262,
+      "sha256": "9398aa9214c3cc6ae4bb0c76a1efd83461ce75d20c128140532cee6888dd9e3c"
     },
     {
-      "path": "generated/config/sts3250_round_v1_rl_profiles.json",
-      "bytes": 1528,
-      "sha256": "e46e81f1b1c22b8abc765c1280d95d0909d1fe2292999beafa0e429488adb199"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_FINGER_1_2.SLDASM",
+      "bytes": 893671,
+      "sha256": "306516efb5bcf973d87ef46b9966dbf1efbaee3ae85ce44d884abafee315dcf3"
     },
     {
-      "path": "generated/config/zeroth01_actuator_metadata.json",
-      "bytes": 20344,
-      "sha256": "ad4a95b5b07e41f693d06fae25c192fc4a3a7719e3e6042bca486d3dd7a03ff7"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_FOOT.SLDASM",
+      "bytes": 651318,
+      "sha256": "45bdd7e399ffbedc2103cdfce4c44443b9d3d37e431639588276a5966844b86f"
     },
     {
-      "path": "generated/config/zeroth01_collision_policy.json",
-      "bytes": 2953,
-      "sha256": "730ec1ef49800baf981044142d077d6cf4636de733b0d31e30d6035e44614e53"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_FOOT_2.SLDASM",
+      "bytes": 574744,
+      "sha256": "caed084fa41eea68f53f230a8eeeaf91269348c57388abf37fc455055bfbb3bf"
     },
     {
-      "path": "generated/config/zeroth01_hardware_calibration_template.csv",
-      "bytes": 1483,
-      "sha256": "652a12480ada467afe88b0ce7e3ae471e652cebb269a1718f18ddb8fd5ce7573"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_IMU_2.SLDASM",
+      "bytes": 183958,
+      "sha256": "28c6fca4f8e1969cfba990c7ef02359e9c1cfe8ca385e43cb941694a571af9ba"
     },
     {
-      "path": "generated/config/zeroth01_sts3250_mount_phase.json",
-      "bytes": 5838,
-      "sha256": "07f7e5721cb5f296837d46c0867de59b9e28eda5d957c663154e434783caec58"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_L_ARM_MIRROR_1.SLDASM",
+      "bytes": 1698625,
+      "sha256": "24ba4464a16aca3d35715f6a97b14c5ba617089ecdd1484d3c175ad5e18dd381"
     },
     {
-      "path": "generated/mujoco/zeroth01_rl_round_v1.xml",
-      "bytes": 31384,
-      "sha256": "8bece33f05b120c76a3a46d99bf8a5e6b25638a6754bad191c7e58c1c6c0c964"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_R_ARM_MIRROR_1.SLDASM",
+      "bytes": 1781287,
+      "sha256": "03469c467eff88efb098e2977ef969c48eb8d7d92147d234e4db26cb05269cb1"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_CHEST_BACK.stl",
-      "bytes": 235984,
-      "sha256": "c9716843a8b34eff87efa2bdd0c0264b3b0632785e8da36c46e5183a07f88625"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_U_HIP_L.SLDASM",
+      "bytes": 385131,
+      "sha256": "b7b15de58580209682092fd35650a9a21a7e07c849166bb8e13fcbafbd852a37"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_CHEST_FRONT.stl",
-      "bytes": 211984,
-      "sha256": "b79f549b14ce71e04ae51123b96057429bc8401ebb31c26a5d187c05d72cc6d0"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_U_HIP_R.SLDASM",
+      "bytes": 373024,
+      "sha256": "59d7b1cb3dd6eda144472fcd28496d38f9029524915c8a69f551b0dc16ed3f8d"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_LEFT_SOLE.stl",
-      "bytes": 159084,
-      "sha256": "798225f28cea57f7e2eb32d6197e59b16f016a9691cb05924ba2a87d6e2e08f7"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_Z_BOT2_MASTER_BODY_SKELETON.SLDASM",
+      "bytes": 1837945,
+      "sha256": "d37dd70b9a981e043e16ab42ebc9408f0383c85044cb6745680f30a7eb517590"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_PELVIS_BACK.stl",
-      "bytes": 264384,
-      "sha256": "14cd0ddfd8f7a611c81a2056de03b5ead9e22cb7d51167dfd603730189bb0bc0"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_Z_BOT2_MASTER_SHOULDER2.SLDASM",
+      "bytes": 364172,
+      "sha256": "652b994a70533f3aab487c39f883a24720ba8bc88ae6d723f9411ef3a7344b0e"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_PELVIS_FRONT.stl",
-      "bytes": 261184,
-      "sha256": "96ac158836b7ff6a4aad658f5fb8fd7f197f1f65747e9899c9872ba60a265fad"
+      "path": "generated/solidworks/physical_mount_v1/links/ZEROTH01_PHYSICAL_MOUNT_V1_LINK_Z_BOT2_MASTER_SHOULDER2_2.SLDASM",
+      "bytes": 364652,
+      "sha256": "6b0260934931aca3ea6726d59af73aa39ac182b54a9be521b4a1f8724420d606"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V1_RIGHT_SOLE.stl",
-      "bytes": 159084,
-      "sha256": "7527fd371f9c06f70f7d2623bb8175592725ee8ea6ed671a139c31a2341bb483"
+      "path": "generated/solidworks/physical_mount_v1/OPEN_FIRST_ZEROTH01_PHYSICAL_MOUNT_V1_16_BLUE_SERVOS.SLDASM",
+      "bytes": 19919597,
+      "sha256": "32a2f187b29c7cbdfacbf8c200e46019f889a5cf634c77e6bcaebafbe9686aa2"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_HEAD_BACK.stl",
-      "bytes": 3527384,
-      "sha256": "15ca27a00b4a9738ea9292b8178de81e9c0eb4da7040e7efc0592a44e6910e54"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S01_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_SHOULDER_PITCH.SLDPRT",
+      "bytes": 2014921,
+      "sha256": "1e0331a9489921dd0b3fa5463de1b72d5bd658ef80c0ffa0c10ff95694d04c85"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_HEAD_FRONT.stl",
-      "bytes": 3873784,
-      "sha256": "1542156d0b82ccccc0b4cd0a0e926019ae10725fdc1713e422f01786099aa6a8"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S02_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_SHOULDER_PITCH.SLDPRT",
+      "bytes": 2015707,
+      "sha256": "a73f45b72f9e55bbefa59e9f439b81205085b8cf2b1ca7430590261bf9ad9556"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.stl",
-      "bytes": 527484,
-      "sha256": "bac785899901b86e4cd1c9dd306c6acb252d72bb4f1a2ae11befb12307b75402"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S03_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_SHOULDER_YAW.SLDPRT",
+      "bytes": 654615,
+      "sha256": "da5e56ef69b9e3b48922ffb6e148cd8ff3c68a6dc1c72a263db06a886e26d4f0"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.stl",
-      "bytes": 274084,
-      "sha256": "73757e0874f6a2933a635aeecc57ae1bcb97780db451f6e53ae0b973f581760b"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S04_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_HIP_PITCH.SLDPRT",
+      "bytes": 3710902,
+      "sha256": "7ed1bf113773d623b5fc2337ab29991c22ed38671e7b0c3b662467704f14ec1a"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.stl",
-      "bytes": 298484,
-      "sha256": "89b41affa06aa350871206d56af24f2d43d518b59cb4cd75b3349622eb66be52"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S05_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_HIP_PITCH.SLDPRT",
+      "bytes": 3721481,
+      "sha256": "33af4e7e05e741c21019e589911c508921f905489e323dbe7bd1bd055b29a89f"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.stl",
-      "bytes": 530284,
-      "sha256": "b854dd614b9a4c243119b10704db9016db9753d9232c3a44ae7ccf9d259d70d8"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S06_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_SHOULDER_YAW.SLDPRT",
+      "bytes": 652119,
+      "sha256": "597dd8855cf6947dc7deaf2151714e351dfd2a72b6af603dd43b0558693dbead"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.stl",
-      "bytes": 274084,
-      "sha256": "73757e0874f6a2933a635aeecc57ae1bcb97780db451f6e53ae0b973f581760b"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S07_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_HIP_YAW.SLDPRT",
+      "bytes": 522879,
+      "sha256": "56a54acd0f0dd09b8010f8dfce45632cb909ff422fb3643329b03a305694da51"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.stl",
-      "bytes": 298484,
-      "sha256": "ad3fc61c1d329838ea684112b8ac2319e97e359d91a2c2b340ac2107bff7389f"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S08_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_HIP_YAW.SLDPRT",
+      "bytes": 535522,
+      "sha256": "cdbbbe62873a224342366638b0e278992f516fad276812b34f118434e8c9fb37"
     },
     {
-      "path": "generated/print/round_v1/final/ZEROTH01_ROUND_V3_VISOR.stl",
-      "bytes": 13484,
-      "sha256": "832e7d7802d934c4961f2f000b8a78227374792c5d4ce8e23798d9fb70181201"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S09_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_ELBOW_YAW.SLDPRT",
+      "bytes": 2364258,
+      "sha256": "015cc1a4e528cf115a525744167c5bca6da34a1f35d2ef81b6f047eb5a9b253e"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/OPEN_FIRST_ZEROTH01_ROUND_V3_WHITE_EVA_16_BLUE_SERVOS_XRAY.SLDASM",
-      "bytes": 13984407,
-      "sha256": "3e8eb5274a7f30bda56419f85b6f3b4b05b7610975e2ff85cbfeb79a60e67a76"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S10_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_ELBOW_YAW.SLDPRT",
+      "bytes": 2394519,
+      "sha256": "7040321f82f69e1f2f312392d9e85aa9e4a470c9055b1b2ea7a87cf3a7243ca5"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_motion.gif",
-      "bytes": 4052399,
-      "sha256": "99642eb6177a65bb572e028ce21c4a227aa950d50c6f80b794191ea541a68c8c"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S11_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_HIP_ROLL.SLDPRT",
+      "bytes": 4364678,
+      "sha256": "fa1d098e1ccf4fca8604ebc6a15d407b609dabc4df76132760d41dbc4633786e"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_xray_front.png",
-      "bytes": 629125,
-      "sha256": "31a19ff17ad0153f89d84cc2bb3ab499037124232d77777411098ad24b06e4bf"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S12_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_HIP_ROLL.SLDPRT",
+      "bytes": 4299786,
+      "sha256": "e42c6c6ae01c5f6203fa5c9c45d3f10435923798d1d42a0a8ddc2186fd51a96b"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_xray_isometric.png",
-      "bytes": 1018826,
-      "sha256": "36184af6bce274399fab41704ad3ace5e21ca7baaa1c0b92f89b126d16e1bec5"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S13_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_KNEE_PITCH.SLDPRT",
+      "bytes": 2160084,
+      "sha256": "689500d91ab0f2a94c9e77821d0c699a16996e44c016a57e8cee1c2a5afdc0c0"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_16_blue_servos_xray_side.png",
-      "bytes": 489009,
-      "sha256": "ec3fbb652a0c242677989b309b3152634b0dd0cf7127796b3e0d0d6661753d38"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S14_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_KNEE_PITCH.SLDPRT",
+      "bytes": 2159740,
+      "sha256": "1d2aa119fcacefd6e870388ac1879602f08a226bb6a7d9525444909fc8608b70"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_white_front.png",
-      "bytes": 426926,
-      "sha256": "e4d38a8bb831d69cea5c3c0c245ee9d03e083a73dd6b098859ea9c743d165d4a"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S15_INSTALLED_STS3215_FAMILY_REFERENCE_RIGHT_ANKLE_PITCH.SLDPRT",
+      "bytes": 2302673,
+      "sha256": "f17ae8733761329ac6bc83f84655a41522cbc546b3b090b0f237c78c38f7a34a"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_white_isometric.png",
-      "bytes": 585138,
-      "sha256": "2aa105dde5a82d6ccfb25f86849b0716a66cd03e5e21e2763aa8c1ac0f363a92"
+      "path": "generated/solidworks/physical_mount_v1/parts/servos/S16_INSTALLED_STS3215_FAMILY_REFERENCE_LEFT_ANKLE_PITCH.SLDPRT",
+      "bytes": 2305228,
+      "sha256": "3a14019d3be8056506c802e9f73cfe44047a8bf50b723d8d12665c1132a74820"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/previews/zeroth01_round_v3_white_side.png",
-      "bytes": 320239,
-      "sha256": "847485240eb7d1958a8be764172d4319a05f2b8bbcf8cbb603f16509f25dfaf8"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_1FLANGE_2_CARRIER.SLDPRT",
+      "bytes": 682711,
+      "sha256": "fb0b8e2633d8eaee7e02f21cb2f17138dc8d231324a2562eca5f238c41d36672"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/solidworks_portable_component_manifest.csv",
-      "bytes": 15160,
-      "sha256": "073d9b824166d975a15d503de815bce39c1affdf720bb6855979a90f6887add3"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_1FLANGE_CARRIER.SLDPRT",
+      "bytes": 679461,
+      "sha256": "fda4265c04b7ba9a3301d267ad7946ca836b6063a5be3e91872d1722fe0e9761"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/solidworks_portable_gate.json",
-      "bytes": 3754,
-      "sha256": "e2fb634b21f9d08a46df9346612c27e5a9917afacd41b2db47d3b394055b4b7c"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_10_CARRIER.SLDPRT",
+      "bytes": 1228182,
+      "sha256": "b8a92a001baf5823aed4e5f85ca3c1e92d3fdaba15c3ba6e1b0e2c6460d72915"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/solidworks_portable_part_import.csv",
-      "bytes": 6782,
-      "sha256": "cb202f37c3a53397e8fc41c62310f9a3f15bd9cf735e21622a0454bdda473450"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_13_CARRIER.SLDPRT",
+      "bytes": 633100,
+      "sha256": "9768b954ed9fd719926759e337c29d0cce0f22672fd7ea09c1f772a9aca3e056"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/solidworks_portable_trace.log",
-      "bytes": 5702,
-      "sha256": "79d66b1579f4f4e29e41215d6e6f7333b61728e25a8bec9b90ff74694d486c12"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_14_CARRIER.SLDPRT",
+      "bytes": 630442,
+      "sha256": "801dae2800daeb3a625ecabfb97bd86c94dec90421d638c91158773d15ab5c12"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_FOOT_LEFT.SLDPRT",
-      "bytes": 856344,
-      "sha256": "13e69bfd98397615196cd16d3dcbb3ae96e325ef0ff9835acd8f0c0864132540"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_5_CARRIER.SLDPRT",
+      "bytes": 578248,
+      "sha256": "32402d3398d09fd0db4c71e8758f5bb19bd748ebb94bc3756095f80f7f68f6ee"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_FOOT_RIGHT.SLDPRT",
-      "bytes": 905904,
-      "sha256": "86221ea2170f81ed636cc26ed939a3c1a649b2207a710a3d2cf0f8830875d166"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_6_CARRIER.SLDPRT",
+      "bytes": 592099,
+      "sha256": "52fba469a733931220c23c1a9fb278b033d015f8f965d6c9d28e1086fe6a359d"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_HIP_ROLL_LEFT.SLDPRT",
-      "bytes": 2297344,
-      "sha256": "fb21ca96c306830027430cb537d586fb81b393b3afe5dd66f0172de69c4666ce"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_9_CARRIER.SLDPRT",
+      "bytes": 1260040,
+      "sha256": "59acdbbec087adbc2ffb830dc6f33e68b27eb6735123c5c66ef337e4194367a7"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_HIP_ROLL_RIGHT.SLDPRT",
-      "bytes": 2279938,
-      "sha256": "ac8c8d7feae427cf07cd2520b7f0f9f76d71771c4cd69d85f915fc8ac08a9148"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_FINGER_1_2_CARRIER.SLDPRT",
+      "bytes": 2136429,
+      "sha256": "af8459d0c919a5145bd33291ea5e4ba47125e437dafd380115adf32ca1d586be"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_HIP_YAW_LEFT.SLDPRT",
-      "bytes": 2305846,
-      "sha256": "fa9e9069ada386cd8617a40e91c6e4d02922164e13b8517536b73d57dd8250c4"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_FINGER_1_CARRIER.SLDPRT",
+      "bytes": 2121297,
+      "sha256": "64b96be99667c16788c0f6d3a5bb00b93ab6be9f7d88ea4e0a0a32945aa7c141"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_HIP_YAW_RIGHT.SLDPRT",
-      "bytes": 2290311,
-      "sha256": "56c9e951b22a99c446ed18fdaa4f201a994ff7507fc16b4d629cf773a407beef"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_FOOT_2_CARRIER.SLDPRT",
+      "bytes": 1225844,
+      "sha256": "549bac478ad32e385f06d5036018e02384006dd0de8c3e69dc45e5716304789f"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_KNEE_PITCH_LEFT.SLDPRT",
-      "bytes": 2475313,
-      "sha256": "034bb9ca31e4a04a84a9fc887736d323cda9badfb484afbc3aae657284ce3e33"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_FOOT_CARRIER.SLDPRT",
+      "bytes": 1299643,
+      "sha256": "20f8e2b63ea99564abf2582773d772149c09f005042a6b389cdfec38c9a5df15"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_KNEE_PITCH_RIGHT.SLDPRT",
-      "bytes": 2384882,
-      "sha256": "42a6759ae2386c288504989051dcd275ff8e1da938c3cbd5877abe627378a4f2"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_IMU_2_CARRIER.SLDPRT",
+      "bytes": 239688,
+      "sha256": "ab845266c7df1d796eb261db829a2059b7416229333a31ac88981c93c5384593"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_LEFT_HAND.SLDPRT",
-      "bytes": 946663,
-      "sha256": "3532b163d69ed4035f20e828a7366cb140e2125550fbffa60e398a704f4be7f9"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_L_ARM_MIRROR_1_CARRIER.SLDPRT",
+      "bytes": 4602111,
+      "sha256": "623a1a18eff2be7b5ff6a004c5226ffb678ee0cf3022fd815e6e596194e3738f"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_LEFT_KNEE_PITCH_MOTOR.SLDPRT",
-      "bytes": 2429028,
-      "sha256": "8945fe9e186653c1afc1309629d83b821f492221e453554b01a6d08e25c8a48a"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_R_ARM_MIRROR_1_CARRIER.SLDPRT",
+      "bytes": 4754913,
+      "sha256": "abb1e7d6a9a6817437e7ca044f9439e222fb65e5e7c52ccfc6eae62f5c235c30"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_LEFT_SHOULDER_YAW_2.SLDPRT",
-      "bytes": 1382443,
-      "sha256": "47d47c90efd8480dc579620d0010f14f05e4934cf8415313c55c9f343a56ec5d"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_U_HIP_L_CARRIER.SLDPRT",
+      "bytes": 741597,
+      "sha256": "0928bb581acaa3a2fefd972f2a500f7fc448a7ae443e88447aaa7527e8cbeb93"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_LEFT_SHOULDER_YAW_MOTOR.SLDPRT",
-      "bytes": 3309263,
-      "sha256": "fbe79e044741c50c2052c794cdcc641ed758360b7b0859378e3314405f307e00"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_U_HIP_R_CARRIER.SLDPRT",
+      "bytes": 725773,
+      "sha256": "709135e25e98392ad084cb6884334f0b32d95d8635633b068f98cc3cfd888cfe"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_RIGHT_HAND.SLDPRT",
-      "bytes": 948515,
-      "sha256": "b57c54feaa649544bbfaddfd002766c32632b9ab98405305a326317e9243d002"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_Z_BOT2_MASTER_BODY_SKELETON_CARRIER.SLDPRT",
+      "bytes": 3207402,
+      "sha256": "d39d47c305a78addfe145bb5b596835c45517a1dff9eddf498cf3d4ecc295567"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_RIGHT_KNEE_PITCH_MOTOR.SLDPRT",
-      "bytes": 2392245,
-      "sha256": "39524e5c2e4ee865b01fff4e3b30db7347b3cd1e63dee32a0b06ab3fca87d820"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_Z_BOT2_MASTER_SHOULDER2_2_CARRIER.SLDPRT",
+      "bytes": 647112,
+      "sha256": "a11c67f4f0ed6120a59aabc4ecf247704bfb5de9b390814d98b500d2de282b24"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_RIGHT_SHOULDER_YAW_2.SLDPRT",
-      "bytes": 1375094,
-      "sha256": "73e9c42a21cb51355ae512351281d689dde6ea25485bca38586124ed11a2b296"
+      "path": "generated/solidworks/physical_mount_v1/parts/skeleton/ZEROTH01_PHYSICAL_MOUNT_V1_Z_BOT2_MASTER_SHOULDER2_CARRIER.SLDPRT",
+      "bytes": 651850,
+      "sha256": "697822008c8ef6b7e0083ac01533b286d17912ef0e5e070e8839b07e78613645"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_RIGHT_SHOULDER_YAW_MOTOR.SLDPRT",
-      "bytes": 3324706,
-      "sha256": "4c53b6338ef08fcb0516ce2ea242fb2b2baf23ac961f6747f9c43182b2f4a2da"
+      "path": "generated/solidworks/physical_mount_v1/ZEROTH01_PHYSICAL_MOUNT_V1_16_BLUE_SERVOS_XRAY.SLDASM",
+      "bytes": 19873092,
+      "sha256": "a81972e17c2f2770961900c3e0f2a7913c9461f39295daca2f61262b525992cb"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_LINK_TORSO.SLDPRT",
-      "bytes": 10121300,
-      "sha256": "7e56a4d51b93d0ee8eecd77b5317a359dfae31a98b3438f168e0a47d2a5fcae6"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S01_right_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 202884,
+      "sha256": "78b50e09ef4d09e21b0e62a67bb3fff62f34ca144fa18deeacbfd20bb671a51c"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_BATTERY_PACK.SLDPRT",
-      "bytes": 116708,
-      "sha256": "529376993671759d15b60c20309f35ad1222f9f6f1a0998118d2144cd2129cc3"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S02_left_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 202684,
+      "sha256": "11249af4c1173258a2e73d7de6f89a3e6d56db475396ad9bb80532736b9eb36d"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_CAMERA_MODULE.SLDPRT",
-      "bytes": 116553,
-      "sha256": "177bd9de66c9bf45b48e4eb165428750b50a9eba9d31ec54cbb1d2933122ef8e"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S03_right_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 49784,
+      "sha256": "47bfd4aac4bf6f803303c85982d5e212da42a959aa238f320c9ac0489e48b508"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_CHEST_BACK.SLDPRT",
-      "bytes": 195043,
-      "sha256": "aa3eb75ad81453518246dd5b292459263096beb8da08030ccd231e9b861e13c4"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S04_right_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 378684,
+      "sha256": "9264993aff08cd444a44d349b0aa0ba40dd79cedba3e2bbfbca6394084f879ca"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_CHEST_FRONT.SLDPRT",
-      "bytes": 203030,
-      "sha256": "56d9956a187fb534f980b2563cf594fe280b4f4d9f91951baa8f68af2ac3ee40"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S05_left_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 379584,
+      "sha256": "6651fbc8521724ae1c0ec328c2607fec36762b6bfcd4bbbcf51f68ffe7c03c0b"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_COMPUTE_MODULE.SLDPRT",
-      "bytes": 107997,
-      "sha256": "57eb9b0b4c4e20407af6b9f7d4f0f4b609c519b42d28cf16c2c9b78efc8dbdb5"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S06_left_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 49284,
+      "sha256": "155d1588f20a34d93d59f8c23b0296f217b2a419096439e9824a13dafa301f92"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_IMU_MODULE.SLDPRT",
-      "bytes": 99658,
-      "sha256": "b32f4e079706508ffdbedbf1ccf7d244da8b077521c24a409fbe7e3f4f286fd2"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S07_right_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 38784,
+      "sha256": "00ad02586dbe94c8537503476a1598542f14bbcd58332c8cb198040e1073597f"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_LEFT_SOLE.SLDPRT",
-      "bytes": 145457,
-      "sha256": "90f216f6991e78cda346d15c8d12ca99a5f29d3d9f64f08abbc5f0ebad48b14c"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S08_left_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 39284,
+      "sha256": "e89c57a95eff1582b07c6e4b698202ebc8e3d53b939132231bc98a1f146cce6e"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_PELVIS_BACK.SLDPRT",
-      "bytes": 236536,
-      "sha256": "fff1c2b470860889151e29e91eb1d32a15e82ba7fa159602f4c9e08b6d916963"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S09_right_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 242284,
+      "sha256": "777b92d5dfe35ede688a2186a821399696b65e7adb8c6d4048c5391f868e74fe"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_PELVIS_FRONT.SLDPRT",
-      "bytes": 274888,
-      "sha256": "d9d0698c31fd308204794cecfa3ade33413b14e9ec07b8bb429748522966f931"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S10_left_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 242384,
+      "sha256": "c94bb62302d7f701e7782eca49485b16e70775b73b3b1bccd27491ad841859fc"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_RIGHT_SOLE.SLDPRT",
-      "bytes": 144147,
-      "sha256": "1dd885ce460e5854605f34d940fead05035bd8d76f34973975c3e2973f9fb452"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S11_right_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 445084,
+      "sha256": "d478e5af6644fce52b504aa29c1fc7267a06ac767e364562195cb33baae0eca5"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V1_TORSO_SPINE.SLDPRT",
-      "bytes": 194190,
-      "sha256": "d8f95eb60ee6bccc5010f2ae95c95019a138235fefba24006d9e0cdfa0a593cf"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S12_left_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 445084,
+      "sha256": "034db8e76390d2697e8ecdf0db482780e614ed7fcd743c86cb25f9d7a1634966"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V2_TOF_MODULE.SLDPRT",
-      "bytes": 120997,
-      "sha256": "a702c02f6b39e4938fee2384f1b3e5ce5c3552b7154458008e5b2f059ed0b6b7"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S13_right_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 224984,
+      "sha256": "38d04ece2818f12dd9646698843cd6104eca7732d28cced3d263bace11c1a5ff"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_CAMERA_SENSOR_WINDOWS.SLDPRT",
-      "bytes": 100981,
-      "sha256": "d1b58726b52e737b41d4e71fa01cc5b8ac57fc61ffffc92a98036301a81fd560"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S14_left_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 224884,
+      "sha256": "068070e5e5696e8a276e470e8b715fe45de8b98682a089896d22fd34a57b1cf3"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_FACE_UI.SLDPRT",
-      "bytes": 266210,
-      "sha256": "8acc14f7771ed40fd01452919125d490fad6c335dd0299e63c835f48a948ba51"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S15_right_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 225084,
+      "sha256": "af5f4d28cbcb8a47ade8a072f1e663ba08c2f29dacf20125eedf66e1b08a3d82"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_HEAD_BACK.SLDPRT",
-      "bytes": 331550,
-      "sha256": "fa2cacef138e82493d7eb4f5dd280aa9ff5bd83523e519ee93842f04968f822d"
+      "path": "generated/urdf/physical_mount_v1/meshes/servos/S16_left_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "bytes": 224984,
+      "sha256": "c5a840e2de40afa70aa26224600b18631c08196e6a98835351472c7591b46ff9"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_HEAD_FRONT.SLDPRT",
-      "bytes": 344458,
-      "sha256": "8a892b9497786046eecc2fc7f94de09f1f26eb23354466a57e1e00af61b1139b"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_1Flange.stl",
+      "bytes": 55184,
+      "sha256": "e64b5a3a5035d8f83fefa0d1f35ddfb59dc5d0e1894658b6ccd456beb06e5f0b"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.SLDPRT",
-      "bytes": 196799,
-      "sha256": "1cf4d0e5417297aa974486d447539995f6c287bdf34d72bb49bea6d867798425"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_1Flange_2.stl",
+      "bytes": 55084,
+      "sha256": "2f9d22857d9a9baefed435514c12e0f43ab15961eac49b6fb2f4539bf8b1ef5e"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.SLDPRT",
-      "bytes": 152173,
-      "sha256": "1c1fa83bd4480ea471d8a3d6afe77c152159cde8332927e915cb6bc11f90716e"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_BothFlange_10.stl",
+      "bytes": 120084,
+      "sha256": "0d540fff0c3a52281f77979230d43010764c96983e7f9ba25118cc561a928f79"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.SLDPRT",
-      "bytes": 173720,
-      "sha256": "45a9cc5d9c8a59b3a08bacdb3f8c607e408cc25bc249284aa1f919b64f623828"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_BothFlange_13.stl",
+      "bytes": 50384,
+      "sha256": "583ab5bc16298d78285eae7102d20317c222b96c72afade5087ee8016fb4cc2f"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.SLDPRT",
-      "bytes": 203975,
-      "sha256": "cb0ad7392beaf3616bec75eb055e36ac29e4edf3f66044e08f8ea7d72ae9ae5d"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_BothFlange_14.stl",
+      "bytes": 50184,
+      "sha256": "6be2d40ee96b82ce1237602e4c21ed9f0c43383236b0a7e31eb521a94b519d39"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.SLDPRT",
-      "bytes": 152201,
-      "sha256": "01aa48184827c95fda93916c9b775437078ae0e39e2d68f940420b3a5e2d6eaa"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_BothFlange_5.stl",
+      "bytes": 55084,
+      "sha256": "6c9cd77a348f1c6516600354e25c2d8515414a65428bb0dc7033b5d8e50c3de8"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.SLDPRT",
-      "bytes": 173171,
-      "sha256": "0b517d52294ca5da1554777d3b6e0adc93d02a84bc9ad0c609846dc5320472f3"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_BothFlange_6.stl",
+      "bytes": 55084,
+      "sha256": "0921969312b9a024c1fb73cfe8f0b5e5a0adebd1f09510d9e4c131548ea1f9b0"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_VISOR.SLDPRT",
-      "bytes": 58479,
-      "sha256": "e48cca6306a50e473b87733e39e84b492c14e6a74999dc2110e1a86baeb694af"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/3215_BothFlange_9.stl",
+      "bytes": 120584,
+      "sha256": "a31db6cccff0df5f844c05ffa537c294b48e033f20a36a9b7a9f582ac01a3c41"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_WAVESHARE_4_3_DSI_DISPLAY.SLDPRT",
-      "bytes": 95940,
-      "sha256": "9f462fa1d026d02d21442b0e8734fdf82fe2f4f0dc6a739f0d551e4adca80f5d"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/FINGER_1.stl",
+      "bytes": 217884,
+      "sha256": "46ef5267f24de0c49b57b21b3256d56facb343c7e74898b4a11088b615005e62"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_ROUND_V3_WHITE_EXTERIOR.SLDASM",
-      "bytes": 13872020,
-      "sha256": "899e5d2e2ba6e82638b2da9bb29ee75e4ea90287ffa0c6c4236291da95998057"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/FINGER_1_2.stl",
+      "bytes": 217584,
+      "sha256": "2b9ecef7db3f85ac5cc4a9d4add3ae45c7a3870b42bfb844b0d354b0b62c4205"
     },
     {
-      "path": "generated/solidworks/portable_flat_round_v3/ZEROTH01_STS3250_C001_BLUE_DIAGNOSTIC.SLDPRT",
-      "bytes": 119574,
-      "sha256": "b7a281aa34d3c599d424a1e43652354bcd462f1a0ec746fa55632d52a94cca86"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/FOOT.stl",
+      "bytes": 120684,
+      "sha256": "0cf1a7fba7d5b1976f11c651d365603866a4810e1b7714110a470e9e22544ae4"
     },
     {
-      "path": "generated/urdf/meshes/ankle_pitch_left.stl",
-      "bytes": 212384,
-      "sha256": "5e7200c973065b885cb15943c7e2d05617456a2ff4ea61f2dd744e4081cab306"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/FOOT_2.stl",
+      "bytes": 120684,
+      "sha256": "d0db4d117632591b82daf5fcaf8d407f97aebe98fe55f008f4588635390d0413"
     },
     {
-      "path": "generated/urdf/meshes/ankle_pitch_right.stl",
-      "bytes": 209934,
-      "sha256": "d8f9993ced11f81ced127f77e0f591ee0f81fbbba5e448b0d04d72674e0b50bb"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/IMU.stl",
+      "bytes": 14384,
+      "sha256": "9f9669bca2776c47dd309ee9724ade030b4c0ea695b08faf8882a00728a39bc2"
     },
     {
-      "path": "generated/urdf/meshes/foot_left.stl",
-      "bytes": 73784,
-      "sha256": "870d7d5db2d84fb05140c421fbf33e11e3975761961fafb07edfffd5a890ad79"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/L_ARM_MIRROR_1.stl",
+      "bytes": 499684,
+      "sha256": "8a4ea2c86c2177b25eb3aaca118b34defd223724744227a367f73cf90142da5d"
     },
     {
-      "path": "generated/urdf/meshes/foot_right.stl",
-      "bytes": 78984,
-      "sha256": "caaf696f70fe86e0392067966b7cc1f1b44f9fed9a601488ffcf004705df037b"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/R_ARM_MIRROR_1.stl",
+      "bytes": 500084,
+      "sha256": "7042f7b3f3eeabd6e29e2724cca5f66232d9fd2efde5a52073a2fc28446932c1"
     },
     {
-      "path": "generated/urdf/meshes/hand_right.stl",
-      "bytes": 81484,
-      "sha256": "d6d9a92c0abd441e9aab4618572b7f5aeaca3551082482e188e5a0f6cd567ed4"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/U_HIP_L.stl",
+      "bytes": 71084,
+      "sha256": "05c8262faa706de1c0cab5ea3472e92062ab2e6503e5cf79c9dc77f34390c517"
     },
     {
-      "path": "generated/urdf/meshes/hip_roll_left.stl",
-      "bytes": 209634,
-      "sha256": "cbf6c0d4dbec27db55eb29c7248f09eaf92300f42f4187a70dcc65e54611e570"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/U_HIP_R.stl",
+      "bytes": 71384,
+      "sha256": "9359cab424b25a52d6c559496baee1c7dff482d400b00e1cb16cd0b63865cf08"
     },
     {
-      "path": "generated/urdf/meshes/hip_roll_right.stl",
-      "bytes": 207084,
-      "sha256": "8b4c4d41d57204b254781dbddc56053988783ba597932e4f66dee9cb26864099"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "bytes": 318484,
+      "sha256": "195e87233f5e997e33628bc24276520dafc93b5e43f6746ab944262e4837bdd8"
     },
     {
-      "path": "generated/urdf/meshes/hip_yaw_left.stl",
-      "bytes": 199034,
-      "sha256": "df6c7bac1e9fe95ac3f5a9b8e8b563fc791f077441ad3fbbe77d9074db2a7a61"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/Z_BOT2_MASTER_SHOULDER2.stl",
+      "bytes": 55784,
+      "sha256": "e4bd555196d7ebb0d9b50b1344eb992ffbd0dd886d130f2933d8dc9140919484"
     },
     {
-      "path": "generated/urdf/meshes/hip_yaw_right.stl",
-      "bytes": 198284,
-      "sha256": "00cc0c65ac1ba1238b43e8ec80ba041147ecf718a3c9033fd3e2ff64098e7670"
+      "path": "generated/urdf/physical_mount_v1/meshes/skeleton/Z_BOT2_MASTER_SHOULDER2_2.stl",
+      "bytes": 55684,
+      "sha256": "a2b55403fe97d789020d31c289c7bd94cbeac0326810040dca26ce1897b8c067"
     },
     {
-      "path": "generated/urdf/meshes/knee_pitch_left.stl",
-      "bytes": 214984,
-      "sha256": "5bc816ac61e2d5bf357fd237e220c879c520d4b99371b51a041a5dd66d1a1662"
-    },
-    {
-      "path": "generated/urdf/meshes/knee_pitch_right.stl",
-      "bytes": 214984,
-      "sha256": "5bc816ac61e2d5bf357fd237e220c879c520d4b99371b51a041a5dd66d1a1662"
-    },
-    {
-      "path": "generated/urdf/meshes/knee_pitch_right_2.stl",
-      "bytes": 211784,
-      "sha256": "a23fe1c08fe4298c2ffa44a8bd209f9e9e879c5776d3c5ee013b1a01f074046e"
-    },
-    {
-      "path": "generated/urdf/meshes/Left_Hand.stl",
-      "bytes": 81684,
-      "sha256": "4bfae2b11634144d16a9c298ab6c91d0d6f4ed4f6e1b2e2771718934a33eb429"
-    },
-    {
-      "path": "generated/urdf/meshes/left_knee_pitch_motor.stl",
-      "bytes": 212384,
-      "sha256": "5e7200c973065b885cb15943c7e2d05617456a2ff4ea61f2dd744e4081cab306"
-    },
-    {
-      "path": "generated/urdf/meshes/left_shoulder_yaw.stl",
-      "bytes": 120834,
-      "sha256": "fc21d81f5ea399e1d2ce727c599f5372ec721769aa0fe01b9c22a467238800b5"
-    },
-    {
-      "path": "generated/urdf/meshes/left_shoulder_yaw_motor.stl",
-      "bytes": 286284,
-      "sha256": "1fd85e3587ee3c6dbe71ba11de471c9c7ee14aae7f36e29190675fe305a7d1cb"
-    },
-    {
-      "path": "generated/urdf/meshes/right_hand.stl",
-      "bytes": 81684,
-      "sha256": "4bfae2b11634144d16a9c298ab6c91d0d6f4ed4f6e1b2e2771718934a33eb429"
-    },
-    {
-      "path": "generated/urdf/meshes/right_knee_pitch_motor.stl",
-      "bytes": 209934,
-      "sha256": "d8f9993ced11f81ced127f77e0f591ee0f81fbbba5e448b0d04d72674e0b50bb"
-    },
-    {
-      "path": "generated/urdf/meshes/right_shoulder_yaw.stl",
-      "bytes": 121884,
-      "sha256": "541560e086b158d6b76f6bab8f8aae2eca6bcf9de31a76c8f848edcc5c7065a5"
-    },
-    {
-      "path": "generated/urdf/meshes/right_shoulder_yaw_motor.stl",
-      "bytes": 280634,
-      "sha256": "879d479d003c9877b389c775b416eecaa8f968594343c9dfb1c026efc02a44ea"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_CHEST_BACK.stl",
-      "bytes": 235984,
-      "sha256": "c9716843a8b34eff87efa2bdd0c0264b3b0632785e8da36c46e5183a07f88625"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_CHEST_FRONT.stl",
-      "bytes": 211984,
-      "sha256": "b79f549b14ce71e04ae51123b96057429bc8401ebb31c26a5d187c05d72cc6d0"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_HEAD_BACK.stl",
-      "bytes": 359484,
-      "sha256": "77d673c2ef0542c7b8672f0313bd31756c9e42eec546a5ba523ca8f37003e788"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_HEAD_FRONT.stl",
-      "bytes": 363534,
-      "sha256": "38113566c900bdf6fd64531ca806f6d2619f4262d9edad40e4add5b43872b5c0"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_LEFT_SOLE.stl",
-      "bytes": 159084,
-      "sha256": "798225f28cea57f7e2eb32d6197e59b16f016a9691cb05924ba2a87d6e2e08f7"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_MUZZLE_BADGE.stl",
-      "bytes": 113584,
-      "sha256": "18fc7605af55a34a15f595cc5367b6f04575cd2681aba3da031b6b9571abac14"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_PELVIS_BACK.stl",
-      "bytes": 264384,
-      "sha256": "14cd0ddfd8f7a611c81a2056de03b5ead9e22cb7d51167dfd603730189bb0bc0"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_PELVIS_FRONT.stl",
-      "bytes": 261184,
-      "sha256": "96ac158836b7ff6a4aad658f5fb8fd7f197f1f65747e9899c9872ba60a265fad"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_RIGHT_SOLE.stl",
-      "bytes": 159084,
-      "sha256": "7527fd371f9c06f70f7d2623bb8175592725ee8ea6ed671a139c31a2341bb483"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V1_VISOR_BADGE.stl",
-      "bytes": 250884,
-      "sha256": "4efb0b619172bf6b8deba1a0c369b2562e14f16700d55483b9901ee61b21834e"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_FACE_UI.stl",
-      "bytes": 2024884,
-      "sha256": "aef124630c28335a305e8e94dac5fdda1a046fa439c45f7604939eacc4bbebc3"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_HEAD_BACK.stl",
-      "bytes": 3527384,
-      "sha256": "15ca27a00b4a9738ea9292b8178de81e9c0eb4da7040e7efc0592a44e6910e54"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_HEAD_FRONT.stl",
-      "bytes": 3873784,
-      "sha256": "1542156d0b82ccccc0b4cd0a0e926019ae10725fdc1713e422f01786099aa6a8"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_LEFT_CHIBI_HAND.stl",
-      "bytes": 527484,
-      "sha256": "bac785899901b86e4cd1c9dd306c6acb252d72bb4f1a2ae11befb12307b75402"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_LEFT_FOREARM_SLEEVE.stl",
-      "bytes": 274084,
-      "sha256": "73757e0874f6a2933a635aeecc57ae1bcb97780db451f6e53ae0b973f581760b"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_LEFT_UPPER_ARM_SLEEVE.stl",
-      "bytes": 298484,
-      "sha256": "89b41affa06aa350871206d56af24f2d43d518b59cb4cd75b3349622eb66be52"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_RIGHT_CHIBI_HAND.stl",
-      "bytes": 530284,
-      "sha256": "b854dd614b9a4c243119b10704db9016db9753d9232c3a44ae7ccf9d259d70d8"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_RIGHT_FOREARM_SLEEVE.stl",
-      "bytes": 274084,
-      "sha256": "73757e0874f6a2933a635aeecc57ae1bcb97780db451f6e53ae0b973f581760b"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_RIGHT_UPPER_ARM_SLEEVE.stl",
-      "bytes": 298484,
-      "sha256": "ad3fc61c1d329838ea684112b8ac2319e97e359d91a2c2b340ac2107bff7389f"
-    },
-    {
-      "path": "generated/urdf/meshes/round_v1/ZEROTH01_ROUND_V3_VISOR.stl",
-      "bytes": 13484,
-      "sha256": "832e7d7802d934c4961f2f000b8a78227374792c5d4ce8e23798d9fb70181201"
-    },
-    {
-      "path": "generated/urdf/meshes/shoulder_yaw_left.stl",
-      "bytes": 120834,
-      "sha256": "fc21d81f5ea399e1d2ce727c599f5372ec721769aa0fe01b9c22a467238800b5"
-    },
-    {
-      "path": "generated/urdf/meshes/shoulder_yaw_right.stl",
-      "bytes": 121884,
-      "sha256": "541560e086b158d6b76f6bab8f8aae2eca6bcf9de31a76c8f848edcc5c7065a5"
-    },
-    {
-      "path": "generated/urdf/meshes/Torso.stl",
-      "bytes": 953984,
-      "sha256": "5aeb3948cf9c588794e529315f328ae28152343a216890b927800b6ea4aa6ee2"
-    },
-    {
-      "path": "generated/urdf/zeroth01_rl_ready.urdf",
-      "bytes": 23120,
-      "sha256": "b6d7e568b316876d56a342293685ea6a65e87a7af13b501567bfc888acd90233"
-    },
-    {
-      "path": "generated/urdf/zeroth01_rl_round_v1.urdf",
-      "bytes": 37528,
-      "sha256": "7fef2175dc76b7c6699ad870363b1bc7339ed6a864a25a3a43ad86205d154e11"
+      "path": "generated/urdf/physical_mount_v1/zeroth01_physical_mount_v1.urdf",
+      "bytes": 34889,
+      "sha256": "c6dc27b65fb0ae3b03f4d9fd823ac3fd37fdeeac0993414b01b22ddf47e33661"
     },
     {
       "path": "LICENSE",
@@ -961,11 +782,6 @@
       "path": "LICENSES/KSCALE_ONSHAPE_MIT.txt",
       "bytes": 1071,
       "sha256": "1c23766c8980cd439795d019648ec967d3d8aba3b03250c03ff3e95f51e7b8dd"
-    },
-    {
-      "path": "LICENSES/POPPY_EVA_HEAD_CC_BY_SA_4_0.md",
-      "bytes": 18701,
-      "sha256": "b3d6f30f5131eb6eb96ad2a3981f338be6c77d60e23d580737a92a4576f60f60"
     },
     {
       "path": "LICENSES/ZEROTH_BOT_MIT.txt",
@@ -979,253 +795,133 @@
     },
     {
       "path": "one-seq.md",
-      "bytes": 649,
-      "sha256": "e2e85fc5f31ad1a77d05661be0bc2bff257356375d8fe4c021bdd69e21d1ef8d"
+      "bytes": 859,
+      "sha256": "1fb5b915fc7a42377b62de43289b30b254f7082785ed642fedb2d060c785a99d"
     },
     {
-      "path": "PRINT_AND_ASSEMBLY_READINESS_zh.md",
-      "bytes": 2764,
-      "sha256": "4e5b77291db07dcda17ca45f9febbdeddcb2c672d40029239c3220a66a1469a9"
+      "path": "PHYSICAL_MOUNT_V1_README_zh.md",
+      "bytes": 8323,
+      "sha256": "7b2021597d8646eb1601a4710b1d547437f6f8a8e8a30113143352589e79672e"
     },
     {
       "path": "README.md",
-      "bytes": 4417,
-      "sha256": "afbec2b86819afbb3abba920e7fb29da1b6e684af747cfde747786493de8e69e"
+      "bytes": 1294,
+      "sha256": "f6c96ef103443811246e1988c5b58dacb80e3b8978e1143eea71119474ec81a7"
     },
     {
       "path": "README_zh.md",
-      "bytes": 3969,
-      "sha256": "41dcdd0dacbb3e437375e3e3d31fcfb7f37a33e11e30f1150a99eafc8270f05c"
+      "bytes": 8323,
+      "sha256": "7b2021597d8646eb1601a4710b1d547437f6f8a8e8a30113143352589e79672e"
     },
     {
-      "path": "reports/generated_urdf_manifest.csv",
-      "bytes": 4183,
-      "sha256": "c4d2e096a09c99e45db329da0044de8d5d2bcaba41ff3afdf0dc94f84150689a"
+      "path": "reports/physical_mount_v1/dynamic_collision_contacts.csv",
+      "bytes": 3171803,
+      "sha256": "eea07480c871aa80d2e44f85d3d2317371fad1befdc92ec8956f77c408ce3202"
     },
     {
-      "path": "reports/joint_servo_frames.csv",
-      "bytes": 8898,
-      "sha256": "0a881e450a9ec0241d4ca8ccfce3f3cc56df9530eaf545bcccdecc7ec817fcdd"
+      "path": "reports/physical_mount_v1/dynamic_collision_gate.json",
+      "bytes": 4847,
+      "sha256": "e3de96a11e01c84c254b8aa6fca6ffe1e8b7e849ac3b575a29823e2549cc575f"
     },
     {
-      "path": "reports/link_inertial_audit.csv",
-      "bytes": 5302,
-      "sha256": "b2a6f3150310cfd70988bb98771190c05456acb032d9a73c15fb172c256fb92a"
+      "path": "reports/physical_mount_v1/first_article_measurements.csv",
+      "bytes": 1130,
+      "sha256": "fc555fcf63d3c507bc6fea5a2f811afcbb0683099a5383778fb099aab62df4de"
     },
     {
-      "path": "reports/mesh_frame_audit.csv",
-      "bytes": 4441,
-      "sha256": "0dbb80b806e97d808d203b60703a99bac6808425122fd4f8c1fb6fb301fd9458"
+      "path": "reports/physical_mount_v1/kinematic_mount_audit.csv",
+      "bytes": 6062,
+      "sha256": "5e65aaa71d25d81ab645e9dd614afb6804e65a60a89760b0266c7262fc7c9c4d"
     },
     {
-      "path": "reports/mesh_frame_audit.json",
-      "bytes": 2995,
-      "sha256": "2af275ee2f966dda119877035566073dac2796fd4da5cc2248bfbd0a6936ee6e"
+      "path": "reports/physical_mount_v1/kinematic_mount_audit.json",
+      "bytes": 18215,
+      "sha256": "8d27ade1ef78b452249f16935845c30ce705e2bbdb4598f1fda18e61b5877f50"
     },
     {
-      "path": "reports/mujoco_round_v1_gate.json",
-      "bytes": 1318,
-      "sha256": "2e5bc59a9228cef5912494a9cf2f6bf15f29c97efff846975a28f4ef7cd4891e"
+      "path": "reports/physical_mount_v1/servo_component_manifest.csv",
+      "bytes": 10014,
+      "sha256": "d6578a9c0875eed6661e13b3a3f7437203a8b10f0b53667579b3c63263138186"
     },
     {
-      "path": "reports/mujoco_round_v1_gate.md",
-      "bytes": 534,
-      "sha256": "6d4abd21d704a4c1674a2dd1c1fd03ae35d836711d2ea44e133e3bc2e721ed9d"
+      "path": "reports/physical_mount_v1/servo_component_manifest.json",
+      "bytes": 18696,
+      "sha256": "a75009a7746fda4eb2d187b8e6b570df2c9bf1bfc122fd301e324814d5194985"
     },
     {
-      "path": "reports/mujoco_round_v1_gate_joint_gate.csv",
-      "bytes": 1766,
-      "sha256": "6649c89c86e8e6ec987f454d5fe835000c542db36723a6ce5695c017880779fd"
+      "path": "reports/physical_mount_v1/solidworks_physical_mount_components.csv",
+      "bytes": 5336,
+      "sha256": "d10c58606fd5998654bfca7d0adf09a223460005026c0ac6b04c06b16b7967eb"
     },
     {
-      "path": "reports/mujoco_round_v1_smoke_gate.json",
-      "bytes": 536,
-      "sha256": "97b437ec5b6fbc797edb420476a749a8895dbf5b605f0349a049102599c0b680"
+      "path": "reports/physical_mount_v1/solidworks_physical_mount_gate.json",
+      "bytes": 1432,
+      "sha256": "fb6cc57fa9885ed4629ffebff9193ffc8165f5e44d98ae22a2f1b9bc9bac5af8"
     },
     {
-      "path": "reports/mujoco_round_v1_smoke_gate.md",
-      "bytes": 531,
-      "sha256": "ebcf5c6cc9d90b32214cf3eec16a3aa1b617b9bf9339c1548adf008bbe06f3c8"
+      "path": "reports/physical_mount_v1/solidworks_physical_mount_link_subassemblies.csv",
+      "bytes": 4781,
+      "sha256": "5a1ac6a914d8ee16298adc52060c420de89dc111d8c8bea97710ff894e04aadf"
     },
     {
-      "path": "reports/mujoco_round_v3_gate.json",
-      "bytes": 1318,
-      "sha256": "2e5bc59a9228cef5912494a9cf2f6bf15f29c97efff846975a28f4ef7cd4891e"
+      "path": "reports/physical_mount_v1/solidworks_physical_mount_parts.csv",
+      "bytes": 19128,
+      "sha256": "5ed878a07b97eac3e1f38b7533737750c5a1a1a5a70c3c835c53b166897157ca"
     },
     {
-      "path": "reports/mujoco_round_v3_gate.md",
-      "bytes": 534,
-      "sha256": "6d4abd21d704a4c1674a2dd1c1fd03ae35d836711d2ea44e133e3bc2e721ed9d"
+      "path": "reports/physical_mount_v1/source_component_gate.json",
+      "bytes": 1111,
+      "sha256": "6e6fbfc9420be4ec37df29a672dd16b39f1c92ff62227cde1f1f42185f5fd2fc"
     },
     {
-      "path": "reports/mujoco_round_v3_gate_joint_gate.csv",
-      "bytes": 1766,
-      "sha256": "6649c89c86e8e6ec987f454d5fe835000c542db36723a6ce5695c017880779fd"
+      "path": "reports/physical_mount_v1/source_mesh_audit/3215_1Flange_components.png",
+      "bytes": 314014,
+      "sha256": "19d20b48ade8dc30d517f2b680f0821251ea6bc553cba408b3bdd5401030003c"
     },
     {
-      "path": "reports/rl_audited_joint_limits.csv",
-      "bytes": 2411,
-      "sha256": "32199639a4fb59627666ca13750b1b06077f771ed8fa85a6a45ec0f11e9abc39"
+      "path": "reports/physical_mount_v1/source_mesh_audit/3215_1Flange_mesh_audit.json",
+      "bytes": 1690,
+      "sha256": "8b5f0033f5ac818f60e33a2788f769334013c0c9f785882b1a733946b3256ec8"
     },
     {
-      "path": "reports/rl_mechanical_completeness.csv",
-      "bytes": 18858,
-      "sha256": "2b69a51750d2be5933e7fa8b12fd95e2476b7bc0a612c26eb80e607812478e05"
+      "path": "reports/physical_mount_v1/source_mesh_audit/right_shoulder_yaw_motor_components.png",
+      "bytes": 193093,
+      "sha256": "713c87151461843992e964cc55493cbffc93c8f1aaa910404d0231afc52159fb"
     },
     {
-      "path": "reports/rl_mechanical_completeness_summary.json",
-      "bytes": 675,
-      "sha256": "22348684eab68e401174ba7d8e28e2f76cf85a76d224b625c5a7f9f359016bf0"
+      "path": "reports/physical_mount_v1/source_mesh_audit/right_shoulder_yaw_motor_mesh_audit.json",
+      "bytes": 1072,
+      "sha256": "c1a44ee60e8f25a8bc60e73d91247f952408d0a0bd08bde7ac074ca8122eefd3"
     },
     {
-      "path": "reports/rl_package_portability_gate.json",
-      "bytes": 304,
-      "sha256": "3f23338a4f432fc9b2bfac7a91330ba0650a7ad417a26bf11bc4a12110b29f8f"
+      "path": "reports/physical_mount_v1/sts3250_inertia_delta.json",
+      "bytes": 4986,
+      "sha256": "385f6b473870a3fe63430b2a1e45e407229ebd3b7d695e31b42a1730ffb01552"
     },
     {
-      "path": "reports/round_v1_link_inertial_overlay.csv",
-      "bytes": 1852,
-      "sha256": "6dfb9bb4a5699854e9f41d36f791da85c5f45d12b7b8f156581f725697f88619"
+      "path": "reports/physical_mount_v1/sts3250_interface_gauge.json",
+      "bytes": 2415,
+      "sha256": "38a69c49680e025aed2941782cfd4828b56b9242cb10e52b0a44c5145c0f536c"
     },
     {
-      "path": "reports/round_v1_print_mesh_gate.csv",
-      "bytes": 6229,
-      "sha256": "0ba66444c22b735601fc17492b8867016112165f3bcdb7ba2336dc5b70d125d1"
+      "path": "reports/release_gate.json",
+      "bytes": 3604,
+      "sha256": "11fbf3ab8fb0fc94239ed41171e5b1e7a27ea6aa6e13d02e248c0ecdc4478041"
     },
     {
-      "path": "reports/round_v1_print_mesh_gate.json",
-      "bytes": 16726,
-      "sha256": "3c69b551a5de154cf14b4bf7ee2bf55a8f2a99a2210715289e9e813e5d0ce272"
-    },
-    {
-      "path": "reports/round_v1_printed_part_mass_properties.csv",
-      "bytes": 6185,
-      "sha256": "a0161a51c3bf213aac2db01d94ea555959110ea01ecfd82c4dce7b216c81838c"
-    },
-    {
-      "path": "reports/round_v1_servo_axis_alignment.csv",
-      "bytes": 9114,
-      "sha256": "3854a4449ee993bc2fdd503fe0898e811f406d900f8279c65b992cb270ffc02d"
-    },
-    {
-      "path": "reports/round_v3_arm_fit_gate.csv",
-      "bytes": 2688,
-      "sha256": "5955d377c5a577e4e6845dc2ce9a4e9c4539221c24fdf63c88b2a5b057ee69d3"
-    },
-    {
-      "path": "reports/round_v3_arm_fit_gate.json",
-      "bytes": 7484,
-      "sha256": "ab5c10180cbe61cb410ae3dad0f89ecea0a4502532f124c8d6659c1a3d35bdaa"
-    },
-    {
-      "path": "reports/solidworks_round_v1_component_manifest.csv",
-      "bytes": 14551,
-      "sha256": "2178b0218b22ac3982e5a03b7bf70097b24e27652595b6d7c8d82754d062ba6e"
-    },
-    {
-      "path": "reports/solidworks_round_v1_gate.json",
-      "bytes": 3565,
-      "sha256": "908509734b3a6e9618f8f5c54bb34b23f5d6169b7435406c72c2bda1c581f043"
-    },
-    {
-      "path": "reports/solidworks_round_v1_kinematic_sweep.csv",
-      "bytes": 7774,
-      "sha256": "d129e13cad2324ef916ab93ef8dad23f1c22b91c27c6da0f6c1f3e744923de02"
-    },
-    {
-      "path": "reports/solidworks_round_v1_part_import.csv",
-      "bytes": 6582,
-      "sha256": "e8ea708ca242c204d7f056c006468fbe59bb811775fb5af6dabc90865c3d1b77"
-    },
-    {
-      "path": "reports/solidworks_round_v1_transmission_semantics.csv",
-      "bytes": 7181,
-      "sha256": "b956d7051f39dfe2ecf8a33fa8b1e1c3f63ec7529a2223ea9b8ca5e966d8fada"
-    },
-    {
-      "path": "reports/solidworks_round_v3_motion_only_gate.json",
-      "bytes": 1210,
-      "sha256": "3fd0a02e8d83278107d64c773eac1818fe6cf9284876d2e1e973e90f29462a2a"
-    },
-    {
-      "path": "reports/source_asset_manifest.csv",
-      "bytes": 3041,
-      "sha256": "13be84ce9ab9b44e62975480bafe6c2f0f9973b0a6289b2f039cff50882cf471"
-    },
-    {
-      "path": "reports/source_lock.json",
-      "bytes": 738,
-      "sha256": "14e0906fb726f202d5d1c2c15942a39e42dd129acdab427d5e715597cdc34357"
-    },
-    {
-      "path": "reports/sts3250_round_v1_feasibility.json",
-      "bytes": 15353,
-      "sha256": "aa970247ff1b8a5d92cc7f76f6997b701a453a242bc78bf8f697d111cb350f19"
-    },
-    {
-      "path": "reports/sts3250_round_v1_feasibility.md",
-      "bytes": 621,
-      "sha256": "c8e3a036507fa8b8ef77a79d9a1c360f96767551f3d673d1f16d0ec5212f39dc"
-    },
-    {
-      "path": "reports/sts3250_round_v1_static_torque.csv",
-      "bytes": 3884,
-      "sha256": "f77ea95a2eba89b59c06255059dc72066f9042940ad5a68c1b72021f04e6fd49"
+      "path": "requirements-generation.txt",
+      "bytes": 121,
+      "sha256": "a57facac4fa275cdbce7568b2b49a8d142f425cebe7e64910c7dc88dc8b6ae23"
     },
     {
       "path": "requirements-validation.txt",
-      "bytes": 15,
-      "sha256": "5527930996d693324c9e2ccf26bfb0da789465178431596b964d042cb27dd9dc"
-    },
-    {
-      "path": "RL_MECHANICAL_HANDOFF_zh.md",
-      "bytes": 1333,
-      "sha256": "5fa6536a5a95085b5e69f39090f8836be993491594cfa42352891ae398c4e44d"
+      "bytes": 32,
+      "sha256": "a33e5666f72f832dbc49af9f3bc13057cb4613924fed659ca9bbc7dd1c32458c"
     },
     {
       "path": "RL_PROMPT.txt",
-      "bytes": 649,
-      "sha256": "e2e85fc5f31ad1a77d05661be0bc2bff257356375d8fe4c021bdd69e21d1ef8d"
-    },
-    {
-      "path": "RL_ROUND_V1_HANDOFF_zh.md",
-      "bytes": 4780,
-      "sha256": "d1adf95f7c57e40837ecc9f23ffc5085b8dc68aab9504030827b8f0a3bc5d6c9"
-    },
-    {
-      "path": "ROUND_V3_WHITE_EVA_BLUE_SERVO_BRIEF_zh.md",
-      "bytes": 1498,
-      "sha256": "46de6528bfd5986e1e5d60048c92faff6de49072e49edd95558b9102ea0da073"
-    },
-    {
-      "path": "scripts/analyze_sts3250_round_v1.py",
-      "bytes": 13427,
-      "sha256": "0ae5ff7eeb0014c008e508a5458bd17748e6f492423b27e37bd6f0654ab40dd4"
-    },
-    {
-      "path": "scripts/audit_mesh_frames.py",
-      "bytes": 9392,
-      "sha256": "1aeccef523385ff2bb088d823c289ba7b78e298bd4b5449011f96d6766b9f9ac"
-    },
-    {
-      "path": "scripts/audit_solidworks_component_placement.py",
-      "bytes": 5881,
-      "sha256": "959e2a6fa3d0ccd45294f211b45a0bf595ae8bdffe390c99e502c18c0869502f"
-    },
-    {
-      "path": "scripts/audit_source_assets.py",
-      "bytes": 6663,
-      "sha256": "b9fbc693c3398dc96fe7d8ea2be4e3f3d2313c937c4d6a48d3d1c405a772897f"
-    },
-    {
-      "path": "scripts/build_round_v1_electronics_layout.py",
-      "bytes": 2793,
-      "sha256": "e1edb9cb5433bca4eeff9a733e15603fea23a401eba1305a7d9c8ac6bc135153"
-    },
-    {
-      "path": "scripts/build_round_v1_servo_axis_report.py",
-      "bytes": 679,
-      "sha256": "0f0dafe95f3bcfb5d874d3c829c042ef455096d20ee2a7d63d3978151281e34f"
+      "bytes": 859,
+      "sha256": "1fb5b915fc7a42377b62de43289b30b254f7082785ed642fedb2d060c785a99d"
     },
     {
       "path": "scripts/create_solidworks_kinematic_review.py",
@@ -1233,354 +929,264 @@
       "sha256": "2f80db15b8bbf93f85ac04610c334a7c7718d38ef45722b9efa63a30c4683194"
     },
     {
-      "path": "scripts/create_solidworks_round_v1_portable.py",
-      "bytes": 6009,
-      "sha256": "c971cc1c448278f17e6fe1001499c439926fd4e9a7f4ef4084b67e40ea55bc9d"
-    },
-    {
-      "path": "scripts/create_solidworks_round_v1_review.py",
-      "bytes": 50761,
-      "sha256": "824f20e17ef26ba1161c9698164125bc617c4eacc82d7779d2dc682fc8bbeb61"
-    },
-    {
-      "path": "scripts/create_solidworks_round_v3_motion_only.py",
-      "bytes": 11248,
-      "sha256": "a7185e75cd5075157aebf04a7a5e31a7a25e37ec8934a3f7e9e8d4f01d7c46a3"
-    },
-    {
-      "path": "scripts/export_round_v1_mass_properties.py",
-      "bytes": 16511,
-      "sha256": "62b79f2fcb07cc030c23a258bc295bfd50933d7d0e7de24d9c9c59a7b73113af"
-    },
-    {
-      "path": "scripts/finalize_round_v1_print_meshes.py",
-      "bytes": 6855,
-      "sha256": "d5530ade7023d3b0a2515b159619c0df50077af2b1ed8649a0116ee9acb27b59"
-    },
-    {
-      "path": "scripts/gen_zeroth01_rl_audited.py",
-      "bytes": 5927,
-      "sha256": "7a5a5f782da0eb9ff6aa1fcd4af75955d1cf78573dea0b2472421fdc756a10e8"
-    },
-    {
-      "path": "scripts/gen_zeroth01_rl_mjcf.py",
-      "bytes": 19368,
-      "sha256": "cf444c35c6c0d29f467f7bf4fed620e476a0ac714cc8b66b14a14cede17b13d2"
-    },
-    {
-      "path": "scripts/gen_zeroth01_rl_ready.py",
-      "bytes": 4103,
-      "sha256": "c1afeb7be4983dc789c8aa52a17519e9e3350f8df573a0e2c7488d3f01e279f6"
-    },
-    {
-      "path": "scripts/gen_zeroth01_rl_round_v1.py",
-      "bytes": 13447,
-      "sha256": "bd32ed5ef60c60849bd2f16d42554bd86994d2a3c4d669c2769896399d89cd57"
-    },
-    {
-      "path": "scripts/gen_zeroth01_urdf.py",
-      "bytes": 7862,
-      "sha256": "302a83f816cf42c7015bbeb2784317fac3c8f63f4bf67545c2fae1f41f8e6b8b"
-    },
-    {
-      "path": "scripts/generate_release_manifest.py",
-      "bytes": 1421,
-      "sha256": "bfc3a355d5fb81a3288ab444e9c45f3556346fc0b3cf988f0812b009d9c78f23"
-    },
-    {
-      "path": "scripts/render_round_v2_component_annotations.py",
-      "bytes": 11030,
-      "sha256": "3c205ca77638457fdbf925498e498dea060d837a929164daa3ec8f5c37469c5e"
-    },
-    {
-      "path": "scripts/run_mujoco_joint_sweep.py",
-      "bytes": 17853,
-      "sha256": "263e55e3188b4b0d6afc4a59ce740080b472c8ef8fc28dcc3feab08c437346a1"
-    },
-    {
-      "path": "scripts/sanitize_release_data.py",
-      "bytes": 2866,
-      "sha256": "da23f857e6afb6e73ccc81fdd616a5df4cf45fb22e3277232dbd1e536ff7662c"
-    },
-    {
-      "path": "scripts/smoke_test_round_v1_mujoco.py",
-      "bytes": 2912,
-      "sha256": "0826f5399e4edeb44d3a602b1bc05c6b78712690efa81bab614b554629ef2611"
-    },
-    {
       "path": "scripts/validate_release.py",
-      "bytes": 14019,
-      "sha256": "51bdceba57ddfd6d5cf55b2941968462a1b6740d14add602249a7edf048eb0be"
+      "bytes": 13078,
+      "sha256": "c0aa86e5cdb0727469bc26e7d4ba29a80aef75efe8e821aa508c77baa41a9adf"
     },
     {
-      "path": "scripts/validate_rl_package_portability.py",
-      "bytes": 3647,
-      "sha256": "3bb8956c685f8accbba815bdc4bded22fd99e0a9e0579ac79adbfcf730b1e7b2"
+      "path": "snapshots/physical_mount_v1/physical_mount_v1_16_blue_servos_front.png",
+      "bytes": 365277,
+      "sha256": "4111e68e759e6809669702d7a71e8c2d2f73bb2bf96ead1c994b04126feb25da"
     },
     {
-      "path": "scripts/validate_rl_ready_mujoco.py",
-      "bytes": 15260,
-      "sha256": "2a9bc5ef7345ffaef133234a7d40f7cef7d33ac879c85a6a19e327f5ac51c8b2"
+      "path": "snapshots/physical_mount_v1/physical_mount_v1_16_blue_servos_xray.png",
+      "bytes": 515312,
+      "sha256": "c91ea1cb3d2354d7b9b5988766a2335e8143df49a0058a4faa6ef689bac31fb2"
     },
     {
-      "path": "scripts/validate_round_v3_arm_fit.py",
-      "bytes": 7348,
-      "sha256": "c3323252ed98bbfe6c371b0d6eed7877d0ffed3b19de311f704ac7262563ddeb"
+      "path": "snapshots/physical_mount_v1/physical_mount_v1_16dof_motion.gif",
+      "bytes": 7392509,
+      "sha256": "fcb79a14e2e2d68cbcb95ca34efff66c65746e6e7c35b627c97f5c864e35f09d"
     },
     {
-      "path": "snapshots/cad/round_v3/white_eva_ears_round_arms_chibi_hands_front_20260730T181430Z.png",
-      "bytes": 320540,
-      "sha256": "db36783fab2cdf1645871ff0dd89ea4801acc476a93f3aed769dd3bf84c466a7"
+      "path": "snapshots/solidworks/physical_mount_v1/solidworks_physical_mount_front.png",
+      "bytes": 859905,
+      "sha256": "668fb1ceb6451063ca12489742e079911c2e9d64d27302df125bf1d0edab050a"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_annotated_front.png",
-      "bytes": 667896,
-      "sha256": "ef25bb5415bc59cba8d3fd7e7e7800a0660eb86e640959d75825df815bae25e9"
+      "path": "snapshots/solidworks/physical_mount_v1/solidworks_physical_mount_isometric.png",
+      "bytes": 1102608,
+      "sha256": "17d5007ae2f359dd921258a752578773761ea346c7bb8bf0c5b4197a45ee7f0b"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_motion.gif",
-      "bytes": 4052399,
-      "sha256": "99642eb6177a65bb572e028ce21c4a227aa950d50c6f80b794191ea541a68c8c"
+      "path": "snapshots/solidworks/physical_mount_v1/solidworks_physical_mount_v1_16dof_motion.gif",
+      "bytes": 20362835,
+      "sha256": "25347e1d61b36b20f858e6518a535b502b6a79f30b52d9a0598650615528fc46"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_xray_front.png",
-      "bytes": 629419,
-      "sha256": "67a9c0be317527e7354939061cb86497343f0ee1e05beb5b1a7c93c0388af125"
+      "path": "source_assets/PHYSICAL_MOUNT_V1_SOURCE_LOCK.json",
+      "bytes": 1869,
+      "sha256": "545ecba510d49f581d2af8cdefe8895a2e0c8489937639505e7315d26f24b3e6"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_xray_isometric.png",
-      "bytes": 1017606,
-      "sha256": "51dea7a133f3edcda00fa399d0849b6d1171db16acbdd885d71a4ea06697e426"
+      "path": "source_assets/vendor/FEETECH_STS3215_DRAWING-6.png",
+      "bytes": 729803,
+      "sha256": "713855591814dbbe7a295d440fac828f6f333e95fdfe43e9cd127cc2a2bd876e"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_16_blue_servos_xray_side.png",
-      "bytes": 489528,
-      "sha256": "8d8387c7494853a3a70d551d525b4e0990c2deaf1be6b2a4c6a7d76b4672b12b"
+      "path": "source_assets/vendor/FEETECH_STS3215_SPEC.pdf",
+      "bytes": 620876,
+      "sha256": "eeac0fb6b73bf2215974d8f73fb7db0f09d59a59f5affff99aa89fee64948286"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_electronics_annotated_front.png",
-      "bytes": 686214,
-      "sha256": "34d1a86a8483af9c1d011193bc252d33ddc373901b21a17cb0ba464e0d2ae07e"
+      "path": "source_assets/vendor/FEETECH_STS3250_DRAWING_1.png",
+      "bytes": 74802,
+      "sha256": "3c8fb0f8fd5d03bed0449066e9b52fd218e07e06ad46d0d9527ac67565894baa"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_shoulder_4_blue_servos_closeup.png",
-      "bytes": 555793,
-      "sha256": "1d3075bdac889adde85beaaeda0a42a0ea04da4faa7bc88d4dd4cc3aa63644b9"
+      "path": "source_assets/vendor/FEETECH_STS3250_DRAWING_2.png",
+      "bytes": 65918,
+      "sha256": "34ee11ceddcf2f625efa94334af6126fb33d772a505d9a53fef1fd89f86f8349"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_white_front.png",
-      "bytes": 426926,
-      "sha256": "74fbcb66fb60f19769e87628fcc92754e9138695e78c03ee6d35657ff643a545"
+      "path": "source_assets/vendor/FEETECH_STS3250_DRAWING_3.png",
+      "bytes": 68093,
+      "sha256": "218c8296ba9f0d0b925c6d9406bbb3ab5eab093c110ca2a9621629d8c7b9b8a4"
     },
     {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_white_isometric.png",
-      "bytes": 585138,
-      "sha256": "9ea79f5f39ca390fadb47555a58b7f3e060beb715b53911a878f6d6c44f7bd61"
-    },
-    {
-      "path": "snapshots/solidworks/round_v1/zeroth01_round_v3_white_side.png",
-      "bytes": 320239,
-      "sha256": "d340abe2f6e03c3421db5f87bfa86306afd2f918580a5004392dc06a3bca4670"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/Eva_head_assemby_procedure.md",
-      "bytes": 3269,
-      "sha256": "43dc377918a6fefa053ed52d996373052ed74c0d263f99b026204c755e5886f0"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/Eva_head_design.pdf",
-      "bytes": 1618968,
-      "sha256": "e27163fdda5b257a362bc575dbca266fa6b8e614d87746fd8af28ac9f52fe507"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/all.jpg",
-      "bytes": 1032570,
-      "sha256": "18ffec6f9b1f2e9b5af905ac7507ade56285cde3bd156ab35791ffb664c4b7ef"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/All_with_labels.png",
-      "bytes": 1107271,
-      "sha256": "a204875ca9f371bb47ad3e3da90c2a3e59a129055e67aa4d635eb5d4142345bf"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/camera_fixation.png",
-      "bytes": 367576,
-      "sha256": "74195d7930b1cbacd3476d688c4154b4769659dcbca55afae39e062a89e51a0c"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/display_in_the_head.png",
-      "bytes": 945057,
-      "sha256": "573de8f5ae3f707284834d78dfde2b545a7fae3b2e86f48b4bb2ab936316cac3"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/display_locking.png",
-      "bytes": 1318456,
-      "sha256": "d077388cbfbe1400294af5a4aaf8042740361c48c82603fe3312284a58ccd450"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/eva_head.png",
-      "bytes": 283778,
-      "sha256": "6cd31fa3b4ff209d28ca94f5a16f5a2a9dc57ff1020be4d3678762953766a301"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/Eva_head_with_students.png",
-      "bytes": 632800,
-      "sha256": "3be09df9adb0e9e3e32f434d04db98bb30f0ec040483bfd613b05a6a7244c48f"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/final_step_1.png",
-      "bytes": 1112192,
-      "sha256": "7ef8e190d7377471793e5e470de63de2e6b0ef58ad142e02de6fceec7a7ff928"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/final_step_2.png",
-      "bytes": 1361057,
-      "sha256": "bc3b53c9f38c57001a338e965483f31226a751d1c58a2ce7fd8f63c6a9369ebb"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/final_step_3.png",
-      "bytes": 869192,
-      "sha256": "a892f9206f8500e54a108991c22280de5c302ae1fc1ff4dcad94c6cb4f24a57d"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/fixation_display_cable.png",
-      "bytes": 230808,
-      "sha256": "e36de8ff0f0c70688d639aecfa169621b58cbd1537948819a2525d1e4df7dfa0"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/front_bottom_head_part_on_motor.png",
-      "bytes": 123455,
-      "sha256": "eba074e49520b3d16c8378400221592937c0148699ee2caf89a964853bad6902"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/magnet_in_head_parts.png",
-      "bytes": 111019,
-      "sha256": "e4eba273420c0ecb93bb006f27138ac145cb2948195c52e905b6f2fa2748e329"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/doc/img/RPi_on_support.png",
-      "bytes": 1230755,
-      "sha256": "d8af24c9ef16e3ffd5412e4f26f8c999f0a299117dea1ce7599cc741b73ade55"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/BOM.md",
-      "bytes": 5242,
-      "sha256": "7bcf22019154b47c6459a935ab7a68a38f6ba8e54fd573876a8d59097fac01b1"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/12_to_5_converter.png",
-      "bytes": 136884,
-      "sha256": "4d4b48f952ea2803d6123976d9f37ec7a15c4a7cfb1cff083a6afa7f0c0ae7d1"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/camera_miniature.png",
-      "bytes": 172280,
-      "sha256": "0777a269b8762578cfe6f9d8cb3aafa7223852ebfc7a0645321333e74ad34117"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/camera_miniature_1.png",
-      "bytes": 68223,
-      "sha256": "dcf208df1cc4c3dd742d229248b4f00f1915e6c9d9f808d32e1a8d89ca31f215"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/camera_miniature_2.png",
-      "bytes": 174149,
-      "sha256": "d186d2a2aa2cea1dc114205942c7bf58c02677925edf0e4954172d905abe628a"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/camera_miniature_3.png",
-      "bytes": 48044,
-      "sha256": "e61f6103deb1fb5207aaaf8782ed265738098e399a6205c4c3e5e532a23aee92"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/display-RPi.png",
-      "bytes": 345567,
-      "sha256": "27d27f3dda57fa79f39d6b617c7cc11a8ea2aca54c13d955f9351d996c049d16"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/display.png",
-      "bytes": 397782,
-      "sha256": "6109e02e06e2c46027c64a6b116e3c9e0f9ea1699b9fe6cd3c58bbd4dc02abde"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/eva_head_frontBottom-part.png",
-      "bytes": 66664,
-      "sha256": "cafedf527f84612c08728e95794eb07baf3b9e2fe80a791c1ae9e9e644424295"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/eva_head_lock-part.png",
-      "bytes": 1257,
-      "sha256": "33853b8b6525a711af0662217565bed056cdf41855a2ebed7d497fa7afd75edf"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/eva_head_RPi4Support-part.png",
-      "bytes": 5691,
-      "sha256": "c7cb2763364aa00dd2405822bcc93f2a087a12b1dfccacb70a6a8702ae5413c3"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/img/eva_head_top-part.png",
-      "bytes": 44206,
-      "sha256": "50ac67f4b6c6c4839cecc4345848cb37bae073a54dd7a25c53143c6eb57c934e"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/STL/eva_head_frontBottom-part.stl",
-      "bytes": 5594285,
-      "sha256": "bc16a6a00916ab6818b476aff50f57e8af22aae45f4fa2c780eb198be8903c42"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/STL/eva_head_lock-part.stl",
-      "bytes": 13469,
-      "sha256": "6c998eeb98a54802d62d7487339a833ef54dd06321cde4926c8b6e60e154c95f"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/STL/eva_head_RPi4Support.stl",
-      "bytes": 293074,
-      "sha256": "8a8df036f633d6d951e015729c620602aa7e75c32885c0535cbbf926908c37aa"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/hardware/STL/eva_head_top-part.stl",
-      "bytes": 2764731,
-      "sha256": "73a515584a09e638ae2448af05d0678d378d01bd6eae1cf619c1642289abf2e8"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/LICENSE.md",
-      "bytes": 18701,
-      "sha256": "b3d6f30f5131eb6eb96ad2a3981f338be6c77d60e23d580737a92a4576f60f60"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/README.md",
-      "bytes": 1106,
-      "sha256": "d47ca114ee2e01bc593afdfa19c165c3898cc71696d20a017eab1c724f8b889c"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/software/config.txt",
-      "bytes": 1891,
-      "sha256": "9c7c513738008568f777e7b1ff0b3e2ed57458bbbd1dd6c5a0dec337e84892dc"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/software/README.md",
-      "bytes": 485,
-      "sha256": "faa7ecd1fefa5490499052b9e668bbd685fd903b82e25d87a1c63fb0408f4856"
-    },
-    {
-      "path": "source_assets/open_source_head/Poppy-eva-head-design/SOURCE_COMMIT.txt",
-      "bytes": 141,
-      "sha256": "db9ee90e0f11fbebf3c7415d2d8fe61e1a94b8d18a722275085c4e316a065397"
-    },
-    {
-      "path": "source_assets/vendor/head_electronics/PROVENANCE.json",
-      "bytes": 1387,
-      "sha256": "39ddf6bf64a91d13ce339c5df93df986f701851d75d902b077dac0914cfac4e5"
-    },
-    {
-      "path": "source_assets/vendor/head_electronics/Raspberry_Pi_Camera_Module_3_Wide.step",
-      "bytes": 29900411,
-      "sha256": "3c73aaa3091e78f92b0d5d9fa84d6be2389f843a15106f5251a770759ef651df"
+      "path": "source_assets/vendor/FEETECH_STS3250_SPEC.pdf",
+      "bytes": 542825,
+      "sha256": "c471fe4e3b872423100ec28726800e65bfc5eb7aa14a82e35db28d3c8e89ab28"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 3722,
-      "sha256": "5009f459810d2ecf0cc5fe22a6a2c015392f375c96064e7a861e24e6ebe7e4d5"
+      "bytes": 1672,
+      "sha256": "bde4100529e647a763e8be1ccc084970f8adf2e4e5017dac60dbca6f1344691b"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_1Flange.collision.stl",
+      "bytes": 5084,
+      "sha256": "7471ad4948f887b035c1c025419c6e2d59621758f70a9d2d36da37f7b87f9693"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_1Flange.stl",
+      "bytes": 500084,
+      "sha256": "7b6b03b4047961576d2edb3702af5d8cd9e817182e6687919ddffd985f004567"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_1Flange_2.collision.stl",
+      "bytes": 5084,
+      "sha256": "ca14dff5dee378cc8b618afe99b3980989c976470686a865491a82e7b5d5e89f"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_1Flange_2.stl",
+      "bytes": 500084,
+      "sha256": "0ab617ab3f45d9369d6bf63d7de428ae3fc392e7e14d9ae3c241590714a355dd"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_10.collision.stl",
+      "bytes": 5084,
+      "sha256": "a584b3e43dca5c16a0a96949d62fdaedd2e9dc96ab05228f625204ad963a87c6"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_10.stl",
+      "bytes": 498684,
+      "sha256": "ec6b1764b7aa9daa277edd69279e3251ce28201b4329a6fd58f642802d73e8c7"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_13.collision.stl",
+      "bytes": 5084,
+      "sha256": "4b33483e57a9307e2fd483d354b51bfd16ee439083f520dda26097df47de6ea5"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_13.stl",
+      "bytes": 500084,
+      "sha256": "558f7a5f7e94f4b9bb44e0237e8c99c0c8c6686ed068f59fc53f9ba7f34324e4"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_14.collision.stl",
+      "bytes": 5084,
+      "sha256": "419873d329ffb794ddcff83a1766bac4c515e4a5ea59bf5caf13cf4bcf547bde"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_14.stl",
+      "bytes": 500084,
+      "sha256": "797195b92821f85a83d4c9e335fae750b0baea982fe6fca96293b900deb7b67d"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_5.stl",
+      "bytes": 500084,
+      "sha256": "97568c164c6daae7d1598bb5b9c4843a3f6a34d4b498ac6cb5f762c59be8398f"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_6.stl",
+      "bytes": 500084,
+      "sha256": "21f00f20bfd4925abb59ada71a8704a0d44c66ae8e39154ab2d14cd2f3955e67"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_9.collision.stl",
+      "bytes": 5084,
+      "sha256": "ed5140b02566666c2b99c60c1e4e70a6779a947b679dff59c88fa37c57855b93"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/3215_BothFlange_9.stl",
+      "bytes": 500084,
+      "sha256": "2cccf4fd8e69476260e6aceb891d6e17f22b21e0c0f358ef58961b1fe9120862"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FINGER_1.collision.stl",
+      "bytes": 5084,
+      "sha256": "a957b03b0d5da1dc8c671cc02bc686166e00e5bbd9cbb5a6096b22e9abd1e0ec"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FINGER_1.stl",
+      "bytes": 217884,
+      "sha256": "46ef5267f24de0c49b57b21b3256d56facb343c7e74898b4a11088b615005e62"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FINGER_1_2.collision.stl",
+      "bytes": 5084,
+      "sha256": "cc1d5169597b2f6f874011e07221eca4303a2c13876f088589ffb4b383eeb607"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FINGER_1_2.stl",
+      "bytes": 217584,
+      "sha256": "2b9ecef7db3f85ac5cc4a9d4add3ae45c7a3870b42bfb844b0d354b0b62c4205"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FOOT.collision.stl",
+      "bytes": 5084,
+      "sha256": "ce8fafb587a96cc1007740ca0a433d810dcdd18ab380b57662e8e002ce749684"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FOOT.stl",
+      "bytes": 120684,
+      "sha256": "0cf1a7fba7d5b1976f11c651d365603866a4810e1b7714110a470e9e22544ae4"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FOOT_2.collision.stl",
+      "bytes": 5084,
+      "sha256": "ff611b90ed3a603f36af33456f89d04668ecbc2a9626252dc7d0b3c7da595298"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/FOOT_2.stl",
+      "bytes": 120684,
+      "sha256": "d0db4d117632591b82daf5fcaf8d407f97aebe98fe55f008f4588635390d0413"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/IMU.stl",
+      "bytes": 14384,
+      "sha256": "9f9669bca2776c47dd309ee9724ade030b4c0ea695b08faf8882a00728a39bc2"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/L_ARM_MIRROR_1.collision.stl",
+      "bytes": 5084,
+      "sha256": "e9892b608c03855169070ef126a8741640cb8373071b5be27d923cd6a53989c5"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/L_ARM_MIRROR_1.stl",
+      "bytes": 499684,
+      "sha256": "8a4ea2c86c2177b25eb3aaca118b34defd223724744227a367f73cf90142da5d"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/R_ARM_MIRROR_1.collision.stl",
+      "bytes": 5084,
+      "sha256": "555edfa709da7212bebfef52df7514fa046c75a9c439038e50881ff257726edf"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/R_ARM_MIRROR_1.stl",
+      "bytes": 500084,
+      "sha256": "7042f7b3f3eeabd6e29e2724cca5f66232d9fd2efde5a52073a2fc28446932c1"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/U_HIP_L.stl",
+      "bytes": 71084,
+      "sha256": "05c8262faa706de1c0cab5ea3472e92062ab2e6503e5cf79c9dc77f34390c517"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/U_HIP_R.stl",
+      "bytes": 71384,
+      "sha256": "9359cab424b25a52d6c559496baee1c7dff482d400b00e1cb16cd0b63865cf08"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/Z_BOT2_MASTER_BODY_SKELETON.collision.stl",
+      "bytes": 5084,
+      "sha256": "5eabae575f16313e7cf7c33b844a5289128faadc44fb3e9999bf5b95888e4eeb"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "bytes": 495284,
+      "sha256": "405959cb8cbab7b8a7d42a44a5e68dc0232388d579ac5c770beb290b418c59cb"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/Z_BOT2_MASTER_SHOULDER2.stl",
+      "bytes": 55784,
+      "sha256": "e4bd555196d7ebb0d9b50b1344eb992ffbd0dd886d130f2933d8dc9140919484"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/meshes/Z_BOT2_MASTER_SHOULDER2_2.stl",
+      "bytes": 55684,
+      "sha256": "a2b55403fe97d789020d31c289c7bd94cbeac0326810040dca26ce1897b8c067"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/metadata.json",
+      "bytes": 1591,
+      "sha256": "5f92f2281b9b98c031f256d9a137a2503b46dde65ce5aa6040c2af5c31ab423d"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/robot.mjcf",
+      "bytes": 19294,
+      "sha256": "4c87b23843a71d22bd33f4f2a91117f069a66c701a55de50c14823ffc897df59"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/robot.suspended.mjcf",
+      "bytes": 19253,
+      "sha256": "3ccc4795f44d419fa0a1503e8ee532be01924ea2b7fdb8d46231bf7c3f1c4871"
+    },
+    {
+      "path": "upstream/kscale-assets/zbot/robot.urdf",
+      "bytes": 21955,
+      "sha256": "584ecbcc8f6b4eaeeb8583eddc4cd58aa58c895a8d2c4dc075ec844fb0dac9f3"
     }
   ]
 }

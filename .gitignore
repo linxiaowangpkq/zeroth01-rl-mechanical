@@ -2,6 +2,6 @@ __pycache__/
 *.py[cod]
 .venv/
 .venv*/
-reports/*.log
-generated/solidworks/portable_flat_round_v3/previews/motion_frames/
-~$*
+reports/physical_mount_v1/*stdout.log
+reports/physical_mount_v1/*stderr.log
+reports/physical_mount_v1/*pid.txt

@@ -1,0 +1,33 @@
+{
+  "schema": "zeroth01.physical_mount_v1.source_lock.v1",
+  "primary_geometry": {
+    "repository": "https://github.com/kscalelabs/kscale-assets",
+    "commit": "f51d6ea19b8b824dd7661600c7a87f3691f770be",
+    "path": "zbot",
+    "repository_state": "archived read-only since 2025-05-03",
+    "local_path": "upstream/kscale-assets/zbot"
+  },
+  "native_cad_reference": {
+    "name": "[0]th Z001",
+    "url": "https://cad.onshape.com/documents/b4672a7f8ce3947bd250f2c1/w/ff02744612b3ad395d4541a6/e/6e9a04dde965d2dab1a3d9af",
+    "document_id": "b4672a7f8ce3947bd250f2c1",
+    "workspace_id": "ff02744612b3ad395d4541a6",
+    "element_id": "6e9a04dde965d2dab1a3d9af",
+    "export_status": "Public viewer was reachable, but native assembly export returned HTTP 401 without Onshape API credentials. No native B-Rep was claimed or fabricated."
+  },
+  "servo_geometry_policy": "The 16 installed blue components are connected regions extracted from the pinned assembled STL in their original link coordinates. They are STS3215-family installation references, not vendor-exact STS3250 B-Rep files.",
+  "sts3250_policy": "Official FEETECH dimensions control the separate reference STEP and first-article gauge. Full robot print release remains HOLD until one purchased STS3250 is measured."
+  ,
+  "vendor_documents": {
+    "sts3250": {
+      "path": "source_assets/vendor/FEETECH_STS3250_SPEC.pdf",
+      "url": "https://www.feetechrc.com/Data/feetechrc/upload/file/20240120/6384135881578380868917773.pdf",
+      "sha256": "c471fe4e3b872423100ec28726800e65bfc5eb7aa14a82e35db28d3c8e89ab28"
+    },
+    "sts3215": {
+      "path": "source_assets/vendor/FEETECH_STS3215_SPEC.pdf",
+      "url": "https://www.feetechrc.com/Data/feetechrc/upload/file/20200611/6372749961523760249976542.pdf",
+      "sha256": "eeac94c5436e08b8e2ad341e2003be5e47d915b19b3e43af48c7ecf8b039bb19"
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "schema": "zeroth01.physical_mount_v1.inertia_delta.v1",
+  "source_servo_mass_kg": 0.055,
+  "target_servo_mass_kg": 0.0745,
+  "delta_per_servo_kg": 0.019499999999999997,
+  "links": [
+    {
+      "link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_ids": [
+        "S03",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "old_mass_kg": 1.546392,
+      "new_mass_kg": 1.624392,
+      "old_com_m": [
+        -0.000189,
+        0.010193,
+        -0.031201
+      ],
+      "new_com_m": [
+        -0.00018064208885539942,
+        0.010106752470154986,
+        -0.03236801457899324
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_1Flange",
+      "servo_ids": [
+        "S02",
+        "S10"
+      ],
+      "old_mass_kg": 0.18196,
+      "new_mass_kg": 0.22096,
+      "old_com_m": [
+        0.033642,
+        0.000438,
+        -0.019963
+      ],
+      "new_com_m": [
+        0.03591003921071687,
+        0.00036950430847212175,
+        -0.019731272999637946
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_1Flange_2",
+      "servo_ids": [
+        "S01",
+        "S09"
+      ],
+      "old_mass_kg": 0.18196,
+      "new_mass_kg": 0.22096,
+      "old_com_m": [
+        0.033642,
+        -0.000433,
+        -0.019968
+      ],
+      "new_com_m": [
+        0.03591003974022447,
+        -0.00036538699764663294,
+        -0.0197353903987147
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_BothFlange_5",
+      "servo_ids": [
+        "S12"
+      ],
+      "old_mass_kg": 0.068295,
+      "new_mass_kg": 0.08779499999999998,
+      "old_com_m": [
+        0.012332,
+        -0.008997,
+        -0.018508
+      ],
+      "new_com_m": [
+        0.012369334853921065,
+        -0.006998691440287033,
+        -0.01837292682385102
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_BothFlange_6",
+      "servo_ids": [
+        "S11"
+      ],
+      "old_mass_kg": 0.068295,
+      "new_mass_kg": 0.08779499999999998,
+      "old_com_m": [
+        0.012332,
+        -0.008983,
+        -0.017811
+      ],
+      "new_com_m": [
+        0.012369334853921065,
+        -0.0069878009567743045,
+        -0.01800842320177687
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_BothFlange_9",
+      "servo_ids": [
+        "S05"
+      ],
+      "old_mass_kg": 0.143337,
+      "new_mass_kg": 0.16283699999999998,
+      "old_com_m": [
+        0.043662,
+        -0.002857,
+        -0.018525
+      ],
+      "new_com_m": [
+        0.039930310110724225,
+        -0.0025148695259676855,
+        -0.01854593977412996
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_BothFlange_10",
+      "servo_ids": [
+        "S04"
+      ],
+      "old_mass_kg": 0.143337,
+      "new_mass_kg": 0.16283699999999998,
+      "old_com_m": [
+        0.043662,
+        0.002863,
+        -0.018537
+      ],
+      "new_com_m": [
+        0.0399303075959395,
+        0.0025201510160467217,
+        -0.018556502754288034
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_BothFlange_13",
+      "servo_ids": [
+        "S14",
+        "S16"
+      ],
+      "old_mass_kg": 0.128213,
+      "new_mass_kg": 0.167213,
+      "old_com_m": [
+        0.05,
+        0.0,
+        -0.017988
+      ],
+      "new_com_m": [
+        0.050000000233235455,
+        1.16617727090597e-10,
+        -0.018177354069360635
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    },
+    {
+      "link": "3215_BothFlange_14",
+      "servo_ids": [
+        "S13",
+        "S15"
+      ],
+      "old_mass_kg": 0.128213,
+      "new_mass_kg": 0.167213,
+      "old_com_m": [
+        0.05,
+        0.0,
+        -0.017888
+      ],
+      "new_com_m": [
+        0.050000000233235455,
+        1.16617727090597e-10,
+        -0.018077354069360636
+      ],
+      "method": "replace archived 55 g STS3215-family actuator mass with 74.5 g STS3250 by a 19.5 g point-mass delta at each extracted actuator-region centre"
+    }
+  ]
+}

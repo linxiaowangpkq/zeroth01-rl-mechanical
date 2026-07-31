@@ -1,0 +1,175 @@
+{
+  "schema": "zeroth01.physical_mount_v1.source_regions.v1",
+  "source_urdf": "upstream/kscale-assets/zbot/robot.urdf",
+  "source_mesh_root": "upstream/kscale-assets/zbot/meshes",
+  "mechanical_policy": {
+    "source_authority": "The archived Zeroth/K-Scale Z-Bot assembled STL geometry is the physical placement authority. Servo regions are extracted in-place; no independent housing phase optimization is allowed.",
+    "servo_identity": "Extracted regions are the installed FEETECH STS3215-family geometry present in the original Zeroth assembly. They are retained as the placement and interference truth for the form-factor-compatible STS3250 conversion.",
+    "sts3250_conversion": "STS3250 uses the same nominal 45.22 x 24.72 x 35 mm case family, 12.5 mm shaft offset, dual 25T/5.9 mm output and M3x6 output retention. New parent carriers must use the STS3250 drawing's 4xM2 threaded interface rather than copying the STS3215 self-tapping screw callout.",
+    "mass_policy": "The archived link inertias already include installed servo mass. The extracted blue components remain visual/collision subcomponents of their owning rigid link and must not add a second inertia.",
+    "hand_policy": "The two gripper joints are converted to fixed joints, leaving 16 actuated joints. Fixed cosmetic chibi palms can replace the source fingers without adding actuators."
+  },
+  "joint_renames": {
+    "left_elbow": "left_elbow_yaw",
+    "right_elbow": "right_elbow_yaw",
+    "left_knee": "left_knee_pitch",
+    "right_knee": "right_knee_pitch",
+    "left_ankle": "left_ankle_pitch",
+    "right_ankle": "right_ankle_pitch"
+  },
+  "fixed_joints": [
+    "left_gripper",
+    "right_gripper"
+  ],
+  "appearance": {
+    "skeleton_color_hex": "#F7F8FA",
+    "servo_color_hex": "#1677FF",
+    "skeleton_xray_opacity": 0.24
+  },
+  "servos": [
+    {
+      "id": "S01",
+      "joint": "right_shoulder_pitch",
+      "source_joint": "right_shoulder_pitch",
+      "owning_link": "3215_1Flange_2",
+      "source_mesh": "3215_1Flange_2.stl",
+      "region_id": 1,
+      "chain_role": "proximal servo body carried by the shoulder-pitch child link"
+    },
+    {
+      "id": "S02",
+      "joint": "left_shoulder_pitch",
+      "source_joint": "left_shoulder_pitch",
+      "owning_link": "3215_1Flange",
+      "source_mesh": "3215_1Flange.stl",
+      "region_id": 1,
+      "chain_role": "proximal servo body carried by the shoulder-pitch child link"
+    },
+    {
+      "id": "S03",
+      "joint": "right_shoulder_yaw",
+      "source_joint": "right_shoulder_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 11,
+      "chain_role": "torso-fixed shoulder-yaw servo body"
+    },
+    {
+      "id": "S04",
+      "joint": "right_hip_pitch",
+      "source_joint": "right_hip_pitch",
+      "owning_link": "3215_BothFlange_10",
+      "source_mesh": "3215_BothFlange_10.stl",
+      "region_id": 1,
+      "chain_role": "hip-pitch servo body carried by the hip-pitch child link"
+    },
+    {
+      "id": "S05",
+      "joint": "left_hip_pitch",
+      "source_joint": "left_hip_pitch",
+      "owning_link": "3215_BothFlange_9",
+      "source_mesh": "3215_BothFlange_9.stl",
+      "region_id": 1,
+      "chain_role": "hip-pitch servo body carried by the hip-pitch child link"
+    },
+    {
+      "id": "S06",
+      "joint": "left_shoulder_yaw",
+      "source_joint": "left_shoulder_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 17,
+      "chain_role": "torso-fixed shoulder-yaw servo body"
+    },
+    {
+      "id": "S07",
+      "joint": "right_hip_yaw",
+      "source_joint": "right_hip_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 5,
+      "chain_role": "torso-fixed hip-yaw servo body"
+    },
+    {
+      "id": "S08",
+      "joint": "left_hip_yaw",
+      "source_joint": "left_hip_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 6,
+      "chain_role": "torso-fixed hip-yaw servo body"
+    },
+    {
+      "id": "S09",
+      "joint": "right_elbow_yaw",
+      "source_joint": "right_elbow",
+      "owning_link": "3215_1Flange_2",
+      "source_mesh": "3215_1Flange_2.stl",
+      "region_id": 0,
+      "chain_role": "distal elbow servo body carried by the upper-arm link"
+    },
+    {
+      "id": "S10",
+      "joint": "left_elbow_yaw",
+      "source_joint": "left_elbow",
+      "owning_link": "3215_1Flange",
+      "source_mesh": "3215_1Flange.stl",
+      "region_id": 0,
+      "chain_role": "distal elbow servo body carried by the upper-arm link"
+    },
+    {
+      "id": "S11",
+      "joint": "right_hip_roll",
+      "source_joint": "right_hip_roll",
+      "owning_link": "3215_BothFlange_6",
+      "source_mesh": "3215_BothFlange_6.stl",
+      "region_id": 1,
+      "chain_role": "hip-roll servo body carried by the hip-roll child link"
+    },
+    {
+      "id": "S12",
+      "joint": "left_hip_roll",
+      "source_joint": "left_hip_roll",
+      "owning_link": "3215_BothFlange_5",
+      "source_mesh": "3215_BothFlange_5.stl",
+      "region_id": 1,
+      "chain_role": "hip-roll servo body carried by the hip-roll child link"
+    },
+    {
+      "id": "S13",
+      "joint": "right_knee_pitch",
+      "source_joint": "right_knee",
+      "owning_link": "3215_BothFlange_14",
+      "source_mesh": "3215_BothFlange_14.stl",
+      "region_id": 1,
+      "chain_role": "proximal knee servo body carried by the lower-leg link"
+    },
+    {
+      "id": "S14",
+      "joint": "left_knee_pitch",
+      "source_joint": "left_knee",
+      "owning_link": "3215_BothFlange_13",
+      "source_mesh": "3215_BothFlange_13.stl",
+      "region_id": 1,
+      "chain_role": "proximal knee servo body carried by the lower-leg link"
+    },
+    {
+      "id": "S15",
+      "joint": "right_ankle_pitch",
+      "source_joint": "right_ankle",
+      "owning_link": "3215_BothFlange_14",
+      "source_mesh": "3215_BothFlange_14.stl",
+      "region_id": 0,
+      "chain_role": "distal ankle servo body carried by the lower-leg link"
+    },
+    {
+      "id": "S16",
+      "joint": "left_ankle_pitch",
+      "source_joint": "left_ankle",
+      "owning_link": "3215_BothFlange_13",
+      "source_mesh": "3215_BothFlange_13.stl",
+      "region_id": 0,
+      "chain_role": "distal ankle servo body carried by the lower-leg link"
+    }
+  ]
+}

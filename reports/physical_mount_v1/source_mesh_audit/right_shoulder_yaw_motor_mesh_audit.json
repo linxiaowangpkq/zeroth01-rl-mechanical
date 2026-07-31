@@ -1,0 +1,58 @@
+{
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\urdf\\meshes\\right_shoulder_yaw_motor.stl",
+  "source_unit_inference": "metre",
+  "points": 2324,
+  "triangles": 5611,
+  "connected_region_count": 2,
+  "bounds_mm": [
+    -44.027034,
+    13.99425,
+    -12.967778,
+    77.268414,
+    -0.799991,
+    40.200006
+  ],
+  "size_mm": [
+    58.021285,
+    90.236193,
+    40.999998
+  ],
+  "regions": [
+    {
+      "region_id": 0,
+      "points": 2321,
+      "triangles": 5609,
+      "bounds_mm": [
+        -44.027034,
+        13.99425,
+        -12.967778,
+        77.268414,
+        -0.799991,
+        40.200006
+      ],
+      "size_mm": [
+        58.021285,
+        90.236193,
+        40.999998
+      ]
+    },
+    {
+      "region_id": 1,
+      "points": 3,
+      "triangles": 2,
+      "bounds_mm": [
+        -25.313979,
+        -24.351723,
+        74.726455,
+        75.068928,
+        31.483863,
+        32.483529
+      ],
+      "size_mm": [
+        0.962256,
+        0.342473,
+        0.999667
+      ]
+    }
+  ]
+}

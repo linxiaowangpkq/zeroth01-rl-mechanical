@@ -1,0 +1,6 @@
+build123d>=0.9,<1
+mujoco>=3.3.7,<4
+numpy>=1.26,<3
+Pillow>=10,<13
+vtk>=9.3,<10
+pywin32>=306; platform_system == "Windows"

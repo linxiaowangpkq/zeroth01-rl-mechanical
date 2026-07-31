@@ -1,0 +1,94 @@
+{
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\upstream\\kscale-assets\\zbot\\meshes\\3215_1Flange.stl",
+  "source_unit_inference": "metre",
+  "points": 4928,
+  "triangles": 10000,
+  "connected_region_count": 4,
+  "bounds_mm": [
+    -19.107435,
+    103.095077,
+    -18.600004,
+    18.799717,
+    -37.39972,
+    -0.0
+  ],
+  "size_mm": [
+    122.202512,
+    37.39972,
+    37.39972
+  ],
+  "regions": [
+    {
+      "region_id": 0,
+      "points": 2401,
+      "triangles": 4846,
+      "bounds_mm": [
+        57.872321,
+        103.095077,
+        -18.600004,
+        18.799717,
+        -30.961664,
+        -6.239087
+      ],
+      "size_mm": [
+        45.222756,
+        37.39972,
+        24.722577
+      ]
+    },
+    {
+      "region_id": 1,
+      "points": 2012,
+      "triangles": 4052,
+      "bounds_mm": [
+        -10.111286,
+        35.111472,
+        -12.361288,
+        12.361288,
+        -37.39972,
+        -0.0
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ]
+    },
+    {
+      "region_id": 2,
+      "points": 395,
+      "triangles": 850,
+      "bounds_mm": [
+        -19.107435,
+        87.522328,
+        -17.520001,
+        17.520001,
+        -36.319718,
+        -1.319719
+      ],
+      "size_mm": [
+        106.629763,
+        35.040002,
+        34.999999
+      ]
+    },
+    {
+      "region_id": 3,
+      "points": 120,
+      "triangles": 252,
+      "bounds_mm": [
+        5.461483,
+        57.599634,
+        -13.859663,
+        13.859662,
+        -7.540666,
+        -1.279717
+      ],
+      "size_mm": [
+        52.138151,
+        27.719325,
+        6.260949
+      ]
+    }
+  ]
+}

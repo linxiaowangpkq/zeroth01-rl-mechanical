@@ -1,0 +1,37 @@
+{
+  "schema": "zeroth01.physical_mount_v1.source_component_gate.v1",
+  "physical_source": "archived assembled Zeroth/K-Scale Z-Bot STL geometry",
+  "checks": {
+    "extracted_servo_component_count": {
+      "value": 16,
+      "expected": 16,
+      "gate": "PASS"
+    },
+    "unique_servo_ids": {
+      "value": 16,
+      "expected": 16,
+      "gate": "PASS"
+    },
+    "servo_family_envelope": {
+      "failures": [],
+      "gate": "PASS"
+    },
+    "remaining_skeleton_link_mesh_count": {
+      "value": 20,
+      "expected": 20,
+      "gate": "PASS"
+    },
+    "actuated_joint_count": {
+      "value": 16,
+      "expected": 16,
+      "gate": "PASS"
+    },
+    "fixed_gripper_count": {
+      "value": 2,
+      "expected": 2,
+      "gate": "PASS"
+    }
+  },
+  "claim_boundary": "PASS proves that 16 actuator-shaped regions were extracted in their original assembled link coordinates and remain connected to the original carrier geometry through the source kinematic chain. Dynamic collision, fastener strength, cable routing and purchased STS3250 tolerance require their separate gates.",
+  "overall": "PASS"
+}

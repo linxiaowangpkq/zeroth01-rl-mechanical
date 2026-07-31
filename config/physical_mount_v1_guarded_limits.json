@@ -1,0 +1,24 @@
+{
+  "schema": "zeroth01.physical_mount_v1.guarded_limits.v1",
+  "units": "radian",
+  "derivation": "Dense 161-point single-joint MuJoCo sweep of the source-derived detailed skeleton and extracted actuator collision meshes. Each changed endpoint is moved at least one degree inside the first observed nonadjacent-link contact.",
+  "scope": "These limits guarantee the sampled single-joint-at-neutral envelope. They do not imply that every Cartesian product of all 16 independent limits is self-collision-free; RL must retain self-collision penalties/termination.",
+  "limits": {
+    "left_shoulder_yaw": [-0.12, 0.12],
+    "left_shoulder_pitch": [-0.47123889, 0.47123889],
+    "left_elbow_yaw": [-0.34, 0.24],
+    "right_shoulder_yaw": [-0.12, 0.12],
+    "right_shoulder_pitch": [-0.47123889, 0.47123889],
+    "right_elbow_yaw": [-0.24, 0.34],
+    "left_hip_yaw": [-0.322013241, 0.026179939],
+    "left_hip_roll": [-0.06, 0.22],
+    "left_hip_pitch": [-0.027495556, 0.412327408],
+    "left_knee_pitch": [-0.83285928, 0.0],
+    "left_ankle_pitch": [-0.66415928, 0.0],
+    "right_hip_yaw": [-0.026179939, 0.322013241],
+    "right_hip_roll": [-0.22, 0.06],
+    "right_hip_pitch": [-0.412327408, 0.027495556],
+    "right_knee_pitch": [0.0, 0.83285928],
+    "right_ankle_pitch": [0.0, 0.66415928]
+  }
+}

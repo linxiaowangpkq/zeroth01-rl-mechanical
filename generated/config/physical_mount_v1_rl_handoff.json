@@ -1,0 +1,65 @@
+{
+  "schema": "zeroth01.physical_mount_v1.rl_handoff.v1",
+  "canonical_urdf": "generated/urdf/physical_mount_v1/zeroth01_physical_mount_v1.urdf",
+  "actuator_config": "generated/config/physical_mount_v1_actuators.json",
+  "hardware_calibration_template": "generated/config/physical_mount_v1_hardware_calibration_template.csv",
+  "joint_limit_source": "config/physical_mount_v1_guarded_limits.json",
+  "robot": {
+    "actuated_dof": 16,
+    "fixed_grippers": 2,
+    "total_mass_kg": 4.064411,
+    "mass_basis": "Pinned open-source Zeroth/K-Scale inertials with sixteen 19.5 g point-mass deltas replacing assumed 55 g installed servos by 74.5 g STS3250 targets.",
+    "mass_gate": "SIMULATION_BASELINE_ONLY",
+    "as_built_mass_gate": "REQUIRES_FINAL_PRINTED_PARTS_ELECTRONICS_AND_HARNESS_MEASUREMENT"
+  },
+  "actuator": {
+    "target_model": "FEETECH STS3250-C001",
+    "supply_voltage_v": 12.0,
+    "rated_torque_nm": 1.569,
+    "stall_torque_nm": 4.903,
+    "urdf_effort_policy": "Use rated torque for sustained policy actions; do not train against stall torque as a continuous limit.",
+    "urdf_velocity_limit_rad_s": 3.0,
+    "no_load_speed_rad_s": 7.853982,
+    "mass_kg_each": 0.0745,
+    "encoder_counts_per_revolution": 4096,
+    "bus_id_status": "CANDIDATE_ONLY_REQUIRES_BUS_SCAN",
+    "direction_status": "REQUIRES_ONE_SERVO_AT_A_TIME_JOG",
+    "zero_status": "REQUIRES_MECHANICAL_ZERO_CALIBRATION"
+  },
+  "collision_validation": {
+    "engine": "MuJoCo 3.11.0",
+    "neutral_nonadjacent_contact_failures": 0,
+    "single_joint_samples_per_joint": 61,
+    "single_joint_gate": "PASS_16_OF_16",
+    "coordinated_pose_samples": 73,
+    "coordinated_motion_gate": "PASS",
+    "random_full_box_pose_samples": 1000,
+    "random_full_box_self_collision_poses": 117,
+    "random_full_box_semantics": "DIAGNOSTIC_ONLY",
+    "policy_requirement": "Keep self-collision penalties or termination; independent joint limits are not a globally collision-free Cartesian box."
+  },
+  "recommended_initial_domain_randomization": {
+    "note": "Engineering recommendation until as-built identification; not a measured distribution.",
+    "link_mass_scale": [0.85, 1.15],
+    "link_com_offset_m_each_axis": [-0.005, 0.005],
+    "principal_inertia_scale": [0.80, 1.20],
+    "motor_strength_scale": [0.75, 1.05],
+    "joint_damping_scale": [0.50, 1.50],
+    "ground_friction_coefficient": [0.5, 1.2],
+    "control_latency_s": [0.0, 0.02],
+    "encoder_zero_error_rad": [-0.017453293, 0.017453293]
+  },
+  "unresolved_physical_inputs": {
+    "battery": "LOCATION_AND_MASS_NOT_SIGNED_OFF_IN_PHYSICAL_MOUNT_V1",
+    "compute": "LOCATION_AND_MASS_NOT_SIGNED_OFF_IN_PHYSICAL_MOUNT_V1",
+    "display_camera_sensors": "OPTIONAL_EXTERIOR_PACKAGE_NOT_INCLUDED_IN_STRUCTURAL_SIGNOFF",
+    "wiring_harness": "MASS_AND_BEND_RADIUS_NOT_MEASURED",
+    "printed_material": "FINAL_DENSITY_AND_INFILL_NOT_FROZEN",
+    "sts3250_mount": "FULL_ROBOT_PRINT_HOLD_PENDING_FIRST_ARTICLE_GAUGE"
+  },
+  "training_readiness": {
+    "rigid_body_rl": "READY_WITH_DOMAIN_RANDOMIZATION",
+    "sim_to_real": "NOT_READY_UNTIL_HARDWARE_CALIBRATION_AND_AS_BUILT_SYSTEM_IDENTIFICATION",
+    "full_robot_print": "HOLD"
+  }
+}

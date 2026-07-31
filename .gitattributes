@@ -1,8 +1,8 @@
 * text=auto eol=lf
 *.gif binary
 *.png binary
+*.pdf binary
 *.SLDASM binary
 *.SLDPRT binary
 *.step binary
 *.stl binary
-source_assets/open_source_head/Poppy-eva-head-design/** -text -diff

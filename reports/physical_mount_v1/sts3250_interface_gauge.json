@@ -1,0 +1,83 @@
+{
+  "schema": "zeroth01.physical_mount_v1.sts3250_interface_gauge.v1",
+  "units": "mm",
+  "official_source": "FEETECH STS3250 product specification A/0 dated 2024-01-16",
+  "case_size": [
+    45.22,
+    24.72,
+    35.0
+  ],
+  "drawing_max_two_sided_depth": 36.5,
+  "shaft_center_from_short_end": 12.5,
+  "output": {
+    "front_spline": "25T, OD5.9, M3x6 retention screw",
+    "rear_envelope_diameter": 6.05
+  },
+  "mounting_face": {
+    "thread_callout": "4-M2.0",
+    "hole_centers_xy": [
+      [
+        -28.5,
+        -10.25
+      ],
+      [
+        -28.5,
+        10.25
+      ],
+      [
+        8.3,
+        -10.25
+      ],
+      [
+        8.3,
+        10.25
+      ]
+    ],
+    "transverse_pitch": 20.5,
+    "longitudinal_pitch": 36.8,
+    "gauge_clearance_diameter": 2.2,
+    "longitudinal_derivation": "45.22 mm case outline with 4.22/4.20 mm drawing edge offsets; verify against purchased actuator"
+  },
+  "artifacts": {
+    "servo_reference_step": "generated/cad/physical_mount_v1/sts3250_interface/FEETECH_STS3250_C001_DIMENSION_REFERENCE.step",
+    "gauge_step": "generated/cad/physical_mount_v1/sts3250_interface/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.step",
+    "gauge_stl": "generated/print/physical_mount_v1/first_article/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.stl"
+  },
+  "sha256": {
+    "servo_reference_step": "afe61a337e6667db8e8a92d4d698bf6833cbbf253253eeba4db56f25a6328970",
+    "gauge_step": "02b6339918cbb3ae6f37a8685d3ba4e1bb222ab1dc1e0292833b40953afd9230",
+    "gauge_stl": "b79ca3bf538fc25fcc4e49919d0607e1993bdcb8654e71f45e4283b618e40dfd"
+  },
+  "validation": {
+    "servo_reference_step_size_xyz": [
+      45.22,
+      24.720000199999998,
+      36.5
+    ],
+    "servo_reference_step_valid_brep": true,
+    "gauge_step_size_xyz": [
+      49.22,
+      28.72,
+      3.0
+    ],
+    "gauge_step_valid_brep": true,
+    "gauge_stl": {
+      "triangle_count": 2552,
+      "boundary_or_nonmanifold_edge_count": 0,
+      "bounds_mm": [
+        -34.720001220703125,
+        14.5,
+        -14.359999656677246,
+        14.359999656677246,
+        -1.5,
+        1.5
+      ],
+      "gate": "PASS"
+    }
+  },
+  "gate": {
+    "cad_generation": "PASS",
+    "full_robot_print_release": "HOLD",
+    "release_condition": "Print one gauge, bolt it to one purchased STS3250 using four M2 screws, verify the 25T horn and rear support, record actual hole centers/case depth, then update all source carriers."
+  }
+}

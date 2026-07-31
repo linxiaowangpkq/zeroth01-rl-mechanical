@@ -1,0 +1,550 @@
+{
+  "schema": "zeroth01.physical_mount_v1.servo_manifest.v1",
+  "servo_count": 16,
+  "servos": [
+    {
+      "id": "S01",
+      "joint": "right_shoulder_pitch",
+      "source_joint": "right_shoulder_pitch",
+      "owning_link": "3215_1Flange_2",
+      "source_mesh": "3215_1Flange_2.stl",
+      "region_id": 1,
+      "chain_role": "proximal servo body carried by the shoulder-pitch child link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S01_right_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4056,
+      "source_region_points": 2014,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "0ab617ab3f45d9369d6bf63d7de428ae3fc392e7e14d9ae3c241590714a355dd",
+      "output_sha256": "78b50e09ef4d09e21b0e62a67bb3fff62f34ca144fa18deeacbfd20bb671a51c",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S02",
+      "joint": "left_shoulder_pitch",
+      "source_joint": "left_shoulder_pitch",
+      "owning_link": "3215_1Flange",
+      "source_mesh": "3215_1Flange.stl",
+      "region_id": 1,
+      "chain_role": "proximal servo body carried by the shoulder-pitch child link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S02_left_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4052,
+      "source_region_points": 2012,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "7b6b03b4047961576d2edb3702af5d8cd9e817182e6687919ddffd985f004567",
+      "output_sha256": "11249af4c1173258a2e73d7de6f89a3e6d56db475396ad9bb80532736b9eb36d",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S03",
+      "joint": "right_shoulder_yaw",
+      "source_joint": "right_shoulder_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 11,
+      "chain_role": "torso-fixed shoulder-yaw servo body",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S03_right_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 994,
+      "source_region_points": 452,
+      "bounds_m": [
+        -0.066000246,
+        -0.020883502,
+        -0.00960999,
+        0.027789729,
+        -0.0218891,
+        0.005981851
+      ],
+      "center_m_in_owning_link": [
+        -0.043441874,
+        0.009089869,
+        -0.007953624
+      ],
+      "size_mm": [
+        45.116743,
+        37.399719,
+        27.870951
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "405959cb8cbab7b8a7d42a44a5e68dc0232388d579ac5c770beb290b418c59cb",
+      "output_sha256": "47bfd4aac4bf6f803303c85982d5e212da42a959aa238f320c9ac0489e48b508",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S04",
+      "joint": "right_hip_pitch",
+      "source_joint": "right_hip_pitch",
+      "owning_link": "3215_BothFlange_10",
+      "source_mesh": "3215_BothFlange_10.stl",
+      "region_id": 1,
+      "chain_role": "hip-pitch servo body carried by the hip-pitch child link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S04_right_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 7572,
+      "source_region_points": 3764,
+      "bounds_m": [
+        -0.010111286,
+        0.035111431,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500072,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222717,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "ec6b1764b7aa9daa277edd69279e3251ce28201b4329a6fd58f642802d73e8c7",
+      "output_sha256": "9264993aff08cd444a44d349b0aa0ba40dd79cedba3e2bbfbca6394084f879ca",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S05",
+      "joint": "left_hip_pitch",
+      "source_joint": "left_hip_pitch",
+      "owning_link": "3215_BothFlange_9",
+      "source_mesh": "3215_BothFlange_9.stl",
+      "region_id": 1,
+      "chain_role": "hip-pitch servo body carried by the hip-pitch child link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S05_left_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 7590,
+      "source_region_points": 3773,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "2cccf4fd8e69476260e6aceb891d6e17f22b21e0c0f358ef58961b1fe9120862",
+      "output_sha256": "6651fbc8521724ae1c0ec328c2607fec36762b6bfcd4bbbcf51f68ffe7c03c0b",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S06",
+      "joint": "left_shoulder_yaw",
+      "source_joint": "left_shoulder_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 17,
+      "chain_role": "torso-fixed shoulder-yaw servo body",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S06_left_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 984,
+      "source_region_points": 447,
+      "bounds_m": [
+        0.020883737,
+        0.066000298,
+        -0.009609988,
+        0.027664732,
+        -0.0218891,
+        0.005981851
+      ],
+      "center_m_in_owning_link": [
+        0.043442017,
+        0.009027372,
+        -0.007953624
+      ],
+      "size_mm": [
+        45.116561,
+        37.27472,
+        27.870951
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "405959cb8cbab7b8a7d42a44a5e68dc0232388d579ac5c770beb290b418c59cb",
+      "output_sha256": "155d1588f20a34d93d59f8c23b0296f217b2a419096439e9824a13dafa301f92",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S07",
+      "joint": "right_hip_yaw",
+      "source_joint": "right_hip_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 5,
+      "chain_role": "torso-fixed hip-yaw servo body",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S07_right_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 774,
+      "source_region_points": 365,
+      "bounds_m": [
+        -0.052873407,
+        -0.007756663,
+        -0.004626211,
+        0.020096365,
+        -0.121693149,
+        -0.084418431
+      ],
+      "center_m_in_owning_link": [
+        -0.030315035,
+        0.007735077,
+        -0.10305579
+      ],
+      "size_mm": [
+        45.116743,
+        24.722576,
+        37.274718
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "405959cb8cbab7b8a7d42a44a5e68dc0232388d579ac5c770beb290b418c59cb",
+      "output_sha256": "00ad02586dbe94c8537503476a1598542f14bbcd58332c8cb198040e1073597f",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S08",
+      "joint": "left_hip_yaw",
+      "source_joint": "left_hip_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "source_mesh": "Z_BOT2_MASTER_BODY_SKELETON.stl",
+      "region_id": 6,
+      "chain_role": "torso-fixed hip-yaw servo body",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S08_left_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 784,
+      "source_region_points": 370,
+      "bounds_m": [
+        0.007696751,
+        0.052813496,
+        -0.004626211,
+        0.020096365,
+        -0.121693149,
+        -0.084418431
+      ],
+      "center_m_in_owning_link": [
+        0.030255124,
+        0.007735077,
+        -0.10305579
+      ],
+      "size_mm": [
+        45.116745,
+        24.722576,
+        37.274718
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "405959cb8cbab7b8a7d42a44a5e68dc0232388d579ac5c770beb290b418c59cb",
+      "output_sha256": "e89c57a95eff1582b07c6e4b698202ebc8e3d53b939132231bc98a1f146cce6e",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S09",
+      "joint": "right_elbow_yaw",
+      "source_joint": "right_elbow",
+      "owning_link": "3215_1Flange_2",
+      "source_mesh": "3215_1Flange_2.stl",
+      "region_id": 0,
+      "chain_role": "distal elbow servo body carried by the upper-arm link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S09_right_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4844,
+      "source_region_points": 2400,
+      "bounds_m": [
+        0.057872325,
+        0.103095084,
+        -0.018799718,
+        0.018600002,
+        -0.030961664,
+        -0.006239086
+      ],
+      "center_m_in_owning_link": [
+        0.080483705,
+        -9.9858e-05,
+        -0.018600375
+      ],
+      "size_mm": [
+        45.222759,
+        37.39972,
+        24.722578
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "0ab617ab3f45d9369d6bf63d7de428ae3fc392e7e14d9ae3c241590714a355dd",
+      "output_sha256": "777b92d5dfe35ede688a2186a821399696b65e7adb8c6d4048c5391f868e74fe",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S10",
+      "joint": "left_elbow_yaw",
+      "source_joint": "left_elbow",
+      "owning_link": "3215_1Flange",
+      "source_mesh": "3215_1Flange.stl",
+      "region_id": 0,
+      "chain_role": "distal elbow servo body carried by the upper-arm link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S10_left_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4846,
+      "source_region_points": 2401,
+      "bounds_m": [
+        0.057872321,
+        0.103095077,
+        -0.018600004,
+        0.018799717,
+        -0.030961664,
+        -0.006239087
+      ],
+      "center_m_in_owning_link": [
+        0.080483699,
+        9.9856e-05,
+        -0.018600376
+      ],
+      "size_mm": [
+        45.222756,
+        37.39972,
+        24.722577
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "7b6b03b4047961576d2edb3702af5d8cd9e817182e6687919ddffd985f004567",
+      "output_sha256": "c94bb62302d7f701e7782eca49485b16e70775b73b3b1bccd27491ad841859fc",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S11",
+      "joint": "right_hip_roll",
+      "source_joint": "right_hip_roll",
+      "owning_link": "3215_BothFlange_6",
+      "source_mesh": "3215_BothFlange_6.stl",
+      "region_id": 1,
+      "chain_role": "hip-roll servo body carried by the hip-roll child link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S11_right_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 8900,
+      "source_region_points": 4428,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "21f00f20bfd4925abb59ada71a8704a0d44c66ae8e39154ab2d14cd2f3955e67",
+      "output_sha256": "d478e5af6644fce52b504aa29c1fc7267a06ac767e364562195cb33baae0eca5",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S12",
+      "joint": "left_hip_roll",
+      "source_joint": "left_hip_roll",
+      "owning_link": "3215_BothFlange_5",
+      "source_mesh": "3215_BothFlange_5.stl",
+      "region_id": 1,
+      "chain_role": "hip-roll servo body carried by the hip-roll child link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S12_left_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 8900,
+      "source_region_points": 4428,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.036599718,
+        0.000800001
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.017899859
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.399719
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "97568c164c6daae7d1598bb5b9c4843a3f6a34d4b498ac6cb5f762c59be8398f",
+      "output_sha256": "034db8e76390d2697e8ecdf0db482780e614ed7fcd743c86cb25f9d7a1634966",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S13",
+      "joint": "right_knee_pitch",
+      "source_joint": "right_knee",
+      "owning_link": "3215_BothFlange_14",
+      "source_mesh": "3215_BothFlange_14.stl",
+      "region_id": 1,
+      "chain_role": "proximal knee servo body carried by the lower-leg link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S13_right_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4498,
+      "source_region_points": 2227,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "797195b92821f85a83d4c9e335fae750b0baea982fe6fca96293b900deb7b67d",
+      "output_sha256": "38d04ece2818f12dd9646698843cd6104eca7732d28cced3d263bace11c1a5ff",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S14",
+      "joint": "left_knee_pitch",
+      "source_joint": "left_knee",
+      "owning_link": "3215_BothFlange_13",
+      "source_mesh": "3215_BothFlange_13.stl",
+      "region_id": 1,
+      "chain_role": "proximal knee servo body carried by the lower-leg link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S14_left_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4496,
+      "source_region_points": 2226,
+      "bounds_m": [
+        -0.010111286,
+        0.035111472,
+        -0.012361288,
+        0.012361288,
+        -0.03739972,
+        -0.0
+      ],
+      "center_m_in_owning_link": [
+        0.012500093,
+        0.0,
+        -0.01869986
+      ],
+      "size_mm": [
+        45.222758,
+        24.722576,
+        37.39972
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "558f7a5f7e94f4b9bb44e0237e8c99c0c8c6686ed068f59fc53f9ba7f34324e4",
+      "output_sha256": "068070e5e5696e8a276e470e8b715fe45de8b98682a089896d22fd34a57b1cf3",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S15",
+      "joint": "right_ankle_pitch",
+      "source_joint": "right_ankle",
+      "owning_link": "3215_BothFlange_14",
+      "source_mesh": "3215_BothFlange_14.stl",
+      "region_id": 0,
+      "chain_role": "distal ankle servo body carried by the lower-leg link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S15_right_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4500,
+      "source_region_points": 2228,
+      "bounds_m": [
+        0.064888529,
+        0.110111289,
+        -0.012361288,
+        0.012361291,
+        -0.037399717,
+        5e-09
+      ],
+      "center_m_in_owning_link": [
+        0.087499909,
+        1e-09,
+        -0.018699856
+      ],
+      "size_mm": [
+        45.222759,
+        24.722579,
+        37.399722
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "797195b92821f85a83d4c9e335fae750b0baea982fe6fca96293b900deb7b67d",
+      "output_sha256": "af5f4d28cbcb8a47ade8a072f1e663ba08c2f29dacf20125eedf66e1b08a3d82",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    },
+    {
+      "id": "S16",
+      "joint": "left_ankle_pitch",
+      "source_joint": "left_ankle",
+      "owning_link": "3215_BothFlange_13",
+      "source_mesh": "3215_BothFlange_13.stl",
+      "region_id": 0,
+      "chain_role": "distal ankle servo body carried by the lower-leg link",
+      "output_mesh": "generated/cad/physical_mount_v1/servos/S16_left_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+      "source_region_triangles": 4498,
+      "source_region_points": 2227,
+      "bounds_m": [
+        0.064888529,
+        0.110111289,
+        -0.012361288,
+        0.012361291,
+        -0.037599716,
+        -0.000199995
+      ],
+      "center_m_in_owning_link": [
+        0.087499909,
+        1e-09,
+        -0.018899856
+      ],
+      "size_mm": [
+        45.222759,
+        24.722579,
+        37.399721
+      ],
+      "family_envelope_gate": "PASS",
+      "source_sha256": "558f7a5f7e94f4b9bb44e0237e8c99c0c8c6686ed068f59fc53f9ba7f34324e4",
+      "output_sha256": "c5a840e2de40afa70aa26224600b18631c08196e6a98835351472c7591b46ff9",
+      "mounting_semantics": "EXTRACTED_IN_PLACE_FROM_ORIGINAL_ASSEMBLED_ZEROTH_LINK; NO_TRANSLATION_OR_HOUSING_PHASE_ADDED"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "zeroth01.physical_mount_v1.solidworks_gate.v1",
+  "solidworks_revision": "33.0.0",
+  "native_surface_part_count": 36,
+  "fixed_link_subassembly_count": 20,
+  "top_level_link_component_count": 20,
+  "blue_servo_part_count": 16,
+  "part_gate": "PASS",
+  "link_subassembly_gate": "PASS",
+  "top_level_transform_gate": "PASS",
+  "motion_gif_gate": "PASS",
+  "assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v1\\OPEN_FIRST_ZEROTH01_PHYSICAL_MOUNT_V1_16_BLUE_SERVOS.SLDASM",
+  "xray_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v1\\ZEROTH01_PHYSICAL_MOUNT_V1_16_BLUE_SERVOS_XRAY.SLDASM",
+  "motion_gif": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\snapshots\\solidworks\\physical_mount_v1\\solidworks_physical_mount_v1_16dof_motion.gif",
+  "claim_boundary": "Each link is a fixed SolidWorks subassembly containing its carrier surface part plus every extracted servo surface part at the original identity transform. The 20 rigid link subassemblies are moved by the URDF forward-kinematic transforms. Because upstream supplied triangulated STL rather than native B-Rep, this does not claim editable cylindrical-face mates or a native SOLIDWORKS Motion contact solution.",
+  "overall": "PASS"
+}
