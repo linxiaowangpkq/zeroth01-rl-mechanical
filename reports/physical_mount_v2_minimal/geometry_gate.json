@@ -1,0 +1,281 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.geometry_gate.v1",
+  "change_policy": "v1 base unchanged except head/chest/sole and complete claw removal",
+  "head_z_shift_mm": -55.0,
+  "part_rows": [
+    {
+      "part": "chest_panel",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "shallow_rounded_chest_front_panel",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 141.162444454276,
+      "bbox_y_mm": 8.775000100000234,
+      "bbox_z_mm": 100.18695407886204,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "head_front",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "rounded_head_front_clamshell",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 155.99874102733963,
+      "bbox_y_mm": 47.72381097922883,
+      "bbox_z_mm": 126.61859765002615,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "head_back",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "rounded_head_back_clamshell_with_ears",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 155.99874102732883,
+      "bbox_y_mm": 56.00000019999877,
+      "bbox_z_mm": 132.01286085479094,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "visor",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "display_front_panel",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 118.0,
+      "bbox_y_mm": 4.0,
+      "bbox_z_mm": 78.0,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "face_ui",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "screen_ui_reference",
+      "printable": false,
+      "step_solid_count": 2,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 66.0000002,
+      "bbox_y_mm": 1.6000002000005509,
+      "bbox_z_mm": 26.000000199999995,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "camera_window",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "visible_camera_and_tof_windows",
+      "printable": false,
+      "step_solid_count": 3,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 38.7,
+      "bbox_y_mm": 2.3999999999999986,
+      "bbox_z_mm": 12.400000000000006,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "camera_bracket",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "camera_m2p5_removable_bracket",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 38.0000002,
+      "bbox_y_mm": 19.000000200000002,
+      "bbox_z_mm": 25.5,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "display_module",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 105.5,
+      "bbox_y_mm": 8.0,
+      "bbox_z_mm": 67.19999999999999,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "camera_module",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 25.0,
+      "bbox_y_mm": 11.400000000000002,
+      "bbox_z_mm": 23.861999999999995,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "tof_module",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 12.0,
+      "bbox_y_mm": 3.0,
+      "bbox_z_mm": 10.0,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "compute_module",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 105.0,
+      "bbox_y_mm": 20.0,
+      "bbox_z_mm": 70.0,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "battery_pack",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 75.0,
+      "bbox_y_mm": 38.0,
+      "bbox_z_mm": 38.0,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "torso_imu",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 32.0,
+      "bbox_y_mm": 25.0,
+      "bbox_z_mm": 8.0,
+      "dimensional_note": "",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "left_q_hand",
+      "installed_link": "FINGER_1",
+      "classification": "complete_claw_link_replacement_twin_ear_m3_crossbolt",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 45.00000010000001,
+      "bbox_y_mm": 40.545891569664235,
+      "bbox_z_mm": 38.0000001,
+      "dimensional_note": "compact hand max<=48 mm; no old claw visual",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "right_q_hand",
+      "installed_link": "FINGER_1_2",
+      "classification": "complete_claw_link_replacement_twin_ear_m3_crossbolt",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 45.00000010000001,
+      "bbox_y_mm": 40.545891569664235,
+      "bbox_z_mm": 38.0000001,
+      "dimensional_note": "compact hand max<=48 mm; no old claw visual",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "left_sole",
+      "installed_link": "FOOT",
+      "classification": "replaceable_9mm_thickened_contact_sole",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 110.0,
+      "bbox_y_mm": 9.0,
+      "bbox_z_mm": 42.4,
+      "dimensional_note": "replaceable sole thickness=9 mm",
+      "geometry_gate": "PASS"
+    },
+    {
+      "part": "right_sole",
+      "installed_link": "FOOT_2",
+      "classification": "replaceable_9mm_thickened_contact_sole",
+      "printable": true,
+      "step_solid_count": 1,
+      "stl_boundary_or_nonmanifold_edges": 0,
+      "bbox_x_mm": 110.0,
+      "bbox_y_mm": 9.0,
+      "bbox_z_mm": 42.4,
+      "dimensional_note": "replaceable sole thickness=9 mm",
+      "geometry_gate": "PASS"
+    }
+  ],
+  "forearm_replacement_rows": [
+    {
+      "source": "generated/urdf/physical_mount_v1/meshes/skeleton/R_ARM_MIRROR_1.stl",
+      "replacement": "generated/cad/physical_mount_v2_minimal/replacements/R_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "source_volume_m3": 3.986329572415682e-05,
+      "replacement_volume_m3": 2.4922659445404773e-05,
+      "retained_volume_ratio": 0.6252031848511174,
+      "boundary_or_nonmanifold_edges": 0,
+      "gate": "PASS"
+    },
+    {
+      "source": "generated/urdf/physical_mount_v1/meshes/skeleton/L_ARM_MIRROR_1.stl",
+      "replacement": "generated/cad/physical_mount_v2_minimal/replacements/L_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "source_volume_m3": 3.9801338357513144e-05,
+      "replacement_volume_m3": 2.492265944540329e-05,
+      "retained_volume_ratio": 0.6261764170223872,
+      "boundary_or_nonmanifold_edges": 0,
+      "gate": "PASS"
+    }
+  ],
+  "static_part_interface_rows": [
+    {
+      "first_part": "head_front",
+      "second_part": "head_back",
+      "requirement": "0.45 mm clamshell seam",
+      "intersection_volume_mm3": 0.0,
+      "gate": "PASS"
+    },
+    {
+      "first_part": "head_front",
+      "second_part": "chest_panel",
+      "requirement": "0.60 mm zero-neck assembly seam",
+      "intersection_volume_mm3": 0.0,
+      "gate": "PASS"
+    },
+    {
+      "first_part": "head_back",
+      "second_part": "chest_panel",
+      "requirement": "0.60 mm zero-neck assembly seam",
+      "intersection_volume_mm3": 0.0,
+      "gate": "PASS"
+    }
+  ],
+  "retained_head_post_visibility": {
+    "source_post_half_width_mm": 40.37502780556679,
+    "source_post_base_z_mm": 13.981852680444717,
+    "head_shell_cover_z_at_post_edge_mm": 15.385646276619902,
+    "maximum_exposed_post_height_mm": 1.4037935961751842,
+    "requirement_mm": 5.0,
+    "gate": "PASS"
+  },
+  "overall": "PASS",
+  "claim_boundary": "Proves released STEP/STL topology, compact hand envelope, 9 mm sole thickness, watertight forearm claw trims, and non-overlapping head/chest seams. The retained head post is exposed by no more than 5 mm at its lateral edge. Dynamic inter-link clearance is separate."
+}

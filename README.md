@@ -1,25 +1,31 @@
-# Zeroth-01 Physical Mount V1
+# Zeroth-01 Physical Mount V2 Minimal
 
-This release replaces the superseded blue servo-envelope overlay with a
-source-derived 16-DoF mechanical chain.
+This release keeps the collision-validated 16-DoF Zeroth mechanism and only
+changes replaceable exterior/print parts: a directly nested rounded head,
+an 8.775 mm shallow chest panel, compact fixed Q-hands, and 9 mm soles.
 
-- 16 installed STS3215-family actuator regions are extracted in-place from
-  the pinned Zeroth/K-Scale assembled meshes.
-- 20 carrier parts and 16 blue actuator reference parts are delivered as 36
-  separate SolidWorks surface parts and 20 rigid link subassemblies.
-- Joint origins/axes come from the source URDF; all 16 shaft-to-case offsets
-  pass the nominal 12.5 mm audit.
-- MuJoCo passes neutral, 61 samples over each guarded joint range, and 73
-  coordinated motion poses with zero nonadjacent-link collision failures.
+- The retained source head post is exposed by **1.404 mm** (gate: <=5 mm).
+- There is no external neck component.
+- The native SolidWorks review assembly contains 51 components, including
+  16 separate blue source-installed servo parts and zero old claw parts.
 - The canonical RL model is
-  `generated/urdf/physical_mount_v1/zeroth01_physical_mount_v1.urdf`.
-- Full-robot 3D-print release remains **HOLD** until one purchased STS3250
-  passes the included 4×M2/horn/rear-axis first-article gauge.
+  `generated/urdf/physical_mount_v2_minimal/zeroth01_physical_mount_v2_minimal.urdf`.
+- `physical_mount_v2_minimal_rl_handoff.json` contains all joint limits,
+  link inertials, actuator metadata, electronics/sensor positions, optical
+  frames, sole contacts, validation evidence and domain-randomization ranges.
+- MuJoCo passes neutral, 61 samples per joint over all guarded ranges and 73
+  coordinated poses with zero non-adjacent-link collision failures.
 
-The installed blue parts are deliberately named
-`INSTALLED_STS3215_FAMILY_REFERENCE`; they are not misrepresented as exact
-vendor STS3250 B-Rep CAD. A separate dimension-controlled STS3250 reference
-STEP and first-article gauge are included.
+Run `python scripts/validate_minimal_v2_release.py` after cloning.
+The native SolidWorks Pack and Go package is flattened under
+`generated/solidworks/physical_mount_v2_minimal/portable_flat/`; open the
+`OPEN_FIRST_...XRAY.SLDASM` file there. It contains two assemblies and 51
+separate part files without development-machine path dependencies.
 
-Read [README_zh.md](README_zh.md) for the complete Chinese handoff, evidence,
-assembly order, known source asymmetries and RL claim boundaries.
+The blue parts are source STS3215-family installed geometry used as placement
+truth for the target FEETECH STS3250-C001. A purchased STS3250 must still pass
+the included 4xM2/horn/rear-axis first-article gauge. Full-robot printing and
+sim-to-real therefore remain on hold until first-article fit, wiring and
+as-built mass/inertia/calibration gates are complete.
+
+Read [README_zh.md](README_zh.md) for the complete Chinese handoff.

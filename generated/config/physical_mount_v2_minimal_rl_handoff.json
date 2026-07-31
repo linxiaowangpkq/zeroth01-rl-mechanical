@@ -1,0 +1,1565 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.rl_handoff.v1",
+  "canonical_urdf": "generated/urdf/physical_mount_v2_minimal/zeroth01_physical_mount_v2_minimal.urdf",
+  "actuator_config": "generated/config/physical_mount_v1_actuators.json",
+  "hardware_calibration_template": "generated/config/physical_mount_v1_hardware_calibration_template.csv",
+  "joint_limit_source": "config/physical_mount_v1_guarded_limits.json",
+  "printed_mass_properties": "generated/config/physical_mount_v2_minimal_mass_properties.json",
+  "coordinate_convention": {
+    "units": "m_kg_rad",
+    "robot_forward_axis": "-Y",
+    "robot_up_axis": "+Z",
+    "robot_left_axis": "+X",
+    "camera_optical_frame": "REP-103: +Z forward, +X image right, +Y image down"
+  },
+  "robot": {
+    "actuated_dof": 16,
+    "fixed_q_hands": 2,
+    "total_mass_kg": 5.216675047851401,
+    "nominal_printed_addon_mass_kg": 0.657425871529313,
+    "mass_basis": "Pinned Zeroth inertials upgraded to sixteen 74.5 g STS3250 targets, plus CAD-solid PETG/TPU exterior parts and nominal display/camera/ToF/compute/battery/IMU payload masses. Override with as-built measurements.",
+    "head_z_shift_mm": -55.0,
+    "maximum_exposed_source_head_post_mm": 1.4037935961751842,
+    "external_neck_component_count": 0,
+    "mass_gate": "SIMULATION_BASELINE_REQUIRES_AS_BUILT_OVERRIDE"
+  },
+  "actuator": {
+    "count": 16,
+    "target_model": "FEETECH STS3250-C001",
+    "supply_voltage_v": 12.0,
+    "rated_torque_nm": 1.569,
+    "stall_torque_nm": 4.903,
+    "continuous_policy_limit": "Use 1.569 N*m rated torque; never use 4.903 N*m stall torque as a sustained action limit.",
+    "urdf_velocity_limit_rad_s": 3.0,
+    "mass_kg_each": 0.0745,
+    "encoder_counts_per_revolution": 4096,
+    "mechanical_interface": {
+      "case_mm": [
+        45.22,
+        24.72,
+        35.0
+      ],
+      "shaft_offset_from_short_end_mm": 12.5,
+      "output": "dual 25T / OD 5.9 mm",
+      "output_retention": "M3x6",
+      "horn": "4xM3 on 14 mm PCD",
+      "case_mount": "4xM2 per STS3250 drawing"
+    },
+    "servo_rows": [
+      {
+        "id": "S01",
+        "joint": "right_shoulder_pitch",
+        "bus_id_candidate": 22,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.47123889,
+        "urdf_upper_rad": 0.47123889,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S01_right_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S02",
+        "joint": "left_shoulder_pitch",
+        "bus_id_candidate": 12,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.47123889,
+        "urdf_upper_rad": 0.47123889,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S02_left_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S03",
+        "joint": "right_shoulder_yaw",
+        "bus_id_candidate": 21,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.12,
+        "urdf_upper_rad": 0.12,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S03_right_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S04",
+        "joint": "right_hip_pitch",
+        "bus_id_candidate": 43,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.412327408,
+        "urdf_upper_rad": 0.027495556,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S04_right_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S05",
+        "joint": "left_hip_pitch",
+        "bus_id_candidate": 33,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.027495556,
+        "urdf_upper_rad": 0.412327408,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S05_left_hip_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S06",
+        "joint": "left_shoulder_yaw",
+        "bus_id_candidate": 11,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.12,
+        "urdf_upper_rad": 0.12,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S06_left_shoulder_yaw_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S07",
+        "joint": "right_hip_yaw",
+        "bus_id_candidate": 41,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.026179939,
+        "urdf_upper_rad": 0.322013241,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S07_right_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S08",
+        "joint": "left_hip_yaw",
+        "bus_id_candidate": 31,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.322013241,
+        "urdf_upper_rad": 0.026179939,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S08_left_hip_yaw_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S09",
+        "joint": "right_elbow_yaw",
+        "bus_id_candidate": 23,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.24,
+        "urdf_upper_rad": 0.34,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S09_right_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S10",
+        "joint": "left_elbow_yaw",
+        "bus_id_candidate": 13,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.34,
+        "urdf_upper_rad": 0.24,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S10_left_elbow_yaw_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S11",
+        "joint": "right_hip_roll",
+        "bus_id_candidate": 42,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.22,
+        "urdf_upper_rad": 0.06,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S11_right_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S12",
+        "joint": "left_hip_roll",
+        "bus_id_candidate": 32,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.06,
+        "urdf_upper_rad": 0.22,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S12_left_hip_roll_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S13",
+        "joint": "right_knee_pitch",
+        "bus_id_candidate": 44,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": 0.0,
+        "urdf_upper_rad": 0.83285928,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S13_right_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S14",
+        "joint": "left_knee_pitch",
+        "bus_id_candidate": 34,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.83285928,
+        "urdf_upper_rad": 0.0,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S14_left_knee_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S15",
+        "joint": "right_ankle_pitch",
+        "bus_id_candidate": 45,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": 0.0,
+        "urdf_upper_rad": 0.66415928,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S15_right_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      },
+      {
+        "id": "S16",
+        "joint": "left_ankle_pitch",
+        "bus_id_candidate": 35,
+        "bus_id_gate": "REQUIRES_PHYSICAL_BUS_SCAN",
+        "model": "FEETECH STS3250-C001",
+        "protocol": "TTL half-duplex serial",
+        "supply_voltage_v": 12.0,
+        "mass_kg": 0.0745,
+        "mass_tolerance_kg": 0.001,
+        "rated_torque_nm": 1.569,
+        "stall_torque_nm": 4.903,
+        "stall_current_a": 4.2,
+        "no_load_speed_rad_s": 7.853982,
+        "encoder_counts_per_revolution": 4096,
+        "neutral_count_candidate": 2048,
+        "neutral_count_gate": "REQUIRES_JOG_CALIBRATION",
+        "urdf_lower_rad": -0.66415928,
+        "urdf_upper_rad": 0.0,
+        "urdf_to_servo_direction_sign": "REQUIRES_JOG_CALIBRATION",
+        "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
+        "mounting_geometry": "generated/cad/physical_mount_v1/servos/S16_left_ankle_pitch_INSTALLED_STS3215_FAMILY.stl",
+        "mounting_geometry_semantics": "original installed STS3215-family geometry retained as the STS3250 form-factor placement reference"
+      }
+    ],
+    "fit_boundary": "Blue installed parts are source STS3215-family geometry; purchased STS3250 4xM2/horn/rear-axis first-article remains mandatory."
+  },
+  "joints": [
+    {
+      "name": "left_shoulder_yaw",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child_link": "Z_BOT2_MASTER_SHOULDER2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.12,
+      "upper_rad": 0.12,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_shoulder_yaw",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.12,
+      "upper_rad": 0.12,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_hip_yaw",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child_link": "U_HIP_L",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.322013241,
+      "upper_rad": 0.026179939,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_hip_yaw",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child_link": "U_HIP_R",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.026179939,
+      "upper_rad": 0.322013241,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_shoulder_pitch",
+      "parent_link": "Z_BOT2_MASTER_SHOULDER2",
+      "child_link": "3215_1Flange",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.47123889,
+      "upper_rad": 0.47123889,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_shoulder_pitch",
+      "parent_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "child_link": "3215_1Flange_2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.47123889,
+      "upper_rad": 0.47123889,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_hip_roll",
+      "parent_link": "U_HIP_L",
+      "child_link": "3215_BothFlange_5",
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "lower_rad": -0.06,
+      "upper_rad": 0.22,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_hip_roll",
+      "parent_link": "U_HIP_R",
+      "child_link": "3215_BothFlange_6",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.22,
+      "upper_rad": 0.06,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_hip_pitch",
+      "parent_link": "3215_BothFlange_5",
+      "child_link": "3215_BothFlange_9",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.027495556,
+      "upper_rad": 0.412327408,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_hip_pitch",
+      "parent_link": "3215_BothFlange_6",
+      "child_link": "3215_BothFlange_10",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.412327408,
+      "upper_rad": 0.027495556,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_elbow_yaw",
+      "parent_link": "3215_1Flange",
+      "child_link": "R_ARM_MIRROR_1",
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "lower_rad": -0.34,
+      "upper_rad": 0.24,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_elbow_yaw",
+      "parent_link": "3215_1Flange_2",
+      "child_link": "L_ARM_MIRROR_1",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.24,
+      "upper_rad": 0.34,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_knee_pitch",
+      "parent_link": "3215_BothFlange_9",
+      "child_link": "3215_BothFlange_13",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.83285928,
+      "upper_rad": 0.0,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_knee_pitch",
+      "parent_link": "3215_BothFlange_10",
+      "child_link": "3215_BothFlange_14",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": 0.0,
+      "upper_rad": 0.83285928,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "left_ankle_pitch",
+      "parent_link": "3215_BothFlange_13",
+      "child_link": "FOOT",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": -0.66415928,
+      "upper_rad": 0.0,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    },
+    {
+      "name": "right_ankle_pitch",
+      "parent_link": "3215_BothFlange_14",
+      "child_link": "FOOT_2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "lower_rad": 0.0,
+      "upper_rad": 0.66415928,
+      "effort_limit_nm": 1.569,
+      "velocity_limit_rad_s": 3.0,
+      "damping_nms_rad": 0.05,
+      "friction_nm": 0.02
+    }
+  ],
+  "link_inertials": [
+    {
+      "link": "floating_base_link",
+      "mass_kg": 0.001,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        1.57
+      ],
+      "inertia_kg_m2": {
+        "ixx": 1e-06,
+        "iyy": 1e-06,
+        "izz": 2e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "mass_kg": 2.08128681816,
+      "com_xyz_m": [
+        -0.000138846757947,
+        0.00663991526771,
+        -0.0128887822596
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00965850287287,
+        "iyy": 0.0105863104475,
+        "izz": 0.0041322636536,
+        "ixy": 8.99516022284e-06,
+        "ixz": 4.42806009014e-06,
+        "iyz": 0.000139172671532
+      }
+    },
+    {
+      "link": "IMU_2",
+      "mass_kg": 0.001887,
+      "com_xyz_m": [
+        -0.01,
+        -0.0075,
+        -0.001235
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 1e-06,
+        "iyy": 1e-06,
+        "izz": 1e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "Z_BOT2_MASTER_SHOULDER2",
+      "mass_kg": 0.024098,
+      "com_xyz_m": [
+        -0.012788,
+        0.001374,
+        0.0188
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 7e-06,
+        "iyy": 8e-06,
+        "izz": 3e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "mass_kg": 0.024098,
+      "com_xyz_m": [
+        -0.012788,
+        -0.001374,
+        0.0188
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 7e-06,
+        "iyy": 8e-06,
+        "izz": 3e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "U_HIP_L",
+      "mass_kg": 0.047132,
+      "com_xyz_m": [
+        -0.001161,
+        -0.004396,
+        0.035396
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.9e-05,
+        "iyy": 3e-05,
+        "izz": 1.9e-05,
+        "ixy": 4e-06,
+        "ixz": -8e-06,
+        "iyz": 4e-06
+      }
+    },
+    {
+      "link": "U_HIP_R",
+      "mass_kg": 0.047132,
+      "com_xyz_m": [
+        0.001161,
+        -0.004396,
+        0.035396
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.9e-05,
+        "iyy": 3e-05,
+        "izz": 1.9e-05,
+        "ixy": -4e-06,
+        "ixz": 8e-06,
+        "iyz": 4e-06
+      }
+    },
+    {
+      "link": "3215_1Flange",
+      "mass_kg": 0.22096,
+      "com_xyz_m": [
+        0.035910039,
+        0.000369504,
+        -0.019731273
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 5.40603881705e-05,
+        "iyy": 0.000278420773011,
+        "izz": 0.000282370252732,
+        "ixy": -3.90603419608e-06,
+        "ixz": 5.39224156677e-06,
+        "iyz": 1.62662161133e-08
+      }
+    },
+    {
+      "link": "3215_1Flange_2",
+      "mass_kg": 0.22096,
+      "com_xyz_m": [
+        0.03591004,
+        -0.000365387,
+        -0.01973539
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 5.40606868155e-05,
+        "iyy": 0.000278421205939,
+        "izz": 0.00028237013931,
+        "ixy": 3.90809936546e-06,
+        "ixz": 5.39017710271e-06,
+        "iyz": -1.61168662707e-08
+      }
+    },
+    {
+      "link": "3215_BothFlange_5",
+      "mass_kg": 0.087795,
+      "com_xyz_m": [
+        0.012369335,
+        -0.006998691,
+        -0.018372927
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.02334709171e-05,
+        "iyy": 2.40060385936e-05,
+        "izz": 2.62282895251e-05,
+        "ixy": -2.29404052853e-08,
+        "ixz": -1.55062809943e-09,
+        "iyz": -8.29957286182e-08
+      }
+    },
+    {
+      "link": "3215_BothFlange_6",
+      "mass_kg": 0.087795,
+      "com_xyz_m": [
+        0.012369335,
+        -0.006987801,
+        -0.018008423
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.02360271269e-05,
+        "iyy": 2.40124131158e-05,
+        "izz": 2.62244712127e-05,
+        "ixy": -2.29047083114e-08,
+        "ixz": 2.26640087161e-09,
+        "iyz": 1.2111794679e-07
+      }
+    },
+    {
+      "link": "3215_BothFlange_9",
+      "mass_kg": 0.162837,
+      "com_xyz_m": [
+        0.03993031,
+        -0.00251487,
+        -0.01854594
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.91406319862e-05,
+        "iyy": 0.000164668693387,
+        "izz": 0.000144808275708,
+        "ixy": 4.52817854056e-06,
+        "ixz": 1.9064692686e-06,
+        "iyz": 8.57512666356e-09
+      }
+    },
+    {
+      "link": "3215_BothFlange_10",
+      "mass_kg": 0.162837,
+      "com_xyz_m": [
+        0.039930308,
+        0.002520151,
+        -0.018556503
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.91411515206e-05,
+        "iyy": 0.00016466864629,
+        "izz": 0.000144808887271,
+        "ixy": -4.53138890797e-06,
+        "ixz": 1.9128878807e-06,
+        "iyz": -8.00341999223e-09
+      }
+    },
+    {
+      "link": "R_ARM_MIRROR_1",
+      "mass_kg": 0.144255794943,
+      "com_xyz_m": [
+        -0.051119,
+        0.00115,
+        -0.017743
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.72911356916e-05,
+        "iyy": 0.000169007665259,
+        "izz": 0.000155828168426,
+        "ixy": 1.62805549102e-05,
+        "ixz": 0.0,
+        "iyz": 1.55052903907e-06
+      }
+    },
+    {
+      "link": "L_ARM_MIRROR_1",
+      "mass_kg": 0.144364381376,
+      "com_xyz_m": [
+        0.001144,
+        0.051123,
+        0.017764
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.000169134883299,
+        "iyy": 4.73267334001e-05,
+        "izz": 0.000155945465794,
+        "ixy": -1.62928098591e-05,
+        "ixz": -1.55169617705e-06,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "3215_BothFlange_13",
+      "mass_kg": 0.167213,
+      "com_xyz_m": [
+        0.05,
+        0.0,
+        -0.018177354
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 3.50200999914e-05,
+        "iyy": 0.000208863580892,
+        "izz": 0.0001998434809,
+        "ixy": -7.31248220952e-13,
+        "ixz": 1.46246740485e-07,
+        "iyz": 1.40887876475e-14
+      }
+    },
+    {
+      "link": "3215_BothFlange_14",
+      "mass_kg": 0.167213,
+      "com_xyz_m": [
+        0.05,
+        0.0,
+        -0.018077354
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 3.6019710007e-05,
+        "iyy": 0.000209863190907,
+        "izz": 0.0001998434809,
+        "ixy": -7.31248220952e-13,
+        "ixz": -2.90071516923e-12,
+        "iyz": 1.21387876475e-14
+      }
+    },
+    {
+      "link": "FINGER_1",
+      "mass_kg": 0.0524515776116,
+      "com_xyz_m": [
+        -0.00360376159841,
+        -0.0289764983321,
+        0.0187733074107
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 9.13937886177e-06,
+        "iyy": 1.01537429173e-05,
+        "izz": 1.03001727025e-05,
+        "ixy": 6.29432154379e-09,
+        "ixz": -2.93027440479e-08,
+        "iyz": 1.32714367758e-09
+      }
+    },
+    {
+      "link": "FINGER_1_2",
+      "mass_kg": 0.0524515720908,
+      "com_xyz_m": [
+        -0.00360376014433,
+        0.0289764954733,
+        0.0187733080569
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 9.13937920696e-06,
+        "iyy": 1.01537414915e-05,
+        "izz": 1.03001720926e-05,
+        "ixy": -6.29628303645e-09,
+        "ixz": -2.93022796277e-08,
+        "iyz": -1.3288948673e-09
+      }
+    },
+    {
+      "link": "FOOT",
+      "mass_kg": 0.325953951835,
+      "com_xyz_m": [
+        -0.0152132475199,
+        0.0296341440691,
+        0.0179665535796
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 5.91389060114e-05,
+        "iyy": 0.000259514977397,
+        "izz": 0.000235264089357,
+        "ixy": 5.46138164474e-06,
+        "ixz": -1.88088725946e-07,
+        "iyz": 2.50206965697e-06
+      }
+    },
+    {
+      "link": "FOOT_2",
+      "mass_kg": 0.325953951835,
+      "com_xyz_m": [
+        -0.0152132475199,
+        -0.0296341440691,
+        0.0179665535796
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 5.91389060114e-05,
+        "iyy": 0.000259514977397,
+        "izz": 0.000235264089357,
+        "ixy": -5.46138164474e-06,
+        "ixz": -1.88088725946e-07,
+        "iyz": -2.50206965697e-06
+      }
+    },
+    {
+      "link": "display_module",
+      "mass_kg": 0.129,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.923328e-05,
+        "iyy": 0.0001681954675,
+        "izz": 0.0001203381875,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "camera_module",
+      "mass_kg": 0.004,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.33118348e-07,
+        "iyy": 3.98131681333e-07,
+        "izz": 2.51653333333e-07,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "tof_module",
+      "mass_kg": 0.002,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 1.81666666667e-08,
+        "iyy": 4.06666666667e-08,
+        "izz": 2.55e-08,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "torso_imu_module",
+      "mass_kg": 0.012,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 6.89e-07,
+        "iyy": 1.088e-06,
+        "izz": 1.649e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "compute_module",
+      "mass_kg": 0.18,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 7.95e-05,
+        "iyy": 0.000238875,
+        "izz": 0.000171375,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    {
+      "link": "battery_pack",
+      "mass_kg": 0.34,
+      "com_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "com_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 8.18266666667e-05,
+        "iyy": 0.000200288333333,
+        "izz": 0.000200288333333,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  ],
+  "electronics_and_sensors": {
+    "display_module": {
+      "source_name": "eye_display_module",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "center_xyz_m": [
+        0.0,
+        -0.043,
+        0.07
+      ],
+      "size_xyz_m": [
+        0.1055,
+        0.008,
+        0.0672
+      ],
+      "nominal_mass_kg": 0.129,
+      "mass_range_kg": [
+        0.11,
+        0.15
+      ],
+      "function": "Waveshare 4.3inch DSI QLED, 800x480 capacitive display",
+      "selection_status": true,
+      "confidence": "VENDOR_PRODUCT_SELECTION_AND_MASS; THICKNESS_ENVELOPE_ASSUMED; MOUNT_REQUIRES_PRINT_FIT_TEST",
+      "source_url": "https://www.waveshare.com/product/4.3inch-dsi-qled.htm"
+    },
+    "camera_module": {
+      "source_name": "camera_module",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "center_xyz_m": [
+        0.0,
+        -0.033,
+        0.105
+      ],
+      "size_xyz_m": [
+        0.025,
+        0.0114,
+        0.023862
+      ],
+      "nominal_mass_kg": 0.004,
+      "mass_range_kg": [
+        0.0035,
+        0.0045
+      ],
+      "function": "Raspberry Pi Camera Module 3 Wide, IMX708 autofocus, 120 degree diagonal FoV",
+      "selection_status": true,
+      "confidence": "VENDOR_DIMENSIONS_AND_EXACT_STEP",
+      "source_url": "https://www.raspberrypi.com/products/camera-module-3/"
+    },
+    "tof_module": {
+      "source_name": "tof_module",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "center_xyz_m": [
+        0.029,
+        -0.038,
+        0.108
+      ],
+      "size_xyz_m": [
+        0.012,
+        0.003,
+        0.01
+      ],
+      "nominal_mass_kg": 0.002,
+      "mass_range_kg": [
+        0.001,
+        0.004
+      ],
+      "function": "ST VL53L5CX 8x8 multi-zone ToF on a custom 12x10 mm carrier",
+      "selection_status": "SENSOR_SELECTED_CARRIER_PCB_NOT_YET_ROUTED",
+      "confidence": "SENSOR_EXACT_CARRIER_ENVELOPE_ASSUMED",
+      "source_url": "https://www.st.com/en/imaging-and-photonics-solutions/vl53l5cx.html"
+    },
+    "torso_imu_module": {
+      "source_name": "imu_module",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "center_xyz_m": [
+        0.0,
+        0.012,
+        0.018
+      ],
+      "size_xyz_m": [
+        0.032,
+        0.025,
+        0.008
+      ],
+      "nominal_mass_kg": 0.012,
+      "mass_range_kg": [
+        0.005,
+        0.025
+      ],
+      "function": "6-axis torso IMU envelope",
+      "selection_status": false,
+      "confidence": "ASSUMED_FOR_RL",
+      "source_url": null
+    },
+    "compute_module": {
+      "source_name": "compute_module",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "center_xyz_m": [
+        0.0,
+        0.042,
+        -0.002
+      ],
+      "size_xyz_m": [
+        0.105,
+        0.02,
+        0.07
+      ],
+      "nominal_mass_kg": 0.18,
+      "mass_range_kg": [
+        0.1,
+        0.3
+      ],
+      "function": "generic SBC, carrier, regulator and mounting tray envelope",
+      "selection_status": false,
+      "confidence": "ASSUMED_FOR_RL",
+      "source_url": null
+    },
+    "battery_pack": {
+      "source_name": "battery_pack",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "center_xyz_m": [
+        0.0,
+        0.028,
+        -0.052
+      ],
+      "size_xyz_m": [
+        0.075,
+        0.038,
+        0.038
+      ],
+      "nominal_mass_kg": 0.34,
+      "mass_range_kg": [
+        0.28,
+        0.45
+      ],
+      "function": "3S2P 18650 plus BMS packaging envelope; cell and BMS selection not frozen",
+      "selection_status": false,
+      "confidence": "ASSUMED_FOR_RL",
+      "source_url": null
+    }
+  },
+  "optical_frames": {
+    "camera_optical_frame": {
+      "parent_link": "camera_module",
+      "xyz_m": [
+        0.0,
+        -0.0295,
+        0.006
+      ],
+      "rpy_rad": [
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "tof_optical_frame": {
+      "parent_link": "tof_module",
+      "xyz_m": [
+        0.0,
+        -0.0245,
+        0.003
+      ],
+      "rpy_rad": [
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ]
+    }
+  },
+  "sole_contact_frames": {
+    "left_sole_front_contact": {
+      "parent_link": "FOOT",
+      "xyz_m": [
+        0.032,
+        0.0446,
+        0.01695
+      ]
+    },
+    "left_sole_rear_contact": {
+      "parent_link": "FOOT",
+      "xyz_m": [
+        -0.045,
+        0.0446,
+        0.01695
+      ]
+    },
+    "right_sole_front_contact": {
+      "parent_link": "FOOT_2",
+      "xyz_m": [
+        0.032,
+        -0.0446,
+        -0.01695
+      ]
+    },
+    "right_sole_rear_contact": {
+      "parent_link": "FOOT_2",
+      "xyz_m": [
+        -0.045,
+        -0.0446,
+        -0.01695
+      ]
+    }
+  },
+  "validation": {
+    "geometry_gate": "PASS",
+    "head_post_visibility_gate": {
+      "source_post_half_width_mm": 40.37502780556679,
+      "source_post_base_z_mm": 13.981852680444717,
+      "head_shell_cover_z_at_post_edge_mm": 15.385646276619902,
+      "maximum_exposed_post_height_mm": 1.4037935961751842,
+      "requirement_mm": 5.0,
+      "gate": "PASS"
+    },
+    "solidworks_gate": "PASS",
+    "solidworks_component_count": 51,
+    "solidworks_separate_blue_servo_count": 16,
+    "solidworks_portable_open_gate": "PASS",
+    "solidworks_portable_resolved_components": 51,
+    "mujoco_version": "3.11.0",
+    "neutral_nonadjacent_failures": 0,
+    "single_joint_samples_per_joint": 61,
+    "single_joint_gate": "PASS_16_OF_16",
+    "coordinated_pose_samples": 73,
+    "coordinated_motion_failures": 0,
+    "random_full_box_semantics": "DIAGNOSTIC_ONLY: independent uniform sampling of the full 16-D joint-limit Cartesian product intentionally includes physically self-colliding humanoid poses and is not a pass/fail gate.",
+    "claim_boundary": "PASS demonstrates no MuJoCo-detected collision between nonadjacent rigid links at neutral, across the sampled full guarded range of every individual joint, and across the coordinated multi-joint motion used for the review GIF. The independent 16-D random-box sample is diagnostic because a humanoid's Cartesian product of joint limits necessarily contains self-colliding poses. PASS does not certify continuous configuration space, cable bend radius, fastener strength or manufacturing tolerance."
+  },
+  "recommended_initial_domain_randomization": {
+    "note": "Engineering ranges until the assembled robot is weighed and system-identified.",
+    "link_mass_scale": [
+      0.8,
+      1.2
+    ],
+    "link_com_offset_m_each_axis": [
+      -0.0075,
+      0.0075
+    ],
+    "principal_inertia_scale": [
+      0.75,
+      1.25
+    ],
+    "motor_strength_scale": [
+      0.7,
+      1.05
+    ],
+    "joint_damping_scale": [
+      0.5,
+      1.5
+    ],
+    "ground_friction_coefficient": [
+      0.5,
+      1.2
+    ],
+    "control_latency_s": [
+      0.0,
+      0.025
+    ],
+    "encoder_zero_error_rad": [
+      -0.017453293,
+      0.017453293
+    ]
+  },
+  "required_hardware_overrides": [
+    "Run a one-servo-at-a-time bus scan, direction jog and mechanical-zero calibration.",
+    "Print and test the STS3250 4xM2/horn/rear-axis first-article gauge before a full robot print.",
+    "Freeze exact cells/BMS/SBC/regulator/IMU/connectors and weigh every installed module.",
+    "Measure assembled link mass, center of mass and principal inertia; regenerate this URDF.",
+    "Calibrate camera intrinsics/extrinsics, ToF extrinsics and torso IMU orientation/bias/noise/latency.",
+    "Route and weigh the harness and verify cable bend radius over the guarded joint motion."
+  ],
+  "training_readiness": {
+    "rigid_body_rl": "READY_WITH_DOMAIN_RANDOMIZATION",
+    "sts3250_feasibility_simulation": "READY_AT_RATED_TORQUE_WITH_THERMAL_AND_VOLTAGE_MARGIN_LOGGING",
+    "sim_to_real": "HOLD_UNTIL_CALIBRATION_FIRST_ARTICLE_AND_AS_BUILT_IDENTIFICATION",
+    "full_robot_print": "HOLD_PENDING_STS3250_FIRST_ARTICLE_AND_ONE_HEAD_WRIST_SOLE_FIT_SET"
+  }
+}

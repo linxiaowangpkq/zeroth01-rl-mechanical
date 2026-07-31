@@ -1,0 +1,18 @@
+﻿part,installed_link,classification,printable,step_solid_count,stl_boundary_or_nonmanifold_edges,bbox_x_mm,bbox_y_mm,bbox_z_mm,dimensional_note,geometry_gate
+chest_panel,Z_BOT2_MASTER_BODY_SKELETON,shallow_rounded_chest_front_panel,True,1,0,141.162444454276,8.775000100000234,100.18695407886204,,PASS
+head_front,Z_BOT2_MASTER_BODY_SKELETON,rounded_head_front_clamshell,True,1,0,155.99874102733963,47.72381097922883,126.61859765002615,,PASS
+head_back,Z_BOT2_MASTER_BODY_SKELETON,rounded_head_back_clamshell_with_ears,True,1,0,155.99874102732883,56.00000019999877,132.01286085479094,,PASS
+visor,Z_BOT2_MASTER_BODY_SKELETON,display_front_panel,True,1,0,118.0,4.0,78.0,,PASS
+face_ui,Z_BOT2_MASTER_BODY_SKELETON,screen_ui_reference,False,2,0,66.0000002,1.6000002000005509,26.000000199999995,,PASS
+camera_window,Z_BOT2_MASTER_BODY_SKELETON,visible_camera_and_tof_windows,False,3,0,38.7,2.3999999999999986,12.400000000000006,,PASS
+camera_bracket,Z_BOT2_MASTER_BODY_SKELETON,camera_m2p5_removable_bracket,True,1,0,38.0000002,19.000000200000002,25.5,,PASS
+display_module,Z_BOT2_MASTER_BODY_SKELETON,internal_payload_controlled_envelope,False,1,0,105.5,8.0,67.19999999999999,,PASS
+camera_module,Z_BOT2_MASTER_BODY_SKELETON,internal_payload_controlled_envelope,False,1,0,25.0,11.400000000000002,23.861999999999995,,PASS
+tof_module,Z_BOT2_MASTER_BODY_SKELETON,internal_payload_controlled_envelope,False,1,0,12.0,3.0,10.0,,PASS
+compute_module,Z_BOT2_MASTER_BODY_SKELETON,internal_payload_controlled_envelope,False,1,0,105.0,20.0,70.0,,PASS
+battery_pack,Z_BOT2_MASTER_BODY_SKELETON,internal_payload_controlled_envelope,False,1,0,75.0,38.0,38.0,,PASS
+torso_imu,Z_BOT2_MASTER_BODY_SKELETON,internal_payload_controlled_envelope,False,1,0,32.0,25.0,8.0,,PASS
+left_q_hand,FINGER_1,complete_claw_link_replacement_twin_ear_m3_crossbolt,True,1,0,45.00000010000001,40.545891569664235,38.0000001,compact hand max<=48 mm; no old claw visual,PASS
+right_q_hand,FINGER_1_2,complete_claw_link_replacement_twin_ear_m3_crossbolt,True,1,0,45.00000010000001,40.545891569664235,38.0000001,compact hand max<=48 mm; no old claw visual,PASS
+left_sole,FOOT,replaceable_9mm_thickened_contact_sole,True,1,0,110.0,9.0,42.4,replaceable sole thickness=9 mm,PASS
+right_sole,FOOT_2,replaceable_9mm_thickened_contact_sole,True,1,0,110.0,9.0,42.4,replaceable sole thickness=9 mm,PASS

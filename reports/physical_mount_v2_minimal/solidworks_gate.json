@@ -1,0 +1,33 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.solidworks_gate.v1",
+  "solidworks_revision": "33.0.0",
+  "open_first_xray_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v2_minimal\\OPEN_FIRST_ZEROTH01_PHYSICAL_MOUNT_V2_MINIMAL_16_BLUE_SERVOS_XRAY.SLDASM",
+  "normal_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v2_minimal\\ZEROTH01_PHYSICAL_MOUNT_V2_MINIMAL_WHITE_NORMAL.SLDASM",
+  "normal_save_code": 0,
+  "xray_save_code": 0,
+  "component_count": 51,
+  "expected_component_count": 51,
+  "carrier_component_count": 20,
+  "separate_blue_source_servo_component_count": 16,
+  "old_claw_component_count": 0,
+  "replacement_q_hand_component_count": 2,
+  "external_neck_component_count": 0,
+  "head_z_shift_mm": -55.0,
+  "geometry_gate": "PASS",
+  "mujoco_collision_gate": "PASS",
+  "component_transform_gate": "PASS",
+  "normal_view_gate": "PASS",
+  "xray_view_gate": "PASS",
+  "motion_gif": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\snapshots\\solidworks\\physical_mount_v2_minimal\\solidworks_physical_mount_v2_minimal_16dof_motion.gif",
+  "motion_gif_gate": "PASS",
+  "normal_snapshots": {
+    "front": true,
+    "isometric": true
+  },
+  "xray_snapshots": {
+    "front": true,
+    "isometric": true
+  },
+  "claim_boundary": "The 16 blue parts are the source extracted installed servo bodies at their original owning-link coordinates. CLI forward kinematics drives native SolidWorks component transforms; MuJoCo supplies the sampled collision gate. This is not a SOLIDWORKS Motion contact solve, and exact STS3250 first-article hole/horn fit remains required.",
+  "overall": "PASS"
+}

@@ -1,0 +1,648 @@
+{
+  "schema": "zeroth01.physical_mount_v1.kinematic_mount_audit.v1",
+  "source": "servo bodies extracted in place from the original Zeroth-01 assembled link meshes; joint frames retained from source URDF",
+  "servo_count": 16,
+  "mirror_pair_count": 8,
+  "expected_sts32xx_shaft_to_case_center_offset_mm": 12.5,
+  "shaft_offset_tolerance_mm": 1.0,
+  "mirror_joint_origin_tolerance_mm": 0.75,
+  "mirror_transverse_housing_tolerance_mm": 0.75,
+  "mirror_axis_angle_tolerance_deg": 0.1,
+  "mirror_size_tolerance_mm": 0.75,
+  "axis_alignment_gate": "PASS",
+  "strict_left_right_symmetry_gate": "FAIL",
+  "overall_mount_provenance_gate": "PASS",
+  "overall_status": "PASS_WITH_SOURCE_ASYMMETRY_REVIEW",
+  "servos": [
+    {
+      "row_type": "servo_axis",
+      "id": "S01",
+      "joint": "right_shoulder_pitch",
+      "owning_link": "3215_1Flange_2",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "Z_BOT2_MASTER_SHOULDER2_2",
+      "joint_child": "3215_1Flange_2",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S02",
+      "joint": "left_shoulder_pitch",
+      "owning_link": "3215_1Flange",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "Z_BOT2_MASTER_SHOULDER2",
+      "joint_child": "3215_1Flange",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S03",
+      "joint": "right_shoulder_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "joint_child": "Z_BOT2_MASTER_SHOULDER2_2",
+      "shaft_center_offset_mm": 12.651467,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 0.151467,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S04",
+      "joint": "right_hip_pitch",
+      "owning_link": "3215_BothFlange_10",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "3215_BothFlange_6",
+      "joint_child": "3215_BothFlange_10",
+      "shaft_center_offset_mm": 12.500072,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 7.2e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S05",
+      "joint": "left_hip_pitch",
+      "owning_link": "3215_BothFlange_9",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "3215_BothFlange_5",
+      "joint_child": "3215_BothFlange_9",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S06",
+      "joint": "left_shoulder_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "joint_child": "Z_BOT2_MASTER_SHOULDER2",
+      "shaft_center_offset_mm": 12.651332,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 0.151332,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S07",
+      "joint": "right_hip_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "joint_child": "U_HIP_R",
+      "shaft_center_offset_mm": 12.552965,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 0.052965,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S08",
+      "joint": "left_hip_yaw",
+      "owning_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "joint_child": "U_HIP_L",
+      "shaft_center_offset_mm": 12.552876,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 0.052876,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S09",
+      "joint": "right_elbow_yaw",
+      "owning_link": "3215_1Flange_2",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "3215_1Flange_2",
+      "joint_child": "L_ARM_MIRROR_1",
+      "shaft_center_offset_mm": 12.500289,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 0.000289,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S10",
+      "joint": "left_elbow_yaw",
+      "owning_link": "3215_1Flange",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "3215_1Flange",
+      "joint_child": "R_ARM_MIRROR_1",
+      "shaft_center_offset_mm": 12.500308,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 0.000308,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S11",
+      "joint": "right_hip_roll",
+      "owning_link": "3215_BothFlange_6",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "U_HIP_R",
+      "joint_child": "3215_BothFlange_6",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S12",
+      "joint": "left_hip_roll",
+      "owning_link": "3215_BothFlange_5",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "U_HIP_L",
+      "joint_child": "3215_BothFlange_5",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S13",
+      "joint": "right_knee_pitch",
+      "owning_link": "3215_BothFlange_14",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "3215_BothFlange_10",
+      "joint_child": "3215_BothFlange_14",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S14",
+      "joint": "left_knee_pitch",
+      "owning_link": "3215_BothFlange_13",
+      "servo_body_side_of_joint": "child",
+      "joint_parent": "3215_BothFlange_9",
+      "joint_child": "3215_BothFlange_13",
+      "shaft_center_offset_mm": 12.500093,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.3e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S15",
+      "joint": "right_ankle_pitch",
+      "owning_link": "3215_BothFlange_14",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "3215_BothFlange_14",
+      "joint_child": "FOOT_2",
+      "shaft_center_offset_mm": 12.500084,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 8.4e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    },
+    {
+      "row_type": "servo_axis",
+      "id": "S16",
+      "joint": "left_ankle_pitch",
+      "owning_link": "3215_BothFlange_13",
+      "servo_body_side_of_joint": "parent",
+      "joint_parent": "3215_BothFlange_13",
+      "joint_child": "FOOT",
+      "shaft_center_offset_mm": 12.500098,
+      "expected_offset_mm": 12.5,
+      "offset_error_mm": 9.8e-05,
+      "carrier_mesh_present": true,
+      "gate": "PASS"
+    }
+  ],
+  "mirror_pairs": [
+    {
+      "row_type": "mirror_pair",
+      "pair": "shoulder_pitch",
+      "right_id": "S01",
+      "left_id": "S02",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        -0.008251189,
+        -0.076833454,
+        -0.014427994
+      ],
+      "left_joint_origin_world_m": [
+        -0.008128802,
+        0.076846504,
+        -0.014427994
+      ],
+      "right_joint_axis_world": [
+        0.000796,
+        0.999999683,
+        3.27e-07
+      ],
+      "left_joint_axis_world": [
+        -0.000797,
+        -0.999999682,
+        3.27e-07
+      ],
+      "right_world_center_m": [
+        -0.008266078,
+        -0.095533304,
+        -0.026928093
+      ],
+      "left_world_center_m": [
+        -0.008113902,
+        0.095546354,
+        -0.026928093
+      ],
+      "mirror_residual_mm": [
+        0.152176,
+        0.01305,
+        0.0
+      ],
+      "housing_center_mirror_error_mm": 0.152734,
+      "housing_axial_offset_mm": 0.012929,
+      "housing_transverse_mirror_error_mm": 0.152186,
+      "joint_origin_mirror_error_mm": 0.123081,
+      "joint_axis_line_mirror_error_mm": 0.122397,
+      "joint_axis_mirror_angle_error_deg": 0.091272177,
+      "max_sorted_size_error_mm": 0.0,
+      "strict_symmetry_gate": "PASS"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "shoulder_yaw",
+      "right_id": "S03",
+      "left_id": "S06",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        0.010565406,
+        -0.056003431,
+        -0.009528
+      ],
+      "left_joint_origin_world_m": [
+        0.010654587,
+        0.055986533,
+        -0.009528
+      ],
+      "right_joint_axis_world": [
+        -0.999999683,
+        0.000796327,
+        3.27e-07
+      ],
+      "left_joint_axis_world": [
+        -0.999999683,
+        0.000796673,
+        3.27e-07
+      ],
+      "right_world_center_m": [
+        -0.00912446,
+        -0.043434622,
+        -0.007953624
+      ],
+      "left_world_center_m": [
+        -0.008992775,
+        0.043449192,
+        -0.007953624
+      ],
+      "mirror_residual_mm": [
+        0.131685,
+        0.01457,
+        0.0
+      ],
+      "housing_center_mirror_error_mm": 0.132489,
+      "housing_axial_offset_mm": 0.131697,
+      "housing_transverse_mirror_error_mm": 0.014465,
+      "joint_origin_mirror_error_mm": 0.090767,
+      "joint_axis_line_mirror_error_mm": 0.016969,
+      "joint_axis_mirror_angle_error_deg": 0.091272177,
+      "max_sorted_size_error_mm": 0.124999,
+      "strict_symmetry_gate": "PASS"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "hip_pitch",
+      "right_id": "S04",
+      "left_id": "S05",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        -0.008974206,
+        -0.049260876,
+        -0.171817994
+      ],
+      "left_joint_origin_world_m": [
+        -0.007495773,
+        0.049213985,
+        -0.171817994
+      ],
+      "right_joint_axis_world": [
+        -0.000795307,
+        -0.999999684,
+        -3.27e-07
+      ],
+      "left_joint_axis_world": [
+        0.000795654,
+        0.999999683,
+        -3.27e-07
+      ],
+      "right_world_center_m": [
+        -0.008959334,
+        -0.030561018,
+        -0.18431806
+      ],
+      "left_world_center_m": [
+        -0.007510643,
+        0.030514127,
+        -0.184318081
+      ],
+      "mirror_residual_mm": [
+        1.44869,
+        -0.046891,
+        -2.1e-05
+      ],
+      "housing_center_mirror_error_mm": 1.449449,
+      "housing_axial_offset_mm": 0.048044,
+      "housing_transverse_mirror_error_mm": 1.448653,
+      "joint_origin_mirror_error_mm": 1.479176,
+      "joint_axis_line_mirror_error_mm": 1.478395,
+      "joint_axis_mirror_angle_error_deg": 0.091155337,
+      "max_sorted_size_error_mm": 4.1e-05,
+      "strict_symmetry_gate": "REVIEW"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "hip_yaw",
+      "right_id": "S07",
+      "left_id": "S08",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        -0.007769134,
+        -0.042861827,
+        -0.083418
+      ],
+      "left_joint_origin_world_m": [
+        -0.007700908,
+        0.042814146,
+        -0.083418
+      ],
+      "right_joint_axis_world": [
+        3.46e-07,
+        -0.0,
+        -1.0
+      ],
+      "left_joint_axis_world": [
+        3.46e-07,
+        -0.0,
+        -1.0
+      ],
+      "right_world_center_m": [
+        -0.007759215,
+        -0.030308866,
+        -0.10305579
+      ],
+      "left_world_center_m": [
+        -0.007710982,
+        0.030261274,
+        -0.10305579
+      ],
+      "mirror_residual_mm": [
+        0.048234,
+        -0.047592,
+        0.0
+      ],
+      "housing_center_mirror_error_mm": 0.06776,
+      "housing_axial_offset_mm": 0.0,
+      "housing_transverse_mirror_error_mm": 0.06776,
+      "joint_origin_mirror_error_mm": 0.083236,
+      "joint_axis_line_mirror_error_mm": 0.083236,
+      "joint_axis_mirror_angle_error_deg": 0.0,
+      "max_sorted_size_error_mm": 2e-06,
+      "strict_symmetry_gate": "PASS"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "elbow_yaw",
+      "right_id": "S09",
+      "left_id": "S10",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        0.011533969,
+        -0.095449178,
+        -0.107412006
+      ],
+      "left_joint_origin_world_m": [
+        0.011685985,
+        0.095430687,
+        -0.107412006
+      ],
+      "right_joint_axis_world": [
+        -0.999999683,
+        0.000796,
+        6.54e-07
+      ],
+      "left_joint_axis_world": [
+        -0.999999682,
+        0.000797327,
+        -2e-08
+      ],
+      "right_world_center_m": [
+        -0.008166163,
+        -0.095433876,
+        -0.094911705
+      ],
+      "left_world_center_m": [
+        -0.008014148,
+        0.095446768,
+        -0.094911699
+      ],
+      "mirror_residual_mm": [
+        0.152015,
+        0.012892,
+        6e-06
+      ],
+      "housing_center_mirror_error_mm": 0.152561,
+      "housing_axial_offset_mm": 0.152025,
+      "housing_transverse_mirror_error_mm": 0.012771,
+      "joint_origin_mirror_error_mm": 0.153137,
+      "joint_axis_line_mirror_error_mm": 0.018612,
+      "joint_axis_mirror_angle_error_deg": 0.091290909,
+      "max_sorted_size_error_mm": 3e-06,
+      "strict_symmetry_gate": "PASS"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "hip_roll",
+      "right_id": "S11",
+      "left_id": "S12",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        0.009930879,
+        -0.042875916,
+        -0.139817994
+      ],
+      "left_joint_origin_world_m": [
+        -0.025400883,
+        0.042828235,
+        -0.139818006
+      ],
+      "right_joint_axis_world": [
+        0.999999683,
+        -0.000795634,
+        2e-08
+      ],
+      "left_joint_axis_world": [
+        0.999999683,
+        -0.00079598,
+        6.73e-07
+      ],
+      "right_world_center_m": [
+        -0.008759029,
+        -0.030360948,
+        -0.139817994
+      ],
+      "left_world_center_m": [
+        -0.00751098,
+        0.030313898,
+        -0.139817994
+      ],
+      "mirror_residual_mm": [
+        1.248049,
+        -0.047051,
+        0.0
+      ],
+      "housing_center_mirror_error_mm": 1.248936,
+      "housing_axial_offset_mm": 1.248012,
+      "housing_transverse_mirror_error_mm": 0.048044,
+      "joint_origin_mirror_error_mm": 35.331795,
+      "joint_axis_line_mirror_error_mm": 0.01957,
+      "joint_axis_mirror_angle_error_deg": 0.091192793,
+      "max_sorted_size_error_mm": 1e-06,
+      "strict_symmetry_gate": "PASS"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "knee_pitch",
+      "right_id": "S13",
+      "left_id": "S14",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        -0.018973199,
+        -0.047992891,
+        -0.271817994
+      ],
+      "left_joint_origin_world_m": [
+        -0.017496705,
+        0.047961909,
+        -0.271818
+      ],
+      "right_joint_axis_world": [
+        -0.000795307,
+        -0.999999684,
+        -3.27e-07
+      ],
+      "left_joint_axis_world": [
+        0.000795654,
+        0.999999683,
+        -3.27e-07
+      ],
+      "right_world_center_m": [
+        -0.018958326,
+        -0.029293033,
+        -0.284318081
+      ],
+      "left_world_center_m": [
+        -0.017511575,
+        0.029262051,
+        -0.284318087
+      ],
+      "mirror_residual_mm": [
+        1.446751,
+        -0.030982,
+        -6e-06
+      ],
+      "housing_center_mirror_error_mm": 1.447083,
+      "housing_axial_offset_mm": 0.032132,
+      "housing_transverse_mirror_error_mm": 1.446726,
+      "joint_origin_mirror_error_mm": 1.476819,
+      "joint_axis_line_mirror_error_mm": 1.476468,
+      "joint_axis_mirror_angle_error_deg": 0.091155337,
+      "max_sorted_size_error_mm": 0.0,
+      "strict_symmetry_gate": "REVIEW"
+    },
+    {
+      "row_type": "mirror_pair",
+      "pair": "ankle_pitch",
+      "right_id": "S15",
+      "left_id": "S16",
+      "world_mirror_plane": "Y=0",
+      "right_joint_origin_world_m": [
+        -0.018973992,
+        -0.048992858,
+        -0.371817994
+      ],
+      "left_joint_origin_world_m": [
+        -0.017496001,
+        0.048761876,
+        -0.371818001
+      ],
+      "right_joint_axis_world": [
+        0.000795307,
+        0.999999684,
+        6.73e-07
+      ],
+      "left_joint_axis_world": [
+        -0.000795654,
+        -0.999999683,
+        -2e-08
+      ],
+      "right_world_center_m": [
+        -0.018958324,
+        -0.029293012,
+        -0.359317897
+      ],
+      "left_world_center_m": [
+        -0.017511685,
+        0.02906203,
+        -0.359317903
+      ],
+      "mirror_residual_mm": [
+        1.446639,
+        -0.230982,
+        -6e-06
+      ],
+      "housing_center_mirror_error_mm": 1.464963,
+      "housing_axial_offset_mm": 0.232132,
+      "housing_transverse_mirror_error_mm": 1.446455,
+      "joint_origin_mirror_error_mm": 1.495931,
+      "joint_axis_line_mirror_error_mm": 1.477807,
+      "joint_axis_mirror_angle_error_deg": 0.091155346,
+      "max_sorted_size_error_mm": 1e-06,
+      "strict_symmetry_gate": "REVIEW"
+    }
+  ],
+  "manufacturing_scope": {
+    "source_sts3215_family_fit": "PASS: component identity, source carrier ownership, shaft axis, and original in-place transforms; strict bilateral source deviations remain separately reported",
+    "sts3250_hole_interface": "NOT_SIGNED_OFF: official STS3250 drawing calls out 4-M2.0; first-article hole and horn fit must be checked against a purchased actuator before printing the full set"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.solidworks_portable_open_gate.v1",
+  "assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v2_minimal\\portable_flat\\OPEN_FIRST_ZEROTH01_PHYSICAL_MOUNT_V2_MINIMAL_16_BLUE_SERVOS_XRAY.SLDASM",
+  "component_count": 51,
+  "portable_resolved_component_count": 51,
+  "missing_or_nonportable": [],
+  "snapshot": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\snapshots\\solidworks\\physical_mount_v2_minimal\\solidworks_minimal_v2_portable_xray_front.png",
+  "snapshot_gate": "PASS",
+  "overall": "PASS"
+}

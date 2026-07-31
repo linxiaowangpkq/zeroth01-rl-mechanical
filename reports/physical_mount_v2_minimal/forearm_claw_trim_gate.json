@@ -1,0 +1,57 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.forearm_claw_trim_gate.v1",
+  "method": "capped planar trim beyond unchanged fixed wrist joint origin",
+  "wrist_axis_to_cut_allowance_mm": 6.8,
+  "rows": [
+    {
+      "source": "generated/urdf/physical_mount_v1/meshes/skeleton/R_ARM_MIRROR_1.stl",
+      "output": "generated/cad/physical_mount_v2_minimal/replacements/R_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "source_bounds_m": [
+        -0.13258583843708038,
+        0.010491685941815376,
+        -0.0256574135273695,
+        0.014113173820078373,
+        -0.038600001484155655,
+        0.0020400015637278557
+      ],
+      "trimmed_bounds_m": [
+        -0.07300599664449692,
+        0.010491685941815376,
+        -0.0256574135273695,
+        0.01388000138103962,
+        -0.038599997758865356,
+        0.0015200000489130616
+      ],
+      "triangle_count": 7604,
+      "boundary_or_nonmanifold_edges": 0,
+      "gate": "PASS"
+    },
+    {
+      "source": "generated/urdf/physical_mount_v1/meshes/skeleton/L_ARM_MIRROR_1.stl",
+      "output": "generated/cad/physical_mount_v2_minimal/replacements/L_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "source_bounds_m": [
+        -0.02565741166472435,
+        0.01410442404448986,
+        -0.010491684079170227,
+        0.1326858401298523,
+        -0.001520000514574349,
+        0.03911999985575676
+      ],
+      "trimmed_bounds_m": [
+        -0.0256574135273695,
+        0.01388000138103962,
+        -0.010491685941815376,
+        0.07300599664449692,
+        -0.0015200000489130616,
+        0.038599997758865356
+      ],
+      "triangle_count": 7604,
+      "boundary_or_nonmanifold_edges": 0,
+      "source_topology_defects_repaired_by_exact_datum_mirror": 14,
+      "mirror_mapping": "x_right=y_left; y_right=-x_left; z_right=-z_left",
+      "gate": "PASS"
+    }
+  ],
+  "overall": "PASS",
+  "claim_boundary": "Preserves the v1 forearm mesh up to the wrist service allowance and removes only the integrated fixed claw extension. Fastener strength remains a first-article gate."
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.forearm_step_gate.v1",
+  "source_units": "metre",
+  "step_units": "millimetre",
+  "rows": [
+    {
+      "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v2_minimal\\replacements\\L_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "target": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v2_minimal\\replacements\\L_ARM_MIRROR_1_WRIST_TRIMMED.step",
+      "method": "OCP_StlAPI_triangular_faces_scale_m_to_mm_STEP_AP214",
+      "bytes": 37971080,
+      "sha256": "b3eca2ab70621b3d0ebaf727f724816c4837fe49ed5948b99756b489f7e5a89d",
+      "seconds": 2.5310000000172295,
+      "status": "PASS"
+    },
+    {
+      "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v2_minimal\\replacements\\R_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "target": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v2_minimal\\replacements\\R_ARM_MIRROR_1_WRIST_TRIMMED.step",
+      "method": "OCP_StlAPI_triangular_faces_scale_m_to_mm_STEP_AP214",
+      "bytes": 37987091,
+      "sha256": "53332a7b8fbbbfdc7cb6ecb5362c27361c26d8ac8eaa08bc45c702ad7d66c000",
+      "seconds": 2.5310000000172295,
+      "status": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.urdf_build.v1",
+  "urdf": "generated/urdf/physical_mount_v2_minimal/zeroth01_physical_mount_v2_minimal.urdf",
+  "revolute_joint_count": 16,
+  "total_mass_kg": 5.216675047851401,
+  "head_z_shift_mm": -55.0,
+  "old_claw_visual_count": 0,
+  "replacement_hand_count": 2
+}

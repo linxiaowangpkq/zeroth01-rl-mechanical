@@ -1,0 +1,265 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.mass_properties.v1",
+  "material_basis": "PETG 1270 kg/m3; sole prototype TPU 1200 kg/m3; CAD-solid nominal",
+  "nominal_printed_mass_kg": 0.657425871529313,
+  "inertia_gate": "PASS",
+  "parts": {
+    "chest_panel": {
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "shallow_rounded_chest_front_panel",
+      "material_assumption": "PETG_WHITE",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 80229.5214861228,
+      "nominal_mass_kg": 0.10189149228737596,
+      "com_m": [
+        -1.0964401323757079e-11,
+        -0.038240923295907864,
+        -0.014338704131507755
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 6.907008918919564e-05,
+        "iyy": 0.00021018345309879865,
+        "izz": 0.000141919311919092,
+        "ixy": 4.281572687927106e-15,
+        "ixz": 2.153059441443284e-14,
+        "iyz": 7.638338079513831e-08
+      },
+      "inertia_eigenvalues_kg_m2": [
+        6.907008918919564e-05,
+        0.0001419192264508878,
+        0.0002101835385670028
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "head_front": {
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "rounded_head_front_clamshell",
+      "material_assumption": "PETG_WHITE",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 96688.58611304374,
+      "nominal_mass_kg": 0.12279450436356554,
+      "com_m": [
+        7.355897278710181e-05,
+        -0.015233665573688685,
+        0.07242942946751837
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 0.0002034245110376866,
+        "iyy": 0.00043812754102899126,
+        "izz": 0.00027387893387678463,
+        "ixy": -2.6585437560592185e-07,
+        "ixz": 1.9995073359618255e-07,
+        "iyz": -3.1563458181806117e-06
+      },
+      "inertia_eigenvalues_kg_m2": [
+        0.00020342366222370523,
+        0.0002738188402434013,
+        0.00043818848347635617
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "head_back": {
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "rounded_head_back_clamshell_with_ears",
+      "material_assumption": "PETG_WHITE",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 139166.8779016945,
+      "nominal_mass_kg": 0.176741934935152,
+      "com_m": [
+        -2.0293112707612178e-05,
+        0.032924882315910675,
+        0.07966218690019836
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 0.0002973837703795757,
+        "iyy": 0.0006044087626896589,
+        "izz": 0.00039422960029793035,
+        "ixy": -6.530388224022308e-08,
+        "ixz": 3.911805953302832e-09,
+        "iyz": 2.351299649681972e-05
+      },
+      "inertia_eigenvalues_kg_m2": [
+        0.0002973837556536827,
+        0.00039163129544990795,
+        0.0006070070822635747
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "visor": {
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "display_front_panel",
+      "material_assumption": "BLACK_PETG_OR_DISPLAY",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 35217.14073397233,
+      "nominal_mass_kg": 0.04472576873214486,
+      "com_m": [
+        -2.2190761066647013e-05,
+        -0.052,
+        0.06990846576032975
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 2.1315214732761142e-05,
+        "iyy": 6.97774521310985e-05,
+        "izz": 4.85815061149564e-05,
+        "ixy": -1.7834099708124995e-21,
+        "ixz": 3.814919911594844e-08,
+        "iyz": -3.784894943237304e-20
+      },
+      "inertia_eigenvalues_kg_m2": [
+        2.1315161357018772e-05,
+        4.858155949069878e-05,
+        6.977745213109852e-05
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "camera_bracket": {
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "classification": "camera_m2p5_removable_bracket",
+      "material_assumption": "PETG_WHITE",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 8457.573100823773,
+      "nominal_mass_kg": 0.010741117838046191,
+      "com_m": [
+        -9.590319436383521e-11,
+        -0.030182263934920378,
+        0.10369396950314197
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 8.894952510454686e-07,
+        "iyy": 2.2643829182015565e-06,
+        "izz": 2.00923073757362e-06,
+        "ixy": -2.1794227638681307e-15,
+        "ixz": 1.0386645314891512e-15,
+        "iyz": -9.566734263324312e-08
+      },
+      "inertia_eigenvalues_kg_m2": [
+        8.894952510454686e-07,
+        1.9773455496213453e-06,
+        2.2962681061538314e-06
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "left_q_hand": {
+      "installed_link": "FINGER_1",
+      "classification": "complete_claw_link_replacement_twin_ear_m3_crossbolt",
+      "material_assumption": "PETG_WHITE",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 41300.45481228852,
+      "nominal_mass_kg": 0.05245157761160641,
+      "com_m": [
+        -0.0036037615984082063,
+        -0.02897649833209025,
+        0.018773307410678324
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 9.139378861770708e-06,
+        "iyy": 1.0153742917278147e-05,
+        "izz": 1.0300172702467749e-05,
+        "ixy": 6.294321543790483e-09,
+        "ixz": -2.930274404790836e-08,
+        "iyz": 1.3271436775837464e-09
+      },
+      "inertia_eigenvalues_kg_m2": [
+        9.138600203796645e-06,
+        1.0153773064969108e-05,
+        1.0300921212750842e-05
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "right_q_hand": {
+      "installed_link": "FINGER_1_2",
+      "classification": "complete_claw_link_replacement_twin_ear_m3_crossbolt",
+      "material_assumption": "PETG_WHITE",
+      "density_kg_m3": 1270.0,
+      "volume_mm3": 41300.4504651984,
+      "nominal_mass_kg": 0.052451572090801965,
+      "com_m": [
+        -0.003603760144327918,
+        0.02897649547332191,
+        0.018773308056904792
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 9.139379206957546e-06,
+        "iyy": 1.0153741491483683e-05,
+        "izz": 1.0300172092601836e-05,
+        "ixy": -6.296283036451125e-09,
+        "ixz": -2.930227962767971e-08,
+        "iyz": -1.3288948673021791e-09
+      },
+      "inertia_eigenvalues_kg_m2": [
+        9.138600546737656e-06,
+        1.015377163721652e-05,
+        1.0300920607088884e-05
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "left_sole": {
+      "installed_link": "FOOT",
+      "classification": "replaceable_9mm_thickened_contact_sole",
+      "material_assumption": "TPU_OR_PETG_CONTACT_PROTOTYPE",
+      "density_kg_m3": 1200.0,
+      "volume_mm3": 39844.95986275838,
+      "nominal_mass_kg": 0.04781395183531005,
+      "com_m": [
+        -0.016000000000000004,
+        0.04010000000000001,
+        0.01369999999999997
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 6.981325206054514e-06,
+        "iyy": 5.3460289899188646e-05,
+        "izz": 4.7091828927632576e-05,
+        "ixy": 4.470348358154297e-21,
+        "ixz": -2.2351741790771483e-21,
+        "iyz": -4.470348358154297e-21
+      },
+      "inertia_eigenvalues_kg_m2": [
+        6.981325206054514e-06,
+        4.7091828927632576e-05,
+        5.346028989918862e-05
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    },
+    "right_sole": {
+      "installed_link": "FOOT_2",
+      "classification": "replaceable_9mm_thickened_contact_sole",
+      "material_assumption": "TPU_OR_PETG_CONTACT_PROTOTYPE",
+      "density_kg_m3": 1200.0,
+      "volume_mm3": 39844.959862758384,
+      "nominal_mass_kg": 0.04781395183531006,
+      "com_m": [
+        -0.015999999999999986,
+        -0.040099999999999976,
+        0.013699999999999967
+      ],
+      "inertia_kg_m2_at_com": {
+        "ixx": 6.981325206054514e-06,
+        "iyy": 5.346028989918868e-05,
+        "izz": 4.7091828927632596e-05,
+        "ixy": -2.6822090148925778e-20,
+        "ixz": 2.2351741790771483e-21,
+        "iyz": 4.470348358154297e-21
+      },
+      "inertia_eigenvalues_kg_m2": [
+        6.981325206054514e-06,
+        4.7091828927632596e-05,
+        5.346028989918866e-05
+      ],
+      "gate": "PASS",
+      "hardware_override_required": true
+    }
+  },
+  "forearm_retained_volume_ratio": {
+    "R_ARM_MIRROR_1_WRIST_TRIMMED": 0.6252031848511174,
+    "L_ARM_MIRROR_1_WRIST_TRIMMED": 0.6261764170223872
+  },
+  "hardware_override_required": true
+}

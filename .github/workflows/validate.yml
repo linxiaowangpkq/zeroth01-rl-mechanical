@@ -1,4 +1,4 @@
-name: validate-physical-mount-v1
+name: validate-physical-mount-v2-minimal
 
 on:
   push:
@@ -15,5 +15,4 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-validation.txt
       - run: pip install -r requirements-validation.txt
-      - run: python scripts/validate_release.py
-      - run: python cad/physical_mount_v1/validate_physical_mount_v1.py --random-samples 1000
+      - run: python scripts/validate_minimal_v2_release.py

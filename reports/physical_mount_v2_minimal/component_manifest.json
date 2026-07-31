@@ -1,0 +1,314 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.component_manifest.v1",
+  "source_mechanism": "generated/urdf/physical_mount_v1/zeroth01_physical_mount_v1.urdf",
+  "change_policy": "head + claw-link replacements + sole + chest-front only",
+  "unchanged_revolute_joint_count": 16,
+  "parts": [
+    {
+      "key": "chest_panel",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_ROUNDED_CHEST_FRONT_PANEL",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#F7F8FA",
+      "classification": "shallow_rounded_chest_front_panel",
+      "printable": true,
+      "material": "PETG_WHITE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 80229.52146794694,
+      "bbox_size_mm": [
+        141.16244445427532,
+        8.775000099999978,
+        100.18695407886217
+      ]
+    },
+    {
+      "key": "head_front",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_ROUNDED_HEAD_FRONT",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#F7F8FA",
+      "classification": "rounded_head_front_clamshell",
+      "printable": true,
+      "material": "PETG_WHITE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 96686.72945912732,
+      "bbox_size_mm": [
+        155.998741027343,
+        47.72381097923182,
+        126.618597650033
+      ]
+    },
+    {
+      "key": "head_back",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_ROUNDED_HEAD_BACK",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#F7F8FA",
+      "classification": "rounded_head_back_clamshell_with_ears",
+      "printable": true,
+      "material": "PETG_WHITE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 139166.8829460034,
+      "bbox_size_mm": [
+        155.998741027331,
+        56.00000020000002,
+        132.012860854791
+      ]
+    },
+    {
+      "key": "visor",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_CONTINUOUS_BLACK_VISOR",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#101820",
+      "classification": "display_front_panel",
+      "printable": true,
+      "material": "BLACK_PETG_OR_DISPLAY",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 35217.140733971726,
+      "bbox_size_mm": [
+        118.0,
+        4.0,
+        78.0
+      ]
+    },
+    {
+      "key": "face_ui",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_DISPLAY_UI",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#52D6FF",
+      "classification": "screen_ui_reference",
+      "printable": false,
+      "material": "DISPLAY_PIXELS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 2,
+      "volume_mm3": 783.7985847356998,
+      "bbox_size_mm": [
+        65.9218359384875,
+        1.6000001999999967,
+        26.000000199999995
+      ]
+    },
+    {
+      "key": "camera_window",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_VISIBLE_CAMERA_TOF_WINDOWS",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#52D6FF",
+      "classification": "visible_camera_and_tof_windows",
+      "printable": false,
+      "material": "OPTICAL_WINDOW_REFERENCE",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 3,
+      "volume_mm3": 365.37350879780007,
+      "bbox_size_mm": [
+        38.7,
+        2.3999999999999986,
+        12.400000000000006
+      ]
+    },
+    {
+      "key": "camera_bracket",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_CAMERA_M2P5_BRACKET",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#F7F8FA",
+      "classification": "camera_m2p5_removable_bracket",
+      "printable": true,
+      "material": "PETG_WHITE",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 8457.573100553353,
+      "bbox_size_mm": [
+        38.0000002,
+        19.000000200000002,
+        25.5
+      ]
+    },
+    {
+      "key": "display_module",
+      "label": "WAVESHARE_4_3IN_DSI_QLED_ENVELOPE",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#00B8D9",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "material": "PURCHASED_OR_SELECTED_ELECTRONICS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 56107.057044280686,
+      "bbox_size_mm": [
+        105.5,
+        8.0,
+        67.19999999999999
+      ]
+    },
+    {
+      "key": "camera_module",
+      "label": "RPI_CAMERA_MODULE_3_WIDE_ENVELOPE",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#2E7D32",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "material": "PURCHASED_OR_SELECTED_ELECTRONICS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 6604.466500228492,
+      "bbox_size_mm": [
+        25.0,
+        11.400000000000006,
+        23.861999999999995
+      ]
+    },
+    {
+      "key": "tof_module",
+      "label": "VL53L5CX_CARRIER_ENVELOPE",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#AA00FF",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "material": "PURCHASED_OR_SELECTED_ELECTRONICS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 339.8790506229924,
+      "bbox_size_mm": [
+        12.0,
+        3.0,
+        10.0
+      ]
+    },
+    {
+      "key": "compute_module",
+      "label": "TORSO_COMPUTE_REGULATOR_ENVELOPE",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#FF9100",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "material": "PURCHASED_OR_SELECTED_ELECTRONICS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 144407.480073328,
+      "bbox_size_mm": [
+        105.0,
+        20.0,
+        70.0
+      ]
+    },
+    {
+      "key": "battery_pack",
+      "label": "3S2P_BATTERY_BMS_ENVELOPE",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#D500F9",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "material": "PURCHASED_OR_SELECTED_ELECTRONICS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 103922.97227009558,
+      "bbox_size_mm": [
+        75.0,
+        38.0,
+        38.0
+      ]
+    },
+    {
+      "key": "torso_imu",
+      "label": "TORSO_IMU_ENVELOPE",
+      "installed_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "color_hex": "#64DD17",
+      "classification": "internal_payload_controlled_envelope",
+      "printable": false,
+      "material": "PURCHASED_OR_SELECTED_ELECTRONICS",
+      "urdf_collision": false,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 6187.527964199327,
+      "bbox_size_mm": [
+        32.0,
+        25.0,
+        8.0
+      ]
+    },
+    {
+      "key": "left_q_hand",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_LEFT_Q_HAND_TWIN_EAR_WRIST_MOUNT",
+      "installed_link": "FINGER_1",
+      "color_hex": "#F7F8FA",
+      "classification": "complete_claw_link_replacement_twin_ear_m3_crossbolt",
+      "printable": true,
+      "material": "PETG_WHITE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": true,
+      "solid_count": 1,
+      "volume_mm3": 41300.703798201954,
+      "bbox_size_mm": [
+        45.00000010000001,
+        40.545891569663645,
+        38.00000010000001
+      ]
+    },
+    {
+      "key": "right_q_hand",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_RIGHT_Q_HAND_TWIN_EAR_WRIST_MOUNT",
+      "installed_link": "FINGER_1_2",
+      "color_hex": "#F7F8FA",
+      "classification": "complete_claw_link_replacement_twin_ear_m3_crossbolt",
+      "printable": true,
+      "material": "PETG_WHITE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": true,
+      "solid_count": 1,
+      "volume_mm3": 41300.70105400307,
+      "bbox_size_mm": [
+        45.00000010000001,
+        40.545891569663645,
+        38.00000010000001
+      ]
+    },
+    {
+      "key": "left_sole",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_LEFT_9MM_REPLACEABLE_SOLE",
+      "installed_link": "FOOT",
+      "color_hex": "#252A30",
+      "classification": "replaceable_9mm_thickened_contact_sole",
+      "printable": true,
+      "material": "TPU_OR_PETG_CONTACT_PROTOTYPE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 39844.959862758136,
+      "bbox_size_mm": [
+        110.0,
+        9.0,
+        42.4
+      ]
+    },
+    {
+      "key": "right_sole",
+      "label": "PHYSICAL_MOUNT_V2_MINIMAL_RIGHT_9MM_REPLACEABLE_SOLE",
+      "installed_link": "FOOT_2",
+      "color_hex": "#252A30",
+      "classification": "replaceable_9mm_thickened_contact_sole",
+      "printable": true,
+      "material": "TPU_OR_PETG_CONTACT_PROTOTYPE",
+      "urdf_collision": true,
+      "replaces_baseline_visual": false,
+      "solid_count": 1,
+      "volume_mm3": 39844.95986275812,
+      "bbox_size_mm": [
+        110.0,
+        9.0,
+        42.4
+      ]
+    }
+  ]
+}

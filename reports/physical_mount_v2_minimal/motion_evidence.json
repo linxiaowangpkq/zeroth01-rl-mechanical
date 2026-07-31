@@ -1,0 +1,13 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.motion_evidence.v1",
+  "base_urdf": "generated/urdf/physical_mount_v1/zeroth01_physical_mount_v1.urdf",
+  "servo_visual_count": 16,
+  "moving_joint_count": 16,
+  "baseline_claw_visual_count": 0,
+  "replacement_hand_visual_count": 2,
+  "frame_count": 20,
+  "maximum_joint_amplitude_deg": 6.0,
+  "result": "PASS",
+  "motion_gif": "snapshots/cad/physical_mount_v2_minimal/physical_mount_v2_minimal_16dof_motion.gif",
+  "scope": "Forward-kinematics visual evidence; collision sweep is a separate gate."
+}

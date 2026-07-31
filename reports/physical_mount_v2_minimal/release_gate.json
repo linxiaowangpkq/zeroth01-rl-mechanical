@@ -1,0 +1,156 @@
+{
+  "schema": "zeroth01.physical_mount_v2_minimal.release_gate.v1",
+  "root": ".",
+  "canonical_urdf": "generated/urdf/physical_mount_v2_minimal/zeroth01_physical_mount_v2_minimal.urdf",
+  "checks": {
+    "required_files": {
+      "gate": "PASS",
+      "evidence": []
+    },
+    "urdf_revolute_joint_count": {
+      "gate": "PASS",
+      "evidence": 16
+    },
+    "urdf_inertials": {
+      "gate": "PASS",
+      "evidence": []
+    },
+    "urdf_total_mass_kg": {
+      "gate": "PASS",
+      "evidence": 5.216675047851398
+    },
+    "urdf_mesh_portability": {
+      "gate": "PASS",
+      "evidence": []
+    },
+    "q_hands_replace_old_claws": {
+      "gate": "PASS",
+      "evidence": {
+        "FINGER_1": [
+          "meshes/minimal/left_q_hand.stl"
+        ],
+        "FINGER_1_2": [
+          "meshes/minimal/right_q_hand.stl"
+        ]
+      }
+    },
+    "joint_limits_and_rated_actuation": {
+      "gate": "PASS",
+      "evidence": "16 joints; effort=1.569 N*m; velocity=3 rad/s"
+    },
+    "actuator_metadata": {
+      "gate": "PASS",
+      "evidence": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "target": "FEETECH STS3250-C001"
+      }
+    },
+    "geometry_and_head_post": {
+      "gate": "PASS",
+      "evidence": {
+        "source_post_half_width_mm": 40.37502780556679,
+        "source_post_base_z_mm": 13.981852680444717,
+        "head_shell_cover_z_at_post_edge_mm": 15.385646276619902,
+        "maximum_exposed_post_height_mm": 1.4037935961751842,
+        "requirement_mm": 5.0,
+        "gate": "PASS"
+      }
+    },
+    "mujoco_collision": {
+      "gate": "PASS",
+      "evidence": {
+        "engine": "3.11.0",
+        "joint_gates": 16,
+        "coordinated_samples": 73
+      }
+    },
+    "solidworks_native_assembly": {
+      "gate": "PASS",
+      "evidence": {
+        "solidworks_revision": "33.0.0",
+        "component_count": 51,
+        "separate_blue_source_servo_component_count": 16,
+        "old_claw_component_count": 0,
+        "external_neck_component_count": 0
+      }
+    },
+    "solidworks_portable_pack": {
+      "gate": "PASS",
+      "evidence": {
+        "parts": 51,
+        "assemblies": 2,
+        "servo_parts": 16,
+        "oversized_github_files": [],
+        "reopened_resolved_components": 51
+      }
+    },
+    "cad_part_count": {
+      "gate": "PASS",
+      "evidence": {
+        "step": 17,
+        "stl": 17
+      }
+    },
+    "printed_mass_inertia_gate": {
+      "gate": "PASS",
+      "evidence": {
+        "mass_kg": 0.657425871529313,
+        "parts": 9
+      }
+    },
+    "rl_handoff": {
+      "gate": "PASS",
+      "evidence": {
+        "mass_kg": 5.216675047851401,
+        "electronics": [
+          "display_module",
+          "camera_module",
+          "tof_module",
+          "torso_imu_module",
+          "compute_module",
+          "battery_pack"
+        ],
+        "status": {
+          "rigid_body_rl": "READY_WITH_DOMAIN_RANDOMIZATION",
+          "sts3250_feasibility_simulation": "READY_AT_RATED_TORQUE_WITH_THERMAL_AND_VOLTAGE_MARGIN_LOGGING",
+          "sim_to_real": "HOLD_UNTIL_CALIBRATION_FIRST_ARTICLE_AND_AS_BUILT_IDENTIFICATION",
+          "full_robot_print": "HOLD_PENDING_STS3250_FIRST_ARTICLE_AND_ONE_HEAD_WRIST_SOLE_FIT_SET"
+        }
+      }
+    },
+    "motion_gifs": {
+      "gate": "PASS",
+      "evidence": {
+        "snapshots/physical_mount_v2_minimal/physical_mount_v2_minimal_16dof_motion.gif": 7268926,
+        "snapshots/solidworks/physical_mount_v2_minimal/solidworks_physical_mount_v2_minimal_16dof_motion.gif": 5742514
+      }
+    },
+    "release_manifest_integrity": {
+      "gate": "PASS",
+      "evidence": {
+        "file_count": 374,
+        "failures": []
+      }
+    }
+  },
+  "failures": [],
+  "overall": "PASS",
+  "claim_boundary": "Simulation and CAD release gate only; purchased STS3250 first article, harness routing and as-built mass/inertia identification remain required before full print/sim-to-real signoff."
+}
