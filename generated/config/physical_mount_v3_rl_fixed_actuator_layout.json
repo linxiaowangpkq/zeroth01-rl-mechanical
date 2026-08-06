@@ -1,0 +1,483 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.actuator_layout.v1",
+  "frame": "body neutral, X forward, Y left, Z up, metres",
+  "count": 18,
+  "actuators": [
+    {
+      "id": "S01",
+      "joint": "right_shoulder_pitch",
+      "owning_rigid_link": "3215_1Flange_2",
+      "shaft_origin_body_neutral_m": [
+        -0.00825118874895795,
+        -0.07683345371944612,
+        -0.014427993856255683
+      ],
+      "shaft_axis_body_neutral": [
+        0.0007959999160470514,
+        0.9999996831919632,
+        3.267950033330078e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S02",
+      "joint": "left_shoulder_pitch",
+      "owning_rigid_link": "3215_1Flange",
+      "shaft_origin_body_neutral_m": [
+        -0.008128802033955402,
+        0.07684650406026938,
+        -0.014427993856255683
+      ],
+      "shaft_axis_body_neutral": [
+        -0.0007969999151027492,
+        -0.9999996823954639,
+        3.267950033330078e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S03",
+      "joint": "right_shoulder_yaw",
+      "owning_rigid_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "shaft_origin_body_neutral_m": [
+        0.010565406321739256,
+        -0.05600343127216897,
+        -0.009528
+      ],
+      "shaft_axis_body_neutral": [
+        -0.9999996829317812,
+        0.0007963267107332208,
+        3.2679489653813835e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S04",
+      "joint": "right_hip_pitch",
+      "owning_rigid_link": "3215_BothFlange_10",
+      "shaft_origin_body_neutral_m": [
+        -0.008974205997696019,
+        -0.049260876181944,
+        -0.17181799423926403
+      ],
+      "shaft_axis_body_neutral": [
+        -0.0007953070965663117,
+        -0.9999996837432077,
+        -3.2679477012832763e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S05",
+      "joint": "left_hip_pitch",
+      "owning_rigid_link": "3215_BothFlange_9",
+      "shaft_origin_body_neutral_m": [
+        -0.007495773103030012,
+        0.0492139847578232,
+        -0.17181799408107876
+      ],
+      "shaft_axis_body_neutral": [
+        0.0007956535064765367,
+        0.9999996834676453,
+        -3.2679511653790383e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S06",
+      "joint": "left_shoulder_yaw",
+      "owning_rigid_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "shaft_origin_body_neutral_m": [
+        0.010654586950074273,
+        0.0559865332193672,
+        -0.009528
+      ],
+      "shaft_axis_body_neutral": [
+        -0.9999996826558659,
+        0.0007966731204167547,
+        3.2679489653813835e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S07",
+      "joint": "right_hip_yaw",
+      "owning_rigid_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "shaft_origin_body_neutral_m": [
+        -0.0077691344809134545,
+        -0.04286182682081437,
+        -0.083418
+      ],
+      "shaft_axis_body_neutral": [
+        3.464096836772891e-07,
+        -2.757353716508188e-10,
+        -0.99999999999994
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S08",
+      "joint": "left_hip_yaw",
+      "owning_rigid_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "shaft_origin_body_neutral_m": [
+        -0.007700908393644671,
+        0.0428141460140535,
+        -0.083418
+      ],
+      "shaft_axis_body_neutral": [
+        3.464096836772891e-07,
+        -2.757353716508188e-10,
+        -0.99999999999994
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S09",
+      "joint": "right_elbow_yaw",
+      "owning_rigid_link": "3215_1Flange_2",
+      "shaft_origin_body_neutral_m": [
+        0.011533969017315161,
+        -0.09544917821426749,
+        -0.10741200640516964
+      ],
+      "shaft_axis_body_neutral": [
+        -0.9999996831918031,
+        0.0007959999159401323,
+        6.535896862813199e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S10",
+      "joint": "left_elbow_yaw",
+      "owning_rigid_link": "3215_1Flange",
+      "shaft_origin_body_neutral_m": [
+        0.011685985465000413,
+        0.0954306871920251,
+        -0.10741200640516964
+      ],
+      "shaft_axis_body_neutral": [
+        -0.9999996821350082,
+        0.0007973267098890855,
+        -1.9615110468972857e-08
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S11",
+      "joint": "right_hip_roll",
+      "owning_rigid_link": "3215_BothFlange_6",
+      "shaft_origin_body_neutral_m": [
+        0.009930879449366693,
+        -0.042875915687694416,
+        -0.13981799386854327
+      ],
+      "shaft_axis_body_neutral": [
+        0.9999996834833053,
+        -0.0007956338913659087,
+        1.961489687911043e-08
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S12",
+      "joint": "left_hip_roll",
+      "owning_rigid_link": "3215_BothFlange_5",
+      "shaft_origin_body_neutral_m": [
+        -0.025400883248912504,
+        0.0428282348498306,
+        -0.13981800613144996
+      ],
+      "shaft_axis_body_neutral": [
+        0.9999996832074034,
+        -0.0007959803010494535,
+        6.732046899553688e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S13",
+      "joint": "right_knee_pitch",
+      "owning_rigid_link": "3215_BothFlange_14",
+      "shaft_origin_body_neutral_m": [
+        -0.018973198760696988,
+        -0.04799289083155515,
+        -0.2718179940236473
+      ],
+      "shaft_axis_body_neutral": [
+        -0.0007953070965663117,
+        -0.9999996837432077,
+        -3.2679477012832763e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S14",
+      "joint": "left_knee_pitch",
+      "owning_rigid_link": "3215_BothFlange_13",
+      "shaft_origin_body_neutral_m": [
+        -0.017496705166687457,
+        0.04796190895865146,
+        -0.27181800040133475
+      ],
+      "shaft_axis_body_neutral": [
+        0.0007956535064765367,
+        0.9999996834676453,
+        -3.2679511653790383e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S15",
+      "joint": "right_ankle_pitch",
+      "owning_rigid_link": "3215_BothFlange_14",
+      "shaft_origin_body_neutral_m": [
+        -0.01897399208030359,
+        -0.04899285783739167,
+        -0.3718179943504367
+      ],
+      "shaft_axis_body_neutral": [
+        0.0007953070964461742,
+        0.9999996837430346,
+        6.732045635455373e-07
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S16",
+      "joint": "left_ankle_pitch",
+      "owning_rigid_link": "3215_BothFlange_13",
+      "shaft_origin_body_neutral_m": [
+        -0.017496001349446837,
+        0.04876187597236051,
+        -0.37181800066274284
+      ],
+      "shaft_axis_body_neutral": [
+        -0.0007956535061301696,
+        -0.9999996834676989,
+        -1.9614676879192558e-08
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S17",
+      "joint": "right_ankle_roll",
+      "owning_rigid_link": "right_ankle_roll_carrier",
+      "shaft_origin_body_neutral_m": [
+        -0.018973992080324267,
+        -0.048992857837412314,
+        -0.4218179943504511
+      ],
+      "shaft_axis_body_neutral": [
+        -0.9999999999997984,
+        8.26013629916566e-13,
+        4.135311705758653e-13
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    },
+    {
+      "id": "S18",
+      "joint": "left_ankle_roll",
+      "owning_rigid_link": "left_ankle_roll_carrier",
+      "shaft_origin_body_neutral_m": [
+        -0.01749600134946751,
+        0.048761875972339865,
+        -0.42181800066276787
+      ],
+      "shaft_axis_body_neutral": [
+        0.9999999999998005,
+        -4.130109409951016e-13,
+        -4.135274730187731e-13
+      ],
+      "model": "FEETECH STS3250-C001",
+      "mass_kg": 0.0745,
+      "cad_color": "blue",
+      "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
+      "neutral_count": "REQUIRES_JOG_CALIBRATION",
+      "direction_sign": "REQUIRES_JOG_CALIBRATION",
+      "mount_gate": "HOLD_STS3250_FIRST_ARTICLE"
+    }
+  ],
+  "mass_ownership": [
+    {
+      "link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_count": 4,
+      "aggregate_link_mass_kg": 0.743471828,
+      "minimum_servo_mass_kg": 0.298,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_1Flange",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.149,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_1Flange_2",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.149,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_5",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_6",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_9",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.1745,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_10",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.1745,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_13",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.229,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_14",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.229,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "left_ankle_roll_carrier",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "right_ankle_roll_carrier",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    }
+  ],
+  "truth_boundary": "shaft frames are CAD/URDF nominal; bus ID, count zero, direction and purchased STS3250 hole/horn fit require physical calibration"
+}

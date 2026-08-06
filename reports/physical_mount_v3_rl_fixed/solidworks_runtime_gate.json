@@ -1,0 +1,13 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.solidworks_runtime_gate.v1",
+  "tested_at": "2026-08-07T00:41:53+08:00",
+  "executable": "E:/SolidWorks/SOLIDWORKS/SLDWORKS.exe",
+  "cli_startup_timeout_s": 45,
+  "cli_result": "FAIL_COM_REGISTRATION_TIMEOUT",
+  "direct_com_activation_timeout_s": 60,
+  "direct_com_result": "FAIL_SERVER_EXECUTION_FAILED_-2146959355",
+  "model_conversion_started": false,
+  "user_documents_closed": false,
+  "fallback": "FreeCAD 1.1.1 CLI generated two self-contained 54-component FCStd assemblies; create_solidworks_v3.py is shipped for retry after the local SolidWorks service/license is repaired",
+  "gate": "HOLD_LOCAL_SOLIDWORKS_RUNTIME_UNAVAILABLE"
+}

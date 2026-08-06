@@ -1,0 +1,108 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.rl_handoff.v1",
+  "canonical_urdf": "generated/urdf/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
+  "canonical_mjcf_mjx": "generated/mujoco/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof_mjx.xml",
+  "actuator_layout": "generated/config/physical_mount_v3_rl_fixed_actuator_layout.json",
+  "joint_order": [
+    "left_shoulder_yaw",
+    "right_shoulder_yaw",
+    "left_shoulder_pitch",
+    "right_shoulder_pitch",
+    "left_elbow_yaw",
+    "right_elbow_yaw",
+    "left_hip_yaw",
+    "right_hip_yaw",
+    "left_hip_roll",
+    "right_hip_roll",
+    "left_hip_pitch",
+    "right_hip_pitch",
+    "left_knee_pitch",
+    "right_knee_pitch",
+    "left_ankle_pitch",
+    "right_ankle_pitch",
+    "left_ankle_roll",
+    "right_ankle_roll"
+  ],
+  "actuator": {
+    "model": "FEETECH STS3250-C001",
+    "count": 18,
+    "mass_each_kg": 0.0745,
+    "continuous_design_torque_nm": 1.2552512,
+    "rated_torque_nm": 1.569064,
+    "static_single_support_required_nm": 1.3008430830106854,
+    "continuous_margin_fraction": -0.036320923661085046,
+    "hip_half_spacing_m": 0.04283798641743393,
+    "quasistatic_torque_report": "reports/physical_mount_v3_rl_fixed/sts3250_quasistatic_torque_gate.json",
+    "quasistatic_peak_joint": "left_ankle_pitch",
+    "quasistatic_peak_torque_nm": 1.1864086814424593
+  },
+  "mass": {
+    "canonical_original_kg": 3.095471828,
+    "urdf_nominal_kg": 3.095471828,
+    "mjcf_nominal_kg": 3.095471828,
+    "confidence": "estimated_from_envelopes_not_as_built"
+  },
+  "sensors": {
+    "imu": {
+      "parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "position_m": [
+        0.0,
+        0.0,
+        0.02
+      ]
+    },
+    "head_module": {
+      "model": "M5Stack StackChan K151",
+      "parent": "m5stack_stackchan_k151_head_pod",
+      "mass_kg": 0.187,
+      "camera": "GC0308 0.3MP",
+      "camera_optical_frame": "camera_optical_frame",
+      "microphones": [
+        "left_microphone_frame",
+        "right_microphone_frame"
+      ],
+      "speaker_frame": "head_speaker_frame",
+      "imu_frame": "head_imu_frame",
+      "walking_policy": "lock internal K151 pan/tilt at centre; treat complete 187 g module as one fixed payload"
+    },
+    "sole_contact_sites": 8
+  },
+  "randomization": {
+    "mass_scale": [
+      0.9,
+      1.1
+    ],
+    "joint_damping_scale": [
+      0.7,
+      1.3
+    ],
+    "motor_strength_scale": [
+      0.8,
+      1.0
+    ],
+    "ground_friction": [
+      0.7,
+      1.25
+    ]
+  },
+  "release_gates": {
+    "CAD_PORTABLE_PASS": "PASS",
+    "SOLIDWORKS_NATIVE_ASSEMBLY_PASS": "PASS",
+    "SOLIDWORKS_PHYSICAL_INTERFERENCE_PASS": "PASS",
+    "URDF_SOLIDWORKS_FK_MATCH_PASS": "PASS",
+    "SOURCE_AXIS_FIDELITY_PASS": "PASS",
+    "MJX_PRIMITIVE_COLLISION_PASS": "PASS",
+    "GROUND_CONTACT_PASS": "PASS",
+    "ACTUATOR_STATIC_FEASIBILITY_PASS": "HOLD_RATED_TORQUE_ONLY_RL_COM_SHIFT_REQUIRED",
+    "STS3250_QUASISTATIC_TORQUE_PASS": "PASS",
+    "STS3250_DYNAMIC_WALKING_PASS": "HOLD_RL_ROLLOUT_TORQUE_AND_THERMAL_TRACE_REQUIRED",
+    "MASS_TARGET_PASS": "PASS",
+    "ACTUATOR_MASS_OWNERSHIP_PASS": "PASS",
+    "MOTION_SAMPLE_NO_NONADJACENT_PENETRATION_PASS": "PASS",
+    "PURCHASED_STACKCHAN_HEAD_MODEL_PASS": "PASS",
+    "MASS_IDENTIFIED_PASS": "HOLD_AS_BUILT_MEASUREMENT_REQUIRED",
+    "STS3250_FIRST_ARTICLE_PASS": "HOLD_PURCHASED_HARDWARE_REQUIRED",
+    "STACKCHAN_ADAPTER_FIRST_ARTICLE_PASS": "HOLD_TORSO_SLOT_FIT_REQUIRED"
+  },
+  "truth_boundary": "RL nominal model passes with the purchased K151 treated as a fixed 187 g head payload; factory release remains held for STS3250 fit, torso-adapter first article and as-built mass/COM/inertia identification."
+}

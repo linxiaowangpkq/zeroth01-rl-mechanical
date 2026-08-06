@@ -1,0 +1,495 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.release_gates.v1",
+  "urdf": "generated/urdf/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
+  "mjcf": "generated/mujoco/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof_mjx.xml",
+  "dof": 18,
+  "mass": {
+    "canonical_original_kg": 3.095471828,
+    "urdf_nominal_kg": 3.095471828,
+    "mjcf_nominal_kg": 3.095471828,
+    "confidence": "estimated_from_envelopes_not_as_built"
+  },
+  "actuator": {
+    "model": "FEETECH STS3250-C001",
+    "count": 18,
+    "mass_each_kg": 0.0745,
+    "continuous_design_torque_nm": 1.2552512,
+    "rated_torque_nm": 1.569064,
+    "static_single_support_required_nm": 1.3008430830106854,
+    "continuous_margin_fraction": -0.036320923661085046,
+    "hip_half_spacing_m": 0.04283798641743393,
+    "quasistatic_torque_report": "reports/physical_mount_v3_rl_fixed/sts3250_quasistatic_torque_gate.json",
+    "quasistatic_peak_joint": "left_ankle_pitch",
+    "quasistatic_peak_torque_nm": 1.1864086814424593
+  },
+  "symmetry": [
+    {
+      "left": "left_shoulder_yaw",
+      "right": "right_shoulder_yaw",
+      "point_error_mm": 0.09076744272435838,
+      "axis_error": 0.0015929998311499996,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_shoulder_pitch",
+      "right": "right_shoulder_pitch",
+      "point_error_mm": 0.12308054031697431,
+      "axis_error": 0.0015929998311499996,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_elbow_yaw",
+      "right": "right_elbow_yaw",
+      "point_error_mm": 0.15313692654095906,
+      "axis_error": 0.0015933267680492084,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_hip_yaw",
+      "right": "right_hip_yaw",
+      "point_error_mm": 0.08323615991487646,
+      "axis_error": 5.514707433016376e-10,
+      "gate": "PASS"
+    },
+    {
+      "left": "left_hip_roll",
+      "right": "right_hip_roll",
+      "point_error_mm": 35.33179487133315,
+      "axis_error": 0.0015916143266123547,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_hip_pitch",
+      "right": "right_hip_pitch",
+      "point_error_mm": 1.4791763348859417,
+      "axis_error": 0.0015909606030428724,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_knee_pitch",
+      "right": "right_knee_pitch",
+      "point_error_mm": 1.476818610947356,
+      "axis_error": 0.0015909606030428724,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_ankle_pitch",
+      "right": "right_ankle_pitch",
+      "point_error_mm": 1.4959308882804698,
+      "axis_error": 0.0015909607534281473,
+      "gate": "FAIL"
+    },
+    {
+      "left": "left_ankle_roll",
+      "right": "right_ankle_roll",
+      "point_error_mm": 1.495930888286848,
+      "axis_error": 1.2390263665495814e-12,
+      "gate": "FAIL"
+    }
+  ],
+  "axis_semantics": [
+    {
+      "joint": "left_shoulder_yaw",
+      "expected_world_axis": [
+        -0.9999996826558656,
+        0.0007966731208299567,
+        3.2679489653813835e-07
+      ],
+      "actual_world_axis": [
+        -0.9999996826558659,
+        0.0007966731204167547,
+        3.2679489653813835e-07
+      ],
+      "axis_residual": 4.132021589158777e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_shoulder_yaw",
+      "expected_world_axis": [
+        -0.9999996829317812,
+        0.0007963267107332208,
+        3.2679489653813835e-07
+      ],
+      "actual_world_axis": [
+        -0.9999996829317812,
+        0.0007963267107332208,
+        3.2679489653813835e-07
+      ],
+      "axis_residual": 0.0,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_shoulder_pitch",
+      "expected_world_axis": [
+        -0.0007969999155159511,
+        -0.9999996823954636,
+        3.267950033330078e-07
+      ],
+      "actual_world_axis": [
+        -0.0007969999151027492,
+        -0.9999996823954639,
+        3.267950033330078e-07
+      ],
+      "axis_residual": 4.1320205049569567e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_shoulder_pitch",
+      "expected_world_axis": [
+        0.0007959999160470514,
+        0.9999996831919632,
+        3.267950033330078e-07
+      ],
+      "actual_world_axis": [
+        0.0007959999160470514,
+        0.9999996831919632,
+        3.267950033330078e-07
+      ],
+      "axis_residual": 0.0,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_elbow_yaw",
+      "expected_world_axis": [
+        -0.9999996821350079,
+        0.0007973267103022874,
+        -1.9615523671097857e-08
+      ],
+      "actual_world_axis": [
+        -0.9999996821350082,
+        0.0007973267098890855,
+        -1.9615110468972857e-08
+      ],
+      "axis_residual": 5.843559964938095e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_elbow_yaw",
+      "expected_world_axis": [
+        -0.9999996831918031,
+        0.000795999915940129,
+        6.535896862813199e-07
+      ],
+      "actual_world_axis": [
+        -0.9999996831918031,
+        0.0007959999159401323,
+        6.535896862813199e-07
+      ],
+      "axis_residual": 3.2526065174565133e-18,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_hip_yaw",
+      "expected_world_axis": [
+        3.4641009687928327e-07,
+        -2.757357004084333e-10,
+        -0.99999999999994
+      ],
+      "actual_world_axis": [
+        3.464096836772891e-07,
+        -2.757353716508188e-10,
+        -0.99999999999994
+      ],
+      "axis_residual": 4.1320212497161117e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_hip_yaw",
+      "expected_world_axis": [
+        3.4641009687928327e-07,
+        -2.757357004084333e-10,
+        -0.99999999999994
+      ],
+      "actual_world_axis": [
+        3.464096836772891e-07,
+        -2.757353716508188e-10,
+        -0.99999999999994
+      ],
+      "axis_residual": 4.1320212497161117e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_hip_roll",
+      "expected_world_axis": [
+        0.9999996832074037,
+        -0.0007959803006362515,
+        6.732051031574938e-07
+      ],
+      "actual_world_axis": [
+        0.9999996832074034,
+        -0.0007959803010494535,
+        6.732046899553688e-07
+      ],
+      "axis_residual": 5.843560731210197e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_hip_roll",
+      "expected_world_axis": [
+        0.9999996834833059,
+        -0.0007956338905395048,
+        1.961531008123543e-08
+      ],
+      "actual_world_axis": [
+        0.9999996834833053,
+        -0.0007956338913659087,
+        1.961489687911043e-08
+      ],
+      "axis_residual": 9.239480036439244e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_hip_pitch",
+      "expected_world_axis": [
+        0.0007956535060633349,
+        0.9999996834676457,
+        -3.2679511653803883e-07
+      ],
+      "actual_world_axis": [
+        0.0007956535064765367,
+        0.9999996834676453,
+        -3.2679511653790383e-07
+      ],
+      "axis_residual": 4.132019420755357e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_hip_pitch",
+      "expected_world_axis": [
+        -0.0007953070957399077,
+        -0.9999996837432084,
+        -3.2679477012790634e-07
+      ],
+      "actual_world_axis": [
+        -0.0007953070965663117,
+        -0.9999996837432077,
+        -3.2679477012832763e-07
+      ],
+      "axis_residual": 8.264042094116808e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_knee_pitch",
+      "expected_world_axis": [
+        0.0007956535060633349,
+        0.9999996834676457,
+        -3.2679511653803883e-07
+      ],
+      "actual_world_axis": [
+        0.0007956535064765367,
+        0.9999996834676453,
+        -3.2679511653790383e-07
+      ],
+      "axis_residual": 4.132019420755357e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_knee_pitch",
+      "expected_world_axis": [
+        -0.0007953070957399077,
+        -0.9999996837432084,
+        -3.2679477012790634e-07
+      ],
+      "actual_world_axis": [
+        -0.0007953070965663117,
+        -0.9999996837432077,
+        -3.2679477012832763e-07
+      ],
+      "axis_residual": 8.264042094116808e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_ankle_pitch",
+      "expected_world_axis": [
+        -0.0007956535057169672,
+        -0.9999996834676992,
+        -1.9615090081182562e-08
+      ],
+      "actual_world_axis": [
+        -0.0007956535061301696,
+        -0.9999996834676989,
+        -1.9614676879192558e-08
+      ],
+      "axis_residual": 5.843562076959961e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_ankle_pitch",
+      "expected_world_axis": [
+        0.00079530709561977,
+        0.9999996837430353,
+        6.73204976747241e-07
+      ],
+      "actual_world_axis": [
+        0.0007953070964461742,
+        0.9999996837430346,
+        6.732045635455373e-07
+      ],
+      "axis_residual": 9.239480092076669e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "left_ankle_roll",
+      "expected_world_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "actual_world_axis": [
+        0.9999999999998005,
+        -4.130109409951016e-13,
+        -4.135274730187731e-13
+      ],
+      "axis_residual": 6.175646381599046e-13,
+      "gate": "PASS"
+    },
+    {
+      "joint": "right_ankle_roll",
+      "expected_world_axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "actual_world_axis": [
+        -0.9999999999997984,
+        8.26013629916566e-13,
+        4.135311705758653e-13
+      ],
+      "axis_residual": 9.45492337055632e-13,
+      "gate": "PASS"
+    }
+  ],
+  "collision": {
+    "urdf_types": [
+      "box",
+      "cylinder",
+      "sphere"
+    ],
+    "mjcf_types": [
+      "box",
+      "capsule",
+      "sphere"
+    ],
+    "sampled_nonadjacent_penetrations": [],
+    "maximum_vertical_regrounding_correction_m": 0.011388812285932838,
+    "sweep_ground_policy": "free base is shifted vertically per sample; ground contacts are excluded from self-interference rows"
+  },
+  "actuator_mass_ownership": [
+    {
+      "link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_count": 4,
+      "aggregate_link_mass_kg": 0.743471828,
+      "minimum_servo_mass_kg": 0.298,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_1Flange",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.149,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_1Flange_2",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.149,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_5",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_6",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_9",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.1745,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_10",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.1745,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_13",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.229,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "3215_BothFlange_14",
+      "servo_count": 2,
+      "aggregate_link_mass_kg": 0.229,
+      "minimum_servo_mass_kg": 0.149,
+      "gate": "PASS"
+    },
+    {
+      "link": "left_ankle_roll_carrier",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    },
+    {
+      "link": "right_ankle_roll_carrier",
+      "servo_count": 1,
+      "aggregate_link_mass_kg": 0.0995,
+      "minimum_servo_mass_kg": 0.0745,
+      "gate": "PASS"
+    }
+  ],
+  "standing": {
+    "sole_bottoms_m": [
+      -1.1147259256459596e-07,
+      -8.23417459347095e-08
+    ],
+    "sole_level_error_rad": [
+      9.999334257726859e-07,
+      7.574716226541482e-07
+    ],
+    "maximum_ground_gap_m": 1.1147259256459596e-07
+  },
+  "gates": {
+    "CAD_PORTABLE_PASS": "PASS",
+    "SOLIDWORKS_NATIVE_ASSEMBLY_PASS": "PASS",
+    "SOLIDWORKS_PHYSICAL_INTERFERENCE_PASS": "PASS",
+    "URDF_SOLIDWORKS_FK_MATCH_PASS": "PASS",
+    "SOURCE_AXIS_FIDELITY_PASS": "PASS",
+    "MJX_PRIMITIVE_COLLISION_PASS": "PASS",
+    "GROUND_CONTACT_PASS": "PASS",
+    "ACTUATOR_STATIC_FEASIBILITY_PASS": "HOLD_RATED_TORQUE_ONLY_RL_COM_SHIFT_REQUIRED",
+    "STS3250_QUASISTATIC_TORQUE_PASS": "PASS",
+    "STS3250_DYNAMIC_WALKING_PASS": "HOLD_RL_ROLLOUT_TORQUE_AND_THERMAL_TRACE_REQUIRED",
+    "MASS_TARGET_PASS": "PASS",
+    "ACTUATOR_MASS_OWNERSHIP_PASS": "PASS",
+    "MOTION_SAMPLE_NO_NONADJACENT_PENETRATION_PASS": "PASS",
+    "PURCHASED_STACKCHAN_HEAD_MODEL_PASS": "PASS",
+    "MASS_IDENTIFIED_PASS": "HOLD_AS_BUILT_MEASUREMENT_REQUIRED",
+    "STS3250_FIRST_ARTICLE_PASS": "HOLD_PURCHASED_HARDWARE_REQUIRED",
+    "STACKCHAN_ADAPTER_FIRST_ARTICLE_PASS": "HOLD_TORSO_SLOT_FIT_REQUIRED"
+  },
+  "blocking_failures": [],
+  "overall_rl_nominal": "PASS",
+  "physical_release": "HOLD_FIRST_ARTICLE_AND_AS_BUILT_IDENTIFICATION",
+  "native_cad": {
+    "solidworks_gate": "reports/physical_mount_v3_rl_fixed/solidworks_gate.json",
+    "solidworks_interference_gate": "reports/physical_mount_v3_rl_fixed/solidworks_interference_gate.json",
+    "fk_manifest_gate": "reports/physical_mount_v3_rl_fixed/fk_manifest_gate.json",
+    "solidworks_status": "native 51-component assembly rebuilt in SolidWorks 33.0.0; physical interference count zero"
+  }
+}

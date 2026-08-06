@@ -1,0 +1,50 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.cad_render_evidence.v1",
+  "source_assembly_manifest": "generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json",
+  "source_sha256": "20fa2a64974fc0f05dcfa5e0ded8b3c9278be5ed408a58465fd71e500efe1b7f",
+  "occurrence_count": 53,
+  "renders": [
+    {
+      "path": "snapshots/cad/physical_mount_v3_rl_fixed/v3_18dof_connected_normal_front.png",
+      "camera_direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xray": false,
+      "annotated": true,
+      "size_px": [
+        1500,
+        1700
+      ]
+    },
+    {
+      "path": "snapshots/cad/physical_mount_v3_rl_fixed/v3_18dof_xray_front.png",
+      "camera_direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xray": true,
+      "annotated": true,
+      "size_px": [
+        1500,
+        1700
+      ]
+    },
+    {
+      "path": "snapshots/cad/physical_mount_v3_rl_fixed/v3_18dof_iso.png",
+      "camera_direction": [
+        1.0,
+        -1.15,
+        0.55
+      ],
+      "xray": false,
+      "annotated": false,
+      "size_px": [
+        1500,
+        1700
+      ]
+    }
+  ]
+}

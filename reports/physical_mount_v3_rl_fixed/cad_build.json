@@ -1,0 +1,177 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.cad_build.v1",
+  "cad_brief": "v2 load-bearing appearance + 18 dimension-controlled blue actuator references + bilateral ankle-roll hardware + lightened 9mm soles + purchased M5Stack StackChan K151 interaction head on reversible 3mm aluminium adapter",
+  "assembly": "generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_DIAGNOSTIC_ASSEMBLY.step",
+  "parts": [
+    {
+      "name": "sts3250_dimension_controlled",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 38935.043443724004,
+      "bbox_mm": [
+        45.22,
+        24.720000199999998,
+        41.5
+      ]
+    },
+    {
+      "name": "sts3250_first_article_gauge",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_first_article_gauge.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_first_article_gauge.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 3090.510498741671,
+      "bbox_mm": [
+        49.22,
+        28.72,
+        3.0000000000000004
+      ]
+    },
+    {
+      "name": "left_ankle_roll_carrier",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_carrier.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_carrier.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 14842.489520084691,
+      "bbox_mm": [
+        74.89,
+        31.75,
+        52.25
+      ]
+    },
+    {
+      "name": "right_ankle_roll_carrier",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_carrier.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_carrier.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 14842.489520084691,
+      "bbox_mm": [
+        74.89,
+        31.75,
+        52.25
+      ]
+    },
+    {
+      "name": "left_ankle_roll_horn_adapter",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_horn_adapter.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_horn_adapter.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 1518.143233920731,
+      "bbox_mm": [
+        27.0,
+        27.0,
+        3.0
+      ]
+    },
+    {
+      "name": "right_ankle_roll_horn_adapter",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_horn_adapter.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_horn_adapter.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 1518.143233920731,
+      "bbox_mm": [
+        27.0,
+        27.0,
+        3.0
+      ]
+    },
+    {
+      "name": "left_sole_lightweighted",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 20783.138262421955,
+      "bbox_mm": [
+        110.0,
+        9.000000100000001,
+        42.4
+      ]
+    },
+    {
+      "name": "right_sole_lightweighted",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 20783.138263378023,
+      "bbox_mm": [
+        110.0,
+        9.000000100000001,
+        42.4
+      ]
+    },
+    {
+      "name": "m5stack_stackchan_k151_purchased_envelope",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 226766.3328039713,
+      "bbox_mm": [
+        61.5,
+        54.0,
+        70.5
+      ]
+    },
+    {
+      "name": "m5stack_stackchan_k151_face_glass_reference",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 1971.0830598197253,
+      "bbox_mm": [
+        1.0,
+        46.0,
+        43.0
+      ]
+    },
+    {
+      "name": "m5stack_stackchan_k151_camera_reference",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 31.8557495074005,
+      "bbox_mm": [
+        1.5,
+        5.2,
+        5.200000000000003
+      ]
+    },
+    {
+      "name": "m5stack_stackchan_k151_expression_reference",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.stl",
+      "valid_brep": true,
+      "solid_count": 2,
+      "volume_mm3": 155.16954434610716,
+      "bbox_mm": [
+        1.4000000000000021,
+        29.4,
+        8.399999999999999
+      ]
+    },
+    {
+      "name": "stackchan_k151_torso_adapter_3mm_6061",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.stl",
+      "valid_brep": true,
+      "solid_count": 1,
+      "volume_mm3": 11163.233990346816,
+      "bbox_mm": [
+        66.0,
+        60.0000002,
+        3.0000002000000006
+      ]
+    }
+  ],
+  "truth_boundary": "diagnostic assembly; K151 shape is an official-size purchased-module envelope backed by official vendor STL/PDF, not a printable substitute; STS3250 and torso-adapter first articles remain physical sign-off items"
+}

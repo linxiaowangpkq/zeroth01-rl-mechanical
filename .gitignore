@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .venv*/
+~$*
 reports/physical_mount_v1/*stdout.log
 reports/physical_mount_v1/*stderr.log
 reports/physical_mount_v1/*pid.txt

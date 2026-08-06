@@ -1,100 +1,97 @@
-# Zeroth-01 Physical Mount V2 Minimal（RL 机械基线）
+# Zeroth-01 Physical Mount v3 RL-Fixed
 
-本版本以已经通过干涉检查的 Physical Mount V1 为机械主链，只做最小、可逆改动：替换头部、增加浅圆角胸板、删除旧爪并替换为小型 Q 手、增加 9 mm 可更换脚底。**16 个关节、安装骨架、关节轴与舵机归属均未重排。**
+这是本仓库唯一推荐的 RL 机械基线。v3 保留已经装配过的 Zeroth-01 v2 承力骨架和原 16 个关节的完整 `xyz/rpy/axis/limit`，只增加两个串联踝横滚关节、加厚轻量脚底、固定 Q 版手和可采购的 M5Stack StackChan K151 交互头。旧的大胸前外观板、自制头和爪子已经删除，不得再作为训练或制造入口。
 
-## 当前结论
+![SolidWorks 正常装配](snapshots/solidworks/physical_mount_v3_rl_fixed/v3_solidworks_normal_front.png)
 
-| 项目 | 结果 | 证据 |
-|---|---:|---|
-| 外挂脖子 | **无独立脖子组件** | SolidWorks `external_neck_component_count=0` |
-| 原骨架头柱最大外露 | **1.404 mm** | 自动门限 ≤5 mm，PASS |
-| 头/胸装配缝 | 0.60 mm、无相交 | STEP 实体布尔门，PASS |
-| 胸板前后深度 | 8.775 mm | 浅圆角面板，不再是厚方盒 |
-| SolidWorks 装配 | 51/51 组件 | 20 承力件 + 16 独立蓝色舵机 + 15 外观/电子件组件 |
-| 旧爪 | 0 | 两个原前臂固定爪已切除，FINGER link 改为 Q 手 |
-| Q 手外包络 | 45.0 × 40.55 × 38.0 mm | 左右镜像，双耳 M3 横穿安装 |
-| 脚底 | 9 mm | 左右可更换接触底，TPU/PETG 首件 |
-| URDF | 16 个 revolute joint | 总标称质量 5.216675 kg，逐 link 质量/质心/惯量齐全 |
-| MuJoCo | PASS | 中位、16×61 单关节采样、73 个协同姿态均无非相邻刚体碰撞 |
-| 整机直接打印 | **HOLD** | 先做一颗 STS3250 量规和一套头/腕/脚底首件 |
+## 冻结结果
 
-## 唯一推荐入口
+| 项目 | v3 值 |
+|---|---:|
+| 可动关节 | 18 个 revolute joint |
+| 执行器 | 18 × FEETECH STS3250-C001，蓝色独立零件 |
+| 原 v2 关节保真 | 16/16 完整六维位姿、轴和限位保持 |
+| 新踝横滚 | 左右各 1 轴，位于踝俯仰轴正下方 50.000 mm |
+| 标称整机质量 | 3.095471828 kg |
+| 原 Zeroth-01 目标范围 | 3.0–3.3 kg |
+| STS3250 额定扭矩 | 1.569064 N·m @ 12 V |
+| RL 连续设计上限 | 1.2552512 N·m/关节 |
+| 64 帧准静态峰值 | 1.186408681 N·m，左踝俯仰，连续值的 94.52% |
+| 头部固定负载 | K151 0.187 kg + 6061 转接板 0.018 kg |
+| 坐标 | X 向前、Y 向左、Z 向上 |
 
-- RL URDF：`generated/urdf/physical_mount_v2_minimal/zeroth01_physical_mount_v2_minimal.urdf`
-- RL 总交接：`generated/config/physical_mount_v2_minimal_rl_handoff.json`
-- 16 舵机数据：`generated/config/physical_mount_v1_actuators.json`
-- 舵机标定模板：`generated/config/physical_mount_v1_hardware_calibration_template.csv`
-- 打印件质量/质心/惯量：`generated/config/physical_mount_v2_minimal_mass_properties.json`
-- SolidWorks 便携透视装配：`generated/solidworks/physical_mount_v2_minimal/portable_flat/OPEN_FIRST_ZEROTH01_PHYSICAL_MOUNT_V2_MINIMAL_16_BLUE_SERVOS_XRAY.SLDASM`
-- SolidWorks 便携正常外观：`generated/solidworks/physical_mount_v2_minimal/portable_flat/ZEROTH01_PHYSICAL_MOUNT_V2_MINIMAL_WHITE_NORMAL.SLDASM`
-- STEP/STL：`generated/cad/physical_mount_v2_minimal/parts/`
-- 一键发布校验：`python scripts/validate_minimal_v2_release.py`
+训练只读取以下五个入口：
 
-Physical Mount V1 被保留为来源机制和 STS3250 首件接口依据，但不再是推荐训练入口。
+- `generated/urdf/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof.urdf`
+- `generated/mujoco/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof_mjx.xml`
+- `generated/config/physical_mount_v3_rl_fixed_actuator_layout.json`
+- `generated/config/physical_mount_v3_rl_fixed_rl_handoff.json`
+- `reports/physical_mount_v3_rl_fixed/release_gates.json`
 
-## 坐标、电子件与传感器位置
+`actuator_layout.json` 给出 S01–S18 的关节名、所有者刚体、中立轴心、世界轴、质量和待实机标定字段。URDF/MJCF 中的质量、质心和惯量目前是可训练的名义估计，不是实测值。
 
-URDF 使用米/千克/弧度；机器人左侧为 `+X`、前方为 `-Y`、上方为 `+Z`。以下均相对 `Z_BOT2_MASTER_BODY_SKELETON`：
+## 验证结论
 
-| 部件 | SolidWorks 颜色 | 中心 XYZ (m) | 标称质量 | 状态 |
-|---|---|---:|---:|---|
-| Waveshare 4.3" DSI QLED 显示 | 青色 | `[0, -0.043, 0.070]` | 0.129 kg | 已选产品，夹具需打印试配 |
-| Raspberry Pi Camera Module 3 Wide | 绿色 | `[0, -0.033, 0.105]` | 0.004 kg | 产品尺寸/STEP 依据 |
-| VL53L5CX ToF 载板包络 | 紫色 | `[0.029, -0.038, 0.108]` | 0.002 kg | 传感器已选，载板待冻结 |
-| SBC/载板/稳压器包络 | 橙色 | `[0, 0.042, -0.002]` | 0.180 kg | RL 假设，型号待冻结 |
-| 3S2P 电池+BMS 包络 | 品红 | `[0, 0.028, -0.052]` | 0.340 kg | RL 假设，电芯/BMS 待冻结 |
-| 躯干 IMU | 亮绿 | `[0, 0.012, 0.018]` | 0.012 kg | RL 假设，型号/方向待冻结 |
+- SolidWorks 33.0.0 原生装配：51/51 组件、18 个独立蓝色 STS3250、旧爪 0、Q 手 2。
+- SolidWorks 原生干涉：机械相交体积为 0。仅保留 3 条 K151 玻璃/表情/摄像孔显示参考层重叠，它们不制造、不计质量、不进入碰撞体。
+- URDF ↔ SolidWorks 中立位：PASS；最大链接位移残差低于 `7e-10 mm`；S01–S18 的 URDF 视觉件全部使用同一个尺寸受控 STS3250 mesh，其 18 组完整 6D 安装变换与 SolidWorks 清单一致。
+- MuJoCo：18 actuator、总质量相等、脚底齐平、逐轴低/中/高限位采样无非地面穿透。
+- 64 帧协调运动和准静态逆动力学：PASS；动态步行仍需 RL rollout 的峰值/RMS 扭矩和热流日志。
 
-相机与 ToF 的 REP-103 光学坐标、四个脚底接触 frame 已写进 URDF 和 handoff JSON。正常 SolidWorks 装配隐藏内部电子件；透视装配显示全部不同颜色包络。
+![64 帧 MuJoCo motion](snapshots/motion/physical_mount_v3_rl_fixed/zeroth01_v3_18dof_mujoco_motion.gif)
 
-## 16 个蓝色舵机究竟是什么
+核心报告：
 
-SolidWorks 中的 `S01`–`S16` 是从原 Zeroth 装配中按原刚体归属提取的 **STS3215-family 安装实体**，不是随意摆放的蓝色盒子：
+- `reports/physical_mount_v3_rl_fixed/solidworks_gate.json`
+- `reports/physical_mount_v3_rl_fixed/solidworks_interference_gate.json`
+- `reports/physical_mount_v3_rl_fixed/fk_manifest_gate.json`
+- `reports/physical_mount_v3_rl_fixed/coordinated_motion_evidence.json`
+- `reports/physical_mount_v3_rl_fixed/sts3250_quasistatic_torque_gate.json`
+- `reports/physical_mount_v3_rl_fixed/release_gates.json`
 
-- 每颗舵机是独立 `.SLDPRT`；
-- 每颗跟随其真实 owning link 和 16DoF 正向运动学；
-- 左右看似不完全同向来自镜像机构和关节坐标，不允许为了画面对称而旋转；
-- 装配树名称同时包含 `Sxx` 与关节名，可在 SolidWorks 中单独隐藏、剖视或测量。
-- 发布仓库采用 SolidWorks Pack and Go 生成的 `portable_flat` 同目录包；两套 `.SLDASM` 与 51 个 `.SLDPRT` 放在同一目录，克隆后不依赖原开发机绝对路径。
+## SolidWorks 主文件
 
-目标执行器仍是 FEETECH `STS3250-C001`：12 V、74.5 g、额定持续扭矩 1.569 N·m、堵转扭矩 4.903 N·m、URDF 速度上限 3.0 rad/s。训练不得把堵转扭矩当持续输出。
+- 正常外观：`generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/OPEN_FIRST_ZEROTH01_V3_RL_FIXED_CONNECTED_WHITE_18_BLUE_STS3250.SLDASM`
+- 可选透视：`generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/OPTIONAL_XRAY_ZEROTH01_V3_RL_FIXED_18_BLUE_STS3250.SLDASM`
+- 51 组件外部件清单：`generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json`
+- 新制 STEP/STL：`generated/cad/physical_mount_v3_rl_fixed/parts/`
 
-STS3250 和源 STS3215-family 的名义壳体家族接近，但官方 STS3250 的 4×M2、25T 舵盘、后轴与实物公差尚未完成首件签核，所以蓝色件必须理解为“安装位置真值”，不是供应商精确 B-Rep。首件量规仍位于：
+配色用于装配识别：白色为承力骨架/外件，蓝色为 18 个 STS3250 和输出连接，橙色为计算模块，紫色为电池，绿色为躯干 IMU，黑色为脚底和 K151 屏幕。透视图用于检查这些内部件，不是额外的可打印壳体。
 
-- `generated/cad/physical_mount_v1/sts3250_interface/FEETECH_STS3250_C001_DIMENSION_REFERENCE.step`
-- `generated/cad/physical_mount_v1/sts3250_interface/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.step`
-- `generated/print/physical_mount_v1/first_article/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.stl`
+## 采购头和连接
 
-## 3D 打印和装配边界
+K151 是完整采购模块，不需要打印头壳：54.0 × 70.5 × 61.5 mm、187 g，含 2 英寸彩色触摸屏、GC0308 摄像头、双麦克风、1 W 扬声器、接近/环境光、9 轴 IMU、Wi‑Fi/BLE、电池和两轴反馈舵机。步行时锁定内部 pan/tilt 中位，把整头作为 187 g 固定负载；交互模式再解锁。
 
-17 组 v2 STEP/STL 均通过拓扑检查；其中头前壳、头后壳、胸板、相机支架、左右 Q 手和左右脚底为打印件。显示器、相机、ToF、计算板、电池、IMU 与 UI/window 几何是受控安装包络，不应直接当成打印件。
+唯一新增机械接口是 `stackchan_k151_torso_adapter_3mm_6061.step`：66 × 60 × 3 mm 6061，K151 侧 4 × Ø3.4 mm 对应 48 × 32 mm M3 孔矩，躯干侧使用四条 3.4 × 12 mm 闭口槽。URDF 连接链为“躯干 → 转接板 → K151”，没有外挂长脖子；旧胸前板已经移除。
 
-推荐顺序：
+官方依据：
 
-1. 打印 STS3250 4×M2 首件量规，只拿一颗实物验证孔、舵盘和后轴；
-2. 打印一套头前/后壳、相机支架，实装显示器/相机/ToF 并检查 FFC/CSI 出线；
-3. 打印一只 Q 手和一块脚底，验证双耳 M3、腕部间隙、落地面与紧固件；
-4. 通过后才打印左右成套件；
-5. 装 16 颗舵机时逐颗做总线扫描、方向点动和机械零位，填写 calibration CSV；
-6. 走完整受限关节运动，确认线束弯曲半径，再称量各总成并更新 URDF 惯量。
+- [M5Stack K151 产品页](https://shop.m5stack.com/products/stackchan-kawaii-co-created-open-source-ai-desktop-robot)
+- [M5Stack StackChan 文档](https://docs.m5stack.com/en/StackChan)
+- [K151 官方结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/K151_StackChan/Structures)
+- [K151 官方软件](https://github.com/m5stack/StackChan)
+- [FEETECH STS3250 官方规格](https://www.feetechrc.com/en/562636.html)
 
-因此结论不是“现在整机直接打印即可拼装”，而是“CAD/URDF 已可训练和做分件首件，整机打印仍由 STS3250 与头/腕/脚首件门控制”。
+## 物理发布边界
 
-## 仿真证据与边界
+数字 RL 基线为 PASS，但实机制造仍保留以下 HOLD：
 
-- `reports/physical_mount_v2_minimal/geometry_gate.json`：头柱外露 1.404 mm、0.60 mm 头胸缝、Q 手与脚底尺寸、STEP/STL 拓扑；
-- `reports/physical_mount_v2_minimal/dynamic_collision_gate.json`：MuJoCo 3.11.0 中位、单关节和协同动作；
-- `reports/physical_mount_v2_minimal/solidworks_gate.json`：51 组件、16 舵机、0 旧爪、0 外挂脖子、视图和 GIF；
-- `reports/physical_mount_v2_minimal/release_gate.json`：可移植 URDF、质量惯量、CAD 数量和交付完整性总门。
+1. 采购一颗 STS3250，用 `sts3250_first_article_gauge.step` 复核 4×M2、25T/Ø5.9 输出、后轴和线束出口。
+2. 先加工一块 K151 转接板，验证躯干闭口槽、M3 紧固、USB-C 和线束弯曲半径。
+3. 装配后逐总成测量质量、质心和惯量，回填 URDF/MJCF。
+4. 用 RL rollout 记录所有关节峰值/RMS 扭矩、速度、电流和热量；准静态 PASS 不等于动态步行签核。
 
-SolidWorks GIF 是 CLI 正向运动学驱动原生组件 transform 的证据；碰撞结论来自同一 URDF/几何的 MuJoCo 采样门。它不是 SolidWorks Motion 的连续接触求解，也不证明全 16 维关节极限笛卡尔积无自碰撞。RL 必须保留自碰撞惩罚/终止。
+完整首件顺序见 `ASSEMBLY_GUIDE_zh.md`，采购表见 `PROCUREMENT_BOM.csv`，RL 会话一句话入口见 `one-seq.md`。
 
-## RL 使用方式
-
-先运行：
+## 本地复核
 
 ```bash
-python scripts/validate_minimal_v2_release.py
+python cad/physical_mount_v3_rl_fixed/build_v3_urdf.py
+python cad/physical_mount_v3_rl_fixed/build_v3_mjcf.py
+python cad/physical_mount_v3_rl_fixed/validate_v3_fk_manifest.py
+python cad/physical_mount_v3_rl_fixed/validate_v3_release.py
+python cad/physical_mount_v3_rl_fixed/validate_v3_sts3250_torque.py
+python cad/physical_mount_v3_rl_fixed/render_v3_motion.py
 ```
 
-然后以 v2-minimal URDF 为唯一机械真值，读取 handoff 中的关节、逐 link 惯量、传感器 frame、接触点、额定扭矩和域随机化范围。当前可做刚体 PPO 步行与 STS3250 额定扭矩可行性研究；sim-to-real 仍需实际总线/方向/零位、首件装配、线束、整机质量/质心/惯量、相机/ToF/IMU 标定和热/电压裕量。
+打开 SolidWorks 正常或透视装配后，再运行 `validate_solidworks_v3_interference.py`。不要手改生成的 URDF/MJCF；修改生成器后重新生成并重跑全部门禁。

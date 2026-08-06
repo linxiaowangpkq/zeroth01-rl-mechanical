@@ -1,0 +1,18 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.solidworks_gate.v1",
+  "solidworks_revision": "33.0.0",
+  "open_first_xray_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v3_rl_fixed\\portable_flat\\OPTIONAL_XRAY_ZEROTH01_V3_RL_FIXED_18_BLUE_STS3250.SLDASM",
+  "normal_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v3_rl_fixed\\portable_flat\\OPEN_FIRST_ZEROTH01_V3_RL_FIXED_CONNECTED_WHITE_18_BLUE_STS3250.SLDASM",
+  "manifest_component_count": 51,
+  "assembly_component_count": 51,
+  "separate_blue_sts3250_count": 18,
+  "old_claw_component_count": 0,
+  "q_hand_component_count": 2,
+  "portable_dependency_gate": "PASS",
+  "component_transform_gate": "PASS",
+  "normal_save_gate": "PASS",
+  "xray_save_gate": "PASS",
+  "normal_view_gate": "PASS",
+  "xray_view_gate": "PASS",
+  "overall": "PASS"
+}

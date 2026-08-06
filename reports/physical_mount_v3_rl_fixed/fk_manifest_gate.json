@@ -1,0 +1,415 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.fk_manifest_gate.v1",
+  "urdf": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\urdf\\physical_mount_v3_rl_fixed\\zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
+  "manifest": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\cad\\physical_mount_v3_rl_fixed\\ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json",
+  "movable_joint_count": 18,
+  "total_mass_kg": 3.095471828,
+  "head_parent_link": "stackchan_k151_torso_adapter",
+  "neutral_frame_rows": [
+    {
+      "link": "3215_1Flange",
+      "translation_residual_mm": 1.1595404540745898e-11,
+      "rotation_max_abs": 4.1320202467942657e-13
+    },
+    {
+      "link": "3215_1Flange_2",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "link": "3215_BothFlange_10",
+      "translation_residual_mm": 4.263395833904035e-11,
+      "rotation_max_abs": 8.264039409386359e-13
+    },
+    {
+      "link": "3215_BothFlange_13",
+      "translation_residual_mm": 7.594021869276343e-11,
+      "rotation_max_abs": 4.1320212918211644e-13
+    },
+    {
+      "link": "3215_BothFlange_14",
+      "translation_residual_mm": 8.387812157937067e-11,
+      "rotation_max_abs": 8.264039409386359e-13
+    },
+    {
+      "link": "3215_BothFlange_5",
+      "translation_residual_mm": 2.5500025604424147e-11,
+      "rotation_max_abs": 4.132021249469517e-13
+    },
+    {
+      "link": "3215_BothFlange_6",
+      "translation_residual_mm": 2.5492806128737917e-11,
+      "rotation_max_abs": 8.264039409386359e-13
+    },
+    {
+      "link": "3215_BothFlange_9",
+      "translation_residual_mm": 3.38827667196707e-11,
+      "rotation_max_abs": 4.1320212918211644e-13
+    },
+    {
+      "link": "FINGER_1",
+      "translation_residual_mm": 4.853280472078707e-11,
+      "rotation_max_abs": 9.428080603550437e-13
+    },
+    {
+      "link": "FINGER_1_2",
+      "translation_residual_mm": 6.724515017418396e-10,
+      "rotation_max_abs": 9.396927680427325e-12
+    },
+    {
+      "link": "FOOT",
+      "translation_residual_mm": 1.3995331322634082e-10,
+      "rotation_max_abs": 4.135307513899924e-13
+    },
+    {
+      "link": "FOOT_2",
+      "translation_residual_mm": 1.4528460096709928e-10,
+      "rotation_max_abs": 8.264039409386359e-13
+    },
+    {
+      "link": "IMU_2",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "link": "L_ARM_MIRROR_1",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 1.000000082740371e-11
+    },
+    {
+      "link": "R_ARM_MIRROR_1",
+      "translation_residual_mm": 1.6301670098351257e-11,
+      "rotation_max_abs": 4.1320212499989126e-13
+    },
+    {
+      "link": "U_HIP_L",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.1320212499989126e-13
+    },
+    {
+      "link": "U_HIP_R",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.1320212499989126e-13
+    },
+    {
+      "link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "link": "Z_BOT2_MASTER_SHOULDER2",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.1320202467942657e-13
+    },
+    {
+      "link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "link": "battery_pack",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "link": "compute_module",
+      "translation_residual_mm": 6.776263578034403e-18,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "link": "left_ankle_roll_carrier",
+      "translation_residual_mm": 1.1685226144928857e-10,
+      "rotation_max_abs": 4.1353075181350886e-13
+    },
+    {
+      "link": "right_ankle_roll_carrier",
+      "translation_residual_mm": 1.2542683603892085e-10,
+      "rotation_max_abs": 8.264041577790704e-13
+    },
+    {
+      "link": "torso_imu_module",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    }
+  ],
+  "released_v2_joint_rows": [
+    {
+      "joint": "left_shoulder_yaw",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "Z_BOT2_MASTER_SHOULDER2"
+    },
+    {
+      "joint": "right_shoulder_yaw",
+      "max_numeric_residual": 0.0,
+      "child": "Z_BOT2_MASTER_SHOULDER2_2"
+    },
+    {
+      "joint": "left_shoulder_pitch",
+      "max_numeric_residual": 0.0,
+      "child": "3215_1Flange"
+    },
+    {
+      "joint": "right_shoulder_pitch",
+      "max_numeric_residual": 0.0,
+      "child": "3215_1Flange_2"
+    },
+    {
+      "joint": "left_elbow_yaw",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "R_ARM_MIRROR_1"
+    },
+    {
+      "joint": "right_elbow_yaw",
+      "max_numeric_residual": 1.000000082740371e-11,
+      "child": "L_ARM_MIRROR_1"
+    },
+    {
+      "joint": "left_hip_yaw",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "U_HIP_L"
+    },
+    {
+      "joint": "right_hip_yaw",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "U_HIP_R"
+    },
+    {
+      "joint": "left_hip_roll",
+      "max_numeric_residual": 0.0,
+      "child": "3215_BothFlange_5"
+    },
+    {
+      "joint": "right_hip_roll",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "3215_BothFlange_6"
+    },
+    {
+      "joint": "left_hip_pitch",
+      "max_numeric_residual": 0.0,
+      "child": "3215_BothFlange_9"
+    },
+    {
+      "joint": "right_hip_pitch",
+      "max_numeric_residual": 0.0,
+      "child": "3215_BothFlange_10"
+    },
+    {
+      "joint": "left_knee_pitch",
+      "max_numeric_residual": 0.0,
+      "child": "3215_BothFlange_13"
+    },
+    {
+      "joint": "right_knee_pitch",
+      "max_numeric_residual": 0.0,
+      "child": "3215_BothFlange_14"
+    },
+    {
+      "joint": "left_ankle_pitch",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "left_ankle_roll_carrier"
+    },
+    {
+      "joint": "right_ankle_pitch",
+      "max_numeric_residual": 4.1320212499989126e-13,
+      "child": "right_ankle_roll_carrier"
+    }
+  ],
+  "ankle_roll_rows": [
+    {
+      "joint": "left_ankle_roll",
+      "parent": "left_ankle_roll_carrier",
+      "child": "FOOT",
+      "vertical_offset_mm": -50.000000000025025,
+      "lateral_offset_mm": 2.9215994421903095e-11,
+      "world_axis_residual": 6.175646381599046e-13
+    },
+    {
+      "joint": "right_ankle_roll",
+      "parent": "right_ankle_roll_carrier",
+      "child": "FOOT_2",
+      "vertical_offset_mm": -50.00000000001437,
+      "lateral_offset_mm": 2.9218449647516673e-11,
+      "world_axis_residual": 9.45492337055632e-13
+    }
+  ],
+  "manifest_frame_rows": [
+    {
+      "component": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+      "link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 0.0
+    },
+    {
+      "component": "CARRIER_3215_BothFlange_13",
+      "link": "3215_BothFlange_13",
+      "translation_residual_mm": 7.594021869276343e-11,
+      "rotation_max_abs": 4.1320212918211644e-13
+    },
+    {
+      "component": "CARRIER_3215_BothFlange_14",
+      "link": "3215_BothFlange_14",
+      "translation_residual_mm": 8.387505392667446e-11,
+      "rotation_max_abs": 8.264039409386359e-13
+    },
+    {
+      "component": "LEFT_9MM_LIGHTWEIGHT_SOLE",
+      "link": "FOOT",
+      "translation_residual_mm": 1.3995331322634082e-10,
+      "rotation_max_abs": 4.135307513899924e-13
+    },
+    {
+      "component": "RIGHT_9MM_LIGHTWEIGHT_SOLE",
+      "link": "FOOT_2",
+      "translation_residual_mm": 1.4528832327625655e-10,
+      "rotation_max_abs": 8.264039409386359e-13
+    }
+  ],
+  "sts3250_visual_manifest_rows": [
+    {
+      "id": "S01",
+      "owner_link": "3215_1Flange_2",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.99661706277855e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S02",
+      "owner_link": "3215_1Flange",
+      "translation_residual_mm": 1.1595404540745898e-11,
+      "rotation_max_abs": 4.99661706277855e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S03",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 2.0682310713134044e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S04",
+      "owner_link": "3215_BothFlange_10",
+      "translation_residual_mm": 4.263395833904035e-11,
+      "rotation_max_abs": 4.789349926513746e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S05",
+      "owner_link": "3215_BothFlange_9",
+      "translation_residual_mm": 3.38827667196707e-11,
+      "rotation_max_abs": 5.210206871650637e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S06",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 2.0682310713134044e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S07",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.896906448045857e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S08",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.615454455314897e-16,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S09",
+      "owner_link": "3215_1Flange_2",
+      "translation_residual_mm": 0.0,
+      "rotation_max_abs": 4.996615426099138e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S10",
+      "owner_link": "3215_1Flange",
+      "translation_residual_mm": 1.6301670098351257e-11,
+      "rotation_max_abs": 4.1320224151986107e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S11",
+      "owner_link": "3215_BothFlange_6",
+      "translation_residual_mm": 2.5501167269464037e-11,
+      "rotation_max_abs": 8.264040493588531e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S12",
+      "owner_link": "3215_BothFlange_5",
+      "translation_residual_mm": 2.5503195399950497e-11,
+      "rotation_max_abs": 4.1336662128640733e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S13",
+      "owner_link": "3215_BothFlange_14",
+      "translation_residual_mm": 8.388151666102346e-11,
+      "rotation_max_abs": 4.789349926513746e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S14",
+      "owner_link": "3215_BothFlange_13",
+      "translation_residual_mm": 7.594059435360867e-11,
+      "rotation_max_abs": 5.210206871650637e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S15",
+      "owner_link": "3215_BothFlange_14",
+      "translation_residual_mm": 1.254247845932103e-10,
+      "rotation_max_abs": 8.264040493588531e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S16",
+      "owner_link": "3215_BothFlange_13",
+      "translation_residual_mm": 1.1685226144928857e-10,
+      "rotation_max_abs": 4.1320247807411947e-13,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S17",
+      "owner_link": "right_ankle_roll_carrier",
+      "translation_residual_mm": 1.4528832327625655e-10,
+      "rotation_max_abs": 5.183377877293812e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    },
+    {
+      "id": "S18",
+      "owner_link": "left_ankle_roll_carrier",
+      "translation_residual_mm": 1.3995331322634082e-10,
+      "rotation_max_abs": 4.976780620532774e-12,
+      "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
+      "gate": "PASS"
+    }
+  ],
+  "failures": [],
+  "overall": "PASS"
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "zeroth01.physical_mount_v3_rl_fixed.solidworks_interference_gate.v1",
+  "solidworks_revision": "33.0.0",
+  "assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\solidworks\\physical_mount_v3_rl_fixed\\portable_flat\\OPTIONAL_XRAY_ZEROTH01_V3_RL_FIXED_18_BLUE_STS3250.SLDASM",
+  "settings": {
+    "treat_coincidence_as_interference": false,
+    "treat_subassemblies_as_components": false,
+    "include_multibody_part_interferences": true,
+    "ignore_hidden_bodies": false
+  },
+  "raw_interference_count": 3,
+  "allowed_reference_overlay_count": 3,
+  "physical_interference_count": 0,
+  "rows": [
+    {
+      "components": [
+        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE-1",
+        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_EXPRESSION_REFERENCE-1"
+      ],
+      "volume_mm3": 11.08353888186472,
+      "possible_interference": false,
+      "classification": "allowed_nonmanufacturing_reference_overlay"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE-1",
+        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_EXPRESSION_REFERENCE-1"
+      ],
+      "volume_mm3": 11.08353888186472,
+      "possible_interference": false,
+      "classification": "allowed_nonmanufacturing_reference_overlay"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE-1",
+        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_CAMERA_REFERENCE-1"
+      ],
+      "volume_mm3": 7.365158216742148,
+      "possible_interference": false,
+      "classification": "allowed_nonmanufacturing_reference_overlay"
+    }
+  ],
+  "truth_boundary": "Only StackChan face-glass/expression/camera display references may overlap; all load-bearing, actuator, adapter and shell components must have zero volume intersection.",
+  "overall": "PASS"
+}
