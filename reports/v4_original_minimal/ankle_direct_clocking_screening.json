@@ -1,0 +1,5047 @@
+{
+  "schema": "zeroth01.v4.ankle_direct_clocking_screening.v1",
+  "rows": [
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5133.90322007049,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 2935.3959352931925,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1751.7031239851954,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1590.6937658074237,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1555.203345823859,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1684.4016937738538,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1604.0323917295218,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1552.724410864983,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1679.1264894300464,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 3181.785560772041,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5326.927471643835,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 495.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 6111.853315212159,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 4603.367597386698,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 2403.326806780887,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1491.020110057854,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1425.9321047996589,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1420.6277530481157,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1503.7438387575412,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1436.5667042433229,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1415.0415586145455,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1493.9806015057513,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 3019.2128353320777,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5197.9691127436745,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 497.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5921.251633659869,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 4335.609243947617,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 2146.777554370392,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1366.8909943703202,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1341.0471621949196,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1343.0813825613996,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1403.2682536378643,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1350.344928876631,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1335.9439736053716,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1379.7781221396224,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 2936.4552037611347,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5122.42993118651,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 498.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5801.048212391383,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 4067.119440813487,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1893.8192351475939,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1247.3831192843124,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1255.40760240106,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1259.6990688157082,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1291.292204090101,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1263.3886134158518,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1250.9081439524655,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1263.925238960301,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 2853.457577862196,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5041.472331954731,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 499.45927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5664.71249204132,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 3933.1019711351387,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1773.3947906912106,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1189.747842547242,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1212.8082998871218,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1217.1193885931784,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1233.1896329342583,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1220.1386585062,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1206.6671739795086,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 1207.326430342118,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 2812.324825181059,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 4999.41760243037,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 499.95927676669544,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "S16_STS3250_left_ankle_pitch"
+          ],
+          "overlap_mm3": 5590.884273878076,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_3215_BothFlange_13"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "CARRIER_FOOT"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S18_STS3250_left_ankle_roll",
+            "LEFT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5133.8954546585965,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 2935.389970800805,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1751.7009301365624,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1588.9583441634222,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1555.2018213909673,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1684.3999275638723,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1604.0304602355905,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1552.7228128372462,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1679.1249833182044,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 3181.785134665414,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5326.925349072591,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 5.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 495.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 6111.848283177866,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 4603.36016502849,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 2403.3215277499107,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1491.0179315779706,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1425.9303444762932,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1420.626000113482,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1503.7419126710615,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1436.564913951801,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1415.0398224837922,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1493.9786947655798,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 3019.212028217986,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5197.966652975282,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 7.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 497.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5921.246245915143,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 4335.602053389152,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 2146.7724756562625,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1366.8889097352458,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1341.0454287438383,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1343.0796527413504,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1403.266371674454,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1350.3416765515362,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1335.9422793937615,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1379.7762459483345,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 2936.4543306191104,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5122.427370285833,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 8.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 498.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5801.0427140281845,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 4067.1124000774607,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1893.8146240967724,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1247.3811304460642,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1255.4059063755253,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1259.6973276114634,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1291.2901899304788,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1263.3868977298157,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1250.9063915757858,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1263.9233311608903,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 2853.4565902539816,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5041.469628773666,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.0,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 499.4592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5664.706801646877,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 0,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 3933.0950285028775,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 30,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1773.3904242303406,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 60,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1189.7458949178763,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 90,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1212.8066202104692,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 120,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1217.1176750513407,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 150,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1233.1876504735985,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 180,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1220.1369617158603,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 210,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1206.6654177636374,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 240,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 1207.3245585090535,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 270,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 2812.3237922935464,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 300,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 4999.414838464742,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "offset_mm": 9.5,
+      "clocking_deg_from_outboard_toward_up": 330,
+      "height_mm": 499.9592493288761,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "S15_STS3250_right_ankle_pitch"
+          ],
+          "overlap_mm3": 5590.878502595005,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_3215_BothFlange_14"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "CARRIER_FOOT_2"
+          ],
+          "overlap_mm3": Infinity,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S17_STS3250_right_ankle_roll",
+            "RIGHT_7MM_LIGHTWEIGHT_SOLE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "screening_gate": "FAIL"
+    }
+  ],
+  "feasible": [],
+  "overall": "FAIL"
+}

@@ -1,0 +1,805 @@
+{
+  "schema": "zeroth01.v4.remote_pivot_screening.v1",
+  "rows": [
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 0.0,
+      "height_mm": 490.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 265.6858982548826,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 129.71161979236746,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 170.04300424942255,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 315.9460410512796,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 942.5308492958192,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 3.0,
+      "height_mm": 493.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 271.7991740074969,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 126.75029822685899,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 139.50133564454808,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 290.31112240268493,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 804.9799598809266,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 5.0,
+      "height_mm": 495.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 280.64002817858153,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 124.85760336157259,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 98.74913470513883,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 264.17782172278766,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 736.021007319826,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 7.0,
+      "height_mm": 497.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 261.98553533880744,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 121.36858765710427,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 60.893129054469654,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 234.82627232892312,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 677.6624670674458,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 8.0,
+      "height_mm": 498.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 238.78604531177444,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 115.24828671225772,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 50.891352053354396,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 219.44847303141,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 653.3096870521515,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 9.0,
+      "height_mm": 499.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 212.35989708152675,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 104.87110952626765,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 42.681779130544946,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 202.305380486935,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 630.1296660984351,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "left",
+      "pivot_offset_below_pitch_mm": 9.5,
+      "height_mm": 499.959277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 198.69855610537297,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 98.35822786522898,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 38.49494631667403,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 193.09889948641106,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 618.5442055432396,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S16_STS3250_left_ankle_pitch",
+            "LEFT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 0.0,
+      "height_mm": 490.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 265.6859299010357,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 129.7117047715756,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 170.04297740269692,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 315.9466678870394,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 942.5306032631388,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 3.0,
+      "height_mm": 493.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 271.79913808858487,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 126.75031497876833,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 139.50111297327462,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 290.3116172159857,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 804.9799095271737,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 5.0,
+      "height_mm": 495.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 280.63878705364243,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 124.85757375500584,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 98.74871426401798,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 264.1782269470384,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 736.0212335967984,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 7.0,
+      "height_mm": 497.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 261.98536757158155,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 121.36817271852127,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 60.892623101263986,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 234.8266029106027,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 677.6623467734645,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 8.0,
+      "height_mm": 498.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 238.7858721499573,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 115.24801507645724,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 50.890785096195934,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 219.44876107080603,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 653.3095460173785,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 9.0,
+      "height_mm": 499.459277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 212.35973947178545,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 104.87095845342967,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 42.68112993655162,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 202.30562168315763,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 630.1295022850087,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    },
+    {
+      "side": "right",
+      "pivot_offset_below_pitch_mm": 9.5,
+      "height_mm": 499.959277582387,
+      "height_gate": "PASS",
+      "pairs": [
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_BEARINGS"
+          ],
+          "overlap_mm3": 198.69839673638296,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_PULLEYS"
+          ],
+          "overlap_mm3": 98.35813043628337,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_OUTPUT_SHAFT"
+          ],
+          "overlap_mm3": 38.49428485294129,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FOOT_HORN"
+          ],
+          "overlap_mm3": 193.09911341140457,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_FRONT_PLATE"
+          ],
+          "overlap_mm3": 618.544030565603,
+          "gate": "FAIL"
+        },
+        {
+          "components": [
+            "S15_STS3250_right_ankle_pitch",
+            "RIGHT_ANKLE_REAR_PLATE"
+          ],
+          "overlap_mm3": 0.0,
+          "gate": "PASS"
+        }
+      ],
+      "critical_hardware_gate": "FAIL"
+    }
+  ],
+  "feasible": [],
+  "overall": "FAIL"
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.coordinated_motion_evidence.v1",
+  "source_mjcf": "generated/mujoco/physical_mount_v4_original_minimal/zeroth01_physical_mount_v4_original_minimal_18dof_mjx.xml",
+  "frame_count": 64,
+  "fps": 12.5,
+  "joint_extrema_rad": {
+    "left_shoulder_yaw": [
+      -0.055,
+      0.055
+    ],
+    "right_shoulder_yaw": [
+      -0.055,
+      0.055
+    ],
+    "left_shoulder_pitch": [
+      -0.26,
+      0.26
+    ],
+    "right_shoulder_pitch": [
+      -0.26,
+      0.26
+    ],
+    "left_elbow_yaw": [
+      -0.12,
+      0.12
+    ],
+    "right_elbow_yaw": [
+      -0.12,
+      0.12
+    ],
+    "left_hip_yaw": [
+      -0.03,
+      0.01
+    ],
+    "right_hip_yaw": [
+      -0.01,
+      0.03
+    ],
+    "left_hip_roll": [
+      0.025,
+      0.055
+    ],
+    "right_hip_roll": [
+      -0.055,
+      -0.025
+    ],
+    "left_hip_pitch": [
+      0.05000000000000002,
+      0.29000000000000004
+    ],
+    "right_hip_pitch": [
+      -0.29000000000000004,
+      -0.05000000000000002
+    ],
+    "left_knee_pitch": [
+      -0.36,
+      -0.2
+    ],
+    "right_knee_pitch": [
+      0.2,
+      0.36
+    ],
+    "left_ankle_pitch": [
+      -0.2,
+      -0.039999999999999994
+    ],
+    "right_ankle_pitch": [
+      0.039999999999999994,
+      0.2
+    ],
+    "left_ankle_roll": [
+      -0.075,
+      0.075
+    ],
+    "right_ankle_roll": [
+      -0.075,
+      0.075
+    ]
+  },
+  "maximum_vertical_regrounding_correction_m": 0.004381330288293479,
+  "non_ground_penetrations": [],
+  "gate": "PASS",
+  "gif": "snapshots/motion/physical_mount_v4_original_minimal/zeroth01_v4_original_minimal_18dof_mujoco_motion.gif",
+  "truth_boundary": "Kinematic coordinated sweep with MuJoCo primitive collisions; not a powered balance or torque validation."
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.solidworks_gate.v1",
+  "solidworks_revision": "33.0.0",
+  "open_first_xray_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\solidworks\\physical_mount_v4_original_minimal\\portable_flat\\OPTIONAL_XRAY_ZEROTH01_V4_ORIGINAL_MINIMAL_INTERNAL_LAYOUT.SLDASM",
+  "normal_assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\solidworks\\physical_mount_v4_original_minimal\\portable_flat\\OPEN_FIRST_ZEROTH01_V4_ORIGINAL_MINIMAL_WHITE_18_BLUE_STS3250.SLDASM",
+  "manifest_component_count": 57,
+  "assembly_component_count": 57,
+  "separate_blue_sts3250_count": 18,
+  "old_claw_component_count": 0,
+  "q_hand_component_count": 0,
+  "portable_dependency_gate": "PASS",
+  "component_transform_gate": "PASS",
+  "normal_save_gate": "PASS",
+  "xray_save_gate": "PASS",
+  "normal_view_gate": "PASS",
+  "xray_view_gate": "PASS",
+  "assembly_bbox_m": {
+    "min": [
+      -0.1000389883020094,
+      -0.1389586927031076,
+      -0.42491804034728703
+    ],
+    "max": [
+      0.05350998817881108,
+      0.13896813363717908,
+      0.0740412372351
+    ],
+    "size": [
+      0.15354897648082047,
+      0.27792682634028665,
+      0.498959277582387
+    ]
+  },
+  "standing_height_mm": 498.959277582387,
+  "standing_height_limit_mm": 500.0,
+  "standing_height_gate": "PASS",
+  "highest_occurrences": [
+    {
+      "component_id": "V4_HEAD_FRONT",
+      "max_z_m": 0.0740412372351
+    },
+    {
+      "component_id": "V4_HEAD_REAR",
+      "max_z_m": 0.0740412372351
+    },
+    {
+      "component_id": "V4_HEAD_VISOR",
+      "max_z_m": 0.0705
+    },
+    {
+      "component_id": "V4_UNITV2_CRADLE",
+      "max_z_m": 0.059000000000000004
+    },
+    {
+      "component_id": "V4_UNITV2",
+      "max_z_m": 0.057
+    }
+  ],
+  "lowest_occurrences": [
+    {
+      "component_id": "LEFT_7MM_LIGHTWEIGHT_SOLE",
+      "min_z_m": -0.42491804034728703
+    },
+    {
+      "component_id": "RIGHT_7MM_LIGHTWEIGHT_SOLE",
+      "min_z_m": -0.4249180129094682
+    },
+    {
+      "component_id": "CARRIER_FOOT",
+      "min_z_m": -0.4159476865419837
+    },
+    {
+      "component_id": "CARRIER_FOOT_2",
+      "min_z_m": -0.4159476578428288
+    },
+    {
+      "component_id": "LEFT_ANKLE_ROLL_CARRIER",
+      "min_z_m": -0.3943180006627469
+    }
+  ],
+  "overall": "PASS",
+  "truth_boundary": "Native SolidWorks save, component count, transform and assembly-envelope gate. Use solidworks_interference_gate.json for cross-component B-Rep interference."
+}

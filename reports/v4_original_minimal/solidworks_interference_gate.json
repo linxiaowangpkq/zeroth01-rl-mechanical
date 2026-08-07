@@ -1,0 +1,54 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.solidworks_interference_gate.v1",
+  "solidworks_revision": "33.0.0",
+  "assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\solidworks\\physical_mount_v4_original_minimal\\portable_flat\\OPTIONAL_XRAY_ZEROTH01_V4_ORIGINAL_MINIMAL_INTERNAL_LAYOUT.SLDASM",
+  "settings": {
+    "treat_coincidence_as_interference": false,
+    "include_multibody_part_interferences": true,
+    "ignore_hidden_bodies": false
+  },
+  "raw_interference_count": 4,
+  "same_component_union_overlap_count": 2,
+  "zero_volume_contact_only_count": 2,
+  "physical_interference_count": 0,
+  "rows": [
+    {
+      "components": [
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1"
+      ],
+      "volume_mm3": 0.016662280309550723,
+      "possible_interference": false,
+      "classification": "same_component_multibody_union_overlap"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
+        "V4_REUSED_ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED-8"
+      ],
+      "volume_mm3": 0.0,
+      "possible_interference": true,
+      "classification": "zero_volume_contact_only"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1"
+      ],
+      "volume_mm3": 0.0,
+      "possible_interference": true,
+      "classification": "same_component_multibody_union_overlap"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
+        "V4_REUSED_ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED-7"
+      ],
+      "volume_mm3": 0.0,
+      "possible_interference": true,
+      "classification": "zero_volume_contact_only"
+    }
+  ],
+  "truth_boundary": "Only bodies that belong to the same imported multibody carrier may overlap. Actuators, shells, mounts, payload envelopes, source carriers, foot and sole must have zero cross-component intersection volume.",
+  "overall": "PASS"
+}

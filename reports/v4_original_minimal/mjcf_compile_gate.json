@@ -1,0 +1,16 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.mjcf_compile_gate.v1",
+  "mjcf": "generated/mujoco/physical_mount_v4_original_minimal/zeroth01_physical_mount_v4_original_minimal_18dof_mjx.xml",
+  "expected_mass_kg": 2.85,
+  "expected_joint_count": 18,
+  "source_gate": "PASS",
+  "runtime_compile_gate": "PASS",
+  "mujoco_version": "3.3.7",
+  "nq": 25,
+  "nv": 24,
+  "nu": 18,
+  "body_count": 28,
+  "geom_count": 28,
+  "sensor_count": 10,
+  "compiled_total_mass_kg": 2.85
+}

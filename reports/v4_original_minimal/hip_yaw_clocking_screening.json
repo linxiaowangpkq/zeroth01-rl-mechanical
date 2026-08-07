@@ -1,0 +1,148 @@
+{
+  "schema": "zeroth01.v4.solidworks_hip_yaw_clocking_screening.v1",
+  "assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\solidworks\\physical_mount_v4_original_minimal\\portable_flat\\OPTIONAL_XRAY_ZEROTH01_V4_ORIGINAL_MINIMAL_INTERNAL_LAYOUT.SLDASM",
+  "tested_count": 49,
+  "best_20": [
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": 2,
+      "body_servo_interference_volume_mm3": 0.0,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": 2,
+      "body_servo_interference_volume_mm3": 0.0,
+      "body_servo_interference_body_pair_count": 1,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": 4,
+      "body_servo_interference_volume_mm3": 0.0,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": 4,
+      "body_servo_interference_volume_mm3": 0.0,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": 6,
+      "body_servo_interference_volume_mm3": 0.0,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": 6,
+      "body_servo_interference_volume_mm3": 0.0,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": -6,
+      "body_servo_interference_volume_mm3": 205.09891561463309,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": -6,
+      "body_servo_interference_volume_mm3": 207.454800438519,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": -4,
+      "body_servo_interference_volume_mm3": 221.02822905501574,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": -4,
+      "body_servo_interference_volume_mm3": 223.46084039987784,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": -2,
+      "body_servo_interference_volume_mm3": 235.21474138489162,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": -2,
+      "body_servo_interference_volume_mm3": 236.72496270543405,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 15,
+      "axial_shim_mm": -6,
+      "body_servo_interference_volume_mm3": 394.42328459407884,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.7755575615628914e-16
+    },
+    {
+      "symmetric_clocking_deg": -15,
+      "axial_shim_mm": -6,
+      "body_servo_interference_volume_mm3": 398.0680934070637,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": 15,
+      "axial_shim_mm": -4,
+      "body_servo_interference_volume_mm3": 424.608394504576,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.7755575615628914e-16
+    },
+    {
+      "symmetric_clocking_deg": -15,
+      "axial_shim_mm": -4,
+      "body_servo_interference_volume_mm3": 428.3258699330536,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": 15,
+      "axial_shim_mm": -2,
+      "body_servo_interference_volume_mm3": 449.77946392596357,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.7755575615628914e-16
+    },
+    {
+      "symmetric_clocking_deg": -15,
+      "axial_shim_mm": -2,
+      "body_servo_interference_volume_mm3": 451.17715542223317,
+      "body_servo_interference_body_pair_count": 2,
+      "transform_error": 2.220446049250313e-16
+    },
+    {
+      "symmetric_clocking_deg": -30,
+      "axial_shim_mm": 0,
+      "body_servo_interference_volume_mm3": 461.23100953184485,
+      "body_servo_interference_body_pair_count": 6,
+      "transform_error": 1.1102230246251565e-16
+    },
+    {
+      "symmetric_clocking_deg": 30,
+      "axial_shim_mm": 0,
+      "body_servo_interference_volume_mm3": 469.64651373233727,
+      "body_servo_interference_body_pair_count": 6,
+      "transform_error": 2.220446049250313e-16
+    }
+  ],
+  "zero_interference_count": 6
+}

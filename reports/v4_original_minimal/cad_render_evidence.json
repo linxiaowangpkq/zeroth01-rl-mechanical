@@ -1,0 +1,38 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.cad_render_evidence.v1",
+  "source_assembly_manifest": "generated/cad/physical_mount_v4_original_minimal/ZEROTH01_V4_ORIGINAL_MINIMAL_18DOF_FULL_ASSEMBLY_MANIFEST.json",
+  "source_sha256": "be8cbe0e55ae8675a8f550eb9aba7f1c88b5176dcd95a2f2d3f82c7565619f7c",
+  "occurrence_count": 57,
+  "renders": [
+    {
+      "path": "snapshots/cad/physical_mount_v4_original_minimal/v4_connected_normal_front.png",
+      "camera_direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xray": false,
+      "annotated": true
+    },
+    {
+      "path": "snapshots/cad/physical_mount_v4_original_minimal/v4_xray_front_18_servos_payloads.png",
+      "camera_direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "xray": true,
+      "annotated": true
+    },
+    {
+      "path": "snapshots/cad/physical_mount_v4_original_minimal/v4_connected_iso.png",
+      "camera_direction": [
+        1.0,
+        -1.15,
+        0.55
+      ],
+      "xray": false,
+      "annotated": false
+    }
+  ]
+}

@@ -1,9 +1,16 @@
 item,manufacturer,model_or_spec,qty,nominal_mass_each_kg,mechanical_interface,status,source
-actuator,FEETECH,STS3250-C001,18,0.0745,"45.22x24.72x35 mm case; 4xM2; 25T/OD5.9; M3x6 output retention",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
-interaction_head,M5Stack,CoreS3 K128 main unit,1,0.0727,"54x54x15.5 mm controlled envelope; fixed torso pocket",PURCHASED_MODULE_SELECTED,https://docs.m5stack.com/en/core/CoreS3
-head_cradle,custom,2 mm 6061 U-cradle,1,0.006,"4xM3 torso passages; 0.20 mm cradle clearance",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.step
-head_fastener,standard,M3 screw + washer + nut plate,4,,"CoreS3 cradle to torso",PROCURE_AFTER_LENGTH_CHECK,
-ankle_roll_carrier,custom,left/right parent carrier,2,,"30 mm pitch-to-roll centre spacing; 0.30 mm service clearance",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
-ankle_horn_adapter,custom,25T horn-to-foot adapter,2,,"PCD14/4xM3 reference",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
-sole,custom,7 mm lightweight sole left/right,2,,"2 mm skin + 5 mm perimeter/rib stack",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
-power_bus,system,regulated 12 V with fuse and emergency stop,1,,"size from measured rollout current and voltage drop",ELECTRICAL_DESIGN_HOLD,
+actuator,FEETECH,STS3250-C001,18,0.0745,"45.22x24.72x35 mm controlled case; 4xM2; 25T/OD5.9; M3x6 output retention",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
+head_interaction,M5Stack,UnitV2,1,0.018,"48x18.5x24 mm controlled envelope; removable cradle; GC2145 camera + microphone",PURCHASED_MODULE_SELECTED,https://docs.m5stack.com/en/unit/unitv2
+head_shell,custom,front/rear 2.2 mm printable shell + M3 nut plate,1,0.055,"direct no-neck torso interface; nominal +5 mm outer envelope; shoulder pockets",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+compute_module,system,70x12x32 mm maximum controlled envelope,1,0.025,"rear service-pod tray; USB and power exit",SELECT_EXACT_BOARD_BEFORE_TRAY_FREEZE,
+battery_pack,system,2S thin pack maximum 75x22x34 mm,1,0.18,"rear service-pod battery cage; BMS and strain relief required",CELL_BMS_CAPACITY_HOLD,
+torso_imu,system,32x8x25 mm maximum controlled envelope,1,0.006,"rigid service-pod shelf; calibrated transform",SELECT_EXACT_IMU_HOLD,
+rear_service_pod,custom,open-front white printable pod,1,0.08,"four reversible M3 torso standoffs; internal cable guides",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+ankle_roll_carrier,custom,left/right direct serial carrier,2,0.095,"26.5 mm pitch-to-roll shaft spacing; double supported output",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+hip_yaw_spacer,custom,2 mm PCD14 output spacer,2,,"symmetric -30/+30 degree clocking; 4xM3",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+lower_leg,custom,original interfaces with 18 mm removed from straight middle span,2,,"terminal servo and ankle interfaces unchanged",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+sole,custom,7 mm lightweight sole left/right,2,0.07,"2 mm skin plus perimeter/rib stack",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+compact_palm,custom,fixed lightweight palm/wrist bumper,2,0.016,"original wrist datum; no claw or ball hand",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+fasteners,standard,"M2/M3 screws washers locknuts and heat-set inserts",1,,"lengths selected after printed stack measurement",PROCURE_AFTER_STACK_CHECK,
+power_bus,system,"regulated 12 V bus; fuse; branch protection; emergency stop",1,,"wire gauge from measured rollout current and voltage drop",ELECTRICAL_DESIGN_HOLD,
+harness,system,"servo bus power USB and sensor wiring",1,,"service loops and strain relief; no joint shear crossings",ROUTING_FIRST_ARTICLE_HOLD,

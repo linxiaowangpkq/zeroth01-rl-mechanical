@@ -1,0 +1,1969 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.external_part_assembly.v1",
+  "units": "mm",
+  "frame": "released Zeroth source link frames; RL convention X forward, Y left, Z up",
+  "component_count": 57,
+  "movable_joint_count": 18,
+  "blue_sts3250_count": 18,
+  "old_claw_count": 0,
+  "large_q_hand_count": 0,
+  "head_expansion_each_side_mm": 5.0,
+  "head_local_underside_exception": "0.8 mm B-Rep pockets around both shoulder servos; local lower-corner solid expansion is about 3.9 mm",
+  "purchased_head_module": "M5Stack UnitV2",
+  "electronics_service_strategy": "reversible white rear service pod because the released torso is a solid 6368-face STL conversion, not a hollow parametric shell",
+  "hip_yaw_installation": "left/right symmetric -30/+30 degree clocking plus 2 mm output-axis PCD14 spacer; SolidWorks zero-volume screening pass",
+  "lower_leg_change": "18 mm removed only from each straight carrier mid-span; both terminal interfaces preserved",
+  "ankle_roll_transmission": {
+    "type": "direct serial STS3250",
+    "pitch_to_roll_shaft_spacing_mm": 26.5,
+    "nominal_case_clearance_mm": 1.64,
+    "foot_frame_shift_from_release_mm": [
+      0.0,
+      0.0,
+      -8.5
+    ]
+  },
+  "manufacturing_tool_not_installed": "parts/head_mount_4xm3_drill_jig.step",
+  "components": [
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/body_original_head_interface_trimmed_2p5mm.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "official v1 body with old head removed at the measured seam and only a 2.5 mm planar top-interface trim; legacy 6368-face carrier otherwise unchanged"
+    },
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_SHOULDER2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/Z_BOT2_MASTER_SHOULDER2.stl",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007966731208299993,
+          3.2679479283171223e-07,
+          -0.9999996826558656,
+          10.654586950074274
+        ],
+        [
+          -0.999999682655919,
+          -2.603487100963554e-10,
+          0.0007966731208299567,
+          55.9865332193672
+        ],
+        [
+          0.0,
+          0.9999999999999466,
+          3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_SHOULDER2_2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/Z_BOT2_MASTER_SHOULDER2_2.stl",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -3.2679479292188006e-07,
+          -0.9999996829317812,
+          10.565406321739257
+        ],
+        [
+          0.9999996829318346,
+          2.602355050446328e-10,
+          0.0007963267107332208,
+          -56.00343127216897
+        ],
+        [
+          0.0,
+          -0.9999999999999466,
+          3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_1Flange",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/3215_1Flange.stl",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          -3.270551415417911e-07,
+          0.9999996823954634,
+          -0.0007969999155159511,
+          -8.128802033946783
+        ],
+        [
+          -3.265344441216159e-07,
+          -0.000796999915622746,
+          -0.9999996823954636,
+          76.84650406027714
+        ],
+        [
+          -0.9999999999998932,
+          -3.267947897432165e-07,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_1Flange_2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/3215_1Flange_2.stl",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -3.2653455741681794e-07,
+          -0.9999996831919633,
+          0.0007959999160470514,
+          -8.25118874895795
+        ],
+        [
+          3.2705502842692465e-07,
+          0.0007959999159402565,
+          0.9999996831919632,
+          -76.83345371944613
+        ],
+        [
+          -0.9999999999998932,
+          3.267947897432165e-07,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_R_ARM_MIRROR_1",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v2_minimal/replacements/R_ARM_MIRROR_1_WRIST_TRIMMED.step",
+      "owner_link": "R_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          -1.935495505616882e-08,
+          -0.0007973267103086551,
+          0.9999996821350079,
+          11.685985465016708
+        ],
+        [
+          3.268105330270428e-07,
+          -0.9999996821349546,
+          -0.0007973267103022874,
+          95.43068719202468
+        ],
+        [
+          0.9999999999999465,
+          3.267949969227722e-07,
+          1.9615523671097857e-08,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released v2 source forearm with only the old claw root trimmed for compact fixed palm"
+    },
+    {
+      "component_id": "CARRIER_L_ARM_MIRROR_1",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v2_minimal/replacements/L_ARM_MIRROR_1_WRIST_TRIMMED.step",
+      "owner_link": "L_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007959999159402991,
+          -6.535894791338808e-07,
+          -0.9999996831918031,
+          11.533969017315162
+        ],
+        [
+          0.9999996831920167,
+          5.203641301924849e-10,
+          0.000795999915940129,
+          -95.44917821426749
+        ],
+        [
+          1.0679488686010167e-13,
+          -0.9999999999997864,
+          6.535896862813199e-07,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released v2 source forearm with only the old claw root trimmed for compact fixed palm"
+    },
+    {
+      "component_id": "CARRIER_U_HIP_L",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/U_HIP_L.stl",
+      "owner_link": "U_HIP_L",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007959803006364319,
+          -0.9999996832075704,
+          3.4641009687928327e-07,
+          -7.700908393644671
+        ],
+        [
+          -0.9999996832076303,
+          0.0007959803006363841,
+          -2.757357004084333e-10,
+          42.8141460140535
+        ],
+        [
+          0.0,
+          -3.464102066193935e-07,
+          -0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_U_HIP_R",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/U_HIP_R.stl",
+      "owner_link": "U_HIP_R",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007959803006364319,
+          -0.9999996832075704,
+          3.4641009687928327e-07,
+          -7.769134480913454
+        ],
+        [
+          -0.9999996832076303,
+          0.0007959803006363841,
+          -2.757357004084333e-10,
+          -42.861826820814365
+        ],
+        [
+          0.0,
+          -3.464102066193935e-07,
+          -0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_5",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_5.stl",
+      "owner_link": "3215_BothFlange_5",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007959803006364319,
+          -6.732048898912538e-07,
+          -0.9999996832074037,
+          -25.40088324888921
+        ],
+        [
+          -0.9999996832076303,
+          5.35858000401282e-10,
+          0.0007959803006362515,
+          42.82823484982327
+        ],
+        [
+          0.0,
+          0.9999999999997734,
+          -6.732051031574938e-07,
+          -139.81800613145728
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_6",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_6.stl",
+      "owner_link": "3215_BothFlange_6",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.000795633890539505,
+          -1.96153037771863e-08,
+          0.9999996834833059,
+          9.930879449390005
+        ],
+        [
+          0.999999683483306,
+          1.572660546734017e-11,
+          -0.0007956338905395048,
+          -42.875915687687126
+        ],
+        [
+          -1.200000312500909e-13,
+          0.9999999999999999,
+          1.961531008123543e-08,
+          -139.81799386853598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_9",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_9.stl",
+      "owner_link": "3215_BothFlange_9",
+      "transform_local_mm_to_world_mm": [
+        [
+          6.729447675912249e-07,
+          -0.9999996834674726,
+          0.0007956535060633349,
+          -7.49577310299613
+        ],
+        [
+          -3.2733065101240997e-07,
+          0.000795653505843197,
+          0.9999996834676457,
+          49.213984757823255
+        ],
+        [
+          -0.99999999999972,
+          -6.732049963625534e-07,
+          -3.2679511653803883e-07,
+          -171.81799408107867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_10",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/3215_BothFlange_10.stl",
+      "owner_link": "3215_BothFlange_10",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9875312872126346e-08,
+          0.9999996837432616,
+          -0.0007953070957399077,
+          -8.974205997654211
+        ],
+        [
+          3.2677906649663073e-07,
+          -0.0007953070957463603,
+          -0.9999996837432084,
+          -49.260876181952334
+        ],
+        [
+          -0.9999999999999465,
+          1.961541687609957e-08,
+          -3.2679477012790634e-07,
+          -171.81799423926455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_13",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/left_source_shin_shortened_18mm.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          6.729447675912249e-07,
+          -0.9999996834674726,
+          0.0007956535060633349,
+          -17.496705166611736
+        ],
+        [
+          -3.2733065101240997e-07,
+          0.000795653505843197,
+          0.9999996834676457,
+          47.961908958647356
+        ],
+        [
+          -0.99999999999972,
+          -6.732049963625534e-07,
+          -3.2679511653803883e-07,
+          -271.8180004013388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "official left lower-leg carrier shortened only in its straight middle span by 18 mm; both terminal STS3250 interfaces retained"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_14",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/right_source_shin_shortened_18mm.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9875312872126346e-08,
+          0.9999996837432616,
+          -0.0007953070957399077,
+          -18.97319876061491
+        ],
+        [
+          3.2677906649663073e-07,
+          -0.0007953070957463603,
+          -0.9999996837432084,
+          -47.99289083157178
+        ],
+        [
+          -0.9999999999999465,
+          1.961541687609957e-08,
+          -3.2679477012790634e-07,
+          -271.817994023652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "official right lower-leg carrier shortened only in its straight middle span by 18 mm; both terminal STS3250 interfaces retained"
+    },
+    {
+      "component_id": "CARRIER_FOOT",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/FOOT.stl",
+      "owner_link": "FOOT",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996834671993,
+          1.0000151831834856e-06,
+          -0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          0.0007956535057361845,
+          1.8819430451860138e-08,
+          -0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -9.999998929005644e-07,
+          -0.9999999999994998,
+          -1.9615090081182562e-08,
+          -380.3180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "CARRIER_FOOT_2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v1/skeleton/FOOT_2.stl",
+      "owner_link": "FOOT_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996837432017,
+          -3.469456085545159e-07,
+          0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          0.0007953070958531074,
+          -6.729292612613361e-07,
+          0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -3.464103134142194e-07,
+          0.9999999999997136,
+          6.73204976747241e-07,
+          -380.3179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "unchanged released v1 source carrier; exact neutral transform retained"
+    },
+    {
+      "component_id": "LEFT_SMALL_LIGHT_PALM",
+      "role": "compact_fixed_palm_twin_ear_m3",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/left_small_light_palm.step",
+      "owner_link": "FINGER_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007492354545723127,
+          -0.0002730662607822385,
+          -0.999999682040475,
+          12.95537725991499
+        ],
+        [
+          -0.9396924944700038,
+          -0.3420195607241081,
+          0.0007974451893690335,
+          107.20765717973704
+        ],
+        [
+          -0.342019669731107,
+          0.9396927931600336,
+          -3.4513469830844076e-07,
+          -173.618010229442
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "30 x 36 x 24 mm light palm body; source claw absent; fixed wrist datum and M3 crossbolt retained"
+    },
+    {
+      "component_id": "RIGHT_SMALL_LIGHT_PALM",
+      "role": "compact_fixed_palm_twin_ear_m3",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/right_small_light_palm.step",
+      "owner_link": "FINGER_1_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007477716655674733,
+          -0.000272862290415179,
+          -0.9999996831918031,
+          12.784550059581832
+        ],
+        [
+          0.9396922720951638,
+          -0.34202017506100796,
+          0.000795999915940129,
+          -107.22817740834591
+        ],
+        [
+          -0.34202028390457323,
+          -0.9396925696191324,
+          6.535896862813199e-07,
+          -173.61800722867977
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "30 x 36 x 24 mm light palm body; source claw absent; fixed wrist datum and M3 crossbolt retained"
+    },
+    {
+      "component_id": "V4_HEAD_FRONT",
+      "role": "printable_head_front_shell",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/head_front_5mm_each_side.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "nominal source envelope +5 mm left/right/top/bottom with 5 mm edge radius; hidden underside has exact shoulder-servo clearance pockets"
+    },
+    {
+      "component_id": "V4_HEAD_REAR",
+      "role": "printable_head_rear_shell",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/head_rear_5mm_each_side.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "two-piece 2.2 mm wall shell with USB-C cable exit"
+    },
+    {
+      "component_id": "V4_HEAD_VISOR",
+      "role": "simple_camera_microphone_visor",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/head_simple_visor.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#101820",
+      "notes": "simple original-style black face; camera and acoustic ports only"
+    },
+    {
+      "component_id": "V4_UNITV2",
+      "role": "purchased_internal_interaction_module",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/m5stack_unitv2_purchased_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#00B8D9",
+      "notes": "M5Stack UnitV2 official 48 x 18.5 x 24 mm, 18 g, GC2145 camera and microphone"
+    },
+    {
+      "component_id": "V4_UNITV2_CRADLE",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/unitv2_removable_cradle.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "M2.5 removable U-cradle"
+    },
+    {
+      "component_id": "V4_HEAD_TORSO_NUT_PLATE",
+      "role": "direct_head_torso_mount",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/direct_head_torso_nut_plate.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "four M3 direct torso fasteners; no neck; drill jig is a manufacturing tool and is not installed"
+    },
+    {
+      "component_id": "V4_COMPUTE_ENVELOPE",
+      "role": "internal_payload_controlled_envelope",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/compute_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#FF9100",
+      "notes": "70 x 12 x 32 mm Raspberry Pi Zero 2 W-class compute volume, recessed and hidden in normal assembly"
+    },
+    {
+      "component_id": "V4_COMPUTE_TRAY",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/compute_removable_tray.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "M3 removable tray with side rails"
+    },
+    {
+      "component_id": "V4_BATTERY_ENVELOPE",
+      "role": "internal_payload_controlled_envelope",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/battery_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#D500F9",
+      "notes": "75 x 22 x 34 mm thin 2S battery service volume, recessed and hidden in normal assembly"
+    },
+    {
+      "component_id": "V4_BATTERY_CAGE",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/battery_service_cage.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "strap ribs and front service opening"
+    },
+    {
+      "component_id": "V4_TORSO_IMU_ENVELOPE",
+      "role": "internal_payload_controlled_envelope",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/torso_imu_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#64DD17",
+      "notes": "32 x 25 x 8 mm IMU volume on rigid torso, not the head"
+    },
+    {
+      "component_id": "V4_REAR_SERVICE_POD",
+      "role": "reversible_white_rear_service_pod",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/rear_service_pod.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "32 mm deep open-front white pod; four M3 standoffs, integral IMU shelf and four cable guides; original torso is not cut"
+    },
+    {
+      "component_id": "S06_STS3250_left_shoulder_yaw",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007966731208299993,
+          3.2679479283171223e-07,
+          0.9999996826558656,
+          10.654586950074274
+        ],
+        [
+          0.999999682655919,
+          -2.6034871009635545e-10,
+          -0.0007966731208299567,
+          55.9865332193672
+        ],
+        [
+          -0.0,
+          0.9999999999999467,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.112 mm"
+    },
+    {
+      "component_id": "S03_STS3250_right_shoulder_yaw",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007963267107332633,
+          -3.2679479292188006e-07,
+          0.9999996829317812,
+          10.565406321739257
+        ],
+        [
+          -0.9999996829318346,
+          2.6023550504463286e-10,
+          -0.0007963267107332208,
+          -56.00343127216897
+        ],
+        [
+          -5.169878828456423e-26,
+          -0.9999999999999466,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.090 mm"
+    },
+    {
+      "component_id": "S02_STS3250_left_shoulder_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6045559004745607e-10,
+          -0.999999682395517,
+          -0.0007969999155159511,
+          -8.128802033946783
+        ],
+        [
+          3.2679489954144973e-07,
+          0.0007969999155159936,
+          -0.9999996823954636,
+          76.84650406027714
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S01_STS3250_right_shoulder_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.601287952176841e-10,
+          0.9999996831920167,
+          0.0007959999160470515,
+          -8.25118874895795
+        ],
+        [
+          -3.267948998017419e-07,
+          -0.000795999916047094,
+          0.9999996831919633,
+          -76.83345371944613
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.2679500333300785e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S10_STS3250_left_elbow_yaw",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9615517436009584e-08,
+          0.0007973267103022876,
+          0.9999996821350079,
+          11.685985465016708
+        ],
+        [
+          -1.5639980959533105e-11,
+          0.9999996821350081,
+          -0.0007973267103022874,
+          95.43068719202468
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615523671097857e-08,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 2.611 mm"
+    },
+    {
+      "component_id": "S09_STS3250_right_elbow_yaw",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -6.535894792188895e-07,
+          0.000795999915940299,
+          0.9999996831918031,
+          11.533969017315162
+        ],
+        [
+          5.20257335339377e-10,
+          0.9999996831920167,
+          -0.000795999915940129,
+          -95.44917821426749
+        ],
+        [
+          -0.9999999999997864,
+          0.0,
+          -6.535896862813199e-07,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 2.611 mm"
+    },
+    {
+      "component_id": "S08_STS3250_left_hip_yaw",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.5,
+          -0.8660254037843867,
+          -2.998620761746836e-07,
+          -7.700908393644671
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999996997,
+          1.734438425609256e-07,
+          42.8141460140535
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -81.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; SolidWorks-screened symmetric re-clocking -30 deg and +2 mm along the common yaw axis; axis-line kinematics unchanged"
+    },
+    {
+      "component_id": "S07_STS3250_right_hip_yaw",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.4999999999999999,
+          0.8660254037843867,
+          -3.0013781187509207e-07,
+          -7.769134480913454
+        ],
+        [
+          -0.8660254037844387,
+          0.49999999999996997,
+          -1.729662543183576e-07,
+          -42.861826820814365
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -81.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; SolidWorks-screened symmetric re-clocking +30 deg and +2 mm along the common yaw axis; axis-line kinematics unchanged"
+    },
+    {
+      "component_id": "S12_STS3250_left_hip_roll",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_5",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007959803006364318,
+          6.732048898912539e-07,
+          -0.9999996832074037,
+          -25.40088324888921
+        ],
+        [
+          0.9999996832076303,
+          -5.35858000401282e-10,
+          0.0007959803006362515,
+          42.82823484982327
+        ],
+        [
+          0.0,
+          -0.9999999999997734,
+          -6.732051031574938e-07,
+          -139.81800613145728
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.720 mm"
+    },
+    {
+      "component_id": "S11_STS3250_right_hip_roll",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_6",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.000795633890539505,
+          1.9615303872662332e-08,
+          0.9999996834833059,
+          9.930879449390005
+        ],
+        [
+          -0.9999996834833061,
+          -1.560660547407212e-11,
+          -0.0007956338905395048,
+          -42.875915687687126
+        ],
+        [
+          3.2311742677852644e-27,
+          -1.0,
+          1.961531008123543e-08,
+          -139.81799386853598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S05_STS3250_left_hip_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_9",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -7.49577310299613
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          49.213984757823255
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -171.81799408107867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S04_STS3250_right_hip_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_10",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -8.974205997654211
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -49.260876181952334
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -171.81799423926455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S14_STS3250_left_knee_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -17.496705166611736
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          47.961908958647356
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -271.8180004013388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S13_STS3250_right_knee_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -18.97319876061491
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -47.99289083157178
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -271.817994023652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 3.149 mm"
+    },
+    {
+      "component_id": "S16_STS3250_left_ankle_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.560681518804702e-11,
+          -0.9999996834676994,
+          0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          1.961508387237297e-08,
+          0.0007956535057169674,
+          0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615090081182562e-08,
+          -353.8180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 2.611 mm"
+    },
+    {
+      "component_id": "S15_STS3250_right_ankle_pitch",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          5.354046948137443e-10,
+          0.9999996837432619,
+          -0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          6.732047638416311e-07,
+          -0.0007953070956199502,
+          -0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -0.9999999999997734,
+          -2.0679515313825692e-25,
+          -6.73204976747241e-07,
+          -353.8179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; released full 6D installation retained; centroid fit residual 2.611 mm"
+    },
+    {
+      "component_id": "S18_STS3250_left_ankle_roll",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "left_ankle_roll_carrier",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          -17.49600134933013
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          48.76187597235637
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -380.3180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; v4 mirrored direct-drive ankle; 26.5 mm pitch-to-roll shaft spacing gives nominal STS3250 case clearance"
+    },
+    {
+      "component_id": "S17_STS3250_right_ankle_roll",
+      "role": "dimension_controlled_sts3250",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
+      "owner_link": "right_ankle_roll_carrier",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -18.97399208017936
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -48.99285783740834
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -380.3179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "shaft origin matches URDF joint frame; v4 mirrored direct-drive ankle; 26.5 mm pitch-to-roll shaft spacing gives nominal STS3250 case clearance"
+    },
+    {
+      "component_id": "LEFT_HIP_YAW_PCD14_2MM_OUTPUT_SPACER",
+      "role": "hip_yaw_2mm_output_axis_spacer",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/hip_yaw_horn_spacer_2mm.step",
+      "owner_link": "U_HIP_L",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.5,
+          -0.8660254037843867,
+          -2.998620761746836e-07,
+          -7.700908393644671
+        ],
+        [
+          0.8660254037844387,
+          0.49999999999996997,
+          1.734438425609256e-07,
+          42.8141460140535
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "2 mm PCD14 four-M3 spacer bridges the axial servo shift without moving the revolute axis line"
+    },
+    {
+      "component_id": "RIGHT_HIP_YAW_PCD14_2MM_OUTPUT_SPACER",
+      "role": "hip_yaw_2mm_output_axis_spacer",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/hip_yaw_horn_spacer_2mm.step",
+      "owner_link": "U_HIP_R",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.4999999999999999,
+          0.8660254037843867,
+          -3.0013781187509207e-07,
+          -7.769134480913454
+        ],
+        [
+          -0.8660254037844387,
+          0.49999999999996997,
+          -1.729662543183576e-07,
+          -42.861826820814365
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "2 mm PCD14 four-M3 spacer bridges the axial servo shift without moving the revolute axis line"
+    },
+    {
+      "component_id": "LEFT_ANKLE_ROLL_CARRIER",
+      "role": "direct_ankle_roll_parent_carrier",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/left_direct_ankle_carrier_26p5mm.step",
+      "owner_link": "left_ankle_roll_carrier",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          -17.49600134933013
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          48.76187597235637
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -380.3180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "direct double-ear cage; 26.5 mm pitch-to-roll spacing and mirrored STS3250 installation"
+    },
+    {
+      "component_id": "LEFT_ANKLE_ROLL_HORN",
+      "role": "direct_ankle_roll_child_horn_adapter",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_horn_adapter.step",
+      "owner_link": "FOOT",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          -17.49600134933013
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          48.76187597235637
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -380.3180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "PCD14 four-M3 output horn adapter retained from verified v3 direct-drive ankle"
+    },
+    {
+      "component_id": "LEFT_7MM_LIGHTWEIGHT_SOLE",
+      "role": "replaceable_7mm_perimeter_rib_sole",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.step",
+      "owner_link": "FOOT",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996834671993,
+          1.0000151831834856e-06,
+          -0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          0.0007956535057361845,
+          1.8819430451860138e-08,
+          -0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -9.999998929005644e-07,
+          -0.9999999999994998,
+          -1.9615090081182562e-08,
+          -380.3180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#101820",
+      "notes": "retained 7 mm lightened sole"
+    },
+    {
+      "component_id": "RIGHT_ANKLE_ROLL_CARRIER",
+      "role": "direct_ankle_roll_parent_carrier",
+      "source": "generated/cad/physical_mount_v4_original_minimal/parts/right_direct_ankle_carrier_26p5mm.step",
+      "owner_link": "right_ankle_roll_carrier",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -18.97399208017936
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -48.99285783740834
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -380.3179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "direct double-ear cage; 26.5 mm pitch-to-roll spacing and mirrored STS3250 installation"
+    },
+    {
+      "component_id": "RIGHT_ANKLE_ROLL_HORN",
+      "role": "direct_ankle_roll_child_horn_adapter",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_horn_adapter.step",
+      "owner_link": "FOOT_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -18.97399208017936
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -48.99285783740834
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -380.3179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "PCD14 four-M3 output horn adapter retained from verified v3 direct-drive ankle"
+    },
+    {
+      "component_id": "RIGHT_7MM_LIGHTWEIGHT_SOLE",
+      "role": "replaceable_7mm_perimeter_rib_sole",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.step",
+      "owner_link": "FOOT_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996837432017,
+          -3.469456085545159e-07,
+          0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          0.0007953070958531074,
+          -6.729292612613361e-07,
+          0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -3.464103134142194e-07,
+          0.9999999999997136,
+          6.73204976747241e-07,
+          -380.3179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#101820",
+      "notes": "retained 7 mm lightened sole"
+    }
+  ],
+  "symmetry_policy": "preserve physical source axes; gate mirrored axis-line and housing errors, not arbitrary origin displacement along a revolute axis",
+  "truth_boundary": "official source carrier geometry + controlled STS3250 envelope + official-size UnitV2 envelope; purchased first articles and as-built mass/inertia remain HOLD"
+}

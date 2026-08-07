@@ -1,0 +1,37 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.release_gate.v1",
+  "digital_rl_release_gate": "PASS",
+  "physical_first_article_gate": "HOLD",
+  "checks": {
+    "solidworks_native_assembly": true,
+    "independent_sts3250_occurrences": true,
+    "solidworks_height_le_500_mm": true,
+    "solidworks_cross_component_interference": true,
+    "urdf_18dof": true,
+    "nominal_mass_le_3kg": true,
+    "mjcf_runtime_compile": true,
+    "coordinated_collision_sweep": true,
+    "quasistatic_torque_below_continuous": true,
+    "actuator_ledger_18": true,
+    "rl_handoff_points_to_v4": true,
+    "authoritative_files_present": true
+  },
+  "facts": {
+    "solidworks_component_count": 57,
+    "sts3250_count": 18,
+    "standing_height_mm": 498.959277582387,
+    "nominal_mass_kg": 2.85,
+    "revolute_joint_count": 18,
+    "quasistatic_peak_joint": "left_ankle_pitch",
+    "quasistatic_peak_torque_nm": 0.5344958807668029
+  },
+  "hold_items": [
+    "print and assemble one load-bearing first article",
+    "dimensionally inspect purchased STS3250 case, 4xM2 pattern, 25T horn and rear support",
+    "scan bus IDs and jog-calibrate neutral counts and direction signs",
+    "weigh every as-built link and identify inertia, damping, friction and motor strength",
+    "run fused bench current/thermal tests and slow suspended motion before ground contact",
+    "close RL rollout peak/RMS torque, impact, current and temperature policy traces"
+  ],
+  "truth_boundary": "PASS releases the digital CAD/URDF/MJCF baseline for RL; it is not a factory print-and-run or powered-dynamic signoff."
+}

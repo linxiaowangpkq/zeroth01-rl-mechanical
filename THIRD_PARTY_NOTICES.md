@@ -38,6 +38,22 @@ belong to their owner.
 
 The separate `FEETECH_STS3250_C001_DIMENSION_REFERENCE.step` is newly
 constructed from published nominal dimensions. It is not supplier-native CAD.
-The installed blue SolidWorks parts are explicitly labelled
-`INSTALLED_STS3215_FAMILY_REFERENCE`; they are source placement references,
-not exact vendor STS3250 B-Rep files.
+V4 uses 18 independent occurrences of a dimension-controlled STS3250
+reference SLDPRT derived from the published drawing. It is not supplier-native
+CAD and still requires inspection against a purchased first article.
+
+## Engineering workflow references
+
+V4 does not redistribute or copy geometry from the following projects. Their
+public documentation informed service splitting, double-supported brackets,
+cable routing, MJX/SysID and training workflow only; their own licenses and
+trademarks remain with their authors.
+
+- ToddlerBot: <https://github.com/hshi74/toddlerbot>
+- Open Duck Mini: <https://github.com/apirrone/Open_Duck_Mini>
+- KHR-3HV documentation: <https://kondo-robot.com/faq/khr-3hv-erection-diagram>
+- TonyPi documentation: <https://docs.hiwonder.com/projects/TonyPi/en/latest/>
+
+M5Stack UnitV2 dimensions, camera and microphone descriptions are vendor
+facts. The v4 envelope and cradle are newly modelled references, not vendor
+CAD: <https://docs.m5stack.com/en/unit/unitv2>.

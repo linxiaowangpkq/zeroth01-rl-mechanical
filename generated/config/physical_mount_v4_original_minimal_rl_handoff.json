@@ -1,0 +1,95 @@
+{
+  "schema": "zeroth01.physical_mount_v4_original_minimal.rl_handoff.v1",
+  "robot": "Zeroth-01 v4 original-minimal 18DoF",
+  "urdf": "generated/urdf/physical_mount_v4_original_minimal/zeroth01_physical_mount_v4_original_minimal_18dof.urdf",
+  "mjcf_mjx": "generated/mujoco/physical_mount_v4_original_minimal/zeroth01_physical_mount_v4_original_minimal_18dof_mjx.xml",
+  "actuator_layout": "generated/config/physical_mount_v4_original_minimal_actuator_layout.json",
+  "nominal_total_mass_kg": 2.85,
+  "mass_limit_kg": 3.0,
+  "solidworks_standing_height_mm": 498.959277582387,
+  "movable_joint_count": 18,
+  "actuator": {
+    "model": "FEETECH STS3250-C001",
+    "count": 18,
+    "continuous_effort_nm": 1.2552512,
+    "rated_effort_nm": 1.569064,
+    "max_velocity_rad_s": 3.0,
+    "mass_each_kg": 0.0745
+  },
+  "sensors": {
+    "camera_optical_frame": "M5Stack UnitV2 GC2145 camera; optical +Z is robot forward",
+    "microphone_frame": "M5Stack UnitV2 integrated microphone",
+    "torso_imu_frame": "32 x 25 x 8 mm controlled envelope on the rigid rear-pod shelf",
+    "foot_contacts": [
+      "left_sole_front_medial_contact",
+      "left_sole_front_lateral_contact",
+      "left_sole_rear_medial_contact",
+      "left_sole_rear_lateral_contact",
+      "right_sole_front_medial_contact",
+      "right_sole_front_lateral_contact",
+      "right_sole_rear_medial_contact",
+      "right_sole_rear_lateral_contact"
+    ]
+  },
+  "payload_envelopes_mm": {
+    "compute": [
+      70,
+      12,
+      32
+    ],
+    "battery": [
+      75,
+      22,
+      34
+    ],
+    "torso_imu": [
+      32,
+      8,
+      25
+    ],
+    "m5stack_unitv2": [
+      48,
+      18.5,
+      24
+    ]
+  },
+  "domain_randomization_start": {
+    "link_mass_scale": [
+      0.9,
+      1.1
+    ],
+    "diagonal_inertia_scale": [
+      0.8,
+      1.2
+    ],
+    "joint_damping_scale": [
+      0.7,
+      1.3
+    ],
+    "motor_strength_scale": [
+      0.85,
+      1.05
+    ],
+    "control_latency_s": [
+      0.0,
+      0.03
+    ],
+    "ground_friction": [
+      0.6,
+      1.4
+    ]
+  },
+  "verified_gates": {
+    "solidworks_static_interference": "PASS",
+    "solidworks_height": "PASS",
+    "urdf_mass": "PASS",
+    "mujoco_coordinated_collision_sweep": "PASS"
+  },
+  "holds": [
+    "weigh printed and purchased first article; update every link mass/COM/inertia",
+    "one-at-a-time powered bus ID, zero and direction calibration",
+    "quasi-static torque/current test before walking",
+    "repeat full range sweep with as-built cable harness installed"
+  ],
+  "reference_architecture": "ToddlerBot-style MJX/SysID/domain-randomization workflow only; no ToddlerBot/KHR/TonyPi/Open Duck Mini geometry was copied."
+}

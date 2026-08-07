@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="zeroth01_physical_mount_v4_original_minimal_18dof_mjx">
+  <compiler angle="radian" coordinate="local" autolimits="true" />
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" />
+  <size njmax="2000" nconmax="400" />
+  <default>
+    <joint damping="0.035" armature="0.002" frictionloss="0.01" />
+    <geom margin="0.001" condim="3" friction="1.0 0.02 0.001" />
+  </default>
+  <visual>
+    <headlight diffuse="0.75 0.75 0.75" ambient="0.35 0.35 0.35" />
+    <rgba haze="0.15 0.18 0.22 1" />
+  </visual>
+  <worldbody>
+    <light pos="0 -1 1.2" dir="0 0 -1" directional="true" />
+    <geom name="ground" type="plane" size="2 2 0.02" rgba="0.82 0.84 0.88 1" friction="1.2 0.02 0.001" />
+    <body name="Z_BOT2_MASTER_BODY_SKELETON" pos="0 0 0" quat="0.707388269167 0 0 0.706825181105">
+      <freejoint name="floating_base" />
+      <inertial pos="0 0 -0.025" mass="0.728" diaginertia="0.00235467846052 0.002635261438 0.00105873989852" />
+      <geom name="torso_collision" type="box" size="0.0525318364224 0.0400417944696 0.09" pos="0 0 -0.025" rgba="0.93 0.94 0.96 1" friction="1.0 0.02 0.001" />
+      <body name="Z_BOT2_MASTER_SHOULDER2" pos="0.055995 -0.01061 -0.009528" quat="1.22474523098e-07 1.22474483074e-07 0.707106665647 0.707106896726">
+        <joint name="left_shoulder_yaw" type="hinge" axis="0 0 1" range="-0.12 0.12" limited="true" />
+        <inertial pos="-0.0104225 -0.00245 0.0094" mass="0.02" diaginertia="3.98041666667e-06 5.83389004167e-06 4.26550670833e-06" />
+        <geom type="capsule" fromto="0 0 0 -0.020845 -0.0049 0.0188" size="0.011" name="Z_BOT2_MASTER_SHOULDER2_collision" rgba="0.92 0.93 0.95 1" />
+        <body name="3215_1Flange" pos="-0.020845 -0.0049 0.0188" quat="0.500000163397 -0.5 0.499999836603 -0.5">
+          <joint name="left_shoulder_pitch" type="hinge" axis="0 0 1" range="-0.47123889 0.47123889" limited="true" />
+          <inertial pos="0.046492 0.0099 -0.0093" mass="0.149" diaginertia="6.51080333333e-05 0.000225751889845 0.000227277649845" />
+          <geom type="capsule" fromto="0 0 0 0.092984 0.0198 -0.0186" size="0.016" name="3215_1Flange_collision" rgba="0.92 0.93 0.95 1" />
+          <body name="R_ARM_MIRROR_1" pos="0.092984 0.0198 -0.0186" quat="-1.22474523098e-07 -1.22474483074e-07 0.707106665647 0.707106896726">
+            <joint name="left_elbow_yaw" type="hinge" axis="0 0 -1" range="-0.34 0.24" limited="true" />
+            <inertial pos="-0.033103 -0.005889 0.00063" mass="0.03" diaginertia="6.09609221e-06 2.432729509e-05 2.61426493e-05" />
+            <geom type="capsule" fromto="0 0 0 -0.066206 -0.011778 0.00126" size="0.014" name="R_ARM_MIRROR_1_collision" rgba="0.92 0.93 0.95 1" />
+            <body name="FINGER_1" pos="-0.066206 -0.011778 0.00126" quat="-9.93463784844e-08 0.573576508925 0.819151993472 -1.41881305656e-07">
+              <inertial pos="0 0 0" mass="0.016" diaginertia="3.456e-06 3.456e-06 3.456e-06" />
+              <geom type="sphere" size="0.018" name="FINGER_1_collision" rgba="0.94 0.95 0.97 1" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="Z_BOT2_MASTER_SHOULDER2_2" pos="-0.055995 -0.01061 -0.009528" quat="0.707106896726 -0.707106665647 0 0">
+        <joint name="right_shoulder_yaw" type="hinge" axis="0 0 1" range="-0.12 0.12" limited="true" />
+        <inertial pos="-0.0104225 0.00245 0.0094" mass="0.02" diaginertia="3.98041666667e-06 5.83389004167e-06 4.26550670833e-06" />
+        <geom type="capsule" fromto="0 0 0 -0.020845 0.0049 0.0188" size="0.011" name="Z_BOT2_MASTER_SHOULDER2_2_collision" rgba="0.92 0.93 0.95 1" />
+        <body name="3215_1Flange_2" pos="-0.020845 0.0049 0.0188" quat="0.500000163397 0.5 0.499999836603 0.5">
+          <joint name="right_shoulder_pitch" type="hinge" axis="0 0 1" range="-0.47123889 0.47123889" limited="true" />
+          <inertial pos="0.046492 -0.0099 -0.0093" mass="0.149" diaginertia="6.51080333333e-05 0.000225751889845 0.000227277649845" />
+          <geom type="capsule" fromto="0 0 0 0.092984 -0.0198 -0.0186" size="0.016" name="3215_1Flange_2_collision" rgba="0.92 0.93 0.95 1" />
+          <body name="L_ARM_MIRROR_1" pos="0.092984 -0.0198 -0.0186" quat="0.500000163397 -0.5 -0.5 -0.499999836603">
+            <joint name="right_elbow_yaw" type="hinge" axis="0 0 1" range="-0.24 0.34" limited="true" />
+            <inertial pos="-0.005889 0.033103 -0.00063" mass="0.03" diaginertia="2.432729509e-05 6.09609221e-06 2.61426493e-05" />
+            <geom type="capsule" fromto="0 0 0 -0.011778 0.066206 -0.00126" size="0.014" name="L_ARM_MIRROR_1_collision" rgba="0.92 0.93 0.95 1" />
+            <body name="FINGER_1_2" pos="-0.011778 0.066206 -0.00126" quat="0.984807740023 3.29132692615e-21 -8.69526751844e-21 0.173648251331">
+              <inertial pos="0 0 0" mass="0.016" diaginertia="3.456e-06 3.456e-06 3.456e-06" />
+              <geom type="sphere" size="0.018" name="FINGER_1_2_collision" rgba="0.94 0.95 0.97 1" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="U_HIP_L" pos="0.042808 0.007735 -0.083418" quat="3.00000078125e-14 -1.7320510331e-07 1 -1.7320510331e-07">
+        <joint name="left_hip_yaw" type="hinge" axis="0 0 1" range="-0.322013241 0.026179939" limited="true" />
+        <inertial pos="3.46944695195e-18 0.00885 0.0282" mass="0.02" diaginertia="1.367175e-05 1.17336e-05 3.85815e-06" />
+        <geom type="capsule" fromto="0 0 0 6.93889390391e-18 0.0177 0.0564" size="0.012" name="U_HIP_L_collision" rgba="0.92 0.93 0.95 1" />
+        <body name="3215_BothFlange_5" pos="0 0.0177 0.0564" quat="0.707106896726 -0.707106665647 0 0">
+          <joint name="left_hip_roll" type="hinge" axis="0 0 -1" range="-0.06 0.22" limited="true" />
+          <inertial pos="-0.0032 -0.016 -0.00895" mass="0.0995" diaginertia="5.08976495833e-05 3.00106095833e-05 4.28592933333e-05" />
+          <geom type="capsule" fromto="0 0 0 -0.0064 -0.032 -0.0179" size="0.015" name="3215_BothFlange_5_collision" rgba="0.92 0.93 0.95 1" />
+          <body name="3215_BothFlange_9" pos="-0.0064 -0.032 -0.0179" quat="0.500000163397 0.5 -0.499999836603 -0.5">
+            <joint name="left_hip_pitch" type="hinge" axis="0 0 1" range="-0.027495556 0.412327408" limited="true" />
+            <inertial pos="0.05 0.005 -0.00063" mass="0.1745" diaginertia="5.09584730167e-05 0.000289150973017 0.000299732833333" />
+            <geom type="capsule" fromto="0 0 0 0.1 0.01 -0.00126" size="0.018" name="3215_BothFlange_9_collision" rgba="0.92 0.93 0.95 1" />
+            <body name="3215_BothFlange_13" pos="0.1 0.01 -0.00126" quat="1 0 0 0">
+              <joint name="left_knee_pitch" type="hinge" axis="0 0 1" range="-0.83285928 0" limited="true" />
+              <inertial pos="0.041 -6.0588449674e-09 0.000399997058844" mass="0.205" diaginertia="4.0436940416e-05 0.000250561926339 0.000249621680743" />
+              <geom type="capsule" fromto="0 0 0 0.082 -1.21176899348e-08 0.000799994117688" size="0.017" name="3215_BothFlange_13_collision" rgba="0.92 0.93 0.95 1" />
+              <body name="left_ankle_roll_carrier" pos="0.082 -1.21176899348e-08 0.000799994117688" quat="1.22474523098e-07 0.707106896726 0.707106665647 1.22474483074e-07">
+                <joint name="left_ankle_pitch" type="hinge" axis="0 0 1" range="-0.66415928 0" limited="true" />
+                <inertial pos="1.3249998581e-08 0.01325 2.59899945315e-10" mass="0.095" diaginertia="2.97211460638e-05 1.24133453121e-05 2.97211575817e-05" />
+                <geom type="capsule" fromto="0 0 0 2.64999971619e-08 0.0265 5.1979989063e-10" size="0.014" name="left_ankle_roll_carrier_collision" rgba="0.086 0.467 1 1" />
+                <body name="FOOT" pos="2.64999971619e-08 0.0265 5.1979989063e-10" quat="1 0 0 0">
+                  <joint name="left_ankle_roll" type="hinge" axis="-0.999999683467 1.00001518318e-06 -0.000795653505717" range="-0.25 0.25" limited="true" />
+                  <inertial pos="0.0100000379347 0.0411000299998 7.95734123816e-06" mass="0.07" diaginertia="3.31749480895e-05 0.000103549005693 7.09457424679e-05" />
+                  <geom name="FOOT_collision" type="box" size="0.0550298230972 0.00350005570656 0.0375437491415" pos="0.0100000379347 0.0411000299998 7.95734123816e-06" rgba="0.12 0.14 0.17 1" friction="1.2 0.02 0.001" />
+                  <site name="left_sole_front_medial" pos="-0.0450238107612 0.0446000844361 0.0299641869711" size="0.004" rgba="0 1 0.8 1" />
+                  <site name="left_sole_front_lateral" pos="-0.0449760715508 0.0446000855652 -0.030035794037" size="0.004" rgba="0 1 0.8 1" />
+                  <site name="left_sole_rear_medial" pos="0.0549761575856 0.0445999844346 0.0300437523217" size="0.004" rgba="0 1 0.8 1" />
+                  <site name="left_sole_rear_lateral" pos="0.0550238967959 0.0445999855637 -0.0299562286864" size="0.004" rgba="0 1 0.8 1" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="U_HIP_R" pos="-0.042868 0.007735 -0.083418" quat="3.00000078125e-14 -1.7320510331e-07 1 -1.7320510331e-07">
+        <joint name="right_hip_yaw" type="hinge" axis="0 0 1" range="-0.026179939 0.322013241" limited="true" />
+        <inertial pos="0 -0.00885 0.0282" mass="0.02" diaginertia="1.367175e-05 1.17336e-05 3.85815e-06" />
+        <geom type="capsule" fromto="0 0 0 0 -0.0177 0.0564" size="0.012" name="U_HIP_R_collision" rgba="0.92 0.93 0.95 1" />
+        <body name="3215_BothFlange_6" pos="0 -0.0177 0.0564" quat="1.22474523098e-07 -1.22474483074e-07 -0.707106665647 0.707106896726">
+          <joint name="right_hip_roll" type="hinge" axis="0 0 1" range="-0.22 0.06" limited="true" />
+          <inertial pos="-0.0032 -0.016 -0.00945" mass="0.0995" diaginertia="5.17002829167e-05 3.08132429167e-05 4.28592933333e-05" />
+          <geom type="capsule" fromto="0 0 0 -0.0064 -0.032 -0.0189" size="0.015" name="3215_BothFlange_6_collision" rgba="0.92 0.93 0.95 1" />
+          <body name="3215_BothFlange_10" pos="-0.0064 -0.032 -0.0189" quat="0.500000163397 0.5 -0.499999836603 -0.5">
+            <joint name="right_hip_pitch" type="hinge" axis="0 0 1" range="-0.412327408 0.027495556" limited="true" />
+            <inertial pos="0.05 -0.005 -0.00063" mass="0.1745" diaginertia="5.09584730167e-05 0.000289150973017 0.000299732833333" />
+            <geom type="capsule" fromto="0 0 0 0.1 -0.01 -0.00126" size="0.018" name="3215_BothFlange_10_collision" rgba="0.92 0.93 0.95 1" />
+            <body name="3215_BothFlange_14" pos="0.1 -0.01 -0.00126" quat="1 0 0 0">
+              <joint name="right_knee_pitch" type="hinge" axis="0 0 1" range="0 0.83285928" limited="true" />
+              <inertial pos="0.041 1.76538750632e-10 0.000499997058847" mass="0.205" diaginertia="4.06754100426e-05 0.000250800409632 0.000249621667077" />
+              <geom type="capsule" fromto="0 0 0 0.082 3.53077501264e-10 0.000999994117694" size="0.017" name="3215_BothFlange_14_collision" rgba="0.92 0.93 0.95 1" />
+              <body name="right_ankle_roll_carrier" pos="0.082 3.53077501264e-10 0.000999994117694" quat="1.22474523098e-07 0.707106896726 -0.707106665647 -1.22474483074e-07">
+                <joint name="right_ankle_pitch" type="hinge" axis="0 0 1" range="0 0.66415928" limited="true" />
+                <inertial pos="4.58993665298e-09 -0.01325 -8.91996594296e-09" mass="0.095" diaginertia="2.97211537424e-05 1.24133453121e-05 2.97211499031e-05" />
+                <geom type="capsule" fromto="0 0 0 9.17987330595e-09 -0.0265 -1.78399318859e-08" size="0.014" name="right_ankle_roll_carrier_collision" rgba="0.086 0.467 1 1" />
+                <body name="FOOT_2" pos="9.17987330595e-09 -0.0265 -1.78399318859e-08" quat="1 0 0 0">
+                  <joint name="right_ankle_roll" type="hinge" axis="0.999999683743 3.46945608555e-07 -0.00079530709562" range="-0.25 0.25" limited="true" />
+                  <inertial pos="0.0100000110749 -0.0411000365305 -7.98073970767e-06" mass="0.07" diaginertia="3.31749168743e-05 0.000103548937143 7.09457014119e-05" />
+                  <geom name="FOOT_2_collision" type="box" size="0.0550298078344 0.00350004431685 0.0375437323868" pos="0.0100000110749 -0.0411000365305 -7.98073970767e-06" rgba="0.12 0.14 0.17 1" friction="1.2 0.02 0.001" />
+                  <site name="right_sole_front_medial" pos="-0.0450238295314 -0.0446000354247 -0.029964231718" size="0.004" rgba="0 1 0.8 1" />
+                  <site name="right_sole_front_lateral" pos="-0.0449761111057 -0.0446000758004 0.0300357493066" size="0.004" rgba="0 1 0.8 1" />
+                  <site name="right_sole_rear_medial" pos="0.0549761388429 -0.0446000007301 -0.0300437624275" size="0.004" rgba="0 1 0.8 1" />
+                  <site name="right_sole_rear_lateral" pos="0.0550238572687 -0.0446000411059 0.0299562185971" size="0.004" rgba="0 1 0.8 1" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="v4_head_shell">
+        <inertial pos="0 0.009189728 0.03883662" mass="0.055" diaginertia="2.71262769951e-05 6.04680248301e-05 4.215091507e-05" />
+        <geom name="v4_head_shell_collision" type="box" size="0.045375002 0.0155000005 0.0352046175" pos="0 0.009189728 0.03883662" rgba="0.97 0.98 0.99 1" />
+        <body name="m5stack_unitv2">
+          <inertial pos="0 0.006 0.045" mass="0.018" diaginertia="1.74684126905e-06 4.32e-06 4.33884126905e-06" />
+          <geom name="m5stack_unitv2_visual" type="box" size="0.024 0.0121301365 0.012" pos="0 0.006 0.045" rgba="0 0.72 0.85 1" contype="0" conaffinity="0" />
+          <site name="unitv2_camera_site" pos="-0.014 -0.0075102725 0.045" size="0.004" rgba="0 0.8 1 1" />
+        </body>
+      </body>
+      <body name="v4_rear_service_pod">
+        <inertial pos="0 0.084 -0.042" mass="0.08" diaginertia="7.38389333333e-05 0.000130693333333 7.11989333333e-05" />
+        <geom name="v4_rear_service_pod_collision" type="box" size="0.049 0.0164 0.05" pos="0 0.084 -0.042" rgba="0.88 0.89 0.91 1" />
+        <body name="v4_compute_module">
+          <inertial pos="0 0.084 -0.018" mass="0.025" diaginertia="2.43333333333e-06 1.23416666667e-05 1.05083333333e-05" />
+          <geom name="v4_compute_module_visual" type="box" size="0.035 0.006 0.016" pos="0 0.084 -0.018" rgba="1 0.57 0 1" contype="0" conaffinity="0" />
+        </body>
+        <body name="v4_battery_pack">
+          <inertial pos="0 0.084 -0.063" mass="0.18" diaginertia="2.46e-05 0.000101715 9.1635e-05" />
+          <geom name="v4_battery_pack_visual" type="box" size="0.0375 0.011 0.017" pos="0 0.084 -0.063" rgba="0.84 0 0.98 1" contype="0" conaffinity="0" />
+        </body>
+        <body name="v4_torso_imu">
+          <inertial pos="0 0.094 -0.018" mass="0.006" diaginertia="3.445e-07 8.245e-07 5.44e-07" />
+          <geom name="v4_torso_imu_visual" type="box" size="0.016 0.004 0.0125" pos="0 0.094 -0.018" rgba="0.39 0.87 0.09 1" contype="0" conaffinity="0" />
+          <site name="imu_site" pos="0 0.094 -0.018" size="0.006" rgba="0.2 1 0.2 1" />
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="left_shoulder_yaw_motor" joint="left_shoulder_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_shoulder_yaw_motor" joint="right_shoulder_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_shoulder_pitch_motor" joint="left_shoulder_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_shoulder_pitch_motor" joint="right_shoulder_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_elbow_yaw_motor" joint="left_elbow_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_elbow_yaw_motor" joint="right_elbow_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_hip_yaw_motor" joint="left_hip_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_hip_yaw_motor" joint="right_hip_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_hip_roll_motor" joint="left_hip_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_hip_roll_motor" joint="right_hip_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_hip_pitch_motor" joint="left_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_hip_pitch_motor" joint="right_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_knee_pitch_motor" joint="left_knee_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_knee_pitch_motor" joint="right_knee_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_ankle_pitch_motor" joint="left_ankle_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_ankle_pitch_motor" joint="right_ankle_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_ankle_roll_motor" joint="left_ankle_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_ankle_roll_motor" joint="right_ankle_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+  </actuator>
+  <sensor>
+    <gyro name="imu_gyro" site="imu_site" />
+    <accelerometer name="imu_accelerometer" site="imu_site" />
+    <touch name="left_front_medial_touch" site="left_sole_front_medial" />
+    <touch name="left_front_lateral_touch" site="left_sole_front_lateral" />
+    <touch name="left_rear_medial_touch" site="left_sole_rear_medial" />
+    <touch name="left_rear_lateral_touch" site="left_sole_rear_lateral" />
+    <touch name="right_front_medial_touch" site="right_sole_front_medial" />
+    <touch name="right_front_lateral_touch" site="right_sole_front_lateral" />
+    <touch name="right_rear_medial_touch" site="right_sole_rear_medial" />
+    <touch name="right_rear_lateral_touch" site="right_sole_rear_lateral" />
+  </sensor>
+  <keyframe>
+    <key name="official_standing" qpos="0 0 0.424918040663 0.707388269167 0 0 0.706825181105 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+    <key name="symmetric_crouch" qpos="0 0 0.424918040663 0.707388269167 0 0 0.706825181105 0 0 0 0 0 0 0 0 0 0 0.18 -0.18 -0.36 0.36 -0.18 0.18 0 0" />
+  </keyframe>
+</mujoco>

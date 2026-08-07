@@ -1,0 +1,578 @@
+{
+  "schema": "zeroth01.v4.payload_triangle_screening.v1",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\cad\\physical_mount_v1\\skeleton\\Z_BOT2_MASTER_BODY_SKELETON.stl",
+  "body_triangle_count": 6368,
+  "method": "vtkCollisionDetectionFilter surface contacts plus 5x5x5 vtkSelectEnclosedPoints samples against released STL",
+  "tests": {
+    "compute_pi_zero_2w_class": {
+      "size_mm": [
+        14.0,
+        74.0,
+        36.0
+      ],
+      "zero_contact_count": 72,
+      "best_20": [
+        {
+          "center_mm": [
+            0,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -5
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -5
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -15
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -5
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -20
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            20,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            -5
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -15
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -25
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -15
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            20,
+            0,
+            -5
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -30,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        }
+      ]
+    },
+    "thin_2s_battery": {
+      "size_mm": [
+        26.0,
+        79.0,
+        38.0
+      ],
+      "zero_contact_count": 54,
+      "best_20": [
+        {
+          "center_mm": [
+            0,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -50
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -50
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -60
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -50
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            20,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -30,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            -50
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -60
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -70
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -60
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            20,
+            0,
+            -50
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            30,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -40,
+            0,
+            -40
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -30,
+            0,
+            -50
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            -60
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -70
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        }
+      ]
+    },
+    "torso_imu": {
+      "size_mm": [
+        12.0,
+        36.0,
+        29.0
+      ],
+      "zero_contact_count": 315,
+      "best_20": [
+        {
+          "center_mm": [
+            0,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            -10,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            10,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -20,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            -10,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -10,
+            10,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            -20,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            -10,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            0,
+            -20
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            10,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            0,
+            20,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            -10,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            0,
+            -10
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            10,
+            10,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            20,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        },
+        {
+          "center_mm": [
+            -30,
+            0,
+            0
+          ],
+          "surface_contact_count": 0,
+          "enclosed_sample_count": 0
+        }
+      ]
+    }
+  }
+}
