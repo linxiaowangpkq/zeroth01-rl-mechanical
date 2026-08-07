@@ -1,4 +1,4 @@
-"""Generate the v3 18DoF RL URDF from the released v2-minimal appearance.
+"""Generate the compact v3.1 18DoF RL URDF from the released v2 assembly.
 
 The generator owns frames, axes, primitive collisions and nominal inertials.
 The v2 URDF is read only as visual/CAD provenance.  Generated XML is not a
@@ -31,14 +31,21 @@ ASSEMBLY_MANIFEST = (
 BODY = "Z_BOT2_MASTER_BODY_SKELETON"
 LEFT_ANKLE_CARRIER = "left_ankle_roll_carrier"
 RIGHT_ANKLE_CARRIER = "right_ankle_roll_carrier"
-TARGET_TOTAL_MASS_KG = 3.095471828
+# The original v3 total was 3.095471828 kg.  Replacing its 187 g K151 and
+# 18 g plate with a conservatively modelled 72.7 g CoreS3 and 6 g cradle
+# reduces the nominal total without silently changing any released v2 mass.
+TARGET_TOTAL_MASS_KG = 2.969171828
 STS3250_MASS_KG = 0.0745
 CONTINUOUS_EFFORT_NM = 1.2552512
 RATED_EFFORT_NM = 1.569064
 MAX_VELOCITY_RAD_S = 3.0
-ANKLE_ROLL_OFFSET_M = 0.050
+# Re-clock the two v3-owned ankle-roll servos symmetrically so their 45.22 mm
+# case axes run laterally.  A 30 mm serial shaft spacing clears the adjacent
+# pitch servo, carrier and horn with assembly tolerance; height is recovered
+# at the non-load-bearing upper body/head interface.
+ANKLE_ROLL_OFFSET_M = 0.030
 
-# Replaced by the purchased StackChan head, and by the exposed load-bearing
+# Replaced by the purchased CoreS3 head, and by the exposed load-bearing
 # torso. These were visual-only in the v3 ledger: excluding them neither hides
 # mass nor moves their nominal weight into another component.
 REMOVED_BODY_VISUALS = {
@@ -51,16 +58,22 @@ REMOVED_BODY_VISUALS = {
     "minimal_camera_bracket_visual",
 }
 TARGET_HIP_HALF_SPACING_M = 0.037
-STACKCHAN_HEAD_POD = "m5stack_stackchan_k151_head_pod"
-STACKCHAN_HEAD_ADAPTER = "stackchan_k151_torso_adapter"
-STACKCHAN_HEAD_POD_MASS_KG = 0.187
-STACKCHAN_HEAD_ADAPTER_MASS_KG = 0.018
-# The 3 mm aluminium adapter sits directly on the torso top; the purchased
-# StackChan base sits directly on the adapter, so the visible neck gap is 0 mm.
-STACKCHAN_ADAPTER_CENTER_M = (0.015, 0.0, 0.0665)
-STACKCHAN_HEAD_CENTER_M = (0.015, 0.0, 0.10325)
-STACKCHAN_ADAPTER_SIZE_M = (0.066, 0.060, 0.003)
-STACKCHAN_HEAD_SIZE_M = (0.0615, 0.054, 0.0705)
+CORES3_HEAD_POD = "m5stack_cores3_head_module"
+CORES3_HEAD_ADAPTER = "cores3_internal_torso_cradle"
+# Official CoreS3 documentation states 72.7 g for the complete retail set.
+# Assigning that entire mass to the 54 x 54 x 15.5 mm main unit is deliberately
+# conservative because the supplied DinBase is not installed on the robot.
+CORES3_HEAD_POD_MASS_KG = 0.0727
+CORES3_HEAD_ADAPTER_MASS_KG = 0.006
+# CoreS3 is flush-mounted into the upper torso at z=-9..45 mm. This removes
+# the exposed neck/stack and keeps the purchased head below the 45 mm body-top
+# trim plane. Its front plane remains at x=46.5 mm; the U-cradle stays hidden.
+BODY_TOP_LIMIT_M = 0.045
+CORES3_ADAPTER_CENTER_M = (0.030, 0.0, 0.018)
+CORES3_HEAD_CENTER_M = (0.03875, 0.0, 0.018)
+# Collision/inertia uses the complete U-cradle envelope, including its lips.
+CORES3_ADAPTER_SIZE_M = (0.0095, 0.058, 0.040)
+CORES3_HEAD_SIZE_M = (0.0155, 0.054, 0.054)
 
 I3 = ((1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, 0.0, 1.0))
 
@@ -164,7 +177,7 @@ def neutral_transforms(old_tf):
 
     All released v2 frames are kept verbatim.  Each ankle-pitch child frame is
     renamed to an intermediate carrier, and the original foot frame is moved
-    50 mm down in the body/world Z direction without changing orientation.
+    30 mm down in the body/world Z direction without changing orientation.
     """
 
     result = dict(old_tf)
@@ -272,7 +285,7 @@ def sym_positions(old):
         positions[right] = (x, -y, z)
     # The v2 source hip shafts average 42.838 mm from the centreline.  A
     # reversible 5.838 mm slotted adapter moves the complete leg chains
-    # inboard so the 3.095 kg single-support moment remains below the
+    # inboard so the conservative single-support moment remains below the
     # conservative STS3250 continuous torque rather than merely the rated
     # torque.  All downstream leg frames move as a rigid neutral-pose group.
     source_half_spacing = positions["U_HIP_L"][1]
@@ -327,8 +340,8 @@ COLLISION = {
     "3215_BothFlange_14": ((0.047, 0.047, 0.105), (0.0, 0.0, -0.050)),
     LEFT_ANKLE_CARRIER: ((0.052, 0.0365, 0.02472), (0.0, 0.0, 0.0)),
     RIGHT_ANKLE_CARRIER: ((0.052, 0.0365, 0.02472), (0.0, 0.0, 0.0)),
-    "FOOT": ((0.110, 0.075, 0.009), (-0.010, 0.0, -0.0225)),
-    "FOOT_2": ((0.110, 0.075, 0.009), (-0.010, 0.0, -0.0225)),
+    "FOOT": ((0.110, 0.075, 0.007), (-0.010, 0.0, -0.0215)),
+    "FOOT_2": ((0.110, 0.075, 0.007), (-0.010, 0.0, -0.0215)),
 }
 
 
@@ -357,8 +370,8 @@ FIXED_MASSES = {
     RIGHT_ANKLE_CARRIER: 0.0995,
     "FOOT": 0.070,
     "FOOT_2": 0.070,
-    STACKCHAN_HEAD_POD: STACKCHAN_HEAD_POD_MASS_KG,
-    STACKCHAN_HEAD_ADAPTER: STACKCHAN_HEAD_ADAPTER_MASS_KG,
+    CORES3_HEAD_POD: CORES3_HEAD_POD_MASS_KG,
+    CORES3_HEAD_ADAPTER: CORES3_HEAD_ADAPTER_MASS_KG,
     "torso_imu_module": 0.010,
     "compute_module": 0.100,
     "battery_pack": 0.200,
@@ -620,6 +633,12 @@ def copy_visuals(old_robot, old_link_name, new_link, neutral_tf, sts_components)
                 mesh.set("filename", "meshes/v3/left_sole_lightweighted.stl")
             elif "right_sole.stl" in filename:
                 mesh.set("filename", "meshes/v3/right_sole_lightweighted.stl")
+            elif (
+                old_link_name == BODY
+                and filename.endswith("Z_BOT2_MASTER_BODY_SKELETON.stl")
+            ):
+                mesh.set("filename", "meshes/v3/body_skeleton_top_trimmed_45mm.stl")
+                mesh.set("scale", "0.001 0.001 0.001")
         new_link.append(copied)
 
 
@@ -627,7 +646,10 @@ def ankle_servo_rotation(world_axis):
     """Match the roll-servo orientation used by the SolidWorks manifest."""
 
     z_axis = _unit(world_axis)
-    x_axis = (0.0, 0.0, -1.0)
+    # Mirror the complete case about the sagittal plane. Both sides then use
+    # local +Y as world up and local +X toward their respective outboard side.
+    axis_sign = 1.0 if z_axis[0] >= 0.0 else -1.0
+    x_axis = (0.0, axis_sign, 0.0)
     y_axis = _cross(z_axis, x_axis)
     return tuple((x_axis[row], y_axis[row], z_axis[row]) for row in range(3))
 
@@ -799,67 +821,67 @@ def gen_urdf() -> ET.Element:
             rpy=matrix_rpy(origin[0]),
         )
 
-    adapter = ET.SubElement(robot, "link", name=STACKCHAN_HEAD_ADAPTER)
+    adapter = ET.SubElement(robot, "link", name=CORES3_HEAD_ADAPTER)
     add_box_visual_collision(
         adapter,
-        STACKCHAN_HEAD_ADAPTER,
-        STACKCHAN_ADAPTER_SIZE_M,
+        CORES3_HEAD_ADAPTER,
+        CORES3_ADAPTER_SIZE_M,
         "0.75 0.78 0.82 1",
     )
     add_inertial(
         adapter,
-        FIXED_MASSES[STACKCHAN_HEAD_ADAPTER],
-        STACKCHAN_ADAPTER_SIZE_M,
+        FIXED_MASSES[CORES3_HEAD_ADAPTER],
+        CORES3_ADAPTER_SIZE_M,
         (0.0, 0.0, 0.0),
     )
-    adapter_world = (I3, STACKCHAN_ADAPTER_CENTER_M)
+    adapter_world = (I3, CORES3_ADAPTER_CENTER_M)
     adapter_local = relative_transform(neutral_tf[BODY], adapter_world)
     add_joint(
         robot,
-        "stackchan_head_adapter_fixed_joint",
+        "cores3_internal_cradle_fixed_joint",
         BODY,
-        STACKCHAN_HEAD_ADAPTER,
+        CORES3_HEAD_ADAPTER,
         adapter_local[1],
         kind="fixed",
         rpy=matrix_rpy(adapter_local[0]),
     )
 
-    head = ET.SubElement(robot, "link", name=STACKCHAN_HEAD_POD)
+    head = ET.SubElement(robot, "link", name=CORES3_HEAD_POD)
     add_box_visual_collision(
         head,
-        STACKCHAN_HEAD_POD,
-        STACKCHAN_HEAD_SIZE_M,
+        CORES3_HEAD_POD,
+        CORES3_HEAD_SIZE_M,
         "0.97 0.98 0.99 1",
     )
     # A black front glass reference makes the purchased expression display
     # visible without pretending the supplier's internal B-Rep is ours.
-    face = ET.SubElement(head, "visual", name="stackchan_front_glass_visual")
-    ET.SubElement(face, "origin", xyz="0.031 0 -0.006", rpy="0 0 0")
+    face = ET.SubElement(head, "visual", name="cores3_front_glass_visual")
+    ET.SubElement(face, "origin", xyz="0.00825 0 0", rpy="0 0 0")
     geometry = ET.SubElement(face, "geometry")
-    ET.SubElement(geometry, "box", size="0.001 0.044 0.040")
-    add_material(face, "stackchan_front_glass", "0.02 0.03 0.04 1")
+    ET.SubElement(geometry, "box", size="0.001 0.046 0.046")
+    add_material(face, "cores3_front_glass", "0.02 0.03 0.04 1")
     add_inertial(
         head,
-        FIXED_MASSES[STACKCHAN_HEAD_POD],
-        STACKCHAN_HEAD_SIZE_M,
+        FIXED_MASSES[CORES3_HEAD_POD],
+        CORES3_HEAD_SIZE_M,
         (0.0, 0.0, 0.0),
     )
     add_joint(
         robot,
-        "stackchan_head_pod_fixed_joint",
-        STACKCHAN_HEAD_ADAPTER,
-        STACKCHAN_HEAD_POD,
-        sub(STACKCHAN_HEAD_CENTER_M, STACKCHAN_ADAPTER_CENTER_M),
+        "cores3_head_module_fixed_joint",
+        CORES3_HEAD_ADAPTER,
+        CORES3_HEAD_POD,
+        sub(CORES3_HEAD_CENTER_M, CORES3_ADAPTER_CENTER_M),
         kind="fixed",
     )
 
     for side, foot in (("left", "FOOT"), ("right", "FOOT_2")):
         foot_rotation_t = mat_t(neutral_tf[foot][0])
         for corner, world_offset in (
-            ("front_medial", (0.045, -0.030, -0.027)),
-            ("front_lateral", (0.045, 0.030, -0.027)),
-            ("rear_medial", (-0.055, -0.030, -0.027)),
-            ("rear_lateral", (-0.055, 0.030, -0.027)),
+            ("front_medial", (0.045, -0.030, -0.025)),
+            ("front_lateral", (0.045, 0.030, -0.025)),
+            ("rear_medial", (-0.055, -0.030, -0.025)),
+            ("rear_lateral", (-0.055, 0.030, -0.025)),
         ):
             xyz = mat_vec(foot_rotation_t, world_offset)
             frame = f"{side}_sole_{corner}_contact"
@@ -867,11 +889,11 @@ def gen_urdf() -> ET.Element:
             add_joint(robot, f"{frame}_joint", foot, frame, xyz, kind="fixed")
 
     sensor_frames = (
-        ("camera_optical_frame", STACKCHAN_HEAD_POD, (0.03075, 0.0, -0.020), "0 1.57079632679 0"),
-        ("left_microphone_frame", STACKCHAN_HEAD_POD, (0.03075, 0.015, -0.020), "0 0 0"),
-        ("right_microphone_frame", STACKCHAN_HEAD_POD, (0.03075, -0.015, -0.020), "0 0 0"),
-        ("head_speaker_frame", STACKCHAN_HEAD_POD, (-0.03075, 0.0, 0.0), "0 0 0"),
-        ("head_imu_frame", STACKCHAN_HEAD_POD, (0.0, 0.0, 0.0), "0 0 0"),
+        ("camera_optical_frame", CORES3_HEAD_POD, (0.00825, 0.0, -0.020), "0 1.57079632679 0"),
+        ("left_microphone_frame", CORES3_HEAD_POD, (0.00825, 0.015, -0.020), "0 0 0"),
+        ("right_microphone_frame", CORES3_HEAD_POD, (0.00825, -0.015, -0.020), "0 0 0"),
+        ("head_speaker_frame", CORES3_HEAD_POD, (-0.00775, 0.0, 0.0), "0 0 0"),
+        ("head_imu_frame", CORES3_HEAD_POD, (0.0, 0.0, 0.0), "0 0 0"),
     )
     for name, parent, xyz, rpy in sensor_frames:
         ET.SubElement(robot, "link", name=name)

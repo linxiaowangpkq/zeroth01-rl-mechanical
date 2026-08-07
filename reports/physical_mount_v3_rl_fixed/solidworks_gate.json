@@ -14,5 +14,69 @@
   "xray_save_gate": "PASS",
   "normal_view_gate": "PASS",
   "xray_view_gate": "PASS",
+  "assembly_bbox_m": {
+    "min": [
+      -0.06648524422589099,
+      -0.14981082041880617,
+      -0.446418040347287
+    ],
+    "max": [
+      0.05350998817881108,
+      0.1498202593134761,
+      0.052818611783218145
+    ],
+    "size": [
+      0.11999523240470206,
+      0.29963107973228226,
+      0.49923665213050517
+    ]
+  },
+  "standing_height_mm": 499.23665213050515,
+  "standing_height_limit_mm": 500.0,
+  "standing_height_gate": "PASS",
+  "highest_occurrences": [
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+      "max_z_m": 0.052818611783218145
+    },
+    {
+      "component_id": "M5STACK_CORES3_K128_PURCHASED_HEAD_MODULE",
+      "max_z_m": 0.045
+    },
+    {
+      "component_id": "CORES3_FACE_GLASS",
+      "max_z_m": 0.041999999999999996
+    },
+    {
+      "component_id": "V2_COMPUTE_MODULE",
+      "max_z_m": 0.032999999821186066
+    },
+    {
+      "component_id": "CORES3_INTERNAL_TORSO_CRADLE_2MM_6061",
+      "max_z_m": 0.029
+    }
+  ],
+  "lowest_occurrences": [
+    {
+      "component_id": "LEFT_7MM_LIGHTWEIGHT_SOLE",
+      "min_z_m": -0.446418040347287
+    },
+    {
+      "component_id": "RIGHT_7MM_LIGHTWEIGHT_SOLE",
+      "min_z_m": -0.44641801290946814
+    },
+    {
+      "component_id": "CARRIER_FOOT",
+      "min_z_m": -0.4374476865419837
+    },
+    {
+      "component_id": "CARRIER_FOOT_2",
+      "min_z_m": -0.43744765784282874
+    },
+    {
+      "component_id": "LEFT_ANKLE_ROLL_CARRIER",
+      "min_z_m": -0.4158180006627469
+    }
+  ],
   "overall": "PASS"
 }

@@ -29,17 +29,18 @@
     "mass_each_kg": 0.0745,
     "continuous_design_torque_nm": 1.2552512,
     "rated_torque_nm": 1.569064,
-    "static_single_support_required_nm": 1.3008430830106854,
-    "continuous_margin_fraction": -0.036320923661085046,
+    "static_single_support_required_nm": 1.2477666893255253,
+    "continuous_margin_fraction": 0.005962560063256465,
     "hip_half_spacing_m": 0.04283798641743393,
     "quasistatic_torque_report": "reports/physical_mount_v3_rl_fixed/sts3250_quasistatic_torque_gate.json",
     "quasistatic_peak_joint": "left_ankle_pitch",
-    "quasistatic_peak_torque_nm": 1.1864086814424593
+    "quasistatic_peak_torque_nm": 1.4142384041702036
   },
   "mass": {
-    "canonical_original_kg": 3.095471828,
-    "urdf_nominal_kg": 3.095471828,
-    "mjcf_nominal_kg": 3.095471828,
+    "pre_compaction_v3_kg": 3.095471828,
+    "maximum_allowed_kg": 3.0,
+    "urdf_nominal_kg": 2.969171828,
+    "mjcf_nominal_kg": 2.9691718280000003,
     "confidence": "estimated_from_envelopes_not_as_built"
   },
   "sensors": {
@@ -52,9 +53,9 @@
       ]
     },
     "head_module": {
-      "model": "M5Stack StackChan K151",
-      "parent": "m5stack_stackchan_k151_head_pod",
-      "mass_kg": 0.187,
+      "model": "M5Stack CoreS3 K128",
+      "parent": "m5stack_cores3_head_module",
+      "mass_kg": 0.0727,
       "camera": "GC0308 0.3MP",
       "camera_optical_frame": "camera_optical_frame",
       "microphones": [
@@ -63,7 +64,7 @@
       ],
       "speaker_frame": "head_speaker_frame",
       "imu_frame": "head_imu_frame",
-      "walking_policy": "lock internal K151 pan/tilt at centre; treat complete 187 g module as one fixed payload"
+      "walking_policy": "CoreS3 has no mechanical pan/tilt; treat the module as one fixed torso-overlapped payload"
     },
     "sole_contact_sites": 8
   },
@@ -93,16 +94,17 @@
     "SOURCE_AXIS_FIDELITY_PASS": "PASS",
     "MJX_PRIMITIVE_COLLISION_PASS": "PASS",
     "GROUND_CONTACT_PASS": "PASS",
-    "ACTUATOR_STATIC_FEASIBILITY_PASS": "HOLD_RATED_TORQUE_ONLY_RL_COM_SHIFT_REQUIRED",
-    "STS3250_QUASISTATIC_TORQUE_PASS": "PASS",
+    "ACTUATOR_STATIC_FEASIBILITY_PASS": "PASS",
+    "STS3250_QUASISTATIC_TORQUE_PASS": "HOLD_RATED_ONLY_DYNAMIC_POLICY_TRACE_REQUIRED",
     "STS3250_DYNAMIC_WALKING_PASS": "HOLD_RL_ROLLOUT_TORQUE_AND_THERMAL_TRACE_REQUIRED",
     "MASS_TARGET_PASS": "PASS",
+    "STANDING_HEIGHT_LIMIT_PASS": "PASS",
     "ACTUATOR_MASS_OWNERSHIP_PASS": "PASS",
     "MOTION_SAMPLE_NO_NONADJACENT_PENETRATION_PASS": "PASS",
-    "PURCHASED_STACKCHAN_HEAD_MODEL_PASS": "PASS",
+    "PURCHASED_CORES3_HEAD_MODEL_PASS": "PASS",
     "MASS_IDENTIFIED_PASS": "HOLD_AS_BUILT_MEASUREMENT_REQUIRED",
     "STS3250_FIRST_ARTICLE_PASS": "HOLD_PURCHASED_HARDWARE_REQUIRED",
-    "STACKCHAN_ADAPTER_FIRST_ARTICLE_PASS": "HOLD_TORSO_SLOT_FIT_REQUIRED"
+    "CORES3_CRADLE_FIRST_ARTICLE_PASS": "HOLD_TORSO_NUT_PLATE_FIT_REQUIRED"
   },
-  "truth_boundary": "RL nominal model passes with the purchased K151 treated as a fixed 187 g head payload; factory release remains held for STS3250 fit, torso-adapter first article and as-built mass/COM/inertia identification."
+  "truth_boundary": "RL nominal model uses a purchased CoreS3 at the official main-unit envelope with the full 72.7 g retail-set mass assigned conservatively; factory release remains held for STS3250 fit, torso-cradle first article and as-built mass/COM/inertia identification."
 }

@@ -1,4 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0"?>
+<!-- cadpy:sourcePath=../../../cad/physical_mount_v3_rl_fixed/build_v3_urdf.py -->
+<!-- cadpy:sourceHash=265ada7cdd6da2ea74c7de51efd942c24c6b1edb8cfcd94ad5c6e1433976d2fa -->
 <robot name="zeroth01_physical_mount_v3_rl_fixed_18dof">
   <!--v3 uses v2-minimal visual provenance, explicit mirrored kinematics, primitive collisions and nominal—not measured—as-built inertials.-->
   <link name="base_link" />
@@ -6,7 +8,7 @@
     <visual name="Z_BOT2_MASTER_BODY_SKELETON_visual">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry name="Z_BOT2_MASTER_BODY_SKELETON_geometry">
-        <mesh filename="meshes/skeleton/Z_BOT2_MASTER_BODY_SKELETON.stl" />
+        <mesh filename="meshes/v3/body_skeleton_top_trimmed_45mm.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="physical_mount_v1_skeleton_white">
         <color rgba="0.93 0.95 0.98 1" />
@@ -187,7 +189,7 @@
       </material>
     </visual>
     <visual name="S14_left_knee_pitch_blue_servo_visual">
-      <origin xyz="0 0 6.93889390391e-18" rpy="-1.08420217249e-19 -8.64653398817e-23 -3.14159198038" />
+      <origin xyz="0 0 6.93889390391e-18" rpy="0 -3.35257301912e-23 -3.14159198038" />
       <geometry>
         <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -196,7 +198,7 @@
       </material>
     </visual>
     <visual name="S16_left_ankle_pitch_blue_servo_visual">
-      <origin xyz="0.1 0 0.0008" rpy="-3.46409966684e-13 -3.46410206619e-07 6.73204996363e-07" />
+      <origin xyz="0.1 0 0.0008" rpy="-3.46410075104e-13 -3.46410206619e-07 6.73204996363e-07" />
       <geometry>
         <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -227,7 +229,7 @@
       </material>
     </visual>
     <visual name="S13_right_knee_pitch_blue_servo_visual">
-      <origin xyz="-5.55111512313e-17 -3.46944695195e-18 0" rpy="1.08420217249e-19 -6.40857725192e-23 3.14159263397" />
+      <origin xyz="0 -3.46944695195e-18 0" rpy="1.08420217249e-19 -6.40857725192e-23 3.14159263397" />
       <geometry>
         <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -329,7 +331,7 @@
       </material>
     </visual>
     <visual name="S05_left_hip_pitch_blue_servo_visual">
-      <origin xyz="0 0 0" rpy="-1.08420217249e-19 -8.64653398817e-23 -3.14159198038" />
+      <origin xyz="0 0 0" rpy="0 -3.35257301912e-23 -3.14159198038" />
       <geometry>
         <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -413,15 +415,15 @@
       </material>
     </visual>
     <collision name="FOOT_primitive_collision">
-      <origin xyz="0.0100000193347 0.0224999899998 7.9569763967e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000183347 0.0214999899998 7.95695678161e-06" rpy="0 0 0" />
       <geometry>
-        <box size="0.110059648194 0.00900011141312 0.0750874983222" />
+        <box size="0.110059646194 0.00700011141312 0.075087498283" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.0100000193347 0.0224999899998 7.9569763967e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000183347 0.0214999899998 7.95695678161e-06" rpy="0 0 0" />
       <mass value="0.07" />
-      <inertia ixx="3.33616173902e-05" iyy="0.000103549008296" izz="7.11324143023e-05" ixy="0" ixz="0" iyz="0" />
+      <inertia ixx="3.31749480895e-05" iyy="0.000103549005693" izz="7.09457424679e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
   <link name="FOOT_2">
@@ -444,15 +446,15 @@
       </material>
     </visual>
     <collision name="FOOT_2_primitive_collision">
-      <origin xyz="0.0100000046317 -0.0224999965305 -7.96821806817e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000042853 -0.0214999965305 -7.9675448632e-06" rpy="0 0 0" />
       <geometry>
-        <box size="0.110059616362 0.00900008863371 0.0750874661201" />
+        <box size="0.110059615669 0.00700008863371 0.0750874647737" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.0100000046317 -0.0224999965305 -7.96821806817e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000042853 -0.0214999965305 -7.9675448632e-06" rpy="0 0 0" />
       <mass value="0.07" />
-      <inertia ixx="3.33615867885e-05" iyy="0.000103548939212" izz="7.11323710363e-05" ixy="0" ixz="0" iyz="0" />
+      <inertia ixx="3.31749168743e-05" iyy="0.000103548937143" izz="7.09457014119e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
   <link name="L_ARM_MIRROR_1">
@@ -589,7 +591,7 @@
   </link>
   <link name="left_ankle_roll_carrier">
     <visual name="left_ankle_roll_carrier_visual">
-      <origin xyz="4.99999946446e-08 0.05 9.80754505386e-10" rpy="-1.57159198038 -1.96150900812e-08 1.5707953268" />
+      <origin xyz="2.99999967854e-08 0.03 5.88452703232e-10" rpy="-3.14156800079 1.57000067321 2.36527964908e-05" />
       <geometry>
         <mesh filename="meshes/v3/left_ankle_roll_carrier.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -598,7 +600,7 @@
       </material>
     </visual>
     <visual name="left_ankle_roll_blue_servo_visual">
-      <origin xyz="4.99999946446e-08 0.05 9.80754505386e-10" rpy="-1.57159198038 -1.96150900812e-08 1.5707953268" />
+      <origin xyz="2.99999967854e-08 0.03 5.88452703232e-10" rpy="-3.14156800079 1.57000067321 2.36527964908e-05" />
       <geometry>
         <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -608,19 +610,19 @@
     </visual>
     <collision name="left_ankle_roll_carrier_primitive_collision">
       <geometry>
-        <cylinder radius="0.014" length="0.05" />
+        <cylinder radius="0.014" length="0.03" />
       </geometry>
-      <origin xyz="2.49999973223e-08 0.025 4.90377252693e-10" rpy="-9.99999892892e-07 -1.57079631189 -1.57079632679" />
+      <origin xyz="1.49999983927e-08 0.015 2.94226351616e-10" rpy="-9.99999892846e-07 -1.57079631189 -1.57079632679" />
     </collision>
     <inertial>
-      <origin xyz="2.49999973223e-08 0.025 4.90377252693e-10" rpy="0 0 0" />
+      <origin xyz="1.49999983927e-08 0.015 2.94226351616e-10" rpy="0 0 0" />
       <mass value="0.0995" />
-      <inertia ixx="5.6947167122e-05" iyy="1.30013570054e-05" izz="5.69471898833e-05" ixy="0" ixz="0" iyz="0" />
+      <inertia ixx="3.43938336066e-05" iyy="1.30013475366e-05" izz="3.43938472633e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
   <link name="right_ankle_roll_carrier">
     <visual name="right_ankle_roll_carrier_visual">
-      <origin xyz="1.7320515671e-08 -0.05 -3.36602488382e-08" rpy="-1.57159163397 6.73204976747e-07 -1.57079598038" />
+      <origin xyz="1.03923094019e-08 -0.03 -2.01961493015e-08" rpy="3.14074618206 1.57000101933 3.14074652874" />
       <geometry>
         <mesh filename="meshes/v3/right_ankle_roll_carrier.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -629,7 +631,7 @@
       </material>
     </visual>
     <visual name="right_ankle_roll_blue_servo_visual">
-      <origin xyz="1.7320515671e-08 -0.05 -3.36602488382e-08" rpy="-1.57159163397 6.73204976747e-07 -1.57079598038" />
+      <origin xyz="1.03923094019e-08 -0.03 -2.01961493015e-08" rpy="3.14074618206 1.57000101933 3.14074652874" />
       <geometry>
         <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -639,14 +641,14 @@
     </visual>
     <collision name="right_ankle_roll_carrier_primitive_collision">
       <geometry>
-        <cylinder radius="0.014" length="0.05" />
+        <cylinder radius="0.014" length="0.03" />
       </geometry>
-      <origin xyz="8.66025783551e-09 -0.025 -1.68301244191e-08" rpy="3.14159230718 1.5707956536 1.57079632679" />
+      <origin xyz="5.19615470096e-09 -0.015 -1.00980746508e-08" rpy="3.14159230718 1.5707956536 1.57079632679" />
     </collision>
     <inertial>
-      <origin xyz="8.66025783551e-09 -0.025 -1.68301244191e-08" rpy="0 0 0" />
+      <origin xyz="5.19615470096e-09 -0.015 -1.00980746508e-08" rpy="0 0 0" />
       <mass value="0.0995" />
-      <inertia ixx="5.69471822962e-05" iyy="1.30013570054e-05" izz="5.69471747091e-05" ixy="0" ixz="0" iyz="0" />
+      <inertia ixx="3.43938427111e-05" iyy="1.30013475366e-05" izz="3.43938381588e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
   <joint name="left_shoulder_yaw" type="revolute">
@@ -764,14 +766,14 @@
   <joint name="left_ankle_roll" type="revolute">
     <parent link="left_ankle_roll_carrier" />
     <child link="FOOT" />
-    <origin xyz="4.99999946446e-08 0.05 9.80754505386e-10" rpy="1.00916034731e-22 -1.35956678732e-19 3.54708617595e-22" />
+    <origin xyz="2.99999967854e-08 0.03 5.88452703232e-10" rpy="1.00916034731e-22 -1.35956678732e-19 3.54708617595e-22" />
     <axis xyz="-0.999999683467 1.00001518318e-06 -0.000795653505717" />
     <limit lower="-0.25" upper="0.25" effort="1.2552512" velocity="3" />
   </joint>
   <joint name="right_ankle_roll" type="revolute">
     <parent link="right_ankle_roll_carrier" />
     <child link="FOOT_2" />
-    <origin xyz="1.7320515671e-08 -0.05 -3.36602488382e-08" rpy="2.65938566936e-22 1.98579295956e-19 2.70901650611e-23" />
+    <origin xyz="1.03923094019e-08 -0.03 -2.01961493015e-08" rpy="2.65938566936e-22 1.98579295956e-19 2.70901650611e-23" />
     <axis xyz="0.999999683743 3.46945608555e-07 -0.00079530709562" />
     <limit lower="-0.25" upper="0.25" effort="1.2552512" velocity="3" />
   </joint>
@@ -869,144 +871,144 @@
     <child link="battery_pack" />
     <origin xyz="0 0.028 -0.052" rpy="0 -0 0" />
   </joint>
-  <link name="stackchan_k151_torso_adapter">
-    <visual name="stackchan_k151_torso_adapter_visual">
+  <link name="cores3_internal_torso_cradle">
+    <visual name="cores3_internal_torso_cradle_visual">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.066 0.06 0.003" />
+        <box size="0.0095 0.058 0.04" />
       </geometry>
-      <material name="stackchan_k151_torso_adapter_material">
+      <material name="cores3_internal_torso_cradle_material">
         <color rgba="0.75 0.78 0.82 1" />
       </material>
     </visual>
-    <collision name="stackchan_k151_torso_adapter_collision">
+    <collision name="cores3_internal_torso_cradle_collision">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.066 0.06 0.003" />
+        <box size="0.0095 0.058 0.04" />
       </geometry>
     </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.018" />
-      <inertia ixx="5.4135e-06" iyy="6.5475e-06" izz="1.1934e-05" ixy="0" ixz="0" iyz="0" />
+      <mass value="0.006" />
+      <inertia ixx="2.482e-06" iyy="8.45125e-07" izz="1.727125e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
-  <joint name="stackchan_head_adapter_fixed_joint" type="fixed">
+  <joint name="cores3_internal_cradle_fixed_joint" type="fixed">
     <parent link="Z_BOT2_MASTER_BODY_SKELETON" />
-    <child link="stackchan_k151_torso_adapter" />
-    <origin xyz="1.1944900661e-05 -0.014999995244 0.0665" rpy="0 -0 -1.57" />
+    <child link="cores3_internal_torso_cradle" />
+    <origin xyz="2.3889801322e-05 -0.029999990488 0.018" rpy="0 -0 -1.57" />
   </joint>
-  <link name="m5stack_stackchan_k151_head_pod">
-    <visual name="m5stack_stackchan_k151_head_pod_visual">
+  <link name="m5stack_cores3_head_module">
+    <visual name="m5stack_cores3_head_module_visual">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.0615 0.054 0.0705" />
+        <box size="0.0155 0.054 0.054" />
       </geometry>
-      <material name="m5stack_stackchan_k151_head_pod_material">
+      <material name="m5stack_cores3_head_module_material">
         <color rgba="0.97 0.98 0.99 1" />
       </material>
     </visual>
-    <collision name="m5stack_stackchan_k151_head_pod_collision">
+    <collision name="m5stack_cores3_head_module_collision">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.0615 0.054 0.0705" />
+        <box size="0.0155 0.054 0.054" />
       </geometry>
     </collision>
-    <visual name="stackchan_front_glass_visual">
-      <origin xyz="0.031 0 -0.006" rpy="0 0 0" />
+    <visual name="cores3_front_glass_visual">
+      <origin xyz="0.00825 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.001 0.044 0.040" />
+        <box size="0.001 0.046 0.046" />
       </geometry>
-      <material name="stackchan_front_glass">
+      <material name="cores3_front_glass">
         <color rgba="0.02 0.03 0.04 1" />
       </material>
     </visual>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.187" />
-      <inertia ixx="0.0001228940625" iyy="0.000136393125" izz="0.0001043810625" ixy="0" ixz="0" iyz="0" />
+      <mass value="0.0727" />
+      <inertia ixx="3.53322e-05" iyy="1.91216145833e-05" izz="1.91216145833e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
-  <joint name="stackchan_head_pod_fixed_joint" type="fixed">
-    <parent link="stackchan_k151_torso_adapter" />
-    <child link="m5stack_stackchan_k151_head_pod" />
-    <origin xyz="0 0 0.03675" rpy="0 0 0" />
+  <joint name="cores3_head_module_fixed_joint" type="fixed">
+    <parent link="cores3_internal_torso_cradle" />
+    <child link="m5stack_cores3_head_module" />
+    <origin xyz="0.00875 0 0" rpy="0 0 0" />
   </joint>
   <link name="left_sole_front_medial_contact" />
   <joint name="left_sole_front_medial_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_front_medial_contact" />
-    <origin xyz="-0.0450238283612 0.0270000444361 0.0299641866259" rpy="0 0 0" />
+    <origin xyz="-0.0450238303612 0.0250000444361 0.0299641865867" rpy="0 0 0" />
   </joint>
   <link name="left_sole_front_lateral_contact" />
   <joint name="left_sole_front_lateral_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_front_lateral_contact" />
-    <origin xyz="-0.0449760891509 0.0270000455653 -0.0300357943822" rpy="0 0 0" />
+    <origin xyz="-0.0449760911509 0.0250000455653 -0.0300357944214" rpy="0 0 0" />
   </joint>
   <link name="left_sole_rear_medial_contact" />
   <joint name="left_sole_rear_medial_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_rear_medial_contact" />
-    <origin xyz="0.0549761399855 0.0269999444346 0.0300437519765" rpy="0 0 0" />
+    <origin xyz="0.0549761379855 0.0249999444346 0.0300437519372" rpy="0 0 0" />
   </joint>
   <link name="left_sole_rear_lateral_contact" />
   <joint name="left_sole_rear_lateral_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_rear_lateral_contact" />
-    <origin xyz="0.0550238791959 0.0269999455637 -0.0299562290316" rpy="0 0 0" />
+    <origin xyz="0.0550238771959 0.0249999455637 -0.0299562290708" rpy="0 0 0" />
   </joint>
   <link name="right_sole_front_medial_contact" />
   <joint name="right_sole_front_medial_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_front_medial_contact" />
-    <origin xyz="-0.0450238356282 -0.0269999954247 -0.0299642198695" rpy="0 0 0" />
+    <origin xyz="-0.0450238363211 -0.0249999954247 -0.0299642185231" rpy="0 0 0" />
   </joint>
   <link name="right_sole_front_lateral_contact" />
   <joint name="right_sole_front_lateral_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_front_lateral_contact" />
-    <origin xyz="-0.0449761172025 -0.0270000358004 0.0300357611551" rpy="0 0 0" />
+    <origin xyz="-0.0449761178953 -0.0250000358004 0.0300357625015" rpy="0 0 0" />
   </joint>
   <link name="right_sole_rear_medial_contact" />
   <joint name="right_sole_rear_medial_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_rear_medial_contact" />
-    <origin xyz="0.0549761327461 -0.0269999607301 -0.0300437505791" rpy="0 0 0" />
+    <origin xyz="0.0549761320533 -0.0249999607301 -0.0300437492327" rpy="0 0 0" />
   </joint>
   <link name="right_sole_rear_lateral_contact" />
   <joint name="right_sole_rear_lateral_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_rear_lateral_contact" />
-    <origin xyz="0.0550238511718 -0.0270000011059 0.0299562304455" rpy="0 0 0" />
+    <origin xyz="0.055023850479 -0.0250000011059 0.0299562317919" rpy="0 0 0" />
   </joint>
   <link name="camera_optical_frame" />
   <joint name="camera_optical_frame_joint" type="fixed">
-    <parent link="m5stack_stackchan_k151_head_pod" />
+    <parent link="m5stack_cores3_head_module" />
     <child link="camera_optical_frame" />
-    <origin xyz="0.03075 0 -0.02" rpy="0 1.57079632679 0" />
+    <origin xyz="0.00825 0 -0.02" rpy="0 1.57079632679 0" />
   </joint>
   <link name="left_microphone_frame" />
   <joint name="left_microphone_frame_joint" type="fixed">
-    <parent link="m5stack_stackchan_k151_head_pod" />
+    <parent link="m5stack_cores3_head_module" />
     <child link="left_microphone_frame" />
-    <origin xyz="0.03075 0.015 -0.02" rpy="0 0 0" />
+    <origin xyz="0.00825 0.015 -0.02" rpy="0 0 0" />
   </joint>
   <link name="right_microphone_frame" />
   <joint name="right_microphone_frame_joint" type="fixed">
-    <parent link="m5stack_stackchan_k151_head_pod" />
+    <parent link="m5stack_cores3_head_module" />
     <child link="right_microphone_frame" />
-    <origin xyz="0.03075 -0.015 -0.02" rpy="0 0 0" />
+    <origin xyz="0.00825 -0.015 -0.02" rpy="0 0 0" />
   </joint>
   <link name="head_speaker_frame" />
   <joint name="head_speaker_frame_joint" type="fixed">
-    <parent link="m5stack_stackchan_k151_head_pod" />
+    <parent link="m5stack_cores3_head_module" />
     <child link="head_speaker_frame" />
-    <origin xyz="-0.03075 0 0" rpy="0 0 0" />
+    <origin xyz="-0.00775 0 0" rpy="0 0 0" />
   </joint>
   <link name="head_imu_frame" />
   <joint name="head_imu_frame_joint" type="fixed">
-    <parent link="m5stack_stackchan_k151_head_pod" />
+    <parent link="m5stack_cores3_head_module" />
     <child link="head_imu_frame" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>

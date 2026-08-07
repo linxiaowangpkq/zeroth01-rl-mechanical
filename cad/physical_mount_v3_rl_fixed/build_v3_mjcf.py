@@ -272,59 +272,59 @@ def main() -> int:
         ET.SubElement(node, "inertial", pos="0 0 0", mass=f"{mass:.12g}", diaginertia=fmt(inertia_box(mass, size)))
         ET.SubElement(node, "geom", name=f"{name}_visual", type="box", size=fmt(tuple(value / 2.0 for value in size)), contype="0", conaffinity="0", rgba=payload_rgba[name])
 
-    adapter_world = (m.I3, m.STACKCHAN_ADAPTER_CENTER_M)
+    adapter_world = (m.I3, m.CORES3_ADAPTER_CENTER_M)
     adapter_origin = m.relative_transform(neutral_tf[m.BODY], adapter_world)
     adapter = ET.SubElement(
         body,
         "body",
-        name=m.STACKCHAN_HEAD_ADAPTER,
+        name=m.CORES3_HEAD_ADAPTER,
         pos=fmt(adapter_origin[1]),
         quat=fmt(matrix_quat(adapter_origin[0])),
     )
-    adapter_mass = m.FIXED_MASSES[m.STACKCHAN_HEAD_ADAPTER]
+    adapter_mass = m.FIXED_MASSES[m.CORES3_HEAD_ADAPTER]
     ET.SubElement(
         adapter,
         "inertial",
         pos="0 0 0",
         mass=f"{adapter_mass:.12g}",
-        diaginertia=fmt(inertia_box(adapter_mass, m.STACKCHAN_ADAPTER_SIZE_M)),
+        diaginertia=fmt(inertia_box(adapter_mass, m.CORES3_ADAPTER_SIZE_M)),
     )
     ET.SubElement(
         adapter,
         "geom",
-        name=f"{m.STACKCHAN_HEAD_ADAPTER}_collision",
+        name=f"{m.CORES3_HEAD_ADAPTER}_collision",
         type="box",
-        size=fmt(tuple(value / 2.0 for value in m.STACKCHAN_ADAPTER_SIZE_M)),
+        size=fmt(tuple(value / 2.0 for value in m.CORES3_ADAPTER_SIZE_M)),
         rgba="0.75 0.78 0.82 1",
     )
 
     head = ET.SubElement(
         adapter,
         "body",
-        name=m.STACKCHAN_HEAD_POD,
-        pos=fmt(m.sub(m.STACKCHAN_HEAD_CENTER_M, m.STACKCHAN_ADAPTER_CENTER_M)),
+        name=m.CORES3_HEAD_POD,
+        pos=fmt(m.sub(m.CORES3_HEAD_CENTER_M, m.CORES3_ADAPTER_CENTER_M)),
     )
-    head_mass = m.FIXED_MASSES[m.STACKCHAN_HEAD_POD]
+    head_mass = m.FIXED_MASSES[m.CORES3_HEAD_POD]
     ET.SubElement(
         head,
         "inertial",
         pos="0 0 0",
         mass=f"{head_mass:.12g}",
-        diaginertia=fmt(inertia_box(head_mass, m.STACKCHAN_HEAD_SIZE_M)),
+        diaginertia=fmt(inertia_box(head_mass, m.CORES3_HEAD_SIZE_M)),
     )
     ET.SubElement(
         head,
         "geom",
-        name=f"{m.STACKCHAN_HEAD_POD}_collision",
+        name=f"{m.CORES3_HEAD_POD}_collision",
         type="box",
-        size=fmt(tuple(value / 2.0 for value in m.STACKCHAN_HEAD_SIZE_M)),
+        size=fmt(tuple(value / 2.0 for value in m.CORES3_HEAD_SIZE_M)),
         rgba="0.97 0.98 0.99 1",
     )
     ET.SubElement(
         head,
         "site",
-        name="stackchan_camera_site",
-        pos="0.03075 0 -0.020",
+        name="cores3_camera_site",
+        pos="0.00825 0 -0.020",
         size="0.004",
         rgba="0 0.8 1 1",
     )

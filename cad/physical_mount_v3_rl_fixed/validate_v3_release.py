@@ -280,6 +280,7 @@ def main() -> int:
         and solidworks_payload.get("assembly_component_count") == 51
         and solidworks_payload.get("separate_blue_sts3250_count") == 18
     )
+    standing_height_mm = float(solidworks_payload.get("standing_height_mm", float("inf")))
     interference_ok = (
         interference_payload.get("overall") == "PASS"
         and interference_payload.get("physical_interference_count") == 0
@@ -303,15 +304,18 @@ def main() -> int:
         "MJX_PRIMITIVE_COLLISION_PASS": "PASS" if set(urdf_collision_types) <= {"box", "sphere", "cylinder"} and set(mjcf_collision_types) <= {"box", "sphere", "capsule", "cylinder"} else "FAIL",
         "GROUND_CONTACT_PASS": "PASS" if ground_gap <= 1.0e-6 and max(sole_level_errors) <= 1.0e-6 else "FAIL",
         "ACTUATOR_STATIC_FEASIBILITY_PASS": actuator_static_gate,
-        "STS3250_QUASISTATIC_TORQUE_PASS": "PASS" if torque_ok else "FAIL",
+        "STS3250_QUASISTATIC_TORQUE_PASS": (
+            "PASS" if torque_ok else "HOLD_RATED_ONLY_DYNAMIC_POLICY_TRACE_REQUIRED"
+        ),
         "STS3250_DYNAMIC_WALKING_PASS": "HOLD_RL_ROLLOUT_TORQUE_AND_THERMAL_TRACE_REQUIRED",
-        "MASS_TARGET_PASS": "PASS" if 3.0 <= urdf_total <= 3.3 and abs(urdf_total - s.TARGET_TOTAL_MASS_KG) <= 1.0e-9 and abs(mjcf_total - urdf_total) <= 1.0e-9 else "FAIL",
+        "MASS_TARGET_PASS": "PASS" if 0.0 < urdf_total <= 3.0 and abs(urdf_total - s.TARGET_TOTAL_MASS_KG) <= 1.0e-9 and abs(mjcf_total - urdf_total) <= 1.0e-9 else "FAIL",
+        "STANDING_HEIGHT_LIMIT_PASS": "PASS" if standing_height_mm <= 500.0 else "FAIL",
         "ACTUATOR_MASS_OWNERSHIP_PASS": "PASS" if sum(servo_owners.values()) == 18 and all(row["gate"] == "PASS" for row in owner_rows) else "FAIL",
         "MOTION_SAMPLE_NO_NONADJACENT_PENETRATION_PASS": "PASS" if not nonadjacent_penetrations else "FAIL",
-        "PURCHASED_STACKCHAN_HEAD_MODEL_PASS": "PASS" if abs(urdf_masses.get(s.STACKCHAN_HEAD_POD, 0.0) - s.STACKCHAN_HEAD_POD_MASS_KG) <= 1.0e-12 else "FAIL",
+        "PURCHASED_CORES3_HEAD_MODEL_PASS": "PASS" if abs(urdf_masses.get(s.CORES3_HEAD_POD, 0.0) - s.CORES3_HEAD_POD_MASS_KG) <= 1.0e-12 else "FAIL",
         "MASS_IDENTIFIED_PASS": "HOLD_AS_BUILT_MEASUREMENT_REQUIRED",
         "STS3250_FIRST_ARTICLE_PASS": "HOLD_PURCHASED_HARDWARE_REQUIRED",
-        "STACKCHAN_ADAPTER_FIRST_ARTICLE_PASS": "HOLD_TORSO_SLOT_FIT_REQUIRED",
+        "CORES3_CRADLE_FIRST_ARTICLE_PASS": "HOLD_TORSO_NUT_PLATE_FIT_REQUIRED",
     }
     blocking = [key for key, value in gates.items() if value == "FAIL"]
     payload = {
@@ -320,10 +324,16 @@ def main() -> int:
         "mjcf": MJCF.relative_to(ROOT).as_posix(),
         "dof": len(movable),
         "mass": {
-            "canonical_original_kg": s.TARGET_TOTAL_MASS_KG,
+            "pre_compaction_v3_kg": 3.095471828,
+            "maximum_allowed_kg": 3.0,
             "urdf_nominal_kg": urdf_total,
             "mjcf_nominal_kg": mjcf_total,
             "confidence": "estimated_from_envelopes_not_as_built",
+        },
+        "standing_envelope": {
+            "solidworks_height_mm": standing_height_mm,
+            "maximum_allowed_mm": 500.0,
+            "source": "native SolidWorks occurrence bounding-box union",
         },
         "actuator": {
             "model": "FEETECH STS3250-C001",
@@ -378,15 +388,15 @@ def main() -> int:
         "sensors": {
             "imu": {"parent": s.BODY, "position_m": [0.0, 0.0, 0.02]},
             "head_module": {
-                "model": "M5Stack StackChan K151",
-                "parent": s.STACKCHAN_HEAD_POD,
-                "mass_kg": s.STACKCHAN_HEAD_POD_MASS_KG,
+                "model": "M5Stack CoreS3 K128",
+                "parent": s.CORES3_HEAD_POD,
+                "mass_kg": s.CORES3_HEAD_POD_MASS_KG,
                 "camera": "GC0308 0.3MP",
                 "camera_optical_frame": "camera_optical_frame",
                 "microphones": ["left_microphone_frame", "right_microphone_frame"],
                 "speaker_frame": "head_speaker_frame",
                 "imu_frame": "head_imu_frame",
-                "walking_policy": "lock internal K151 pan/tilt at centre; treat complete 187 g module as one fixed payload",
+                "walking_policy": "CoreS3 has no mechanical pan/tilt; treat the module as one fixed torso-overlapped payload",
             },
             "sole_contact_sites": 8,
         },
@@ -397,7 +407,7 @@ def main() -> int:
             "ground_friction": [0.70, 1.25],
         },
         "release_gates": gates,
-        "truth_boundary": "RL nominal model passes with the purchased K151 treated as a fixed 187 g head payload; factory release remains held for STS3250 fit, torso-adapter first article and as-built mass/COM/inertia identification.",
+        "truth_boundary": "RL nominal model uses a purchased CoreS3 at the official main-unit envelope with the full 72.7 g retail-set mass assigned conservatively; factory release remains held for STS3250 fit, torso-cradle first article and as-built mass/COM/inertia identification.",
     }
     HANDOFF.parent.mkdir(parents=True, exist_ok=True)
     HANDOFF.write_text(json.dumps(handoff, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

@@ -27,7 +27,7 @@ STRUCTURAL_ROLES = {
     "new_ankle_roll_parent_carrier",
     "new_ankle_roll_child_horn_adapter",
     "reversible_slotted_inboard_adapter",
-    "replaceable_9mm_perimeter_rib_sole",
+    "replaceable_7mm_perimeter_rib_sole",
 }
 
 

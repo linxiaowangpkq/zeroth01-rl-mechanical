@@ -98,13 +98,14 @@ def render_frame(model, data, index, frame_count, values):
     torso_center = point(root + np.array((0.0, 0.0, -0.025)))
     torso_box = (torso_center[0] - 95, torso_center[1] - 155, torso_center[0] + 95, torso_center[1] + 155)
     draw.rounded_rectangle(torso_box, 28, fill=(248, 249, 251), outline=(112, 128, 151), width=4)
-    head_center = point(root + np.array((0.0, 0.0, 0.105)))
-    draw.rounded_rectangle((head_center[0] - 120, head_center[1] - 92, head_center[0] + 120, head_center[1] + 92), 62, fill=(247, 248, 250), outline=(100, 116, 138), width=4)
-    draw.rounded_rectangle((head_center[0] - 94, head_center[1] - 62, head_center[0] + 94, head_center[1] + 58), 28, fill=(12, 24, 36), outline=(55, 84, 110), width=3)
-    for eye_x in (-42, 42):
-        draw.ellipse((head_center[0] + eye_x - 12, head_center[1] - 16, head_center[0] + eye_x + 12, head_center[1] + 18), fill=(82, 214, 255))
-    draw.ellipse((head_center[0] - 106, head_center[1] - 112, head_center[0] - 58, head_center[1] - 66), fill=(247, 248, 250), outline=(100, 116, 138), width=3)
-    draw.ellipse((head_center[0] + 58, head_center[1] - 112, head_center[0] + 106, head_center[1] - 66), fill=(247, 248, 250), outline=(100, 116, 138), width=3)
+    # Purchased M5Stack CoreS3 K128: actual 54 x 54 mm front envelope, flush
+    # in the torso at world Z=18 mm. No decorative neck or fictional ears.
+    head_center = point(root + np.array((0.0, 0.0, 0.018)))
+    draw.rounded_rectangle((head_center[0] - 43, head_center[1] - 43, head_center[0] + 43, head_center[1] + 43), 10, fill=(247, 248, 250), outline=(100, 116, 138), width=3)
+    draw.rounded_rectangle((head_center[0] - 36, head_center[1] - 36, head_center[0] + 36, head_center[1] + 36), 8, fill=(12, 24, 36), outline=(55, 84, 110), width=2)
+    for eye_x in (-15, 15):
+        draw.ellipse((head_center[0] + eye_x - 6, head_center[1] - 5, head_center[0] + eye_x + 6, head_center[1] + 9), fill=(82, 214, 255))
+    draw.ellipse((head_center[0] - 4, head_center[1] + 25, head_center[0] + 4, head_center[1] + 33), fill=(0, 184, 217))
 
     physical = {
         "Z_BOT2_MASTER_SHOULDER2", "Z_BOT2_MASTER_SHOULDER2_2",

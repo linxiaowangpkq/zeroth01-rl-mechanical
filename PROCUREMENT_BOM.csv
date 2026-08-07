@@ -1,9 +1,9 @@
 item,manufacturer,model_or_spec,qty,nominal_mass_each_kg,mechanical_interface,status,source
-actuator,FEETECH,STS3250-C001,18,0.0745,"45.22x24.72x35 mm case; 36.5 mm overall reference; 4xM2; 25T/OD5.9",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
-interaction_head,M5Stack,StackChan K151,1,0.187,"48x32 mm 4xM3; USB-C",PURCHASED_MODULE_SELECTED,https://shop.m5stack.com/products/stackchan-kawaii-co-created-open-source-ai-desktop-robot
-head_adapter,custom,66x60x3 mm 6061-T6 plate,1,0.018,"4xOD3.4 plus 4x3.4x12 closed slots",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.step
-head_fastener,standard,M3 socket screw + washer + locknut,8,,"K151 and torso adapter",PROCURE_AFTER_LENGTH_CHECK,
-ankle_roll_carrier,custom,left/right printed bridge,2,,"50 mm pitch-to-roll shaft spacing; outer flange-side plate",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
-ankle_horn_adapter,custom,25T horn-to-foot adapter,2,,"OD19.95/PCD14/4xM3 reference",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
-sole,custom,9 mm lightweight thickened sole left/right,2,,"v3 STEP/STL",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
+actuator,FEETECH,STS3250-C001,18,0.0745,"45.22x24.72x35 mm case; 4xM2; 25T/OD5.9; M3x6 output retention",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
+interaction_head,M5Stack,CoreS3 K128 main unit,1,0.0727,"54x54x15.5 mm controlled envelope; fixed torso pocket",PURCHASED_MODULE_SELECTED,https://docs.m5stack.com/en/core/CoreS3
+head_cradle,custom,2 mm 6061 U-cradle,1,0.006,"4xM3 torso passages; 0.20 mm cradle clearance",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.step
+head_fastener,standard,M3 screw + washer + nut plate,4,,"CoreS3 cradle to torso",PROCURE_AFTER_LENGTH_CHECK,
+ankle_roll_carrier,custom,left/right parent carrier,2,,"30 mm pitch-to-roll centre spacing; 0.30 mm service clearance",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
+ankle_horn_adapter,custom,25T horn-to-foot adapter,2,,"PCD14/4xM3 reference",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
+sole,custom,7 mm lightweight sole left/right,2,,"2 mm skin + 5 mm perimeter/rib stack",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v3_rl_fixed/parts
 power_bus,system,regulated 12 V with fuse and emergency stop,1,,"size from measured rollout current and voltage drop",ELECTRICAL_DESIGN_HOLD,

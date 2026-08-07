@@ -1,4 +1,4 @@
-"""STEP-first v3 manufacturing/review geometry.
+"""STEP-first compact v3.1 manufacturing/review geometry.
 
 Individual parts are the manufacturing handoff.  ``gen_step`` returns a
 labelled diagnostic assembly that makes all 18 actuator axes and electronics
@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import math
 from pathlib import Path
 
 from build123d import (
@@ -26,6 +27,7 @@ from build123d import (
     export_stl,
     import_step,
 )
+from OCP.BRepAlgoAPI import BRepAlgoAPI_Common, BRepAlgoAPI_Cut
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -33,6 +35,15 @@ OUT = ROOT / "generated" / "cad" / "physical_mount_v3_rl_fixed"
 PARTS = OUT / "parts"
 REPORT = ROOT / "reports" / "physical_mount_v3_rl_fixed" / "cad_build.json"
 V2_PARTS = ROOT / "generated" / "cad" / "physical_mount_v2_minimal" / "parts"
+V1_BODY_STEP = (
+    ROOT
+    / "generated"
+    / "cad"
+    / "physical_mount_v1"
+    / "step"
+    / "skeleton"
+    / "Z_BOT2_MASTER_BODY_SKELETON.step"
+)
 
 WHITE = Color("#F7F8FA")
 BLUE = Color("#1677FF")
@@ -51,8 +62,16 @@ CASE_CENTER_X_MM = (CASE_X_MIN_MM + CASE_X_MAX_MM) / 2.0
 SERVO_ORIGIN_Z_SHIFT_MM = -20.90
 M2_X_MM = (-28.50, 8.30)
 M2_Y_MM = (-10.25, 10.25)
-STACKCHAN_HOLE_X_MM = (-24.0, 24.0)
-STACKCHAN_HOLE_Y_MM = (-16.0, 16.0)
+CORES3_TORSO_HOLE_Y_MM = (-18.0, 18.0)
+CORES3_TORSO_HOLE_Z_MM = (-6.0, 6.0)
+ANKLE_ROLL_COMPACT_OFFSET_MM = 30.0
+BODY_TOP_LIMIT_MM = 45.0
+BODY_LOCAL_TO_WORLD_Z_DEG = math.degrees(
+    math.atan2(0.9999996829318346, 0.0007963267107332633)
+)
+CORES3_BODY_CLEARANCE_MM = 0.30
+CORES3_CRADLE_CLEARANCE_MM = 0.20
+STS3250_BODY_CLEARANCE_MM = 0.30
 
 
 def rounded_box(size, center=(0.0, 0.0, 0.0), radius=2.0) -> Shape:
@@ -64,6 +83,25 @@ def rounded_box(size, center=(0.0, 0.0, 0.0), radius=2.0) -> Shape:
     except Exception:
         result = solid
     return result.moved(Location(center))
+
+
+def cut_full_product_tree(shape: Shape, *tools: Shape) -> Shape:
+    """Cut every solid in a legacy STEP compound, preserving one component."""
+
+    current = shape.wrapped
+    for tool in tools:
+        operation = BRepAlgoAPI_Cut(current, tool.wrapped)
+        operation.Build()
+        if not operation.IsDone():
+            raise RuntimeError("OCCT failed to cut a v3 body installation feature")
+        current = operation.Shape()
+    return Compound(current)
+
+
+def world_tool_to_body_local(shape: Shape) -> Shape:
+    """Map a world-authored installation cutter into the legacy body frame."""
+
+    return shape.moved(Location((0.0, 0.0, 0.0), (0.0, 0.0, -BODY_LOCAL_TO_WORLD_Z_DEG)))
 
 
 def controlled_sts3250() -> Shape:
@@ -118,7 +156,7 @@ def ankle_carrier(side: str) -> Shape:
     if side not in {"left", "right"}:
         raise ValueError(side)
     cage_z = -20.75
-    outer = rounded_box((52.0, 31.5, 43.0), (CASE_CENTER_X_MM, 0.0, cage_z), 3.0)
+    outer = rounded_box((52.0, 28.0, 43.0), (CASE_CENTER_X_MM, 0.0, cage_z), 3.0)
     inner = rounded_box((46.42, 25.92, 42.0), (CASE_CENTER_X_MM, 0.0, cage_z), 2.0)
     cage = outer.cut(inner)
     # Open the horn side; the opposite wall remains the rear support face.
@@ -127,18 +165,39 @@ def ankle_carrier(side: str) -> Shape:
             Location((CASE_CENTER_X_MM, 0.0, -4.5))
         )
     )
-    # Thin outer-side bridge reaches the released ankle-pitch horn without
-    # crossing the 24.72 mm servo case. In both mirrored installed roll
-    # frames local +Y is the pitch-servo output/flange side.
-    anchor = rounded_box((24.0, 3.0, 20.0), (-47.0, 14.5, 0.0), 1.2)
+    # With the roll servos mirrored, local +X is outboard and local +Y is
+    # world up on both sides. This short bridge
+    # reaches the released ankle-pitch output while the 45.22 mm case axis
+    # remains horizontal.
+    anchor = rounded_box(
+        (3.0, ANKLE_ROLL_COMPACT_OFFSET_MM, 20.0),
+        (
+            14.5,
+            ANKLE_ROLL_COMPACT_OFFSET_MM / 2.0,
+            0.0,
+        ),
+        1.2,
+    )
     cage = cage.fuse(anchor)
+    # The PCD14 horn/foot adapter is a rotating child. Cut radial clearance
+    # through the parent carrier instead of accepting coincident overlap.
+    cage = cage.cut(
+        Cylinder(14.2, 5.0, align=(Align.CENTER, Align.CENTER, Align.CENTER))
+    )
     for z_pos in (-6.0, 6.0):
         hole = Cylinder(
             1.7,
             6.0,
             align=(Align.CENTER, Align.CENTER, Align.CENTER),
         ).moved(
-            Location((-50.0, 14.5, z_pos), (90.0, 0.0, 0.0))
+            Location(
+                (
+                    14.5,
+                    ANKLE_ROLL_COMPACT_OFFSET_MM - 3.0,
+                    z_pos,
+                ),
+                (0.0, 90.0, 0.0),
+            )
         )
         cage = cage.cut(hole)
     # Keep the part authored in the STS3250 local frame. The assembly manifest
@@ -146,6 +205,108 @@ def ankle_carrier(side: str) -> Shape:
     cage.label = f"{side.upper()}_STS3250_ANKLE_ROLL_PARENT_CARRIER_4XM2"
     cage.color = WHITE
     return cage
+
+
+def trimmed_body_skeleton() -> Shape:
+    """Trim the old head plate and machine the real v3 installation pockets.
+
+    The released v1 body STEP is a multibody carrier with a few intentional
+    same-component union overlaps. Preserve that product structure here; the
+    assembly gate classifies those internal overlaps separately from true
+    cross-component interference. The following cuts are physical
+    installation features, not display-only suppression: a flush CoreS3
+    pocket, the hidden U-cradle recess/bolt passages, and 0.30 mm case
+    clearance around the two hip-yaw STS3250 servos. Servo joint frames and
+    all retained v1 interfaces stay unchanged.
+    """
+
+    source = import_step(V1_BODY_STEP)
+    keep = Box(
+        400.0,
+        400.0,
+        600.0,
+        align=(Align.CENTER, Align.CENTER, Align.CENTER),
+    ).moved(Location((0.0, 0.0, BODY_TOP_LIMIT_MM - 300.0)))
+    common = BRepAlgoAPI_Common(source.wrapped, keep.wrapped)
+    common.Build()
+    if not common.IsDone():
+        raise RuntimeError("failed to trim source body skeleton at Z=45 mm")
+    result = Compound(common.Shape())
+
+    # Official CoreS3 K128 main-unit envelope: 54 x 54 x 15.5 mm.  Add only
+    # 0.30 mm diametral/axial assembly clearance so the purchased module is
+    # flush-sunk into the torso instead of intersecting or becoming a neck.
+    cores3_pocket = rounded_box(
+        (
+            15.5 + 2.0 * CORES3_BODY_CLEARANCE_MM,
+            54.0 + 2.0 * CORES3_BODY_CLEARANCE_MM,
+            54.0 + 2.0 * CORES3_BODY_CLEARANCE_MM,
+        ),
+        (38.75, 0.0, 18.0),
+        3.0 + CORES3_BODY_CLEARANCE_MM,
+    )
+
+    # Recess the reversible 2 mm aluminium U-cradle with 0.20 mm clearance.
+    # Matching M3 passages continue through the remaining torso wall so the
+    # cradle is retained by a real bolt/nut-plate stack rather than floating.
+    cradle_clearance = rounded_box(
+        (2.0 + 2.0 * CORES3_CRADLE_CLEARANCE_MM, 50.4, 22.4),
+        (30.0, 0.0, 18.0),
+        1.0,
+    ).fuse(
+        rounded_box((7.9, 2.4, 22.4), (34.75, -28.0, 18.0), 0.8),
+        rounded_box((7.9, 2.4, 22.4), (34.75, 28.0, 18.0), 0.8),
+        rounded_box((7.9, 50.4, 2.4), (34.75, 0.0, -10.0), 0.8),
+    )
+    result = cut_full_product_tree(
+        result,
+        world_tool_to_body_local(cores3_pocket),
+        world_tool_to_body_local(cradle_clearance),
+    )
+    for y_pos in CORES3_TORSO_HOLE_Y_MM:
+        for z_pos in CORES3_TORSO_HOLE_Z_MM:
+            result = cut_full_product_tree(
+                result,
+                world_tool_to_body_local(
+                    Cylinder(
+                        1.7,
+                        40.0,
+                        align=(Align.CENTER, Align.CENTER, Align.CENTER),
+                    ).moved(
+                        Location((18.0, y_pos, 18.0 + z_pos), (0.0, 90.0, 0.0))
+                    )
+                ),
+            )
+
+    # The two hip-yaw cases keep the released v2 shaft frames.  A bounded
+    # rectangular machining envelope clears the full purchased case/spline
+    # extent while preserving all material outside a 0.30 mm service gap.
+    hip_clearance_local = rounded_box(
+        (
+            45.22 + 2.0 * STS3250_BODY_CLEARANCE_MM,
+            CASE_Y_MM + 2.0 * STS3250_BODY_CLEARANCE_MM,
+            42.10 + 2.0 * STS3250_BODY_CLEARANCE_MM,
+        ),
+        (CASE_CENTER_X_MM, 0.0, -20.75),
+        2.0 + STS3250_BODY_CLEARANCE_MM,
+    )
+    result = cut_full_product_tree(
+        result,
+        world_tool_to_body_local(
+            hip_clearance_local.moved(
+                Location((-7.700908, 42.814146, -83.418), (0.0, 0.0, 90.0))
+            )
+        ),
+        world_tool_to_body_local(
+            hip_clearance_local.moved(
+                Location((-7.769134, -42.861827, -83.418), (0.0, 0.0, -90.0))
+            )
+        ),
+    )
+
+    result.label = "Z_BOT2_MASTER_BODY_SKELETON_V3_INSTALL_POCKETS_Z45"
+    result.color = WHITE
+    return result
 
 
 def horn_adapter(side: str) -> Shape:
@@ -201,94 +362,87 @@ def lightweight_sole(side: str) -> Shape:
     center_x = -16.0
     center_z = 13.7
     skin_y = y_contact - sign * 1.0
-    rib_y = y_contact - sign * 5.5
+    # 2 mm ground skin + 5 mm structural rib stack = 7 mm total. This remains
+    # thicker than the source foot plate while recovering height margin.
+    rib_y = y_contact - sign * 4.5
     skin = rounded_box((110.0, 2.0, 42.4), (center_x, skin_y, center_z), 4.0)
     long_rails = [
-        rounded_box((102.0, 7.0, 4.0), (center_x, rib_y, z), 1.5)
+        rounded_box((102.0, 5.0, 4.0), (center_x, rib_y, z), 1.5)
         for z in (-5.0, 32.4)
     ]
     end_rails = [
-        rounded_box((4.0, 7.0, 34.4), (x, rib_y, center_z), 1.5)
+        rounded_box((4.0, 5.0, 34.4), (x, rib_y, center_z), 1.5)
         for x in (-67.0, 35.0)
     ]
-    cross_x = rounded_box((7.0, 7.0, 34.4), (center_x, rib_y, center_z), 1.5)
-    cross_z = rounded_box((96.0, 7.0, 5.0), (center_x, rib_y, center_z), 1.5)
+    cross_x = rounded_box((7.0, 5.0, 34.4), (center_x, rib_y, center_z), 1.5)
+    cross_z = rounded_box((96.0, 5.0, 5.0), (center_x, rib_y, center_z), 1.5)
     result = skin.fuse(*long_rails, *end_rails, cross_x, cross_z)
-    result.label = f"{side.upper()}_9MM_LIGHTWEIGHT_REPLACEABLE_SOLE_RING_RIB"
+    result.label = f"{side.upper()}_7MM_LIGHTWEIGHT_REPLACEABLE_SOLE_RING_RIB"
     result.color = BLACK
     return result
 
 
-def stackchan_k151_purchased_envelope() -> Shape:
-    """Official-size purchased module envelope, not a printable replacement."""
+def cores3_purchased_envelope() -> Shape:
+    """Official-size CoreS3 main-unit envelope, not a printable replacement."""
 
-    body = rounded_box((61.5, 54.0, 70.5), (0.0, 0.0, 0.0), 7.0)
-    body.label = "M5STACK_STACKCHAN_K151_PURCHASED_BODY_ENVELOPE"
+    body = rounded_box((15.5, 54.0, 54.0), (0.0, 0.0, 0.0), 3.0)
+    body.label = "M5STACK_CORES3_K128_PURCHASED_MAIN_UNIT_ENVELOPE"
     body.color = WHITE
     return body
 
 
-def stackchan_face_glass_reference() -> Shape:
-    glass = rounded_box((1.0, 46.0, 43.0), (31.5, 0.0, -6.0), 5.0)
-    glass.label = "STACKCHAN_2INCH_FACE_GLASS"
+def cores3_face_glass_reference() -> Shape:
+    glass = rounded_box((1.0, 48.0, 48.0), (8.25, 0.0, 0.0), 3.0)
+    glass.label = "CORES3_2INCH_TOUCH_FACE_GLASS"
     glass.color = BLACK
     return glass
 
 
-def stackchan_camera_reference() -> Shape:
+def cores3_camera_reference() -> Shape:
     camera = Cylinder(2.6, 1.5, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
-        Location((32.4, 0.0, -25.0), (0.0, 90.0, 0.0))
+        Location((8.9, 0.0, -20.0), (0.0, 90.0, 0.0))
     )
-    camera.label = "STACKCHAN_GC0308_CAMERA_WINDOW"
+    camera.label = "CORES3_GC0308_CAMERA_WINDOW"
     camera.color = CYAN
     return camera
 
 
-def stackchan_expression_reference() -> Shape:
+def cores3_expression_reference() -> Shape:
     eyes = []
     for y_pos in (-10.5, 10.5):
         eye = Cylinder(4.2, 1.4, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
-            Location((32.5, y_pos, -5.0), (0.0, 90.0, 0.0))
+            Location((8.95, y_pos, 3.0), (0.0, 90.0, 0.0))
         )
         eye.color = CYAN
-        eye.label = "STACKCHAN_SCREEN_EXPRESSION_EYE"
+        eye.label = "CORES3_SCREEN_EXPRESSION_EYE"
         eyes.append(eye)
     return Compound(
-        label="STACKCHAN_PURCHASED_SCREEN_EXPRESSION_REFERENCE",
+        label="CORES3_PURCHASED_SCREEN_EXPRESSION_REFERENCE",
         children=eyes,
     )
 
 
-def stackchan_torso_adapter() -> Shape:
-    """3 mm 6061 plate: exact K151 holes plus reversible torso-side slots."""
+def cores3_internal_torso_cradle() -> Shape:
+    """Compact 2 mm 6061 U-cradle hidden behind the purchased CoreS3."""
 
-    plate = rounded_box((66.0, 60.0, 3.0), (0.0, 0.0, 0.0), 4.0)
-    # Official Model_Size.pdf shows a 48 x 32 mm four-hole rectangle.  The
-    # complete product documentation specifies M3 mounting hardware.
-    for x_pos in STACKCHAN_HOLE_X_MM:
-        for y_pos in STACKCHAN_HOLE_Y_MM:
+    plate = rounded_box((2.0, 50.0, 22.0), (0.0, 0.0, 0.0), 1.0)
+    # Side and bottom retention lips touch the CoreS3 perimeter without
+    # entering its controlled 54 x 54 x 15.5 mm envelope.
+    plate = plate.fuse(
+        rounded_box((7.5, 2.0, 22.0), (4.75, -28.0, 0.0), 0.8),
+        rounded_box((7.5, 2.0, 22.0), (4.75, 28.0, 0.0), 0.8),
+        rounded_box((7.5, 50.0, 2.0), (4.75, 0.0, -28.0), 0.8),
+    )
+    # Four M3 clearance holes are a controlled first-article interface to the
+    # torso-side nut plate; CoreS3 itself is retained by the U-cradle.
+    for y_pos in CORES3_TORSO_HOLE_Y_MM:
+        for z_pos in CORES3_TORSO_HOLE_Z_MM:
             plate = plate.cut(
-                Cylinder(1.7, 5.0, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
-                    Location((x_pos, y_pos, 0.0))
+                Cylinder(1.7, 4.0, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
+                    Location((0.0, y_pos, z_pos), (0.0, 90.0, 0.0))
                 )
             )
-    # Four 3.4 x 12 mm closed slots make the bridge reversible and tolerate
-    # the source torso's as-printed hole location without drilling StackChan.
-    for x_pos in (-18.0, 18.0):
-        for y_pos in (-25.0, 25.0):
-            slot = Box(3.4, 8.6, 5.0, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
-                Location((x_pos, y_pos, 0.0))
-            )
-            slot = slot.fuse(
-                Cylinder(1.7, 5.0, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
-                    Location((x_pos, y_pos - 4.3, 0.0))
-                ),
-                Cylinder(1.7, 5.0, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
-                    Location((x_pos, y_pos + 4.3, 0.0))
-                ),
-            )
-            plate = plate.cut(slot)
-    plate.label = "STACKCHAN_K151_TO_ZEROTH01_REVERSIBLE_3MM_6061_ADAPTER"
+    plate.label = "CORES3_INTERNAL_2MM_6061_U_CRADLE"
     plate.color = Color("#BFC7D1")
     return plate
 
@@ -346,7 +500,7 @@ def gen_step() -> Shape:
     torso.color = WHITE
     children.append(torso)
     # The v2 cosmetic chest panel is deliberately absent. Its upper edge
-    # conflicts with the purchased StackChan and blocks the USB-C service
+    # conflicts with the purchased CoreS3 and blocks the USB-C service
     # volume; the original load-bearing torso remains below.
 
     # This bounded STEP is the light diagnostic envelope.  The full assembly
@@ -376,8 +530,11 @@ def gen_step() -> Shape:
         instance.color = BLUE
         children.append(instance)
 
-    for side, link in (("left", module.LEFT_ANKLE_CARRIER), ("right", module.RIGHT_ANKLE_CARRIER)):
-        carrier = ankle_carrier(side).moved(Location(pos[link]))
+    for side, link, foot, axis in (
+        ("left", module.LEFT_ANKLE_CARRIER, "FOOT", (1.0, 0.0, 0.0)),
+        ("right", module.RIGHT_ANKLE_CARRIER, "FOOT_2", (-1.0, 0.0, 0.0)),
+    ):
+        carrier = ankle_carrier(side).moved(_axis_location(pos[foot], axis))
         carrier.label = f"{side.upper()}_ANKLE_ROLL_CARRIER_INSTALLED"
         children.append(carrier)
     electronics = (
@@ -393,18 +550,18 @@ def gen_step() -> Shape:
         shape.color = color
         children.append(shape)
 
-    adapter_center = tuple(value * 1000.0 for value in module.STACKCHAN_ADAPTER_CENTER_M)
-    head_center = tuple(value * 1000.0 for value in module.STACKCHAN_HEAD_CENTER_M)
-    adapter = stackchan_torso_adapter().moved(Location(adapter_center))
-    adapter.label = "STACKCHAN_K151_TO_TORSO_ADAPTER_INSTALLED"
+    adapter_center = tuple(value * 1000.0 for value in module.CORES3_ADAPTER_CENTER_M)
+    head_center = tuple(value * 1000.0 for value in module.CORES3_HEAD_CENTER_M)
+    adapter = cores3_internal_torso_cradle().moved(Location(adapter_center))
+    adapter.label = "CORES3_INTERNAL_TORSO_CRADLE_INSTALLED"
     children.append(adapter)
-    purchased_head = stackchan_k151_purchased_envelope().moved(Location(head_center))
-    purchased_head.label = "PURCHASED_M5STACK_STACKCHAN_K151_HEAD_POD_INSTALLED"
+    purchased_head = cores3_purchased_envelope().moved(Location(head_center))
+    purchased_head.label = "PURCHASED_M5STACK_CORES3_K128_HEAD_INSTALLED"
     children.append(purchased_head)
     for feature in (
-        stackchan_face_glass_reference(),
-        stackchan_camera_reference(),
-        stackchan_expression_reference(),
+        cores3_face_glass_reference(),
+        cores3_camera_reference(),
+        cores3_expression_reference(),
     ):
         children.append(feature.moved(Location(head_center)))
 
@@ -424,11 +581,12 @@ def main() -> int:
         "right_ankle_roll_horn_adapter": horn_adapter("right"),
         "left_sole_lightweighted": lightweight_sole("left"),
         "right_sole_lightweighted": lightweight_sole("right"),
-        "m5stack_stackchan_k151_purchased_envelope": stackchan_k151_purchased_envelope(),
-        "m5stack_stackchan_k151_face_glass_reference": stackchan_face_glass_reference(),
-        "m5stack_stackchan_k151_camera_reference": stackchan_camera_reference(),
-        "m5stack_stackchan_k151_expression_reference": stackchan_expression_reference(),
-        "stackchan_k151_torso_adapter_3mm_6061": stackchan_torso_adapter(),
+        "m5stack_cores3_k128_purchased_envelope": cores3_purchased_envelope(),
+        "m5stack_cores3_face_glass_reference": cores3_face_glass_reference(),
+        "m5stack_cores3_camera_reference": cores3_camera_reference(),
+        "m5stack_cores3_expression_reference": cores3_expression_reference(),
+        "cores3_internal_torso_cradle_2mm_6061": cores3_internal_torso_cradle(),
+        "body_skeleton_top_trimmed_45mm": trimmed_body_skeleton(),
     }
     rows = []
     for name, shape in parts.items():
@@ -453,10 +611,10 @@ def main() -> int:
     export_step(assembly, assembly_path)
     payload = {
         "schema": "zeroth01.physical_mount_v3_rl_fixed.cad_build.v1",
-        "cad_brief": "v2 load-bearing appearance + 18 dimension-controlled blue actuator references + bilateral ankle-roll hardware + lightened 9mm soles + purchased M5Stack StackChan K151 interaction head on reversible 3mm aluminium adapter",
+        "cad_brief": "v2 load-bearing assembly with the obsolete upper head plate trimmed at Z=45 mm and controlled CoreS3/cradle/hip-servo installation pockets + 18 dimension-controlled blue actuator references + bilateral 30 mm non-interfering ankle-roll hardware + lightened thickened 7 mm soles + purchased M5Stack CoreS3 interaction head flush-sunk into the upper torso on a hidden 2mm aluminium cradle",
         "assembly": assembly_path.relative_to(ROOT).as_posix(),
         "parts": rows,
-        "truth_boundary": "diagnostic assembly; K151 shape is an official-size purchased-module envelope backed by official vendor STL/PDF, not a printable substitute; STS3250 and torso-adapter first articles remain physical sign-off items",
+        "truth_boundary": "diagnostic assembly; CoreS3 is an official-size 54 x 54 x 15.5 mm purchased-module envelope backed by the official K128 product page/structure STL, not a printable substitute; STS3250 and torso-cradle first articles remain physical sign-off items",
     }
     REPORT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(assembly_path)

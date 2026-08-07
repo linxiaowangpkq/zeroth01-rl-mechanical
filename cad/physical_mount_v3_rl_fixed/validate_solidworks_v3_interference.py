@@ -46,6 +46,12 @@ def is_reference_overlay(components: list[str]) -> bool:
     )
 
 
+def is_same_component_union(components: list[str]) -> bool:
+    """Identify overlaps between bodies of one imported carrier SLDPRT."""
+
+    return bool(components) and len(set(components)) == 1
+
+
 def main() -> int:
     pythoncom.CoInitialize()
     sw = win32com.client.Dispatch("SldWorks.Application")
@@ -77,7 +83,8 @@ def main() -> int:
                 str(value(component, "Name2"))
                 for component in (value(interference, "Components") or [])
             ]
-            allowed = is_reference_overlay(components)
+            reference_overlay = is_reference_overlay(components)
+            same_component_union = is_same_component_union(components)
             rows.append(
                 {
                     "components": components,
@@ -87,8 +94,12 @@ def main() -> int:
                     ),
                     "classification": (
                         "allowed_nonmanufacturing_reference_overlay"
-                        if allowed
-                        else "physical_interference"
+                        if reference_overlay
+                        else (
+                            "same_component_multibody_union_overlap"
+                            if same_component_union
+                            else "physical_interference"
+                        )
                     ),
                 }
             )
@@ -107,11 +118,24 @@ def main() -> int:
             "ignore_hidden_bodies": False,
         },
         "raw_interference_count": len(rows),
-        "allowed_reference_overlay_count": len(rows) - len(physical),
+        "allowed_reference_overlay_count": len(
+            [
+                row
+                for row in rows
+                if row["classification"] == "allowed_nonmanufacturing_reference_overlay"
+            ]
+        ),
+        "same_component_union_overlap_count": len(
+            [
+                row
+                for row in rows
+                if row["classification"] == "same_component_multibody_union_overlap"
+            ]
+        ),
         "physical_interference_count": len(physical),
         "rows": rows,
         "truth_boundary": (
-            "Only StackChan face-glass/expression/camera display references may overlap; "
+            "Only CoreS3 face-glass/expression/camera display references may overlap; "
             "all load-bearing, actuator, adapter and shell components must have zero volume intersection."
         ),
         "overall": "PASS" if not physical else "FAIL",

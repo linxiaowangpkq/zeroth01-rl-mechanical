@@ -167,8 +167,8 @@ def main() -> int:
         ("CARRIER_Z_BOT2_MASTER_BODY_SKELETON", u.BODY),
         ("CARRIER_3215_BothFlange_13", "3215_BothFlange_13"),
         ("CARRIER_3215_BothFlange_14", "3215_BothFlange_14"),
-        ("LEFT_9MM_LIGHTWEIGHT_SOLE", "FOOT"),
-        ("RIGHT_9MM_LIGHTWEIGHT_SOLE", "FOOT_2"),
+        ("LEFT_7MM_LIGHTWEIGHT_SOLE", "FOOT"),
+        ("RIGHT_7MM_LIGHTWEIGHT_SOLE", "FOOT_2"),
     ):
         component_tf = manifest_transform(manifest_by_id[component_id])
         link_tf = actual_tf[link]
@@ -251,7 +251,7 @@ def main() -> int:
             }
         )
 
-    head_parent = str(v3_joints["stackchan_head_pod_fixed_joint"].find("parent").get("link"))
+    head_parent = str(v3_joints["cores3_head_module_fixed_joint"].find("parent").get("link"))
     masses = [float(item.get("value")) for item in v3_robot.findall("./link/inertial/mass")]
     failures = []
     if any(row["translation_residual_mm"] > 1.0e-5 or row["rotation_max_abs"] > 1.0e-8 for row in frame_rows):
@@ -259,7 +259,7 @@ def main() -> int:
     if any(row["max_numeric_residual"] > 1.0e-9 for row in original_joint_rows):
         failures.append("released_v2_joint_frame_changed")
     if any(
-        abs(row["vertical_offset_mm"] + 50.0) > 1.0e-5
+        abs(row["vertical_offset_mm"] + 1000.0 * u.ANKLE_ROLL_OFFSET_M) > 1.0e-5
         or row["lateral_offset_mm"] > 1.0e-5
         or row["world_axis_residual"] > 1.0e-8
         for row in roll_rows
@@ -269,7 +269,7 @@ def main() -> int:
         failures.append("solidworks_manifest_frame_mismatch")
     if len(servo_visuals) != 18 or any(row["gate"] != "PASS" for row in servo_manifest_rows):
         failures.append("urdf_sts3250_visual_manifest_mismatch")
-    if head_parent != u.STACKCHAN_HEAD_ADAPTER:
+    if head_parent != u.CORES3_HEAD_ADAPTER:
         failures.append("head_bypasses_adapter")
     if abs(sum(masses) - u.TARGET_TOTAL_MASS_KG) > 1.0e-9:
         failures.append("mass_mismatch")

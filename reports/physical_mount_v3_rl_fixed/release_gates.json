@@ -4,10 +4,16 @@
   "mjcf": "generated/mujoco/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof_mjx.xml",
   "dof": 18,
   "mass": {
-    "canonical_original_kg": 3.095471828,
-    "urdf_nominal_kg": 3.095471828,
-    "mjcf_nominal_kg": 3.095471828,
+    "pre_compaction_v3_kg": 3.095471828,
+    "maximum_allowed_kg": 3.0,
+    "urdf_nominal_kg": 2.969171828,
+    "mjcf_nominal_kg": 2.9691718280000003,
     "confidence": "estimated_from_envelopes_not_as_built"
+  },
+  "standing_envelope": {
+    "solidworks_height_mm": 499.23665213050515,
+    "maximum_allowed_mm": 500.0,
+    "source": "native SolidWorks occurrence bounding-box union"
   },
   "actuator": {
     "model": "FEETECH STS3250-C001",
@@ -15,12 +21,12 @@
     "mass_each_kg": 0.0745,
     "continuous_design_torque_nm": 1.2552512,
     "rated_torque_nm": 1.569064,
-    "static_single_support_required_nm": 1.3008430830106854,
-    "continuous_margin_fraction": -0.036320923661085046,
+    "static_single_support_required_nm": 1.2477666893255253,
+    "continuous_margin_fraction": 0.005962560063256465,
     "hip_half_spacing_m": 0.04283798641743393,
     "quasistatic_torque_report": "reports/physical_mount_v3_rl_fixed/sts3250_quasistatic_torque_gate.json",
     "quasistatic_peak_joint": "left_ankle_pitch",
-    "quasistatic_peak_torque_nm": 1.1864086814424593
+    "quasistatic_peak_torque_nm": 1.4142384041702036
   },
   "symmetry": [
     {
@@ -82,7 +88,7 @@
     {
       "left": "left_ankle_roll",
       "right": "right_ankle_roll",
-      "point_error_mm": 1.495930888286848,
+      "point_error_mm": 1.4959308882842983,
       "axis_error": 1.2390263665495814e-12,
       "gate": "FAIL"
     }
@@ -371,7 +377,7 @@
       "sphere"
     ],
     "sampled_nonadjacent_penetrations": [],
-    "maximum_vertical_regrounding_correction_m": 0.011388812285932838,
+    "maximum_vertical_regrounding_correction_m": 0.016065235678611192,
     "sweep_ground_policy": "free base is shifted vertically per sample; ground contacts are excluded from self-interference rows"
   },
   "actuator_mass_ownership": [
@@ -455,14 +461,14 @@
   ],
   "standing": {
     "sole_bottoms_m": [
-      -1.1147259256459596e-07,
-      -8.23417459347095e-08
+      -1.1147258150746853e-07,
+      -8.23417395283757e-08
     ],
     "sole_level_error_rad": [
       9.999334257726859e-07,
       7.574716226541482e-07
     ],
-    "maximum_ground_gap_m": 1.1147259256459596e-07
+    "maximum_ground_gap_m": 1.1147258150746853e-07
   },
   "gates": {
     "CAD_PORTABLE_PASS": "PASS",
@@ -472,16 +478,17 @@
     "SOURCE_AXIS_FIDELITY_PASS": "PASS",
     "MJX_PRIMITIVE_COLLISION_PASS": "PASS",
     "GROUND_CONTACT_PASS": "PASS",
-    "ACTUATOR_STATIC_FEASIBILITY_PASS": "HOLD_RATED_TORQUE_ONLY_RL_COM_SHIFT_REQUIRED",
-    "STS3250_QUASISTATIC_TORQUE_PASS": "PASS",
+    "ACTUATOR_STATIC_FEASIBILITY_PASS": "PASS",
+    "STS3250_QUASISTATIC_TORQUE_PASS": "HOLD_RATED_ONLY_DYNAMIC_POLICY_TRACE_REQUIRED",
     "STS3250_DYNAMIC_WALKING_PASS": "HOLD_RL_ROLLOUT_TORQUE_AND_THERMAL_TRACE_REQUIRED",
     "MASS_TARGET_PASS": "PASS",
+    "STANDING_HEIGHT_LIMIT_PASS": "PASS",
     "ACTUATOR_MASS_OWNERSHIP_PASS": "PASS",
     "MOTION_SAMPLE_NO_NONADJACENT_PENETRATION_PASS": "PASS",
-    "PURCHASED_STACKCHAN_HEAD_MODEL_PASS": "PASS",
+    "PURCHASED_CORES3_HEAD_MODEL_PASS": "PASS",
     "MASS_IDENTIFIED_PASS": "HOLD_AS_BUILT_MEASUREMENT_REQUIRED",
     "STS3250_FIRST_ARTICLE_PASS": "HOLD_PURCHASED_HARDWARE_REQUIRED",
-    "STACKCHAN_ADAPTER_FIRST_ARTICLE_PASS": "HOLD_TORSO_SLOT_FIT_REQUIRED"
+    "CORES3_CRADLE_FIRST_ARTICLE_PASS": "HOLD_TORSO_NUT_PLATE_FIT_REQUIRED"
   },
   "blocking_failures": [],
   "overall_rl_nominal": "PASS",

@@ -360,9 +360,9 @@
       "joint": "right_ankle_roll",
       "owning_rigid_link": "right_ankle_roll_carrier",
       "shaft_origin_body_neutral_m": [
-        -0.018973992080324267,
-        -0.048992857837412314,
-        -0.4218179943504511
+        -0.018973992080315995,
+        -0.04899285783740406,
+        -0.4018179943504453
       ],
       "shaft_axis_body_neutral": [
         -0.9999999999997984,
@@ -382,9 +382,9 @@
       "joint": "left_ankle_roll",
       "owning_rigid_link": "left_ankle_roll_carrier",
       "shaft_origin_body_neutral_m": [
-        -0.01749600134946751,
-        0.048761875972339865,
-        -0.42181800066276787
+        -0.01749600134945924,
+        0.04876187597234812,
+        -0.40181800066275786
       ],
       "shaft_axis_body_neutral": [
         0.9999999999998005,

@@ -1,11 +1,11 @@
 {
   "schema": "zeroth01.physical_mount_v3_rl_fixed.release_manifest.v1",
-  "generated_at_utc": "2026-08-06T18:22:40.720471+00:00",
+  "generated_at_utc": "2026-08-07T13:18:37.278985+00:00",
   "canonical_solidworks": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/OPEN_FIRST_ZEROTH01_V3_RL_FIXED_CONNECTED_WHITE_18_BLUE_STS3250.SLDASM",
   "canonical_urdf": "generated/urdf/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
   "canonical_mjcf": "generated/mujoco/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof_mjx.xml",
-  "file_count": 523,
-  "total_bytes": 606616476,
+  "file_count": 559,
+  "total_bytes": 637221460,
   "files": [
     {
       "path": ".gitattributes",
@@ -24,8 +24,8 @@
     },
     {
       "path": "ASSEMBLY_GUIDE_zh.md",
-      "bytes": 3782,
-      "sha256": "c8b3e65587233a82b1df8f6b8a893823dcc66a6eec69952e52481de466180859"
+      "bytes": 2964,
+      "sha256": "875bedc1da412309bce63bccab996b99b0ceb820c621ffe3b9316e2328c0bc3a"
     },
     {
       "path": "LICENSE",
@@ -59,18 +59,18 @@
     },
     {
       "path": "PROCUREMENT_BOM.csv",
-      "bytes": 1375,
-      "sha256": "8a05b12b10370eb68ca4a267fce7bb075b065f4be74fbc9e100192a9135245da"
+      "bytes": 1370,
+      "sha256": "c53bcf370db3bed7150c4468df9607cf84635e67b936ec2b773f9694f5f783a3"
     },
     {
       "path": "README.md",
-      "bytes": 2054,
-      "sha256": "0c08712dda00450edb19d89e67864c18403934f224ee26a41eb34eeab32a2076"
+      "bytes": 2464,
+      "sha256": "a13c5609c4ce72cc5e11b42054c9acdc34821aca0ae3e263bcdaa2b2d7639677"
     },
     {
       "path": "README_zh.md",
-      "bytes": 6278,
-      "sha256": "9ea4981831ca7b73fc52b014a0d77799695c9eb5d124fd861c3a9db180d307ab"
+      "bytes": 3924,
+      "sha256": "a52e19d7ad4719b11d3e290e7a2177dde65c3beb33b192f39ac755ba81af2b3f"
     },
     {
       "path": "RL_PROMPT.txt",
@@ -219,8 +219,23 @@
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/V3_DESIGN_LEDGER.md",
-      "bytes": 7214,
-      "sha256": "1ac1ed9d640df75546fb2f7766e3111e11fec5e11b66e9440728dee5965416f0"
+      "bytes": 8718,
+      "sha256": "e5fa777c4f551b82a730f5bb8f5844ee5f061b1ba466ab5ba6b096101669f93f"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/analyze_v3_ankle_clocking.cpython-312.pyc",
+      "bytes": 7728,
+      "sha256": "d1a630e31c5ed241d99dd90119a74c674de0da1a8b843d1018d70baf329c4b6e"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/build_v3_assembly_manifest.cpython-312.pyc",
+      "bytes": 24731,
+      "sha256": "2210b873e6f9fe58631a50e33f4794d3cccc5ce922da7751d934f9077bf6bc8b"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/build_v3_mjcf.cpython-312.pyc",
+      "bytes": 18772,
+      "sha256": "6aa45e4a93b48dae6825c6dbff2b895d208ca1f53b371f5af52e4d5755ec7e6e"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/__pycache__/build_v3_urdf.cpython-311.pyc",
@@ -229,8 +244,8 @@
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/__pycache__/build_v3_urdf.cpython-312.pyc",
-      "bytes": 43949,
-      "sha256": "c9be2bab733c1d6955d0284b9c8aaf80586ffcf54160fc56b1ad337f9a1b5ea6"
+      "bytes": 44268,
+      "sha256": "2bdbedfb51df66a01a069736573236682ca162b6276317b739e86ec02f2ea1c3"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/__pycache__/create_freecad_v3.cpython-311.pyc",
@@ -238,69 +253,99 @@
       "sha256": "ab0289a66d827646ed05b57e4cf6d001586d35c169b49ac989528c810d1e6492"
     },
     {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/create_solidworks_v3.cpython-312.pyc",
+      "bytes": 25943,
+      "sha256": "6e00af16e9c5115fb23747799e1dfcb1089ddd83dd243d9e7b846d11c1409962"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/generate_v3_cad.cpython-312.pyc",
+      "bytes": 31895,
+      "sha256": "f9016808398096468e177befcb600ab57fe8b87d5808afd5cbc83849650db177"
+    },
+    {
       "path": "cad/physical_mount_v3_rl_fixed/__pycache__/render_v3_motion.cpython-312.pyc",
-      "bytes": 15953,
-      "sha256": "7c4b0c4e6893b7fad92fa3d68c82e75bb00ef2eee285b9bfdfdf8d9f6ce3c45b"
+      "bytes": 15763,
+      "sha256": "bd1370a06add54ec7b39d3b50ffa0c0e5914d58ad24f707720cd45752520d897"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/validate_v3_fk_manifest.cpython-312.pyc",
+      "bytes": 17570,
+      "sha256": "e46ca90f41b6e7884dfe8776cc4a8b00293f50a2218f18cfdf9d292af32d5feb"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/__pycache__/validate_v3_release.cpython-312.pyc",
+      "bytes": 26682,
+      "sha256": "ee2c95dbaf593ea1ab1e32bbb9a1e22b9ea73fcbe8138eba9fe54f58baf2fe1f"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/analyze_v3_ankle_clocking.py",
+      "bytes": 5516,
+      "sha256": "21b51c8fa34f7181289576afdd7c4b4ebc6a44915a27f6cb77f259d1232249cd"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/build_v3_assembly_manifest.py",
-      "bytes": 15880,
-      "sha256": "0824b9ff458947f20e565894ec65fc153efe24f40938891a0fcae635725ca778"
+      "bytes": 17255,
+      "sha256": "f3209e92658cf466d07d4a1632be3f666675a78fc561c047cfe94e803b61e6a3"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/build_v3_mjcf.py",
-      "bytes": 13715,
-      "sha256": "1704c6e2649eaf10758ca3825b2147420283b2b461dd9c8a8f6b1ec974cc13df"
+      "bytes": 13673,
+      "sha256": "27b986aef6b4631262038a777d2f316e6bacd080421d20542d60cb3610d2b063"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/build_v3_urdf.py",
-      "bytes": 34146,
-      "sha256": "ce2a1b400867649ab7eb09cc7c7b9f938469e54a6772d3a7eacd45377ad62047"
+      "bytes": 35449,
+      "sha256": "265ada7cdd6da2ea74c7de51efd942c24c6b1edb8cfcd94ad5c6e1433976d2fa"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/create_freecad_v3.py",
-      "bytes": 6051,
-      "sha256": "5ac00b758dc59a057be816db15b13db8fdc83c9186790c966de26bf81fa52c4e"
+      "bytes": 6049,
+      "sha256": "8663209b48d0e46c7215ef2cb41c2433d86c241c2123daff6ab0f5967dbbfcf8"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/create_solidworks_v3.py",
-      "bytes": 14979,
-      "sha256": "7015543e04f7398108ee183dbb90289f33493ab548287e03ffc1e7848d47f1db"
+      "bytes": 16761,
+      "sha256": "455dc9dcd1234fa90c89d7b2e9259a1df3661e81427fcbd4cbb5b5efb4825553"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/generate_v3_cad.py",
-      "bytes": 18907,
-      "sha256": "8dfbd11531ce3f75d7021661ab45afcb5e0affc7f330752658d2a14b246048d9"
+      "bytes": 24617,
+      "sha256": "8320c887ba1ea6077f79143cb0c1e039061135f7b853fc05fd90b3296aed348e"
+    },
+    {
+      "path": "cad/physical_mount_v3_rl_fixed/inspect_solidworks_component_boxes.py",
+      "bytes": 1278,
+      "sha256": "b5359a9a8dedfdafd241452ae18ae16b7c3711e92a6f681923d0448b0f139c45"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/render_v3_cad_evidence.py",
-      "bytes": 8569,
-      "sha256": "e721cfc31306ae570d5e172115036e0c134b473f41aa9049345b469d30fdc3e2"
+      "bytes": 10496,
+      "sha256": "7aa19593484c6ae885ad747227cf62fc58956bbee0ac67b45fe92f1603a5f2fe"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/render_v3_motion.py",
-      "bytes": 9745,
-      "sha256": "5ed3f942d8fe5f82ea238974dece236d6fac3c7ad6105ec72ada09c6eae6d9dc"
+      "bytes": 9689,
+      "sha256": "06ce139843283192c3c64355cb77eb06a8177e0fc2198a29935f6574e545ddb6"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/validate_solidworks_v3_interference.py",
-      "bytes": 4391,
-      "sha256": "2eebbd4b25ef7112e5058c1a280ce0d84f62933d4e7580e7bb80cb1b9b6d431b"
+      "bytes": 5242,
+      "sha256": "3ec16b2414234a7b1732acb02c2050e4473dc37e68231a421f65ce1915a474a3"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/validate_v3_cad_connectivity.py",
       "bytes": 5620,
-      "sha256": "b9e64f353059671e5ac44fe0185ff312c3477d275466af65a4ec893c3c610dc2"
+      "sha256": "981a8a04b7059e318fc9763ab1eb1bceea37e4dace16fdb320a34815d0acc524"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/validate_v3_fk_manifest.py",
-      "bytes": 11301,
-      "sha256": "8c4c8295e931d086d0d0822c8f343e11a619db6c01b0a2d292dcc5405a08473c"
+      "bytes": 11324,
+      "sha256": "07c0f629d074e8f1966c89145bd7d01ee79a2f6436c2bbce078f241a395c532f"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/validate_v3_release.py",
-      "bytes": 20113,
-      "sha256": "441d870d390808188baf217612ba603ed8310c07dc2034392a8995f60642d4dc"
+      "bytes": 20631,
+      "sha256": "aec52ec6bbe86f78ba3f872b293fb586c256f539a567482af1504488e9f7709a"
     },
     {
       "path": "cad/physical_mount_v3_rl_fixed/validate_v3_sts3250_torque.py",
@@ -704,38 +749,68 @@
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/.ZEROTH01_V3_RL_FIXED_18DOF_DIAGNOSTIC_ASSEMBLY.step.glb",
-      "bytes": 5074836,
-      "sha256": "306e25deff4c76ae48955df42856be1d44dd4595ac4f5f911c89a3eeb8e36502"
-    },
-    {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_DIAGNOSTIC_ASSEMBLY.glb",
-      "bytes": 5074836,
-      "sha256": "306e25deff4c76ae48955df42856be1d44dd4595ac4f5f911c89a3eeb8e36502"
+      "bytes": 4795396,
+      "sha256": "d576f1af380f9ef462cd7afb8d055f5b5e69517f3096db8ee13094e5114fce58"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_DIAGNOSTIC_ASSEMBLY.step",
-      "bytes": 1642651,
-      "sha256": "9ea6d4e98cd5929eeca439e43573429819fa2a9e68af79617de8ea683e380630"
+      "bytes": 1590565,
+      "sha256": "3a7d542e5c258415cc7d2657d91709fd45dbe56a12eb04ad4769f1c04f6a121e"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json",
-      "bytes": 46725,
-      "sha256": "87b750ab6f3d0b819a0ecf0e0b5779bcd52683274c2295a188d00da86a0615b1"
+      "bytes": 46879,
+      "sha256": "c44e629d22ce5577d32be033e44b6277b4bce795e179a8fb1b246fc34651dc54"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/.body_skeleton_top_trimmed_45mm.step.glb",
+      "bytes": 9785740,
+      "sha256": "771aff1a3c0f8743cbc74d21ab5d81a4bd9134f979515255de2dd2429985ac5d"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/.left_ankle_roll_carrier.step.glb",
+      "bytes": 1048604,
+      "sha256": "f14193c096bb150107daf1e2f24cccb084875c6a81f205016d54a4589ff27398"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/.left_sole_lightweighted.step.glb",
+      "bytes": 1546932,
+      "sha256": "1de5c147d811ed47f046fb45a80c679a18fc4f804283e30348fcf823af2bd25d"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/body_skeleton_top_trimmed_45mm.step",
+      "bytes": 21203806,
+      "sha256": "b4e08fd566b99e65d037fccf4f6e58b33b9a971824f717d46073125d748139cb"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/body_skeleton_top_trimmed_45mm.stl",
+      "bytes": 389534,
+      "sha256": "ac49302c221e77dc5f1502303d5d33ea45eb8aa3a72da0c9d57cae0edc102ee4"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.step",
+      "bytes": 274588,
+      "sha256": "0dce9d297b6165f0b33146bfa998b93811ef31b9cf9df8d1939f22963bf97992"
+    },
+    {
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.stl",
+      "bytes": 1410484,
+      "sha256": "2ee0c437dc52ec8b89e57b4eba851a635adf61483a13ec45fe5d1688c448336c"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_carrier.step",
-      "bytes": 254106,
-      "sha256": "df6b936b39eb5d0b23edffd3763fa3ad336d6bd6c3bb69b89206b579e9d8b5b0"
+      "bytes": 235525,
+      "sha256": "d981133d0ec4e9f1672a1090b711ec648946148620fe609cb8124b8fbc12da84"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_carrier.stl",
-      "bytes": 758784,
-      "sha256": "9d45127098fc27e5ca70a431d7231ff2f0dbcc28044d5b56d14b471425903f7e"
+      "bytes": 752884,
+      "sha256": "4bf364278658d13416597492ca8387db87b3c432ac552f7735f7e5aa850136d0"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_horn_adapter.step",
       "bytes": 24713,
-      "sha256": "5b5966b476990c44e99f9830e283b71e129e1db88763e7067561555c598ae1b6"
+      "sha256": "bd9b7f1fd31a3252a443b3e3fdd5a3007ed1669b1beff5b67f5ffb2ad9535a26"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_horn_adapter.stl",
@@ -744,68 +819,68 @@
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.step",
-      "bytes": 653578,
-      "sha256": "c15aea8a15fe63d23e958efaeb725eac8f5c7a7b4a4e4df5ff1c767d41af0e75"
+      "bytes": 654362,
+      "sha256": "558b0ab86d8403a26a4f62fa5c17567a78f6d13957f238c49e864f58c7e92aaf"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.stl",
       "bytes": 2099484,
-      "sha256": "b8fadc742e99a9ec1fb5dee91f78f52f74c568fddbd27380a1e7ad1a2936034f"
+      "sha256": "084cd269d12e0ce100024c6e048aa6bd3d0ffadc76b315e627339e99148a48e7"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.step",
-      "bytes": 8030,
-      "sha256": "b1d8756a564144498d4c7043fed8e8c8e6cfcf455d0522b1f957ed9f724a2610"
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_camera_reference.step",
+      "bytes": 8009,
+      "sha256": "fb591c6407c1f9c47a6257490a72d1770f3e057440e670020dbf45941aa33da9"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.stl",
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_camera_reference.stl",
       "bytes": 20884,
-      "sha256": "3a8311e3861cba36dfbe10a505cd6ee0b83ef9de62decb94bf095655aadd12bc"
+      "sha256": "75c37dee69b7e68d6e7407e7b9848c40f32e2e5108f071a5a1cc699277a5d06d"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.step",
-      "bytes": 14568,
-      "sha256": "c05d3be3bde9877b205b3921ec14c79969d1cfa922693bd4c85708fcf401d57b"
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_expression_reference.step",
+      "bytes": 14539,
+      "sha256": "dff92b327e0e400204761a554da259c679ffca1277d35e1377b694b881299a4a"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.stl",
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_expression_reference.stl",
       "bytes": 41684,
-      "sha256": "0b4b5202ed174fa11ec2013b7337a6144ae13c0dd5f32ec3dc79b441ebc202fe"
+      "sha256": "1f9d0d33204726f9b2c76dad02b67c6fe8742b1e531371a888dba81270915c63"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.step",
-      "bytes": 66976,
-      "sha256": "a1d38d930f6fc1d52934a056e0b05012548491900dfbb28c0d29fdac887e25a7"
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_face_glass_reference.step",
+      "bytes": 66961,
+      "sha256": "fbf087b4dde71a5289a781a58d86e6233229961339600c9f718155f3f4656e27"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.stl",
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_face_glass_reference.stl",
       "bytes": 331484,
-      "sha256": "b98cc1212355b219905edc0f083acaa9704bbe09be0203589a9f0b4f7b868be9"
+      "sha256": "a46a3378f8476ed84ef35f95778bfde99bf418e0c81e2ca9600a7e5cbb39445f"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.step",
-      "bytes": 66972,
-      "sha256": "c56c927e3d1a5023cbc5bab432410f08510863c397bf9100750d9e3550c2f7b6"
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_k128_purchased_envelope.step",
+      "bytes": 66680,
+      "sha256": "388698b69fba8910e384f1ba0957df30b7b43a03083d7d87a064097927d25fbd"
     },
     {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.stl",
+      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_k128_purchased_envelope.stl",
       "bytes": 331484,
-      "sha256": "a3b988f2964198c0a240cb2e5ea36250ad3633e6889638c0ef26fae56b128c5a"
+      "sha256": "1030f152eed2775cb7fe67fe8f76ad43c2b2e886516e123731ecf5609c2227f9"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_carrier.step",
-      "bytes": 254109,
-      "sha256": "78c1a288869bc0384f676420b098f1519a0c97b96eee7cb8d311cea48455c9fa"
+      "bytes": 235528,
+      "sha256": "514237c2d09e144592e83c6029a2f718893077968106f21b7b47604bc9bcb77e"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_carrier.stl",
-      "bytes": 758784,
-      "sha256": "9d45127098fc27e5ca70a431d7231ff2f0dbcc28044d5b56d14b471425903f7e"
+      "bytes": 752884,
+      "sha256": "4bf364278658d13416597492ca8387db87b3c432ac552f7735f7e5aa850136d0"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_horn_adapter.step",
       "bytes": 24716,
-      "sha256": "1d4246aa089d6b5d5d114ff04b256608a198376fe8cf9f537a17c0056abf9b49"
+      "sha256": "1f467e9c186aab5947fca8c867f430422bd3fa13b3d08eccf65e693d014c7387"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_horn_adapter.stl",
@@ -814,28 +889,18 @@
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.step",
-      "bytes": 654369,
-      "sha256": "b3fa2fb40b6883f375d341ce75596b93384c8e2fc8c6867e73a1507dae02cd32"
+      "bytes": 655145,
+      "sha256": "14ffab73e1fc0678fd2e2b9024189bbeb982be9576a7d359b839049d2d6133eb"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.stl",
       "bytes": 2099484,
-      "sha256": "300ff86b34d7d27ac9337a15cdc04dd26984e839a6067c87e69495389c2b40e0"
-    },
-    {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.step",
-      "bytes": 278321,
-      "sha256": "2e0b34e6430ddf405ed8db00fc470d31dde1b90ef782bde135b319825a4f6f8c"
-    },
-    {
-      "path": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.stl",
-      "bytes": 515484,
-      "sha256": "f352e98df44ca6dcb4de542510ca8c485810f9b01814f6920ed72c0eebe6797c"
+      "sha256": "d6592e6f1551949ca9b6d0f97a0b02e62aee92fca33e97c34d122b0ec1dd9e45"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.step",
       "bytes": 201699,
-      "sha256": "06567b0849f4a841f671daa9065c6bab2cb736751153eae74978a42a985e61fb"
+      "sha256": "9f8f399cfe3c71726bb1745c495299516d0c31c541d667a68b07d45c6175b728"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_dimension_controlled.stl",
@@ -845,7 +910,7 @@
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_first_article_gauge.step",
       "bytes": 83229,
-      "sha256": "d30970133429fe0cd6838a60045a98484193e3086ac297c3bfc40e12bdc7f0e3"
+      "sha256": "129907d0daef45d89514ad1218bfdb267e167789298f76b5ae1e039fa46ba2e1"
     },
     {
       "path": "generated/cad/physical_mount_v3_rl_fixed/parts/sts3250_first_article_gauge.stl",
@@ -879,18 +944,18 @@
     },
     {
       "path": "generated/config/physical_mount_v3_rl_fixed_actuator_layout.json",
-      "bytes": 14402,
-      "sha256": "db326161b26a07f9dabfe6673fb3a31d2ccce5130777e7dd4faf6d9ef4cc0618"
+      "bytes": 14400,
+      "sha256": "c9a4f0856af87d091fcabda8aa148416bbb034202b38d858186d58e55603f78b"
     },
     {
       "path": "generated/config/physical_mount_v3_rl_fixed_rl_handoff.json",
-      "bytes": 3710,
-      "sha256": "e0b04cfd7e27b8bb324ae4e1ff7f27d65ab6fbf3030bdd88514f0fa6ca4e1c6b"
+      "bytes": 3832,
+      "sha256": "69f303a2a3b5fcf06d23e4042eb0d4188c9b722ae541e8316c731cd3843f5ab5"
     },
     {
       "path": "generated/mujoco/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof_mjx.xml",
-      "bytes": 18517,
-      "sha256": "3ed0b59a68f175c41e6992061d2db6150a65a91898a05fbd6815c457580f3fc8"
+      "bytes": 18512,
+      "sha256": "171462f9da6f4817dcac1d040ff0cfc589bbe3f3b68f827e23c4bb150e41497f"
     },
     {
       "path": "generated/print/physical_mount_v1/first_article/STS3250_4XM2_FIRST_ARTICLE_FACE_GAUGE.stl",
@@ -1164,13 +1229,13 @@
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/OPEN_FIRST_ZEROTH01_V3_RL_FIXED_CONNECTED_WHITE_18_BLUE_STS3250.SLDASM",
-      "bytes": 18944344,
-      "sha256": "1d092130eff929d5f14bea3b24900468d8473c556c64aa84c7220994f2b48118"
+      "bytes": 18827242,
+      "sha256": "4934742e90c36ca05e4d82905a397cd4014f745ff46ce977739c7a17cd8f60d8"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/OPTIONAL_XRAY_ZEROTH01_V3_RL_FIXED_18_BLUE_STS3250.SLDASM",
-      "bytes": 19381840,
-      "sha256": "5276effa930387ef36f782f654a5f5488782d7c9989c31503598af5dda472110"
+      "bytes": 19261683,
+      "sha256": "df9d786ce625c2627f9ff6ed8ffe35d82b56430360da2f52ed9dc4823783918f"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_PHYSICAL_MOUNT_V1_3215_1FLANGE_2_CARRIER.SLDPRT",
@@ -1283,9 +1348,19 @@
       "sha256": "e06df5d504d3d79b9a132c1a06aeff829a5b959c188bcf65178ddfc6d8ef086b"
     },
     {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM.SLDPRT",
+      "bytes": 4552377,
+      "sha256": "8e2674ebb6d84c92d50f2af79f2c946f4154eefef04e58c7cfb303cef08ae51c"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_CORES3_INTERNAL_TORSO_CRADLE_2MM_6061.SLDPRT",
+      "bytes": 187832,
+      "sha256": "884ad008383d5239cf77838bf16dfa8fd9938bc68b16d4071d0c490426fd545e"
+    },
+    {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_LEFT_ANKLE_ROLL_CARRIER.SLDPRT",
-      "bytes": 159215,
-      "sha256": "3e19ced96474ea4983fe06c0785d8ad53d9c6e03b54d2392ffadba1d160d2d7f"
+      "bytes": 148403,
+      "sha256": "d5adbbdad76a8a332ce528fbc04d24d859dc144de5ab15149c6ca8f82b53c573"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_LEFT_ANKLE_ROLL_HORN_ADAPTER.SLDPRT",
@@ -1294,33 +1369,33 @@
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_LEFT_SOLE_LIGHTWEIGHTED.SLDPRT",
-      "bytes": 260677,
-      "sha256": "458ab0b2e54d743d2b6a56ccb7f75c150546dc103867eb0d09b212aebde3f34d"
+      "bytes": 259241,
+      "sha256": "8022eb7ca1e41f701832018c6bd63afe5ba5d7aedaf5c541751db11e8ff207dc"
     },
     {
-      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_STACKCHAN_K151_CAMERA_REFERENCE.SLDPRT",
-      "bytes": 59437,
-      "sha256": "33f639fdc704f7e1740c9102c3f3192ab49042e29ebc30f425f6f495ebea9101"
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_CORES3_CAMERA_REFERENCE.SLDPRT",
+      "bytes": 59874,
+      "sha256": "a53735a8188a7f7c489edcb923550cb9c75eb0b2897f48f4b7ff70ba20fca5fd"
     },
     {
-      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_STACKCHAN_K151_EXPRESSION_REFERENCE.SLDPRT",
-      "bytes": 56310,
-      "sha256": "9ef7c126e817ceb784764dd693ce0b3acd455a5903ed814a032b1227eb437c88"
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_CORES3_EXPRESSION_REFERENCE.SLDPRT",
+      "bytes": 55916,
+      "sha256": "0125e82d6acd7b6f332f2ce508d2f70c2172016ec7e8b0ecefd103a4f7fb75d9"
     },
     {
-      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE.SLDPRT",
-      "bytes": 72188,
-      "sha256": "f7db1083760720f0fe9d78a494146bc093232297bbbee90f90c14496903c6586"
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_CORES3_FACE_GLASS_REFERENCE.SLDPRT",
+      "bytes": 73044,
+      "sha256": "60e910625937351e01e19a8515aac1032eb44cab18ebe994eb9e047ca9e2fb31"
     },
     {
-      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_STACKCHAN_K151_PURCHASED_ENVELOPE.SLDPRT",
-      "bytes": 117337,
-      "sha256": "171f8c316fcbcea778ef4ff83df7fffcf386c13934b69845a1bdd0d65c374e56"
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_M5STACK_CORES3_K128_PURCHASED_ENVELOPE.SLDPRT",
+      "bytes": 93605,
+      "sha256": "5846871d75a3c8d278e7e4f08dc850e2f6acbd1692a0370a91e522ff70114aff"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_RIGHT_ANKLE_ROLL_CARRIER.SLDPRT",
-      "bytes": 160414,
-      "sha256": "8261b939cecca277986ee96b5c0115da51c527f01972fdd3b6299af9a9fa7836"
+      "bytes": 149285,
+      "sha256": "28ceab6d38c958cf642434455fabdff98d4fe11937d32fbc461f47dd97d14d89"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_RIGHT_ANKLE_ROLL_HORN_ADAPTER.SLDPRT",
@@ -1329,23 +1404,193 @@
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_RIGHT_SOLE_LIGHTWEIGHTED.SLDPRT",
-      "bytes": 298159,
-      "sha256": "d28dbc40729ee4c3ec42616f5a880f7939a1a4be6b8abcdcaa849e1225262228"
+      "bytes": 297667,
+      "sha256": "bd2c43ac9bef0e10d5244087e62cb0e8d5e329e3f744aa760fa9e6bb99a0268f"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json",
-      "bytes": 46725,
-      "sha256": "87b750ab6f3d0b819a0ecf0e0b5779bcd52683274c2295a188d00da86a0615b1"
-    },
-    {
-      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_STACKCHAN_K151_TORSO_ADAPTER_3MM_6061.SLDPRT",
-      "bytes": 128682,
-      "sha256": "80fe63767fa125cf7d60bda69140eed791aaede4acb79a66c0d9341fe0694ce7"
+      "bytes": 46879,
+      "sha256": "c44e629d22ce5577d32be033e44b6277b4bce795e179a8fb1b246fc34651dc54"
     },
     {
       "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED.SLDPRT",
       "bytes": 137246,
       "sha256": "9fe36eeb65f69c90f0a9c26949490c5d7812a62891402f5b077d2384a3c2544f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$OPTIONAL_XRAY_ZEROTH01_V3_RL_FIXED_18_BLUE_STS3250.SLDASM",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_1FLANGE_2_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_1FLANGE_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_10_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_13_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_14_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_5_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_6_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_3215_BOTHFLANGE_9_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_FOOT_2_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_FOOT_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_U_HIP_L_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_U_HIP_R_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_Z_BOT2_MASTER_SHOULDER2_2_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_PHYSICAL_MOUNT_V1_Z_BOT2_MASTER_SHOULDER2_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_BATTERY_PACK.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_COMPUTE_MODULE.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_LEFT_Q_HAND.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_L_ARM_MIRROR_1_WRIST_TRIMMED.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_RIGHT_Q_HAND.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_R_ARM_MIRROR_1_WRIST_TRIMMED.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V2_MINIMAL_TORSO_IMU.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_CORES3_INTERNAL_TORSO_CRADLE_2MM_6061.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_LEFT_ANKLE_ROLL_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_LEFT_ANKLE_ROLL_HORN_ADAPTER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_LEFT_SOLE_LIGHTWEIGHTED.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_M5STACK_CORES3_CAMERA_REFERENCE.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_M5STACK_CORES3_EXPRESSION_REFERENCE.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_M5STACK_CORES3_FACE_GLASS_REFERENCE.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_M5STACK_CORES3_K128_PURCHASED_ENVELOPE.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_RIGHT_ANKLE_ROLL_CARRIER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_RIGHT_ANKLE_ROLL_HORN_ADAPTER.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_RIGHT_SOLE_LIGHTWEIGHTED.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
+    },
+    {
+      "path": "generated/solidworks/physical_mount_v3_rl_fixed/portable_flat/~$ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED.SLDPRT",
+      "bytes": 6,
+      "sha256": "693bd876a492b2492c090b2f32c4ff6006f122b2bc7675c134ebcba1666da93f"
     },
     {
       "path": "generated/urdf/physical_mount_v1/meshes/servos/S01_right_shoulder_pitch_INSTALLED_STS3215_FAMILY.stl",
@@ -1898,11 +2143,6 @@
       "sha256": "9359cab424b25a52d6c559496baee1c7dff482d400b00e1cb16cd0b63865cf08"
     },
     {
-      "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/skeleton/Z_BOT2_MASTER_BODY_SKELETON.stl",
-      "bytes": 318484,
-      "sha256": "195e87233f5e997e33628bc24276520dafc93b5e43f6746ab944262e4837bdd8"
-    },
-    {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/skeleton/Z_BOT2_MASTER_SHOULDER2.stl",
       "bytes": 55784,
       "sha256": "e4bd555196d7ebb0d9b50b1344eb992ffbd0dd886d130f2933d8dc9140919484"
@@ -1913,24 +2153,29 @@
       "sha256": "a2b55403fe97d789020d31c289c7bd94cbeac0326810040dca26ce1897b8c067"
     },
     {
+      "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/v3/body_skeleton_top_trimmed_45mm.stl",
+      "bytes": 284734,
+      "sha256": "4a4970b722a980f5812e1dd0fd9be8e0b7e0fadf6d3fee2bb5e56501b19fce2c"
+    },
+    {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/v3/left_ankle_roll_carrier.stl",
-      "bytes": 758784,
-      "sha256": "9d45127098fc27e5ca70a431d7231ff2f0dbcc28044d5b56d14b471425903f7e"
+      "bytes": 752884,
+      "sha256": "4bf364278658d13416597492ca8387db87b3c432ac552f7735f7e5aa850136d0"
     },
     {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/v3/left_sole_lightweighted.stl",
       "bytes": 2099484,
-      "sha256": "b8fadc742e99a9ec1fb5dee91f78f52f74c568fddbd27380a1e7ad1a2936034f"
+      "sha256": "084cd269d12e0ce100024c6e048aa6bd3d0ffadc76b315e627339e99148a48e7"
     },
     {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/v3/right_ankle_roll_carrier.stl",
-      "bytes": 758784,
-      "sha256": "9d45127098fc27e5ca70a431d7231ff2f0dbcc28044d5b56d14b471425903f7e"
+      "bytes": 752884,
+      "sha256": "4bf364278658d13416597492ca8387db87b3c432ac552f7735f7e5aa850136d0"
     },
     {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/v3/right_sole_lightweighted.stl",
       "bytes": 2099484,
-      "sha256": "300ff86b34d7d27ac9337a15cdc04dd26984e839a6067c87e69495389c2b40e0"
+      "sha256": "d6592e6f1551949ca9b6d0f97a0b02e62aee92fca33e97c34d122b0ec1dd9e45"
     },
     {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/meshes/v3/sts3250_dimension_controlled.stl",
@@ -1939,13 +2184,13 @@
     },
     {
       "path": "generated/urdf/physical_mount_v3_rl_fixed/zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
-      "bytes": 42273,
-      "sha256": "7316ba0555621e2321c0910670773a8e80a964ce24abf18f5f232b0bbb60a509"
+      "bytes": 42337,
+      "sha256": "9662240aaae24848e124e56f8dd4ed4ca3268c1da4cdd4671d3213d251b58f84"
     },
     {
       "path": "one-seq.md",
-      "bytes": 470,
-      "sha256": "82fb935d5dcdf166a06815a91dcdc75ccd986027d627d50cb9db2640d03459bf"
+      "bytes": 651,
+      "sha256": "c4711f2305099cbf4ef5e4001b42efd6858b4dd9925c109ae1807c343193930d"
     },
     {
       "path": "reports/physical_mount_v1/dynamic_collision_contacts.csv",
@@ -2124,8 +2369,8 @@
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/cad_build.json",
-      "bytes": 6260,
-      "sha256": "9431feec0fbda7d4f0b119e205198158cb8f7853ade1cebc64e2232962fcdd62"
+      "bytes": 6789,
+      "sha256": "a31d647b5a9e9f484a8dc529527f8e743adb2ece92e25d431aec4b76f4a51a26"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/cad_connectivity_gate.json",
@@ -2133,39 +2378,34 @@
       "sha256": "e78a1d275a5fc34de24b2adf85be9aad3087cfc8c4287810143f467d37492528"
     },
     {
-      "path": "reports/physical_mount_v3_rl_fixed/cad_render_evidence.json",
-      "bytes": 1156,
-      "sha256": "54b598d9834a032b6cf3aff03136ef5eb73f081008a96a4ccc3f937ef77ef024"
-    },
-    {
       "path": "reports/physical_mount_v3_rl_fixed/coordinated_motion_evidence.json",
       "bytes": 1593,
-      "sha256": "99f8e55e45346af023e71b609f2c4462851a784a81b1660eb7a986f16142757f"
+      "sha256": "6e796fe48e2ceb3b00157ab000b7ffb1c5c982ef2f594cf47731ca058e80d206"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/fk_manifest_gate.json",
-      "bytes": 12397,
-      "sha256": "ab30d9eb0b67c52eb35a82f73c9489e916733765d00a5ebd32de32dd35b24c7b"
+      "bytes": 12373,
+      "sha256": "a4e596303d335ed939673affcce02f6496624b9d4efa7e6ba1f47b7856bb72cc"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/release_gates.json",
-      "bytes": 13475,
-      "sha256": "457dad950f36ff8ae51d6e4e37bd7a8688f10db74f1491b8c3cb59efadf2fed8"
+      "bytes": 13728,
+      "sha256": "3bac3a2b6afc9b9b5a05062e975ba58a95fb1adb549d3570bd60cb20bf3a3a5a"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/solidworks_component_manifest.csv",
-      "bytes": 7489,
-      "sha256": "5cc80d3995edf5449202c3fd81b99c5dc8cabc6b24fcfec161cc4996ef3ebc9d"
+      "bytes": 7362,
+      "sha256": "c9f35030148571a483f35b7a3d197b319e500286beb74cb5b01a221b371b63a6"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/solidworks_gate.json",
-      "bytes": 986,
-      "sha256": "d15888afb7634e29d3585dcc7b1eb0dfa12b6545c10327c66b1a659b6dbf5513"
+      "bytes": 2474,
+      "sha256": "7dbf8ff696d410aa1efe8cae142869a30d997170b3820151f047935493d5737d"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/solidworks_interference_gate.json",
-      "bytes": 1865,
-      "sha256": "282348b6edc80891d571a3d8f69b2ad902b213591197da946b8f989e56f32e66"
+      "bytes": 3338,
+      "sha256": "e99b433d8363f35fc5a288d46b3c458a37bd73eaf238d5d13136aa7ef62af7ed"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/solidworks_runtime_gate.json",
@@ -2174,13 +2414,18 @@
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/solidworks_trace.log",
-      "bytes": 27742,
-      "sha256": "16b407bda473b946491b879f1a2a1b5f87eabf589033f34bcbd936b17b60d6e4"
+      "bytes": 54872,
+      "sha256": "a277239a889e375f010e108ac39f067d8106ecb2d41fc5146b91a1243d028186"
     },
     {
       "path": "reports/physical_mount_v3_rl_fixed/sts3250_quasistatic_torque_gate.json",
-      "bytes": 6357,
-      "sha256": "a63a60c234a2df1722740f6e5d029c13f47b3dbf0eb3da9409273365ab50b795"
+      "bytes": 6372,
+      "sha256": "bdcd04658ae46b946833f28542b7f2ce4ff1df1164f87a5dee9af7ffb0d0251c"
+    },
+    {
+      "path": "reports/publish_validation.json",
+      "bytes": 808,
+      "sha256": "7d94bea63dbe358ee3189b340a934b93fc40af90c1f362652fc80d921e0827dd"
     },
     {
       "path": "requirements-generation.txt",
@@ -2209,23 +2454,23 @@
     },
     {
       "path": "scripts/validate_release.py",
-      "bytes": 13078,
-      "sha256": "c0aa86e5cdb0727469bc26e7d4ba29a80aef75efe8e821aa508c77baa41a9adf"
+      "bytes": 5414,
+      "sha256": "3258369b8dbbdf257d442762b2e8b0c739c5506395a8274d4897bec4012d958f"
     },
     {
       "path": "snapshots/motion/physical_mount_v3_rl_fixed/motion_frame_000.png",
-      "bytes": 23580,
-      "sha256": "f9df9f493480fa88ab5796080e9dc3ed56747dc998eb80d1fb3da242cd081775"
+      "bytes": 22571,
+      "sha256": "48603f4cf7d0492b39cafb345ff9b1acb9ffd88408bf99bd8efba4660270cc12"
     },
     {
       "path": "snapshots/motion/physical_mount_v3_rl_fixed/motion_frame_016.png",
-      "bytes": 24546,
-      "sha256": "5b520e8e0afa38e4d29617bcac3391e2f09d154a79f684bb4c983ce50d130853"
+      "bytes": 23408,
+      "sha256": "0dc3e7e652dd1ee0bedf66735f42aaf0b5c1fd2ab52e14613ed938d9d506f381"
     },
     {
       "path": "snapshots/motion/physical_mount_v3_rl_fixed/zeroth01_v3_18dof_mujoco_motion.gif",
-      "bytes": 1606336,
-      "sha256": "e5a15cc79e3cb617e079f7eb7ea155f056e54cec77f2b41ba2d5c3e084208a9b"
+      "bytes": 1530024,
+      "sha256": "635afce5d7605de754e3a6555c91b5ca43f19f8323b2aefd064a71117a6d2296"
     },
     {
       "path": "snapshots/physical_mount_v1/physical_mount_v1_16_blue_servos_front.png",
@@ -2319,23 +2564,23 @@
     },
     {
       "path": "snapshots/solidworks/physical_mount_v3_rl_fixed/v3_solidworks_normal_front.png",
-      "bytes": 276814,
-      "sha256": "7ea19c2fc2701c9fc4a0f049133c879f2470eeea356057a68e5b7ad8d6fbb063"
+      "bytes": 283463,
+      "sha256": "8cfa7fcf9fe1ceab726db8e0f1b6bcb3bb6d9d7fbd1791ea0851ba275ca21bcf"
     },
     {
       "path": "snapshots/solidworks/physical_mount_v3_rl_fixed/v3_solidworks_normal_iso.png",
-      "bytes": 449580,
-      "sha256": "3d73f2e86ebecf66433c90132ffe3bba12e61b9dc010c665856a0d8b834f2616"
+      "bytes": 444556,
+      "sha256": "2e476725e41ec9118d1b476d1391bd89c231832255e7ab4eef8f001a663b5115"
     },
     {
       "path": "snapshots/solidworks/physical_mount_v3_rl_fixed/v3_solidworks_xray_front.png",
-      "bytes": 370159,
-      "sha256": "c5288251d0d9f5378b550369aef2239e91de86fb0ec50190243d59dcab0beb2e"
+      "bytes": 389965,
+      "sha256": "98c543d5e52c44338a280daf4db4e186e7875f6c3a59cdd7ef58f0aa9ea830a7"
     },
     {
       "path": "snapshots/solidworks/physical_mount_v3_rl_fixed/v3_solidworks_xray_iso.png",
-      "bytes": 718077,
-      "sha256": "9a85d9da9e99e7115a614ba03564562630ac478c330bac16aa465c3719537996"
+      "bytes": 708165,
+      "sha256": "d24c990bd9e21a385abd1434eff0c6ba9cd165892698cda42e71b8d1c2fcbd16"
     },
     {
       "path": "source_assets/PHYSICAL_MOUNT_V1_SOURCE_LOCK.json",
@@ -2371,71 +2616,6 @@
       "path": "source_assets/vendor/FEETECH_STS3250_SPEC.pdf",
       "bytes": 542825,
       "sha256": "c471fe4e3b872423100ec28726800e65bfc5eb7aa14a82e35db28d3c8e89ab28"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/Model_Size.pdf",
-      "bytes": 286360,
-      "sha256": "b87ea1ce52bb7a1627f787e516f799cecefe7cd568204d3d07494c968eb9428a"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/Model_Size.png",
-      "bytes": 203079,
-      "sha256": "0f3cc33a30bb74549c43affa8ff26d3f8ab2319f02eebe05a15994c0a5cf9bc1"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/SOURCE.md",
-      "bytes": 2248,
-      "sha256": "a89cd47f92bad587b2250131d9e1a1291b59773fd84a76de06d925b130f077eb"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-Base.stl",
-      "bytes": 872384,
-      "sha256": "46990c8941eca02082eca9b11b7dfdefd03d435142c52daee3dc95e1196271c8"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-BaseCover.stl",
-      "bytes": 270084,
-      "sha256": "938ff6547f93ae7f20b26e253e0ee6221d9418c4ce2ea07bce52f8cee0a61495"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-BearingFixture.stl",
-      "bytes": 58284,
-      "sha256": "04f511c46afb82db49657daa8ec624e91d4d26d29712290e26d32084af6bc2f7"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-LightGuideBar-A.stl",
-      "bytes": 28884,
-      "sha256": "05313220a4c3734dd0c412a9de04349e4f9b55024ff3a382ea0d85c1d297d2a3"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-LightGuideBar-B.stl",
-      "bytes": 35484,
-      "sha256": "ba640a41fde8b197a20579814fd8ca94eba44e7b4cbcae3096d6a1e556dd7db2"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-MainBody.stl",
-      "bytes": 824784,
-      "sha256": "5495cd313847c2c135fa0309ee64747b93794e3d464a08e76d518b73b13a3107"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-ServoArm.stl",
-      "bytes": 187284,
-      "sha256": "e530ade0873df01ed5b8bf9275358ccf9ffddb494025f64465bf5efde886c9db"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-ServoBody.stl",
-      "bytes": 323984,
-      "sha256": "c21e35ad812b71aa44933055d3873090ae8c184479edf8e66e1fe595df598e1b"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-ServoCover.stl",
-      "bytes": 64084,
-      "sha256": "f79ff641201fdbde78767cd08b29381ebb0146fa929bdd5e1aa41406e5c6280c"
-    },
-    {
-      "path": "source_assets/vendor/m5stack_stackchan_k151/structures/StackChan-ServoSideCover.stl",
-      "bytes": 60884,
-      "sha256": "b4e7906d2f4c5b4d5950c9421b8eadc9ba74b6073f5cee0a67835207d55135ce"
     },
     {
       "path": "upstream/kscale-assets/zbot/meshes/3215_1Flange.collision.stl",

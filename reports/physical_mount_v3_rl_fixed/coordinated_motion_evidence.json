@@ -77,7 +77,7 @@
       0.075
     ]
   },
-  "maximum_vertical_regrounding_correction_m": 0.004435052995038432,
+  "maximum_vertical_regrounding_correction_m": 0.004571064571674346,
   "non_ground_penetrations": [],
   "gate": "PASS",
   "gif": "snapshots/motion/physical_mount_v3_rl_fixed/zeroth01_v3_18dof_mujoco_motion.gif"

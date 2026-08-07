@@ -1,10 +1,10 @@
 {
   "schema": "zeroth01.physical_mount_v3_rl_fixed.fk_manifest_gate.v1",
-  "urdf": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\urdf\\physical_mount_v3_rl_fixed\\zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
-  "manifest": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\cad\\physical_mount_v3_rl_fixed\\ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json",
+  "urdf": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\urdf\\physical_mount_v3_rl_fixed\\zeroth01_physical_mount_v3_rl_fixed_18dof.urdf",
+  "manifest": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v3_rl_fixed\\ZEROTH01_V3_RL_FIXED_18DOF_FULL_ASSEMBLY_MANIFEST.json",
   "movable_joint_count": 18,
-  "total_mass_kg": 3.095471828,
-  "head_parent_link": "stackchan_k151_torso_adapter",
+  "total_mass_kg": 2.969171828,
+  "head_parent_link": "cores3_internal_torso_cradle",
   "neutral_frame_rows": [
     {
       "link": "3215_1Flange",
@@ -58,12 +58,12 @@
     },
     {
       "link": "FOOT",
-      "translation_residual_mm": 1.3995331322634082e-10,
+      "translation_residual_mm": 1.2984137666569806e-10,
       "rotation_max_abs": 4.135307513899924e-13
     },
     {
       "link": "FOOT_2",
-      "translation_residual_mm": 1.4528460096709928e-10,
+      "translation_residual_mm": 1.36756035089356e-10,
       "rotation_max_abs": 8.264039409386359e-13
     },
     {
@@ -219,16 +219,16 @@
       "joint": "left_ankle_roll",
       "parent": "left_ankle_roll_carrier",
       "child": "FOOT",
-      "vertical_offset_mm": -50.000000000025025,
-      "lateral_offset_mm": 2.9215994421903095e-11,
+      "vertical_offset_mm": -30.000000000015014,
+      "lateral_offset_mm": 1.7528614631457793e-11,
       "world_axis_residual": 6.175646381599046e-13
     },
     {
       "joint": "right_ankle_roll",
       "parent": "right_ankle_roll_carrier",
       "child": "FOOT_2",
-      "vertical_offset_mm": -50.00000000001437,
-      "lateral_offset_mm": 2.9218449647516673e-11,
+      "vertical_offset_mm": -30.000000000008576,
+      "lateral_offset_mm": 1.7531069788510003e-11,
       "world_axis_residual": 9.45492337055632e-13
     }
   ],
@@ -248,19 +248,19 @@
     {
       "component": "CARRIER_3215_BothFlange_14",
       "link": "3215_BothFlange_14",
-      "translation_residual_mm": 8.387505392667446e-11,
+      "translation_residual_mm": 8.387812157937067e-11,
       "rotation_max_abs": 8.264039409386359e-13
     },
     {
-      "component": "LEFT_9MM_LIGHTWEIGHT_SOLE",
+      "component": "LEFT_7MM_LIGHTWEIGHT_SOLE",
       "link": "FOOT",
-      "translation_residual_mm": 1.3995331322634082e-10,
+      "translation_residual_mm": 1.2984137666569806e-10,
       "rotation_max_abs": 4.135307513899924e-13
     },
     {
-      "component": "RIGHT_9MM_LIGHTWEIGHT_SOLE",
+      "component": "RIGHT_7MM_LIGHTWEIGHT_SOLE",
       "link": "FOOT_2",
-      "translation_residual_mm": 1.4528832327625655e-10,
+      "translation_residual_mm": 1.3675762363816003e-10,
       "rotation_max_abs": 8.264039409386359e-13
     }
   ],
@@ -301,7 +301,7 @@
       "id": "S05",
       "owner_link": "3215_BothFlange_9",
       "translation_residual_mm": 3.38827667196707e-11,
-      "rotation_max_abs": 5.210206871650637e-12,
+      "rotation_max_abs": 5.210206871650621e-12,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
     },
@@ -341,7 +341,7 @@
       "id": "S10",
       "owner_link": "3215_1Flange",
       "translation_residual_mm": 1.6301670098351257e-11,
-      "rotation_max_abs": 4.1320224151986107e-13,
+      "rotation_max_abs": 4.1320202467942657e-13,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
     },
@@ -373,14 +373,14 @@
       "id": "S14",
       "owner_link": "3215_BothFlange_13",
       "translation_residual_mm": 7.594059435360867e-11,
-      "rotation_max_abs": 5.210206871650637e-12,
+      "rotation_max_abs": 5.210206871650621e-12,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
     },
     {
       "id": "S15",
       "owner_link": "3215_BothFlange_14",
-      "translation_residual_mm": 1.254247845932103e-10,
+      "translation_residual_mm": 1.2542683603892085e-10,
       "rotation_max_abs": 8.264040493588531e-13,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
@@ -389,23 +389,23 @@
       "id": "S16",
       "owner_link": "3215_BothFlange_13",
       "translation_residual_mm": 1.1685226144928857e-10,
-      "rotation_max_abs": 4.1320247807411947e-13,
+      "rotation_max_abs": 4.1320247807415486e-13,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
     },
     {
       "id": "S17",
       "owner_link": "right_ankle_roll_carrier",
-      "translation_residual_mm": 1.4528832327625655e-10,
-      "rotation_max_abs": 5.183377877293812e-12,
+      "translation_residual_mm": 1.3675762363816003e-10,
+      "rotation_max_abs": 2.397543672285921e-12,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
     },
     {
       "id": "S18",
       "owner_link": "left_ankle_roll_carrier",
-      "translation_residual_mm": 1.3995331322634082e-10,
-      "rotation_max_abs": 4.976780620532774e-12,
+      "translation_residual_mm": 1.2984137666569806e-10,
+      "rotation_max_abs": 5.425386829375448e-12,
       "mesh": "meshes/v3/sts3250_dimension_controlled.stl",
       "gate": "PASS"
     }

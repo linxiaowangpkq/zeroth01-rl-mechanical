@@ -6,14 +6,15 @@
   "movable_joint_count": 18,
   "blue_sts3250_count": 18,
   "old_claw_count": 0,
-  "purchased_head_module": "M5Stack StackChan K151",
+  "purchased_head_module": "M5Stack CoreS3 K128",
   "removed_custom_head_component_count": 9,
   "removed_interfering_chest_panel_count": 1,
+  "removed_obsolete_upper_head_plate_count": 1,
   "components": [
     {
       "component_id": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
       "role": "source_load_bearing_carrier",
-      "source": "generated/cad/physical_mount_v1/step/skeleton/Z_BOT2_MASTER_BODY_SKELETON.step",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/body_skeleton_top_trimmed_45mm.step",
       "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
       "transform_local_mm_to_world_mm": [
         [
@@ -42,7 +43,7 @@
         ]
       ],
       "color_hex": "#F7F8FA",
-      "notes": "v2/v1 released carrier; complete neutral 6D transform retained without numerical re-symmetrisation"
+      "notes": "source-derived body with only the obsolete upper head plate removed above Z=45 mm; released shoulder/hip interfaces and complete neutral 6D transform retained"
     },
     {
       "component_id": "CARRIER_Z_BOT2_MASTER_SHOULDER2",
@@ -189,13 +190,13 @@
         [
           -1.935495505616882e-08,
           -0.0007973267103086551,
-          0.9999996821350078,
+          0.9999996821350079,
           11.685985465016708
         ],
         [
           3.268105330270428e-07,
           -0.9999996821349546,
-          -0.0007973267103022875,
+          -0.0007973267103022874,
           95.43068719202468
         ],
         [
@@ -228,14 +229,14 @@
         ],
         [
           0.9999996831920167,
-          5.203641301924622e-10,
+          5.203641301924849e-10,
           0.000795999915940129,
           -95.44917821426749
         ],
         [
           1.0679488686010167e-13,
           -0.9999999999997864,
-          6.5358968628132e-07,
+          6.535896862813199e-07,
           -107.41200640516963
         ],
         [
@@ -358,7 +359,7 @@
       "transform_local_mm_to_world_mm": [
         [
           0.000795633890539505,
-          -1.9615303777186314e-08,
+          -1.96153037771863e-08,
           0.9999996834833059,
           9.930879449390005
         ],
@@ -399,7 +400,7 @@
         [
           -3.2733065101240997e-07,
           0.000795653505843197,
-          0.9999996834676456,
+          0.9999996834676457,
           49.213984757823255
         ],
         [
@@ -425,7 +426,7 @@
       "owner_link": "3215_BothFlange_10",
       "transform_local_mm_to_world_mm": [
         [
-          1.987531287212636e-08,
+          1.9875312872126346e-08,
           0.9999996837432616,
           -0.0007953070957399077,
           -8.974205997654211
@@ -467,7 +468,7 @@
         [
           -3.2733065101240997e-07,
           0.000795653505843197,
-          0.9999996834676456,
+          0.9999996834676457,
           47.961908958647356
         ],
         [
@@ -493,7 +494,7 @@
       "owner_link": "3215_BothFlange_14",
       "transform_local_mm_to_world_mm": [
         [
-          1.987531287212636e-08,
+          1.9875312872126346e-08,
           0.9999996837432616,
           -0.0007953070957399077,
           -18.97319876061491
@@ -508,7 +509,7 @@
           -0.9999999999999465,
           1.961541687609957e-08,
           -3.2679477012790634e-07,
-          -271.8179940236519
+          -271.817994023652
         ],
         [
           0.0,
@@ -534,15 +535,15 @@
         ],
         [
           0.0007956535057361845,
-          1.8819430451860105e-08,
-          -0.9999996834676991,
+          1.8819430451860138e-08,
+          -0.9999996834676992,
           48.76187597235637
         ],
         [
           -9.999998929005644e-07,
           -0.9999999999994998,
-          -1.961509008118254e-08,
-          -421.8180006627469
+          -1.9615090081182562e-08,
+          -401.81800066274684
         ],
         [
           0.0,
@@ -574,9 +575,9 @@
         ],
         [
           -3.464103134142194e-07,
-          0.9999999999997135,
+          0.9999999999997136,
           6.73204976747241e-07,
-          -421.8179943504413
+          -401.8179943504414
         ],
         [
           0.0,
@@ -597,13 +598,13 @@
         [
           -0.0007492354545723127,
           -0.0002730662607822385,
-          -0.9999996820404748,
-          12.955377259914988
+          -0.999999682040475,
+          12.95537725991499
         ],
         [
           -0.9396924944700038,
           -0.3420195607241081,
-          0.0007974451893690336,
+          0.0007974451893690335,
           107.20765717973704
         ],
         [
@@ -643,7 +644,7 @@
         [
           -0.34202028390457323,
           -0.9396925696191324,
-          6.5358968628132e-07,
+          6.535896862813199e-07,
           -173.61800722867977
         ],
         [
@@ -759,16 +760,16 @@
       "notes": ""
     },
     {
-      "component_id": "M5STACK_STACKCHAN_K151_PURCHASED_HEAD_POD",
+      "component_id": "M5STACK_CORES3_K128_PURCHASED_HEAD_MODULE",
       "role": "purchased_interaction_head_module",
-      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.step",
-      "owner_link": "m5stack_stackchan_k151_head_pod",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_k128_purchased_envelope.step",
+      "owner_link": "m5stack_cores3_head_module",
       "transform_local_mm_to_world_mm": [
         [
           1.0,
           0.0,
           0.0,
-          15.0
+          38.75
         ],
         [
           0.0,
@@ -780,7 +781,7 @@
           0.0,
           0.0,
           1.0,
-          103.25
+          18.0
         ],
         [
           0.0,
@@ -790,19 +791,19 @@
         ]
       ],
       "color_hex": "#F7F8FA",
-      "notes": "off-the-shelf SKU K151, 187 g complete unit; camera, dual microphones, speaker, display and internal two-axis interaction mechanism included"
+      "notes": "off-the-shelf SKU K128 CoreS3 main unit, official 54 x 54 x 15.5 mm; the full 72.7 g retail-set mass is conservatively assigned here; camera, dual microphones, 1 W speaker, touch display and IMU included"
     },
     {
-      "component_id": "STACKCHAN_K151_TORSO_ADAPTER_3MM_6061",
+      "component_id": "CORES3_INTERNAL_TORSO_CRADLE_2MM_6061",
       "role": "reversible_purchased_head_torso_adapter",
-      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.step",
-      "owner_link": "stackchan_k151_torso_adapter",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.step",
+      "owner_link": "cores3_internal_torso_cradle",
       "transform_local_mm_to_world_mm": [
         [
           1.0,
           0.0,
           0.0,
-          15.0
+          30.0
         ],
         [
           0.0,
@@ -814,7 +815,7 @@
           0.0,
           0.0,
           1.0,
-          66.5
+          18.0
         ],
         [
           0.0,
@@ -824,19 +825,19 @@
         ]
       ],
       "color_hex": "#BFC7D1",
-      "notes": "3 mm 6061 plate; K151 M3 rectangle 48 x 32 mm; torso side uses closed adjustment slots; direct contact gives zero visible neck gap"
+      "notes": "hidden 2 mm 6061 U-cradle with four M3 torso-side holes; perimeter lips retain CoreS3; first-article slot/nut-plate fit is still required"
     },
     {
-      "component_id": "STACKCHAN_K151_FACE_GLASS",
+      "component_id": "CORES3_FACE_GLASS",
       "role": "purchased_head_face_reference",
-      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.step",
-      "owner_link": "m5stack_stackchan_k151_head_pod",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_face_glass_reference.step",
+      "owner_link": "m5stack_cores3_head_module",
       "transform_local_mm_to_world_mm": [
         [
           1.0,
           0.0,
           0.0,
-          15.0
+          38.75
         ],
         [
           0.0,
@@ -848,7 +849,7 @@
           0.0,
           0.0,
           1.0,
-          103.25
+          18.0
         ],
         [
           0.0,
@@ -861,16 +862,16 @@
       "notes": "front glass/display feature of the purchased module"
     },
     {
-      "component_id": "STACKCHAN_K151_CAMERA_WINDOW",
+      "component_id": "CORES3_CAMERA_WINDOW",
       "role": "purchased_head_sensor_window_reference",
-      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.step",
-      "owner_link": "m5stack_stackchan_k151_head_pod",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_camera_reference.step",
+      "owner_link": "m5stack_cores3_head_module",
       "transform_local_mm_to_world_mm": [
         [
           1.0,
           0.0,
           0.0,
-          15.0
+          38.75
         ],
         [
           0.0,
@@ -882,7 +883,7 @@
           0.0,
           0.0,
           1.0,
-          103.25
+          18.0
         ],
         [
           0.0,
@@ -895,16 +896,16 @@
       "notes": "GC0308 camera location; optical frame is published in URDF"
     },
     {
-      "component_id": "STACKCHAN_K151_SCREEN_EXPRESSION",
+      "component_id": "CORES3_SCREEN_EXPRESSION",
       "role": "purchased_head_screen_ui_reference",
-      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.step",
-      "owner_link": "m5stack_stackchan_k151_head_pod",
+      "source": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_expression_reference.step",
+      "owner_link": "m5stack_cores3_head_module",
       "transform_local_mm_to_world_mm": [
         [
           1.0,
           0.0,
           0.0,
-          15.0
+          38.75
         ],
         [
           0.0,
@@ -916,7 +917,7 @@
           0.0,
           0.0,
           1.0,
-          103.25
+          18.0
         ],
         [
           0.0,
@@ -1071,21 +1072,21 @@
       "owner_link": "3215_1Flange",
       "transform_local_mm_to_world_mm": [
         [
-          1.9615517436009588e-08,
-          0.0007973267103022878,
+          1.9615517436009584e-08,
+          0.0007973267103022876,
           0.9999996821350079,
           11.685985465016708
         ],
         [
-          -1.5639980959533112e-11,
+          -1.5639980959533105e-11,
           0.9999996821350081,
-          -0.0007973267103022876,
+          -0.0007973267103022874,
           95.43068719202468
         ],
         [
           -0.9999999999999999,
           0.0,
-          1.961552367109786e-08,
+          1.9615523671097857e-08,
           -107.41200640516963
         ],
         [
@@ -1105,13 +1106,13 @@
       "owner_link": "3215_1Flange_2",
       "transform_local_mm_to_world_mm": [
         [
-          -6.535894792188897e-07,
+          -6.535894792188895e-07,
           0.000795999915940299,
           0.9999996831918031,
           11.533969017315162
         ],
         [
-          5.202573353393771e-10,
+          5.20257335339377e-10,
           0.9999996831920167,
           -0.000795999915940129,
           -95.44917821426749
@@ -1119,7 +1120,7 @@
         [
           -0.9999999999997864,
           0.0,
-          -6.5358968628132e-07,
+          -6.535896862813199e-07,
           -107.41200640516963
         ],
         [
@@ -1275,21 +1276,21 @@
       "owner_link": "3215_BothFlange_9",
       "transform_local_mm_to_world_mm": [
         [
-          2.600156802378807e-10,
+          2.6001568023788064e-10,
           0.9999996834676991,
-          0.000795653506063335,
+          0.0007956535060633349,
           -7.49577310299613
         ],
         [
-          3.2679501309682873e-07,
-          -0.0007956535060633775,
+          3.267950130968287e-07,
+          -0.0007956535060633774,
           0.9999996834676457,
           49.213984757823255
         ],
         [
           0.9999999999999466,
-          5.169878828456423e-26,
-          -3.267951165380389e-07,
+          0.0,
+          -3.2679511653803883e-07,
           -171.81799408107867
         ],
         [
@@ -1343,21 +1344,21 @@
       "owner_link": "3215_BothFlange_13",
       "transform_local_mm_to_world_mm": [
         [
-          2.600156802378807e-10,
+          2.6001568023788064e-10,
           0.9999996834676991,
-          0.000795653506063335,
+          0.0007956535060633349,
           -17.496705166611736
         ],
         [
-          3.2679501309682873e-07,
-          -0.0007956535060633775,
+          3.267950130968287e-07,
+          -0.0007956535060633774,
           0.9999996834676457,
           47.961908958647356
         ],
         [
           0.9999999999999466,
-          5.169878828456423e-26,
-          -3.267951165380389e-07,
+          0.0,
+          -3.2679511653803883e-07,
           -271.8180004013388
         ],
         [
@@ -1392,7 +1393,7 @@
           0.9999999999999466,
           5.169878828456423e-26,
           -3.2679477012790634e-07,
-          -271.8179940236519
+          -271.817994023652
         ],
         [
           0.0,
@@ -1411,21 +1412,21 @@
       "owner_link": "3215_BothFlange_13",
       "transform_local_mm_to_world_mm": [
         [
-          1.5606815188047006e-11,
+          1.560681518804702e-11,
           -0.9999996834676994,
-          0.0007956535057169673,
+          0.0007956535057169672,
           -17.49600134933013
         ],
         [
-          1.961508387237295e-08,
-          0.0007956535057169676,
+          1.961508387237297e-08,
+          0.0007956535057169674,
           0.9999996834676992,
           48.76187597235637
         ],
         [
           -0.9999999999999999,
           0.0,
-          1.9615090081182542e-08,
+          1.9615090081182562e-08,
           -371.8180006627469
         ],
         [
@@ -1460,7 +1461,7 @@
           -0.9999999999997734,
           -2.0679515313825692e-25,
           -6.73204976747241e-07,
-          -371.8179943504413
+          -371.8179943504414
         ],
         [
           0.0,
@@ -1480,21 +1481,21 @@
       "transform_local_mm_to_world_mm": [
         [
           0.0,
-          -0.0,
+          0.0,
           1.0,
           -17.49600134933013
         ],
         [
-          0.0,
           1.0,
+          0.0,
           0.0,
           48.76187597235637
         ],
         [
-          -1.0,
           0.0,
+          1.0,
           0.0,
-          -421.8180006627469
+          -401.81800066274684
         ],
         [
           0.0,
@@ -1504,7 +1505,7 @@
         ]
       ],
       "color_hex": "#1677FF",
-      "notes": "shaft origin coincides with URDF joint frame; new ankle-roll installation; local +Z output axis maps to body +/-X and long case direction points down"
+      "notes": "shaft origin coincides with URDF joint frame; new mirrored 30 mm ankle-roll installation; local +Z output axis maps to body +/-X, local +Y is world up and the 45.22 mm case direction is lateral"
     },
     {
       "component_id": "S17_STS3250_right_ankle_roll",
@@ -1514,21 +1515,21 @@
       "transform_local_mm_to_world_mm": [
         [
           0.0,
-          -0.0,
+          0.0,
           -1.0,
           -18.97399208017936
         ],
         [
-          0.0,
           -1.0,
+          0.0,
           0.0,
           -48.99285783740834
         ],
         [
-          -1.0,
-          -0.0,
           0.0,
-          -421.8179943504413
+          1.0,
+          0.0,
+          -401.8179943504414
         ],
         [
           0.0,
@@ -1538,7 +1539,7 @@
         ]
       ],
       "color_hex": "#1677FF",
-      "notes": "shaft origin coincides with URDF joint frame; new ankle-roll installation; local +Z output axis maps to body +/-X and long case direction points down"
+      "notes": "shaft origin coincides with URDF joint frame; new mirrored 30 mm ankle-roll installation; local +Z output axis maps to body +/-X, local +Y is world up and the 45.22 mm case direction is lateral"
     },
     {
       "component_id": "LEFT_ANKLE_ROLL_CARRIER",
@@ -1548,21 +1549,21 @@
       "transform_local_mm_to_world_mm": [
         [
           0.0,
-          -0.0,
+          0.0,
           1.0,
           -17.49600134933013
         ],
         [
-          0.0,
           1.0,
+          0.0,
           0.0,
           48.76187597235637
         ],
         [
-          -1.0,
           0.0,
+          1.0,
           0.0,
-          -421.8180006627469
+          -401.81800066274684
         ],
         [
           0.0,
@@ -1582,21 +1583,21 @@
       "transform_local_mm_to_world_mm": [
         [
           0.0,
-          -0.0,
+          0.0,
           1.0,
           -17.49600134933013
         ],
         [
-          0.0,
           1.0,
+          0.0,
           0.0,
           48.76187597235637
         ],
         [
-          -1.0,
           0.0,
+          1.0,
           0.0,
-          -421.8180006627469
+          -401.81800066274684
         ],
         [
           0.0,
@@ -1609,8 +1610,8 @@
       "notes": ""
     },
     {
-      "component_id": "LEFT_9MM_LIGHTWEIGHT_SOLE",
-      "role": "replaceable_9mm_perimeter_rib_sole",
+      "component_id": "LEFT_7MM_LIGHTWEIGHT_SOLE",
+      "role": "replaceable_7mm_perimeter_rib_sole",
       "source": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.step",
       "owner_link": "FOOT",
       "transform_local_mm_to_world_mm": [
@@ -1622,15 +1623,15 @@
         ],
         [
           0.0007956535057361845,
-          1.8819430451860105e-08,
-          -0.9999996834676991,
+          1.8819430451860138e-08,
+          -0.9999996834676992,
           48.76187597235637
         ],
         [
           -9.999998929005644e-07,
           -0.9999999999994998,
-          -1.961509008118254e-08,
-          -421.8180006627469
+          -1.9615090081182562e-08,
+          -401.81800066274684
         ],
         [
           0.0,
@@ -1650,21 +1651,21 @@
       "transform_local_mm_to_world_mm": [
         [
           0.0,
-          -0.0,
+          0.0,
           -1.0,
           -18.97399208017936
         ],
         [
-          0.0,
           -1.0,
+          0.0,
           0.0,
           -48.99285783740834
         ],
         [
-          -1.0,
-          -0.0,
           0.0,
-          -421.8179943504413
+          1.0,
+          0.0,
+          -401.8179943504414
         ],
         [
           0.0,
@@ -1684,21 +1685,21 @@
       "transform_local_mm_to_world_mm": [
         [
           0.0,
-          -0.0,
+          0.0,
           -1.0,
           -18.97399208017936
         ],
         [
-          0.0,
           -1.0,
+          0.0,
           0.0,
           -48.99285783740834
         ],
         [
-          -1.0,
-          -0.0,
           0.0,
-          -421.8179943504413
+          1.0,
+          0.0,
+          -401.8179943504414
         ],
         [
           0.0,
@@ -1711,8 +1712,8 @@
       "notes": ""
     },
     {
-      "component_id": "RIGHT_9MM_LIGHTWEIGHT_SOLE",
-      "role": "replaceable_9mm_perimeter_rib_sole",
+      "component_id": "RIGHT_7MM_LIGHTWEIGHT_SOLE",
+      "role": "replaceable_7mm_perimeter_rib_sole",
       "source": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.step",
       "owner_link": "FOOT_2",
       "transform_local_mm_to_world_mm": [
@@ -1730,9 +1731,9 @@
         ],
         [
           -3.464103134142194e-07,
-          0.9999999999997135,
+          0.9999999999997136,
           6.73204976747241e-07,
-          -421.8179943504413
+          -401.8179943504414
         ],
         [
           0.0,
@@ -1745,5 +1746,5 @@
       "notes": ""
     }
   ],
-  "truth_boundary": "source carrier installation geometry + controlled STS3250 envelope + official-size purchased K151 reference; purchased STS3250/adapter first article and as-built mass properties remain HOLD"
+  "truth_boundary": "source carrier installation geometry + controlled STS3250 envelope + official-size purchased CoreS3 reference; purchased STS3250/cradle first article and as-built mass properties remain HOLD"
 }

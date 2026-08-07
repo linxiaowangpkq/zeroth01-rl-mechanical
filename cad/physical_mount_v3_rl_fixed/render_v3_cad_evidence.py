@@ -14,7 +14,10 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from build123d import import_step, import_stl
+from build123d import import_step
+from OCP.BRep import BRep_Tool
+from OCP.TopAbs import TopAbs_REVERSED
+from OCP.TopLoc import TopLoc_Location
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,8 +26,37 @@ ASSEMBLY_MANIFEST = ROOT / "generated" / "cad" / "physical_mount_v3_rl_fixed" / 
 LAYOUT = ROOT / "generated" / "config" / "physical_mount_v3_rl_fixed_actuator_layout.json"
 OUT = ROOT / "snapshots" / "cad" / "physical_mount_v3_rl_fixed"
 REPORT = ROOT / "reports" / "physical_mount_v3_rl_fixed" / "cad_render_evidence.json"
+CACHE_DIR = ROOT / "reports" / "physical_mount_v3_rl_fixed" / "tessellation_cache"
 
 SHELL_KEYS = ("BODY_SKELETON", "TORSO", "CHEST", "HEAD", "VISOR", "CAMERA_WINDOW")
+
+
+def safe_tessellate(shape, tolerance=1.0, angular_tolerance=0.18):
+    """Tessellate imported faceted STEP while skipping null OCCT face meshes."""
+
+    shape.mesh(tolerance, angular_tolerance)
+    vertices = []
+    triangles = []
+    offset = 0
+    for face in shape.faces():
+        location = TopLoc_Location()
+        poly = BRep_Tool.Triangulation_s(face.wrapped, location)
+        if poly is None:
+            continue
+        transform = location.Transformation()
+        reverse = face.wrapped.Orientation() == TopAbs_REVERSED
+        local_vertices = [
+            poly.Node(index).Transformed(transform)
+            for index in range(1, poly.NbNodes() + 1)
+        ]
+        vertices.extend((vertex.X(), vertex.Y(), vertex.Z()) for vertex in local_vertices)
+        for triangle in poly.Triangles():
+            indices = [triangle.Value(index) + offset - 1 for index in (1, 2, 3)]
+            if reverse:
+                indices[1], indices[2] = indices[2], indices[1]
+            triangles.append(tuple(indices))
+        offset += poly.NbNodes()
+    return np.asarray(vertices, dtype=float), np.asarray(triangles, dtype=np.int32)
 
 
 def unit(values):
@@ -52,20 +84,30 @@ def tessellate_actors():
     cache = {}
     for component in manifest["components"]:
         source = ROOT / str(component["source"])
+        # Render the same local-coordinate STEP B-Reps consumed by SolidWorks.
+        # The older source STL files contain baked/global placements; applying
+        # the manifest transform to those a second time creates a false
+        # exploded view and must never be used as assembly evidence.
         render_source = source
-        parts = list(source.parts)
-        if "physical_mount_v1" in parts and "step" in parts and "skeleton" in parts:
-            render_source = ROOT / "generated" / "cad" / "physical_mount_v1" / "skeleton" / source.with_suffix(".stl").name
-        elif "replacements" in parts and source.with_suffix(".stl").is_file():
-            render_source = source.with_suffix(".stl")
         cache_key = str(render_source)
         if cache_key not in cache:
-            shape = import_stl(render_source) if render_source.suffix.lower() == ".stl" else import_step(render_source)
-            vertices, triangles = shape.tessellate(1.0, 0.18)
-            cache[cache_key] = (
-                np.array([(v.X, v.Y, v.Z) for v in vertices], dtype=float),
-                np.asarray(triangles, dtype=np.int32),
-            )
+            stat = render_source.stat()
+            fingerprint = hashlib.sha256(
+                f"{render_source.resolve()}|{stat.st_size}|{stat.st_mtime_ns}".encode("utf-8")
+            ).hexdigest()
+            cached_mesh = CACHE_DIR / f"{fingerprint}.npz"
+            if cached_mesh.is_file():
+                payload = np.load(cached_mesh)
+                cache[cache_key] = (payload["vertices"], payload["triangles"])
+            else:
+                shape = import_step(render_source)
+                cache[cache_key] = safe_tessellate(shape)
+                CACHE_DIR.mkdir(parents=True, exist_ok=True)
+                np.savez_compressed(
+                    cached_mesh,
+                    vertices=cache[cache_key][0],
+                    triangles=cache[cache_key][1],
+                )
         local_points, faces = cache[cache_key]
         transform = np.asarray(component["transform_local_mm_to_world_mm"], dtype=float)
         points = local_points @ transform[:3, :3].T + transform[:3, 3]
@@ -73,6 +115,7 @@ def tessellate_actors():
             continue
         actors.append({
             "label": str(component["component_id"]),
+            "role": str(component["role"]),
             "points": points,
             "faces": faces,
             "color": hex_color(str(component["color_hex"])),
@@ -112,6 +155,11 @@ def render(path, actors, all_points, direction, xray=False, annotate=False):
     shell_edges = []
     light = unit((0.8, -0.5, 1.2))
     for actor in actors:
+        if not xray and actor["role"] in {
+            "internal_payload_controlled_envelope",
+            "reversible_purchased_head_torso_adapter",
+        }:
+            continue
         points, faces = actor["points"], actor["faces"]
         projected = project(points)
         shell = any(key in actor["label"] for key in SHELL_KEYS)
@@ -144,9 +192,9 @@ def render(path, actors, all_points, direction, xray=False, annotate=False):
     text_font = load_font(20)
     small_font = load_font(17, True)
     draw.rounded_rectangle((42, 35, width - 42, 105), 18, fill=(16, 24, 40), outline=(48, 68, 96), width=2)
-    draw.text((70, 52), "ZEROTH-01 v3 RL-FIXED - 18DoF / 3.095 kg nominal", font=title_font, fill=(245, 249, 255))
+    draw.text((70, 52), "ZEROTH-01 v3.1 COMPACT - 18DoF / 2.969 kg nominal / <500 mm", font=title_font, fill=(245, 249, 255))
     draw.text((65, height - 82), "Blue: STS3250 controlled envelope   |   primitive RL collision sweep: PASS", font=text_font, fill=(30, 44, 66))
-    draw.text((65, height - 48), "Physical release: HOLD until STS3250 + K151 adapter first articles and as-built mass/COM/inertia identification", font=text_font, fill=(145, 44, 44))
+    draw.text((65, height - 48), "Physical release: HOLD until STS3250 + CoreS3 cradle first articles and as-built mass/COM/inertia identification", font=text_font, fill=(145, 44, 44))
 
     if annotate:
         layout = json.loads(LAYOUT.read_text(encoding="utf-8"))

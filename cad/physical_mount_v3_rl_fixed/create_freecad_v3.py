@@ -57,7 +57,7 @@ SOLID_XRAY_ROLES = {
     "fixed_q_hand",
     "new_ankle_roll_parent_carrier",
     "new_ankle_roll_child_horn_adapter",
-    "replaceable_9mm_perimeter_rib_sole",
+    "replaceable_7mm_perimeter_rib_sole",
     "reversible_slotted_inboard_adapter",
     "purchased_head_face_reference",
     "purchased_head_sensor_window_reference",
@@ -119,9 +119,9 @@ def build(target: Path, xray: bool) -> dict[str, object]:
     metadata.addProperty("App::PropertyInteger", "BlueSTS3250Count")
     metadata.BlueSTS3250Count = int(payload["blue_sts3250_count"])
     metadata.addProperty("App::PropertyString", "MassNominalKg")
-    metadata.MassNominalKg = "3.095471828"
+    metadata.MassNominalKg = "2.969171828"
     metadata.addProperty("App::PropertyString", "HeadModule")
-    metadata.HeadModule = "M5Stack StackChan K151 purchased complete"
+    metadata.HeadModule = "M5Stack CoreS3 K128 purchased main unit"
     doc.recompute()
     doc.saveAs(str(target))
     App.closeDocument(doc.Name)

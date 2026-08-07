@@ -1,6 +1,6 @@
 {
   "schema": "zeroth01.physical_mount_v3_rl_fixed.cad_build.v1",
-  "cad_brief": "v2 load-bearing appearance + 18 dimension-controlled blue actuator references + bilateral ankle-roll hardware + lightened 9mm soles + purchased M5Stack StackChan K151 interaction head on reversible 3mm aluminium adapter",
+  "cad_brief": "v2 load-bearing assembly with the obsolete upper head plate trimmed at Z=45 mm and controlled CoreS3/cradle/hip-servo installation pockets + 18 dimension-controlled blue actuator references + bilateral 30 mm non-interfering ankle-roll hardware + lightened thickened 7 mm soles + purchased M5Stack CoreS3 interaction head flush-sunk into the upper torso on a hidden 2mm aluminium cradle",
   "assembly": "generated/cad/physical_mount_v3_rl_fixed/ZEROTH01_V3_RL_FIXED_18DOF_DIAGNOSTIC_ASSEMBLY.step",
   "parts": [
     {
@@ -35,10 +35,10 @@
       "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/left_ankle_roll_carrier.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 14842.489520084691,
+      "volume_mm3": 9762.46074783397,
       "bbox_mm": [
-        74.89,
-        31.75,
+        52.1100001,
+        44.0,
         52.25
       ]
     },
@@ -48,10 +48,10 @@
       "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/right_ankle_roll_carrier.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 14842.489520084691,
+      "volume_mm3": 9762.46074783397,
       "bbox_mm": [
-        74.89,
-        31.75,
+        52.1100001,
+        44.0,
         52.25
       ]
     },
@@ -87,10 +87,10 @@
       "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/left_sole_lightweighted.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 20783.138262421955,
+      "volume_mm3": 17265.60770731983,
       "bbox_mm": [
         110.0,
-        9.000000100000001,
+        7.000000100000001,
         42.4
       ]
     },
@@ -100,46 +100,46 @@
       "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/right_sole_lightweighted.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 20783.138263378023,
+      "volume_mm3": 17265.607708063468,
       "bbox_mm": [
         110.0,
-        9.000000100000001,
+        7.000000100000001,
         42.4
       ]
     },
     {
-      "name": "m5stack_stackchan_k151_purchased_envelope",
-      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.step",
-      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_purchased_envelope.stl",
+      "name": "m5stack_cores3_k128_purchased_envelope",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_k128_purchased_envelope.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_k128_purchased_envelope.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 226766.3328039713,
+      "volume_mm3": 44280.03956011274,
       "bbox_mm": [
-        61.5,
+        15.5,
         54.0,
-        70.5
+        54.0
       ]
     },
     {
-      "name": "m5stack_stackchan_k151_face_glass_reference",
-      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.step",
-      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_face_glass_reference.stl",
+      "name": "m5stack_cores3_face_glass_reference",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_face_glass_reference.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_face_glass_reference.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 1971.0830598197253,
+      "volume_mm3": 2296.542263191487,
       "bbox_mm": [
         1.0,
-        46.0,
-        43.0
+        48.0,
+        48.0
       ]
     },
     {
-      "name": "m5stack_stackchan_k151_camera_reference",
-      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.step",
-      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_camera_reference.stl",
+      "name": "m5stack_cores3_camera_reference",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_camera_reference.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_camera_reference.stl",
       "valid_brep": true,
       "solid_count": 1,
-      "volume_mm3": 31.8557495074005,
+      "volume_mm3": 31.855749507400496,
       "bbox_mm": [
         1.5,
         5.2,
@@ -147,31 +147,44 @@
       ]
     },
     {
-      "name": "m5stack_stackchan_k151_expression_reference",
-      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.step",
-      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_stackchan_k151_expression_reference.stl",
+      "name": "m5stack_cores3_expression_reference",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_expression_reference.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/m5stack_cores3_expression_reference.stl",
       "valid_brep": true,
       "solid_count": 2,
-      "volume_mm3": 155.16954434610716,
+      "volume_mm3": 155.1695443461071,
       "bbox_mm": [
-        1.4000000000000021,
+        1.4000000000000004,
         29.4,
-        8.399999999999999
+        8.4
       ]
     },
     {
-      "name": "stackchan_k151_torso_adapter_3mm_6061",
-      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.step",
-      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/stackchan_k151_torso_adapter_3mm_6061.stl",
+      "name": "cores3_internal_torso_cradle_2mm_6061",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/cores3_internal_torso_cradle_2mm_6061.stl",
       "valid_brep": true,
-      "solid_count": 1,
-      "volume_mm3": 11163.233990346816,
+      "solid_count": 4,
+      "volume_mm3": 3432.155821776548,
       "bbox_mm": [
-        66.0,
-        60.0000002,
-        3.0000002000000006
+        9.5,
+        58.0,
+        40.0
+      ]
+    },
+    {
+      "name": "body_skeleton_top_trimmed_45mm",
+      "step": "generated/cad/physical_mount_v3_rl_fixed/parts/body_skeleton_top_trimmed_45mm.step",
+      "stl": "generated/cad/physical_mount_v3_rl_fixed/parts/body_skeleton_top_trimmed_45mm.stl",
+      "valid_brep": true,
+      "solid_count": 0,
+      "volume_mm3": 0.0,
+      "bbox_mm": [
+        134.60505753755837,
+        103.76729816198198,
+        165.3181520104524
       ]
     }
   ],
-  "truth_boundary": "diagnostic assembly; K151 shape is an official-size purchased-module envelope backed by official vendor STL/PDF, not a printable substitute; STS3250 and torso-adapter first articles remain physical sign-off items"
+  "truth_boundary": "diagnostic assembly; CoreS3 is an official-size 54 x 54 x 15.5 mm purchased-module envelope backed by the official K128 product page/structure STL, not a printable substitute; STS3250 and torso-cradle first articles remain physical sign-off items"
 }

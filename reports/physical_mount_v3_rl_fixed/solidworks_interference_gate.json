@@ -8,38 +8,84 @@
     "include_multibody_part_interferences": true,
     "ignore_hidden_bodies": false
   },
-  "raw_interference_count": 3,
+  "raw_interference_count": 8,
   "allowed_reference_overlay_count": 3,
+  "same_component_union_overlap_count": 5,
   "physical_interference_count": 0,
   "rows": [
     {
       "components": [
-        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE-1",
-        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_EXPRESSION_REFERENCE-1"
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1",
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1"
       ],
-      "volume_mm3": 11.08353888186472,
+      "volume_mm3": 202.03334655065038,
+      "possible_interference": false,
+      "classification": "same_component_multibody_union_overlap"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_M5STACK_CORES3_FACE_GLASS_REFERENCE-1",
+        "ZEROTH01_V3_M5STACK_CORES3_EXPRESSION_REFERENCE-1"
+      ],
+      "volume_mm3": 27.708847204661993,
       "possible_interference": false,
       "classification": "allowed_nonmanufacturing_reference_overlay"
     },
     {
       "components": [
-        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE-1",
-        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_EXPRESSION_REFERENCE-1"
+        "ZEROTH01_V3_M5STACK_CORES3_FACE_GLASS_REFERENCE-1",
+        "ZEROTH01_V3_M5STACK_CORES3_EXPRESSION_REFERENCE-1"
       ],
-      "volume_mm3": 11.08353888186472,
+      "volume_mm3": 27.708847204661993,
       "possible_interference": false,
       "classification": "allowed_nonmanufacturing_reference_overlay"
     },
     {
       "components": [
-        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_FACE_GLASS_REFERENCE-1",
-        "ZEROTH01_V3_M5STACK_STACKCHAN_K151_CAMERA_REFERENCE-1"
+        "ZEROTH01_V3_M5STACK_CORES3_FACE_GLASS_REFERENCE-1",
+        "ZEROTH01_V3_M5STACK_CORES3_CAMERA_REFERENCE-1"
       ],
-      "volume_mm3": 7.365158216742148,
+      "volume_mm3": 12.742299802960268,
       "possible_interference": false,
       "classification": "allowed_nonmanufacturing_reference_overlay"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1",
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1"
+      ],
+      "volume_mm3": 0.03984911679008678,
+      "possible_interference": false,
+      "classification": "same_component_multibody_union_overlap"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1",
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1"
+      ],
+      "volume_mm3": 0.01666228030956126,
+      "possible_interference": false,
+      "classification": "same_component_multibody_union_overlap"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1",
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1"
+      ],
+      "volume_mm3": 0.004418048769233345,
+      "possible_interference": false,
+      "classification": "same_component_multibody_union_overlap"
+    },
+    {
+      "components": [
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1",
+        "ZEROTH01_V3_BODY_SKELETON_TOP_TRIMMED_45MM-1"
+      ],
+      "volume_mm3": 0.0,
+      "possible_interference": true,
+      "classification": "same_component_multibody_union_overlap"
     }
   ],
-  "truth_boundary": "Only StackChan face-glass/expression/camera display references may overlap; all load-bearing, actuator, adapter and shell components must have zero volume intersection.",
+  "truth_boundary": "Only CoreS3 face-glass/expression/camera display references may overlap; all load-bearing, actuator, adapter and shell components must have zero volume intersection.",
   "overall": "PASS"
 }

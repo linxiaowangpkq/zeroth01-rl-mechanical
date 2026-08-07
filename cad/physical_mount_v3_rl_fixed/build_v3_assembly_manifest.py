@@ -9,11 +9,11 @@ from __future__ import annotations
 import importlib.util
 import json
 import math
+import struct
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import numpy as np
-import trimesh
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -30,6 +30,27 @@ STS3250_LOCAL_BBOX_CENTER_MM = np.array((-10.11, 0.0, -20.75), dtype=float)
 WHITE = "#F7F8FA"
 BLUE = "#1677FF"
 BLACK = "#101820"
+
+
+def binary_stl_bounds(path: Path) -> tuple[np.ndarray, np.ndarray]:
+    """Read bounds without pulling the visualization-only trimesh package."""
+
+    payload = path.read_bytes()
+    if len(payload) < 84:
+        raise ValueError(f"STL is too short: {path}")
+    triangle_count = struct.unpack_from("<I", payload, 80)[0]
+    if len(payload) != 84 + 50 * triangle_count:
+        raise ValueError(f"only binary STL is supported: {path}")
+    minimum = np.full(3, np.inf, dtype=float)
+    maximum = np.full(3, -np.inf, dtype=float)
+    offset = 84
+    for _ in range(triangle_count):
+        values = struct.unpack_from("<12fH", payload, offset)
+        vertices = np.asarray(values[3:12], dtype=float).reshape(3, 3)
+        minimum = np.minimum(minimum, vertices.min(axis=0))
+        maximum = np.maximum(maximum, vertices.max(axis=0))
+        offset += 50
+    return minimum, maximum
 
 
 def load_module(filename, name):
@@ -73,10 +94,11 @@ def axis_rotation(axis):
 
 
 def ankle_servo_rotation(axis):
-    """Local +Z follows roll axis; the long local X direction points down."""
+    """Mirror cases: local +X is outboard and local +Y is world up."""
 
     z_axis = unit(axis)
-    x_axis = (0.0, 0.0, -1.0)
+    axis_sign = 1.0 if z_axis[0] >= 0.0 else -1.0
+    x_axis = (0.0, axis_sign, 0.0)
     y_axis = cross(z_axis, x_axis)
     return tuple((x_axis[row], y_axis[row], z_axis[row]) for row in range(3))
 
@@ -124,8 +146,8 @@ def fitted_servo_rotations(old_robot, old_tf):
         axis_vector = joint_rotation @ axis_local
         axis_vector = axis_vector / np.linalg.norm(axis_vector)
         owner, mesh_path = visuals[joint_name]
-        mesh = trimesh.load_mesh(mesh_path, process=False)
-        local_center_m = np.mean(np.asarray(mesh.bounds, dtype=float), axis=0)
+        mesh_minimum, mesh_maximum = binary_stl_bounds(mesh_path)
+        local_center_m = (mesh_minimum + mesh_maximum) / 2.0
         owner_rotation = np.asarray(old_tf[owner][0], dtype=float)
         owner_position = np.asarray(old_tf[owner][1], dtype=float)
         source_center_m = owner_rotation @ local_center_m + owner_position
@@ -189,6 +211,8 @@ def main() -> int:
             source = V2_REPLACEMENTS / "R_ARM_MIRROR_1_WRIST_TRIMMED.step"
         elif link_name == "L_ARM_MIRROR_1":
             source = V2_REPLACEMENTS / "L_ARM_MIRROR_1_WRIST_TRIMMED.step"
+        elif link_name == u.BODY:
+            source = V3_PARTS / "body_skeleton_top_trimmed_45mm.step"
         else:
             source = V1_SKELETON / f"{link_name}.step"
         components.append(row(
@@ -199,7 +223,11 @@ def main() -> int:
             matrix4(old_tf[link_name][0], pos_mm[link_name]),
             WHITE,
             link_name,
-            "v2/v1 released carrier; complete neutral 6D transform retained without numerical re-symmetrisation",
+            (
+                "source-derived body with only the obsolete upper head plate removed above Z=45 mm; released shoulder/hip interfaces and complete neutral 6D transform retained"
+                if link_name == u.BODY
+                else "v2/v1 released carrier; complete neutral 6D transform retained without numerical re-symmetrisation"
+            ),
         ))
 
     # Q-hands replace the complete old claw links.
@@ -241,43 +269,43 @@ def main() -> int:
 
     components.append(row(
         ROOT,
-        "M5STACK_STACKCHAN_K151_PURCHASED_HEAD_POD",
+        "M5STACK_CORES3_K128_PURCHASED_HEAD_MODULE",
         "purchased_interaction_head_module",
-        V3_PARTS / "m5stack_stackchan_k151_purchased_envelope.step",
-        matrix4(identity, tuple(value * 1000.0 for value in u.STACKCHAN_HEAD_CENTER_M)),
+        V3_PARTS / "m5stack_cores3_k128_purchased_envelope.step",
+        matrix4(identity, tuple(value * 1000.0 for value in u.CORES3_HEAD_CENTER_M)),
         WHITE,
-        u.STACKCHAN_HEAD_POD,
-        "off-the-shelf SKU K151, 187 g complete unit; camera, dual microphones, speaker, display and internal two-axis interaction mechanism included",
+        u.CORES3_HEAD_POD,
+        "off-the-shelf SKU K128 CoreS3 main unit, official 54 x 54 x 15.5 mm; the full 72.7 g retail-set mass is conservatively assigned here; camera, dual microphones, 1 W speaker, touch display and IMU included",
     ))
     components.append(row(
         ROOT,
-        "STACKCHAN_K151_TORSO_ADAPTER_3MM_6061",
+        "CORES3_INTERNAL_TORSO_CRADLE_2MM_6061",
         "reversible_purchased_head_torso_adapter",
-        V3_PARTS / "stackchan_k151_torso_adapter_3mm_6061.step",
-        matrix4(identity, tuple(value * 1000.0 for value in u.STACKCHAN_ADAPTER_CENTER_M)),
+        V3_PARTS / "cores3_internal_torso_cradle_2mm_6061.step",
+        matrix4(identity, tuple(value * 1000.0 for value in u.CORES3_ADAPTER_CENTER_M)),
         "#BFC7D1",
-        u.STACKCHAN_HEAD_ADAPTER,
-        "3 mm 6061 plate; K151 M3 rectangle 48 x 32 mm; torso side uses closed adjustment slots; direct contact gives zero visible neck gap",
+        u.CORES3_HEAD_ADAPTER,
+        "hidden 2 mm 6061 U-cradle with four M3 torso-side holes; perimeter lips retain CoreS3; first-article slot/nut-plate fit is still required",
     ))
     for component_id, role, filename, feature_color, notes in (
         (
-            "STACKCHAN_K151_FACE_GLASS",
+            "CORES3_FACE_GLASS",
             "purchased_head_face_reference",
-            "m5stack_stackchan_k151_face_glass_reference.step",
+            "m5stack_cores3_face_glass_reference.step",
             BLACK,
             "front glass/display feature of the purchased module",
         ),
         (
-            "STACKCHAN_K151_CAMERA_WINDOW",
+            "CORES3_CAMERA_WINDOW",
             "purchased_head_sensor_window_reference",
-            "m5stack_stackchan_k151_camera_reference.step",
+            "m5stack_cores3_camera_reference.step",
             "#00B8D9",
             "GC0308 camera location; optical frame is published in URDF",
         ),
         (
-            "STACKCHAN_K151_SCREEN_EXPRESSION",
+            "CORES3_SCREEN_EXPRESSION",
             "purchased_head_screen_ui_reference",
-            "m5stack_stackchan_k151_expression_reference.step",
+            "m5stack_cores3_expression_reference.step",
             "#00B8D9",
             "replaceable screen pixels, not a manufactured solid",
         ),
@@ -287,9 +315,9 @@ def main() -> int:
             component_id,
             role,
             V3_PARTS / filename,
-            matrix4(identity, tuple(value * 1000.0 for value in u.STACKCHAN_HEAD_CENTER_M)),
+            matrix4(identity, tuple(value * 1000.0 for value in u.CORES3_HEAD_CENTER_M)),
             feature_color,
-            u.STACKCHAN_HEAD_POD,
+            u.CORES3_HEAD_POD,
             notes,
         ))
 
@@ -315,7 +343,7 @@ def main() -> int:
         else:
             servo_rotation = ankle_servo_rotation(axis)
             fit_residual_mm = 0.0
-            pose_note = "new ankle-roll installation; local +Z output axis maps to body +/-X and long case direction points down"
+            pose_note = "new mirrored 30 mm ankle-roll installation; local +Z output axis maps to body +/-X, local +Y is world up and the 45.22 mm case direction is lateral"
         owner_link = source_servo_owner.get(joint_name, parent)
         components.append(row(
             ROOT,
@@ -335,7 +363,7 @@ def main() -> int:
         roll_rotation = ankle_servo_rotation(axis)
         components.append(row(ROOT, f"{side.upper()}_ANKLE_ROLL_CARRIER", "new_ankle_roll_parent_carrier", V3_PARTS / f"{side}_ankle_roll_carrier.step", matrix4(roll_rotation, pos_mm[foot]), WHITE, carrier, "cage surrounds roll servo; upper anchor reaches released ankle-pitch output"))
         components.append(row(ROOT, f"{side.upper()}_ANKLE_ROLL_HORN", "new_ankle_roll_child_horn_adapter", V3_PARTS / f"{side}_ankle_roll_horn_adapter.step", matrix4(roll_rotation, pos_mm[foot]), BLUE, foot))
-        components.append(row(ROOT, f"{side.upper()}_9MM_LIGHTWEIGHT_SOLE", "replaceable_9mm_perimeter_rib_sole", V3_PARTS / f"{side}_sole_lightweighted.step", matrix4(old_tf[foot][0], pos_mm[foot]), BLACK, foot))
+        components.append(row(ROOT, f"{side.upper()}_7MM_LIGHTWEIGHT_SOLE", "replaceable_7mm_perimeter_rib_sole", V3_PARTS / f"{side}_sole_lightweighted.step", matrix4(old_tf[foot][0], pos_mm[foot]), BLACK, foot))
 
     payload = {
         "schema": "zeroth01.physical_mount_v3_rl_fixed.external_part_assembly.v1",
@@ -345,11 +373,12 @@ def main() -> int:
         "movable_joint_count": len(u.JOINT_SPECS),
         "blue_sts3250_count": sum(item["role"] == "dimension_controlled_sts3250" for item in components),
         "old_claw_count": 0,
-        "purchased_head_module": "M5Stack StackChan K151",
+        "purchased_head_module": "M5Stack CoreS3 K128",
         "removed_custom_head_component_count": len(replaced_head_keys),
         "removed_interfering_chest_panel_count": 1,
+        "removed_obsolete_upper_head_plate_count": 1,
         "components": components,
-        "truth_boundary": "source carrier installation geometry + controlled STS3250 envelope + official-size purchased K151 reference; purchased STS3250/adapter first article and as-built mass properties remain HOLD",
+        "truth_boundary": "source carrier installation geometry + controlled STS3250 envelope + official-size purchased CoreS3 reference; purchased STS3250/cradle first article and as-built mass properties remain HOLD",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

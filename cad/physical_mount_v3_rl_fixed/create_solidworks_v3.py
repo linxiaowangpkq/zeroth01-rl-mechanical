@@ -1,4 +1,4 @@
-"""Create the portable native SolidWorks v3 assembly from the v3 truth manifest.
+"""Create the portable native SolidWorks compact-v3.1 assembly.
 
 The released v2 native carriers/cosmetics are copied, not remodeled.  Only the
 nine new v3 STEP sources are translated.  All 18 servo occurrences reference
@@ -108,7 +108,7 @@ NEW_ROLES = {
     "dimension_controlled_sts3250",
     "new_ankle_roll_parent_carrier",
     "new_ankle_roll_child_horn_adapter",
-    "replaceable_9mm_perimeter_rib_sole",
+    "replaceable_7mm_perimeter_rib_sole",
     "reversible_slotted_inboard_adapter",
     "purchased_interaction_head_module",
     "reversible_purchased_head_torso_adapter",
@@ -118,10 +118,18 @@ NEW_ROLES = {
 }
 
 
+def is_new_v3_part(row: dict[str, object]) -> bool:
+    source = str(row["source"]).replace("\\", "/")
+    return (
+        str(row["role"]) in NEW_ROLES
+        or "/physical_mount_v3_rl_fixed/parts/" in f"/{source}"
+    )
+
+
 def unique_new_sources() -> dict[str, str]:
     result: dict[str, str] = {}
     for row in data()["components"]:
-        if row["role"] in NEW_ROLES:
+        if is_new_v3_part(row):
             source = str(row["source"])
             result[Path(source).stem] = source
     return result
@@ -142,7 +150,7 @@ def v2_native_name(row: dict[str, object]) -> str:
 
 
 def native_part_for(row: dict[str, object]) -> Path:
-    if str(row["role"]) in NEW_ROLES:
+    if is_new_v3_part(row):
         return v3_part_path(str(row["source"]))
     return PORTABLE / v2_native_name(row)
 
@@ -152,7 +160,7 @@ def prepare_portable() -> dict[str, object]:
     copied: list[str] = []
     seen: set[str] = set()
     for row in data()["components"]:
-        if str(row["role"]) in NEW_ROLES:
+        if is_new_v3_part(row):
             continue
         name = v2_native_name(row)
         if name in seen:
@@ -276,6 +284,25 @@ def assemble(startup_timeout: float) -> dict[str, object]:
             }
         )
 
+    occurrence_boxes = []
+    occurrence_box_by_id: dict[str, list[float]] = {}
+    for component_id, component in components.items():
+        raw_box = list(v1.base.call(component, "GetBox", [], False, False) or [])
+        if len(raw_box) != 6:
+            raise RuntimeError(f"SolidWorks GetBox failed for {component_id}: {raw_box}")
+        box = [float(value) for value in raw_box]
+        occurrence_boxes.append(box)
+        occurrence_box_by_id[component_id] = box
+    assembly_bbox_m = {
+        "min": [min(box[index] for box in occurrence_boxes) for index in range(3)],
+        "max": [max(box[index + 3] for box in occurrence_boxes) for index in range(3)],
+    }
+    assembly_bbox_m["size"] = [
+        assembly_bbox_m["max"][index] - assembly_bbox_m["min"][index]
+        for index in range(3)
+    ]
+    standing_height_mm = assembly_bbox_m["size"][2] * 1000.0
+
     payload_ids = {
         str(row["component_id"])
         for row in manifest["components"]
@@ -343,6 +370,22 @@ def assemble(startup_timeout: float) -> dict[str, object]:
         "xray_save_gate": "PASS" if TOP_ASM.is_file() and xray_code >= 0 else "FAIL",
         "normal_view_gate": "PASS" if all(normal_views.values()) else "FAIL",
         "xray_view_gate": "PASS" if all(xray_views.values()) else "FAIL",
+        "assembly_bbox_m": assembly_bbox_m,
+        "standing_height_mm": standing_height_mm,
+        "standing_height_limit_mm": 500.0,
+        "standing_height_gate": "PASS" if standing_height_mm <= 500.0 else "FAIL",
+        "highest_occurrences": [
+            {"component_id": name, "max_z_m": box[5]}
+            for name, box in sorted(
+                occurrence_box_by_id.items(), key=lambda item: item[1][5], reverse=True
+            )[:5]
+        ],
+        "lowest_occurrences": [
+            {"component_id": name, "min_z_m": box[2]}
+            for name, box in sorted(
+                occurrence_box_by_id.items(), key=lambda item: item[1][2]
+            )[:5]
+        ],
     }
     gate["overall"] = "PASS" if all(
         gate[key] == "PASS"
@@ -353,6 +396,7 @@ def assemble(startup_timeout: float) -> dict[str, object]:
             "xray_save_gate",
             "normal_view_gate",
             "xray_view_gate",
+            "standing_height_gate",
         )
     ) and actual_count == manifest["component_count"] else "FAIL"
     GATE_REPORT.write_text(json.dumps(gate, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
