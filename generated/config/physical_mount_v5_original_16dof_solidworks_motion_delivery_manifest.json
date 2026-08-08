@@ -1,0 +1,387 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.delivery_manifest.v2",
+  "checksum_convention": {
+    "text": "SHA-256 over raw bytes after CRLF/CR newline normalization to LF; BOM is preserved",
+    "binary": "SHA-256 over exact bytes"
+  },
+  "file_count": 62,
+  "total_bytes": 840848688,
+  "digital_rl_baseline": "PASS",
+  "native_solidworks_motion": "HOLD",
+  "physical_first_article": "HOLD",
+  "files": [
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_1FLANGE.step",
+      "bytes": 65874328,
+      "sha256": "8f31768605e172cd377cb818c2e37babb4b37b282f7c22c7bac6ecf79ab846c9",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_1FLANGE_2.step",
+      "bytes": 65844665,
+      "sha256": "690e70ef03717f814425af6867e8b843ee67109d478efb093bd7812722ef2673",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_BOTHFLANGE_10.step",
+      "bytes": 36590303,
+      "sha256": "2b3df06e2d2c280097ee096cec2f8dfab6071787d5825398dc6365771ff33ce9",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_BOTHFLANGE_13.step",
+      "bytes": 65480568,
+      "sha256": "af8a21aaeb2b5d6c43a9f42539468201da1aef5dfb86927a210c8d5f97b7464e",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_BOTHFLANGE_14.step",
+      "bytes": 65474612,
+      "sha256": "9883c11dd4058270fac7fe7d35ea042bfbbff8a0d6b26fcab69276f2f76ff7fb",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_BOTHFLANGE_5.step",
+      "bytes": 33633829,
+      "sha256": "ffe9620657e2a1c84d750b7568483c5bf0a44abf34b11c07149aaa21169b1931",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_BOTHFLANGE_6.step",
+      "bytes": 33574774,
+      "sha256": "45d2c6c8d8ff3678512a5f4fa7b2e0954dfae7f3eb9f06e037fc6655a2230fcc",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_BOTHFLANGE_9.step",
+      "bytes": 36325804,
+      "sha256": "83acf5e4ef3a59ee7389d3056507d304b9b6b184647dcf860b18e13ba77292a5",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_FOOT.step",
+      "bytes": 5113365,
+      "sha256": "abb2e35386ce1c64d8fd2cd973b3b695f8034278eb013f1770a3a392c0bddd0d",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_FOOT_2.step",
+      "bytes": 5118115,
+      "sha256": "4d952c880a36cbab3c519118b4d9df11f22c2af52263b5dde1dc80c36aaa35e6",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_L_ARM_MIRROR_1.step",
+      "bytes": 22719600,
+      "sha256": "279b8c79ec332f1e11ad4644c4931cbfde79f32e85d7b6e66a5ef83bbf13109c",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_R_ARM_MIRROR_1.step",
+      "bytes": 17651983,
+      "sha256": "fd70163ac51fd55a40f115b8cf963037c314ad2df85c245e8440afe4d025901d",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_U_HIP_L.step",
+      "bytes": 2337978,
+      "sha256": "766fd4f9893ddd43e4432d279597217c65eb96c4bf0be20e09484ed680787624",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_U_HIP_R.step",
+      "bytes": 2023994,
+      "sha256": "617a0b00a9d101ef58645851df77dbc840b1026bd48b927c828cb66183a8e43e",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_Z_BOT2_MASTER_BODY_SKELETON.step",
+      "bytes": 142856438,
+      "sha256": "8863004e869b86c8d31b0c31c1e6543d9e589f784759da97ec5f08dd7bcf72ec",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_Z_BOT2_MASTER_SHOULDER2.step",
+      "bytes": 1963783,
+      "sha256": "84ed5e04a5062c05428870431e7a22bbda9fb19423d9df1670ccdcd24a599072",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_Z_BOT2_MASTER_SHOULDER2_2.step",
+      "bytes": 1917459,
+      "sha256": "ab0a64f1efad238e0a75d4d444573d45815c2e0403f89bc6fb0cf6153e84c799",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_NEUTRAL_REVIEW.glb",
+      "bytes": 216206724,
+      "sha256": "7a6e28697721fd69bf4daeab6281575bd4536e519108635dd621261d46a41c22",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_SOLIDWORKS_MOTION_ASSEMBLY_MANIFEST.json",
+      "bytes": 88358,
+      "sha256": "937d4046619075118300d3ad31b845af84e1bfb9e93f227345fa8058ed9cada0",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json",
+      "bytes": 28072,
+      "sha256": "7593ce622d59ee3654bd046e49204177ff7aeeda94ea898d0dc32039754fd10c",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_hardware_calibration.csv",
+      "bytes": 854,
+      "sha256": "bba12e5cf8dd25ac75b14a3fc70d6771cfc2d7567276db85bc2be565fced2088",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json",
+      "bytes": 4425,
+      "sha256": "e369ed80d32cc84e2a1f78b0867c02191daf74cf4f68c35f6a13cc8bd809c53c",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
+      "bytes": 16370,
+      "sha256": "fbd77027e2da91cef0fee76fd9dc322920ba953a4c0e87b4f57b442473d1550e",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/replacements/L_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "bytes": 380284,
+      "sha256": "86df57c7d78b36a5ec1e17ea694f94e0689f0c942458521bddbcc255432b6b6c",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/replacements/R_ARM_MIRROR_1_WRIST_TRIMMED.stl",
+      "bytes": 380284,
+      "sha256": "f5d07bd3bbdc83d6599ed4dcc847c936ba90cc70cd6b77c750c31de472d124ce",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_1Flange.stl",
+      "bytes": 55184,
+      "sha256": "e64b5a3a5035d8f83fefa0d1f35ddfb59dc5d0e1894658b6ccd456beb06e5f0b",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_1Flange_2.stl",
+      "bytes": 55084,
+      "sha256": "2f9d22857d9a9baefed435514c12e0f43ab15961eac49b6fb2f4539bf8b1ef5e",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_BothFlange_10.stl",
+      "bytes": 120084,
+      "sha256": "0d540fff0c3a52281f77979230d43010764c96983e7f9ba25118cc561a928f79",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_BothFlange_13.stl",
+      "bytes": 50384,
+      "sha256": "583ab5bc16298d78285eae7102d20317c222b96c72afade5087ee8016fb4cc2f",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_BothFlange_14.stl",
+      "bytes": 50184,
+      "sha256": "6be2d40ee96b82ce1237602e4c21ed9f0c43383236b0a7e31eb521a94b519d39",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_BothFlange_5.stl",
+      "bytes": 55084,
+      "sha256": "6c9cd77a348f1c6516600354e25c2d8515414a65428bb0dc7033b5d8e50c3de8",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_BothFlange_6.stl",
+      "bytes": 55084,
+      "sha256": "0921969312b9a024c1fb73cfe8f0b5e5a0adebd1f09510d9e4c131548ea1f9b0",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/3215_BothFlange_9.stl",
+      "bytes": 120584,
+      "sha256": "a31db6cccff0df5f844c05ffa537c294b48e033f20a36a9b7a9f582ac01a3c41",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/FOOT.stl",
+      "bytes": 120684,
+      "sha256": "0cf1a7fba7d5b1976f11c651d365603866a4810e1b7714110a470e9e22544ae4",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/FOOT_2.stl",
+      "bytes": 120684,
+      "sha256": "d0db4d117632591b82daf5fcaf8d407f97aebe98fe55f008f4588635390d0413",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/U_HIP_L.stl",
+      "bytes": 71084,
+      "sha256": "05c8262faa706de1c0cab5ea3472e92062ab2e6503e5cf79c9dc77f34390c517",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/U_HIP_R.stl",
+      "bytes": 71384,
+      "sha256": "9359cab424b25a52d6c559496baee1c7dff482d400b00e1cb16cd0b63865cf08",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/Z_BOT2_MASTER_SHOULDER2.stl",
+      "bytes": 55784,
+      "sha256": "e4bd555196d7ebb0d9b50b1344eb992ffbd0dd886d130f2933d8dc9140919484",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/skeleton/Z_BOT2_MASTER_SHOULDER2_2.stl",
+      "bytes": 55684,
+      "sha256": "a2b55403fe97d789020d31c289c7bd94cbeac0326810040dca26ce1897b8c067",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/body_original_head_interface_trimmed_2p5mm.stl",
+      "bytes": 226984,
+      "sha256": "ac42a9cd2a98d7c609c67fcdfa9558a359ff69a74370bc05524d2c7d66510a26",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/direct_head_torso_nut_plate.stl",
+      "bytes": 281084,
+      "sha256": "34c9ee6d21db35e7f0aa3d5d04b1a65e6954b8a4f84890a5b43cc8b676bf6651",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/head_front_5mm_each_side.stl",
+      "bytes": 388584,
+      "sha256": "eeda98c63b8ccd8fd4c5aec59817954237af4ee3556c7e52b1b9610eefd8f648",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/head_rear_5mm_each_side.stl",
+      "bytes": 360284,
+      "sha256": "6652e6cea07fc7c8e0489ab2be425b9cafe364a4c20046f854037b208ed0ef28",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/head_simple_visor.stl",
+      "bytes": 247084,
+      "sha256": "43cad8ba9edd30977b4af662c3db45bd856c95237974a8b2eb19172eda85794a",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/left_fixed_wrist_support.stl",
+      "bytes": 246684,
+      "sha256": "e142624d7b96a643100495f6dd4bd2981e817c6d7818f2e01be8d7f0347f33d7",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/left_tapered_sole_flare.stl",
+      "bytes": 288784,
+      "sha256": "0145f33fc5920b55be6f291dff0e57f46393e5975044fac434e1b9e7b5e69b0a",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/m5stack_unitv2_purchased_envelope.stl",
+      "bytes": 229684,
+      "sha256": "b9d9a63bebba31ec398ff35adadc4cdc33875cf930e55b87bf2428a43331f0a9",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/right_fixed_wrist_support.stl",
+      "bytes": 246684,
+      "sha256": "14849eb865c211d9d3133e97bacf5a988e8230c86b91925744c8309245f8647a",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/right_tapered_sole_flare.stl",
+      "bytes": 288784,
+      "sha256": "766b69084fa0d9d6669e81ff4560082212e1f11ce45b1933269fc327d1b1f60b",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/sts3250_parent_thrust_ring_2mm.stl",
+      "bytes": 92084,
+      "sha256": "4bfd73330f64d1edf5fc272fa78397e281fea4e759b154698d4d9c4c7925e7f3",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.stl",
+      "bytes": 134484,
+      "sha256": "51c1f9391537c409bba5936b970d239f15261ade7e5d33a58213724b7db86de3",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/sts3250_pcd14_output_bridge_2p05mm.stl",
+      "bytes": 101684,
+      "sha256": "42a18830cfaa3469ca87ff44af8954035a2fc1a3bb45e65bce3133bd0d027edd",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/sts3250_step_parts_exact_shaft_frame.stl",
+      "bytes": 14290084,
+      "sha256": "2cc75ee4c30ca9e623a8beaf06b8debdddc11fb19267872ea29c062b0fcb9a9c",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/meshes/v5/unitv2_removable_cradle.stl",
+      "bytes": 675284,
+      "sha256": "02ae4e43056e12afaf452696c0da960b3de70bbfa007277af98fe0b49806dadb",
+      "hash_mode": "sha256_exact_bytes"
+    },
+    {
+      "path": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion.urdf",
+      "bytes": 51138,
+      "sha256": "415a1573dfae99d04d4f20b9549cad7133f2c495d077fe0299b53e4091d05e40",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/hip_yaw_dynamic_mount_screen.json",
+      "bytes": 5321,
+      "sha256": "0d873aac79024f45953cb4d88f4d25fcda2110828ee3e4821a592440dc5b2e3c",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/hip_yaw_uhip_mount_clearance.json",
+      "bytes": 7251,
+      "sha256": "8c3dd9f779010905c276e7c0fc5dfcad0c2602bbf31903d750db0bd69d037a90",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/mjcf_compile_gate.json",
+      "bytes": 815,
+      "sha256": "c9e17d7b0330624c9e65bc0b0084e9103c966d4ed40bc5a606bb13a452610bfd",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/motion_link_part_gate.json",
+      "bytes": 9887,
+      "sha256": "53f8187a582b2d6eb9286e6009b6f1024457512bc65a87a622df700bd1e01aea",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/offline_brep_component_interference.json",
+      "bytes": 1437,
+      "sha256": "8aaa9314b56cb679d3d3fb56769630ee0365b0fb3890421c27833f7eee777197",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/release_gate.json",
+      "bytes": 1098,
+      "sha256": "6c8e6ac017b5336606b4edb3cb97df1d453b03e5505c0a87f0e831c71819f312",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
+    {
+      "path": "reports/v5_original_16dof_solidworks_motion/urdf_mass_inertia_gate.json",
+      "bytes": 9536,
+      "sha256": "7a7ce175bdbb05fd9867ed63f11049b2bdb474b04b5b4c251221060ee110c1c7",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    }
+  ],
+  "overall": "PASS"
+}

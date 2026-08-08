@@ -1,13 +1,14 @@
 item,manufacturer,model_or_spec,qty,nominal_mass_each_kg,mechanical_interface,status,source
-actuator,FEETECH,STS3250-C001,18,0.0745,"45.22x24.72x35 mm controlled case; 4xM2; 25T/OD5.9; M3x6 output retention",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
+actuator,FEETECH,STS3250-C001,16,0.0745,"45.22x24.72x36.5 mm controlled envelope; official rear M2 holes; 25T/OD5.9; PCD14 4xM3 output",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
 head_interaction,M5Stack,UnitV2,1,0.018,"48x18.5x24 mm controlled envelope; removable cradle; GC2145 camera + microphone",PURCHASED_MODULE_SELECTED,https://docs.m5stack.com/en/unit/unitv2
-head_shell,custom,front/rear 2.2 mm printable shell + M3 nut plate,1,0.055,"direct no-neck torso interface; nominal +5 mm outer envelope; shoulder pockets",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+head_shell,custom,front/rear 2.2 mm printable shell + M3 nut plate,1,0.055,"direct no-neck torso interface; +5 mm on every side; small fillets",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
 compute_module,system,70x12x32 mm maximum controlled envelope,1,0.025,"internal torso tray; USB and power exit",SELECT_EXACT_BOARD_BEFORE_TRAY_FREEZE,
 battery_pack,system,2S thin pack maximum 75x22x34 mm,1,0.18,"internal torso cage; BMS fuse and strain relief required",CELL_BMS_CAPACITY_HOLD,
 torso_imu,system,32x8x25 mm maximum controlled envelope,1,0.006,"rigid internal torso shelf; calibrated transform",SELECT_EXACT_IMU_HOLD,
-ankle_roll_carrier,custom,left/right direct serial carrier,2,0.095,"26.5 mm pitch-to-roll shaft spacing; double supported output",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
-hip_yaw_fastener_stack,custom,"4 mm axial clearance; 4xM2 case screws plus 4xM3 PCD14 output tie rods",2,,"unchanged joint axis; no solid spacer/backplate",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
-lower_leg,custom,original interfaces with 18 mm removed from straight middle span,2,,"terminal servo and ankle interfaces unchanged",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v4_original_minimal/parts
+hip_yaw_mount,custom,"torso-integrated narrow ribs/bosses plus 2xM2x8 per side",2,,"official rear-case pattern; unchanged axis; no floating bridge/backplate",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
+hip_yaw_output,custom,"2.05 mm PCD14 bridge plus four M3 spacer sleeves",2,,"connects released U-hip; full-limit swept clearance",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
+wrist_support,custom,"compact rounded two-M3 fixed support",2,0.0060616,"no claw/gripper/large palm",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
+sole,custom,"9 mm white tapered lower-wider replaceable sole",2,0.0618177,"four M3 clearance holes; no black sole",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
 fasteners,standard,"M2/M3 screws washers locknuts and heat-set inserts",1,,"lengths selected after printed stack measurement",PROCURE_AFTER_STACK_CHECK,
 power_bus,system,"regulated 12 V bus; fuse; branch protection; emergency stop",1,,"wire gauge from measured rollout current and voltage drop",ELECTRICAL_DESIGN_HOLD,
 harness,system,"servo bus power USB and sensor wiring",1,,"service loops and strain relief; no joint shear crossings",ROUTING_FIRST_ARTICLE_HOLD,

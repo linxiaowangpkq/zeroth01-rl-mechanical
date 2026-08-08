@@ -1,0 +1,28 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.review_glb_gate.v1",
+  "source_manifest": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_SOLIDWORKS_MOTION_ASSEMBLY_MANIFEST.json",
+  "component_count": 85,
+  "unique_step_source_count": 38,
+  "solid_count": 347,
+  "bbox_mm": {
+    "min": [
+      -98.01191414504896,
+      -125.02441647054955,
+      -416.4480317511857
+    ],
+    "max": [
+      50.056523977190125,
+      125.0338510983838,
+      74.0412372351
+    ],
+    "size": [
+      148.0684381222391,
+      250.05826756893336,
+      490.48926898628565
+    ]
+  },
+  "output": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_NEUTRAL_REVIEW.glb",
+  "bytes": 216206724,
+  "truth_boundary": "lightweight coloured neutral-pose review derivative; not the manufacturing or interference authority",
+  "overall": "PASS"
+}

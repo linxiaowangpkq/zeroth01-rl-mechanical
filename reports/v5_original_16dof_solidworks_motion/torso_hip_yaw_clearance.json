@@ -1,0 +1,54 @@
+{
+  "schema": "zeroth01.v5.torso_hip_yaw_clearance.v1",
+  "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/Z_BOT2_MASTER_BODY_SKELETON_SOLID.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/torso_mounted_solid.step",
+  "vendor_case_size_mm": [
+    45.22,
+    24.72,
+    37.4
+  ],
+  "clearance_mm": 0.3,
+  "head_keep_max_z_mm": 4.983854409,
+  "joint_axes_changed": false,
+  "link_lengths_changed": false,
+  "released_body_below_head_seam_unchanged_except_internal_case_bays_and_mount_fusion": true,
+  "bbox_mm": {
+    "min": [
+      -67.4718543887127,
+      -38.62491995096,
+      -122.86800929219825
+    ],
+    "max": [
+      67.13320314884567,
+      65.04999846220039,
+      4.983854408999953
+    ]
+  },
+  "solid_count": 33,
+  "volume_mm3": 233309.9405328534,
+  "occt_valid": true,
+  "case_retention": "2x M2x8 per hip-yaw servo through torso-integrated lateral ribs plus 0.30 mm form-fit installation bay; no floating bridge",
+  "rows": [
+    {
+      "servo_component_id": "S07_STS3250_right_hip_yaw",
+      "clearance_mm": 0.3,
+      "nominal_overlap_before_mm3": 435.5405581864404,
+      "nominal_overlap_after_mm3": 0.0,
+      "integrated_mount_overlap_with_torso_mm3": 15.16686856898259,
+      "integrated_mount_overlap_with_exact_servo_mm3": 0.0,
+      "retained_case_fasteners": "2x M2x8 at official negative-X rear-cover pattern",
+      "status": "PASS"
+    },
+    {
+      "servo_component_id": "S08_STS3250_left_hip_yaw",
+      "clearance_mm": 0.3,
+      "nominal_overlap_before_mm3": 568.9048194105281,
+      "nominal_overlap_after_mm3": 0.0,
+      "integrated_mount_overlap_with_torso_mm3": 15.166877428029338,
+      "integrated_mount_overlap_with_exact_servo_mm3": 0.0,
+      "retained_case_fasteners": "2x M2x8 at official negative-X rear-cover pattern",
+      "status": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

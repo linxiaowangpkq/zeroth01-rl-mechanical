@@ -1,0 +1,140 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.rl_handoff.v1",
+  "robot": "Zeroth-01 v5 original 16DoF, physically mounted STS3250",
+  "manifest_sha256": "8cbd8e2a6b0064353803529341d41cd3187f5e336e4b38bec17379680d5942f3",
+  "urdf": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion.urdf",
+  "mjcf_mjx": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
+  "actuator_layout": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json",
+  "hardware_calibration_template": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_hardware_calibration.csv",
+  "nominal_total_mass_kg": 2.745758514949,
+  "mass_limit_kg": 3.0,
+  "movable_joint_count": 16,
+  "actuator": {
+    "model": "FEETECH STS3250-C001",
+    "count": 16,
+    "training_continuous_effort_nm": 1.2552512,
+    "rated_effort_nm": 1.569064,
+    "stall_effort_nm_not_for_training": 4.903,
+    "max_velocity_rad_s": 3.0,
+    "mass_each_kg": 0.0745,
+    "encoder_counts_per_revolution": 4096
+  },
+  "mechanical": {
+    "manufacturing_component_count": 85,
+    "solidworks_motion_rigid_link_count": 17,
+    "ankle_roll_actuator_count": 0,
+    "white_tapered_sole_thickness_mm": 9.0,
+    "wrist_support": "small rounded two-M3 through-bolt support; no gripper/claw/large palm",
+    "static_exact_brep_positive_interferences": 0,
+    "cad_standing_height_mm": 490.48926898628565
+  },
+  "sensors": {
+    "camera": "M5Stack UnitV2 GC2145 envelope in removable head cradle",
+    "microphone": "M5Stack UnitV2 integrated microphone",
+    "torso_imu_frame": "torso_imu_frame",
+    "foot_touch_sites": [
+      "left_sole_front_medial",
+      "left_sole_front_lateral",
+      "left_sole_rear_medial",
+      "left_sole_rear_lateral",
+      "right_sole_front_medial",
+      "right_sole_front_lateral",
+      "right_sole_rear_medial",
+      "right_sole_rear_lateral"
+    ]
+  },
+  "payload_reserved_envelopes_mm": {
+    "compute": [
+      70,
+      12,
+      32
+    ],
+    "battery": [
+      75,
+      22,
+      34
+    ],
+    "torso_imu": [
+      32,
+      8,
+      25
+    ],
+    "m5stack_unitv2": [
+      48,
+      18.5,
+      24
+    ]
+  },
+  "sysid": {
+    "architecture_reference": "ToddlerBot-style MJX identification workflow",
+    "identify": [
+      "per-joint direction/zero/safe count range",
+      "torque gain and deadband at multiple supply voltages",
+      "viscous and Coulomb friction",
+      "reflected armature/rotor inertia",
+      "command-to-motion latency and jitter",
+      "backlash/hysteresis",
+      "battery voltage sag and thermal derating"
+    ],
+    "recommended_sequence": [
+      "one actuator at a time bus scan and low-speed jog",
+      "unloaded chirp and step response",
+      "known-mass pendulum/swing test",
+      "paired-leg quasi-static torque/current sweep",
+      "whole-body stance residual fitting"
+    ]
+  },
+  "domain_randomization_start": {
+    "link_mass_scale": [
+      0.9,
+      1.1
+    ],
+    "full_inertia_scale": [
+      0.8,
+      1.2
+    ],
+    "joint_damping_scale": [
+      0.6,
+      1.5
+    ],
+    "coulomb_friction_scale": [
+      0.5,
+      1.8
+    ],
+    "motor_strength_scale": [
+      0.8,
+      1.05
+    ],
+    "control_latency_s": [
+      0.0,
+      0.035
+    ],
+    "backlash_rad": [
+      0.0,
+      0.035
+    ],
+    "battery_voltage_v": [
+      10.5,
+      12.6
+    ],
+    "ground_friction": [
+      0.6,
+      1.4
+    ]
+  },
+  "verified_gates": {
+    "exact_brep_static_interference": "PASS",
+    "urdf_mass_inertia_graph_limits_contacts": "PASS",
+    "mujoco_runtime_compile": "PASS",
+    "solidworks_static": "STALE_MANIFEST_RERUN_REQUIRED",
+    "solidworks_all_joints_isolated_motion": "PENDING_RERUN"
+  },
+  "training_readiness": "DIGITAL_RL_BASELINE_PASS_NATIVE_SOLIDWORKS_HOLD_PHYSICAL_FIRST_ARTICLE_HOLD",
+  "holds": [
+    "native SOLIDWORKS static and isolated full-limit Motion rerun must pass on the current manifest",
+    "print one STS3250 carrier/output-stack and both wrist/sole coupons before full-set printing",
+    "weigh the first article and identify each link COM/full inertia; replace the engineering ledger",
+    "complete the hardware calibration CSV before real-robot torque enable",
+    "repeat collision/strain-relief sweep with the as-built cable harness"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "zeroth01.v5.torso_hip_yaw_overlap.v1",
+  "rows": [
+    {
+      "servo_component_id": "S07_STS3250_right_hip_yaw",
+      "volume_mm3": 0.0,
+      "bbox_world_mm": {
+        "min": [
+          -20.12913155374739,
+          -55.04339844011796,
+          -105.76800402688134
+        ],
+        "max": [
+          4.590872914941373,
+          -10.142165825227483,
+          -81.46799967950521
+        ],
+        "size": [
+          24.720004468688764,
+          44.901232614890475,
+          24.30000434737613
+        ]
+      },
+      "valid_brep": true,
+      "intersection_step": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/diagnostics/S07_STS3250_right_hip_yaw_TORSO_COMMON.step"
+    },
+    {
+      "servo_component_id": "S08_STS3250_left_hip_yaw",
+      "volume_mm3": 0.0,
+      "bbox_world_mm": {
+        "min": [
+          -20.060905466478605,
+          10.09448511671565,
+          -105.76800403256816
+        ],
+        "max": [
+          4.659099002210152,
+          54.94444060428948,
+          -81.46799754029465
+        ],
+        "size": [
+          24.720004468688757,
+          44.84995548757384,
+          24.30000649227351
+        ]
+      },
+      "valid_brep": true,
+      "intersection_step": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/diagnostics/S08_STS3250_left_hip_yaw_TORSO_COMMON.step"
+    }
+  ],
+  "overall": "FAIL"
+}

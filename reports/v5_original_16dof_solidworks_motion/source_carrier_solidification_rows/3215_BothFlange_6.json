@@ -1,0 +1,13 @@
+{
+  "carrier": "3215_BothFlange_6",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v1\\step\\skeleton\\3215_BothFlange_6.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_6_SOLID.step",
+  "source_faces": 1100,
+  "sewn_shells": 1,
+  "solid_count": 1,
+  "face_count": 1100,
+  "volume_mm3": 4265.897768735842,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS"
+}

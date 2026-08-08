@@ -1,0 +1,22 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.mjcf_compile_gate.v1",
+  "mjcf": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
+  "expected_mass_kg": 2.745758514949,
+  "expected_joint_count": 16,
+  "ankle_roll_actuator_count": 0,
+  "source_gate": "PASS",
+  "inertial_source": "full tensors copied from generated v5 URDF",
+  "collision_source": "v5 compact wrist support + 9 mm lower-wider sole primitives",
+  "runtime_compile_gate": "PASS",
+  "mujoco_version": "3.3.7",
+  "nq": 23,
+  "nv": 22,
+  "nu": 16,
+  "body_count": 22,
+  "geom_count": 24,
+  "sensor_count": 10,
+  "compiled_total_mass_kg": 2.745758514949,
+  "compiled_mass_delta_kg": 0.0,
+  "standing_height_m": 0.41644803175118567,
+  "overall": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "carrier": "Z_BOT2_MASTER_SHOULDER2_2",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v1\\step\\skeleton\\Z_BOT2_MASTER_SHOULDER2_2.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/Z_BOT2_MASTER_SHOULDER2_2_SOLID.step",
+  "source_faces": 1112,
+  "sewn_shells": 1,
+  "solid_count": 1,
+  "face_count": 1112,
+  "volume_mm3": 3098.768957507851,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS"
+}

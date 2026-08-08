@@ -1,0 +1,24 @@
+{
+  "carrier": "L_ARM_MIRROR_1",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v2_minimal\\replacements\\L_ARM_MIRROR_1_WRIST_TRIMMED.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/L_ARM_MIRROR_1_SOLID.step",
+  "source_faces": 7604,
+  "sewn_shells": 4,
+  "solid_count": 4,
+  "face_count": 7604,
+  "volume_mm3": 24922.65944403893,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS",
+  "mesh_topology_repair": false,
+  "symmetry_reconstruction": true,
+  "released_solid_twin": "R_ARM_MIRROR_1",
+  "transform": "released_right_forearm_mirror_x_eq_y_y_eq_minus_x_z_eq_minus_z",
+  "translation_mm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_joint_axes_unchanged": true,
+  "reason": "released trimmed right-forearm STEP contains one invalid shell"
+}

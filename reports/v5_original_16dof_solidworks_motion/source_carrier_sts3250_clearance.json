@@ -1,0 +1,456 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.source_carrier_sts3250_clearance.v1",
+  "clearance_mm": 0.3,
+  "carrier_count": 16,
+  "modified_carrier_count": 16,
+  "rows": [
+    {
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/Z_BOT2_MASTER_SHOULDER2_2_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_2_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 1,
+      "initial_volume_mm3": 3098.76895750785,
+      "final_volume_mm3": 2530.4385589330545,
+      "removed_volume_mm3": 568.3303985747953,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S03_STS3250_right_shoulder_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 568.3303985748328,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_1Flange_2",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_1Flange_2_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_2_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 14305.186526217238,
+      "final_volume_mm3": 12143.35056538087,
+      "removed_volume_mm3": 2161.835960836368,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S01_PARENT_THRUST_RING_right_shoulder_pitch",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 13.990339496237391,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S01_STS3250_right_shoulder_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 1581.3767524032476,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S09_STS3250_right_elbow_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 566.4688702417013,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/Z_BOT2_MASTER_SHOULDER2_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 1,
+      "initial_volume_mm3": 3098.768908032463,
+      "final_volume_mm3": 2530.6277652040935,
+      "removed_volume_mm3": 568.1411428283695,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S06_STS3250_left_shoulder_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 568.1411428284895,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_1Flange",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_1Flange_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 14307.977614586276,
+      "final_volume_mm3": 12146.438312722976,
+      "removed_volume_mm3": 2161.5393018633004,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S02_PARENT_THRUST_RING_left_shoulder_pitch",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 13.990338270653474,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S02_STS3250_left_shoulder_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 1581.080553668353,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S10_STS3250_left_elbow_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 566.4684073876739,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_BothFlange_6",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_6_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_6_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 4265.897768735782,
+      "final_volume_mm3": 3220.3374954822452,
+      "removed_volume_mm3": 1045.5602732535367,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S04_STS3250_right_hip_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 613.6323380538485,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S11_PARENT_THRUST_RING_right_hip_roll",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 32.188028856807044,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S11_STS3250_right_hip_roll",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 399.73990861508213,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_BothFlange_10",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_10_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_10_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 13882.886701454994,
+      "final_volume_mm3": 11771.631465159875,
+      "removed_volume_mm3": 2111.255236295119,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S04_PARENT_THRUST_RING_right_hip_pitch",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 29.980919657273475,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S04_STS3250_right_hip_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 1512.3654171242583,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S13_STS3250_right_knee_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 568.908911206954,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_BothFlange_5",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_5_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_5_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 4265.899224682887,
+      "final_volume_mm3": 3358.6310734132007,
+      "removed_volume_mm3": 907.2681512696859,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S05_STS3250_left_hip_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 613.6325459688543,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S12_PARENT_THRUST_RING_left_hip_roll",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 48.35305915804901,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S12_STS3250_left_hip_roll",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 245.28254614106,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_BothFlange_9",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_9_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_9_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 13882.886701453297,
+      "final_volume_mm3": 11943.904542483324,
+      "removed_volume_mm3": 1938.9821589699732,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S05_PARENT_THRUST_RING_left_hip_pitch",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 28.151267061112875,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S05_STS3250_left_hip_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 1341.0716126074713,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S14_STS3250_left_knee_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 569.7593192788216,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "U_HIP_R",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/U_HIP_R_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_R_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 2,
+      "initial_volume_mm3": 6043.612976624814,
+      "final_volume_mm3": 4940.337547604579,
+      "removed_volume_mm3": 1103.2754290202347,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S07_STS3250_right_hip_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 575.2268573219976,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S11_STS3250_right_hip_roll",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 528.0485716997656,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "U_HIP_L",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/U_HIP_L_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_L_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 2,
+      "initial_volume_mm3": 6042.831832107905,
+      "final_volume_mm3": 3920.1852460421355,
+      "removed_volume_mm3": 2122.6465860657695,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S08_STS3250_left_hip_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 575.2268500235037,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S12_STS3250_left_hip_roll",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 1547.4197360427015,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "L_ARM_MIRROR_1",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/L_ARM_MIRROR_1_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/L_ARM_MIRROR_1_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 1,
+      "initial_volume_mm3": 24922.65944295761,
+      "final_volume_mm3": 24296.17540738587,
+      "removed_volume_mm3": 626.4840355717424,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S09_STS3250_right_elbow_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 626.4840358014046,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "R_ARM_MIRROR_1",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/R_ARM_MIRROR_1_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/R_ARM_MIRROR_1_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 1,
+      "initial_volume_mm3": 24922.659442950822,
+      "final_volume_mm3": 24296.17539243727,
+      "removed_volume_mm3": 626.4840505135508,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S10_STS3250_left_elbow_yaw",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 626.4840507431335,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_BothFlange_14",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_14_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_14_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 7449.471293268444,
+      "final_volume_mm3": 6057.681049341973,
+      "removed_volume_mm3": 1391.7902439264708,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S13_PARENT_THRUST_RING_right_knee_pitch",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 15.554621323671785,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S13_STS3250_right_knee_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 621.0757115077405,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S15_STS3250_right_ankle_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 755.1599261141017,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "3215_BothFlange_13",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_13_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_13_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 3,
+      "initial_volume_mm3": 7449.27480899375,
+      "final_volume_mm3": 6007.19548683827,
+      "removed_volume_mm3": 1442.0793221554804,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S14_PARENT_THRUST_RING_left_knee_pitch",
+          "tool_role": "sts3250_parent_axis_and_thrust_mate",
+          "removed_clearance_sweep_volume_mm3": 12.468168712787763,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S14_STS3250_left_knee_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 674.6703561405062,
+          "remaining_nominal_overlap_mm3": 0.0
+        },
+        {
+          "tool_component_id": "S16_STS3250_left_ankle_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 754.9408187968056,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "FOOT_2",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/FOOT_2_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/FOOT_2_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 1,
+      "initial_volume_mm3": 35421.56686256419,
+      "final_volume_mm3": 34798.007196546656,
+      "removed_volume_mm3": 623.5596660175361,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S15_STS3250_right_ankle_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 623.5596660133677,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "owner_link": "FOOT",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/FOOT_SOLID.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/FOOT_STS3250_CLEARANCED.step",
+      "clearance_mm": 0.3,
+      "operation_count": 1,
+      "initial_volume_mm3": 35421.56746046718,
+      "final_volume_mm3": 34798.00781931791,
+      "removed_volume_mm3": 623.5596411492734,
+      "remaining_nominal_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "operations": [
+        {
+          "tool_component_id": "S16_STS3250_left_ankle_pitch",
+          "tool_role": "purchased_exact_sts3250",
+          "removed_clearance_sweep_volume_mm3": 623.5596411495613,
+          "remaining_nominal_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "joint_axes_changed": false,
+  "link_lengths_changed": false,
+  "released_outer_silhouette_policy": "only exact internal actuator/ring clash volumes swept by 0.30 mm are removed",
+  "overall": "PASS"
+}

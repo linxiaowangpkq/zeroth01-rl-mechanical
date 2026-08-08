@@ -1,0 +1,249 @@
+{
+  "schema": "zeroth01.v5.hip_yaw_uhip_mount_clearance.v1",
+  "clearance_mm": 0.3,
+  "rows": [
+    {
+      "side": "right",
+      "joint": "right_hip_yaw",
+      "owner_link": "U_HIP_R",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_R_STS3250_CLEARANCED.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_R_MOUNT_CLEARANCED.step",
+      "limits_rad": [
+        -0.026179939,
+        0.322013241
+      ],
+      "sweep_samples": 33,
+      "swept_tool_count": 8,
+      "applied_cut_count": 2,
+      "swept_tool_initial_overlaps_mm3": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        45.23629656813272,
+        0.0,
+        0.0,
+        10.079388322479659
+      ],
+      "validation_samples": 17,
+      "clearance_mm": 0.3,
+      "initial_volume_mm3": 4940.3375476042875,
+      "final_volume_mm3": 4885.021862713813,
+      "removed_volume_mm3": 55.315684890474586,
+      "max_remaining_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "joint_axis_changed": false,
+      "neutral_transform_changed": false,
+      "validation": [
+        {
+          "angle_rad": -0.026179939,
+          "angle_deg": -1.5000000126099449,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.00441786525,
+          "angle_deg": -0.2531250332825083,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.0173442085,
+          "angle_deg": 0.9937499460449283,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.03910628225,
+          "angle_deg": 2.240624925372365,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.060868356,
+          "angle_deg": 3.4874999046998014,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.08263042975,
+          "angle_deg": 4.734374884027238,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.1043925035,
+          "angle_deg": 5.981249863354675,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.12615457725,
+          "angle_deg": 7.228124842682112,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.147916651,
+          "angle_deg": 8.474999822009549,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.16967872475,
+          "angle_deg": 9.721874801336986,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.1914407985,
+          "angle_deg": 10.968749780664421,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.21320287225,
+          "angle_deg": 12.215624759991858,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.234964946,
+          "angle_deg": 13.462499739319295,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.25672701975,
+          "angle_deg": 14.709374718646732,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.2784890935,
+          "angle_deg": 15.956249697974167,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.30025116725,
+          "angle_deg": 17.203124677301606,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.322013241,
+          "angle_deg": 18.449999656629043,
+          "remaining_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "side": "left",
+      "joint": "left_hip_yaw",
+      "owner_link": "U_HIP_L",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_L_STS3250_CLEARANCED.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_L_MOUNT_CLEARANCED.step",
+      "limits_rad": [
+        -0.322013241,
+        0.026179939
+      ],
+      "sweep_samples": 33,
+      "swept_tool_count": 8,
+      "applied_cut_count": 2,
+      "swept_tool_initial_overlaps_mm3": [
+        45.19377193268533,
+        0.0,
+        0.0,
+        10.179333423001035,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_samples": 17,
+      "clearance_mm": 0.3,
+      "initial_volume_mm3": 3920.1852460431232,
+      "final_volume_mm3": 3864.8121406874607,
+      "removed_volume_mm3": 55.373105355662574,
+      "max_remaining_overlap_mm3": 0.0,
+      "occt_valid": true,
+      "joint_axis_changed": false,
+      "neutral_transform_changed": false,
+      "validation": [
+        {
+          "angle_rad": -0.322013241,
+          "angle_deg": -18.449999656629043,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.30025116725,
+          "angle_deg": -17.203124677301606,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.2784890935,
+          "angle_deg": -15.956249697974167,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.25672701975,
+          "angle_deg": -14.709374718646732,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.234964946,
+          "angle_deg": -13.462499739319295,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.21320287225,
+          "angle_deg": -12.215624759991858,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.1914407985,
+          "angle_deg": -10.968749780664421,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.16967872475,
+          "angle_deg": -9.721874801336986,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.147916651,
+          "angle_deg": -8.474999822009549,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.12615457725,
+          "angle_deg": -7.228124842682112,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.10439250350000001,
+          "angle_deg": -5.981249863354675,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.08263042975000001,
+          "angle_deg": -4.734374884027239,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.06086835600000001,
+          "angle_deg": -3.4874999046998023,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.03910628225000001,
+          "angle_deg": -2.240624925372366,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.017344208500000013,
+          "angle_deg": -0.9937499460449291,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.004417865249999986,
+          "angle_deg": 0.2531250332825075,
+          "remaining_overlap_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.026179939,
+          "angle_deg": 1.5000000126099449,
+          "remaining_overlap_mm3": 0.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

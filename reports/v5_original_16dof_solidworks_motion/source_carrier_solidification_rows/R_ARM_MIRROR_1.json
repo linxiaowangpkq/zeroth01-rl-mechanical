@@ -1,0 +1,14 @@
+{
+  "carrier": "R_ARM_MIRROR_1",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v2_minimal\\replacements\\R_ARM_MIRROR_1_WRIST_TRIMMED.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/R_ARM_MIRROR_1_SOLID.step",
+  "source_faces": 7604,
+  "sewn_shells": 4,
+  "solid_count": 4,
+  "face_count": 7604,
+  "volume_mm3": 24922.659445837387,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS",
+  "mesh_topology_repair": false
+}

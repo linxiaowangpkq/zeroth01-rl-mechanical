@@ -1,0 +1,334 @@
+{
+  "schema": "zeroth01.v5.hip_yaw_mount_space.v1",
+  "coordinate_convention": "joint local +Z is the servo output axis; purchased case is shifted +4.0 mm; all dimensions mm",
+  "results": [
+    {
+      "side": "right",
+      "joint_world_from_local": [
+        [
+          -9.551763069156241e-17,
+          0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.769134480913454
+        ],
+        [
+          -1.0,
+          0.0,
+          2.757357004084333e-10,
+          -42.861826820814365
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "diagnostic_step": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/diagnostics/right_hip_yaw_joint_local_mount_space.step",
+      "components": [
+        {
+          "label": "fixed_torso",
+          "component_id": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+          "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+          "bbox_joint_local": {
+            "min_mm": [
+              -110.02241168412814,
+              -57.40082652987921,
+              -36.90016200766112
+            ],
+            "max_mm": [
+              24.62202159961446,
+              46.398273267154444,
+              88.40187423947694
+            ],
+            "size_mm": [
+              134.64443328374261,
+              103.79909979703365,
+              125.30203624713806
+            ]
+          }
+        },
+        {
+          "label": "moving_uhip",
+          "component_id": "CARRIER_U_HIP_R",
+          "owner_link": "U_HIP_R",
+          "bbox_joint_local": {
+            "min_mm": [
+              -35.091103874662046,
+              -20.227701976650817,
+              -68.75999271871042
+            ],
+            "max_mm": [
+              18.139482807522164,
+              20.247598574062877,
+              1.5199938789012217
+            ],
+            "size_mm": [
+              53.23058668218421,
+              40.4753005507137,
+              70.27998659761164
+            ]
+          }
+        },
+        {
+          "label": "purchased_servo",
+          "component_id": "S07_STS3250_right_hip_yaw",
+          "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+          "bbox_joint_local": {
+            "min_mm": [
+              -32.7200231628231,
+              -12.360023754600405,
+              -35.450057381309996
+            ],
+            "max_mm": [
+              12.500026155437,
+              12.360026204369998,
+              1.9500001181466837
+            ],
+            "size_mm": [
+              45.220049318260095,
+              24.720049958970403,
+              37.40005749945668
+            ]
+          }
+        },
+        {
+          "label": "output_bridge",
+          "component_id": "S07_PCD14_OUTPUT_BRIDGE_right_hip_yaw",
+          "owner_link": "U_HIP_R",
+          "bbox_joint_local": {
+            "min_mm": [
+              -9.975,
+              -9.975000000000001,
+              1.9500000000000002
+            ],
+            "max_mm": [
+              9.975,
+              9.974999999999998,
+              4.0
+            ],
+            "size_mm": [
+              19.95,
+              19.95,
+              2.05
+            ]
+          }
+        },
+        {
+          "label": "output_sleeves",
+          "component_id": "S07_PCD14_FOUR_SLEEVE_SPACER_right_hip_yaw",
+          "owner_link": "U_HIP_R",
+          "bbox_joint_local": {
+            "min_mm": [
+              -9.0,
+              -9.0,
+              0.3
+            ],
+            "max_mm": [
+              9.0,
+              9.0,
+              1.95
+            ],
+            "size_mm": [
+              18.0,
+              18.0,
+              1.65
+            ]
+          }
+        },
+        {
+          "label": "invalid_old_case_bridge",
+          "component_id": "S07_CASE_4XM2_FASTENER_BRIDGE_right_hip_yaw",
+          "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+          "bbox_joint_local": {
+            "min_mm": [
+              -29.4,
+              -11.15,
+              -39.45
+            ],
+            "max_mm": [
+              9.200000000000001,
+              11.15,
+              -35.45
+            ],
+            "size_mm": [
+              38.6,
+              22.3,
+              4.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "side": "left",
+      "joint_world_from_local": [
+        [
+          9.551763069156241e-17,
+          -0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.700908393644671
+        ],
+        [
+          1.0,
+          0.0,
+          2.757357004084333e-10,
+          42.8141460140535
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "diagnostic_step": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/diagnostics/left_hip_yaw_joint_local_mount_space.step",
+      "components": [
+        {
+          "label": "fixed_torso",
+          "component_id": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+          "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+          "bbox_joint_local": {
+            "min_mm": [
+              -110.29799443448233,
+              -46.33004717988566,
+              -36.90016200765085
+            ],
+            "max_mm": [
+              24.346438849260277,
+              57.46905261714799,
+              88.40187423948721
+            ],
+            "size_mm": [
+              134.64443328374261,
+              103.79909979703365,
+              125.30203624713806
+            ]
+          }
+        },
+        {
+          "label": "moving_uhip",
+          "component_id": "CARRIER_U_HIP_L",
+          "owner_link": "U_HIP_L",
+          "bbox_joint_local": {
+            "min_mm": [
+              -35.12208288993084,
+              -20.227701976647122,
+              -68.75999271869885
+            ],
+            "max_mm": [
+              18.139482809003795,
+              20.228012563671964,
+              1.519993878902146
+            ],
+            "size_mm": [
+              53.26156569893463,
+              40.455714540319086,
+              70.279986597601
+            ]
+          }
+        },
+        {
+          "label": "purchased_servo",
+          "component_id": "S08_STS3250_left_hip_yaw",
+          "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+          "bbox_joint_local": {
+            "min_mm": [
+              -32.7200231628231,
+              -12.360023754600403,
+              -35.45005738131001
+            ],
+            "max_mm": [
+              12.500026155437,
+              12.36002620437,
+              1.9500001181466695
+            ],
+            "size_mm": [
+              45.220049318260095,
+              24.720049958970403,
+              37.40005749945668
+            ]
+          }
+        },
+        {
+          "label": "output_bridge",
+          "component_id": "S08_PCD14_OUTPUT_BRIDGE_left_hip_yaw",
+          "owner_link": "U_HIP_L",
+          "bbox_joint_local": {
+            "min_mm": [
+              -9.975,
+              -9.975000000000001,
+              1.949999999999986
+            ],
+            "max_mm": [
+              9.975,
+              9.975,
+              3.999999999999986
+            ],
+            "size_mm": [
+              19.95,
+              19.950000000000003,
+              2.05
+            ]
+          }
+        },
+        {
+          "label": "output_sleeves",
+          "component_id": "S08_PCD14_FOUR_SLEEVE_SPACER_left_hip_yaw",
+          "owner_link": "U_HIP_L",
+          "bbox_joint_local": {
+            "min_mm": [
+              -9.0,
+              -9.0,
+              0.3
+            ],
+            "max_mm": [
+              9.0,
+              9.0,
+              1.95
+            ],
+            "size_mm": [
+              18.0,
+              18.0,
+              1.65
+            ]
+          }
+        },
+        {
+          "label": "invalid_old_case_bridge",
+          "component_id": "S08_CASE_4XM2_FASTENER_BRIDGE_left_hip_yaw",
+          "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+          "bbox_joint_local": {
+            "min_mm": [
+              -29.4,
+              -11.15,
+              -39.45
+            ],
+            "max_mm": [
+              9.200000000000001,
+              11.15,
+              -35.45
+            ],
+            "size_mm": [
+              38.6,
+              22.3,
+              4.0
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

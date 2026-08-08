@@ -1,0 +1,176 @@
+{
+  "schema": "zeroth01.v5.hip_yaw_dynamic_mount_screen.v1",
+  "design_intent": "two official-pattern M2x8 rear fasteners provide retention; two narrow lateral ribs connect the bosses to measured fixed torso side-wall material and the close-fit installation bay carries case reaction",
+  "angle_samples_per_joint": 9,
+  "rows": [
+    {
+      "side": "right",
+      "joint": "right_hip_yaw",
+      "limits_rad": [
+        -0.026179939,
+        0.322013241
+      ],
+      "m2_axes_joint_local_mm": [
+        [
+          -28.5,
+          -10.25
+        ],
+        [
+          -28.5,
+          10.25
+        ]
+      ],
+      "m2_engagement_z_mm": [
+        -39.45,
+        -31.35
+      ],
+      "screw_vs_servo_volume_mm3": 0.0,
+      "anchor_bar_vs_servo_volume_mm3": 0.0,
+      "anchor_bar_vs_fixed_torso_volume_mm3": 985.5782719066107,
+      "poses": [
+        {
+          "angle_rad": -0.026179939,
+          "angle_deg": -1.5000000126099449,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.0173442085,
+          "angle_deg": 0.9937499460449283,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.060868356,
+          "angle_deg": 3.4874999046998014,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.1043925035,
+          "angle_deg": 5.981249863354675,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.147916651,
+          "angle_deg": 8.474999822009549,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.1914407985,
+          "angle_deg": 10.968749780664421,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.234964946,
+          "angle_deg": 13.462499739319295,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.2784890935,
+          "angle_deg": 15.956249697974167,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.322013241,
+          "angle_deg": 18.449999656629043,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        }
+      ],
+      "max_fixed_screw_vs_moving_volume_mm3": 0.0,
+      "max_anchor_bar_vs_moving_volume_mm3": 0.0,
+      "status": "PASS"
+    },
+    {
+      "side": "left",
+      "joint": "left_hip_yaw",
+      "limits_rad": [
+        -0.322013241,
+        0.026179939
+      ],
+      "m2_axes_joint_local_mm": [
+        [
+          -28.5,
+          -10.25
+        ],
+        [
+          -28.5,
+          10.25
+        ]
+      ],
+      "m2_engagement_z_mm": [
+        -39.45,
+        -31.35
+      ],
+      "screw_vs_servo_volume_mm3": 0.0,
+      "anchor_bar_vs_servo_volume_mm3": 0.0,
+      "anchor_bar_vs_fixed_torso_volume_mm3": 985.5782980788998,
+      "poses": [
+        {
+          "angle_rad": -0.322013241,
+          "angle_deg": -18.449999656629043,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.2784890935,
+          "angle_deg": -15.956249697974167,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.234964946,
+          "angle_deg": -13.462499739319295,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.1914407985,
+          "angle_deg": -10.968749780664421,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.147916651,
+          "angle_deg": -8.474999822009549,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.10439250350000001,
+          "angle_deg": -5.981249863354675,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.06086835600000001,
+          "angle_deg": -3.4874999046998023,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": -0.017344208500000013,
+          "angle_deg": -0.9937499460449291,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        },
+        {
+          "angle_rad": 0.026179939,
+          "angle_deg": 1.5000000126099449,
+          "fixed_screw_vs_moving_volume_mm3": 0.0,
+          "anchor_bar_vs_moving_volume_mm3": 0.0
+        }
+      ],
+      "max_fixed_screw_vs_moving_volume_mm3": 0.0,
+      "max_anchor_bar_vs_moving_volume_mm3": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

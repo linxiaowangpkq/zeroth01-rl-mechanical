@@ -1,0 +1,22 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.release_gate.v1",
+  "manifest_sha256": "8cbd8e2a6b0064353803529341d41cd3187f5e336e4b38bec17379680d5942f3",
+  "digital_rl_baseline": "PASS",
+  "native_solidworks_motion": "HOLD",
+  "physical_first_article": "HOLD",
+  "movable_joint_count": 16,
+  "component_count": 85,
+  "exact_sts3250_count": 16,
+  "nominal_total_mass_kg": 2.745758514949,
+  "cad_envelope_height_mm": 490.48926898628565,
+  "mjcf_standing_kinematic_height_m": 0.41644803175118567,
+  "gates": {
+    "exact_brep_static_interference": "PASS",
+    "urdf_mass_inertia_graph_limits_contacts": "PASS",
+    "mujoco_runtime_compile": "PASS",
+    "solidworks_static": "STALE_MANIFEST_RERUN_REQUIRED",
+    "solidworks_all_joints_isolated_motion": "PENDING_RERUN"
+  },
+  "truth_boundary": "PASS releases only the generated URDF/MJCF and associated engineering ledger to digital RL. It does not certify native SOLIDWORKS Motion, printing, assembly, electrical safety, purchased-part tolerances or real-robot operation.",
+  "overall": "DIGITAL_RL_PASS_WITH_NATIVE_AND_PHYSICAL_HOLDS"
+}

@@ -1,0 +1,374 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.mass_inertia_gate.v1",
+  "urdf": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion.urdf",
+  "movable_joint_count": 16,
+  "movable_joints": [
+    "left_shoulder_yaw",
+    "right_shoulder_yaw",
+    "left_shoulder_pitch",
+    "right_shoulder_pitch",
+    "left_elbow_yaw",
+    "right_elbow_yaw",
+    "left_hip_yaw",
+    "right_hip_yaw",
+    "left_hip_roll",
+    "right_hip_roll",
+    "left_hip_pitch",
+    "right_hip_pitch",
+    "left_knee_pitch",
+    "right_knee_pitch",
+    "left_ankle_pitch",
+    "right_ankle_pitch"
+  ],
+  "nominal_total_mass_kg": 2.745758514949,
+  "hard_mass_limit_kg": 3.0,
+  "mass_gate": "PASS",
+  "inertial_gate": "PASS",
+  "mesh_gate": "PASS",
+  "bad_inertials": [],
+  "missing_meshes": [],
+  "ankle_roll_count": 0,
+  "link_masses_kg": {
+    "Z_BOT2_MASTER_BODY_SKELETON": 1.041,
+    "3215_1Flange": 0.149,
+    "3215_1Flange_2": 0.149,
+    "3215_BothFlange_10": 0.1745,
+    "3215_BothFlange_13": 0.205,
+    "3215_BothFlange_14": 0.205,
+    "3215_BothFlange_5": 0.0995,
+    "3215_BothFlange_6": 0.0995,
+    "3215_BothFlange_9": 0.1745,
+    "FINGER_1": 0.0060616019575,
+    "FINGER_1_2": 0.0060616019575,
+    "FOOT": 0.111817655517,
+    "FOOT_2": 0.111817655517,
+    "L_ARM_MIRROR_1": 0.03,
+    "R_ARM_MIRROR_1": 0.03,
+    "U_HIP_L": 0.02,
+    "U_HIP_R": 0.02,
+    "Z_BOT2_MASTER_SHOULDER2": 0.02,
+    "Z_BOT2_MASTER_SHOULDER2_2": 0.02,
+    "v4_head_shell": 0.055,
+    "m5stack_unitv2": 0.018
+  },
+  "mass_ledger": {
+    "baseline_v4_18dof_mass_kg": 2.85,
+    "removed_two_ankle_roll_modules_kg": 0.19,
+    "baseline_after_16dof_rollback_kg": 2.66,
+    "replaced_old_wrist_budget_kg": 0.01,
+    "left_wrist": {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/left_fixed_wrist_support.step",
+      "volume_mm3": 1597.6941899023902,
+      "density_kg_per_mm3": 1.04e-06,
+      "printed_mass_kg": 0.0016616019574984858,
+      "hardware_mass_kg": 0.0044,
+      "mass_kg": 0.0060616019574984865,
+      "center_m": [
+        -0.0034807999999999675,
+        -0.014063930276391664,
+        0.018799299999999956
+      ],
+      "bbox_m": {
+        "min": [
+          -0.013480800000000001,
+          -0.0175,
+          0.0117993
+        ],
+        "max": [
+          0.006519199999999999,
+          -0.0105,
+          0.025799299999999997
+        ]
+      },
+      "inertia_kg_m2": [
+        [
+          1.0975397996989859e-07,
+          1.1041902560715894e-22,
+          5.520951280357947e-23
+        ],
+        [
+          1.1041902560715894e-22,
+          2.672047173104733e-07,
+          -1.3250283072859073e-21
+        ],
+        [
+          5.520951280357947e-23,
+          -1.3250283072859073e-21,
+          2.0031321665240645e-07
+        ]
+      ]
+    },
+    "right_wrist": {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/right_fixed_wrist_support.step",
+      "volume_mm3": 1597.6941899023843,
+      "density_kg_per_mm3": 1.04e-06,
+      "printed_mass_kg": 0.0016616019574984798,
+      "hardware_mass_kg": 0.0044,
+      "mass_kg": 0.00606160195749848,
+      "center_m": [
+        -0.0034808000000000217,
+        0.014063930276391707,
+        0.01879929999999996
+      ],
+      "bbox_m": {
+        "min": [
+          -0.013480800000000001,
+          0.0105,
+          0.0117993
+        ],
+        "max": [
+          0.006519199999999999,
+          0.0175,
+          0.025799299999999997
+        ]
+      },
+      "inertia_kg_m2": [
+        [
+          1.0975397996989932e-07,
+          -1.6562853841073884e-22,
+          1.1041902560715923e-22
+        ],
+        [
+          -1.6562853841073884e-22,
+          2.672047173104713e-07,
+          4.416761024286369e-22
+        ],
+        [
+          1.1041902560715923e-22,
+          4.416761024286369e-22,
+          2.0031321665240653e-07
+        ]
+      ]
+    },
+    "left_sole": {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/left_tapered_sole_flare.step",
+      "volume_mm3": 36363.130304679566,
+      "density_kg_per_mm3": 1.04e-06,
+      "printed_mass_kg": 0.03781765551686675,
+      "hardware_mass_kg": 0.004,
+      "mass_kg": 0.04181765551686675,
+      "center_m": [
+        -0.01602499979821646,
+        0.04028844445373802,
+        0.018699999684219887
+      ],
+      "bbox_m": {
+        "min": [
+          -0.0640552285396356,
+          0.0356299999,
+          -0.004330228539640647
+        ],
+        "max": [
+          0.032005228539640655,
+          0.04463000010000002,
+          0.04173022853964066
+        ]
+      },
+      "inertia_kg_m2": [
+        [
+          6.9384850051612686e-06,
+          -2.6378386005337402e-14,
+          -4.560119861679479e-15
+        ],
+        [
+          -2.6378386005337402e-14,
+          3.716804301826864e-05,
+          4.455857974396273e-14
+        ],
+        [
+          -4.560119861679479e-15,
+          4.455857974396273e-14,
+          3.0781036658275444e-05
+        ]
+      ]
+    },
+    "right_sole": {
+      "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/right_tapered_sole_flare.step",
+      "volume_mm3": 36363.13030468071,
+      "density_kg_per_mm3": 1.04e-06,
+      "printed_mass_kg": 0.037817655516867936,
+      "hardware_mass_kg": 0.004,
+      "mass_kg": 0.04181765551686793,
+      "center_m": [
+        -0.01602499979821656,
+        -0.04028844445373821,
+        0.01870000031578017
+      ],
+      "bbox_m": {
+        "min": [
+          -0.0640552285396356,
+          -0.04463000010000002,
+          -0.004330228539640647
+        ],
+        "max": [
+          0.032005228539640655,
+          -0.03562999989999999,
+          0.04173022853964066
+        ]
+      },
+      "inertia_kg_m2": [
+        [
+          6.93848500516164e-06,
+          2.637835173262095e-14,
+          4.560064168515365e-15
+        ],
+        [
+          2.637835173262095e-14,
+          3.7168043018270106e-05,
+          4.4558575459873046e-14
+        ],
+        [
+          4.560064168515365e-15,
+          4.4558575459873046e-14,
+          3.0781036658276514e-05
+        ]
+      ]
+    },
+    "computed_total_mass_kg": 2.745758514949,
+    "method": "v4 released-link engineering ledger + exact CAD volumes at PA12 density + explicit fastener allowances; no arbitrary torso balancing"
+  },
+  "mass_method_gate": "PASS",
+  "graph_root_links": [
+    "base_link"
+  ],
+  "graph_errors": [],
+  "graph_gate": "PASS",
+  "joint_limits": [
+    {
+      "joint": "left_shoulder_yaw",
+      "lower": -0.12,
+      "upper": 0.12,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_shoulder_yaw",
+      "lower": -0.12,
+      "upper": 0.12,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_shoulder_pitch",
+      "lower": -0.47123889,
+      "upper": 0.47123889,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_shoulder_pitch",
+      "lower": -0.47123889,
+      "upper": 0.47123889,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_elbow_yaw",
+      "lower": -0.34,
+      "upper": 0.24,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_elbow_yaw",
+      "lower": -0.24,
+      "upper": 0.34,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_hip_yaw",
+      "lower": -0.322013241,
+      "upper": 0.026179939,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_hip_yaw",
+      "lower": -0.026179939,
+      "upper": 0.322013241,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_hip_roll",
+      "lower": -0.06,
+      "upper": 0.22,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_hip_roll",
+      "lower": -0.22,
+      "upper": 0.06,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_hip_pitch",
+      "lower": -0.027495556,
+      "upper": 0.412327408,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_hip_pitch",
+      "lower": -0.412327408,
+      "upper": 0.027495556,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_knee_pitch",
+      "lower": -0.83285928,
+      "upper": 0.0,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_knee_pitch",
+      "lower": 0.0,
+      "upper": 0.83285928,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "left_ankle_pitch",
+      "lower": -0.66415928,
+      "upper": 0.0,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    },
+    {
+      "joint": "right_ankle_pitch",
+      "lower": 0.0,
+      "upper": 0.66415928,
+      "effort": 1.2552512,
+      "velocity": 3.0,
+      "status": "PASS"
+    }
+  ],
+  "joint_limit_gate": "PASS",
+  "sole_contact_plane_gap_mm": {
+    "left": 0.03000010000001746,
+    "right": 0.03000010000001746
+  },
+  "sole_contact_gate": "PASS",
+  "confidence": "engineering estimate; update from first-article scale, pendulum/SysID and harness measurements",
+  "overall": "PASS"
+}

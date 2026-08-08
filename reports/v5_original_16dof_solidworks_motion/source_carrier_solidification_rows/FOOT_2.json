@@ -1,0 +1,13 @@
+{
+  "carrier": "FOOT_2",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v1\\step\\skeleton\\FOOT_2.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/FOOT_2_SOLID.step",
+  "source_faces": 2412,
+  "sewn_shells": 2,
+  "solid_count": 2,
+  "face_count": 2412,
+  "volume_mm3": 35421.56686254345,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS"
+}

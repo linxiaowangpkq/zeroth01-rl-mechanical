@@ -1,0 +1,621 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.servo_axial_fit.v1",
+  "offsets_mm": [
+    0.0,
+    2.05,
+    4.0,
+    6.0
+  ],
+  "results": [
+    {
+      "joint": "right_shoulder_pitch",
+      "housing_owner": "3215_1Flange_2",
+      "output_owner": "Z_BOT2_MASTER_SHOULDER2_2",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 0.0,
+        "housing_owner_overlap_mm3": 32.736100269675966,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 32.736100269675966
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 32.736100269675966,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 32.736100269675966
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 446.0535977732111,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 446.0535977732111
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 356.5285588723151,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 356.5285588723151
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 341.8586807589043,
+          "output_owner_overlap_mm3": 346.141783998661,
+          "total_two_carrier_overlap_mm3": 688.0004647575654
+        }
+      ]
+    },
+    {
+      "joint": "left_shoulder_pitch",
+      "housing_owner": "3215_1Flange",
+      "output_owner": "Z_BOT2_MASTER_SHOULDER2",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 0.0,
+        "housing_owner_overlap_mm3": 32.7361227270559,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 32.7361227270559
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 32.7361227270559,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 32.7361227270559
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 445.8293329085052,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 445.8293329085052
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 356.528650253012,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 356.528650253012
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 341.8587366378088,
+          "output_owner_overlap_mm3": 346.1430726489263,
+          "total_two_carrier_overlap_mm3": 688.0018092867351
+        }
+      ]
+    },
+    {
+      "joint": "right_shoulder_yaw",
+      "housing_owner": "Z_BOT2_MASTER_BODY_SKELETON",
+      "output_owner": "Z_BOT2_MASTER_SHOULDER2_2",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 0.0,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 0.0
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 0.0,
+          "output_owner_overlap_mm3": 148.9149860517575,
+          "total_two_carrier_overlap_mm3": 148.9149860517575
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 0.0,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 0.0
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 16.60342601998685,
+          "output_owner_overlap_mm3": 59.173342390173275,
+          "total_two_carrier_overlap_mm3": 75.77676841016012
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 31.952192348889806,
+          "output_owner_overlap_mm3": 483.2494580054843,
+          "total_two_carrier_overlap_mm3": 515.2016503543741
+        }
+      ]
+    },
+    {
+      "joint": "right_hip_pitch",
+      "housing_owner": "3215_BothFlange_10",
+      "output_owner": "3215_BothFlange_6",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 162.49888159222502,
+        "output_owner_overlap_mm3": 12.629590425436641,
+        "total_two_carrier_overlap_mm3": 175.12847201766166
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 331.6910661113043,
+          "output_owner_overlap_mm3": 158.11742801986045,
+          "total_two_carrier_overlap_mm3": 489.8084941311647
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 162.49888159222502,
+          "output_owner_overlap_mm3": 12.629590425436641,
+          "total_two_carrier_overlap_mm3": 175.12847201766166
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 254.92231029919557,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 254.92231029919557
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 371.35724296163676,
+          "output_owner_overlap_mm3": 321.114556319768,
+          "total_two_carrier_overlap_mm3": 692.4717992814047
+        }
+      ]
+    },
+    {
+      "joint": "left_hip_pitch",
+      "housing_owner": "3215_BothFlange_9",
+      "output_owner": "3215_BothFlange_5",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 168.47881405655878,
+        "output_owner_overlap_mm3": 12.629592646843411,
+        "total_two_carrier_overlap_mm3": 181.10840670340218
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 356.1395332765679,
+          "output_owner_overlap_mm3": 158.1174653398202,
+          "total_two_carrier_overlap_mm3": 514.256998616388
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 168.47881405655878,
+          "output_owner_overlap_mm3": 12.629592646843411,
+          "total_two_carrier_overlap_mm3": 181.10840670340218
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 225.58151467936474,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 225.58151467936474
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 418.4882895205945,
+          "output_owner_overlap_mm3": 321.11524593484944,
+          "total_two_carrier_overlap_mm3": 739.603535455444
+        }
+      ]
+    },
+    {
+      "joint": "left_shoulder_yaw",
+      "housing_owner": "Z_BOT2_MASTER_BODY_SKELETON",
+      "output_owner": "Z_BOT2_MASTER_SHOULDER2",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 0.0014522684338474537,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 0.0014522684338474537
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 0.0,
+          "output_owner_overlap_mm3": 148.8779167071323,
+          "total_two_carrier_overlap_mm3": 148.8779167071323
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 0.0014522684338474537,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 0.0014522684338474537
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 20.59209259851143,
+          "output_owner_overlap_mm3": 59.186135058527654,
+          "total_two_carrier_overlap_mm3": 79.77822765703908
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 30.944181714325893,
+          "output_owner_overlap_mm3": 483.4376672725413,
+          "total_two_carrier_overlap_mm3": 514.3818489868672
+        }
+      ]
+    },
+    {
+      "joint": "right_hip_yaw",
+      "housing_owner": "Z_BOT2_MASTER_BODY_SKELETON",
+      "output_owner": "U_HIP_R",
+      "manifest_existing_axial_shim_mm": 4.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 4.0,
+        "housing_owner_overlap_mm3": -372.7512040866886,
+        "output_owner_overlap_mm3": 0.2578428631602211,
+        "total_two_carrier_overlap_mm3": -372.4933612235283
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": -306.87437269373146,
+          "output_owner_overlap_mm3": 59.58023275765488,
+          "total_two_carrier_overlap_mm3": -247.2941399360766
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": -180.08373621417516,
+          "output_owner_overlap_mm3": 13.07525316070616,
+          "total_two_carrier_overlap_mm3": -167.008483053469
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": -372.7512040866886,
+          "output_owner_overlap_mm3": 0.2578428631602211,
+          "total_two_carrier_overlap_mm3": -372.4933612235283
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": -50.112557802803835,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": -50.112557802803835
+        }
+      ]
+    },
+    {
+      "joint": "left_hip_yaw",
+      "housing_owner": "Z_BOT2_MASTER_BODY_SKELETON",
+      "output_owner": "U_HIP_L",
+      "manifest_existing_axial_shim_mm": 4.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 0.0,
+        "housing_owner_overlap_mm3": -558.7102883687403,
+        "output_owner_overlap_mm3": 59.58023323155286,
+        "total_two_carrier_overlap_mm3": -499.1300551371874
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": -558.7102883687403,
+          "output_owner_overlap_mm3": 59.58023323155286,
+          "total_two_carrier_overlap_mm3": -499.1300551371874
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": -23.08196966131533,
+          "output_owner_overlap_mm3": 13.075251000012395,
+          "total_two_carrier_overlap_mm3": -10.006718661302935
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 60.29830308747804,
+          "output_owner_overlap_mm3": 0.25784257590630677,
+          "total_two_carrier_overlap_mm3": 60.55614566338435
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 95.043065849176,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 95.043065849176
+        }
+      ]
+    },
+    {
+      "joint": "right_elbow_yaw",
+      "housing_owner": "3215_1Flange_2",
+      "output_owner": "L_ARM_MIRROR_1",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 108.41243335367969,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 108.41243335367969
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 81.35686782051164,
+          "output_owner_overlap_mm3": 169.42459897929155,
+          "total_two_carrier_overlap_mm3": 250.78146679980318
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 108.41243335367969,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 108.41243335367969
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 137.5677696910969,
+          "output_owner_overlap_mm3": 64.20954264906885,
+          "total_two_carrier_overlap_mm3": 201.77731234016576
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 92.31660104421907,
+          "output_owner_overlap_mm3": 531.617133962363,
+          "total_two_carrier_overlap_mm3": 623.9337350065821
+        }
+      ]
+    },
+    {
+      "joint": "left_elbow_yaw",
+      "housing_owner": "3215_1Flange",
+      "output_owner": "R_ARM_MIRROR_1",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 108.65040539509542,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 108.65040539509542
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 81.33526990314873,
+          "output_owner_overlap_mm3": 169.42460035598293,
+          "total_two_carrier_overlap_mm3": 250.75987025913167
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 108.65040539509542,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 108.65040539509542
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 135.81957317342926,
+          "output_owner_overlap_mm3": 64.20954003264062,
+          "total_two_carrier_overlap_mm3": 200.0291132060699
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 190.91174420437585,
+          "output_owner_overlap_mm3": 531.6197891629504,
+          "total_two_carrier_overlap_mm3": 722.5315333673262
+        }
+      ]
+    },
+    {
+      "joint": "right_hip_roll",
+      "housing_owner": "3215_BothFlange_6",
+      "output_owner": "U_HIP_R",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 49.85646334485578,
+        "output_owner_overlap_mm3": 39.2618011929159,
+        "total_two_carrier_overlap_mm3": 89.11826453777168
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 139.33617210315867,
+          "output_owner_overlap_mm3": 144.2471505008886,
+          "total_two_carrier_overlap_mm3": 283.5833226040473
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 49.85646334485578,
+          "output_owner_overlap_mm3": 39.2618011929159,
+          "total_two_carrier_overlap_mm3": 89.11826453777168
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 112.46032367673291,
+          "output_owner_overlap_mm3": 267.42853985330765,
+          "total_two_carrier_overlap_mm3": 379.88886353004057
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 170.95704129584217,
+          "output_owner_overlap_mm3": 353.16342308610524,
+          "total_two_carrier_overlap_mm3": 524.1204643819474
+        }
+      ]
+    },
+    {
+      "joint": "left_hip_roll",
+      "housing_owner": "3215_BothFlange_5",
+      "output_owner": "U_HIP_L",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 4.0,
+        "housing_owner_overlap_mm3": 72.2762162731985,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 72.2762162731985
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 184.85962122051777,
+          "output_owner_overlap_mm3": 563.4325328071052,
+          "total_two_carrier_overlap_mm3": 748.2921540276229
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 99.39436736135107,
+          "output_owner_overlap_mm3": 108.740887699284,
+          "total_two_carrier_overlap_mm3": 208.13525506063507
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 72.2762162731985,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 72.2762162731985
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 179.113935700087,
+          "output_owner_overlap_mm3": 287.7259434006098,
+          "total_two_carrier_overlap_mm3": 466.83987910069686
+        }
+      ]
+    },
+    {
+      "joint": "right_knee_pitch",
+      "housing_owner": "3215_BothFlange_14",
+      "output_owner": "3215_BothFlange_10",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 73.82004683389177,
+        "output_owner_overlap_mm3": 12.489997218722303,
+        "total_two_carrier_overlap_mm3": 86.31004405261407
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 169.93973171345698,
+          "output_owner_overlap_mm3": 151.5921266480053,
+          "total_two_carrier_overlap_mm3": 321.53185836146224
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 73.82004683389177,
+          "output_owner_overlap_mm3": 12.489997218722303,
+          "total_two_carrier_overlap_mm3": 86.31004405261407
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 180.80195496697974,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 180.80195496697974
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 236.77306979076468,
+          "output_owner_overlap_mm3": 317.99719788052266,
+          "total_two_carrier_overlap_mm3": 554.7702676712873
+        }
+      ]
+    },
+    {
+      "joint": "left_knee_pitch",
+      "housing_owner": "3215_BothFlange_13",
+      "output_owner": "3215_BothFlange_9",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 81.73828770518486,
+        "output_owner_overlap_mm3": 12.504187918252452,
+        "total_two_carrier_overlap_mm3": 94.24247562343731
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 178.52299081650824,
+          "output_owner_overlap_mm3": 151.80593329380898,
+          "total_two_carrier_overlap_mm3": 330.3289241103172
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 81.73828770518486,
+          "output_owner_overlap_mm3": 12.504187918252452,
+          "total_two_carrier_overlap_mm3": 94.24247562343731
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 201.0137249177341,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 201.0137249177341
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 222.9758098582927,
+          "output_owner_overlap_mm3": 317.5533087324611,
+          "total_two_carrier_overlap_mm3": 540.5291185907538
+        }
+      ]
+    },
+    {
+      "joint": "right_ankle_pitch",
+      "housing_owner": "3215_BothFlange_14",
+      "output_owner": "FOOT_2",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 108.06108427250459,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 108.06108427250459
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 123.32633020788697,
+          "output_owner_overlap_mm3": 161.08888432221022,
+          "total_two_carrier_overlap_mm3": 284.41521453009716
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 108.06108427250459,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 108.06108427250459
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 271.8996932099974,
+          "output_owner_overlap_mm3": 59.58823495325091,
+          "total_two_carrier_overlap_mm3": 331.4879281632483
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": 2.7836399962843927e-08,
+          "output_owner_overlap_mm3": 509.5084438472632,
+          "total_two_carrier_overlap_mm3": 509.5084438750996
+        }
+      ]
+    },
+    {
+      "joint": "left_ankle_pitch",
+      "housing_owner": "3215_BothFlange_13",
+      "output_owner": "FOOT",
+      "manifest_existing_axial_shim_mm": 0.0,
+      "best_trial": {
+        "additional_axial_offset_mm": 2.05,
+        "housing_owner_overlap_mm3": 111.05615018234663,
+        "output_owner_overlap_mm3": 0.0,
+        "total_two_carrier_overlap_mm3": 111.05615018234663
+      },
+      "trials": [
+        {
+          "additional_axial_offset_mm": 0.0,
+          "housing_owner_overlap_mm3": 130.2822807990266,
+          "output_owner_overlap_mm3": 161.0857629486725,
+          "total_two_carrier_overlap_mm3": 291.3680437476991
+        },
+        {
+          "additional_axial_offset_mm": 2.05,
+          "housing_owner_overlap_mm3": 111.05615018234663,
+          "output_owner_overlap_mm3": 0.0,
+          "total_two_carrier_overlap_mm3": 111.05615018234663
+        },
+        {
+          "additional_axial_offset_mm": 4.0,
+          "housing_owner_overlap_mm3": 271.8979051951884,
+          "output_owner_overlap_mm3": 59.58570240434792,
+          "total_two_carrier_overlap_mm3": 331.4836075995363
+        },
+        {
+          "additional_axial_offset_mm": 6.0,
+          "housing_owner_overlap_mm3": -3.3342645955336536e-07,
+          "output_owner_overlap_mm3": 509.50402385587313,
+          "total_two_carrier_overlap_mm3": 509.5040235224467
+        }
+      ]
+    }
+  ],
+  "all_zero_by_axial_shift_only": false,
+  "overall": "FAIL"
+}

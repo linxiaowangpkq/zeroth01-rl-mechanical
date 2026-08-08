@@ -1,0 +1,3162 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.assembly_manifest.v1",
+  "component_count": 85,
+  "movable_joint_count": 16,
+  "blue_sts3250_count": 16,
+  "ankle_roll_actuator_count": 0,
+  "source_shin_count": 2,
+  "source_foot_count": 2,
+  "tapered_lower_wider_sole_count": 2,
+  "black_sole_count": 0,
+  "claw_count": 0,
+  "large_hand_count": 0,
+  "fixed_wrist_support_count": 2,
+  "redundant_full_disc_child_standoff_count": 0,
+  "hip_yaw_four_sleeve_spacer_count": 2,
+  "hip_yaw_case_fastener_bridge_count": 0,
+  "hip_yaw_integrated_case_mount_count": 2,
+  "hip_yaw_case_screw_set_count": 2,
+  "motion_solid_carrier_count": 16,
+  "fixed_reference_carrier_count": 1,
+  "sts3250_catalog_id": "feetech_sts3250",
+  "sts3250_catalog_sha256": "cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf",
+  "joint_specs": [
+    {
+      "id": "S01",
+      "name": "right_shoulder_pitch",
+      "parent": "Z_BOT2_MASTER_SHOULDER2_2",
+      "child": "3215_1Flange_2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.47123889,
+        0.47123889
+      ]
+    },
+    {
+      "id": "S02",
+      "name": "left_shoulder_pitch",
+      "parent": "Z_BOT2_MASTER_SHOULDER2",
+      "child": "3215_1Flange",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.47123889,
+        0.47123889
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "right_shoulder_yaw",
+      "parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child": "Z_BOT2_MASTER_SHOULDER2_2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.12,
+        0.12
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "right_hip_pitch",
+      "parent": "3215_BothFlange_6",
+      "child": "3215_BothFlange_10",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.412327408,
+        0.027495556
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "left_hip_pitch",
+      "parent": "3215_BothFlange_5",
+      "child": "3215_BothFlange_9",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.027495556,
+        0.412327408
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "left_shoulder_yaw",
+      "parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child": "Z_BOT2_MASTER_SHOULDER2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.12,
+        0.12
+      ]
+    },
+    {
+      "id": "S07",
+      "name": "right_hip_yaw",
+      "parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child": "U_HIP_R",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.026179939,
+        0.322013241
+      ]
+    },
+    {
+      "id": "S08",
+      "name": "left_hip_yaw",
+      "parent": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child": "U_HIP_L",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.322013241,
+        0.026179939
+      ]
+    },
+    {
+      "id": "S09",
+      "name": "right_elbow_yaw",
+      "parent": "3215_1Flange_2",
+      "child": "L_ARM_MIRROR_1",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.24,
+        0.34
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "left_elbow_yaw",
+      "parent": "3215_1Flange",
+      "child": "R_ARM_MIRROR_1",
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "limits": [
+        -0.34,
+        0.24
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "right_hip_roll",
+      "parent": "U_HIP_R",
+      "child": "3215_BothFlange_6",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.22,
+        0.06
+      ]
+    },
+    {
+      "id": "S12",
+      "name": "left_hip_roll",
+      "parent": "U_HIP_L",
+      "child": "3215_BothFlange_5",
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "limits": [
+        -0.06,
+        0.22
+      ]
+    },
+    {
+      "id": "S13",
+      "name": "right_knee_pitch",
+      "parent": "3215_BothFlange_10",
+      "child": "3215_BothFlange_14",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        0.0,
+        0.83285928
+      ]
+    },
+    {
+      "id": "S14",
+      "name": "left_knee_pitch",
+      "parent": "3215_BothFlange_9",
+      "child": "3215_BothFlange_13",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.83285928,
+        0.0
+      ]
+    },
+    {
+      "id": "S15",
+      "name": "right_ankle_pitch",
+      "parent": "3215_BothFlange_14",
+      "child": "FOOT_2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        0.0,
+        0.66415928
+      ]
+    },
+    {
+      "id": "S16",
+      "name": "left_ankle_pitch",
+      "parent": "3215_BothFlange_13",
+      "child": "FOOT",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": [
+        -0.66415928,
+        0.0
+      ]
+    }
+  ],
+  "servo_axial_shims_mm": {
+    "left_hip_yaw": 4.0,
+    "right_hip_yaw": 4.0
+  },
+  "components": [
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/torso_mounted_solid.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "fixed released Zeroth-01 torso reference; intentionally not promoted to a moving body"
+    },
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_SHOULDER2_2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_2_STS3250_CLEARANCED.step",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -3.2679479292188006e-07,
+          -0.9999996829317812,
+          10.565406321739257
+        ],
+        [
+          0.9999996829318346,
+          2.602355050446328e-10,
+          0.0007963267107332208,
+          -56.00343127216897
+        ],
+        [
+          0.0,
+          -0.9999999999999466,
+          3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_1Flange_2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_2_STS3250_CLEARANCED.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -3.2653455741681794e-07,
+          -0.9999996831919633,
+          0.0007959999160470514,
+          -8.25118874895795
+        ],
+        [
+          3.2705502842692465e-07,
+          0.0007959999159402565,
+          0.9999996831919632,
+          -76.83345371944613
+        ],
+        [
+          -0.9999999999998932,
+          3.267947897432165e-07,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_Z_BOT2_MASTER_SHOULDER2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_STS3250_CLEARANCED.step",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007966731208299993,
+          3.2679479283171223e-07,
+          -0.9999996826558656,
+          10.654586950074274
+        ],
+        [
+          -0.999999682655919,
+          -2.603487100963554e-10,
+          0.0007966731208299567,
+          55.9865332193672
+        ],
+        [
+          0.0,
+          0.9999999999999466,
+          3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_1Flange",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_STS3250_CLEARANCED.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          -3.270551415417911e-07,
+          0.9999996823954634,
+          -0.0007969999155159511,
+          -8.128802033946783
+        ],
+        [
+          -3.265344441216159e-07,
+          -0.000796999915622746,
+          -0.9999996823954636,
+          76.84650406027714
+        ],
+        [
+          -0.9999999999998932,
+          -3.267947897432165e-07,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_6",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_6_STS3250_CLEARANCED.step",
+      "owner_link": "3215_BothFlange_6",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.000795633890539505,
+          -1.96153037771863e-08,
+          0.9999996834833059,
+          9.930879449390005
+        ],
+        [
+          0.999999683483306,
+          1.572660546734017e-11,
+          -0.0007956338905395048,
+          -42.875915687687126
+        ],
+        [
+          -1.200000312500909e-13,
+          0.9999999999999999,
+          1.961531008123543e-08,
+          -139.81799386853598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_10",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_10_STS3250_CLEARANCED.step",
+      "owner_link": "3215_BothFlange_10",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9875312872126346e-08,
+          0.9999996837432616,
+          -0.0007953070957399077,
+          -8.974205997654211
+        ],
+        [
+          3.2677906649663073e-07,
+          -0.0007953070957463603,
+          -0.9999996837432084,
+          -49.260876181952334
+        ],
+        [
+          -0.9999999999999465,
+          1.961541687609957e-08,
+          -3.2679477012790634e-07,
+          -171.81799423926455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_5",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_5_STS3250_CLEARANCED.step",
+      "owner_link": "3215_BothFlange_5",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007959803006364319,
+          -6.732048898912538e-07,
+          -0.9999996832074037,
+          -25.40088324888921
+        ],
+        [
+          -0.9999996832076303,
+          5.35858000401282e-10,
+          0.0007959803006362515,
+          42.82823484982327
+        ],
+        [
+          0.0,
+          0.9999999999997734,
+          -6.732051031574938e-07,
+          -139.81800613145728
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_9",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_9_STS3250_CLEARANCED.step",
+      "owner_link": "3215_BothFlange_9",
+      "transform_local_mm_to_world_mm": [
+        [
+          6.729447675912249e-07,
+          -0.9999996834674726,
+          0.0007956535060633349,
+          -7.49577310299613
+        ],
+        [
+          -3.2733065101240997e-07,
+          0.000795653505843197,
+          0.9999996834676457,
+          49.213984757823255
+        ],
+        [
+          -0.99999999999972,
+          -6.732049963625534e-07,
+          -3.2679511653803883e-07,
+          -171.81799408107867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_U_HIP_R",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_R_MOUNT_CLEARANCED.step",
+      "owner_link": "U_HIP_R",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007959803006364319,
+          -0.9999996832075704,
+          3.4641009687928327e-07,
+          -7.769134480913454
+        ],
+        [
+          -0.9999996832076303,
+          0.0007959803006363841,
+          -2.757357004084333e-10,
+          -42.861826820814365
+        ],
+        [
+          0.0,
+          -3.464102066193935e-07,
+          -0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_U_HIP_L",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_L_MOUNT_CLEARANCED.step",
+      "owner_link": "U_HIP_L",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007959803006364319,
+          -0.9999996832075704,
+          3.4641009687928327e-07,
+          -7.700908393644671
+        ],
+        [
+          -0.9999996832076303,
+          0.0007959803006363841,
+          -2.757357004084333e-10,
+          42.8141460140535
+        ],
+        [
+          0.0,
+          -3.464102066193935e-07,
+          -0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_L_ARM_MIRROR_1",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/L_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+      "owner_link": "L_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007959999159402991,
+          -6.535894791338808e-07,
+          -0.9999996831918031,
+          11.533969017315162
+        ],
+        [
+          0.9999996831920167,
+          5.203641301924849e-10,
+          0.000795999915940129,
+          -95.44917821426749
+        ],
+        [
+          1.0679488686010167e-13,
+          -0.9999999999997864,
+          6.535896862813199e-07,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_R_ARM_MIRROR_1",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/R_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+      "owner_link": "R_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          -1.935495505616882e-08,
+          -0.0007973267103086551,
+          0.9999996821350079,
+          11.685985465016708
+        ],
+        [
+          3.268105330270428e-07,
+          -0.9999996821349546,
+          -0.0007973267103022874,
+          95.43068719202468
+        ],
+        [
+          0.9999999999999465,
+          3.267949969227722e-07,
+          1.9615523671097857e-08,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_14",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_14_STS3250_CLEARANCED.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9875312872126346e-08,
+          0.9999996837432616,
+          -0.0007953070957399077,
+          -18.97319876061491
+        ],
+        [
+          3.2677906649663073e-07,
+          -0.0007953070957463603,
+          -0.9999996837432084,
+          -47.99289083157178
+        ],
+        [
+          -0.9999999999999465,
+          1.961541687609957e-08,
+          -3.2679477012790634e-07,
+          -271.817994023652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_3215_BothFlange_13",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_13_STS3250_CLEARANCED.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          6.729447675912249e-07,
+          -0.9999996834674726,
+          0.0007956535060633349,
+          -17.496705166611736
+        ],
+        [
+          -3.2733065101240997e-07,
+          0.000795653505843197,
+          0.9999996834676457,
+          47.961908958647356
+        ],
+        [
+          -0.99999999999972,
+          -6.732049963625534e-07,
+          -3.2679511653803883e-07,
+          -271.8180004013388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_FOOT_2",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/FOOT_2_STS3250_CLEARANCED.step",
+      "owner_link": "FOOT_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996837432017,
+          -3.469456085545159e-07,
+          0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          0.0007953070958531074,
+          -6.729292612613361e-07,
+          0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -3.464103134142194e-07,
+          0.9999999999997136,
+          6.73204976747241e-07,
+          -371.8179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "CARRIER_FOOT",
+      "role": "source_load_bearing_carrier",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/FOOT_STS3250_CLEARANCED.step",
+      "owner_link": "FOOT",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996834671993,
+          1.0000151831834856e-06,
+          -0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          0.0007956535057361845,
+          1.8819430451860138e-08,
+          -0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -9.999998929005644e-07,
+          -0.9999999999994998,
+          -1.9615090081182562e-08,
+          -371.8180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "released Zeroth-01 16DoF carrier sewn into a positive-volume motion solid at the exact neutral transform"
+    },
+    {
+      "component_id": "LEFT_FIXED_WRIST_SUPPORT",
+      "role": "fixed_compact_wrist_support",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/left_fixed_wrist_support.step",
+      "owner_link": "R_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007492354545723127,
+          -0.0002730662607822385,
+          -0.999999682040475,
+          12.95537725991499
+        ],
+        [
+          -0.9396924944700038,
+          -0.3420195607241081,
+          0.0007974451893690335,
+          107.20765717973704
+        ],
+        [
+          -0.342019669731107,
+          0.9396927931600336,
+          -3.4513469830844076e-07,
+          -173.618010229442
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "small rounded support bumper outside the released forearm; two M3 through-bolts provide retention and anti-rotation; not an actuator and not a gripper"
+    },
+    {
+      "component_id": "RIGHT_FIXED_WRIST_SUPPORT",
+      "role": "fixed_compact_wrist_support",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/right_fixed_wrist_support.step",
+      "owner_link": "L_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007477716655674733,
+          -0.000272862290415179,
+          -0.9999996831918031,
+          12.784550059581832
+        ],
+        [
+          0.9396922720951638,
+          -0.34202017506100796,
+          0.000795999915940129,
+          -107.22817740834591
+        ],
+        [
+          -0.34202028390457323,
+          -0.9396925696191324,
+          6.535896862813199e-07,
+          -173.61800722867977
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "small rounded support bumper outside the released forearm; two M3 through-bolts provide retention and anti-rotation; not an actuator and not a gripper"
+    },
+    {
+      "component_id": "LEFT_TAPERED_SOLE_FLARE",
+      "role": "replaceable_white_tapered_lower_wider_sole",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/left_tapered_sole_flare.step",
+      "owner_link": "FOOT",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996834671993,
+          1.0000151831834856e-06,
+          -0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          0.0007956535057361845,
+          1.8819430451860138e-08,
+          -0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -9.999998929005644e-07,
+          -0.9999999999994998,
+          -1.9615090081182562e-08,
+          -371.8180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "9.0 mm replaceable sole; top stays within released foot outline, ground face is 8 mm longer and wider; four M3 clearance holes; ground face matches the released RL contact plane"
+    },
+    {
+      "component_id": "RIGHT_TAPERED_SOLE_FLARE",
+      "role": "replaceable_white_tapered_lower_wider_sole",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/right_tapered_sole_flare.step",
+      "owner_link": "FOOT_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.9999996837432017,
+          -3.469456085545159e-07,
+          0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          0.0007953070958531074,
+          -6.729292612613361e-07,
+          0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -3.464103134142194e-07,
+          0.9999999999997136,
+          6.73204976747241e-07,
+          -371.8179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "9.0 mm replaceable sole; top stays within released foot outline, ground face is 8 mm longer and wider; four M3 clearance holes; ground face matches the released RL contact plane"
+    },
+    {
+      "component_id": "V5_HEAD_FRONT",
+      "role": "printable_head_front_shell",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/head_front_5mm_each_side.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "+5 mm each side rounded two-piece head"
+    },
+    {
+      "component_id": "V5_HEAD_REAR",
+      "role": "printable_head_rear_shell",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/head_rear_5mm_each_side.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#F7F8FA",
+      "notes": "rear shell with cable service exit"
+    },
+    {
+      "component_id": "V5_HEAD_VISOR",
+      "role": "simple_camera_microphone_visor",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/head_simple_visor.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#101820",
+      "notes": "simple original-style black face"
+    },
+    {
+      "component_id": "V5_UNITV2",
+      "role": "purchased_internal_interaction_module",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/m5stack_unitv2_purchased_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#00B8D9",
+      "notes": "48 x 18.5 x 24 mm camera/microphone module"
+    },
+    {
+      "component_id": "V5_UNITV2_CRADLE",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/unitv2_removable_cradle.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "removable M2.5 cradle"
+    },
+    {
+      "component_id": "V5_HEAD_TORSO_NUT_PLATE",
+      "role": "direct_head_torso_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/direct_head_torso_nut_plate.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "four M3 direct mount; no neck"
+    },
+    {
+      "component_id": "V5_COMPUTE",
+      "role": "internal_payload_controlled_envelope",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/compute_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#FF9100",
+      "notes": "compute reservation inside torso"
+    },
+    {
+      "component_id": "V5_COMPUTE_TRAY",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/compute_removable_tray.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "removable internal compute tray"
+    },
+    {
+      "component_id": "V5_BATTERY",
+      "role": "internal_payload_controlled_envelope",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/battery_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#D500F9",
+      "notes": "battery/BMS reservation inside torso"
+    },
+    {
+      "component_id": "V5_BATTERY_CAGE",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/battery_service_cage.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "internal battery cage"
+    },
+    {
+      "component_id": "V5_TORSO_IMU",
+      "role": "internal_payload_controlled_envelope",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/torso_imu_envelope.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#64DD17",
+      "notes": "IMU reservation"
+    },
+    {
+      "component_id": "V5_HARNESS_GUIDES",
+      "role": "harness_strain_relief",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/harness_strain_relief_guides.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "internal strain-relief guides"
+    },
+    {
+      "component_id": "S01_STS3250_right_shoulder_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.601287952176841e-10,
+          0.9999996831920167,
+          0.0007959999160470515,
+          -8.25118874895795
+        ],
+        [
+          -3.267948998017419e-07,
+          -0.000795999916047094,
+          0.9999996831919633,
+          -76.83345371944613
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.2679500333300785e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_1Flange_2; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S01_PARENT_THRUST_RING_right_shoulder_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.601287952176841e-10,
+          0.9999996831920167,
+          0.0007959999160470515,
+          -8.25118874895795
+        ],
+        [
+          -3.267948998017419e-07,
+          -0.000795999916047094,
+          0.9999996831919633,
+          -76.83345371944613
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.2679500333300785e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S01_PCD14_OUTPUT_BRIDGE_right_shoulder_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.601287952176841e-10,
+          0.9999996831920167,
+          0.0007959999160470515,
+          -8.25118874895795
+        ],
+        [
+          -3.267948998017419e-07,
+          -0.000795999916047094,
+          0.9999996831919633,
+          -76.83345371944613
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.2679500333300785e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to Z_BOT2_MASTER_SHOULDER2_2; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S02_STS3250_left_shoulder_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6045559004745607e-10,
+          -0.999999682395517,
+          -0.0007969999155159511,
+          -8.128802033946783
+        ],
+        [
+          3.2679489954144973e-07,
+          0.0007969999155159936,
+          -0.9999996823954636,
+          76.84650406027714
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_1Flange; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S02_PARENT_THRUST_RING_left_shoulder_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6045559004745607e-10,
+          -0.999999682395517,
+          -0.0007969999155159511,
+          -8.128802033946783
+        ],
+        [
+          3.2679489954144973e-07,
+          0.0007969999155159936,
+          -0.9999996823954636,
+          76.84650406027714
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S02_PCD14_OUTPUT_BRIDGE_left_shoulder_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6045559004745607e-10,
+          -0.999999682395517,
+          -0.0007969999155159511,
+          -8.128802033946783
+        ],
+        [
+          3.2679489954144973e-07,
+          0.0007969999155159936,
+          -0.9999996823954636,
+          76.84650406027714
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          3.267950033330078e-07,
+          -14.427993856255682
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to Z_BOT2_MASTER_SHOULDER2; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S03_STS3250_right_shoulder_yaw",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007963267107332633,
+          -3.2679479292188006e-07,
+          0.9999996829317812,
+          10.565406321739257
+        ],
+        [
+          -0.9999996829318346,
+          2.6023550504463286e-10,
+          -0.0007963267107332208,
+          -56.00343127216897
+        ],
+        [
+          -5.169878828456423e-26,
+          -0.9999999999999466,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to Z_BOT2_MASTER_BODY_SKELETON; fitted 6D residual 3.090 mm"
+    },
+    {
+      "component_id": "S03_PARENT_THRUST_RING_right_shoulder_yaw",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007963267107332633,
+          -3.2679479292188006e-07,
+          0.9999996829317812,
+          10.565406321739257
+        ],
+        [
+          -0.9999996829318346,
+          2.6023550504463286e-10,
+          -0.0007963267107332208,
+          -56.00343127216897
+        ],
+        [
+          -5.169878828456423e-26,
+          -0.9999999999999466,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S03_PCD14_OUTPUT_BRIDGE_right_shoulder_yaw",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.0007963267107332633,
+          -3.2679479292188006e-07,
+          0.9999996829317812,
+          10.565406321739257
+        ],
+        [
+          -0.9999996829318346,
+          2.6023550504463286e-10,
+          -0.0007963267107332208,
+          -56.00343127216897
+        ],
+        [
+          -5.169878828456423e-26,
+          -0.9999999999999466,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to Z_BOT2_MASTER_SHOULDER2_2; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S04_STS3250_right_hip_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_10",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -8.974205997654211
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -49.260876181952334
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -171.81799423926455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_10; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S04_PARENT_THRUST_RING_right_hip_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_10",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -8.974205997654211
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -49.260876181952334
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -171.81799423926455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S04_PCD14_OUTPUT_BRIDGE_right_hip_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "3215_BothFlange_6",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -8.974205997654211
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -49.260876181952334
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -171.81799423926455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to 3215_BothFlange_6; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S05_STS3250_left_hip_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_9",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -7.49577310299613
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          49.213984757823255
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -171.81799408107867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_9; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S05_PARENT_THRUST_RING_left_hip_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_9",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -7.49577310299613
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          49.213984757823255
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -171.81799408107867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S05_PCD14_OUTPUT_BRIDGE_left_hip_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "3215_BothFlange_5",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -7.49577310299613
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          49.213984757823255
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -171.81799408107867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to 3215_BothFlange_5; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S06_STS3250_left_shoulder_yaw",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007966731208299993,
+          3.2679479283171223e-07,
+          0.9999996826558656,
+          10.654586950074274
+        ],
+        [
+          0.999999682655919,
+          -2.6034871009635545e-10,
+          -0.0007966731208299567,
+          55.9865332193672
+        ],
+        [
+          -0.0,
+          0.9999999999999467,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to Z_BOT2_MASTER_BODY_SKELETON; fitted 6D residual 3.112 mm"
+    },
+    {
+      "component_id": "S06_PARENT_THRUST_RING_left_shoulder_yaw",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007966731208299993,
+          3.2679479283171223e-07,
+          0.9999996826558656,
+          10.654586950074274
+        ],
+        [
+          0.999999682655919,
+          -2.6034871009635545e-10,
+          -0.0007966731208299567,
+          55.9865332193672
+        ],
+        [
+          -0.0,
+          0.9999999999999467,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S06_PCD14_OUTPUT_BRIDGE_left_shoulder_yaw",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "Z_BOT2_MASTER_SHOULDER2",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007966731208299993,
+          3.2679479283171223e-07,
+          0.9999996826558656,
+          10.654586950074274
+        ],
+        [
+          0.999999682655919,
+          -2.6034871009635545e-10,
+          -0.0007966731208299567,
+          55.9865332193672
+        ],
+        [
+          -0.0,
+          0.9999999999999467,
+          -3.2679489653813835e-07,
+          -9.528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to Z_BOT2_MASTER_SHOULDER2; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S07_STS3250_right_hip_yaw",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          -9.551763069156241e-17,
+          0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.7691358665538415
+        ],
+        [
+          -1.0,
+          0.0,
+          2.757357004084333e-10,
+          -42.861826819711425
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -79.41800000000025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to Z_BOT2_MASTER_BODY_SKELETON; fitted 6D residual 2.684 mm"
+    },
+    {
+      "component_id": "S07_PARENT_THRUST_RING_right_hip_yaw",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          -9.551763069156241e-17,
+          0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.7691358665538415
+        ],
+        [
+          -1.0,
+          0.0,
+          2.757357004084333e-10,
+          -42.861826819711425
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -79.41800000000025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S07_PCD14_OUTPUT_BRIDGE_right_hip_yaw",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "U_HIP_R",
+      "transform_local_mm_to_world_mm": [
+        [
+          -9.551763069156241e-17,
+          0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.7691358665538415
+        ],
+        [
+          -1.0,
+          0.0,
+          2.757357004084333e-10,
+          -42.861826819711425
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -79.41800000000025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to U_HIP_R; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S07_2XM2X8_CASE_SCREWS_right_hip_yaw",
+      "role": "purchased_2xm2x8_case_fasteners",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_hip_yaw_2xm2x8_case_screws.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          -9.551763069156241e-17,
+          0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.769134480913454
+        ],
+        [
+          -1.0,
+          0.0,
+          2.757357004084333e-10,
+          -42.861826820814365
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#586069",
+      "notes": "two real M2x8 shanks pass through the torso-integrated lateral-rib bosses and engage the official STS3250 negative-X rear-cover holes; low-profile heads remain service-accessible"
+    },
+    {
+      "component_id": "S07_PCD14_FOUR_SLEEVE_SPACER_right_hip_yaw",
+      "role": "sts3250_pcd14_four_m3_spacer_sleeves_to_released_horn",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.step",
+      "owner_link": "U_HIP_R",
+      "transform_local_mm_to_world_mm": [
+        [
+          -9.551763069156241e-17,
+          0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.769134480913454
+        ],
+        [
+          -1.0,
+          0.0,
+          2.757357004084333e-10,
+          -42.861826820814365
+        ],
+        [
+          2.7573570040841675e-10,
+          3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "four standard OD4x1.65 metal PCD14 sleeves seat 0.30 mm above the joint datum and end at the 1.95 mm bridge face; exact STS face clearance is 0.05 mm; M3x8 screws are specified in the fastener map"
+    },
+    {
+      "component_id": "S08_STS3250_left_hip_yaw",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          9.551763069156241e-17,
+          -0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.700909779285058
+        ],
+        [
+          1.0,
+          0.0,
+          2.757357004084333e-10,
+          42.81414601515644
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -79.41800000000025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to Z_BOT2_MASTER_BODY_SKELETON; fitted 6D residual 2.684 mm"
+    },
+    {
+      "component_id": "S08_PARENT_THRUST_RING_left_hip_yaw",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          9.551763069156241e-17,
+          -0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.700909779285058
+        ],
+        [
+          1.0,
+          0.0,
+          2.757357004084333e-10,
+          42.81414601515644
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -79.41800000000025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S08_PCD14_OUTPUT_BRIDGE_left_hip_yaw",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "U_HIP_L",
+      "transform_local_mm_to_world_mm": [
+        [
+          9.551763069156241e-17,
+          -0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.700909779285058
+        ],
+        [
+          1.0,
+          0.0,
+          2.757357004084333e-10,
+          42.81414601515644
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -79.41800000000025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to U_HIP_L; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S08_2XM2X8_CASE_SCREWS_left_hip_yaw",
+      "role": "purchased_2xm2x8_case_fasteners",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_hip_yaw_2xm2x8_case_screws.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          9.551763069156241e-17,
+          -0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.700908393644671
+        ],
+        [
+          1.0,
+          0.0,
+          2.757357004084333e-10,
+          42.8141460140535
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#586069",
+      "notes": "two real M2x8 shanks pass through the torso-integrated lateral-rib bosses and engage the official STS3250 negative-X rear-cover holes; low-profile heads remain service-accessible"
+    },
+    {
+      "component_id": "S08_PCD14_FOUR_SLEEVE_SPACER_left_hip_yaw",
+      "role": "sts3250_pcd14_four_m3_spacer_sleeves_to_released_horn",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.step",
+      "owner_link": "U_HIP_L",
+      "transform_local_mm_to_world_mm": [
+        [
+          9.551763069156241e-17,
+          -0.99999999999994,
+          -3.4641009687928327e-07,
+          -7.700908393644671
+        ],
+        [
+          1.0,
+          0.0,
+          2.757357004084333e-10,
+          42.8141460140535
+        ],
+        [
+          -2.7573570040841675e-10,
+          -3.4641009687928327e-07,
+          0.99999999999994,
+          -83.418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "four standard OD4x1.65 metal PCD14 sleeves seat 0.30 mm above the joint datum and end at the 1.95 mm bridge face; exact STS face clearance is 0.05 mm; M3x8 screws are specified in the fastener map"
+    },
+    {
+      "component_id": "S09_STS3250_right_elbow_yaw",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -6.535894792188895e-07,
+          0.000795999915940299,
+          0.9999996831918031,
+          11.533969017315162
+        ],
+        [
+          5.20257335339377e-10,
+          0.9999996831920167,
+          -0.000795999915940129,
+          -95.44917821426749
+        ],
+        [
+          -0.9999999999997864,
+          0.0,
+          -6.535896862813199e-07,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_1Flange_2; fitted 6D residual 2.611 mm"
+    },
+    {
+      "component_id": "S09_PARENT_THRUST_RING_right_elbow_yaw",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_1Flange_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          -6.535894792188895e-07,
+          0.000795999915940299,
+          0.9999996831918031,
+          11.533969017315162
+        ],
+        [
+          5.20257335339377e-10,
+          0.9999996831920167,
+          -0.000795999915940129,
+          -95.44917821426749
+        ],
+        [
+          -0.9999999999997864,
+          0.0,
+          -6.535896862813199e-07,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S09_PCD14_OUTPUT_BRIDGE_right_elbow_yaw",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "L_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          -6.535894792188895e-07,
+          0.000795999915940299,
+          0.9999996831918031,
+          11.533969017315162
+        ],
+        [
+          5.20257335339377e-10,
+          0.9999996831920167,
+          -0.000795999915940129,
+          -95.44917821426749
+        ],
+        [
+          -0.9999999999997864,
+          0.0,
+          -6.535896862813199e-07,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to L_ARM_MIRROR_1; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S10_STS3250_left_elbow_yaw",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9615517436009584e-08,
+          0.0007973267103022876,
+          0.9999996821350079,
+          11.685985465016708
+        ],
+        [
+          -1.5639980959533105e-11,
+          0.9999996821350081,
+          -0.0007973267103022874,
+          95.43068719202468
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615523671097857e-08,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_1Flange; fitted 6D residual 2.611 mm"
+    },
+    {
+      "component_id": "S10_PARENT_THRUST_RING_left_elbow_yaw",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_1Flange",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9615517436009584e-08,
+          0.0007973267103022876,
+          0.9999996821350079,
+          11.685985465016708
+        ],
+        [
+          -1.5639980959533105e-11,
+          0.9999996821350081,
+          -0.0007973267103022874,
+          95.43068719202468
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615523671097857e-08,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S10_PCD14_OUTPUT_BRIDGE_left_elbow_yaw",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "R_ARM_MIRROR_1",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.9615517436009584e-08,
+          0.0007973267103022876,
+          0.9999996821350079,
+          11.685985465016708
+        ],
+        [
+          -1.5639980959533105e-11,
+          0.9999996821350081,
+          -0.0007973267103022874,
+          95.43068719202468
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615523671097857e-08,
+          -107.41200640516963
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to R_ARM_MIRROR_1; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S11_STS3250_right_hip_roll",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_6",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.000795633890539505,
+          1.9615303872662332e-08,
+          0.9999996834833059,
+          9.930879449390005
+        ],
+        [
+          -0.9999996834833061,
+          -1.560660547407212e-11,
+          -0.0007956338905395048,
+          -42.875915687687126
+        ],
+        [
+          3.2311742677852644e-27,
+          -1.0,
+          1.961531008123543e-08,
+          -139.81799386853598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_6; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S11_PARENT_THRUST_RING_right_hip_roll",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_6",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.000795633890539505,
+          1.9615303872662332e-08,
+          0.9999996834833059,
+          9.930879449390005
+        ],
+        [
+          -0.9999996834833061,
+          -1.560660547407212e-11,
+          -0.0007956338905395048,
+          -42.875915687687126
+        ],
+        [
+          3.2311742677852644e-27,
+          -1.0,
+          1.961531008123543e-08,
+          -139.81799386853598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S11_PCD14_OUTPUT_BRIDGE_right_hip_roll",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "U_HIP_R",
+      "transform_local_mm_to_world_mm": [
+        [
+          -0.000795633890539505,
+          1.9615303872662332e-08,
+          0.9999996834833059,
+          9.930879449390005
+        ],
+        [
+          -0.9999996834833061,
+          -1.560660547407212e-11,
+          -0.0007956338905395048,
+          -42.875915687687126
+        ],
+        [
+          3.2311742677852644e-27,
+          -1.0,
+          1.961531008123543e-08,
+          -139.81799386853598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to U_HIP_R; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S12_STS3250_left_hip_roll",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_5",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007959803006364318,
+          6.732048898912539e-07,
+          -0.9999996832074037,
+          -25.40088324888921
+        ],
+        [
+          0.9999996832076303,
+          -5.35858000401282e-10,
+          0.0007959803006362515,
+          42.82823484982327
+        ],
+        [
+          0.0,
+          -0.9999999999997734,
+          -6.732051031574938e-07,
+          -139.81800613145728
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_5; fitted 6D residual 3.720 mm"
+    },
+    {
+      "component_id": "S12_PARENT_THRUST_RING_left_hip_roll",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_5",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007959803006364318,
+          6.732048898912539e-07,
+          -0.9999996832074037,
+          -25.40088324888921
+        ],
+        [
+          0.9999996832076303,
+          -5.35858000401282e-10,
+          0.0007959803006362515,
+          42.82823484982327
+        ],
+        [
+          0.0,
+          -0.9999999999997734,
+          -6.732051031574938e-07,
+          -139.81800613145728
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S12_PCD14_OUTPUT_BRIDGE_left_hip_roll",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "U_HIP_L",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007959803006364318,
+          6.732048898912539e-07,
+          -0.9999996832074037,
+          -25.40088324888921
+        ],
+        [
+          0.9999996832076303,
+          -5.35858000401282e-10,
+          0.0007959803006362515,
+          42.82823484982327
+        ],
+        [
+          0.0,
+          -0.9999999999997734,
+          -6.732051031574938e-07,
+          -139.81800613145728
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to U_HIP_L; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S13_STS3250_right_knee_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -18.97319876061491
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -47.99289083157178
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -271.817994023652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_14; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S13_PARENT_THRUST_RING_right_knee_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -18.97319876061491
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -47.99289083157178
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -271.817994023652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S13_PCD14_OUTPUT_BRIDGE_right_knee_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "3215_BothFlange_10",
+      "transform_local_mm_to_world_mm": [
+        [
+          -2.599021995334298e-10,
+          -0.9999996837432618,
+          -0.0007953070957399077,
+          -18.97319876061491
+        ],
+        [
+          -3.267946667768583e-07,
+          0.0007953070957399501,
+          -0.9999996837432084,
+          -47.99289083157178
+        ],
+        [
+          0.9999999999999466,
+          5.169878828456423e-26,
+          -3.2679477012790634e-07,
+          -271.817994023652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to 3215_BothFlange_10; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S14_STS3250_left_knee_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -17.496705166611736
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          47.961908958647356
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -271.8180004013388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_13; fitted 6D residual 3.149 mm"
+    },
+    {
+      "component_id": "S14_PARENT_THRUST_RING_left_knee_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -17.496705166611736
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          47.961908958647356
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -271.8180004013388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S14_PCD14_OUTPUT_BRIDGE_left_knee_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "3215_BothFlange_9",
+      "transform_local_mm_to_world_mm": [
+        [
+          2.6001568023788064e-10,
+          0.9999996834676991,
+          0.0007956535060633349,
+          -17.496705166611736
+        ],
+        [
+          3.267950130968287e-07,
+          -0.0007956535060633774,
+          0.9999996834676457,
+          47.961908958647356
+        ],
+        [
+          0.9999999999999466,
+          0.0,
+          -3.2679511653803883e-07,
+          -271.8180004013388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to 3215_BothFlange_9; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S15_STS3250_right_ankle_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          5.354046948137443e-10,
+          0.9999996837432619,
+          -0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          6.732047638416311e-07,
+          -0.0007953070956199502,
+          -0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -0.9999999999997734,
+          -2.0679515313825692e-25,
+          -6.73204976747241e-07,
+          -371.8179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_14; fitted 6D residual 2.611 mm"
+    },
+    {
+      "component_id": "S15_PARENT_THRUST_RING_right_ankle_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_14",
+      "transform_local_mm_to_world_mm": [
+        [
+          5.354046948137443e-10,
+          0.9999996837432619,
+          -0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          6.732047638416311e-07,
+          -0.0007953070956199502,
+          -0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -0.9999999999997734,
+          -2.0679515313825692e-25,
+          -6.73204976747241e-07,
+          -371.8179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S15_PCD14_OUTPUT_BRIDGE_right_ankle_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "FOOT_2",
+      "transform_local_mm_to_world_mm": [
+        [
+          5.354046948137443e-10,
+          0.9999996837432619,
+          -0.00079530709561977,
+          -18.97399208017936
+        ],
+        [
+          6.732047638416311e-07,
+          -0.0007953070956199502,
+          -0.9999996837430353,
+          -48.99285783740834
+        ],
+        [
+          -0.9999999999997734,
+          -2.0679515313825692e-25,
+          -6.73204976747241e-07,
+          -371.8179943504414
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to FOOT_2; four M3 on PCD14 and centre M3x6"
+    },
+    {
+      "component_id": "S16_STS3250_left_ankle_pitch",
+      "role": "purchased_exact_sts3250",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.560681518804702e-11,
+          -0.9999996834676994,
+          0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          1.961508387237297e-08,
+          0.0007956535057169674,
+          0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615090081182562e-08,
+          -371.8180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "purchased-exact STEP; housing fixed to 3215_BothFlange_13; fitted 6D residual 2.611 mm"
+    },
+    {
+      "component_id": "S16_PARENT_THRUST_RING_left_ankle_pitch",
+      "role": "sts3250_parent_axis_and_thrust_mate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+      "owner_link": "3215_BothFlange_13",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.560681518804702e-11,
+          -0.9999996834676994,
+          0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          1.961508387237297e-08,
+          0.0007956535057169674,
+          0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615090081182562e-08,
+          -371.8180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "parent-fixed annulus; 0.225 mm radial clearance around output bridge; supplies actual SolidWorks concentric and thrust-face mates"
+    },
+    {
+      "component_id": "S16_PCD14_OUTPUT_BRIDGE_left_ankle_pitch",
+      "role": "sts3250_pcd14_output_bridge_to_child",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "owner_link": "FOOT",
+      "transform_local_mm_to_world_mm": [
+        [
+          1.560681518804702e-11,
+          -0.9999996834676994,
+          0.0007956535057169672,
+          -17.49600134933013
+        ],
+        [
+          1.961508387237297e-08,
+          0.0007956535057169674,
+          0.9999996834676992,
+          48.76187597235637
+        ],
+        [
+          -0.9999999999999999,
+          0.0,
+          1.9615090081182562e-08,
+          -371.8180006627469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#1677FF",
+      "notes": "rotating side, locked to FOOT; four M3 on PCD14 and centre M3x6"
+    }
+  ],
+  "truth_boundary": "original Zeroth-01 16-actuator topology plus exact STS3250, positive-volume fixed torso with integrated hip-yaw case mounts, explicit parent thrust ring and child PCD14 output stack; native SolidWorks mate/Motion gate is required separately"
+}

@@ -1,0 +1,24 @@
+{
+  "carrier": "3215_BothFlange_10",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v1\\step\\skeleton\\3215_BothFlange_10.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_BothFlange_10_SOLID.step",
+  "source_faces": 2410,
+  "sewn_shells": 2,
+  "solid_count": 2,
+  "face_count": 2410,
+  "volume_mm3": 13882.886701452157,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS",
+  "mesh_topology_repair": false,
+  "symmetry_reconstruction": true,
+  "released_solid_twin": "3215_BothFlange_9",
+  "transform": "rotation_x_180_then_bbox_datum_alignment",
+  "translation_mm": [
+    6.984919309616089e-07,
+    0.0,
+    -38.1194386864081
+  ],
+  "target_joint_axes_unchanged": true,
+  "reason": "released right-thigh STL is non-orientable and cannot form a rigid solid"
+}

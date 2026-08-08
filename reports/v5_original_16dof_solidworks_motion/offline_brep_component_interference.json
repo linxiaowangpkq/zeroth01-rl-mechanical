@@ -1,0 +1,38 @@
+{
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.offline_brep_component_interference.v2",
+  "manifest": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\cad\\physical_mount_v5_original_16dof_solidworks_motion\\ZEROTH01_V5_ORIGINAL_16DOF_SOLIDWORKS_MOTION_ASSEMBLY_MANIFEST.json",
+  "manifest_sha256": "8cbd8e2a6b0064353803529341d41cd3187f5e336e4b38bec17379680d5942f3",
+  "component_count": 85,
+  "all_component_pair_count": 3570,
+  "candidate_pair_count": 153,
+  "distance_prefilter_tolerance_mm": 1e-06,
+  "distance_rejected_pair_count": 0,
+  "boolean_pair_count": 153,
+  "positive_interference_count": 0,
+  "total_positive_volume_mm3": 0,
+  "boolean_error_count": 0,
+  "volume_tolerance_mm3": 0.01,
+  "assembly_bbox_world_mm": {
+    "min": [
+      -98.01191414504896,
+      -125.02441647054955,
+      -416.4480317511857
+    ],
+    "max": [
+      50.056523977190125,
+      125.0338510983838,
+      74.0412372351
+    ],
+    "size": [
+      148.0684381222391,
+      250.05826756893336,
+      490.48926898628565
+    ]
+  },
+  "standing_height_mm": 490.48926898628565,
+  "standing_height_limit_mm": 500.0,
+  "standing_height_gate": "PASS",
+  "rows": [],
+  "truth_boundary": "All unordered pairs of the exact STEP B-Reps at manifest neutral transforms. Final acceptance still requires SOLIDWORKS static interference and isolated Motion gates.",
+  "overall": "PASS"
+}

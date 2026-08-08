@@ -1,0 +1,13 @@
+{
+  "carrier": "3215_1Flange",
+  "source": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\reference\\zeroth01\\generated\\cad\\physical_mount_v1\\step\\skeleton\\3215_1Flange.step",
+  "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_solid/3215_1Flange_SOLID.step",
+  "source_faces": 1102,
+  "sewn_shells": 2,
+  "solid_count": 2,
+  "face_count": 1102,
+  "volume_mm3": 14307.977614586001,
+  "filled_free_bounds": 0,
+  "occt_brep_valid": true,
+  "status": "PASS"
+}

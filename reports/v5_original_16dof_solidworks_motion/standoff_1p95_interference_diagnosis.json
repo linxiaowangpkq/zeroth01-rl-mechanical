@@ -1,0 +1,177 @@
+{
+  "schema": "zeroth01.v5.standoff_interference_diagnosis.v1",
+  "results": [
+    {
+      "joint": "right_shoulder_yaw",
+      "servo": "S03_STS3250_right_shoulder_yaw",
+      "standoff": "S03_PCD14_CHILD_STANDOFF_right_shoulder_yaw",
+      "trials": [
+        {
+          "center_clearance_radius_mm": 4.8,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.0,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.2,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.3,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.35,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.7,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.4,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.2,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.0,
+          "overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "joint": "left_shoulder_yaw",
+      "servo": "S06_STS3250_left_shoulder_yaw",
+      "standoff": "S06_PCD14_CHILD_STANDOFF_left_shoulder_yaw",
+      "trials": [
+        {
+          "center_clearance_radius_mm": 4.8,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.0,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.2,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.3,
+          "overlap_mm3": 0.0
+        },
+        {
+          "center_clearance_radius_mm": 5.35,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.7,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.4,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.2,
+          "overlap_mm3": 0.0
+        },
+        {
+          "four_post_outer_radius_mm": 2.0,
+          "overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "joint": "right_hip_yaw",
+      "servo": "S07_STS3250_right_hip_yaw",
+      "standoff": "S07_PCD14_CHILD_STANDOFF_right_hip_yaw",
+      "trials": [
+        {
+          "center_clearance_radius_mm": 4.8,
+          "overlap_mm3": 38.46219784653639
+        },
+        {
+          "center_clearance_radius_mm": 5.0,
+          "overlap_mm3": 36.922817607548986
+        },
+        {
+          "center_clearance_radius_mm": 5.2,
+          "overlap_mm3": 35.32060551549075
+        },
+        {
+          "center_clearance_radius_mm": 5.3,
+          "overlap_mm3": 34.4959375245585
+        },
+        {
+          "center_clearance_radius_mm": 5.35,
+          "overlap_mm3": 34.07771304286729
+        },
+        {
+          "four_post_outer_radius_mm": 2.7,
+          "overlap_mm3": 10.951977983199994
+        },
+        {
+          "four_post_outer_radius_mm": 2.4,
+          "overlap_mm3": 7.399555285964741
+        },
+        {
+          "four_post_outer_radius_mm": 2.2,
+          "overlap_mm3": 5.266903040848402
+        },
+        {
+          "four_post_outer_radius_mm": 2.0,
+          "overlap_mm3": 3.32275713239233
+        }
+      ]
+    },
+    {
+      "joint": "left_hip_yaw",
+      "servo": "S08_STS3250_left_hip_yaw",
+      "standoff": "S08_PCD14_CHILD_STANDOFF_left_hip_yaw",
+      "trials": [
+        {
+          "center_clearance_radius_mm": 4.8,
+          "overlap_mm3": 38.46219784653669
+        },
+        {
+          "center_clearance_radius_mm": 5.0,
+          "overlap_mm3": 36.92281760754958
+        },
+        {
+          "center_clearance_radius_mm": 5.2,
+          "overlap_mm3": 35.32060551548975
+        },
+        {
+          "center_clearance_radius_mm": 5.3,
+          "overlap_mm3": 34.49593752455911
+        },
+        {
+          "center_clearance_radius_mm": 5.35,
+          "overlap_mm3": 34.07771304286794
+        },
+        {
+          "four_post_outer_radius_mm": 2.7,
+          "overlap_mm3": 10.951977983199786
+        },
+        {
+          "four_post_outer_radius_mm": 2.4,
+          "overlap_mm3": 7.3995552859644675
+        },
+        {
+          "four_post_outer_radius_mm": 2.2,
+          "overlap_mm3": 5.266903040848027
+        },
+        {
+          "four_post_outer_radius_mm": 2.0,
+          "overlap_mm3": 3.322757132392117
+        }
+      ]
+    }
+  ]
+}

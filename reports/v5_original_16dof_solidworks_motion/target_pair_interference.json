@@ -1,0 +1,49 @@
+{
+  "schema": "zeroth01.v5.target_pair_interference.v1",
+  "rows": [
+    {
+      "component_ids": [
+        "CARRIER_R_ARM_MIRROR_1",
+        "LEFT_FIXED_WRIST_SUPPORT"
+      ],
+      "volume_mm3": 0.0
+    },
+    {
+      "component_ids": [
+        "CARRIER_L_ARM_MIRROR_1",
+        "RIGHT_FIXED_WRIST_SUPPORT"
+      ],
+      "volume_mm3": 0.0
+    },
+    {
+      "component_ids": [
+        "S07_PCD14_FOUR_SLEEVE_SPACER_right_hip_yaw",
+        "S07_STS3250_right_hip_yaw"
+      ],
+      "volume_mm3": 0.0
+    },
+    {
+      "component_ids": [
+        "S08_PCD14_FOUR_SLEEVE_SPACER_left_hip_yaw",
+        "S08_STS3250_left_hip_yaw"
+      ],
+      "volume_mm3": 0.0
+    },
+    {
+      "component_ids": [
+        "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+        "S07_2XM2X8_CASE_SCREWS_right_hip_yaw"
+      ],
+      "volume_mm3": 0.0
+    },
+    {
+      "component_ids": [
+        "CARRIER_Z_BOT2_MASTER_BODY_SKELETON",
+        "S08_2XM2X8_CASE_SCREWS_left_hip_yaw"
+      ],
+      "volume_mm3": 0.0
+    }
+  ],
+  "positive_interference_count": 0,
+  "overall": "PASS"
+}

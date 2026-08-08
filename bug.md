@@ -1,25 +1,27 @@
-# v4 connected mechanical issue ledger
+# v5 原始 16DoF 机械问题闭环
 
-## Resolved in `codex/zeroth01-v4-connected`
+## 已修复并有数字证据
 
-- Removed non-load-bearing square palms/hand blocks; original lightweight wrist termination remains.
-- Removed the external rear service pod/backplate and its exposed payload envelopes from the installed CAD, URDF and MJCF.
-- Removed added black 7 mm soles; source feet are the only installed contact geometry.
-- Replaced simplified servo boxes with 18 purchased-exact FEETECH STS3250 STEP occurrences.
-- Restored original Zeroth joint axes/carriers; left/right shoulder, hip, knee and ankle placements are generated from the same joint ledger.
-- Replaced the asymmetric/remote ankle experiment with mirrored direct-drive ankle-roll carriers and explicit PCD14 output bridges.
-- Added an explicit case/output torque path at all 18 joints.
-- Cleared the exact hip-yaw servo/torso clash with a 4 mm axial-only shift and 4×M2 case plus 4×M3 output fastener stacks; joint axes remain unchanged.
-- Removed full-disc hip spacers that collided with the servo horn/body.
-- SolidWorks B-Rep gate: 0 unapproved physical interferences. Eight bounded detections are the intended M3 screw engagement with the two STS3250 PCD14 tapped outputs; four are zero-volume contact.
-- MuJoCo 64-pose coordinated sweep: 0 non-ground penetrations.
+- 回滚错误的 18DoF/踝 roll 方案：当前仅 16 个原始 Zeroth-01 关节，未添加穿模踝舵机，也未缩短小腿。
+- 删除夹爪、大手掌、球形手和方块腕端；左右仅保留镜像的两 M3 小型固定支撑。
+- 删除黑色增高鞋底；替换为 9 mm 白色脚底，上端不超过原脚轮廓、接地端每向外扩 4 mm，即下宽上窄。
+- 删除外露背板/后勤舱；计算板、电池/BMS、IMU 和线束包络全部归属躯干内部。
+- 头部只在接受过的原 Zeroth 简单脸基础上，上下左右各扩 5 mm、加小圆角，并以隐藏 M3 螺母板无脖子直连；UnitV2 摄像头/麦克风为可拆件。
+- 将 17 个原始承力 carrier 转换为正体积运动 link；原躯干的 26 个闭合区域保持不动，只参数化替换两个破损头部定位柱。当前 motion-link STEP 全部为有效正体积 B-Rep。
+- 16 个蓝色舵机均采用 FEETECH STS3250-C001 采购精确 STEP，不再使用尺寸随意的方盒。
+- 明确每个关节的壳体侧与输出侧归属：静止侧含采购舵机与轴向承力环，运动侧含 PCD14 四孔输出桥。
+- 重做左右髋 yaw 安装：正体积躯干融合两组窄肋/螺柱，每侧 2×M2×8 固定后壳；输出侧四个 M3 套筒连接 U 形髋架；不再使用悬空桥板、整圆垫片或虚构背板。
+- 左右 U 形髋架按原关节全限位做 0.30 mm 扫掠避让；右侧切除 55.316 mm³、左侧 55.373 mm³，17 个验证姿态最大剩余交叠均为 0，轴线和中立位不变。
+- 当前 85 组件在中立位完成 3570/3570 对精确 B-Rep 检查：正体积干涉 0、Boolean 错误 0。
+- URDF：16 关节、2.745759 kg、惯量/网格/限位门禁 PASS；MJCF 在 MuJoCo 3.3.7 编译 PASS，`nq=23`, `nv=22`, `nu=16`。
 
-## Open physical-first-article blockers
+## 尚未关闭，禁止伪造 PASS
 
-- Verify purchased servo tolerances, output spline/threads and screw lengths on one joint coupon.
-- Freeze the actual compute board, battery/BMS, IMU, fuse, emergency stop and internal torso trays.
-- Route and flex-test the complete harness through joint limits.
-- Measure bus IDs, mechanical zeros, direction signs, as-built link mass/COM/inertia and SysID parameters.
-- Validate printed strength, fastener access/retention, current, voltage drop, thermal behavior and dynamic-policy torque traces.
+- 当前 SOLIDWORKS 进程无响应；新的 85 组件 assembly 尚未完成原生静态重建和 16 关节 × 上下限的 32 次真实 Motion。旧 native gate 的 manifest 哈希已过期，不能当作 v5 证据。
+- 必须采购至少一只真实 STS3250，验证外壳、后盖 M2、输出 25T/PCD14、螺钉长度和工具空间。
+- 必须打印髋 yaw 座/输出桥、腕端和脚底试片，验证间隙、层向、嵌件拉拔和重复拆装。
+- 必须冻结计算板、电池/BMS、IMU、保险丝、急停、稳压器和线束后，才能对内部托架签字。
+- 必须实测总线 ID、机械零位、方向、背隙、延迟、扭矩增益、电流、温升、电压降、分 link 质量/COM/全惯量，并通过 SysID 更新 RL 模型。
+- 必须带真实线束完成无电全行程、悬吊单关节、镜像关节、限位慢扫和动态策略测试。
 
-These blockers do not invalidate the digital RL baseline, but they prohibit changing `physical_first_article_gate` from `HOLD`.
+当前结论：`digital_rl_baseline = PASS`；`native_solidworks_motion = HOLD`；`physical_first_article = HOLD`。

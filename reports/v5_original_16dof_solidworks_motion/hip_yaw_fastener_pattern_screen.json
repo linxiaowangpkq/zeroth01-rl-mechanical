@@ -1,0 +1,634 @@
+{
+  "schema": "zeroth01.v5.hip_yaw_fastener_pattern_screen.v1",
+  "source_truth": {
+    "official_pattern": "user-supplied/FEETECH STS3250 dimension drawing",
+    "step_patterns": "analytic cylindrical axes extracted from the exact step.parts ST-3235M-family STEP"
+  },
+  "rows": [
+    {
+      "pattern": "official_sts3250_drawing_4xm2",
+      "z_start_mm": -39.45,
+      "z_end_mm": -35.45,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -28.5,
+            -10.25
+          ],
+          "servo_distance_mm": 1.6178495057193978,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -28.5,
+            10.25
+          ],
+          "servo_distance_mm": 1.617849505719398,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            -10.25
+          ],
+          "servo_distance_mm": 1.438111468154989,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.30965905562503,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            10.25
+          ],
+          "servo_distance_mm": 1.4381114681549905,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625031,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 1.617849505719398,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "official_sts3250_drawing_4xm2",
+      "z_start_mm": -39.45,
+      "z_end_mm": -34.0,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -28.5,
+            -10.25
+          ],
+          "servo_distance_mm": 1.2717849752047334,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -28.5,
+            10.25
+          ],
+          "servo_distance_mm": 1.2717849752047334,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            -10.25
+          ],
+          "servo_distance_mm": 1.033514063443179,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.30965905562503,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            10.25
+          ],
+          "servo_distance_mm": 1.0335140634431819,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625031,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 1.2717849752047334,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "official_sts3250_drawing_4xm2",
+      "z_start_mm": -39.45,
+      "z_end_mm": -32.85,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -28.5,
+            -10.25
+          ],
+          "servo_distance_mm": 1.2717849752047334,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -28.5,
+            10.25
+          ],
+          "servo_distance_mm": 1.2717849752047334,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            -10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.30965905562503,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625031,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 1.2717849752047334,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "official_sts3250_drawing_4xm2",
+      "z_start_mm": -39.45,
+      "z_end_mm": -31.35,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -28.5,
+            -10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -28.5,
+            10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            -10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 4.247416850406509,
+          "moving_uhip_overlap_mm3": 4.30965905562503,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            8.3,
+            10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 4.247429063423736,
+          "moving_uhip_overlap_mm3": 4.309659055625031,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 0.0,
+      "total_servo_overlap_mm3": 8.494845913830245,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "step_case_screw_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -35.45,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -29.71,
+            -9.35
+          ],
+          "servo_distance_mm": 1.554540677228205,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -29.71,
+            9.35
+          ],
+          "servo_distance_mm": 1.5545406772282018,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            -10.0
+          ],
+          "servo_distance_mm": 2.6000000000000014,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0007068830447913975
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            10.0
+          ],
+          "servo_distance_mm": 2.6000000000000014,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.012299035829475398
+        }
+      ],
+      "max_servo_distance_mm": 2.6000000000000014,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.619318111250063,
+      "total_fixed_torso_overlap_mm3": 0.013005918874266796
+    },
+    {
+      "pattern": "step_case_screw_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -34.0,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -29.71,
+            -9.35
+          ],
+          "servo_distance_mm": 1.1902086863895447,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -29.71,
+            9.35
+          ],
+          "servo_distance_mm": 1.1902086863895451,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            -10.0
+          ],
+          "servo_distance_mm": 1.1499999999999986,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0007068830447913975
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            10.0
+          ],
+          "servo_distance_mm": 1.1499999999999986,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.012299035829475377
+        }
+      ],
+      "max_servo_distance_mm": 1.1902086863895451,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.619318111250063,
+      "total_fixed_torso_overlap_mm3": 0.013005918874266775
+    },
+    {
+      "pattern": "step_case_screw_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -32.85,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -29.71,
+            -9.35
+          ],
+          "servo_distance_mm": 1.1902086863895447,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -29.71,
+            9.35
+          ],
+          "servo_distance_mm": 1.1902086863895451,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            -10.0
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0007068830447913975
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            10.0
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.012299035829475367
+        }
+      ],
+      "max_servo_distance_mm": 1.1902086863895451,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.619318111250063,
+      "total_fixed_torso_overlap_mm3": 0.013005918874266765
+    },
+    {
+      "pattern": "step_case_screw_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -31.35,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -29.71,
+            -9.35
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -29.71,
+            9.35
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            -10.0
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 1.1803471397358034,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0007068830447913975
+        },
+        {
+          "axis_xy_mm": [
+            10.14,
+            10.0
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 1.1973354117107657,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.012299035829475419
+        }
+      ],
+      "max_servo_distance_mm": 0.0,
+      "total_servo_overlap_mm3": 2.3776825514465694,
+      "total_moving_uhip_overlap_mm3": 8.619318111250063,
+      "total_fixed_torso_overlap_mm3": 0.013005918874266817
+    },
+    {
+      "pattern": "step_front_cover_hole_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -35.45,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -14.31,
+            -10.25
+          ],
+          "servo_distance_mm": 2.60048072478917,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -14.31,
+            10.25
+          ],
+          "servo_distance_mm": 2.60048072478917,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            -10.25
+          ],
+          "servo_distance_mm": 0.7962767069604466,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            10.25
+          ],
+          "servo_distance_mm": 0.7962767069604478,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625028,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 2.60048072478917,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "step_front_cover_hole_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -34.0,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -14.31,
+            -10.25
+          ],
+          "servo_distance_mm": 1.1510864433221324,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -14.31,
+            10.25
+          ],
+          "servo_distance_mm": 1.1510864433221324,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            -10.25
+          ],
+          "servo_distance_mm": 0.07954461733657614,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            10.25
+          ],
+          "servo_distance_mm": 0.07954461733657969,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625028,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 1.1510864433221324,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "step_front_cover_hole_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -32.85,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -14.31,
+            -10.25
+          ],
+          "servo_distance_mm": 0.03535533906002877,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -14.31,
+            10.25
+          ],
+          "servo_distance_mm": 0.03535533906002877,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            -10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.0,
+          "moving_uhip_overlap_mm3": 4.309659055625028,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 0.03535533906002877,
+      "total_servo_overlap_mm3": 0.0,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    },
+    {
+      "pattern": "step_front_cover_hole_axes",
+      "z_start_mm": -39.45,
+      "z_end_mm": -31.35,
+      "pin_radius_mm": 0.95,
+      "pins": [
+        {
+          "axis_xy_mm": [
+            -14.31,
+            -10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.8905265962955309,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            -14.31,
+            10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 0.8930864429275622,
+          "moving_uhip_overlap_mm3": 0.0,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            -10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 4.2529310547971795,
+          "moving_uhip_overlap_mm3": 4.309659055625032,
+          "fixed_torso_overlap_mm3": 0.0
+        },
+        {
+          "axis_xy_mm": [
+            6.39,
+            10.25
+          ],
+          "servo_distance_mm": 0.0,
+          "servo_overlap_mm3": 4.25293105479718,
+          "moving_uhip_overlap_mm3": 4.309659055625028,
+          "fixed_torso_overlap_mm3": 0.0
+        }
+      ],
+      "max_servo_distance_mm": 0.0,
+      "total_servo_overlap_mm3": 10.289475148817452,
+      "total_moving_uhip_overlap_mm3": 8.61931811125006,
+      "total_fixed_torso_overlap_mm3": 0.0
+    }
+  ],
+  "acceptance": "A fixed case fastener must reach the purchased case (distance <= 0.05 mm) and have moving-U-hip overlap <= 0.01 mm^3. Torso overlap is not accepted; any selected pattern requires explicit matching torso holes."
+}

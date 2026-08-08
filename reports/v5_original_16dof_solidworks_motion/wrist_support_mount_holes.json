@@ -1,0 +1,30 @@
+{
+  "schema": "zeroth01.v5.wrist_support_mount_holes.v1",
+  "rows": [
+    {
+      "owner_link": "R_ARM_MIRROR_1",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/R_ARM_MIRROR_1_STS3250_CLEARANCED.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/R_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+      "hole_count": 2,
+      "hole_diameter_mm": 3.4,
+      "fastener": "2x M3 through-bolt, washer and locknut",
+      "removed_volume_mm3": 37.65570440425654,
+      "occt_valid": true,
+      "status": "PASS"
+    },
+    {
+      "owner_link": "L_ARM_MIRROR_1",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/L_ARM_MIRROR_1_STS3250_CLEARANCED.step",
+      "target": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/L_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+      "hole_count": 2,
+      "hole_diameter_mm": 3.4,
+      "fastener": "2x M3 through-bolt, washer and locknut",
+      "removed_volume_mm3": 37.655696405414346,
+      "occt_valid": true,
+      "status": "PASS"
+    }
+  ],
+  "joint_axes_changed": false,
+  "link_lengths_changed": false,
+  "overall": "PASS"
+}

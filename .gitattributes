@@ -2,7 +2,8 @@
 *.gif binary
 *.png binary
 *.pdf binary
-*.SLDASM binary
-*.SLDPRT binary
-*.step binary
+*.SLDASM filter=lfs diff=lfs merge=lfs -text
+*.SLDPRT filter=lfs diff=lfs merge=lfs -text
+*.step filter=lfs diff=lfs merge=lfs -text
 *.stl binary
+*.glb filter=lfs diff=lfs merge=lfs -text
