@@ -8,7 +8,7 @@
   "mass_gate": "PASS",
   "inertial_gate": "PASS",
   "link_masses_kg": {
-    "Z_BOT2_MASTER_BODY_SKELETON": 0.728,
+    "Z_BOT2_MASTER_BODY_SKELETON": 1.041,
     "3215_1Flange": 0.149,
     "3215_1Flange_2": 0.149,
     "3215_BothFlange_10": 0.1745,
@@ -17,8 +17,8 @@
     "3215_BothFlange_5": 0.0995,
     "3215_BothFlange_6": 0.0995,
     "3215_BothFlange_9": 0.1745,
-    "FINGER_1": 0.016,
-    "FINGER_1_2": 0.016,
+    "FINGER_1": 0.005,
+    "FINGER_1_2": 0.005,
     "FOOT": 0.07,
     "FOOT_2": 0.07,
     "L_ARM_MIRROR_1": 0.03,
@@ -30,11 +30,7 @@
     "left_ankle_roll_carrier": 0.095,
     "right_ankle_roll_carrier": 0.095,
     "v4_head_shell": 0.055,
-    "m5stack_unitv2": 0.018,
-    "v4_rear_service_pod": 0.08,
-    "v4_compute_module": 0.025,
-    "v4_battery_pack": 0.18,
-    "v4_torso_imu": 0.006
+    "m5stack_unitv2": 0.018
   },
   "confidence": "engineering_estimate_pending_first_article_scale_and_swing_identification",
   "truth_boundary": "Nominal RL mass/inertia is complete and internally consistent, but physical release remains HOLD until the printed first article, purchased payload and fasteners are weighed and identified."

@@ -2,29 +2,94 @@
   "schema": "zeroth01.physical_mount_v4_original_minimal.solidworks_interference_gate.v1",
   "solidworks_revision": "33.0.0",
   "assembly": "E:\\Codex\\Documents-Codex\\roboto-lite-infra-portfolio\\roboto_xw\\publish\\zeroth01-rl-mechanical\\generated\\solidworks\\physical_mount_v4_original_minimal\\portable_flat\\OPTIONAL_XRAY_ZEROTH01_V4_ORIGINAL_MINIMAL_INTERNAL_LAYOUT.SLDASM",
+  "manifest_sha256": "7c7e94c845a4ff5377afb50406d8e1186e9c29992149bad3bf74607537a2909e",
   "settings": {
     "treat_coincidence_as_interference": false,
-    "include_multibody_part_interferences": true,
+    "include_multibody_part_interferences": false,
     "ignore_hidden_bodies": false
   },
-  "raw_interference_count": 4,
-  "same_component_union_overlap_count": 2,
-  "zero_volume_contact_only_count": 2,
+  "raw_interference_count": 12,
+  "same_component_union_overlap_count": 0,
+  "zero_volume_contact_only_count": 4,
+  "intentional_threaded_fastener_engagement_count": 8,
   "physical_interference_count": 0,
   "rows": [
     {
       "components": [
-        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
-        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1"
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-2"
       ],
-      "volume_mm3": 0.016662280309550723,
+      "volume_mm3": 1.2271846303084712,
       "possible_interference": false,
-      "classification": "same_component_multibody_union_overlap"
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-2"
+      ],
+      "volume_mm3": 1.2271846303084692,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-1"
+      ],
+      "volume_mm3": 1.2271846303084646,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-1"
+      ],
+      "volume_mm3": 1.2271846303084628,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-2"
+      ],
+      "volume_mm3": 0.5047605862080761,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-1"
+      ],
+      "volume_mm3": 0.5047605862080002,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-2"
+      ],
+      "volume_mm3": 0.5047603417314737,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7",
+        "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM-1"
+      ],
+      "volume_mm3": 0.5047603417314052,
+      "possible_interference": false,
+      "classification": "intentional_threaded_fastener_engagement"
     },
     {
       "components": [
         "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
-        "V4_REUSED_ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED-8"
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8"
       ],
       "volume_mm3": 0.0,
       "possible_interference": true,
@@ -33,22 +98,31 @@
     {
       "components": [
         "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
-        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1"
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7"
       ],
       "volume_mm3": 0.0,
       "possible_interference": true,
-      "classification": "same_component_multibody_union_overlap"
+      "classification": "zero_volume_contact_only"
     },
     {
       "components": [
         "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
-        "V4_REUSED_ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED-7"
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7"
+      ],
+      "volume_mm3": 0.0,
+      "possible_interference": true,
+      "classification": "zero_volume_contact_only"
+    },
+    {
+      "components": [
+        "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1",
+        "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8"
       ],
       "volume_mm3": 0.0,
       "possible_interference": true,
       "classification": "zero_volume_contact_only"
     }
   ],
-  "truth_boundary": "Only bodies that belong to the same imported multibody carrier may overlap. Actuators, shells, mounts, payload envelopes, source carriers, foot and sole must have zero cross-component intersection volume.",
+  "truth_boundary": "Cross-component intersection must be zero except the explicitly modeled M3 screw shanks entering the purchased STS3250 tapped PCD14 holes (each <=1.25 mm^3). All other actuators, shells, torque bridges, mounts, carriers and feet must not intersect.",
   "overall": "PASS"
 }

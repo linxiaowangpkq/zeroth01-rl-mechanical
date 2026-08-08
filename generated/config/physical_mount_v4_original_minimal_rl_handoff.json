@@ -6,7 +6,7 @@
   "actuator_layout": "generated/config/physical_mount_v4_original_minimal_actuator_layout.json",
   "nominal_total_mass_kg": 2.85,
   "mass_limit_kg": 3.0,
-  "solidworks_standing_height_mm": 498.959277582387,
+  "solidworks_standing_height_mm": 489.9889237770837,
   "movable_joint_count": 18,
   "actuator": {
     "model": "FEETECH STS3250-C001",
@@ -19,7 +19,7 @@
   "sensors": {
     "camera_optical_frame": "M5Stack UnitV2 GC2145 camera; optical +Z is robot forward",
     "microphone_frame": "M5Stack UnitV2 integrated microphone",
-    "torso_imu_frame": "32 x 25 x 8 mm controlled envelope on the rigid rear-pod shelf",
+    "torso_imu_frame": "torso_imu_frame; physical internal mounting remains a first-article HOLD",
     "foot_contacts": [
       "left_sole_front_medial_contact",
       "left_sole_front_lateral_contact",
@@ -31,7 +31,7 @@
       "right_sole_rear_lateral_contact"
     ]
   },
-  "payload_envelopes_mm": {
+  "payload_reserved_envelopes_mm": {
     "compute": [
       70,
       12,
@@ -86,6 +86,7 @@
     "mujoco_coordinated_collision_sweep": "PASS"
   },
   "holds": [
+    "freeze a real internal torso tray and cable routing before print release; the removed external rear pod is not an installed part",
     "weigh printed and purchased first article; update every link mass/COM/inertia",
     "one-at-a-time powered bus ID, zero and direction calibration",
     "quasi-static torque/current test before walking",

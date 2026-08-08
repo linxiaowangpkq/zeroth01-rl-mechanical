@@ -584,7 +584,10 @@ def sts3250_manifest_components() -> dict[str, dict[str, object]]:
     payload = json.loads(ASSEMBLY_MANIFEST.read_text(encoding="utf-8"))
     components: dict[str, dict[str, object]] = {}
     for component in payload["components"]:
-        if component.get("role") != "dimension_controlled_sts3250":
+        if component.get("role") not in {
+            "dimension_controlled_sts3250",
+            "purchased_exact_sts3250",
+        }:
             continue
         servo_id = str(component["component_id"]).split("_", 1)[0]
         components[servo_id] = component
@@ -627,7 +630,14 @@ def copy_visuals(old_robot, old_link_name, new_link, neutral_tf, sts_components)
                     origin = ET.SubElement(copied, "origin")
                 origin.set("xyz", fmt(local_tf[1]))
                 origin.set("rpy", fmt(matrix_rpy(local_tf[0])))
-                mesh.set("filename", "meshes/v3/sts3250_dimension_controlled.stl")
+                mesh.set(
+                    "filename",
+                    (
+                        "meshes/v4/sts3250_step_parts_exact_shaft_frame.stl"
+                        if component.get("role") == "purchased_exact_sts3250"
+                        else "meshes/v3/sts3250_dimension_controlled.stl"
+                    ),
+                )
                 mesh.set("scale", "0.001 0.001 0.001")
             elif "left_sole.stl" in filename:
                 mesh.set("filename", "meshes/v3/left_sole_lightweighted.stl")

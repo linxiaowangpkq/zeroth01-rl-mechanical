@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import shutil
@@ -137,6 +138,14 @@ def normalize_gate_schema() -> None:
     gate = REPORT_ROOT / "solidworks_gate.json"
     payload = json.loads(gate.read_text(encoding="utf-8"))
     payload["schema"] = "zeroth01.physical_mount_v4_original_minimal.solidworks_gate.v1"
+    manifest = data()
+    payload["manifest_sha256"] = hashlib.sha256(MANIFEST.read_bytes()).hexdigest()
+    payload["expected_manifest_component_count"] = int(manifest["component_count"])
+    payload["separate_blue_sts3250_count"] = sum(
+        row.get("role") == "purchased_exact_sts3250"
+        for row in manifest["components"]
+    )
+    payload["actuator_geometry"] = "step.parts purchased-exact FEETECH STS3250 STEP"
     payload["truth_boundary"] = (
         "Native SolidWorks save, component count, transform and assembly-envelope gate. "
         "Use solidworks_interference_gate.json for cross-component B-Rep interference."

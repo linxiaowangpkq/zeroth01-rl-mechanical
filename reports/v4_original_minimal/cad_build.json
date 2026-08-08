@@ -66,47 +66,135 @@
       "valid_brep": true
     },
     {
-      "name": "left_small_light_palm",
-      "step": "generated/cad/physical_mount_v4_original_minimal/parts/left_small_light_palm.step",
-      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/left_small_light_palm.stl",
+      "name": "sts3250_step_parts_exact_shaft_frame",
+      "step": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_step_parts_exact_shaft_frame.step",
+      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_step_parts_exact_shaft_frame.stl",
       "bbox_min_mm": [
-        -18.480800000000002,
-        -42.0,
-        0.7499999999999996
+        -32.72002316282314,
+        -12.360023754600425,
+        -39.450057381309996
       ],
       "bbox_max_mm": [
-        11.519200000000001,
-        7.0,
-        36.85
+        12.500026155437,
+        12.36002620437,
+        -2.0499998818533163
       ],
       "bbox_size_mm": [
-        30.000000000000004,
-        49.0,
-        36.1
+        45.22004931826014,
+        24.720049958970424,
+        37.40005749945668
       ],
-      "volume_mm3": 23791.591354886146,
+      "volume_mm3": 11860.680951315851,
       "valid_brep": true
     },
     {
-      "name": "right_small_light_palm",
-      "step": "generated/cad/physical_mount_v4_original_minimal/parts/right_small_light_palm.step",
-      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/right_small_light_palm.stl",
+      "name": "sts3250_pcd14_output_bridge_2p05mm",
+      "step": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_output_bridge_2p05mm.stl",
       "bbox_min_mm": [
-        -18.480800000000002,
-        -7.0,
-        0.7499999999999996
+        -9.975,
+        -9.975,
+        -2.05
       ],
       "bbox_max_mm": [
-        11.519200000000001,
-        42.0,
-        36.85
+        9.975,
+        9.975,
+        0.0
       ],
       "bbox_size_mm": [
-        30.000000000000004,
-        49.0,
-        36.1
+        19.95,
+        19.95,
+        2.05
       ],
-      "volume_mm3": 23791.591374456722,
+      "volume_mm3": 512.9711276253627,
+      "valid_brep": true
+    },
+    {
+      "name": "sts3250_pcd14_child_standoff_1mm",
+      "step": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_child_standoff_1mm.step",
+      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_child_standoff_1mm.stl",
+      "bbox_min_mm": [
+        -9.975,
+        -9.975,
+        0.0
+      ],
+      "bbox_max_mm": [
+        9.975,
+        9.975,
+        1.0
+      ],
+      "bbox_size_mm": [
+        19.95,
+        19.95,
+        1.0
+      ],
+      "volume_mm3": 250.22981835383553,
+      "valid_brep": true
+    },
+    {
+      "name": "sts3250_pcd14_4xm3_tie_rods_1p95mm",
+      "step": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_4xm3_tie_rods_1p95mm.step",
+      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_4xm3_tie_rods_1p95mm.stl",
+      "bbox_min_mm": [
+        -8.25,
+        -8.25,
+        0.0
+      ],
+      "bbox_max_mm": [
+        8.25,
+        8.25,
+        1.95
+      ],
+      "bbox_size_mm": [
+        16.5,
+        16.5,
+        1.95
+      ],
+      "volume_mm3": 38.2881604656256,
+      "valid_brep": true
+    },
+    {
+      "name": "sts3250_pcd14_child_standoff_12p95mm",
+      "step": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_child_standoff_12p95mm.step",
+      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_pcd14_child_standoff_12p95mm.stl",
+      "bbox_min_mm": [
+        -9.975,
+        -9.975,
+        0.0
+      ],
+      "bbox_max_mm": [
+        9.975,
+        9.975,
+        12.95
+      ],
+      "bbox_size_mm": [
+        19.95,
+        19.95,
+        12.95
+      ],
+      "volume_mm3": 3240.4761476821704,
+      "valid_brep": true
+    },
+    {
+      "name": "sts3250_case_4xm2_standoff_4mm",
+      "step": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_case_4xm2_standoff_4mm.step",
+      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/sts3250_case_4xm2_standoff_4mm.stl",
+      "bbox_min_mm": [
+        -29.4,
+        -11.15,
+        -39.45
+      ],
+      "bbox_max_mm": [
+        9.200000000000001,
+        11.15,
+        -35.45
+      ],
+      "bbox_size_mm": [
+        38.6,
+        22.3,
+        4.0
+      ],
+      "volume_mm3": 40.715040790523716,
       "valid_brep": true
     },
     {
@@ -159,8 +247,8 @@
       "stl": "generated/cad/physical_mount_v4_original_minimal/parts/left_direct_ankle_carrier_26p5mm.stl",
       "bbox_min_mm": [
         -36.11,
-        -14.0,
-        -42.25
+        -14.0000001,
+        -42.2500001
       ],
       "bbox_max_mm": [
         16.0000001,
@@ -169,10 +257,10 @@
       ],
       "bbox_size_mm": [
         52.1100001,
-        40.5,
-        52.25
+        40.5000001,
+        52.2500001
       ],
-      "volume_mm3": 9556.787118873672,
+      "volume_mm3": 9548.46410151624,
       "valid_brep": true
     },
     {
@@ -181,8 +269,8 @@
       "stl": "generated/cad/physical_mount_v4_original_minimal/parts/right_direct_ankle_carrier_26p5mm.stl",
       "bbox_min_mm": [
         -36.11,
-        -14.0,
-        -42.25
+        -14.0000001,
+        -42.2500001
       ],
       "bbox_max_mm": [
         16.0000001,
@@ -191,32 +279,10 @@
       ],
       "bbox_size_mm": [
         52.1100001,
-        40.5,
-        52.25
+        40.5000001,
+        52.2500001
       ],
-      "volume_mm3": 9556.787118873672,
-      "valid_brep": true
-    },
-    {
-      "name": "hip_yaw_horn_spacer_2mm",
-      "step": "generated/cad/physical_mount_v4_original_minimal/parts/hip_yaw_horn_spacer_2mm.step",
-      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/hip_yaw_horn_spacer_2mm.stl",
-      "bbox_min_mm": [
-        -9.975,
-        -9.975,
-        0.0
-      ],
-      "bbox_max_mm": [
-        9.975,
-        9.975,
-        2.0
-      ],
-      "bbox_size_mm": [
-        19.95,
-        19.95,
-        2.0
-      ],
-      "volume_mm3": 500.45963670767105,
+      "volume_mm3": 9548.46410151624,
       "valid_brep": true
     },
     {
@@ -525,28 +591,6 @@
         38.0
       ],
       "volume_mm3": 1183.0356359642753,
-      "valid_brep": true
-    },
-    {
-      "name": "rear_service_pod",
-      "step": "generated/cad/physical_mount_v4_original_minimal/parts/rear_service_pod.step",
-      "stl": "generated/cad/physical_mount_v4_original_minimal/parts/rear_service_pod.stl",
-      "bbox_min_mm": [
-        -49.0,
-        67.2,
-        -92.0000001
-      ],
-      "bbox_max_mm": [
-        49.0,
-        100.0,
-        8.0000001
-      ],
-      "bbox_size_mm": [
-        98.0,
-        32.8,
-        100.00000019999999
-      ],
-      "volume_mm3": 40902.01017447334,
       "valid_brep": true
     }
   ]

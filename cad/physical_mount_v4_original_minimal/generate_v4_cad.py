@@ -38,6 +38,7 @@ OUT = ROOT / "generated" / "cad" / "physical_mount_v4_original_minimal"
 PARTS = OUT / "parts"
 REPORT = ROOT / "reports" / "v4_original_minimal" / "cad_build.json"
 V1_STL = ROOT / "generated" / "cad" / "physical_mount_v1" / "skeleton"
+STS3250_STEP_PARTS = ROOT / "source_assets" / "step_parts" / "feetech_sts3250.step"
 V1_STEP = (
     ROOT.parents[1]
     / "reference"
@@ -113,6 +114,39 @@ SHIN_SHORTEN_MM = 18.0
 ANKLE_ROLL_DIRECT_OFFSET_MM = 26.5
 BODY_HEAD_INTERFACE_TRIM_MM = 2.5
 SHOULDER_SERVO_HEAD_CLEARANCE_MM = 0.8
+OBSOLETE_GENERATED_PART_STEMS = {
+    "body_original_head_interface_trimmed_2mm",
+    "body_original_minus_head",
+    "left_original_hand",
+    "right_original_hand",
+    "left_small_light_palm",
+    "right_small_light_palm",
+    "rear_service_pod",
+    "hip_yaw_horn_spacer_2mm",
+    "remote_ankle_2x688_bearings",
+    "remote_ankle_equal_16t_pulleys",
+    "remote_ankle_foot_horn_adapter",
+    "remote_ankle_front_plate",
+    "remote_ankle_gt2_90mm_belt_reference",
+    "remote_ankle_output_shaft",
+    "remote_ankle_rear_plate",
+    "remote_ankle_spacers",
+    "sts3250_pcd14_child_standoff_8p9mm",
+    "sts3250_pcd14_child_standoff_3mm",
+    "sts3250_pcd14_child_standoff_13mm",
+    "sts3250_pcd14_child_standoff_1p95mm",
+}
+# The step.parts model uses its vendor frame: output axis +Y, shaft line at
+# X=-2.89/Z=0.  The released Zeroth installation frame uses output axis +Z
+# and places the child-joint datum 2.05 mm beyond the supplied output face.
+# This proper rotation/translation preserves the exact 45.22 x 24.72 x 37.40
+# purchased geometry while keeping every released joint axis unchanged.
+STS3250_NATIVE_TO_SHAFT_FRAME = (
+    (1.0, 0.0, 0.0, 2.89),
+    (0.0, 0.0, -1.0, 0.0),
+    (0.0, 1.0, 0.0, -11.25),
+)
+STS3250_OUTPUT_FACE_GAP_MM = 2.05
 HIP_SERVO_MATRICES = (
     (
         (9.551763069156241e-17, -0.99999999999994, -3.4641009687928327e-07, -7.700908393644671),
@@ -174,6 +208,21 @@ def scaled_source_stl(name: str) -> Shape:
     return result
 
 
+def exact_sts3250_shaft_frame() -> Shape:
+    """Purchased STS3250 STEP normalized to the released shaft datum."""
+
+    if not STS3250_STEP_PARTS.is_file():
+        raise FileNotFoundError(STS3250_STEP_PARTS)
+    moved = moved_by_matrix(import_step(STS3250_STEP_PARTS), STS3250_NATIVE_TO_SHAFT_FRAME)
+    # Flatten the vendor product tree to its 13 manufacturing solids.  OCCT's
+    # STEP writer cannot re-serialize the imported nested assembly wrapper,
+    # while a flat compound preserves every face and thread exactly.
+    result = Compound(children=list(moved.solids()))
+    result.label = "FEETECH_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME"
+    result.color = BLUE
+    return result
+
+
 def source_step(name: str) -> Shape:
     path = V1_STEP / f"{name}.step"
     if not path.is_file():
@@ -212,11 +261,10 @@ def body_without_old_head() -> Shape:
         base_body = common(source, keep)
         export_step(base_body, cached)
 
-    # The released body is a 6368-face STL conversion, not a sewn solid.
-    # Claiming service-pocket booleans on that source would be false.  Keep the
-    # load-bearing body unchanged and put all electronics in the reversible
-    # white rear service pod generated below.  Only the top 2 mm head-interface
-    # band is planarly trimmed to give the enlarged shell true clearance.
+    # Keep the released faceted load-bearing body unchanged below this planar
+    # head-interface trim.  Its unsewn source cannot truthfully accept detailed
+    # B-Rep pocket booleans; the hip-yaw exact-servo clearance is instead owned
+    # by the explicit axial shim/output stack in the assembly manifest.
     keep = Box(
         400.0,
         400.0,
@@ -599,7 +647,12 @@ def shortened_lower_leg(side: str) -> Shape:
 
 
 def direct_ankle_carrier(side: str) -> Shape:
-    """Direct-drive carrier with a robust 26.5 mm STS centre spacing."""
+    """Mirrored double-face ankle cage for the exact purchased STS3250.
+
+    The output and rear plates both use the drawing-derived four-M2 pattern.
+    This removes the old friction-fit shell assumption and gives the case a
+    closed parent-side load path before the PCD14 output bridge drives FOOT.
+    """
 
     cage_z = -20.75
     outer = rounded_box((52.0, 28.0, 43.0), (STS_CASE_CENTER_X_MM, 0.0, cage_z), 3.0)
@@ -618,6 +671,17 @@ def direct_ankle_carrier(side: str) -> Shape:
     cage = cage.fuse(anchor).cut(
         Cylinder(14.2, 5.0, align=(Align.CENTER, Align.CENTER, Align.CENTER))
     )
+    # Four M2 case screws on both axial faces.  The holes are coaxial with the
+    # purchased servo's tapped pattern in the normalized shaft frame.
+    for x_pos in STS_M2_X_MM:
+        for y_pos in STS_M2_Y_MM:
+            cage = cage.cut(
+                Cylinder(
+                    1.15,
+                    48.0,
+                    align=(Align.CENTER, Align.CENTER, Align.CENTER),
+                ).moved(Location((x_pos, y_pos, cage_z)))
+            )
     for z_pos in (-6.0, 6.0):
         cage = cage.cut(
             Cylinder(1.7, 6.0, align=(Align.CENTER, Align.CENTER, Align.CENTER)).moved(
@@ -627,6 +691,139 @@ def direct_ankle_carrier(side: str) -> Shape:
     cage.label = f"ZEROTH01_V4_{side.upper()}_STS3250_DIRECT_ANKLE_CARRIER_26P5MM"
     cage.color = WHITE
     return cage
+
+
+def sts3250_output_bridge_2p05mm() -> Shape:
+    """PCD14 bridge between the purchased output face and child datum.
+
+    The step.parts actuator stops 2.05 mm behind the released Zeroth joint
+    plane.  This keyed four-M3 plate fills only that measured axial gap; it is
+    not a cosmetic disc and is assigned to the opposite/rotating joint side.
+    """
+
+    bridge = Cylinder(
+        9.975,
+        STS3250_OUTPUT_FACE_GAP_MM,
+        align=(Align.CENTER, Align.CENTER, Align.MAX),
+    )
+    bridge = bridge.cut(
+        Cylinder(
+            3.1,
+            STS3250_OUTPUT_FACE_GAP_MM + 1.0,
+            align=(Align.CENTER, Align.CENTER, Align.MAX),
+        )
+    )
+    for angle_deg in (0.0, 90.0, 180.0, 270.0):
+        angle_rad = math.radians(angle_deg)
+        bridge = bridge.cut(
+            Cylinder(
+                1.6,
+                STS3250_OUTPUT_FACE_GAP_MM + 1.0,
+                align=(Align.CENTER, Align.CENTER, Align.MAX),
+            ).moved(
+                Location(
+                    (
+                        7.0 * math.cos(angle_rad),
+                        7.0 * math.sin(angle_rad),
+                        0.0,
+                    )
+                )
+            )
+        )
+    bridge.label = "ZEROTH01_V4_STS3250_PCD14_OUTPUT_BRIDGE_2P05MM"
+    bridge.color = BLUE
+    return bridge
+
+
+def sts3250_child_standoff(height_mm: float, outer_radius_mm: float = 9.975) -> Shape:
+    """Four-hole PCD14 child-side standoff from joint datum to carrier.
+
+    The original Zeroth carriers use three nominal output offsets: 1 mm for
+    compact flanges, 3 mm at the elbows, and 8.9 mm at the ankle-pitch cage.
+    Keeping this as a separate replaceable spacer preserves the released
+    shaft axis while making the torque path explicit and printable.
+    """
+
+    standoff = Cylinder(
+        outer_radius_mm,
+        height_mm,
+        align=(Align.CENTER, Align.CENTER, Align.MIN),
+    )
+    standoff = standoff.cut(
+        Cylinder(
+            3.1,
+            height_mm + 1.0,
+            align=(Align.CENTER, Align.CENTER, Align.MIN),
+        )
+    )
+    for angle_deg in (0.0, 90.0, 180.0, 270.0):
+        angle_rad = math.radians(angle_deg)
+        standoff = standoff.cut(
+            Cylinder(
+                1.6,
+                height_mm + 1.0,
+                align=(Align.CENTER, Align.CENTER, Align.MIN),
+            ).moved(
+                Location(
+                    (
+                        7.0 * math.cos(angle_rad),
+                        7.0 * math.sin(angle_rad),
+                        0.0,
+                    )
+                )
+            )
+        )
+    standoff.label = (
+        f"ZEROTH01_V4_STS3250_PCD14_CHILD_STANDOFF_{height_mm:g}MM_"
+        f"R{outer_radius_mm:g}"
+    )
+    standoff.color = BLUE
+    return standoff
+
+
+def sts3250_case_4xm2_standoff_4mm() -> Shape:
+    """Four M2 screw shanks spanning the hip-yaw case-side 4 mm offset."""
+
+    screws = []
+    for x_pos in STS_M2_X_MM:
+        for y_pos in STS_M2_Y_MM:
+            screw = Cylinder(
+                0.9,
+                4.0,
+                align=(Align.CENTER, Align.CENTER, Align.MIN),
+            ).moved(Location((x_pos, y_pos, -39.45)))
+            screws.append(screw)
+    result = Compound(children=screws)
+    result.label = "ZEROTH01_V4_STS3250_CASE_4XM2_TIE_RODS_4MM"
+    result.color = BLUE
+    return result
+
+
+def sts3250_pcd14_4xm3_tie_rods_1p95mm() -> Shape:
+    """Four M3 shanks joining the fixed joint plane to the shifted horn."""
+
+    rods = []
+    for angle_deg in (0.0, 90.0, 180.0, 270.0):
+        angle_rad = math.radians(angle_deg)
+        rods.append(
+            Cylinder(
+                1.25,
+                1.95,
+                align=(Align.CENTER, Align.CENTER, Align.MIN),
+            ).moved(
+                Location(
+                    (
+                        7.0 * math.cos(angle_rad),
+                        7.0 * math.sin(angle_rad),
+                        0.0,
+                    )
+                )
+            )
+        )
+    result = Compound(children=rods)
+    result.label = "ZEROTH01_V4_STS3250_PCD14_4XM3_TIE_RODS_1P95MM"
+    result.color = BLUE
+    return result
 
 
 def remote_ankle_plate(front: bool) -> Shape:
@@ -808,13 +1005,16 @@ def parts() -> dict[str, Shape]:
     body = body_without_old_head()
     return {
         "body_original_head_interface_trimmed_2p5mm": body,
-        "left_small_light_palm": small_palm("left"),
-        "right_small_light_palm": small_palm("right"),
+        "sts3250_step_parts_exact_shaft_frame": exact_sts3250_shaft_frame(),
+        "sts3250_pcd14_output_bridge_2p05mm": sts3250_output_bridge_2p05mm(),
+        "sts3250_pcd14_child_standoff_1mm": sts3250_child_standoff(1.0),
+        "sts3250_pcd14_4xm3_tie_rods_1p95mm": sts3250_pcd14_4xm3_tie_rods_1p95mm(),
+        "sts3250_pcd14_child_standoff_12p95mm": sts3250_child_standoff(12.95),
+        "sts3250_case_4xm2_standoff_4mm": sts3250_case_4xm2_standoff_4mm(),
         "left_source_shin_shortened_18mm": shortened_lower_leg("left"),
         "right_source_shin_shortened_18mm": shortened_lower_leg("right"),
         "left_direct_ankle_carrier_26p5mm": direct_ankle_carrier("left"),
         "right_direct_ankle_carrier_26p5mm": direct_ankle_carrier("right"),
-        "hip_yaw_horn_spacer_2mm": hip_yaw_horn_spacer_2mm(),
         "head_front_5mm_each_side": split_head(True),
         "head_rear_5mm_each_side": split_head(False),
         "head_simple_visor": head_visor(),
@@ -829,7 +1029,6 @@ def parts() -> dict[str, Shape]:
         "torso_imu_envelope": imu_envelope(),
         "torso_imu_shelf": imu_shelf(),
         "harness_strain_relief_guides": harness_guides(),
-        "rear_service_pod": rear_service_pod(),
     }
 
 
@@ -842,6 +1041,9 @@ def gen_step() -> Compound:
 
 def main() -> int:
     PARTS.mkdir(parents=True, exist_ok=True)
+    for stem in sorted(OBSOLETE_GENERATED_PART_STEMS):
+        for suffix in (".step", ".stl"):
+            (PARTS / f"{stem}{suffix}").unlink(missing_ok=True)
     rows = []
     selected = parts()
     for name, shape in selected.items():

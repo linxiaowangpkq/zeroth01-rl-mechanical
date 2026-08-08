@@ -36,11 +36,16 @@ belong to their owner.
 - STS3215 official specification:
   <https://www.feetechrc.com/Data/feetechrc/upload/file/20200611/6372749961523760249976542.pdf>
 
-The separate `FEETECH_STS3250_C001_DIMENSION_REFERENCE.step` is newly
-constructed from published nominal dimensions. It is not supplier-native CAD.
-V4 uses 18 independent occurrences of a dimension-controlled STS3250
-reference SLDPRT derived from the published drawing. It is not supplier-native
-CAD and still requires inspection against a purchased first article.
+V4 uses 18 independent occurrences normalized from the downloadable STS3250
+CAD hosted by step.parts:
+
+- Catalog page: <https://www.step.parts/parts/feetech_sts3250>
+- Preserved download: `source_assets/step_parts/feetech_sts3250.step`
+- SHA-256: `cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf`
+
+This is substantially more detailed than the former drawing-derived box, but
+it is still third-party reference CAD and not a substitute for checking the
+purchased actuator, threads, spline, cable exit and production tolerances.
 
 ## Engineering workflow references
 

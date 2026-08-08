@@ -22,6 +22,8 @@ NORMAL_ASM = ROOT / "generated" / "solidworks" / "physical_mount_v4_original_min
 XRAY_ASM = ROOT / "generated" / "solidworks" / "physical_mount_v4_original_minimal" / "portable_flat" / "OPTIONAL_XRAY_ZEROTH01_V4_ORIGINAL_MINIMAL_INTERNAL_LAYOUT.SLDASM"
 ACTUATOR_CONFIG = ROOT / "generated" / "config" / "physical_mount_v4_original_minimal_actuator_layout.json"
 RL_CONFIG = ROOT / "generated" / "config" / "physical_mount_v4_original_minimal_rl_handoff.json"
+ASSEMBLY_MANIFEST = ROOT / "generated" / "cad" / "physical_mount_v4_original_minimal" / "ZEROTH01_V4_ORIGINAL_MINIMAL_18DOF_FULL_ASSEMBLY_MANIFEST.json"
+CONNECTIVITY_REPORT = REPORT_DIR / "mechanical_connectivity_gate.json"
 
 
 def read_json(path: Path):
@@ -59,9 +61,11 @@ def collect_release_files() -> list[Path]:
         ROOT / "README_zh.md",
         ROOT / "ASSEMBLY_GUIDE_zh.md",
         ROOT / "PROCUREMENT_BOM.csv",
+        ROOT / "bug.md",
         ROOT / "one-seq.md",
         ROOT / "RL_PROMPT.txt",
         ROOT / "THIRD_PARTY_NOTICES.md",
+        ROOT / "source_assets" / "step_parts" / "feetech_sts3250.step",
         ROOT / "scripts" / "create_solidworks_round_v1_review.py",
         ROOT / "snapshots" / "solidworks" / "v4_original_minimal" / "v4_normal_rl_front_upright.png",
         ROOT / "snapshots" / "solidworks" / "v4_original_minimal" / "v4_normal_rl_rear_upright.png",
@@ -69,6 +73,7 @@ def collect_release_files() -> list[Path]:
         REPORT_DIR / "cad_render_evidence.json",
         REPORT_DIR / "coordinated_motion_evidence.json",
         REPORT_DIR / "mjcf_compile_gate.json",
+        CONNECTIVITY_REPORT,
         RELEASE_REPORT,
         component_csv,
         REPORT_DIR / "solidworks_gate.json",
@@ -106,6 +111,7 @@ def collect_release_files() -> list[Path]:
             and path.suffix.lower() not in {".log", ".pyc"}
             and "__pycache__" not in relative.parts
             and "tessellation_cache" not in relative.parts
+            and not path.name.startswith(".")
         )
 
     files = set(path for path in explicit if releasable(path))
@@ -124,6 +130,9 @@ def main() -> int:
     torque = read_json(REPORT_DIR / "sts3250_quasistatic_torque_gate.json")
     actuator = read_json(ACTUATOR_CONFIG)
     rl = read_json(RL_CONFIG)
+    manifest = read_json(ASSEMBLY_MANIFEST)
+    connectivity = read_json(CONNECTIVITY_REPORT)
+    manifest_sha256 = sha256(ASSEMBLY_MANIFEST)
 
     robot = ET.parse(URDF).getroot()
     revolute = [joint for joint in robot.findall("joint") if joint.get("type") == "revolute"]
@@ -131,10 +140,25 @@ def main() -> int:
     compiled_mass = float(model.body_mass.sum())
 
     checks = {
-        "solidworks_native_assembly": sw.get("overall") == "PASS" and sw.get("assembly_component_count") == 57,
+        "solidworks_native_assembly": (
+            sw.get("overall") == "PASS"
+            and sw.get("assembly_component_count") == manifest.get("component_count")
+            and sw.get("manifest_component_count") == manifest.get("component_count")
+            and sw.get("manifest_sha256") == manifest_sha256
+        ),
         "independent_sts3250_occurrences": sw.get("separate_blue_sts3250_count") == 18,
         "solidworks_height_le_500_mm": sw.get("standing_height_gate") == "PASS" and sw.get("standing_height_mm", 999.0) <= 500.0,
-        "solidworks_cross_component_interference": interference.get("overall") == "PASS" and interference.get("physical_interference_count") == 0,
+        "solidworks_cross_component_interference": (
+            interference.get("overall") == "PASS"
+            and interference.get("physical_interference_count") == 0
+            and interference.get("manifest_sha256") == manifest_sha256
+        ),
+        "mechanical_connectivity_18": (
+            connectivity.get("overall") == "PASS"
+            and connectivity.get("joint_count") == 18
+            and connectivity.get("exact_sts3250_count") == 18
+            and connectivity.get("output_bridge_count") == 18
+        ),
         "urdf_18dof": len(revolute) == 18 and urdf_gate.get("movable_joint_count") == 18,
         "nominal_mass_le_3kg": abs(compiled_mass - 2.85) < 1.0e-9 and urdf_gate.get("mass_gate") == "PASS",
         "mjcf_runtime_compile": mjcf_gate.get("runtime_compile_gate") == "PASS" and model.nu == 18,

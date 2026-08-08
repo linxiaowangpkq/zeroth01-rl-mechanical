@@ -1,6 +1,4 @@
-<?xml version="1.0"?>
-<!-- cadpy:sourcePath=../../../cad/physical_mount_v4_original_minimal/build_v4_urdf.py -->
-<!-- cadpy:sourceHash=e45591f3272a972dc5dee86cb30d7e32d8a7c36942ec0b531af21320c700b909 -->
+<?xml version='1.0' encoding='utf-8'?>
 <robot name="zeroth01_physical_mount_v4_original_minimal_18dof">
   <!--v3 uses v2-minimal visual provenance, explicit mirrored kinematics, primitive collisions and nominal—not measured—as-built inertials.-->
   <link name="base_link" />
@@ -17,7 +15,7 @@
     <visual name="S03_right_shoulder_yaw_blue_servo_visual">
       <origin xyz="-0.055995 -0.01061 -0.009528" rpy="-1.57079665359 5.16987882846e-26 3.14159265359" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S03_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -26,25 +24,25 @@
     <visual name="S06_left_shoulder_yaw_blue_servo_visual">
       <origin xyz="0.055995 -0.01061 -0.009528" rpy="1.57079665359 -0 -3.46410206619e-07" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S06_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
       </material>
     </visual>
     <visual name="S07_right_hip_yaw_blue_servo_visual">
-      <origin xyz="-0.042868 0.007735 -0.081418" rpy="3.46410096879e-07 -2.75735700408e-10 -2.6171975512" />
+      <origin xyz="-0.042868 0.00773500138564 -0.079418" rpy="3.46410096879e-07 -2.75735700408e-10 -3.14079632679" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S07_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
       </material>
     </visual>
     <visual name="S08_left_hip_yaw_blue_servo_visual">
-      <origin xyz="0.042808 0.007735 -0.081418" rpy="-3.46410096879e-07 2.75735700408e-10 -0.522802448803" />
+      <origin xyz="0.042808 0.00773500138564 -0.079418" rpy="-3.46410096879e-07 2.75735700408e-10 0.000796326794896" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S08_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -58,9 +56,27 @@
     </collision>
     <inertial>
       <origin xyz="0 0 -0.025" rpy="0 0 0" />
-      <mass value="0.728" />
-      <inertia ixx="0.00235467846052" iyy="0.002635261438" izz="0.00105873989852" ixy="0" ixz="0" iyz="0" />
+      <mass value="1.041" />
+      <inertia ixx="0.00336706082061" iyy="0.00376827906175" izz="0.00151393988236" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S08_CASE_4XM2_TIE_RODS_left_hip_yaw_visual">
+      <origin xyz="0.042808 0.007735 -0.083418" rpy="-3.46410096879e-07 2.75735700408e-10 0.000796326794896" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_case_4xm2_standoff_4mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S08_CASE_4XM2_TIE_RODS_left_hip_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S07_CASE_4XM2_TIE_RODS_right_hip_yaw_visual">
+      <origin xyz="-0.042868 0.007735 -0.083418" rpy="3.46410096879e-07 -2.75735700408e-10 -3.14079632679" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_case_4xm2_standoff_4mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S07_CASE_4XM2_TIE_RODS_right_hip_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <joint name="base_to_body" type="fixed">
     <parent link="base_link" />
@@ -80,7 +96,7 @@
     <visual name="S02_left_shoulder_pitch_blue_servo_visual">
       <origin xyz="0 0 0" rpy="0 6.65334375141e-23 -3.1415923268" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S02_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -89,7 +105,7 @@
     <visual name="S10_left_elbow_yaw_blue_servo_visual">
       <origin xyz="0.092984 0.0198 -0.0186" rpy="-1.570796 3.26794996923e-07 3.46410313414e-07" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S10_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -120,7 +136,7 @@
     <visual name="S01_right_shoulder_pitch_blue_servo_visual">
       <origin xyz="0 0 0" rpy="0 7.77927924163e-23 3.1415923268" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S01_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -129,7 +145,7 @@
     <visual name="S09_right_elbow_yaw_blue_servo_visual">
       <origin xyz="0.092984 -0.0198 -0.0186" rpy="1.5707963268 3.26795003333e-07 3.26794896538e-07" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S09_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -160,7 +176,7 @@
     <visual name="S04_right_hip_pitch_blue_servo_visual">
       <origin xyz="0 0 0" rpy="1.08420217249e-19 -6.40857725192e-23 3.14159263397" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S04_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -177,6 +193,24 @@
       <mass value="0.1745" />
       <inertia ixx="5.09584730167e-05" iyy="0.000289150973017" izz="0.000299732833333" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S13_PCD14_OUTPUT_BRIDGE_right_knee_pitch_visual">
+      <origin xyz="0.1 -0.01 -0.00126" rpy="1.08420217249e-19 -6.40857725192e-23 3.14159263397" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S13_PCD14_OUTPUT_BRIDGE_right_knee_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S13_PCD14_CHILD_STANDOFF_right_knee_pitch_visual">
+      <origin xyz="0.1 -0.01 -0.00126" rpy="1.08420217249e-19 -6.40857725192e-23 3.14159263397" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S13_PCD14_CHILD_STANDOFF_right_knee_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="3215_BothFlange_13">
     <visual name="3215_BothFlange_visual_13">
@@ -191,7 +225,7 @@
     <visual name="S14_left_knee_pitch_blue_servo_visual">
       <origin xyz="0 0 6.93889390391e-18" rpy="0 -3.35257301912e-23 -3.14159198038" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S14_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -200,7 +234,7 @@
     <visual name="S16_left_ankle_pitch_blue_servo_visual">
       <origin xyz="0.082 -1.21176899348e-08 0.000799994117688" rpy="-3.46410075104e-13 -3.46410206619e-07 6.73204996363e-07" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S16_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -231,7 +265,7 @@
     <visual name="S13_right_knee_pitch_blue_servo_visual">
       <origin xyz="0 -3.46944695195e-18 0" rpy="1.08420217249e-19 -6.40857725192e-23 3.14159263397" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S13_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -240,7 +274,7 @@
     <visual name="S15_right_ankle_pitch_blue_servo_visual">
       <origin xyz="0.082 3.53077501264e-10 0.000999994117694" rpy="-1.20000038552e-13 3.46410206619e-07 -1.96154168762e-08" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S15_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -271,7 +305,7 @@
     <visual name="S12_left_hip_roll_blue_servo_visual">
       <origin xyz="0 0 3.46944695195e-18" rpy="-1.06631022756e-22 -1.08420217249e-19 3.14159265359" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S12_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -288,6 +322,24 @@
       <mass value="0.0995" />
       <inertia ixx="5.08976495833e-05" iyy="3.00106095833e-05" izz="4.28592933333e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S05_PCD14_OUTPUT_BRIDGE_left_hip_pitch_visual">
+      <origin xyz="-0.0064 -0.032 -0.0179" rpy="-1.570796 6.73204996363e-07 1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S05_PCD14_OUTPUT_BRIDGE_left_hip_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S05_PCD14_CHILD_STANDOFF_left_hip_pitch_visual">
+      <origin xyz="-0.0064 -0.032 -0.0179" rpy="-1.570796 6.73204996363e-07 1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S05_PCD14_CHILD_STANDOFF_left_hip_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="3215_BothFlange_6">
     <visual name="3215_BothFlange_visual_6">
@@ -302,7 +354,7 @@
     <visual name="S11_right_hip_roll_blue_servo_visual">
       <origin xyz="-6.93889390391e-18 -2.77555756156e-17 1.73472347598e-18" rpy="-5.95465343419e-25 1.08420217249e-19 -3.14159265359" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S11_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -319,6 +371,24 @@
       <mass value="0.0995" />
       <inertia ixx="5.17002829167e-05" iyy="3.08132429167e-05" izz="4.28592933333e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S04_PCD14_OUTPUT_BRIDGE_right_hip_pitch_visual">
+      <origin xyz="-0.0064 -0.032 -0.0189" rpy="-1.570796 -1.96154168761e-08 1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S04_PCD14_OUTPUT_BRIDGE_right_hip_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S04_PCD14_CHILD_STANDOFF_right_hip_pitch_visual">
+      <origin xyz="-0.0064 -0.032 -0.0189" rpy="-1.570796 -1.96154168761e-08 1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S04_PCD14_CHILD_STANDOFF_right_hip_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="3215_BothFlange_9">
     <visual name="3215_BothFlange_visual_9">
@@ -333,7 +403,7 @@
     <visual name="S05_left_hip_pitch_blue_servo_visual">
       <origin xyz="0 0 0" rpy="0 -3.35257301912e-23 -3.14159198038" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="S05_sts3250_blue">
         <color rgba="0.086 0.467 1.0 1" />
@@ -350,50 +420,38 @@
       <mass value="0.1745" />
       <inertia ixx="5.09584730167e-05" iyy="0.000289150973017" izz="0.000299732833333" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S14_PCD14_OUTPUT_BRIDGE_left_knee_pitch_visual">
+      <origin xyz="0.1 0.01 -0.00126" rpy="0 -3.35257301912e-23 -3.14159198038" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S14_PCD14_OUTPUT_BRIDGE_left_knee_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S14_PCD14_CHILD_STANDOFF_left_knee_pitch_visual">
+      <origin xyz="0.1 0.01 -0.00126" rpy="0 -3.35257301912e-23 -3.14159198038" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S14_PCD14_CHILD_STANDOFF_left_knee_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="FINGER_1">
-    <collision name="FINGER_1_primitive_collision">
-      <geometry>
-        <sphere radius="0.018" />
-      </geometry>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.016" />
-      <inertia ixx="3.456e-06" iyy="3.456e-06" izz="3.456e-06" ixy="0" ixz="0" iyz="0" />
+      <mass value="0.005" />
+      <inertia ixx="1.08e-06" iyy="1.08e-06" izz="1.08e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
-    <visual name="left_small_light_palm_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/left_small_light_palm.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="left_small_light_palm_visual_material">
-        <color rgba="0.969 0.973 0.980 1" />
-      </material>
-    </visual>
   </link>
   <link name="FINGER_1_2">
-    <collision name="FINGER_1_2_primitive_collision">
-      <geometry>
-        <sphere radius="0.018" />
-      </geometry>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.016" />
-      <inertia ixx="3.456e-06" iyy="3.456e-06" izz="3.456e-06" ixy="0" ixz="0" iyz="0" />
+      <mass value="0.005" />
+      <inertia ixx="1.08e-06" iyy="1.08e-06" izz="1.08e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
-    <visual name="right_small_light_palm_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/right_small_light_palm.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="right_small_light_palm_visual_material">
-        <color rgba="0.969 0.973 0.980 1" />
-      </material>
-    </visual>
   </link>
   <link name="FOOT">
     <visual name="FOOT_visual">
@@ -405,26 +463,26 @@
         <color rgba="0.93 0.95 0.98 1" />
       </material>
     </visual>
-    <visual name="minimal_left_sole_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v3/left_sole_lightweighted.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="minimal_left_sole_material">
-        <color rgba="0.145098 0.164706 0.188235 1" />
-      </material>
-    </visual>
     <collision name="FOOT_primitive_collision">
-      <origin xyz="0.0100000379347 0.0411000299998 7.95734123816e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000294347 0.0326000299998 7.95717450989e-06" rpy="0 0 0" />
       <geometry>
-        <box size="0.110059646194 0.00700011141312 0.075087498283" />
+        <box size="0.0900325993058 0.00600009077296 0.0410715959554" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.0100000379347 0.0411000299998 7.95734123816e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000294347 0.0326000299998 7.95717450989e-06" rpy="0 0 0" />
       <mass value="0.07" />
-      <inertia ixx="3.31749480895e-05" iyy="0.000103549005693" izz="7.09457424679e-05" ixy="0" ixz="0" iyz="0" />
+      <inertia ixx="1.0050116321e-05" iyy="5.71243454371e-05" izz="4.74942418244e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S18_PCD14_OUTPUT_BRIDGE_left_ankle_roll_visual">
+      <origin xyz="0 0 0" rpy="-3.14156800079 1.57000067321 2.36527964908e-05" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S18_PCD14_OUTPUT_BRIDGE_left_ankle_roll_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="FOOT_2">
     <visual name="FOOT_visual_2">
@@ -436,26 +494,26 @@
         <color rgba="0.93 0.95 0.98 1" />
       </material>
     </visual>
-    <visual name="minimal_right_sole_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v3/right_sole_lightweighted.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="minimal_right_sole_material">
-        <color rgba="0.145098 0.164706 0.188235 1" />
-      </material>
-    </visual>
     <collision name="FOOT_2_primitive_collision">
-      <origin xyz="0.0100000110749 -0.0411000365305 -7.98073970767e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000081304 -0.0326000365305 -7.97501746537e-06" rpy="0 0 0" />
       <geometry>
-        <box size="0.110059615669 0.00700008863371 0.0750874647737" />
+        <box size="0.0900325812063 0.0060000588152 0.0410715687113" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.0100000110749 -0.0411000365305 -7.98073970767e-06" rpy="0 0 0" />
+      <origin xyz="0.0100000081304 -0.0326000365305 -7.97501746537e-06" rpy="0 0 0" />
       <mass value="0.07" />
-      <inertia ixx="3.31749168743e-05" iyy="0.000103548937143" izz="7.09457014119e-05" ixy="0" ixz="0" iyz="0" />
+      <inertia ixx="1.00501010295e-05" iyy="5.71243133713e-05" izz="4.7494220576e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S17_PCD14_OUTPUT_BRIDGE_right_ankle_roll_visual">
+      <origin xyz="0 0 0" rpy="3.14074618206 1.57000101933 3.14074652874" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S17_PCD14_OUTPUT_BRIDGE_right_ankle_roll_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="L_ARM_MIRROR_1">
     <visual name="L_ARM_MIRROR_1_visual">
@@ -478,6 +536,15 @@
       <mass value="0.03" />
       <inertia ixx="2.432729509e-05" iyy="6.09609221e-06" izz="2.61426493e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S09_PCD14_OUTPUT_BRIDGE_right_elbow_yaw_visual">
+      <origin xyz="0 0 0" rpy="3.14159265359 -1.19720004844e-22 1.5707963268" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S09_PCD14_OUTPUT_BRIDGE_right_elbow_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="R_ARM_MIRROR_1">
     <visual name="R_ARM_MIRROR_1_visual">
@@ -500,6 +567,15 @@
       <mass value="0.03" />
       <inertia ixx="6.09609221e-06" iyy="2.432729509e-05" izz="2.61426493e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S10_PCD14_OUTPUT_BRIDGE_left_elbow_yaw_visual">
+      <origin xyz="0 0 0" rpy="0 -4.91325133194e-24 -3.14159232679" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S10_PCD14_OUTPUT_BRIDGE_left_elbow_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="U_HIP_L">
     <visual name="U_HIP_L_visual">
@@ -522,6 +598,42 @@
       <mass value="0.02" />
       <inertia ixx="1.367175e-05" iyy="1.17336e-05" izz="3.85815e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S08_PCD14_OUTPUT_BRIDGE_left_hip_yaw_visual">
+      <origin xyz="0 0 -0.004" rpy="3.14159265359 -1.04719942263e-27 3.14079667321" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S08_PCD14_OUTPUT_BRIDGE_left_hip_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S08_PCD14_4XM3_TIE_RODS_left_hip_yaw_visual">
+      <origin xyz="0 0 0" rpy="3.14159265359 -1.04719942263e-27 3.14079667321" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_4xm3_tie_rods_1p95mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S08_PCD14_4XM3_TIE_RODS_left_hip_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S12_PCD14_OUTPUT_BRIDGE_left_hip_roll_visual">
+      <origin xyz="6.93889390391e-18 0.0177 0.0564" rpy="1.570796 -0 3.14159265359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S12_PCD14_OUTPUT_BRIDGE_left_hip_roll_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S12_PCD14_CHILD_STANDOFF_left_hip_roll_visual">
+      <origin xyz="6.93889390391e-18 0.0177 0.0564" rpy="1.570796 -0 3.14159265359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S12_PCD14_CHILD_STANDOFF_left_hip_roll_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="U_HIP_R">
     <visual name="U_HIP_R_visual">
@@ -544,6 +656,42 @@
       <mass value="0.02" />
       <inertia ixx="1.367175e-05" iyy="1.17336e-05" izz="3.85815e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S07_PCD14_OUTPUT_BRIDGE_right_hip_yaw_visual">
+      <origin xyz="0 0 -0.004" rpy="3.14159265359 1.04719942263e-27 -0.00079598038469" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S07_PCD14_OUTPUT_BRIDGE_right_hip_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S07_PCD14_4XM3_TIE_RODS_right_hip_yaw_visual">
+      <origin xyz="0 0 0" rpy="3.14159265359 1.04719942263e-27 -0.00079598038469" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_4xm3_tie_rods_1p95mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S07_PCD14_4XM3_TIE_RODS_right_hip_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S11_PCD14_OUTPUT_BRIDGE_right_hip_roll_visual">
+      <origin xyz="6.93889390391e-18 -0.0177 0.0564" rpy="1.570796 -1.2000003125e-13 -3.46410206619e-07" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S11_PCD14_OUTPUT_BRIDGE_right_hip_roll_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S11_PCD14_CHILD_STANDOFF_right_hip_roll_visual">
+      <origin xyz="6.93889390391e-18 -0.0177 0.0564" rpy="1.570796 -1.2000003125e-13 -3.46410206619e-07" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S11_PCD14_CHILD_STANDOFF_right_hip_roll_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="Z_BOT2_MASTER_SHOULDER2">
     <visual name="Z_BOT2_MASTER_SHOULDER2_visual">
@@ -566,6 +714,33 @@
       <mass value="0.02" />
       <inertia ixx="3.98041666667e-06" iyy="5.83389004167e-06" izz="4.26550670833e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S06_PCD14_OUTPUT_BRIDGE_left_shoulder_yaw_visual">
+      <origin xyz="0 0 0" rpy="-3.14159265359 -0 3.14159265359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S06_PCD14_OUTPUT_BRIDGE_left_shoulder_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S02_PCD14_OUTPUT_BRIDGE_left_shoulder_pitch_visual">
+      <origin xyz="-0.020845 -0.0049 0.0188" rpy="1.570796 -3.26794789743e-07 1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S02_PCD14_OUTPUT_BRIDGE_left_shoulder_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S02_PCD14_CHILD_STANDOFF_left_shoulder_pitch_visual">
+      <origin xyz="-0.020845 -0.0049 0.0188" rpy="1.570796 -3.26794789743e-07 1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S02_PCD14_CHILD_STANDOFF_left_shoulder_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="Z_BOT2_MASTER_SHOULDER2_2">
     <visual name="Z_BOT2_MASTER_SHOULDER2_visual_2">
@@ -588,6 +763,33 @@
       <mass value="0.02" />
       <inertia ixx="3.98041666667e-06" iyy="5.83389004167e-06" izz="4.26550670833e-06" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S03_PCD14_OUTPUT_BRIDGE_right_shoulder_yaw_visual">
+      <origin xyz="0 0 -1.73472347598e-18" rpy="3.14159265359 1.68949001686e-32 3.14159265359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S03_PCD14_OUTPUT_BRIDGE_right_shoulder_yaw_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S01_PCD14_OUTPUT_BRIDGE_right_shoulder_pitch_visual">
+      <origin xyz="-0.020845 0.0049 0.0188" rpy="-1.570796 -3.26794789743e-07 -1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S01_PCD14_OUTPUT_BRIDGE_right_shoulder_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S01_PCD14_CHILD_STANDOFF_right_shoulder_pitch_visual">
+      <origin xyz="-0.020845 0.0049 0.0188" rpy="-1.570796 -3.26794789743e-07 -1.57079665359" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_1mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S01_PCD14_CHILD_STANDOFF_right_shoulder_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="left_ankle_roll_carrier">
     <visual name="left_ankle_roll_carrier_visual">
@@ -602,7 +804,7 @@
     <visual name="left_ankle_roll_blue_servo_visual">
       <origin xyz="2.64999971619e-08 0.0265 5.1979989063e-10" rpy="-3.14156800079 1.57000067321 2.36527964908e-05" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="left_ankle_roll_servo_blue">
         <color rgba="0.086 0.467 1 1" />
@@ -619,6 +821,24 @@
       <mass value="0.095" />
       <inertia ixx="2.97211460638e-05" iyy="1.24133453121e-05" izz="2.97211575817e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S16_PCD14_OUTPUT_BRIDGE_left_ankle_pitch_visual">
+      <origin xyz="0 0 0" rpy="3.14159265359 2.16840507905e-25 1.5707953268" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S16_PCD14_OUTPUT_BRIDGE_left_ankle_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S16_PCD14_CHILD_STANDOFF_left_ankle_pitch_visual">
+      <origin xyz="0 0 0" rpy="3.14159265359 2.16840507905e-25 1.5707953268" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_12p95mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S16_PCD14_CHILD_STANDOFF_left_ankle_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <link name="right_ankle_roll_carrier">
     <visual name="right_ankle_roll_carrier_visual">
@@ -633,7 +853,7 @@
     <visual name="right_ankle_roll_blue_servo_visual">
       <origin xyz="9.17987330595e-09 -0.0265 -1.78399318859e-08" rpy="3.14074618206 1.57000101933 3.14074652874" />
       <geometry>
-        <mesh filename="meshes/v3/sts3250_dimension_controlled.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/v4/sts3250_step_parts_exact_shaft_frame.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="right_ankle_roll_servo_blue">
         <color rgba="0.086 0.467 1 1" />
@@ -650,6 +870,24 @@
       <mass value="0.095" />
       <inertia ixx="2.97211537424e-05" iyy="1.24133453121e-05" izz="2.97211499031e-05" ixy="0" ixz="0" iyz="0" />
     </inertial>
+    <visual name="S15_PCD14_OUTPUT_BRIDGE_right_ankle_pitch_visual">
+      <origin xyz="0 0 0" rpy="-3.14159265359 -1.2252254365e-22 -1.57079598038" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_output_bridge_2p05mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S15_PCD14_OUTPUT_BRIDGE_right_ankle_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
+    <visual name="S15_PCD14_CHILD_STANDOFF_right_ankle_pitch_visual">
+      <origin xyz="0 0 0" rpy="-3.14159265359 -1.2252254365e-22 -1.57079598038" />
+      <geometry>
+        <mesh filename="meshes/v4/sts3250_pcd14_child_standoff_12p95mm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="S15_PCD14_CHILD_STANDOFF_right_ankle_pitch_visual_material">
+        <color rgba="0.086 0.467 1 1" />
+      </material>
+    </visual>
   </link>
   <joint name="left_shoulder_yaw" type="revolute">
     <parent link="Z_BOT2_MASTER_BODY_SKELETON" />
@@ -791,49 +1029,49 @@
   <joint name="left_sole_front_medial_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_front_medial_contact" />
-    <origin xyz="-0.0450238107612 0.0446000844361 0.0299641869711" rpy="0 0 0" />
+    <origin xyz="-0.0450238197612 0.0356000844361 0.0299641867946" rpy="0 0 0" />
   </joint>
   <link name="left_sole_front_lateral_contact" />
   <joint name="left_sole_front_lateral_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_front_lateral_contact" />
-    <origin xyz="-0.0449760715508 0.0446000855652 -0.030035794037" rpy="0 0 0" />
+    <origin xyz="-0.0449760805508 0.0356000855652 -0.0300357942135" rpy="0 0 0" />
   </joint>
   <link name="left_sole_rear_medial_contact" />
   <joint name="left_sole_rear_medial_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_rear_medial_contact" />
-    <origin xyz="0.0549761575856 0.0445999844346 0.0300437523217" rpy="0 0 0" />
+    <origin xyz="0.0549761485856 0.0355999844346 0.0300437521451" rpy="0 0 0" />
   </joint>
   <link name="left_sole_rear_lateral_contact" />
   <joint name="left_sole_rear_lateral_contact_joint" type="fixed">
     <parent link="FOOT" />
     <child link="left_sole_rear_lateral_contact" />
-    <origin xyz="0.0550238967959 0.0445999855637 -0.0299562286864" rpy="0 0 0" />
+    <origin xyz="0.0550238877959 0.0355999855637 -0.0299562288629" rpy="0 0 0" />
   </joint>
   <link name="right_sole_front_medial_contact" />
   <joint name="right_sole_front_medial_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_front_medial_contact" />
-    <origin xyz="-0.0450238295314 -0.0446000354247 -0.029964231718" rpy="0 0 0" />
+    <origin xyz="-0.0450238326491 -0.0356000354247 -0.0299642256591" rpy="0 0 0" />
   </joint>
   <link name="right_sole_front_lateral_contact" />
   <joint name="right_sole_front_lateral_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_front_lateral_contact" />
-    <origin xyz="-0.0449761111057 -0.0446000758004 0.0300357493066" rpy="0 0 0" />
+    <origin xyz="-0.0449761142233 -0.0356000758004 0.0300357553655" rpy="0 0 0" />
   </joint>
   <link name="right_sole_rear_medial_contact" />
   <joint name="right_sole_rear_medial_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_rear_medial_contact" />
-    <origin xyz="0.0549761388429 -0.0446000007301 -0.0300437624275" rpy="0 0 0" />
+    <origin xyz="0.0549761357252 -0.0356000007301 -0.0300437563687" rpy="0 0 0" />
   </joint>
   <link name="right_sole_rear_lateral_contact" />
   <joint name="right_sole_rear_lateral_contact_joint" type="fixed">
     <parent link="FOOT_2" />
     <child link="right_sole_rear_lateral_contact" />
-    <origin xyz="0.0550238572687 -0.0446000411059 0.0299562185971" rpy="0 0 0" />
+    <origin xyz="0.055023854151 -0.0356000411059 0.0299562246559" rpy="0 0 0" />
   </joint>
   <link name="v4_head_shell">
     <inertial>
@@ -919,114 +1157,6 @@
     <child link="m5stack_unitv2" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
-  <link name="v4_rear_service_pod">
-    <inertial>
-      <origin xyz="0 0.084 -0.042" rpy="0 0 0" />
-      <mass value="0.08" />
-      <inertia ixx="7.38389333333e-05" iyy="0.000130693333333" izz="7.11989333333e-05" ixy="0" ixz="0" iyz="0" />
-    </inertial>
-    <visual name="v4_rear_service_pod_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/rear_service_pod.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="v4_rear_service_pod_visual_material">
-        <color rgba="0.82 0.84 0.87 1" />
-      </material>
-    </visual>
-    <visual name="v4_compute_tray_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/compute_removable_tray.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="v4_compute_tray_visual_material">
-        <color rgba="0.82 0.84 0.87 1" />
-      </material>
-    </visual>
-    <visual name="v4_battery_cage_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/battery_service_cage.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="v4_battery_cage_visual_material">
-        <color rgba="0.82 0.84 0.87 1" />
-      </material>
-    </visual>
-    <collision name="v4_rear_service_pod_training_collision">
-      <origin xyz="0 0.084 -0.042" rpy="0 0 0" />
-      <geometry>
-        <box size="0.098 0.0328 0.1" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="v4_rear_service_pod_fixed_joint" type="fixed">
-    <parent link="Z_BOT2_MASTER_BODY_SKELETON" />
-    <child link="v4_rear_service_pod" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </joint>
-  <link name="v4_compute_module">
-    <inertial>
-      <origin xyz="0 0.084 -0.018" rpy="0 0 0" />
-      <mass value="0.025" />
-      <inertia ixx="2.43333333333e-06" iyy="1.23416666667e-05" izz="1.05083333333e-05" ixy="0" ixz="0" iyz="0" />
-    </inertial>
-    <visual name="v4_compute_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/compute_envelope.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="v4_compute_visual_material">
-        <color rgba="1 0.57 0 1" />
-      </material>
-    </visual>
-  </link>
-  <joint name="v4_compute_module_fixed_joint" type="fixed">
-    <parent link="v4_rear_service_pod" />
-    <child link="v4_compute_module" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </joint>
-  <link name="v4_battery_pack">
-    <inertial>
-      <origin xyz="0 0.084 -0.063" rpy="0 0 0" />
-      <mass value="0.18" />
-      <inertia ixx="2.46e-05" iyy="0.000101715" izz="9.1635e-05" ixy="0" ixz="0" iyz="0" />
-    </inertial>
-    <visual name="v4_battery_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/battery_envelope.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="v4_battery_visual_material">
-        <color rgba="0.84 0 0.98 1" />
-      </material>
-    </visual>
-  </link>
-  <joint name="v4_battery_pack_fixed_joint" type="fixed">
-    <parent link="v4_rear_service_pod" />
-    <child link="v4_battery_pack" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </joint>
-  <link name="v4_torso_imu">
-    <inertial>
-      <origin xyz="0 0.094 -0.018" rpy="0 0 0" />
-      <mass value="0.006" />
-      <inertia ixx="3.445e-07" iyy="8.245e-07" izz="5.44e-07" ixy="0" ixz="0" iyz="0" />
-    </inertial>
-    <visual name="v4_torso_imu_visual">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/v4/torso_imu_envelope.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="v4_torso_imu_visual_material">
-        <color rgba="0.39 0.87 0.09 1" />
-      </material>
-    </visual>
-  </link>
-  <joint name="v4_torso_imu_fixed_joint" type="fixed">
-    <parent link="v4_rear_service_pod" />
-    <child link="v4_torso_imu" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </joint>
   <link name="camera_optical_frame" />
   <joint name="camera_optical_frame_joint" type="fixed">
     <parent link="m5stack_unitv2" />
@@ -1038,11 +1168,5 @@
     <parent link="m5stack_unitv2" />
     <child link="microphone_frame" />
     <origin xyz="0.014 -0.0075102725 0.045" rpy="0 0 0" />
-  </joint>
-  <link name="torso_imu_frame" />
-  <joint name="torso_imu_frame_joint" type="fixed">
-    <parent link="v4_torso_imu" />
-    <child link="torso_imu_frame" />
-    <origin xyz="0 0.094 -0.018" rpy="0 0 0" />
   </joint>
 </robot>

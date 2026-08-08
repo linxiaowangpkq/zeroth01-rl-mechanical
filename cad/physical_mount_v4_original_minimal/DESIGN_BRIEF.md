@@ -1,56 +1,28 @@
-# Zeroth-01 v4 original-minimal design brief
+# Zeroth-01 v4 connected design brief
 
 ## Frozen baseline
 
-- The official Zeroth-01 source geometry, neutral joint centres, limb lengths,
-  shoulder width, hip spacing and torso proportions are the only geometric
-  baseline.
-- The released v3 18-DoF ankle-roll correction and RL frame/axis fixes remain
-  in scope. They may not silently move an existing source joint.
-- ToddlerBot, KHR-3HV, TonyPi and Open Duck Mini are engineering references,
-  not replacement geometries. No third-party shape is copied into v4.
+- Preserve the released Zeroth-01 load-bearing torso, shoulder/hip spacing, upper limbs, thighs, source feet and all neutral joint axes.
+- ToddlerBot, KHR-3HV, TonyPi and Open Duck Mini inform serviceability, double support, cable routing and MJX/SysID workflow only; their geometry is not substituted.
+- The v3 RL frame/axis corrections remain frozen.
 
-## Allowed geometry changes
+## Released changes
 
-1. Replace only the source head cover by a two-piece printable head cover.
-2. Relative to the measured source head cover envelope, add a nominal 5 mm
-   outer envelope on left, right, top and bottom (10 mm total width/height).
-   The hidden lower corners contain exact shoulder-servo B-Rep pockets with
-   0.8 mm clearance; their local solid expansion is about 3.9 mm. Extending
-   those corners to a solid 5 mm would recreate the measured interference.
-3. Keep the source depth unless a purchased camera/microphone module needs a
-   documented clearance increase. Use a small edge radius only.
-4. Mount the head directly to the original torso datum. No visible neck and a
-   maximum nominal head-to-torso gap of 2 mm.
-5. Preserve the original hands and arms. A light removable wrist bumper is
-   allowed, but no gripper, claw, ball hand or heavy Q-hand.
-6. Preserve the source upper and lower body carriers. New service parts may
-   add real fasteners, double-supported servo brackets, cable strain relief,
-   battery/compute trays and removable covers without changing kinematics.
-7. Retain the lightened 7 mm sole and the 18-DoF ankle-roll correction only if
-   the regenerated interference and motion gates pass.
-8. The only released proportion change below the torso is an 18 mm cut from
-   each lower leg's straight middle span; both terminal interfaces are kept.
-   This recovers the direct ankle-roll stack height without changing axes.
+1. Two-piece rounded head, nominally +5 mm left/right/top/bottom, source depth retained, hidden 0.8 mm shoulder clearances, no visible neck.
+2. Removable M5Stack UnitV2 camera/microphone cradle and direct four-M3 torso nut plate.
+3. Original lightweight wrist termination only: no square palm, claw, gripper, ball hand or heavy Q-hand.
+4. No external rear service pod or backplate. Compute, battery and IMU packaging must be frozen inside the torso after exact components are selected.
+5. No added black sole; source feet define the contact surface.
+6. Eighteen purchased-exact STS3250 occurrences. Every output has a 2.05 mm PCD14 bridge; required child-side standoffs close the torque path.
+7. Hip-yaw servos move 4 mm only along their unchanged axes to clear the source torso. Four M2 case screws and four M3 PCD14 output tie rods close each joint; no fictitious solid spacer is installed.
+8. Mirrored direct-drive ankle-roll carriers retain the original foot path; lower-leg straight spans are shortened 18 mm without altering terminal interfaces.
 
-## Engineering patterns borrowed without copying geometry
+## Blocking gates
 
-- ToddlerBot: split printable shells, maintainable electronics packaging,
-  SysID and simulation handoff discipline.
-- KHR-3HV: double-supported servo output and replaceable U-bracket practice.
-- TonyPi: serviceable camera, compute and battery placement.
-- Open Duck Mini: compact printable links, cable relief and assembly-oriented
-  part splitting.
-
-## Release gates
-
-- Exactly 18 separately visible blue STS3250 controlled envelopes.
-- Joint origins and axes are generated once and shared by CAD, URDF and MJCF.
-- Bilateral symmetry is a blocking release gate; failures may not be omitted.
-- Native SolidWorks assembly opens without suppressed/missing components.
-- Zero non-adjacent interference at neutral and sampled joint motion.
-- Standing height no greater than 500 mm; nominal mass no greater than 3 kg.
-- Camera, microphones, IMU, compute, battery, power board and harness service
-  volumes have physical mounts and cable exits.
-- Walking/running hardware release remains HOLD until purchased-actuator,
-  as-built mass/inertia, current, thermal and dynamic-policy traces exist.
+- 18/18 exact actuators and complete case/output torque paths.
+- Bilateral axis/placement symmetry.
+- 75/75 native SolidWorks occurrences and portable dependencies.
+- Zero unapproved B-Rep cross-component interference. Threaded fastener engagement is allowed only for the explicitly paired PCD14 M3 shanks and only below 1.25 mm³ per detected engagement.
+- Height ≤500 mm; nominal mass ≤3 kg.
+- URDF/MJCF compile and 64-pose primitive collision sweep passes.
+- Physical walking/running remains HOLD until first-article fit, printed strength, internal electronics/harness packaging, measured mass/SysID, current, thermal and policy traces are complete.

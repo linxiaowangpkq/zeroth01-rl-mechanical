@@ -7,6 +7,7 @@
     "independent_sts3250_occurrences": true,
     "solidworks_height_le_500_mm": true,
     "solidworks_cross_component_interference": true,
+    "mechanical_connectivity_18": true,
     "urdf_18dof": true,
     "nominal_mass_le_3kg": true,
     "mjcf_runtime_compile": true,
@@ -17,13 +18,13 @@
     "authoritative_files_present": true
   },
   "facts": {
-    "solidworks_component_count": 57,
+    "solidworks_component_count": 75,
     "sts3250_count": 18,
-    "standing_height_mm": 498.959277582387,
-    "nominal_mass_kg": 2.85,
+    "standing_height_mm": 489.9889237770837,
+    "nominal_mass_kg": 2.8499999999999996,
     "revolute_joint_count": 18,
     "quasistatic_peak_joint": "left_ankle_pitch",
-    "quasistatic_peak_torque_nm": 0.5344958807668029
+    "quasistatic_peak_torque_nm": 0.47477625302732296
   },
   "hold_items": [
     "print and assemble one load-bearing first article",

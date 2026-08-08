@@ -85,7 +85,7 @@ def interference_volume(document, body_name, servo_names):
     manager = document.InterferenceDetectionManager
     manager.TreatCoincidenceAsInterference = False
     manager.TreatSubAssembliesAsComponents = False
-    manager.IncludeMultibodyPartInterferences = True
+    manager.IncludeMultibodyPartInterferences = False
     manager.IgnoreHiddenBodies = True
     total = 0.0
     counts = {name: 0 for name in servo_names}
@@ -103,6 +103,27 @@ def interference_volume(document, body_name, servo_names):
     return total, counts
 
 
+def cross_component_interferences(document):
+    manager = document.InterferenceDetectionManager
+    manager.TreatCoincidenceAsInterference = False
+    manager.TreatSubAssembliesAsComponents = False
+    manager.IncludeMultibodyPartInterferences = False
+    manager.IgnoreHiddenBodies = False
+    rows = []
+    try:
+        for interference in value(manager, "GetInterferences") or []:
+            names = [
+                str(value(component, "Name2"))
+                for component in (value(interference, "Components") or [])
+            ]
+            volume_mm3 = float(value(interference, "Volume")) * 1.0e9
+            if len(set(names)) > 1 and volume_mm3 > 1.0e-9:
+                rows.append({"components": names, "volume_mm3": volume_mm3})
+    finally:
+        value(manager, "Done")
+    return rows
+
+
 def main() -> int:
     pythoncom.CoInitialize()
     sw = sw_helpers.v1.typed_sldworks(sw_helpers.get_sw(30.0))
@@ -114,9 +135,9 @@ def main() -> int:
     if document is None:
         raise RuntimeError(f"open the xray v4 assembly first: {ASSEMBLY}")
     components = list(document.GetComponents(False) or [])
-    body_name = "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2MM-1"
-    left_name = "V4_REUSED_ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED-7"
-    right_name = "V4_REUSED_ZEROTH01_V3_STS3250_DIMENSION_CONTROLLED-8"
+    body_name = "ZEROTH01_V4_BODY_ORIGINAL_HEAD_INTERFACE_TRIMMED_2P5MM-1"
+    left_name = "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-7"
+    right_name = "ZEROTH01_V4_STS3250_STEP_PARTS_EXACT_SHAFT_FRAME-8"
     body = find_component(components, body_name)
     left = find_component(components, left_name)
     right = find_component(components, right_name)
@@ -138,8 +159,8 @@ def main() -> int:
     original_right = list(right.Transform2.ArrayData)
     results = []
     try:
-        for angle_deg in (-45, -30, -15, 0, 15, 30, 45):
-            for shim_mm in (-6, -4, -2, 0, 2, 4, 6):
+        for angle_deg in (0,):
+            for shim_mm in range(-14, 15, 2):
                 left_rotation = mat_mul(rz(angle_deg), left_base[0])
                 right_rotation = mat_mul(rz(-angle_deg), right_base[0])
                 left_translation = (left_base[1][0], left_base[1][1], left_base[1][2] + shim_mm / 1000.0)
@@ -172,12 +193,26 @@ def main() -> int:
         value(document, "EditRebuild3")
 
     results.sort(key=lambda row: (row["body_servo_interference_volume_mm3"], abs(row["axial_shim_mm"]), abs(row["symmetric_clocking_deg"])))
+    best = results[0]
+    full_rows = []
+    try:
+        shim_m = float(best["axial_shim_mm"]) / 1000.0
+        set_transform(sw, left, left_base[0], (left_base[1][0], left_base[1][1], left_base[1][2] + shim_m))
+        set_transform(sw, right, right_base[0], (right_base[1][0], right_base[1][1], right_base[1][2] + shim_m))
+        value(document, "EditRebuild3")
+        full_rows = cross_component_interferences(document)
+    finally:
+        left.Transform2 = kin.create_math_transform(sw, original_left)
+        right.Transform2 = kin.create_math_transform(sw, original_right)
+        value(document, "EditRebuild3")
     payload = {
         "schema": "zeroth01.v4.solidworks_hip_yaw_clocking_screening.v1",
         "assembly": str(ASSEMBLY),
         "tested_count": len(results),
         "best_20": results[:20],
         "zero_interference_count": sum(row["body_servo_interference_volume_mm3"] <= 1.0e-6 for row in results),
+        "best_full_assembly_cross_component_interference_count": len(full_rows),
+        "best_full_assembly_cross_component_interferences": full_rows,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

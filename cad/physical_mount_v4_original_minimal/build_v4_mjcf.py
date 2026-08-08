@@ -151,50 +151,9 @@ def main() -> int:
         rgba="0 0.8 1 1",
     )
 
-    pod = add_inertial_body(
-        torso,
-        "v4_rear_service_pod",
-        u4.V4_FIXED_MASSES["v4_rear_service_pod"],
-        (0.098, 0.0328, 0.100),
-        (0.0, 0.084, -0.042),
-        rgba="0.88 0.89 0.91 1",
-        collision=True,
-    )
-    add_inertial_body(
-        pod,
-        "v4_compute_module",
-        u4.V4_FIXED_MASSES["v4_compute_module"],
-        (0.070, 0.012, 0.032),
-        (0.0, 0.084, -0.018),
-        rgba="1 0.57 0 1",
-    )
-    add_inertial_body(
-        pod,
-        "v4_battery_pack",
-        u4.V4_FIXED_MASSES["v4_battery_pack"],
-        (0.075, 0.022, 0.034),
-        (0.0, 0.084, -0.063),
-        rgba="0.84 0 0.98 1",
-    )
-    imu = add_inertial_body(
-        pod,
-        "v4_torso_imu",
-        u4.V4_FIXED_MASSES["v4_torso_imu"],
-        (0.032, 0.008, 0.025),
-        (0.0, 0.094, -0.018),
-        rgba="0.39 0.87 0.09 1",
-    )
-    imu_site = torso.find("site[@name='imu_site']")
-    if imu_site is not None:
-        torso.remove(imu_site)
-    ET.SubElement(
-        imu,
-        "site",
-        name="imu_site",
-        pos="0 0.094 -0.018",
-        size="0.006",
-        rgba="0.2 1 0.2 1",
-    )
+    # No external rear-pod bodies are recreated.  Their nominal mass remains
+    # in the torso aggregate produced by build_v4_urdf.py, so RL dynamics do
+    # not become artificially light while the internal bay is still on HOLD.
 
     ET.indent(root, space="  ")
     ET.ElementTree(root).write(MJCF, encoding="utf-8", xml_declaration=True)

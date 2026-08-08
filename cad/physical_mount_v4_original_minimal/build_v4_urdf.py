@@ -30,18 +30,14 @@ REPORT = ROOT / "reports" / "v4_original_minimal" / "urdf_mass_inertia_gate.json
 TARGET_TOTAL_MASS_KG = 2.850
 SHIN_SHORTEN_M = 0.018
 ANKLE_ROLL_OFFSET_M = 0.0265
-SOLE_WORLD_CENTER_Z_M = -0.04110004
-SOLE_CONTACT_WORLD_Z_M = -0.04460004
+SOLE_WORLD_CENTER_Z_M = -0.03260004
+SOLE_CONTACT_WORLD_Z_M = -0.03560004
 
 # Nominal, pre-first-article engineering estimates.  STS3250 mass is already
 # owned exactly once by the aggregate articulated links inherited from v3.
 V4_FIXED_MASSES = {
     "v4_head_shell": 0.055,
     "m5stack_unitv2": 0.018,
-    "v4_rear_service_pod": 0.080,
-    "v4_compute_module": 0.025,
-    "v4_battery_pack": 0.180,
-    "v4_torso_imu": 0.006,
 }
 
 
@@ -158,6 +154,7 @@ def replace_manufacturing_visuals(robot: ET.Element) -> None:
         "meshes/skeleton/3215_BothFlange_14.stl": "meshes/v4/right_source_shin_shortened_18mm.stl",
         "meshes/v3/left_ankle_roll_carrier.stl": "meshes/v4/left_direct_ankle_carrier_26p5mm.stl",
         "meshes/v3/right_ankle_roll_carrier.stl": "meshes/v4/right_direct_ankle_carrier_26p5mm.stl",
+        "meshes/v3/sts3250_dimension_controlled.stl": "meshes/v4/sts3250_step_parts_exact_shaft_frame.stl",
     }
     for mesh in robot.findall(".//mesh"):
         filename = str(mesh.get("filename"))
@@ -169,11 +166,69 @@ def replace_manufacturing_visuals(robot: ET.Element) -> None:
         link = link_by_name(robot, link_name)
         for visual in list(link.findall("visual")):
             link.remove(visual)
+        for collision in list(link.findall("collision")):
+            link.remove(collision)
+
+    # Remove every later-added external sole.  The original Zeroth FOOT/FOOT_2
+    # geometry remains and defines the corrected contact plane below.
+    for foot_name in ("FOOT", "FOOT_2"):
+        foot = link_by_name(robot, foot_name)
+        for visual in list(foot.findall("visual")):
+            if "sole" in str(visual.get("name", "")).lower():
+                foot.remove(visual)
+        for collision in list(foot.findall("collision")):
+            if "sole" in str(collision.get("name", "")).lower():
+                foot.remove(collision)
+
+
+def add_output_bridge_visuals(robot: ET.Element) -> None:
+    """Attach each PCD14 bridge/standoff stack to the rotating side."""
+
+    manifest = json.loads(V4_MANIFEST.read_text(encoding="utf-8"))
+    old_robot = ET.parse(v3.V2_URDF).getroot()
+    neutral_tf = neutral_transforms_v4(v3.old_fk(old_robot))
+    rows = [
+        row
+        for row in manifest["components"]
+        if row.get("role") in {
+            "sts3250_pcd14_output_bridge_to_child",
+            "sts3250_pcd14_child_standoff_to_carrier",
+            "sts3250_pcd14_4xm3_tie_rods_to_carrier",
+        }
+    ]
+    case_rows = [
+        row
+        for row in manifest["components"]
+        if row.get("role") == "sts3250_case_4xm2_tie_rods_to_parent"
+    ]
+    bridge_count = sum(row.get("role") == "sts3250_pcd14_output_bridge_to_child" for row in rows)
+    standoff_count = sum(
+        row.get("role") in {
+            "sts3250_pcd14_child_standoff_to_carrier",
+            "sts3250_pcd14_4xm3_tie_rods_to_carrier",
+        }
+        for row in rows
+    )
+    expected_standoff_count = len(manifest.get("child_output_standoffs_mm", {}))
+    if (bridge_count, standoff_count) != (18, expected_standoff_count):
+        raise RuntimeError(
+            f"expected 18 PCD14 bridges and {expected_standoff_count} child standoffs, got {bridge_count} and {standoff_count}"
+        )
+    if len(case_rows) != len(manifest.get("servo_axial_shims_mm", {})):
+        raise RuntimeError(f"unexpected case-side standoff count: {len(case_rows)}")
+    for row in rows + case_rows:
+        owner = str(row["owner_link"])
+        local_tf = v3.relative_transform(
+            neutral_tf[owner],
+            v3.component_world_transform(row),
+        )
         add_mesh_visual(
-            link,
-            f"{side}_small_light_palm_visual",
-            f"meshes/v4/{side}_small_light_palm.stl",
-            "0.969 0.973 0.980 1",
+            link_by_name(robot, owner),
+            f"{row['component_id']}_visual",
+            f"meshes/v4/{Path(str(row['source'])).with_suffix('.stl').name}",
+            "0.086 0.467 1 1",
+            xyz=local_tf[1],
+            rpy=v3.matrix_rpy(local_tf[0]),
         )
 
 
@@ -215,61 +270,10 @@ def add_v4_body_payloads(robot: ET.Element) -> None:
         "0 0.72 0.85 1",
     )
 
-    pod = add_fixed_body_link(
-        robot,
-        "v4_rear_service_pod",
-        V4_FIXED_MASSES["v4_rear_service_pod"],
-        (0.098, 0.0328, 0.100),
-        (0.0, 0.084, -0.042),
-    )
-    for filename, name in (
-        ("rear_service_pod.stl", "v4_rear_service_pod_visual"),
-        ("compute_removable_tray.stl", "v4_compute_tray_visual"),
-        ("battery_service_cage.stl", "v4_battery_cage_visual"),
-    ):
-        add_mesh_visual(pod, name, f"meshes/v4/{filename}", "0.82 0.84 0.87 1")
-    add_box_collision(
-        pod,
-        "v4_rear_service_pod_training_collision",
-        (0.098, 0.0328, 0.100),
-        (0.0, 0.084, -0.042),
-    )
-
-    compute = add_fixed_body_link(
-        robot,
-        "v4_compute_module",
-        V4_FIXED_MASSES["v4_compute_module"],
-        (0.070, 0.012, 0.032),
-        (0.0, 0.084, -0.018),
-        parent="v4_rear_service_pod",
-    )
-    add_mesh_visual(compute, "v4_compute_visual", "meshes/v4/compute_envelope.stl", "1 0.57 0 1")
-
-    battery = add_fixed_body_link(
-        robot,
-        "v4_battery_pack",
-        V4_FIXED_MASSES["v4_battery_pack"],
-        (0.075, 0.022, 0.034),
-        (0.0, 0.084, -0.063),
-        parent="v4_rear_service_pod",
-    )
-    add_mesh_visual(battery, "v4_battery_visual", "meshes/v4/battery_envelope.stl", "0.84 0 0.98 1")
-
-    imu = add_fixed_body_link(
-        robot,
-        "v4_torso_imu",
-        V4_FIXED_MASSES["v4_torso_imu"],
-        (0.032, 0.008, 0.025),
-        (0.0, 0.094, -0.018),
-        parent="v4_rear_service_pod",
-    )
-    add_mesh_visual(imu, "v4_torso_imu_visual", "meshes/v4/torso_imu_envelope.stl", "0.39 0.87 0.09 1")
-
     # UnitV2 optical +Z points through the front face, i.e. BODY-local -Y.
     for name, parent, xyz, rpy in (
         ("camera_optical_frame", "m5stack_unitv2", (-0.014, -0.0075102725, 0.045), (1.57079632679, 0.0, 0.0)),
         ("microphone_frame", "m5stack_unitv2", (0.014, -0.0075102725, 0.045), (0.0, 0.0, 0.0)),
-        ("torso_imu_frame", "v4_torso_imu", (0.0, 0.094, -0.018), (0.0, 0.0, 0.0)),
     ):
         ET.SubElement(robot, "link", name=name)
         v3.add_joint(robot, f"{name}_joint", parent, name, xyz, kind="fixed", rpy=rpy)
@@ -342,14 +346,14 @@ def gen_urdf() -> ET.Element:
     v3.joint_kinematics = joint_kinematics_v4
     v3.TARGET_TOTAL_MASS_KG = TARGET_TOTAL_MASS_KG
     v3.ANKLE_ROLL_OFFSET_M = ANKLE_ROLL_OFFSET_M
-    v3.FIXED_MASSES["FINGER_1"] = 0.016
-    v3.FIXED_MASSES["FINGER_1_2"] = 0.016
+    v3.FIXED_MASSES["FINGER_1"] = 0.005
+    v3.FIXED_MASSES["FINGER_1_2"] = 0.005
     v3.FIXED_MASSES["3215_BothFlange_13"] = 0.205
     v3.FIXED_MASSES["3215_BothFlange_14"] = 0.205
     v3.FIXED_MASSES[v3.LEFT_ANKLE_CARRIER] = 0.095
     v3.FIXED_MASSES[v3.RIGHT_ANKLE_CARRIER] = 0.095
     v3.COLLISION["FOOT"] = (
-        (0.110, 0.075, 0.007),
+        (0.090, 0.041, 0.006),
         (-0.010, 0.0, SOLE_WORLD_CENTER_Z_M),
     )
     v3.COLLISION["FOOT_2"] = v3.COLLISION["FOOT"]
@@ -373,6 +377,7 @@ def gen_urdf() -> ET.Element:
         },
     )
     replace_manufacturing_visuals(robot)
+    add_output_bridge_visuals(robot)
     add_v4_body_payloads(robot)
     update_sole_contact_frames(robot)
     masses = rebalance_body_mass(robot)

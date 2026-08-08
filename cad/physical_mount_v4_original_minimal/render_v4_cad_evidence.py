@@ -8,8 +8,10 @@ import json
 from pathlib import Path
 
 import numpy as np
+import vtk
 from PIL import Image, ImageDraw
 from build123d import import_step, import_stl
+from vtk.util.numpy_support import vtk_to_numpy
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -40,20 +42,36 @@ def tessellate_actors():
     cache = {}
     for component in manifest["components"]:
         source = ROOT / str(component["source"])
-        cache_key = str(source)
+        mesh_source = source if source.suffix.lower() == ".stl" else source.with_suffix(".stl")
+        if not mesh_source.is_file():
+            mesh_source = source
+        cache_key = str(mesh_source)
         if cache_key not in cache:
-            stat = source.stat()
+            stat = mesh_source.stat()
             fingerprint = hashlib.sha256(
-                f"{source.resolve()}|{stat.st_size}|{stat.st_mtime_ns}|v4-mm".encode()
+                f"{mesh_source.resolve()}|{stat.st_size}|{stat.st_mtime_ns}|v4-mm-v2-unit-fix".encode()
             ).hexdigest()
             cached = CACHE_DIR / f"{fingerprint}.npz"
             if cached.is_file():
                 payload = np.load(cached)
                 cache[cache_key] = (payload["vertices"], payload["triangles"])
             else:
-                shape = import_stl(source) if source.suffix.lower() == ".stl" else import_step(source)
-                vertices, triangles = v3.safe_tessellate(shape)
-                if source.suffix.lower() == ".stl" and "physical_mount_v1" in source.as_posix():
+                if mesh_source.suffix.lower() == ".stl":
+                    reader = vtk.vtkSTLReader()
+                    reader.SetFileName(str(mesh_source))
+                    reader.Update()
+                    polydata = reader.GetOutput()
+                    vertices = vtk_to_numpy(polydata.GetPoints().GetData()).astype(float, copy=True)
+                    raw_faces = vtk_to_numpy(polydata.GetPolys().GetData())
+                    triangles = raw_faces.reshape((-1, 4))[:, 1:4].astype(int, copy=False)
+                else:
+                    shape = import_step(mesh_source)
+                    vertices, triangles = v3.safe_tessellate(shape)
+                source_path = mesh_source.as_posix()
+                if mesh_source.suffix.lower() == ".stl" and (
+                    "physical_mount_v1" in source_path
+                    or "physical_mount_v2_minimal/replacements" in source_path
+                ):
                     vertices = vertices * 1000.0
                 cache[cache_key] = (vertices, triangles)
                 CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -133,9 +151,10 @@ def render(path, actors, all_points, direction, *, xray=False, annotate=False):
                 draw.line([tuple(point) for point in triangle] + [tuple(triangle[0])], fill=(145, 158, 175), width=1)
 
     draw.rounded_rectangle((42, 35, width - 42, 105), 18, fill=(16, 24, 40), outline=(48, 68, 96), width=2)
-    draw.text((70, 52), "Zeroth-01 v4 original-minimal · 18DoF · 2.850 kg · 498.959 mm", font=v3.load_font(34, True), fill=(245, 249, 255))
-    draw.text((65, height - 82), "Blue: 18 installed STS3250   |   orange/magenta/green: compute/battery/IMU", font=v3.load_font(20), fill=(30, 44, 66))
-    draw.text((65, height - 48), "CAD + MuJoCo gates PASS; physical release HOLD until purchased/printed first article and as-built SysID", font=v3.load_font(20), fill=(145, 44, 44))
+    standing_height_mm = float(all_points[:, 2].max() - all_points[:, 2].min())
+    draw.text((70, 52), f"Zeroth-01 v4 connected · 18DoF · 2.850 kg · {standing_height_mm:.1f} mm", font=v3.load_font(34, True), fill=(245, 249, 255))
+    draw.text((65, height - 82), "Blue: 18 purchased-exact STS3250 plus PCD14 output bridge/standoff stacks", font=v3.load_font(20), fill=(30, 44, 66))
+    draw.text((65, height - 48), "No hand block, external rear pod or added black sole; physical first-article release remains HOLD", font=v3.load_font(20), fill=(145, 44, 44))
 
     if annotate:
         layout = json.loads(LAYOUT.read_text(encoding="utf-8"))
@@ -155,9 +174,10 @@ def render(path, actors, all_points, direction, *, xray=False, annotate=False):
 
 def main() -> int:
     actors, points = tessellate_actors()
+    (OUT / "v4_xray_front_18_servos_payloads.png").unlink(missing_ok=True)
     rows = [
         render(OUT / "v4_connected_normal_front.png", actors, points, (1.0, 0.0, 0.0), annotate=True),
-        render(OUT / "v4_xray_front_18_servos_payloads.png", actors, points, (1.0, 0.0, 0.0), xray=True, annotate=True),
+        render(OUT / "v4_xray_front_18_servos_connections.png", actors, points, (1.0, 0.0, 0.0), xray=True, annotate=True),
         render(OUT / "v4_connected_iso.png", actors, points, (1.0, -1.15, 0.55)),
     ]
     payload = {

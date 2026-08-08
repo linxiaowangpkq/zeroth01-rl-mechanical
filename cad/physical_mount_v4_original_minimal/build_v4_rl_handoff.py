@@ -25,7 +25,10 @@ def main() -> int:
     joints = {str(joint.get("name")): joint for joint in robot.findall("joint")}
     rows = []
     for component in manifest["components"]:
-        if component.get("role") != "dimension_controlled_sts3250":
+        if component.get("role") not in {
+            "dimension_controlled_sts3250",
+            "purchased_exact_sts3250",
+        }:
             continue
         component_id = str(component["component_id"])
         servo_id, remainder = component_id.split("_", 1)
@@ -45,6 +48,8 @@ def main() -> int:
                 "continuous_effort_limit_nm": float(limit.get("effort")),
                 "velocity_limit_rad_s": float(limit.get("velocity")),
                 "model": "FEETECH STS3250-C001",
+                "cad_source": component.get("source", ""),
+                "cad_fidelity": "purchased_exact_step",
                 "mass_kg": 0.0745,
                 "cad_color": "blue",
                 "bus_id": "REQUIRES_PHYSICAL_BUS_SCAN",
@@ -92,14 +97,14 @@ def main() -> int:
         "sensors": {
             "camera_optical_frame": "M5Stack UnitV2 GC2145 camera; optical +Z is robot forward",
             "microphone_frame": "M5Stack UnitV2 integrated microphone",
-            "torso_imu_frame": "32 x 25 x 8 mm controlled envelope on the rigid rear-pod shelf",
+            "torso_imu_frame": "torso_imu_frame; physical internal mounting remains a first-article HOLD",
             "foot_contacts": [
                 f"{side}_sole_{corner}_contact"
                 for side in ("left", "right")
                 for corner in ("front_medial", "front_lateral", "rear_medial", "rear_lateral")
             ],
         },
-        "payload_envelopes_mm": {
+        "payload_reserved_envelopes_mm": {
             "compute": [70, 12, 32],
             "battery": [75, 22, 34],
             "torso_imu": [32, 8, 25],
@@ -120,6 +125,7 @@ def main() -> int:
             "mujoco_coordinated_collision_sweep": motion["gate"],
         },
         "holds": [
+            "freeze a real internal torso tray and cable routing before print release; the removed external rear pod is not an installed part",
             "weigh printed and purchased first article; update every link mass/COM/inertia",
             "one-at-a-time powered bus ID, zero and direction calibration",
             "quasi-static torque/current test before walking",
