@@ -25,3 +25,88 @@
 - 必须带真实线束完成无电全行程、悬吊单关节、镜像关节、限位慢扫和动态策略测试。
 
 当前结论：`digital_rl_baseline = PASS`；`native_solidworks_motion = HOLD`；`physical_first_article = HOLD`。
+
+## 2026-08-09 独立 RL 运行时审计：新增未关闭问题
+
+审计基线：分支 `codex/zeroth01-v5-16dof-solidworks-motion`，commit
+`626d716bffb6688138e545e1b6bff5ae7d5f197b`；MuJoCo 3.3.7、JAX
+0.7.2、RTX 4070 Laptop（CUDA）。原始 MJCF 可编译为 `nq=23`,
+`nv=22`, `nu=16`，质量为 `2.745758514949 kg`；`official_standing`
+在 `1.2552512 N·m` 限幅 PD 下连续仿真 60 s 无 NaN，底盘高度范围
+`0.416453–0.416796 m`，因此下面是交付契约问题，不是“质量过大导致必然无法站立”。
+
+### BUG-RL-V5-001（P0）：actuator 顺序与编译后的 joint/qpos 顺序不一致
+
+编译后的 16 关节顺序为：
+
+```text
+left_shoulder_yaw, left_shoulder_pitch, left_elbow_yaw,
+right_shoulder_yaw, right_shoulder_pitch, right_elbow_yaw,
+left_hip_yaw, left_hip_roll, left_hip_pitch, left_knee_pitch,
+left_ankle_pitch, right_hip_yaw, right_hip_roll, right_hip_pitch,
+right_knee_pitch, right_ankle_pitch
+```
+
+MJCF actuator 顺序却为：
+
+```text
+left_shoulder_yaw, right_shoulder_yaw, left_hip_yaw, right_hip_yaw,
+left_shoulder_pitch, right_shoulder_pitch, left_hip_roll, right_hip_roll,
+left_hip_pitch, right_hip_pitch, left_elbow_yaw, right_elbow_yaw,
+left_knee_pitch, right_knee_pitch, left_ankle_pitch, right_ankle_pitch
+```
+
+任何把策略输出、`qpos[7:]` 和 `ctrl[:]` 当作同一索引契约的训练/部署程序，
+都会静默控制错关节。修复要求：生成 MJCF 时按编译树中的 joint 顺序生成
+actuator，或交付显式且自动校验的 `qpos_index <-> actuator_index` 映射；
+checkpoint 必须记录所用顺序和源 MJCF SHA-256。
+
+### BUG-RL-V5-002（P0）：`symmetric_crouch` keyframe 按错误顺序写入 qpos
+
+当前 keyframe 在编译后的 joint 顺序中被解释为：
+
+```text
+left_hip_pitch=+0.18, left_knee_pitch=-0.18,
+right_hip_roll=-0.36, right_hip_pitch=+0.36,
+right_knee_pitch=-0.18, right_ankle_pitch=+0.18
+```
+
+其中 `right_hip_roll=-0.36`、`right_hip_pitch=+0.36`、
+`right_knee_pitch=-0.18` 已超出各自限位。`mj_forward` 显示该姿态两脚无地面接触：
+左脚底最低点 `z=3.406 mm`，右脚底最低点 `z=9.068 mm`，右脚中心横向漂到
+`y=-125.4 mm`，不是对称蹲姿。根因是 `build_v5_mjcf.py` 用一套交错的
+URDF/actuator 顺序拼接 keyframe，而 MuJoCo qpos 使用运动树深度优先顺序。
+
+修复后的腿部 qpos（按编译 joint 顺序）应至少满足镜像结构：
+
+```text
+left:  hip_yaw=0, hip_roll=0, hip_pitch=+0.18,
+       knee_pitch=-0.36, ankle_pitch=-0.18
+right: hip_yaw=0, hip_roll=0, hip_pitch=-0.18,
+       knee_pitch=+0.36, ankle_pitch=+0.18
+```
+
+同时应重新求解 base z，使两块鞋底实际接地，再由自动测试检查所有 qpos 均在限位内、
+左右脚世界坐标镜像且存在双脚接触。
+
+### BUG-RL-V5-003（P1）：足底 `front/rear` 名称与声明的世界 +X 前向相反
+
+执行 `official_standing` 的世界坐标正运动学后，所有 `front_*` site 的 x 约为
+`-50 mm`，所有 `rear_*` site 的 x 约为 `+26–27 mm`；而执行器配置声明
+`X forward, Y left, Z up`。因此“世界前向定义”和“足底前/后传感器命名”至少有一项
+相反，会污染前后足冲击、步态相位和滑移统计。修复要求：以 CAD 中真实脚尖/相机朝向
+为权威，冻结世界前向；随后重命名 site 或修正根坐标变换，并添加
+`front_site_world_x > rear_site_world_x`（若 +X 为前）的自动门禁。
+
+### BUG-RL-V5-004（P2）：GitHub 分支 ZIP 不是完整离线交付，README 未说明 LFS
+
+GitHub codeload 分支 ZIP 中 17 个 motion-link STEP 和 1 个 review GLB 是
+132–134 字节的 Git LFS 指针。直接运行交付清单校验得到 `FAIL`：清单声明
+`840848688` bytes，ZIP 实际只有 `20142756` bytes。应在 README 明确要求
+`git lfs install && git lfs pull`，并让校验器识别 LFS pointer 后给出该根因；若目标是
+“下载 ZIP 即离线复核”，则需提供包含 LFS 实体文件的 release archive。
+
+在 BUG-RL-V5-001/002 修复前，不应继续宣称未经映射修正的 MJCF 可直接用于 16DoF
+训练。允许的临时训练派生物只能重排 actuator、修正 keyframe/接地高度，且不得改变
+几何、质量、惯量、碰撞体、关节轴或限位；派生过程和双 SHA-256 必须随 checkpoint
+保存。
