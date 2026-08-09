@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "milestone": {
+    "kind": "standing",
+    "symbol": "N",
+    "ppo_update": 12,
+    "status": "PASS",
+    "walking_status": "NOT_ACHIEVED",
+    "running_status": "NOT_ACHIEVED"
+  },
+  "checkpoint": {
+    "file": "ckpt.12.bin",
+    "size_bytes": 187353,
+    "sha256": "aeecc3185edaa1661411931183cb42021c5104eb5e0da338e1d3f77c067be806",
+    "num_samples": 45057,
+    "restore_test": {
+      "passed": true,
+      "jax_backend": "gpu",
+      "jax_devices": ["cuda:0"],
+      "finite_action": true,
+      "policy_action_dim": 16,
+      "simulator_target_dim": 16
+    }
+  },
+  "mechanical_baseline": {
+    "repository": "https://github.com/linxiaowangpkq/zeroth01-rl-mechanical",
+    "branch": "codex/zeroth01-v5-16dof-solidworks-motion",
+    "source_commit": "626d716bffb6688138e545e1b6bff5ae7d5f197b",
+    "source_mjcf": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
+    "source_mjcf_sha256": "fbd77027e2da91cef0fee76fd9dc322920ba953a4c0e87b4f57b442473d1550e",
+    "derived_runtime_mjcf_sha256": "241628eb8c98426b87b1407295145a67c342d9792787987a304c88c8850b1321",
+    "mechanical_parameters_changed": false,
+    "runtime_only_changes": [
+      "actuators reordered to compiled joint/qpos order and renamed *_ctrl",
+      "free-base default pose set to official_standing",
+      "orientation framequat sensor added for KSim observation",
+      "invalid symmetric_crouch replaced by grounded symmetric_crouch_fixed"
+    ],
+    "physical_joint_count": 16,
+    "model_dimensions": {"nq": 23, "nv": 22, "nu": 16},
+    "total_mass_kg": 2.745758514949,
+    "continuous_torque_limit_nm_per_joint": 1.2552512,
+    "remote_metadata_required_at_runtime": false
+  },
+  "policy": {
+    "algorithm": "PPO",
+    "action_dim": 16,
+    "arm_control": "RL controlled",
+    "leg_control": "RL controlled",
+    "target_forward_velocity_mps": 0.08,
+    "standing_base_height_target_m": 0.41655
+  },
+  "training": {
+    "timestamp_local": "2026-08-09",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpu_memory_mib": 8188,
+    "num_envs": 128,
+    "batch_size": 32,
+    "rollout_length_frames": 32,
+    "num_passes": 2,
+    "dt_s": 0.004,
+    "control_dt_s": 0.02,
+    "ppo_updates": 12,
+    "random_seed": 20260809,
+    "xla_preallocate": false,
+    "xla_memory_fraction": 0.85
+  },
+  "acceptance": {
+    "identical_seed_evaluation": {
+      "episodes": 12,
+      "episode_duration_s": 4.0,
+      "trained_success_rate": 1.0,
+      "trained_mean_return": 1281.416748046875,
+      "random_success_rate": 0.0,
+      "random_mean_return": 274.30115127563477,
+      "mean_return_improvement": 1007.1155967712402,
+      "mean_return_ratio": 4.671568974784317
+    },
+    "deterministic_replay": {
+      "duration_s": 10.0,
+      "upright_fraction": 1.0,
+      "base_z_min_m": 0.4158704269433522,
+      "base_z_final_m": 0.41633537348074384,
+      "mean_forward_velocity_mps": 0.002111801536830849
+    },
+    "classification": "standing only; forward speed is below a walking gate"
+  },
+  "training_source_hashes": {
+    "scripts/build_v5_training_model.py": "30065d81414845cfdc7d86da7e58966556b21942a6fb1c2e784481962ba0772a",
+    "scripts/train_v5_16dof.py": "0d749af176deefcfb846f4375168da1fcdf4c0db4da151c6b54d832cb8c9838e",
+    "scripts/evaluate_policy.py": "9f95f874f43392cad9e5c426eb82c30476a8fd36ae174651df3abb10b56894d2",
+    "scripts/render_policy.py": "ddc5405684c140edc36102ab4df80cde10a2d5a56e5355d41408bdf7efac89f2",
+    "src/zeroth01_sim/task.py": "5be9905c02831cb45e0a690291971cfd87bc1544d0e2ef19878c95b7826f61cb",
+    "src/zeroth01_sim/model_spec.py": "47149c932a28260729409a7e95ca28377a6f9acf21a826d45630b66fc4e79b63"
+  },
+  "safety": {
+    "hardware_control_performed": false,
+    "deployable_to_hardware": false,
+    "reason": "locomotion gates and actuator thermal/electrical validation are not complete"
+  }
+}
