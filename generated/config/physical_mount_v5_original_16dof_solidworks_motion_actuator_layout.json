@@ -1,6 +1,6 @@
 {
   "schema": "zeroth01.v5_original_16dof_solidworks_motion.actuator_layout.v1",
-  "manifest_sha256": "8cbd8e2a6b0064353803529341d41cd3187f5e336e4b38bec17379680d5942f3",
+  "manifest_sha256": "d8f58de1720ade71202a087df4d419ae5f04da6950affb450bd988a4cb2348a9",
   "frame": "released body-neutral/world convention, X forward, Y left, Z up, metres",
   "count": 16,
   "total_actuator_mass_kg": 1.192,
@@ -792,6 +792,6 @@
     "right_knee_pitch",
     "right_ankle_pitch"
   ],
-  "mjcf_source_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+  "mjcf_source_sha256": "1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2",
   "calibration_truth_boundary": "Candidate IDs are non-authoritative history. Bus IDs, neutral counts, direction signs, backlash, torque gain and latency require powered physical calibration."
 }

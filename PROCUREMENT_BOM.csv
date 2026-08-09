@@ -1,14 +1,18 @@
 item,manufacturer,model_or_spec,qty,nominal_mass_each_kg,mechanical_interface,status,source
-actuator,FEETECH,STS3250-C001,16,0.0745,"45.22x24.72x36.5 mm controlled envelope; official rear M2 holes; 25T/OD5.9; PCD14 4xM3 output",FIRST_ARTICLE_HOLD,https://www.feetechrc.com/en/562636.html
-head_interaction,M5Stack,UnitV2,1,0.018,"48x18.5x24 mm controlled envelope; removable cradle; GC2145 camera + microphone",PURCHASED_MODULE_SELECTED,https://docs.m5stack.com/en/unit/unitv2
-head_shell,custom,front/rear 2.2 mm printable shell + M3 nut plate,1,0.055,"direct no-neck torso interface; +5 mm on every side; small fillets",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
-compute_module,system,70x12x32 mm maximum controlled envelope,1,0.025,"internal torso tray; USB and power exit",SELECT_EXACT_BOARD_BEFORE_TRAY_FREEZE,
-battery_pack,system,2S thin pack maximum 75x22x34 mm,1,0.18,"internal torso cage; BMS fuse and strain relief required",CELL_BMS_CAPACITY_HOLD,
-torso_imu,system,32x8x25 mm maximum controlled envelope,1,0.006,"rigid internal torso shelf; calibrated transform",SELECT_EXACT_IMU_HOLD,
-hip_yaw_mount,custom,"torso-integrated narrow ribs/bosses plus 2xM2x8 per side",2,,"official rear-case pattern; unchanged axis; no floating bridge/backplate",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
-hip_yaw_output,custom,"2.05 mm PCD14 bridge plus four M3 spacer sleeves",2,,"connects released U-hip; full-limit swept clearance",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
-wrist_support,custom,"compact rounded two-M3 fixed support",2,0.0060616,"no claw/gripper/large palm",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
-sole,custom,"9 mm white tapered lower-wider replaceable sole",2,0.0618177,"four M3 clearance holes; no black sole",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
-fasteners,standard,"M2/M3 screws washers locknuts and heat-set inserts",1,,"lengths selected after printed stack measurement",PROCURE_AFTER_STACK_CHECK,
-power_bus,system,"regulated 12 V bus; fuse; branch protection; emergency stop",1,,"wire gauge from measured rollout current and voltage drop",ELECTRICAL_DESIGN_HOLD,
-harness,system,"servo bus power USB and sensor wiring",1,,"service loops and strain relief; no joint shear crossings",ROUTING_FIRST_ARTICLE_HOLD,
+actuator,FEETECH,STS3250-C001,16,0.0745,"official exact envelope; rear M2 case mount; 25T/OD5.9; PCD14 4xM3 output",WALKING_BASELINE_RUNNING_HOLD,https://www.feetechrc.com/en/562636.html
+head_interaction,M5Stack,UnitV2 GC2145,1,0.018,"48x18.5x24 mm; removable cradle; camera + microphone",SELECTED,https://shop.m5stack.com/products/unitv2-ai-camera-gc2145
+head_shell,custom,"front/rear printable shell + visor + M3 nut plate",1,0.055,"direct no-neck torso interface; +5 mm every side; small fillets",FIRST_ARTICLE_PRINT_RELEASE,manufacturing/v5_bambu_first_article_release/3mf
+compute_module,Raspberry Pi,Zero 2 W,1,0.012,"65x30 mm; internal torso tray; 5 V power",SELECTED,https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/
+battery_pack,Power-Xtra,"PX850XT3S 3S 11.1 V 850 mAh 80C XT30",2,0.099,"69.5x32.5x20.9 mm; internal torso cage; fuse and strain relief",SELECTED_DIMENSION_CONTROLLED,https://www.promodelhobby.com/urun/power-xtra-11-1v-850-mah-80c-li-polymer-pil
+torso_imu,Adafruit,BNO085 PID 4754,1,0.0025,"25.6x22.7x4.6 mm; rigid torso shelf; calibrated transform",SELECTED,https://www.adafruit.com/product/4754
+servo_io,Waveshare,Bus Servo Adapter A SKU25514,1,,"42x33 mm; 9-12.6 V UART; external fused power injection",SELECTED,https://www.waveshare.com/product/modules/motors-servos/bus-servo-adapter-a.htm
+logic_regulator,Pololu,D24V50F5 5 V 5 A,1,0.003,"17.8x20.3x8.9 mm; 6-38 V input; logic/camera rail",SELECTED_EQUIVALENT_ALLOWED,https://www.pololu.com/product/2851/specs
+hip_yaw_mount,custom,"torso-integrated ribs/bosses plus 2xM2x8 per side",2,,"official rear-case pattern; unchanged axis; no floating backplate",FIRST_ARTICLE_HOLD,generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts
+output_bridge,custom,"6061-T6 OD19.95 ID6.2 4xD3.2 PCD14 t2.05",16,,"final powered torque path; plastic file only checks fit",CUSTOM_QUOTE_AFTER_FIT,manufacturing/v5_bambu_first_article_release/fit_check_only/04_sts3250_pcd14_output_bridge_2p05mm.step
+parent_thrust_ring,custom,"POM/6061 OD25 ID20.4 t2.0",16,,"parent-side thrust interface",CUSTOM_QUOTE_AFTER_FIT,manufacturing/v5_bambu_first_article_release/fit_check_only/02_sts3250_parent_thrust_ring_2mm.step
+hip_yaw_spacer,custom,"metal sleeve OD4 ID3 L1.65",8,,"four per hip yaw",CUSTOM_QUOTE_AFTER_FIT,manufacturing/v5_bambu_first_article_release/fit_check_only/03_sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.step
+wrist_support,custom,"compact rounded two-M3 fixed support",2,0.0060616,"no claw/gripper/large palm",FIRST_ARTICLE_PRINT_RELEASE,manufacturing/v5_bambu_first_article_release/3mf
+sole,custom,"9 mm tapered lower-wider replaceable sole",2,0.0618177,"four M3 clearance holes; add measured 2 mm anti-slip pad",FIRST_ARTICLE_PRINT_RELEASE,manufacturing/v5_bambu_first_article_release/3mf
+fasteners,standard,"M2/M3 screws washers locknuts and heat-set inserts",1,,"freeze lengths after first printed stack measurement",STACK_CHECK_REQUIRED,manufacturing/v5_bambu_first_article_release/PURCHASE_BOM.csv
+power_bus,system,"3S direct servo bus; 20 A fuse; fused branches; physical disconnect",1,,"wire gauge from measured rollout current and voltage drop",FIRST_ARTICLE_ELECTRICAL_HOLD,manufacturing/v5_bambu_first_article_release/PURCHASE_BOM.csv
+harness,system,"servo bus power USB sensor and STEMMA QT wiring",1,,"service loops and strain relief; no joint shear crossings",ROUTING_FIRST_ARTICLE_HOLD,manufacturing/v5_bambu_first_article_release/PURCHASE_BOM.csv

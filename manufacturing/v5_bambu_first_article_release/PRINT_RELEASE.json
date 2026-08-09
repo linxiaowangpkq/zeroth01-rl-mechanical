@@ -1,0 +1,1153 @@
+{
+  "schema": "zeroth01.v5.bambu_first_article_print_release.v1",
+  "status": "FIRST_ARTICLE_PRINT_RELEASE",
+  "source_assembly_manifest": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_SOLIDWORKS_MOTION_ASSEMBLY_MANIFEST.json",
+  "primary_diagnostic_step": "manufacturing/v5_bambu_first_article_release/ZEROTH01_V5_BAMBU_PRINTABLE_PARTS_DIAGNOSTIC.step",
+  "target": "Bambu Studio; 256 x 256 x 256 mm or larger printer; machine-specific G-code intentionally not included",
+  "summary": {
+    "print_part_source_count": 30,
+    "print_occurrence_count": 30,
+    "solid_material_upper_bound_g": 702.634,
+    "solid_material_upper_bound_by_material_g": {
+      "PA6-CF": 602.184,
+      "PETG-HF": 42.66,
+      "PETG-HF black": 9.322,
+      "PETG-HF white": 48.468
+    },
+    "mass_scope": "solid-volume upper bound only; use Bambu Studio sliced mass for purchasing and weigh every finished link for RL inertial identification"
+  },
+  "printed_parts": [
+    {
+      "name": "head_front_5mm_each_side",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/head_front_5mm_each_side.step",
+      "role": "printable_head_front_shell",
+      "quantity": 1,
+      "occurrences": [
+        "V5_HEAD_FRONT"
+      ],
+      "material": "PETG-HF white",
+      "part_class": "COSMETIC",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 25,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "01_head_front_5mm_each_side",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/01_head_front_5mm_each_side.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/01_head_front_5mm_each_side.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/01_head_front_5mm_each_side.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/01_head_front_5mm_each_side.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        90.75,
+        70.409,
+        15.5
+      ],
+      "solid_volume_mm3": 18986.944,
+      "solid_material_upper_bound_g_each": 24.113
+    },
+    {
+      "name": "head_rear_5mm_each_side",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/head_rear_5mm_each_side.step",
+      "role": "printable_head_rear_shell",
+      "quantity": 1,
+      "occurrences": [
+        "V5_HEAD_REAR"
+      ],
+      "material": "PETG-HF white",
+      "part_class": "COSMETIC",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 25,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "02_head_rear_5mm_each_side",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/02_head_rear_5mm_each_side.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/02_head_rear_5mm_each_side.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/02_head_rear_5mm_each_side.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/02_head_rear_5mm_each_side.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        90.75,
+        70.409,
+        15.5
+      ],
+      "solid_volume_mm3": 19177.362,
+      "solid_material_upper_bound_g_each": 24.355
+    },
+    {
+      "name": "head_simple_visor",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/head_simple_visor.step",
+      "role": "simple_camera_microphone_visor",
+      "quantity": 1,
+      "occurrences": [
+        "V5_HEAD_VISOR"
+      ],
+      "material": "PETG-HF black",
+      "part_class": "COSMETIC",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 25,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "03_head_simple_visor",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/03_head_simple_visor.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/03_head_simple_visor.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/03_head_simple_visor.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/03_head_simple_visor.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        76.0,
+        51.0,
+        2.0
+      ],
+      "solid_volume_mm3": 7340.01,
+      "solid_material_upper_bound_g_each": 9.322
+    },
+    {
+      "name": "battery_service_cage",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/battery_service_cage.step",
+      "role": "removable_internal_service_mount",
+      "quantity": 1,
+      "occurrences": [
+        "V5_BATTERY_CAGE"
+      ],
+      "material": "PETG-HF",
+      "part_class": "SERVICE",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 30,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "04_battery_service_cage",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/04_battery_service_cage.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/04_battery_service_cage.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/04_battery_service_cage.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/04_battery_service_cage.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        79.0,
+        38.0,
+        26.0
+      ],
+      "solid_volume_mm3": 14428.902,
+      "solid_material_upper_bound_g_each": 18.325
+    },
+    {
+      "name": "compute_removable_tray",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/compute_removable_tray.step",
+      "role": "removable_internal_service_mount",
+      "quantity": 1,
+      "occurrences": [
+        "V5_COMPUTE_TRAY"
+      ],
+      "material": "PETG-HF",
+      "part_class": "SERVICE",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 30,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "05_compute_removable_tray",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/05_compute_removable_tray.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/05_compute_removable_tray.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/05_compute_removable_tray.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/05_compute_removable_tray.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        76.0,
+        36.0,
+        15.0
+      ],
+      "solid_volume_mm3": 6963.455,
+      "solid_material_upper_bound_g_each": 8.844
+    },
+    {
+      "name": "harness_strain_relief_guides",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/harness_strain_relief_guides.step",
+      "role": "harness_strain_relief",
+      "quantity": 1,
+      "occurrences": [
+        "V5_HARNESS_GUIDES"
+      ],
+      "material": "PETG-HF",
+      "part_class": "SERVICE",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 30,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "06_harness_strain_relief_guides",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/06_harness_strain_relief_guides.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/06_harness_strain_relief_guides.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/06_harness_strain_relief_guides.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/06_harness_strain_relief_guides.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "bbox_mm": [
+        38.0,
+        100.0,
+        6.0
+      ],
+      "solid_volume_mm3": 1183.036,
+      "solid_material_upper_bound_g_each": 1.502
+    },
+    {
+      "name": "torso_imu_shelf",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/torso_imu_shelf.step",
+      "role": "removable_internal_service_mount",
+      "quantity": 1,
+      "occurrences": [
+        "V5_TORSO_IMU_SHELF"
+      ],
+      "material": "PETG-HF",
+      "part_class": "SERVICE",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 30,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "07_torso_imu_shelf",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/07_torso_imu_shelf.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/07_torso_imu_shelf.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/07_torso_imu_shelf.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/07_torso_imu_shelf.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        38.0,
+        31.0,
+        2.0
+      ],
+      "solid_volume_mm3": 2317.68,
+      "solid_material_upper_bound_g_each": 2.943
+    },
+    {
+      "name": "unitv2_removable_cradle",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/unitv2_removable_cradle.step",
+      "role": "removable_internal_service_mount",
+      "quantity": 1,
+      "occurrences": [
+        "V5_UNITV2_CRADLE"
+      ],
+      "material": "PETG-HF",
+      "part_class": "SERVICE",
+      "layer_mm": 0.2,
+      "walls": 4,
+      "top_bottom_layers": 5,
+      "infill_percent": 30,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.4,
+      "nozzle": "standard or hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "08_unitv2_removable_cradle",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/08_unitv2_removable_cradle.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/08_unitv2_removable_cradle.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/08_unitv2_removable_cradle.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/08_unitv2_removable_cradle.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        54.0,
+        29.0,
+        20.75
+      ],
+      "solid_volume_mm3": 8697.35,
+      "solid_material_upper_bound_g_each": 11.046
+    },
+    {
+      "name": "3215_1flange_2_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_2_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_1Flange_2"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "09_3215_1flange_2_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/09_3215_1flange_2_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/09_3215_1flange_2_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/09_3215_1flange_2_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/09_3215_1flange_2_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        100.015,
+        35.04,
+        35.04
+      ],
+      "solid_volume_mm3": 12143.351,
+      "solid_material_upper_bound_g_each": 14.329
+    },
+    {
+      "name": "3215_1flange_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_1Flange"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "10_3215_1flange_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/10_3215_1flange_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/10_3215_1flange_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/10_3215_1flange_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/10_3215_1flange_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        100.015,
+        35.04,
+        35.04
+      ],
+      "solid_volume_mm3": 12146.438,
+      "solid_material_upper_bound_g_each": 14.333
+    },
+    {
+      "name": "3215_bothflange_10_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_10_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_BothFlange_10"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "11_3215_bothflange_10_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/11_3215_bothflange_10_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/11_3215_bothflange_10_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/11_3215_bothflange_10_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/11_3215_bothflange_10_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        104.437,
+        40.64,
+        36.849
+      ],
+      "solid_volume_mm3": 11771.631,
+      "solid_material_upper_bound_g_each": 13.891
+    },
+    {
+      "name": "3215_bothflange_13_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_13_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_BothFlange_13"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "12_3215_bothflange_13_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/12_3215_bothflange_13_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/12_3215_bothflange_13_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/12_3215_bothflange_13_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/12_3215_bothflange_13_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        85.432,
+        34.84,
+        32.76
+      ],
+      "solid_volume_mm3": 6007.195,
+      "solid_material_upper_bound_g_each": 7.088
+    },
+    {
+      "name": "3215_bothflange_14_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_14_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_BothFlange_14"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "13_3215_bothflange_14_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/13_3215_bothflange_14_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/13_3215_bothflange_14_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/13_3215_bothflange_14_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/13_3215_bothflange_14_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        85.432,
+        35.04,
+        32.76
+      ],
+      "solid_volume_mm3": 6057.681,
+      "solid_material_upper_bound_g_each": 7.148
+    },
+    {
+      "name": "3215_bothflange_5_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_5_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_BothFlange_5"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "14_3215_bothflange_5_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/14_3215_bothflange_5_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/14_3215_bothflange_5_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/14_3215_bothflange_5_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/14_3215_bothflange_5_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        44.026,
+        54.803,
+        35.04
+      ],
+      "solid_volume_mm3": 3358.631,
+      "solid_material_upper_bound_g_each": 3.963
+    },
+    {
+      "name": "3215_bothflange_6_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_6_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_BothFlange_6"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "15_3215_bothflange_6_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/15_3215_bothflange_6_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/15_3215_bothflange_6_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/15_3215_bothflange_6_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/15_3215_bothflange_6_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        44.026,
+        54.803,
+        35.04
+      ],
+      "solid_volume_mm3": 3220.337,
+      "solid_material_upper_bound_g_each": 3.8
+    },
+    {
+      "name": "3215_bothflange_9_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_BothFlange_9_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_3215_BothFlange_9"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "16_3215_bothflange_9_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/16_3215_bothflange_9_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/16_3215_bothflange_9_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/16_3215_bothflange_9_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/16_3215_bothflange_9_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        104.437,
+        40.64,
+        36.849
+      ],
+      "solid_volume_mm3": 11943.905,
+      "solid_material_upper_bound_g_each": 14.094
+    },
+    {
+      "name": "direct_head_torso_nut_plate",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/direct_head_torso_nut_plate.step",
+      "role": "direct_head_torso_mount",
+      "quantity": 1,
+      "occurrences": [
+        "V5_HEAD_TORSO_NUT_PLATE"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "17_direct_head_torso_nut_plate",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/17_direct_head_torso_nut_plate.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/17_direct_head_torso_nut_plate.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/17_direct_head_torso_nut_plate.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/17_direct_head_torso_nut_plate.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        60.0,
+        22.0,
+        2.0
+      ],
+      "solid_volume_mm3": 2521.904,
+      "solid_material_upper_bound_g_each": 2.976
+    },
+    {
+      "name": "foot_2_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/FOOT_2_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_FOOT_2"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "18_foot_2_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/18_foot_2_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/18_foot_2_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/18_foot_2_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/18_foot_2_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        89.95,
+        45.568,
+        40.44
+      ],
+      "solid_volume_mm3": 34798.007,
+      "solid_material_upper_bound_g_each": 41.062
+    },
+    {
+      "name": "foot_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/FOOT_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_FOOT"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "19_foot_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/19_foot_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/19_foot_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/19_foot_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/19_foot_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        89.95,
+        45.568,
+        40.44
+      ],
+      "solid_volume_mm3": 34798.008,
+      "solid_material_upper_bound_g_each": 41.062
+    },
+    {
+      "name": "l_arm_mirror_1_sts3250_wrist_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/L_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_L_ARM_MIRROR_1"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "20_l_arm_mirror_1_sts3250_wrist_mount",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/20_l_arm_mirror_1_sts3250_wrist_mount.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/20_l_arm_mirror_1_sts3250_wrist_mount.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/20_l_arm_mirror_1_sts3250_wrist_mount.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/20_l_arm_mirror_1_sts3250_wrist_mount.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "bbox_mm": [
+        40.12,
+        83.498,
+        39.537
+      ],
+      "solid_volume_mm3": 24258.52,
+      "solid_material_upper_bound_g_each": 28.625
+    },
+    {
+      "name": "left_fixed_wrist_support",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/left_fixed_wrist_support.step",
+      "role": "fixed_compact_wrist_support",
+      "quantity": 1,
+      "occurrences": [
+        "LEFT_FIXED_WRIST_SUPPORT"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "21_left_fixed_wrist_support",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/21_left_fixed_wrist_support.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/21_left_fixed_wrist_support.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/21_left_fixed_wrist_support.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/21_left_fixed_wrist_support.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        20.0,
+        14.0,
+        7.0
+      ],
+      "solid_volume_mm3": 1597.694,
+      "solid_material_upper_bound_g_each": 1.885
+    },
+    {
+      "name": "left_tapered_sole_flare",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/left_tapered_sole_flare.step",
+      "role": "replaceable_white_tapered_lower_wider_sole",
+      "quantity": 1,
+      "occurrences": [
+        "LEFT_TAPERED_SOLE_FLARE"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "22_left_tapered_sole_flare",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/22_left_tapered_sole_flare.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/22_left_tapered_sole_flare.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/22_left_tapered_sole_flare.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/22_left_tapered_sole_flare.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        96.06,
+        46.06,
+        9.0
+      ],
+      "solid_volume_mm3": 36363.13,
+      "solid_material_upper_bound_g_each": 42.908
+    },
+    {
+      "name": "r_arm_mirror_1_sts3250_wrist_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/R_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_R_ARM_MIRROR_1"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "23_r_arm_mirror_1_sts3250_wrist_mount",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/23_r_arm_mirror_1_sts3250_wrist_mount.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/23_r_arm_mirror_1_sts3250_wrist_mount.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/23_r_arm_mirror_1_sts3250_wrist_mount.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/23_r_arm_mirror_1_sts3250_wrist_mount.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        83.498,
+        40.12,
+        39.537
+      ],
+      "solid_volume_mm3": 24258.52,
+      "solid_material_upper_bound_g_each": 28.625
+    },
+    {
+      "name": "right_fixed_wrist_support",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/right_fixed_wrist_support.step",
+      "role": "fixed_compact_wrist_support",
+      "quantity": 1,
+      "occurrences": [
+        "RIGHT_FIXED_WRIST_SUPPORT"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "24_right_fixed_wrist_support",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/24_right_fixed_wrist_support.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/24_right_fixed_wrist_support.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/24_right_fixed_wrist_support.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/24_right_fixed_wrist_support.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        20.0,
+        14.0,
+        7.0
+      ],
+      "solid_volume_mm3": 1597.694,
+      "solid_material_upper_bound_g_each": 1.885
+    },
+    {
+      "name": "right_tapered_sole_flare",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/right_tapered_sole_flare.step",
+      "role": "replaceable_white_tapered_lower_wider_sole",
+      "quantity": 1,
+      "occurrences": [
+        "RIGHT_TAPERED_SOLE_FLARE"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "25_right_tapered_sole_flare",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/25_right_tapered_sole_flare.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/25_right_tapered_sole_flare.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/25_right_tapered_sole_flare.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/25_right_tapered_sole_flare.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        96.06,
+        46.06,
+        9.0
+      ],
+      "solid_volume_mm3": 36363.13,
+      "solid_material_upper_bound_g_each": 42.908
+    },
+    {
+      "name": "torso_mounted_solid",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/torso_mounted_solid.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_Z_BOT2_MASTER_BODY_SKELETON"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "26_torso_mounted_solid",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/26_torso_mounted_solid.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/26_torso_mounted_solid.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/26_torso_mounted_solid.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/26_torso_mounted_solid.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        134.605,
+        127.852,
+        103.675
+      ],
+      "solid_volume_mm3": 233309.94,
+      "solid_material_upper_bound_g_each": 275.306
+    },
+    {
+      "name": "u_hip_l_mount_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_L_MOUNT_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_U_HIP_L"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "27_u_hip_l_mount_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/27_u_hip_l_mount_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/27_u_hip_l_mount_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/27_u_hip_l_mount_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/27_u_hip_l_mount_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        53.236,
+        70.28,
+        40.439
+      ],
+      "solid_volume_mm3": 3864.812,
+      "solid_material_upper_bound_g_each": 4.56
+    },
+    {
+      "name": "u_hip_r_mount_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/U_HIP_R_MOUNT_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_U_HIP_R"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "28_u_hip_r_mount_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/28_u_hip_r_mount_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/28_u_hip_r_mount_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/28_u_hip_r_mount_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/28_u_hip_r_mount_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "bbox_mm": [
+        53.236,
+        70.28,
+        40.439
+      ],
+      "solid_volume_mm3": 4885.022,
+      "solid_material_upper_bound_g_each": 5.764
+    },
+    {
+      "name": "z_bot2_master_shoulder2_2_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_2_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_Z_BOT2_MASTER_SHOULDER2_2"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "29_z_bot2_master_shoulder2_2_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/29_z_bot2_master_shoulder2_2_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/29_z_bot2_master_shoulder2_2_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/29_z_bot2_master_shoulder2_2_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/29_z_bot2_master_shoulder2_2_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "bbox_mm": [
+        40.64,
+        29.842,
+        29.785
+      ],
+      "solid_volume_mm3": 2530.439,
+      "solid_material_upper_bound_g_each": 2.986
+    },
+    {
+      "name": "z_bot2_master_shoulder2_sts3250_clearanced",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_STS3250_CLEARANCED.step",
+      "role": "source_load_bearing_carrier",
+      "quantity": 1,
+      "occurrences": [
+        "CARRIER_Z_BOT2_MASTER_SHOULDER2"
+      ],
+      "material": "PA6-CF",
+      "part_class": "STRUCTURAL",
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "infill_pattern": "gyroid",
+      "nozzle_mm": 0.6,
+      "nozzle": "hardened steel",
+      "support": "paint only where overhang exceeds 50 deg; keep servo pockets and bearing faces support-free",
+      "release_name": "30_z_bot2_master_shoulder2_sts3250_clearanced",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/step/assembly_frame/30_z_bot2_master_shoulder2_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/step/print_oriented/30_z_bot2_master_shoulder2_sts3250_clearanced.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/stl/30_z_bot2_master_shoulder2_sts3250_clearanced.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/3mf/30_z_bot2_master_shoulder2_sts3250_clearanced.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "bbox_mm": [
+        40.64,
+        29.842,
+        29.785
+      ],
+      "solid_volume_mm3": 2530.628,
+      "solid_material_upper_bound_g_each": 2.986
+    }
+  ],
+  "fit_check_only": [
+    {
+      "name": "sts3250_4xm2_first_article_face_gauge",
+      "step": "manufacturing/v5_bambu_first_article_release/fit_check_only/01_sts3250_4xm2_first_article_face_gauge.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/fit_check_only/01_sts3250_4xm2_first_article_face_gauge.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/fit_check_only/01_sts3250_4xm2_first_article_face_gauge.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH"
+    },
+    {
+      "name": "sts3250_parent_thrust_ring_2mm",
+      "step": "manufacturing/v5_bambu_first_article_release/fit_check_only/02_sts3250_parent_thrust_ring_2mm.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/fit_check_only/02_sts3250_parent_thrust_ring_2mm.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/fit_check_only/02_sts3250_parent_thrust_ring_2mm.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH"
+    },
+    {
+      "name": "sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30",
+      "step": "manufacturing/v5_bambu_first_article_release/fit_check_only/03_sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/fit_check_only/03_sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/fit_check_only/03_sts3250_pcd14_four_sleeve_spacer_1p65mm_z0p30.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH"
+    },
+    {
+      "name": "sts3250_pcd14_output_bridge_2p05mm",
+      "step": "manufacturing/v5_bambu_first_article_release/fit_check_only/04_sts3250_pcd14_output_bridge_2p05mm.step",
+      "stl": "manufacturing/v5_bambu_first_article_release/fit_check_only/04_sts3250_pcd14_output_bridge_2p05mm.stl",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/fit_check_only/04_sts3250_pcd14_output_bridge_2p05mm.3mf",
+      "orientation_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH"
+    }
+  ],
+  "mesh_gate": "manufacturing/v5_bambu_first_article_release/validation/mesh_gate.json",
+  "powered_motion_release": "HOLD_UNTIL_PRINTED_FIRST_ARTICLE_DRY_FIT_AND_ISOLATED_JOINT_SWEEP"
+}

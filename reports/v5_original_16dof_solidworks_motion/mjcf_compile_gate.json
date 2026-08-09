@@ -19,7 +19,8 @@
   "compiled_total_mass_kg": 2.745758514949,
   "compiled_mass_delta_kg": 0.0,
   "standing_height_m": 0.41644803175118567,
-  "mjcf_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+  "mjcf_sha256": "1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2",
+  "mjcf_hash_mode": "sha256_exact_lf_bytes",
   "grounded_keyframe_solution": {
     "gait_neutral": {
       "base_z_before_m": 0.416448031751,

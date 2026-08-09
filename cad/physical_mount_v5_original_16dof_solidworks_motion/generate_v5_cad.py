@@ -285,6 +285,7 @@ def parts() -> dict[str, Shape]:
         "battery_envelope": v4.battery_envelope(),
         "battery_service_cage": v4.battery_cage(),
         "torso_imu_envelope": v4.imu_envelope(),
+        "torso_imu_shelf": v4.imu_shelf(),
         "harness_strain_relief_guides": v4.harness_guides(),
     }
 

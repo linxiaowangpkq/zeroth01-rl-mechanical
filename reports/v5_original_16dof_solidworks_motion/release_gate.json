@@ -1,11 +1,11 @@
 {
   "schema": "zeroth01.v5_original_16dof_solidworks_motion.release_gate.v1",
-  "manifest_sha256": "8cbd8e2a6b0064353803529341d41cd3187f5e336e4b38bec17379680d5942f3",
+  "manifest_sha256": "d8f58de1720ade71202a087df4d419ae5f04da6950affb450bd988a4cb2348a9",
   "digital_rl_baseline": "PASS",
   "native_solidworks_motion": "HOLD",
   "physical_first_article": "HOLD",
   "movable_joint_count": 16,
-  "component_count": 85,
+  "component_count": 86,
   "exact_sts3250_count": 16,
   "nominal_total_mass_kg": 2.745758514949,
   "cad_envelope_height_mm": 490.48926898628565,

@@ -1,0 +1,29 @@
+{
+  "input": "E:/Codex/Documents-Codex/roboto-lite-infra-portfolio/roboto_xw/publish/zeroth01-rl-mechanical/manufacturing/v5_bambu_first_article_release/ZEROTH01_V5_BAMBU_PRINTABLE_PARTS_DIAGNOSTIC.step",
+  "mode": "view",
+  "outputs": [
+    {
+      "path": "E:/Codex/Documents-Codex/roboto-lite-infra-portfolio/roboto_xw/publish/zeroth01-rl-mechanical/manufacturing/v5_bambu_first_article_release/validation/snapshots/print_release_iso.png",
+      "camera": "iso",
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "path": "E:/Codex/Documents-Codex/roboto-lite-infra-portfolio/roboto_xw/publish/zeroth01-rl-mechanical/manufacturing/v5_bambu_first_article_release/validation/snapshots/print_release_front.png",
+      "camera": "front",
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "path": "E:/Codex/Documents-Codex/roboto-lite-infra-portfolio/roboto_xw/publish/zeroth01-rl-mechanical/manufacturing/v5_bambu_first_article_release/validation/snapshots/print_release_top.png",
+      "camera": "top",
+      "width": 1920,
+      "height": 1440
+    }
+  ],
+  "render": {
+    "viewLabels": true,
+    "padding": 0.08,
+    "sizeProfile": "assembly-large"
+  }
+}

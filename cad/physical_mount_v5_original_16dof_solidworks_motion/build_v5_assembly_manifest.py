@@ -188,6 +188,7 @@ def main() -> int:
         ("V5_BATTERY", "internal_payload_controlled_envelope", "battery_envelope.step", MAGENTA, "battery/BMS reservation inside torso"),
         ("V5_BATTERY_CAGE", "removable_internal_service_mount", "battery_service_cage.step", GREY, "internal battery cage"),
         ("V5_TORSO_IMU", "internal_payload_controlled_envelope", "torso_imu_envelope.step", GREEN, "IMU reservation"),
+        ("V5_TORSO_IMU_SHELF", "removable_internal_service_mount", "torso_imu_shelf.step", GREY, "rigid internal M2 IMU shelf; sensor orientation is fixed to the torso frame"),
         ("V5_HARNESS_GUIDES", "harness_strain_relief", "harness_strain_relief_guides.step", GREY, "internal strain-relief guides"),
     ):
         components.append(m.row(ROOT, component_id, role, V5_PARTS / filename, body_tf, color, BODY, note))

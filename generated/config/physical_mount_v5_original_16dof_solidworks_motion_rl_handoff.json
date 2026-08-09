@@ -1,7 +1,7 @@
 {
   "schema": "zeroth01.v5_original_16dof_solidworks_motion.rl_handoff.v1",
   "robot": "Zeroth-01 v5 original 16DoF, physically mounted STS3250",
-  "manifest_sha256": "8cbd8e2a6b0064353803529341d41cd3187f5e336e4b38bec17379680d5942f3",
+  "manifest_sha256": "d8f58de1720ade71202a087df4d419ae5f04da6950affb450bd988a4cb2348a9",
   "urdf": "generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion.urdf",
   "mjcf_mjx": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
   "actuator_layout": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json",
@@ -21,7 +21,7 @@
     "encoder_counts_per_revolution": 4096
   },
   "mechanical": {
-    "manufacturing_component_count": 85,
+    "manufacturing_component_count": 86,
     "solidworks_motion_rigid_link_count": 17,
     "ankle_roll_actuator_count": 0,
     "white_tapered_sole_thickness_mm": 9.0,
@@ -45,7 +45,7 @@
     ]
   },
   "model_contract": {
-    "mjcf_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+    "mjcf_sha256": "1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2",
     "frame_convention": "X forward, Y left, Z up; SI units; free base qpos[0:7]",
     "compiled_joint_order": [
       "left_shoulder_yaw",

@@ -642,6 +642,28 @@
       "valid_brep": true
     },
     {
+      "name": "torso_imu_shelf",
+      "step": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/torso_imu_shelf.step",
+      "stl": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/torso_imu_shelf.stl",
+      "bbox_min_mm": [
+        -19.0,
+        98.0,
+        -33.5
+      ],
+      "bbox_max_mm": [
+        19.000000000000004,
+        100.0,
+        -2.5
+      ],
+      "bbox_size_mm": [
+        38.0,
+        2.0,
+        31.0
+      ],
+      "volume_mm3": 2317.6796581321437,
+      "valid_brep": true
+    },
+    {
       "name": "harness_strain_relief_guides",
       "step": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/harness_strain_relief_guides.step",
       "stl": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/harness_strain_relief_guides.stl",

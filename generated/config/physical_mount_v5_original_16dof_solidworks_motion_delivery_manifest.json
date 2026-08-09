@@ -5,7 +5,7 @@
     "binary": "SHA-256 over exact bytes"
   },
   "file_count": 63,
-  "total_bytes": 840866868,
+  "total_bytes": 840867742,
   "digital_rl_baseline": "PASS",
   "native_solidworks_motion": "HOLD",
   "physical_first_article": "HOLD",
@@ -126,14 +126,14 @@
     },
     {
       "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_SOLIDWORKS_MOTION_ASSEMBLY_MANIFEST.json",
-      "bytes": 88358,
-      "sha256": "937d4046619075118300d3ad31b845af84e1bfb9e93f227345fa8058ed9cada0",
+      "bytes": 89187,
+      "sha256": "32b7b6625e012cfaa880f0ed9df3c3dc1b1df0990bfe9d0730eb08a15249c32f",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
       "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json",
       "bytes": 29945,
-      "sha256": "1b5cdebf63d9938295c2ee730287a0cdeeaccc535b779ef9f241b9785c2f5a96",
+      "sha256": "1a26e581e53c6b8cf3de9096bb2b4e8838b6da9948c11e3f6598bca2a8808cd3",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
@@ -145,7 +145,7 @@
     {
       "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json",
       "bytes": 8159,
-      "sha256": "771c5ffabe660dccf25a57a485017581893bdec2cadc20a56ec8b48a852af4aa",
+      "sha256": "c62378e6b177203681fef396af0431d7d15d5bd00857abeb39bc10dbf9bc21a5",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
@@ -360,8 +360,8 @@
     },
     {
       "path": "reports/v5_original_16dof_solidworks_motion/mjcf_compile_gate.json",
-      "bytes": 9966,
-      "sha256": "245270adb041398e3e80342a1d3a38e076f16371bf3a450c78537e0ffe5f3646",
+      "bytes": 10011,
+      "sha256": "43adf76313f658b1980e4c7bb0cea3aebbc036b3f58f6d94f8df5b6c41251314",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
@@ -379,7 +379,7 @@
     {
       "path": "reports/v5_original_16dof_solidworks_motion/release_gate.json",
       "bytes": 1205,
-      "sha256": "bfa85c0deea4a7f4c7607e45f051cd16e4ebfc868f6f40d4f29bf6c999ad3a73",
+      "sha256": "70b532fa816a30fa0f4f1d621e78ef539ac7bb3c7113f3139b2f0032a8c79ab0",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {

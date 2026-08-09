@@ -1,6 +1,6 @@
 # Zeroth-01 v5 机械基线 / RL 问题清单
 
-最后更新：2026-08-09
+最后更新：2026-08-10
 
 适用分支：`codex/zeroth01-v5-16dof-solidworks-motion`
 
@@ -17,28 +17,20 @@ RL 动力学基线：`c5cb2c7eb892579c273e68f0436e6285e0782b34`
 | BUG-RL-V5-003 足底 front/rear 语义反向 | CLOSED | 足底 site 已按世界坐标语义更正并自动检查。 |
 | BUG-RL-V5-004 Git LFS 离线交付不完整 | CLOSED FOR GIT CLONE | README 已要求 `git lfs pull`；GitHub ZIP 仍不能视为完整离线包。 |
 | BUG-RL-V5-005 官方零位把膝踝放在硬限位 | DIGITAL CLOSED / PHYSICAL HOLD | 新 `gait_neutral` 提供双向余量；实体零位、方向、硬挡仍需首件确认。 |
-| BUG-RL-V5-006 canonical MJCF 哈希契约不一致 | OPEN / P1 | 见下文。 |
+| BUG-RL-V5-006 canonical MJCF 哈希契约不一致 | CLOSED | MJCF 生成器强制写入 LF 字节；compile gate、RL handoff、actuator layout 与 delivery manifest 使用同一 SHA-256。 |
 | BUG-RL-V5-007 STS3250 膝关节速度不足以复现当前跑步 | OPEN / P0 FOR REAL RUNNING | 见下文。 |
 
-## BUG-RL-V5-006：canonical MJCF 哈希契约不一致
+## BUG-RL-V5-006：canonical MJCF 哈希契约不一致（已关闭）
 
-commit `c5cb2c7` 中 committed MJCF 字节和 delivery manifest 使用：
+根因是 Windows 工作树中 MJCF 曾以 CRLF 写出，而 delivery manifest 对文本使用 LF 规范化；compile gate 和下游 JSON 当时哈希了工作树原始 CRLF 字节，导致同一 XML 出现两个摘要。
+
+现在 MJCF 生成器通过二进制写入强制 LF，并在写出后拒绝任何 `CR` 字节；compile gate 记录 `sha256_exact_lf_bytes`，RL handoff、actuator layout 和 delivery manifest 由该值重生成。当前规范摘要为：
 
 ```text
 1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2
 ```
 
-但以下文件仍嵌入：
-
-```text
-145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18
-```
-
-- `reports/v5_original_16dof_solidworks_motion/mjcf_compile_gate.json`
-- `generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json`
-- `generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json`
-
-要求：对 MJCF 强制 LF，干净 checkout 后重生成派生 JSON，并在 CI 逐项验证 committed bytes、delivery manifest 和所有嵌入哈希一致。在关闭前，checkpoint metadata 必须同时记录两个值并标记 `source_hash_contract_match=false`。
+关闭门禁：工作树 MJCF 不含 CR；上述三个派生文件及 delivery manifest 摘要一致；`verify_v5_delivery_manifest.py` 全项通过。
 
 ## BUG-RL-V5-007：当前跑步依赖超过 STS3250 包络的快速膝伸展
 

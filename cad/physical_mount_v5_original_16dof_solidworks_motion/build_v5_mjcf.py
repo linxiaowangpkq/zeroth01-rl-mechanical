@@ -296,7 +296,11 @@ def enforce_model_index_contract(root: ET.Element, joint_order: list[str]) -> No
 def write_xml(root: ET.Element) -> None:
     ET.indent(root, space="  ")
     OUT.mkdir(parents=True, exist_ok=True)
-    ET.ElementTree(root).write(MJCF, encoding="utf-8", xml_declaration=True)
+    # Write bytes directly so the generated MJCF has one clone-stable LF byte
+    # representation on Windows and Linux.  The embedded hash, delivery
+    # manifest and committed file must all describe these same bytes.
+    data = ET.tostring(root, encoding="utf-8", xml_declaration=True)
+    MJCF.write_bytes(data.replace(b"\r\n", b"\n").replace(b"\r", b"\n"))
 
 
 def box_geom_bottom(model, data, geom_name: str) -> float:
@@ -670,7 +674,10 @@ def main() -> int:
         compiled_mass = float(model.body_mass.sum())
         contract = validate_model_contract(model)
         dynamics_smoke = gait_neutral_pd_smoke(model)
-        mjcf_sha256 = hashlib.sha256(MJCF.read_bytes()).hexdigest()
+        mjcf_bytes = MJCF.read_bytes()
+        if b"\r" in mjcf_bytes:
+            raise RuntimeError("generated MJCF is not LF-normalized")
+        mjcf_sha256 = hashlib.sha256(mjcf_bytes).hexdigest()
         runtime = {
             "runtime_compile_gate": "PASS" if contract["overall"] == "PASS" and dynamics_smoke["overall"] == "PASS" else "FAIL",
             "mujoco_version": mujoco.__version__,
@@ -684,6 +691,7 @@ def main() -> int:
             "compiled_mass_delta_kg": compiled_mass - u5.TARGET_TOTAL_MASS_KG,
             "standing_height_m": standing_height,
             "mjcf_sha256": mjcf_sha256,
+            "mjcf_hash_mode": "sha256_exact_lf_bytes",
             "grounded_keyframe_solution": grounded_keyframe_solution,
             "model_contract": contract,
             "gait_neutral_dynamics_smoke": dynamics_smoke,

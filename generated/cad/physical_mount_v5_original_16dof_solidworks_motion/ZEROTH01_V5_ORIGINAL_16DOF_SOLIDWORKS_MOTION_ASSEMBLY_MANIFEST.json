@@ -1,6 +1,6 @@
 {
   "schema": "zeroth01.v5_original_16dof_solidworks_motion.assembly_manifest.v1",
-  "component_count": 85,
+  "component_count": 86,
   "movable_joint_count": 16,
   "blue_sts3250_count": 16,
   "ankle_roll_actuator_count": 0,
@@ -1354,6 +1354,40 @@
       ],
       "color_hex": "#64DD17",
       "notes": "IMU reservation"
+    },
+    {
+      "component_id": "V5_TORSO_IMU_SHELF",
+      "role": "removable_internal_service_mount",
+      "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/torso_imu_shelf.step",
+      "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "transform_local_mm_to_world_mm": [
+        [
+          0.0007963267107332633,
+          -0.9999996829318346,
+          0.0,
+          0.0
+        ],
+        [
+          0.9999996829318346,
+          0.0007963267107332633,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color_hex": "#BFC7D1",
+      "notes": "rigid internal M2 IMU shelf; sensor orientation is fixed to the torso frame"
     },
     {
       "component_id": "V5_HARNESS_GUIDES",
