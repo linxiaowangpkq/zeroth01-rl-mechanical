@@ -1,0 +1,39 @@
+{
+  "gate_definition": {
+    "episode_count": 8,
+    "episode_seconds": 4.0,
+    "requires_flight_phase": true,
+    "actuator_target_speed_limit_rad_s": 3.0
+  },
+  "checkpoints": [
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_rl/Z4_robust_run/checkpoints/ckpt.4.bin",
+      "ppo_update": 4,
+      "success_rate": 0.0,
+      "mean_forward_velocity_mps": 0.25927305528346256,
+      "minimum_episode_forward_velocity_mps": 0.2486022353248994,
+      "mean_single_support_fraction": 0.3049206497386109,
+      "mean_flight_fraction": 0.0,
+      "mean_contact_foot_planar_speed_mps": 0.032762167023773235,
+      "maximum_episode_knee_p95_speed_rad_s": 2.6352783326062346,
+      "maximum_knee_speed_rad_s": 4.818943060740082,
+      "mean_knee_speed_violation_fraction": 0.014441094100074683,
+      "running_gate": {
+        "all_episodes_survive_4s": false,
+        "mean_forward_velocity_at_least_0_15_mps": true,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": true,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": false,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": true
+      },
+      "sts3250_running_gate_pass": false
+    }
+  ],
+  "invalid_empty_checkpoints": [],
+  "running_milestone_achieved": false,
+  "sts3250_running_milestone_achieved": false
+}

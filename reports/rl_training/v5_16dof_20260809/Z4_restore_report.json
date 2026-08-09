@@ -1,0 +1,32 @@
+{
+  "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_rl/Z4_robust_run/checkpoints/ckpt.4.bin",
+  "jax_backend": "gpu",
+  "jax_devices": [
+    "cuda:0"
+  ],
+  "physical_joint_count": 16,
+  "policy_action_dim": 16,
+  "simulator_target_dim": 16,
+  "observation_dim": 46,
+  "finite_action": true,
+  "arm_targets_rad": [
+    5.646683712257072e-05,
+    3.9847476728027686e-05,
+    2.1226307580946013e-05,
+    -1.5210990568448324e-05,
+    5.440526729216799e-05,
+    -2.698902244446799e-05
+  ],
+  "leg_targets_rad": [
+    -0.22992748022079468,
+    -6.928519724169746e-05,
+    3.0100607546046376e-05,
+    0.7409296631813049,
+    0.4999277889728546,
+    0.2299674153327942,
+    2.4146524083334953e-05,
+    -1.6099698768812232e-05,
+    -0.7410539388656616,
+    -0.49995920062065125
+  ]
+}

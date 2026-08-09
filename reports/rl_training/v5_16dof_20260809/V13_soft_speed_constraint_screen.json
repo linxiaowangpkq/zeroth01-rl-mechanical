@@ -1,0 +1,402 @@
+{
+  "gate_definition": {
+    "episode_count": 8,
+    "episode_seconds": 4.0,
+    "requires_flight_phase": true
+  },
+  "checkpoints": [
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.2.bin",
+      "ppo_update": 2,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.0950211950195437,
+      "minimum_episode_forward_velocity_mps": 0.09277061055853401,
+      "mean_single_support_fraction": 0.156875,
+      "mean_flight_fraction": 0.0625,
+      "mean_contact_foot_planar_speed_mps": 0.04586538332838085,
+      "maximum_episode_knee_p95_speed_rad_s": 4.123906852668609,
+      "maximum_knee_speed_rad_s": 5.914426425545937,
+      "mean_knee_speed_violation_fraction": 0.124125,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.3.bin",
+      "ppo_update": 3,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09487975069542207,
+      "minimum_episode_forward_velocity_mps": 0.09297736593895026,
+      "mean_single_support_fraction": 0.155625,
+      "mean_flight_fraction": 0.06375,
+      "mean_contact_foot_planar_speed_mps": 0.045980925172183294,
+      "maximum_episode_knee_p95_speed_rad_s": 4.113754588963203,
+      "maximum_knee_speed_rad_s": 5.914842636220823,
+      "mean_knee_speed_violation_fraction": 0.123375,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.4.bin",
+      "ppo_update": 4,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.0952689007713276,
+      "minimum_episode_forward_velocity_mps": 0.09314038713040457,
+      "mean_single_support_fraction": 0.15625,
+      "mean_flight_fraction": 0.061875,
+      "mean_contact_foot_planar_speed_mps": 0.04621004986614206,
+      "maximum_episode_knee_p95_speed_rad_s": 4.132426837142535,
+      "maximum_knee_speed_rad_s": 6.025181328831785,
+      "mean_knee_speed_violation_fraction": 0.12456249999999999,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.5.bin",
+      "ppo_update": 5,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09545109756662676,
+      "minimum_episode_forward_velocity_mps": 0.0923030423604954,
+      "mean_single_support_fraction": 0.155625,
+      "mean_flight_fraction": 0.064375,
+      "mean_contact_foot_planar_speed_mps": 0.045743589641187334,
+      "maximum_episode_knee_p95_speed_rad_s": 4.105981552368654,
+      "maximum_knee_speed_rad_s": 5.915396883855559,
+      "mean_knee_speed_violation_fraction": 0.12406249999999999,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.6.bin",
+      "ppo_update": 6,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.0948294233187625,
+      "minimum_episode_forward_velocity_mps": 0.09299411306505256,
+      "mean_single_support_fraction": 0.15625,
+      "mean_flight_fraction": 0.063125,
+      "mean_contact_foot_planar_speed_mps": 0.0455631986698857,
+      "maximum_episode_knee_p95_speed_rad_s": 4.111296807713593,
+      "maximum_knee_speed_rad_s": 6.034349340425515,
+      "mean_knee_speed_violation_fraction": 0.12481249999999999,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.7.bin",
+      "ppo_update": 7,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09563443253328234,
+      "minimum_episode_forward_velocity_mps": 0.09333834687644792,
+      "mean_single_support_fraction": 0.15812500000000002,
+      "mean_flight_fraction": 0.0625,
+      "mean_contact_foot_planar_speed_mps": 0.04522994299673233,
+      "maximum_episode_knee_p95_speed_rad_s": 4.086809730614434,
+      "maximum_knee_speed_rad_s": 5.913601068479648,
+      "mean_knee_speed_violation_fraction": 0.12325,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.8.bin",
+      "ppo_update": 8,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09510639555859485,
+      "minimum_episode_forward_velocity_mps": 0.09252747477958488,
+      "mean_single_support_fraction": 0.153125,
+      "mean_flight_fraction": 0.06625,
+      "mean_contact_foot_planar_speed_mps": 0.045428886913565586,
+      "maximum_episode_knee_p95_speed_rad_s": 4.0931077261577125,
+      "maximum_knee_speed_rad_s": 5.914182975880125,
+      "mean_knee_speed_violation_fraction": 0.124375,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.9.bin",
+      "ppo_update": 9,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09563457153539051,
+      "minimum_episode_forward_velocity_mps": 0.09347816244825712,
+      "mean_single_support_fraction": 0.16125,
+      "mean_flight_fraction": 0.06125,
+      "mean_contact_foot_planar_speed_mps": 0.044734847480816346,
+      "maximum_episode_knee_p95_speed_rad_s": 4.162246056767645,
+      "maximum_knee_speed_rad_s": 6.0990432353698765,
+      "mean_knee_speed_violation_fraction": 0.1249375,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.10.bin",
+      "ppo_update": 10,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09562435168282897,
+      "minimum_episode_forward_velocity_mps": 0.0929458294732727,
+      "mean_single_support_fraction": 0.1575,
+      "mean_flight_fraction": 0.061875,
+      "mean_contact_foot_planar_speed_mps": 0.04534625050448847,
+      "maximum_episode_knee_p95_speed_rad_s": 4.120901005355341,
+      "maximum_knee_speed_rad_s": 6.005312088954988,
+      "mean_knee_speed_violation_fraction": 0.12331249999999999,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.11.bin",
+      "ppo_update": 11,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09525377877940922,
+      "minimum_episode_forward_velocity_mps": 0.092731972489741,
+      "mean_single_support_fraction": 0.15812500000000002,
+      "mean_flight_fraction": 0.0625,
+      "mean_contact_foot_planar_speed_mps": 0.04530948116007233,
+      "maximum_episode_knee_p95_speed_rad_s": 4.117054938848617,
+      "maximum_knee_speed_rad_s": 5.975761671767879,
+      "mean_knee_speed_violation_fraction": 0.124,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.12.bin",
+      "ppo_update": 12,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09569760767845184,
+      "minimum_episode_forward_velocity_mps": 0.09399205143912268,
+      "mean_single_support_fraction": 0.15875,
+      "mean_flight_fraction": 0.0625,
+      "mean_contact_foot_planar_speed_mps": 0.045612591208526065,
+      "maximum_episode_knee_p95_speed_rad_s": 4.091645669200779,
+      "maximum_knee_speed_rad_s": 5.905645864968587,
+      "mean_knee_speed_violation_fraction": 0.123625,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.13.bin",
+      "ppo_update": 13,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09623099535224995,
+      "minimum_episode_forward_velocity_mps": 0.09426724130626747,
+      "mean_single_support_fraction": 0.15812500000000002,
+      "mean_flight_fraction": 0.065,
+      "mean_contact_foot_planar_speed_mps": 0.04498820393139884,
+      "maximum_episode_knee_p95_speed_rad_s": 4.075995577185115,
+      "maximum_knee_speed_rad_s": 5.90596411169895,
+      "mean_knee_speed_violation_fraction": 0.123125,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.14.bin",
+      "ppo_update": 14,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09580622556507923,
+      "minimum_episode_forward_velocity_mps": 0.09429479389138558,
+      "mean_single_support_fraction": 0.15375,
+      "mean_flight_fraction": 0.065625,
+      "mean_contact_foot_planar_speed_mps": 0.04532773253062225,
+      "maximum_episode_knee_p95_speed_rad_s": 4.158315669209195,
+      "maximum_knee_speed_rad_s": 6.024315033657477,
+      "mean_knee_speed_violation_fraction": 0.1239375,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.15.bin",
+      "ppo_update": 15,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09557831880718452,
+      "minimum_episode_forward_velocity_mps": 0.09350302329728519,
+      "mean_single_support_fraction": 0.15375,
+      "mean_flight_fraction": 0.066875,
+      "mean_contact_foot_planar_speed_mps": 0.04483491899319575,
+      "maximum_episode_knee_p95_speed_rad_s": 4.1219255640549335,
+      "maximum_knee_speed_rad_s": 5.978811666776221,
+      "mean_knee_speed_violation_fraction": 0.12381249999999999,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    },
+    {
+      "checkpoint": "/mnt/c/Users/Admin/Documents/Codex/2026-05-28/wsl-home-mobaxterm-wsl-git-clone/roboto-lite-infra-portfolio/zeroth01-16-sim/checkpoints/v5_16dof_phase_run_v13_sts_speed/checkpoints/ckpt.16.bin",
+      "ppo_update": 16,
+      "success_rate": 1.0,
+      "mean_forward_velocity_mps": 0.09575700070148106,
+      "minimum_episode_forward_velocity_mps": 0.09346275152368458,
+      "mean_single_support_fraction": 0.15375,
+      "mean_flight_fraction": 0.0675,
+      "mean_contact_foot_planar_speed_mps": 0.04494086780505981,
+      "maximum_episode_knee_p95_speed_rad_s": 4.10228701644233,
+      "maximum_knee_speed_rad_s": 5.972917232184454,
+      "mean_knee_speed_violation_fraction": 0.1236875,
+      "running_gate": {
+        "all_episodes_survive_4s": true,
+        "mean_forward_velocity_at_least_0_15_mps": false,
+        "minimum_episode_forward_velocity_at_least_0_10_mps": false,
+        "single_support_fraction_at_least_0_15": true,
+        "flight_fraction_at_least_0_02": true,
+        "mean_contact_foot_planar_speed_at_most_0_05_mps": true
+      },
+      "running_gate_pass": false,
+      "sts3250_speed_gate": {
+        "maximum_episode_knee_p95_speed_at_most_3_rad_s": false
+      },
+      "sts3250_running_gate_pass": false
+    }
+  ],
+  "invalid_empty_checkpoints": [],
+  "running_milestone_achieved": false,
+  "sts3250_running_milestone_achieved": false
+}

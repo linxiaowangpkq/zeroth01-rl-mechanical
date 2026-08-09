@@ -1,41 +1,16 @@
 # Zeroth-01 v5 16DoF RL milestones
 
-This directory stores only checkpoints that passed an explicit milestone gate.
-The integer in each milestone name is the PPO update number, not an assertion of
-walking distance or convergence.
+这里只保存通过明确仿真门禁的冻结 checkpoint。N/M/Z 分别表示站立、步行和跑步，不代表 PPO 更新总数或实体部署许可。
 
-## Current status
+| 里程碑 | 文件 | 状态 |
+|---|---|---|
+| N12 `gait_neutral` 站立 | `N12_gait_neutral_standing/ckpt.12.bin` | PASS；canonical 中立姿态回归 |
+| N12 历史零位站立 | `N12_standing/ckpt.12.bin` | PASS / 仅旧模型回归 |
+| M4 步行 | `M4_robust_walk/ckpt.4.bin` | PASS；8/8 × 4 s，0.106928 m/s |
+| Z4 跑步 | `Z4_robust_run/ckpt.4.bin` | PASS；8/8 × 4 s，0.150424 m/s，飞行相 0.03 |
 
-| Milestone | PPO update | Status | Evidence |
-| --- | ---: | --- | --- |
-| standing (`N`, canonical `gait_neutral`) | 12 | PASS | 12/12 deterministic 4 s episodes healthy; mean return 1277.60 versus random 290.93 |
-| standing (`N`, historical `official_standing`) | 12 | PASS / regression only | retained for old-model replay; not a locomotion reset |
-| walking (`M`) | — | NOT ACHIEVED | canonical updates 16–64 all failed; best fully surviving update 24 reached only 0.0040 m/s |
-| running (`Z`) | — | NOT ACHIEVED | walking gate has not been passed |
+全部新 checkpoint 是 46 维观测、16 维全身 PPO 动作，六个手臂关节和十个腿部关节均由策略输出；每个执行器扭矩限制为 `±1.2552512 N·m`。
 
-`N12_gait_neutral_standing/ckpt.12.bin` is the current canonical standing smoke
-checkpoint. `N12_standing/ckpt.12.bin` is the historical all-zero standing
-regression checkpoint. Neither is a walking or running policy, and neither may
-be used as evidence of locomotion or hardware readiness.
+Z4 是仿真跑步里程碑，不是 STS3250 实机合格证明。其 10 s 负载复放显示膝关节 p95 速度约 5.0 rad/s，高于配置中的 3 rad/s 包络。对 Z4 加硬 3 rad/s 目标速率后 0/8 生存且飞行相消失；硬约束 PPO v14 训练 147,201 样本后仍为 0/8。因此实体跑步必须先关闭 `bug.md` 中的 BUG-RL-V5-007。
 
-The canonical `gait_neutral` walking stage ran through PPO update 64 with 128
-environments on the same RTX 4070 Laptop GPU. Update 20 was fastest at 0.0125
-m/s but survived only 3/4 episodes. The best fully surviving policy, update 24,
-reached 0.0040 m/s with only 0.75% single support. Later policies converged back
-to double support. No checkpoint met the 0.05 m/s gait gate, so rejected walk
-checkpoints are not stored in this repository and running training did not start.
-
-The policy action is 16-dimensional: all six arm joints and all ten leg joints
-are policy outputs. MuJoCo actuator torque is clamped to the mechanical baseline
-continuous limit of +/-1.2552512 N m at every joint.
-
-See each checkpoint's `metadata.json` for its exact mechanical source commit,
-model hashes, training configuration, GPU restore result and acceptance data.
-
-The historical N12 policy was trained from the historical source MJCF plus the runtime-only
-index/keyframe repair recorded by those two hashes. The current canonical MJCF
-now applies that index repair at generation time and adds the validated
-`gait_neutral` reset. Keep N12 as a standing regression checkpoint; new walking
-training must use `gait_neutral` and record the canonical MJCF SHA-256,
-16-joint control order and source commit in its own metadata. The current N12
-does so and also records the open embedded-hash inconsistency in BUG-RL-V5-006.
+详细门禁、恢复、随机策略对照和硬件负载证据见 `reports/rl_training/v5_16dof_20260809/`。没有执行任何实体舵机命令。

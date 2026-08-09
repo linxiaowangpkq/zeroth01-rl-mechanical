@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "milestone": {"kind": "walking", "symbol": "M", "ppo_update": 4, "status": "PASS"},
+  "checkpoint": {
+    "file": "ckpt.4.bin",
+    "size_bytes": 554711,
+    "sha256": "8eca898943abcb407d8cf2d7dafa3b733d95736b74fd7fdff674c123f8bb0b3b"
+  },
+  "mechanical_baseline": {
+    "repository": "https://github.com/linxiaowangpkq/zeroth01-rl-mechanical",
+    "branch": "codex/zeroth01-v5-16dof-solidworks-motion",
+    "source_commit": "c5cb2c7eb892579c273e68f0436e6285e0782b34",
+    "source_mjcf_committed_bytes_sha256": "1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2",
+    "source_compile_report_declared_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+    "source_hash_contract_match": false,
+    "derived_runtime_mjcf_sha256": "d825712ea125a758aa669a8669c43dc6c5bc44e42fe1cb2526b8cd676adfa894",
+    "mechanical_parameters_changed": false,
+    "physical_joint_count": 16,
+    "model_dimensions": {"nq": 23, "nv": 22, "nu": 16},
+    "total_mass_kg": 2.745758514949,
+    "continuous_torque_limit_nm_per_joint": 1.2552512,
+    "runtime_remote_metadata_required": false
+  },
+  "policy": {"algorithm": "PPO", "observation_dim": 46, "action_dim": 16, "arm_control": "RL controlled", "leg_control": "RL controlled"},
+  "acceptance": {
+    "episodes": 8,
+    "episode_duration_s": 4.0,
+    "success_rate": 1.0,
+    "mean_forward_velocity_mps": 0.106928,
+    "minimum_episode_forward_velocity_mps": 0.080134,
+    "mean_single_support_fraction": 0.44,
+    "mean_contact_foot_planar_speed_mps": 0.02318,
+    "classification": "walking"
+  },
+  "safety": {"hardware_control_performed": false, "deployable_to_hardware": false, "reason": "physical STS3250 system identification and calibration remain open"}
+}

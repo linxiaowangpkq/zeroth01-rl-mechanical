@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "milestone": {"kind": "running", "symbol": "Z", "ppo_update": 4, "status": "SIMULATION_PASS_HARDWARE_HOLD"},
+  "checkpoint": {
+    "file": "ckpt.4.bin",
+    "size_bytes": 553394,
+    "sha256": "66822b8fff53fcb95d0358633e87477f11c01a3cc72dbc830cfbca3142a03a31",
+    "restore_test": {"passed": true, "jax_backend": "gpu", "jax_devices": ["cuda:0"], "finite_action": true}
+  },
+  "mechanical_baseline": {
+    "repository": "https://github.com/linxiaowangpkq/zeroth01-rl-mechanical",
+    "branch": "codex/zeroth01-v5-16dof-solidworks-motion",
+    "source_commit": "c5cb2c7eb892579c273e68f0436e6285e0782b34",
+    "source_mjcf_committed_bytes_sha256": "1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2",
+    "source_compile_report_declared_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+    "source_hash_contract_match": false,
+    "derived_runtime_mjcf_sha256": "d825712ea125a758aa669a8669c43dc6c5bc44e42fe1cb2526b8cd676adfa894",
+    "mechanical_parameters_changed": false,
+    "physical_joint_count": 16,
+    "model_dimensions": {"nq": 23, "nv": 22, "nu": 16},
+    "total_mass_kg": 2.745758514949,
+    "continuous_torque_limit_nm_per_joint": 1.2552512,
+    "runtime_remote_metadata_required": false
+  },
+  "policy": {"algorithm": "PPO", "observation_dim": 46, "action_dim": 16, "arm_control": "RL controlled", "leg_control": "RL controlled"},
+  "training": {"gpu": "NVIDIA GeForce RTX 4070 Laptop GPU", "num_envs": 32, "batch_size": 32, "rollout_length_frames": 200, "peak_gpu_memory_gib": 4.091353199804592},
+  "acceptance": {
+    "episodes": 8,
+    "episode_duration_s": 4.0,
+    "success_rate": 1.0,
+    "mean_forward_velocity_mps": 0.15042448704747155,
+    "minimum_episode_forward_velocity_mps": 0.13976015474531575,
+    "mean_single_support_fraction": 0.27625,
+    "mean_flight_fraction": 0.03,
+    "mean_contact_foot_planar_speed_mps": 0.04226349136725788,
+    "versus_random_mean_return_ratio": 4.4036,
+    "classification": "simulation running; not hardware ready"
+  },
+  "safety": {"hardware_control_performed": false, "deployable_to_hardware": false, "reason": "BUG-RL-V5-007: current run exceeds STS3250 knee speed envelope"}
+}
