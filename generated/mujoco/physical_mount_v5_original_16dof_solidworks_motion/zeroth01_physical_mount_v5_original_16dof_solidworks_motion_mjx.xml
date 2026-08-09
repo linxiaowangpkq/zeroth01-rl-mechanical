@@ -78,10 +78,10 @@
                 <inertial pos="0.000267168356117 0.0354753493366 0.00699842206098" mass="0.111817655517" fullinertia="2.7682691276e-05 0.000121169872719 9.75536033414e-05 5.23811885925e-06 1.2734893707e-05 -3.76219134454e-06" />
                 <geom name="FOOT_collision" type="box" size="0.045 0.0228 0.0202" pos="-0.016025 0.012845 0.0187" rgba="0.92 0.93 0.95 1" friction="1.0 0.02 0.001" />
                 <geom name="FOOT_v5_white_tapered_sole_collision" type="box" size="0.049 0.0045 0.024" pos="-0.016025 0.04013 0.0187" rgba="0.97 0.98 0.99 1" friction="1.2 0.02 0.001" />
-                <site name="left_sole_front_medial" pos="0.032 0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
-                <site name="left_sole_front_lateral" pos="0.032 0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
-                <site name="left_sole_rear_medial" pos="-0.045 0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
-                <site name="left_sole_rear_lateral" pos="-0.045 0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
+                <site name="left_sole_front_medial" pos="-0.045 0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
+                <site name="left_sole_front_lateral" pos="-0.045 0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
+                <site name="left_sole_rear_medial" pos="0.032 0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
+                <site name="left_sole_rear_lateral" pos="0.032 0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
               </body>
             </body>
           </body>
@@ -108,10 +108,10 @@
                 <inertial pos="0.000267155019216 -0.035475353425 0.00698844843899" mass="0.111817655517" fullinertia="2.76982728993e-05 0.000121185411168 9.75535504349e-05 -5.23811012192e-06 1.27457383194e-05 3.76539507214e-06" />
                 <geom name="FOOT_2_collision" type="box" size="0.045 0.0228 0.0202" pos="-0.016025 -0.012845 0.0187" rgba="0.92 0.93 0.95 1" friction="1.0 0.02 0.001" />
                 <geom name="FOOT_2_v5_white_tapered_sole_collision" type="box" size="0.049 0.0045 0.024" pos="-0.016025 -0.04013 0.0187" rgba="0.97 0.98 0.99 1" friction="1.2 0.02 0.001" />
-                <site name="right_sole_front_medial" pos="0.032 -0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
-                <site name="right_sole_front_lateral" pos="0.032 -0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
-                <site name="right_sole_rear_medial" pos="-0.045 -0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
-                <site name="right_sole_rear_lateral" pos="-0.045 -0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
+                <site name="right_sole_front_medial" pos="-0.045 -0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
+                <site name="right_sole_front_lateral" pos="-0.045 -0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
+                <site name="right_sole_rear_medial" pos="0.032 -0.0446 0.0307" size="0.004" rgba="0 1 0.8 1" />
+                <site name="right_sole_rear_lateral" pos="0.032 -0.0446 0.0067" size="0.004" rgba="0 1 0.8 1" />
               </body>
             </body>
           </body>
@@ -130,22 +130,22 @@
     </body>
   </worldbody>
   <actuator>
-    <motor name="left_shoulder_yaw_motor" joint="left_shoulder_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_shoulder_yaw_motor" joint="right_shoulder_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_hip_yaw_motor" joint="left_hip_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_hip_yaw_motor" joint="right_hip_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_shoulder_pitch_motor" joint="left_shoulder_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_shoulder_pitch_motor" joint="right_shoulder_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_hip_roll_motor" joint="left_hip_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_hip_roll_motor" joint="right_hip_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_hip_pitch_motor" joint="left_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_hip_pitch_motor" joint="right_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_elbow_yaw_motor" joint="left_elbow_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_elbow_yaw_motor" joint="right_elbow_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_knee_pitch_motor" joint="left_knee_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_knee_pitch_motor" joint="right_knee_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="left_ankle_pitch_motor" joint="left_ankle_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
-    <motor name="right_ankle_pitch_motor" joint="right_ankle_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_shoulder_yaw_ctrl" joint="left_shoulder_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_shoulder_pitch_ctrl" joint="left_shoulder_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_elbow_yaw_ctrl" joint="left_elbow_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_shoulder_yaw_ctrl" joint="right_shoulder_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_shoulder_pitch_ctrl" joint="right_shoulder_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_elbow_yaw_ctrl" joint="right_elbow_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_hip_yaw_ctrl" joint="left_hip_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_hip_roll_ctrl" joint="left_hip_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_hip_pitch_ctrl" joint="left_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_knee_pitch_ctrl" joint="left_knee_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="left_ankle_pitch_ctrl" joint="left_ankle_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_hip_yaw_ctrl" joint="right_hip_yaw" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_hip_roll_ctrl" joint="right_hip_roll" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_hip_pitch_ctrl" joint="right_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_knee_pitch_ctrl" joint="right_knee_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
+    <motor name="right_ankle_pitch_ctrl" joint="right_ankle_pitch" gear="1" ctrllimited="true" ctrlrange="-1.2552512 1.2552512" />
   </actuator>
   <sensor>
     <gyro name="imu_gyro" site="imu_site" />
@@ -161,6 +161,7 @@
   </sensor>
   <keyframe>
     <key name="official_standing" qpos="0 0 0.416448031751 0.707388269167 0 0 0.706825181105 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
-    <key name="symmetric_crouch" qpos="0 0 0.416448031751 0.707388269167 0 0 0.706825181105 0 0 0 0 0 0 0 0 0.18 -0.18 0 0 -0.36 0.36 -0.18 0.18" />
+    <key name="gait_neutral" qpos="0 0 0.411426464541 0.707388269167 0 0 0.706825181105 0 0 0 0 0 0 0 0 0.18 -0.36 -0.18 0 0 -0.18 0.36 0.18" />
+    <key name="symmetric_crouch" qpos="0 0 0.411426464541 0.707388269167 0 0 0.706825181105 0 0 0 0 0 0 0 0 0.18 -0.36 -0.18 0 0 -0.18 0.36 0.18" />
   </keyframe>
 </mujoco>

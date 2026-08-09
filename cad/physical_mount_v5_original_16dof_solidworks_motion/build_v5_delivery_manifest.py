@@ -15,7 +15,7 @@ REPORT_ROOT = ROOT / "reports" / "v5_original_16dof_solidworks_motion"
 OUTPUT = ROOT / "generated" / "config" / "physical_mount_v5_original_16dof_solidworks_motion_delivery_manifest.json"
 
 
-TEXT_SUFFIXES = {".csv", ".json", ".urdf", ".xml"}
+TEXT_SUFFIXES = {".csv", ".json", ".md", ".urdf", ".xml"}
 
 
 def canonical_bytes(path: Path) -> tuple[bytes, str]:
@@ -57,6 +57,7 @@ def main() -> int:
         REPORT_ROOT / "hip_yaw_uhip_mount_clearance.json",
         REPORT_ROOT / "urdf_mass_inertia_gate.json",
         REPORT_ROOT / "mjcf_compile_gate.json",
+        ROOT / "cad" / "physical_mount_v5_original_16dof_solidworks_motion" / "RL_MODEL_CONTRACT.md",
     ]
     files.extend(sorted((CAD_ROOT / "motion_link_parts").glob("*.step")))
     files.extend(sorted(URDF_ROOT.rglob("*")))

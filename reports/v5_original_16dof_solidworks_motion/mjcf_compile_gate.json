@@ -1,10 +1,11 @@
 {
-  "schema": "zeroth01.v5_original_16dof_solidworks_motion.mjcf_compile_gate.v1",
+  "schema": "zeroth01.v5_original_16dof_solidworks_motion.mjcf_compile_gate.v2",
   "mjcf": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
   "expected_mass_kg": 2.745758514949,
   "expected_joint_count": 16,
   "ankle_roll_actuator_count": 0,
   "source_gate": "PASS",
+  "physics_change_policy": "no geometry, mass, inertia, collision, joint axis, joint range or torque limit changed by the RL contract repair",
   "inertial_source": "full tensors copied from generated v5 URDF",
   "collision_source": "v5 compact wrist support + 9 mm lower-wider sole primitives",
   "runtime_compile_gate": "PASS",
@@ -18,5 +19,312 @@
   "compiled_total_mass_kg": 2.745758514949,
   "compiled_mass_delta_kg": 0.0,
   "standing_height_m": 0.41644803175118567,
+  "mjcf_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+  "grounded_keyframe_solution": {
+    "gait_neutral": {
+      "base_z_before_m": 0.416448031751,
+      "base_z_solved_m": 0.4114264645413874,
+      "sole_bottom_before_m": {
+        "left": 0.005021554800044415,
+        "right": 0.005021579619180693
+      }
+    },
+    "symmetric_crouch": {
+      "base_z_before_m": 0.416448031751,
+      "base_z_solved_m": 0.4114264645413874,
+      "sole_bottom_before_m": {
+        "left": 0.005021554800044415,
+        "right": 0.005021579619180693
+      }
+    }
+  },
+  "model_contract": {
+    "frame_convention": "X forward, Y left, Z up; SI units; free base qpos[0:7]",
+    "compiled_joint_order": [
+      "left_shoulder_yaw",
+      "left_shoulder_pitch",
+      "left_elbow_yaw",
+      "right_shoulder_yaw",
+      "right_shoulder_pitch",
+      "right_elbow_yaw",
+      "left_hip_yaw",
+      "left_hip_roll",
+      "left_hip_pitch",
+      "left_knee_pitch",
+      "left_ankle_pitch",
+      "right_hip_yaw",
+      "right_hip_roll",
+      "right_hip_pitch",
+      "right_knee_pitch",
+      "right_ankle_pitch"
+    ],
+    "actuator_order": [
+      "left_shoulder_yaw",
+      "left_shoulder_pitch",
+      "left_elbow_yaw",
+      "right_shoulder_yaw",
+      "right_shoulder_pitch",
+      "right_elbow_yaw",
+      "left_hip_yaw",
+      "left_hip_roll",
+      "left_hip_pitch",
+      "left_knee_pitch",
+      "left_ankle_pitch",
+      "right_hip_yaw",
+      "right_hip_roll",
+      "right_hip_pitch",
+      "right_knee_pitch",
+      "right_ankle_pitch"
+    ],
+    "index_mapping": [
+      {
+        "joint": "left_shoulder_yaw",
+        "ctrl_index": 0,
+        "qpos_index": 7,
+        "qvel_index": 6
+      },
+      {
+        "joint": "left_shoulder_pitch",
+        "ctrl_index": 1,
+        "qpos_index": 8,
+        "qvel_index": 7
+      },
+      {
+        "joint": "left_elbow_yaw",
+        "ctrl_index": 2,
+        "qpos_index": 9,
+        "qvel_index": 8
+      },
+      {
+        "joint": "right_shoulder_yaw",
+        "ctrl_index": 3,
+        "qpos_index": 10,
+        "qvel_index": 9
+      },
+      {
+        "joint": "right_shoulder_pitch",
+        "ctrl_index": 4,
+        "qpos_index": 11,
+        "qvel_index": 10
+      },
+      {
+        "joint": "right_elbow_yaw",
+        "ctrl_index": 5,
+        "qpos_index": 12,
+        "qvel_index": 11
+      },
+      {
+        "joint": "left_hip_yaw",
+        "ctrl_index": 6,
+        "qpos_index": 13,
+        "qvel_index": 12
+      },
+      {
+        "joint": "left_hip_roll",
+        "ctrl_index": 7,
+        "qpos_index": 14,
+        "qvel_index": 13
+      },
+      {
+        "joint": "left_hip_pitch",
+        "ctrl_index": 8,
+        "qpos_index": 15,
+        "qvel_index": 14
+      },
+      {
+        "joint": "left_knee_pitch",
+        "ctrl_index": 9,
+        "qpos_index": 16,
+        "qvel_index": 15
+      },
+      {
+        "joint": "left_ankle_pitch",
+        "ctrl_index": 10,
+        "qpos_index": 17,
+        "qvel_index": 16
+      },
+      {
+        "joint": "right_hip_yaw",
+        "ctrl_index": 11,
+        "qpos_index": 18,
+        "qvel_index": 17
+      },
+      {
+        "joint": "right_hip_roll",
+        "ctrl_index": 12,
+        "qpos_index": 19,
+        "qvel_index": 18
+      },
+      {
+        "joint": "right_hip_pitch",
+        "ctrl_index": 13,
+        "qpos_index": 20,
+        "qvel_index": 19
+      },
+      {
+        "joint": "right_knee_pitch",
+        "ctrl_index": 14,
+        "qpos_index": 21,
+        "qvel_index": 20
+      },
+      {
+        "joint": "right_ankle_pitch",
+        "ctrl_index": 15,
+        "qpos_index": 22,
+        "qvel_index": 21
+      }
+    ],
+    "index_contract_pass": true,
+    "recommended_training_reset_keyframe": "gait_neutral",
+    "calibration_zero_keyframe": "official_standing",
+    "keyframe_gates": {
+      "gait_neutral": {
+        "base_z_m": 0.411426464541,
+        "joint_values_rad": {
+          "left_shoulder_yaw": 0.0,
+          "left_shoulder_pitch": 0.0,
+          "left_elbow_yaw": 0.0,
+          "right_shoulder_yaw": 0.0,
+          "right_shoulder_pitch": 0.0,
+          "right_elbow_yaw": 0.0,
+          "left_hip_yaw": 0.0,
+          "left_hip_roll": 0.0,
+          "left_hip_pitch": 0.18,
+          "left_knee_pitch": -0.36,
+          "left_ankle_pitch": -0.18,
+          "right_hip_yaw": 0.0,
+          "right_hip_roll": 0.0,
+          "right_hip_pitch": -0.18,
+          "right_knee_pitch": 0.36,
+          "right_ankle_pitch": 0.18
+        },
+        "limit_failures": [],
+        "expected_values_pass": true,
+        "sole_bottom_world_z_m": {
+          "left": -1.2409955551032081e-08,
+          "right": 1.2409180726383195e-08
+        },
+        "dual_ground_contact_geometry_pass": true,
+        "left_right_mirror_max_error_m": 0.0014673579822405136,
+        "left_right_mirror_pass": true,
+        "bidirectional_travel": {
+          "left_knee_pitch": {
+            "negative_margin_rad": 0.47285928,
+            "positive_margin_rad": 0.36,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          },
+          "left_ankle_pitch": {
+            "negative_margin_rad": 0.48415928,
+            "positive_margin_rad": 0.18,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          },
+          "right_knee_pitch": {
+            "negative_margin_rad": 0.36,
+            "positive_margin_rad": 0.47285928,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          },
+          "right_ankle_pitch": {
+            "negative_margin_rad": 0.18,
+            "positive_margin_rad": 0.48415928,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          }
+        },
+        "bidirectional_travel_pass": true,
+        "overall": "PASS"
+      },
+      "symmetric_crouch": {
+        "base_z_m": 0.411426464541,
+        "joint_values_rad": {
+          "left_shoulder_yaw": 0.0,
+          "left_shoulder_pitch": 0.0,
+          "left_elbow_yaw": 0.0,
+          "right_shoulder_yaw": 0.0,
+          "right_shoulder_pitch": 0.0,
+          "right_elbow_yaw": 0.0,
+          "left_hip_yaw": 0.0,
+          "left_hip_roll": 0.0,
+          "left_hip_pitch": 0.18,
+          "left_knee_pitch": -0.36,
+          "left_ankle_pitch": -0.18,
+          "right_hip_yaw": 0.0,
+          "right_hip_roll": 0.0,
+          "right_hip_pitch": -0.18,
+          "right_knee_pitch": 0.36,
+          "right_ankle_pitch": 0.18
+        },
+        "limit_failures": [],
+        "expected_values_pass": true,
+        "sole_bottom_world_z_m": {
+          "left": -1.2409955551032081e-08,
+          "right": 1.2409180726383195e-08
+        },
+        "dual_ground_contact_geometry_pass": true,
+        "left_right_mirror_max_error_m": 0.0014673579822405136,
+        "left_right_mirror_pass": true,
+        "bidirectional_travel": {
+          "left_knee_pitch": {
+            "negative_margin_rad": 0.47285928,
+            "positive_margin_rad": 0.36,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          },
+          "left_ankle_pitch": {
+            "negative_margin_rad": 0.48415928,
+            "positive_margin_rad": 0.18,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          },
+          "right_knee_pitch": {
+            "negative_margin_rad": 0.36,
+            "positive_margin_rad": 0.47285928,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          },
+          "right_ankle_pitch": {
+            "negative_margin_rad": 0.18,
+            "positive_margin_rad": 0.48415928,
+            "required_each_direction_rad": 0.08726646259971647,
+            "pass": true
+          }
+        },
+        "bidirectional_travel_pass": true,
+        "overall": "PASS"
+      }
+    },
+    "foot_site_semantics": {
+      "left": {
+        "front_mean_world_x_m": 0.027489150286868335,
+        "rear_mean_world_x_m": -0.049510825340105945,
+        "medial_mean_abs_world_y_m": 0.018056714781682272,
+        "lateral_mean_abs_world_y_m": 0.04205670718490703,
+        "forward_name_pass": true,
+        "medial_name_pass": true
+      },
+      "right": {
+        "front_mean_world_x_m": 0.02604088140468659,
+        "rear_mean_world_x_m": -0.050959094243539844,
+        "medial_mean_abs_world_y_m": 0.01829800703018832,
+        "lateral_mean_abs_world_y_m": 0.04229799944002114,
+        "forward_name_pass": true,
+        "medial_name_pass": true
+      }
+    },
+    "foot_site_semantics_pass": true,
+    "overall": "PASS"
+  },
+  "gait_neutral_dynamics_smoke": {
+    "duration_s": 5.0,
+    "controller": "joint-space PD kp=18.0 kd=0.45, clipped by canonical actuator ctrlrange",
+    "finite_state_pass": true,
+    "base_z_min_m": 0.410028361171819,
+    "base_z_final_m": 0.41057486806940585,
+    "stable_height_pass": true,
+    "max_abs_ctrl_nm": 0.5040938206856743,
+    "overall": "PASS"
+  },
   "overall": "PASS"
 }

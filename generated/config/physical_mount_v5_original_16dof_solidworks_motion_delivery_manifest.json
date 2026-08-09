@@ -4,12 +4,18 @@
     "text": "SHA-256 over raw bytes after CRLF/CR newline normalization to LF; BOM is preserved",
     "binary": "SHA-256 over exact bytes"
   },
-  "file_count": 62,
-  "total_bytes": 840848688,
+  "file_count": 63,
+  "total_bytes": 840866868,
   "digital_rl_baseline": "PASS",
   "native_solidworks_motion": "HOLD",
   "physical_first_article": "HOLD",
   "files": [
+    {
+      "path": "cad/physical_mount_v5_original_16dof_solidworks_motion/RL_MODEL_CONTRACT.md",
+      "bytes": 3186,
+      "sha256": "a93db4139d53b6631228a28c6cda1c950030bcb7b23b54c2ec1330061d2e2174",
+      "hash_mode": "sha256_lf_normalized_bytes"
+    },
     {
       "path": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/ZEROTH01_V5_MOTION_LINK_3215_1FLANGE.step",
       "bytes": 65874328,
@@ -126,8 +132,8 @@
     },
     {
       "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json",
-      "bytes": 28072,
-      "sha256": "7593ce622d59ee3654bd046e49204177ff7aeeda94ea898d0dc32039754fd10c",
+      "bytes": 29945,
+      "sha256": "1b5cdebf63d9938295c2ee730287a0cdeeaccc535b779ef9f241b9785c2f5a96",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
@@ -138,14 +144,14 @@
     },
     {
       "path": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json",
-      "bytes": 4425,
-      "sha256": "e369ed80d32cc84e2a1f78b0867c02191daf74cf4f68c35f6a13cc8bd809c53c",
+      "bytes": 8159,
+      "sha256": "771c5ffabe660dccf25a57a485017581893bdec2cadc20a56ec8b48a852af4aa",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
       "path": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
-      "bytes": 16370,
-      "sha256": "fbd77027e2da91cef0fee76fd9dc322920ba953a4c0e87b4f57b442473d1550e",
+      "bytes": 16499,
+      "sha256": "1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
@@ -354,8 +360,8 @@
     },
     {
       "path": "reports/v5_original_16dof_solidworks_motion/mjcf_compile_gate.json",
-      "bytes": 815,
-      "sha256": "c9e17d7b0330624c9e65bc0b0084e9103c966d4ed40bc5a606bb13a452610bfd",
+      "bytes": 9966,
+      "sha256": "245270adb041398e3e80342a1d3a38e076f16371bf3a450c78537e0ffe5f3646",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {
@@ -372,8 +378,8 @@
     },
     {
       "path": "reports/v5_original_16dof_solidworks_motion/release_gate.json",
-      "bytes": 1098,
-      "sha256": "6c8e6ac017b5336606b4edb3cb97df1d453b03e5505c0a87f0e831c71819f312",
+      "bytes": 1205,
+      "sha256": "bfa85c0deea4a7f4c7607e45f051cd16e4ebfc868f6f40d4f29bf6c999ad3a73",
       "hash_mode": "sha256_lf_normalized_bytes"
     },
     {

@@ -2,10 +2,26 @@
 
 v5 回到原始 Zeroth-01 的 16 个关节和矮胖比例，不增加踝 roll、不缩短小腿、不安装夹爪或大手掌。仅保留这些小改动：头罩上下左右各扩 5 mm 并加圆角、M5Stack UnitV2 摄像头/麦克风可拆安装、头部无脖子直连、两个小型固定腕端、9 mm 白色下宽上窄可更换脚底，以及真实 FEETECH STS3250 的机壳侧/输出侧传动接口。
 
+## 正确拉取 CAD 大文件
+
+STEP/GLB 二进制由 Git LFS 管理。GitHub 的分支 ZIP 只会包含约百字节的
+LFS 指针文本，**不是**完整离线 CAD/RL 交付。请使用 Git clone，并在校验前下载实体：
+
+```bash
+git lfs install
+git clone --branch codex/zeroth01-v5-16dof-solidworks-motion https://github.com/linxiaowangpkq/zeroth01-rl-mechanical.git
+cd zeroth01-rl-mechanical
+git lfs pull
+python cad/physical_mount_v5_original_16dof_solidworks_motion/verify_v5_delivery_manifest.py
+```
+
+若大文件未下载，校验器会明确报告 `git_lfs_pointer_not_materialized` 和上述修复命令。
+
 ## RL 唯一入口
 
 - URDF：`generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion.urdf`
 - MuJoCo/MJX：`generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml`
+- RL 模型索引/坐标/复位契约：`cad/physical_mount_v5_original_16dof_solidworks_motion/RL_MODEL_CONTRACT.md`
 - 舵机轴、限位、壳体/输出归属：`generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json`
 - 硬件标定模板：`generated/config/physical_mount_v5_original_16dof_solidworks_motion_hardware_calibration.csv`
 - RL 交接：`generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json`
@@ -30,6 +46,8 @@ v5 回到原始 Zeroth-01 的 16 个关节和矮胖比例，不增加踝 roll、
 | MJCF 站立运动学高度 | 416.448 mm |
 | URDF/MJCF 标称质量 | 2.745759 kg，PASS ≤ 3 kg |
 | MuJoCo 3.3.7 | `nq=23`, `nv=22`, `nu=16`，编译 PASS |
+| RL 索引契约 | `ctrl[i] = qpos[7+i]` 对应关节，16/16 自动校验 PASS |
+| 步态复位 | `gait_neutral` 双脚接地、镜像、膝踝双向余量 ≥ 5°，PASS |
 | 髋 yaw 固定座全限位扫掠 | 左右各 17 姿态，0 干涉 |
 
 髋 yaw 的力矩链不是悬空外观件：正体积躯干内融合两组窄肋/螺柱，每侧两根 M2×8 固定 STS3250 后盖，输出端通过 PCD14 四孔桥和四个 M3 套筒连接 U 形髋架；左右 U 形髋架仅切除约 55.3 mm³，并在原限位内验证固定座/螺钉与运动件为 0 干涉。其他关节保留原 Zeroth 承力槽位，采购精确舵机壳体归属静止侧，PCD14 桥归属运动侧。

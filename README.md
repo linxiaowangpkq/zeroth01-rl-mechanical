@@ -2,10 +2,28 @@
 
 v5 restores the released Zeroth-01 16-joint topology and proportions. It adds no ankle-roll motors, shortened shins, claws or large palms. The bounded changes are a rounded head enlarged by 5 mm on every side, a removable M5Stack UnitV2 camera/microphone, a direct no-neck head mount, two compact fixed wrist supports, two 9 mm white lower-wider replaceable soles, and explicit FEETECH STS3250 housing/output interfaces.
 
+## Clone with CAD payloads
+
+The STEP/GLB binaries are stored with Git LFS. A GitHub branch ZIP contains only
+small LFS pointer text files and is **not** a complete offline CAD/RL delivery.
+Use a Git clone and materialize the payloads before running any checksum gate:
+
+```bash
+git lfs install
+git clone --branch codex/zeroth01-v5-16dof-solidworks-motion https://github.com/linxiaowangpkq/zeroth01-rl-mechanical.git
+cd zeroth01-rl-mechanical
+git lfs pull
+python cad/physical_mount_v5_original_16dof_solidworks_motion/verify_v5_delivery_manifest.py
+```
+
+The verifier reports `git_lfs_pointer_not_materialized` with this remediation
+when a required binary has not been downloaded.
+
 ## Authoritative RL files
 
 - URDF: `generated/urdf/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion.urdf`
 - MJCF/MJX: `generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml`
+- RL model contract: `cad/physical_mount_v5_original_16dof_solidworks_motion/RL_MODEL_CONTRACT.md`
 - Actuator layout: `generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json`
 - Hardware calibration template: `generated/config/physical_mount_v5_original_16dof_solidworks_motion_hardware_calibration.csv`
 - RL handoff: `generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json`
@@ -15,7 +33,7 @@ v5 restores the released Zeroth-01 16-joint topology and proportions. It adds no
 - 85-component coloured neutral review GLB: `generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_NEUTRAL_REVIEW.glb`
 - 17 rigid-link STEP files: `generated/cad/physical_mount_v5_original_16dof_solidworks_motion/motion_link_parts/`
 
-Current digital evidence: 16 revolute joints and 16 purchased-exact STS3250 STEP occurrences; 85 components; 17 positive-volume valid B-Rep motion links; zero positive interference among all 3,570 neutral-pose component pairs; 490.489 mm CAD envelope height; 416.448 mm MJCF standing kinematic height; 2.745759 kg nominal URDF/MJCF mass; and MuJoCo 3.3.7 compile at `nq=23`, `nv=22`, `nu=16`.
+Current digital evidence: 16 revolute joints and 16 purchased-exact STS3250 STEP occurrences; 85 components; 17 positive-volume valid B-Rep motion links; zero positive interference among all 3,570 neutral-pose component pairs; 490.489 mm CAD envelope height; 416.448 mm MJCF standing kinematic height; 2.745759 kg nominal URDF/MJCF mass; and MuJoCo 3.3.7 compile at `nq=23`, `nv=22`, `nu=16`. For locomotion, reset from `gait_neutral`; `official_standing` is retained as the released calibration/standing-checkpoint pose.
 
 The hip-yaw case path is physical CAD rather than a floating marker: two integrated torso ribs/bosses per side accept two M2x8 rear-case screws, while a PCD14 four-hole bridge and four M3 sleeves drive the U-hip. The mount and screw stack is clear of each moving U-hip over its unchanged full joint limit.
 

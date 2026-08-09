@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "generated" / "config" / "physical_mount_v5_original_16dof_solidworks_motion_delivery_manifest.json"
+LFS_POINTER_PREFIX = b"version https://git-lfs.github.com/spec/v1\n"
 
 
 def canonical_bytes(path: Path, mode: str) -> bytes:
@@ -28,6 +29,16 @@ def main() -> int:
         path = ROOT / row["path"]
         if not path.is_file():
             failures.append({"path": row["path"], "failure": "missing"})
+            continue
+        raw = path.read_bytes()
+        if raw.replace(b"\r\n", b"\n").startswith(LFS_POINTER_PREFIX):
+            failures.append(
+                {
+                    "path": row["path"],
+                    "failure": "git_lfs_pointer_not_materialized",
+                    "remediation": "Run `git lfs install` and `git lfs pull` in this repository; GitHub branch ZIP archives do not contain the LFS payloads.",
+                }
+            )
             continue
         data = canonical_bytes(path, row["hash_mode"])
         total_bytes += len(data)

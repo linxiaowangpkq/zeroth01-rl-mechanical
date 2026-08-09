@@ -155,3 +155,28 @@ right_ankle_pitch: [0, +0.66415928]
 站立验证中的最大控制扭矩仅 `0.2361 N·m`，远低于 `1.2552512 N·m` 连续上限。应先修正
 关节/actuator 映射、无效蹲姿和硬限位中性姿态，再重新训练；只有在动态步态产生后，
 才能用峰值/RMS 扭矩、电流、温升和母线压降判断是否需要减重。
+
+## 2026-08-09 生成器修复与复测状态
+
+本节记录对上述独立审计的源头修复；历史问题和失败训练结果保留，不回写为虚假成功。
+
+| 问题 | 状态 | 当前证据 |
+|---|---|---|
+| BUG-RL-V5-001 | **CLOSED** | `build_v5_mjcf.py` 从最终运动树推导编译顺序并据此重排 actuator；门禁逐项验证 `ctrl[i]`、`qpos[7+i]` 和 joint 一致，16/16 PASS。 |
+| BUG-RL-V5-002 | **CLOSED** | `gait_neutral` / `symmetric_crouch` 按 joint 名生成，不再按列表拼接；base Z 由左右 sole box 联合求解，限位、双脚接地和镜像门禁 PASS。 |
+| BUG-RL-V5-003 | **CLOSED** | 足底 site 按世界语义重命名；左右均满足 `front_x > rear_x`，同时修正并验证 `abs(medial_y) < abs(lateral_y)`。 |
+| BUG-RL-V5-004 | **CLOSED（Git clone 路径）** | 中英文 README 已要求 `git lfs install/pull`；交付校验器会识别未实体化的 LFS pointer 并给出修复命令。GitHub 分支 ZIP 仍不承诺完整离线交付。 |
+| BUG-RL-V5-005 | **DIGITAL CLOSED / PHYSICAL HOLD** | 新 `gait_neutral` 的四个膝踝距正负限位均大于 5°，双脚接地和镜像 PASS；`official_standing` 仅保留为原始标定/旧站立 checkpoint 姿态。实体零位、硬挡和编码器映射仍须 SolidWorks 运动装配与上电首件确认。 |
+
+当前生成的 MJCF 仍为 16DoF、`nq=23`、`nv=22`、`nu=16`、
+`2.745758514949 kg`；本轮没有修改几何、质量、COM、惯量、碰撞体、关节轴、关节
+range 或 `1.2552512 N·m` 连续扭矩上限。机器可读结果位于
+`reports/v5_original_16dof_solidworks_motion/mjcf_compile_gate.json`，模型契约位于
+`cad/physical_mount_v5_original_16dof_solidworks_motion/RL_MODEL_CONTRACT.md`。生成门禁还从
+`gait_neutral` 执行 5 s 限幅 PD 动力学 smoke：状态有限、底盘最低 `0.410028 m`、
+最大控制 `0.504094 N·m`，PASS；这只证明复位姿态动态可用，不代表已经学会步行。
+
+已有 `N12_standing` checkpoint 仍只证明站立，而且其 metadata 正确保留旧 canonical
+MJCF 与训练时派生 MJCF 的双哈希；它不能改名为步行 checkpoint。下一轮步态训练必须直接
+使用新 canonical MJCF、以 `gait_neutral` 复位，并在新 checkpoint metadata 中记录当前
+MJCF SHA-256、上述 16 维顺序和训练源 commit。

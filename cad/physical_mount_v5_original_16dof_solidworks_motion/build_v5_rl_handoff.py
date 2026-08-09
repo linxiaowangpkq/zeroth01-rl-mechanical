@@ -24,6 +24,7 @@ ACTUATORS = CONFIG_ROOT / "physical_mount_v5_original_16dof_solidworks_motion_ac
 CALIBRATION = CONFIG_ROOT / "physical_mount_v5_original_16dof_solidworks_motion_hardware_calibration.csv"
 HANDOFF = CONFIG_ROOT / "physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json"
 RELEASE_GATE = ROOT / "reports" / "v5_original_16dof_solidworks_motion" / "release_gate.json"
+MODEL_CONTRACT = Path(__file__).with_name("RL_MODEL_CONTRACT.md")
 
 
 def optional_json(path: Path):
@@ -44,6 +45,11 @@ def main() -> int:
     manifest_sha = hashlib.sha256(MANIFEST.read_bytes()).hexdigest()
     robot = ET.parse(URDF).getroot()
     joints = {str(joint.get("name")): joint for joint in robot.findall("joint")}
+    mjcf = json.loads(MJCF_REPORT.read_text(encoding="utf-8"))
+    model_contract = mjcf.get("model_contract", {})
+    mapping_by_joint = {
+        str(row["joint"]): row for row in model_contract.get("index_mapping", [])
+    }
     v1 = {str(row["joint"]): row for row in json.loads(V1_ACTUATORS.read_text(encoding="utf-8"))["servos"]}
     components = {str(row["component_id"]): row for row in manifest["components"]}
     rows = []
@@ -55,6 +61,9 @@ def main() -> int:
         transform = servo["transform_local_mm_to_world_mm"]
         limit = joints[joint_name].find("limit")
         original = v1[joint_name]
+        index_mapping = mapping_by_joint.get(joint_name)
+        if index_mapping is None:
+            raise RuntimeError(f"missing MJCF index mapping for {joint_name}")
         rows.append({
             "id": servo_id,
             "joint": joint_name,
@@ -84,6 +93,9 @@ def main() -> int:
             "direction_sign": "REQUIRES_JOG_CALIBRATION",
             "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
             "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+            "mjcf_ctrl_index": int(index_mapping["ctrl_index"]),
+            "mjcf_qpos_index": int(index_mapping["qpos_index"]),
+            "mjcf_qvel_index": int(index_mapping["qvel_index"]),
         })
     rows.sort(key=lambda row: row["id"])
     if len(rows) != 16 or any("ankle_roll" in row["joint"] for row in rows):
@@ -96,6 +108,8 @@ def main() -> int:
         "count": len(rows),
         "total_actuator_mass_kg": sum(float(row["mass_kg"]) for row in rows),
         "actuators": rows,
+        "mjcf_control_order": model_contract.get("actuator_order", []),
+        "mjcf_source_sha256": mjcf.get("mjcf_sha256"),
         "calibration_truth_boundary": "Candidate IDs are non-authoritative history. Bus IDs, neutral counts, direction signs, backlash, torque gain and latency require powered physical calibration.",
     }
     CONFIG_ROOT.mkdir(parents=True, exist_ok=True)
@@ -112,7 +126,6 @@ def main() -> int:
             writer.writerow({"id": row["id"], "joint": row["joint"], "status": "UNMEASURED"})
 
     mass = json.loads(MASS_REPORT.read_text(encoding="utf-8"))
-    mjcf = json.loads(MJCF_REPORT.read_text(encoding="utf-8"))
     brep = json.loads(BREP_REPORT.read_text(encoding="utf-8"))
     handoff = {
         "schema": "zeroth01.v5_original_16dof_solidworks_motion.rl_handoff.v1",
@@ -122,6 +135,7 @@ def main() -> int:
         "mjcf_mjx": MJCF.relative_to(ROOT).as_posix(),
         "actuator_layout": ACTUATORS.relative_to(ROOT).as_posix(),
         "hardware_calibration_template": CALIBRATION.relative_to(ROOT).as_posix(),
+        "model_contract_ledger": MODEL_CONTRACT.relative_to(ROOT).as_posix(),
         "nominal_total_mass_kg": mass["nominal_total_mass_kg"],
         "mass_limit_kg": mass["hard_mass_limit_kg"],
         "movable_joint_count": 16,
@@ -149,6 +163,17 @@ def main() -> int:
             "microphone": "M5Stack UnitV2 integrated microphone",
             "torso_imu_frame": "torso_imu_frame",
             "foot_touch_sites": [f"{side}_sole_{fore_aft}_{lateral}" for side in ("left", "right") for fore_aft in ("front", "rear") for lateral in ("medial", "lateral")],
+        },
+        "model_contract": {
+            "mjcf_sha256": mjcf.get("mjcf_sha256"),
+            "frame_convention": model_contract.get("frame_convention"),
+            "compiled_joint_order": model_contract.get("compiled_joint_order", []),
+            "actuator_order": model_contract.get("actuator_order", []),
+            "index_mapping": model_contract.get("index_mapping", []),
+            "recommended_training_reset_keyframe": model_contract.get("recommended_training_reset_keyframe"),
+            "calibration_zero_keyframe": model_contract.get("calibration_zero_keyframe"),
+            "contract_gate": model_contract.get("overall", "UNKNOWN"),
+            "physical_zero_verification": "HOLD_NATIVE_SOLIDWORKS_AND_POWERED_CALIBRATION_REQUIRED",
         },
         "payload_reserved_envelopes_mm": {
             "compute": [70, 12, 32],
@@ -190,6 +215,9 @@ def main() -> int:
             "exact_brep_static_interference": brep["overall"],
             "urdf_mass_inertia_graph_limits_contacts": mass["overall"],
             "mujoco_runtime_compile": mjcf["runtime_compile_gate"],
+            "mjcf_index_contract": model_contract.get("overall", "UNKNOWN"),
+            "gait_neutral_keyframe": model_contract.get("keyframe_gates", {}).get("gait_neutral", {}).get("overall", "UNKNOWN"),
+            "foot_site_semantics": "PASS" if model_contract.get("foot_site_semantics_pass") else "FAIL",
             "solidworks_static": current_gate(SW_GATE, manifest_sha),
             "solidworks_all_joints_isolated_motion": current_gate(SW_MOTION_GATE, manifest_sha),
         },
@@ -199,6 +227,7 @@ def main() -> int:
             "print one STS3250 carrier/output-stack and both wrist/sole coupons before full-set printing",
             "weigh the first article and identify each link COM/full inertia; replace the engineering ledger",
             "complete the hardware calibration CSV before real-robot torque enable",
+            "confirm physical knee/ankle zero and hard stops in native SOLIDWORKS and on the powered first article",
             "repeat collision/strain-relief sweep with the as-built cable harness",
         ],
     }

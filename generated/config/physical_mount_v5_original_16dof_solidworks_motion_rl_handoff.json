@@ -6,6 +6,7 @@
   "mjcf_mjx": "generated/mujoco/physical_mount_v5_original_16dof_solidworks_motion/zeroth01_physical_mount_v5_original_16dof_solidworks_motion_mjx.xml",
   "actuator_layout": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json",
   "hardware_calibration_template": "generated/config/physical_mount_v5_original_16dof_solidworks_motion_hardware_calibration.csv",
+  "model_contract_ledger": "cad/physical_mount_v5_original_16dof_solidworks_motion/RL_MODEL_CONTRACT.md",
   "nominal_total_mass_kg": 2.745758514949,
   "mass_limit_kg": 3.0,
   "movable_joint_count": 16,
@@ -42,6 +43,148 @@
       "right_sole_rear_medial",
       "right_sole_rear_lateral"
     ]
+  },
+  "model_contract": {
+    "mjcf_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
+    "frame_convention": "X forward, Y left, Z up; SI units; free base qpos[0:7]",
+    "compiled_joint_order": [
+      "left_shoulder_yaw",
+      "left_shoulder_pitch",
+      "left_elbow_yaw",
+      "right_shoulder_yaw",
+      "right_shoulder_pitch",
+      "right_elbow_yaw",
+      "left_hip_yaw",
+      "left_hip_roll",
+      "left_hip_pitch",
+      "left_knee_pitch",
+      "left_ankle_pitch",
+      "right_hip_yaw",
+      "right_hip_roll",
+      "right_hip_pitch",
+      "right_knee_pitch",
+      "right_ankle_pitch"
+    ],
+    "actuator_order": [
+      "left_shoulder_yaw",
+      "left_shoulder_pitch",
+      "left_elbow_yaw",
+      "right_shoulder_yaw",
+      "right_shoulder_pitch",
+      "right_elbow_yaw",
+      "left_hip_yaw",
+      "left_hip_roll",
+      "left_hip_pitch",
+      "left_knee_pitch",
+      "left_ankle_pitch",
+      "right_hip_yaw",
+      "right_hip_roll",
+      "right_hip_pitch",
+      "right_knee_pitch",
+      "right_ankle_pitch"
+    ],
+    "index_mapping": [
+      {
+        "joint": "left_shoulder_yaw",
+        "ctrl_index": 0,
+        "qpos_index": 7,
+        "qvel_index": 6
+      },
+      {
+        "joint": "left_shoulder_pitch",
+        "ctrl_index": 1,
+        "qpos_index": 8,
+        "qvel_index": 7
+      },
+      {
+        "joint": "left_elbow_yaw",
+        "ctrl_index": 2,
+        "qpos_index": 9,
+        "qvel_index": 8
+      },
+      {
+        "joint": "right_shoulder_yaw",
+        "ctrl_index": 3,
+        "qpos_index": 10,
+        "qvel_index": 9
+      },
+      {
+        "joint": "right_shoulder_pitch",
+        "ctrl_index": 4,
+        "qpos_index": 11,
+        "qvel_index": 10
+      },
+      {
+        "joint": "right_elbow_yaw",
+        "ctrl_index": 5,
+        "qpos_index": 12,
+        "qvel_index": 11
+      },
+      {
+        "joint": "left_hip_yaw",
+        "ctrl_index": 6,
+        "qpos_index": 13,
+        "qvel_index": 12
+      },
+      {
+        "joint": "left_hip_roll",
+        "ctrl_index": 7,
+        "qpos_index": 14,
+        "qvel_index": 13
+      },
+      {
+        "joint": "left_hip_pitch",
+        "ctrl_index": 8,
+        "qpos_index": 15,
+        "qvel_index": 14
+      },
+      {
+        "joint": "left_knee_pitch",
+        "ctrl_index": 9,
+        "qpos_index": 16,
+        "qvel_index": 15
+      },
+      {
+        "joint": "left_ankle_pitch",
+        "ctrl_index": 10,
+        "qpos_index": 17,
+        "qvel_index": 16
+      },
+      {
+        "joint": "right_hip_yaw",
+        "ctrl_index": 11,
+        "qpos_index": 18,
+        "qvel_index": 17
+      },
+      {
+        "joint": "right_hip_roll",
+        "ctrl_index": 12,
+        "qpos_index": 19,
+        "qvel_index": 18
+      },
+      {
+        "joint": "right_hip_pitch",
+        "ctrl_index": 13,
+        "qpos_index": 20,
+        "qvel_index": 19
+      },
+      {
+        "joint": "right_knee_pitch",
+        "ctrl_index": 14,
+        "qpos_index": 21,
+        "qvel_index": 20
+      },
+      {
+        "joint": "right_ankle_pitch",
+        "ctrl_index": 15,
+        "qpos_index": 22,
+        "qvel_index": 21
+      }
+    ],
+    "recommended_training_reset_keyframe": "gait_neutral",
+    "calibration_zero_keyframe": "official_standing",
+    "contract_gate": "PASS",
+    "physical_zero_verification": "HOLD_NATIVE_SOLIDWORKS_AND_POWERED_CALIBRATION_REQUIRED"
   },
   "payload_reserved_envelopes_mm": {
     "compute": [
@@ -126,6 +269,9 @@
     "exact_brep_static_interference": "PASS",
     "urdf_mass_inertia_graph_limits_contacts": "PASS",
     "mujoco_runtime_compile": "PASS",
+    "mjcf_index_contract": "PASS",
+    "gait_neutral_keyframe": "PASS",
+    "foot_site_semantics": "PASS",
     "solidworks_static": "STALE_MANIFEST_RERUN_REQUIRED",
     "solidworks_all_joints_isolated_motion": "PENDING_RERUN"
   },
@@ -135,6 +281,7 @@
     "print one STS3250 carrier/output-stack and both wrist/sole coupons before full-set printing",
     "weigh the first article and identify each link COM/full inertia; replace the engineering ledger",
     "complete the hardware calibration CSV before real-robot torque enable",
+    "confirm physical knee/ankle zero and hard stops in native SOLIDWORKS and on the powered first article",
     "repeat collision/strain-relief sweep with the as-built cable harness"
   ]
 }

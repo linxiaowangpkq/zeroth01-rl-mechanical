@@ -28,3 +28,10 @@ continuous limit of +/-1.2552512 N m at every joint.
 
 See `N12_standing/metadata.json` for the exact mechanical source commit, model
 hashes, training configuration, GPU restore result, and acceptance measurements.
+
+The N12 policy was trained from the historical source MJCF plus the runtime-only
+index/keyframe repair recorded by those two hashes. The current canonical MJCF
+now applies that index repair at generation time and adds the validated
+`gait_neutral` reset. Keep N12 as a standing regression checkpoint; new walking
+training must use `gait_neutral` and record the new canonical MJCF SHA-256,
+16-joint control order and source commit in its own metadata.

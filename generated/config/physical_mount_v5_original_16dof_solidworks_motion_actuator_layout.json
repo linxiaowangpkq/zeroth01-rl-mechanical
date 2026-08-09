@@ -48,7 +48,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 4,
+      "mjcf_qpos_index": 11,
+      "mjcf_qvel_index": 10
     },
     {
       "id": "S02",
@@ -93,7 +96,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 1,
+      "mjcf_qpos_index": 8,
+      "mjcf_qvel_index": 7
     },
     {
       "id": "S03",
@@ -138,7 +144,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 3,
+      "mjcf_qpos_index": 10,
+      "mjcf_qvel_index": 9
     },
     {
       "id": "S04",
@@ -183,7 +192,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 13,
+      "mjcf_qpos_index": 20,
+      "mjcf_qvel_index": 19
     },
     {
       "id": "S05",
@@ -228,7 +240,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 8,
+      "mjcf_qpos_index": 15,
+      "mjcf_qvel_index": 14
     },
     {
       "id": "S06",
@@ -273,7 +288,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 0,
+      "mjcf_qpos_index": 7,
+      "mjcf_qvel_index": 6
     },
     {
       "id": "S07",
@@ -318,7 +336,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 11,
+      "mjcf_qpos_index": 18,
+      "mjcf_qvel_index": 17
     },
     {
       "id": "S08",
@@ -363,7 +384,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 6,
+      "mjcf_qpos_index": 13,
+      "mjcf_qvel_index": 12
     },
     {
       "id": "S09",
@@ -408,7 +432,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 5,
+      "mjcf_qpos_index": 12,
+      "mjcf_qvel_index": 11
     },
     {
       "id": "S10",
@@ -453,7 +480,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 2,
+      "mjcf_qpos_index": 9,
+      "mjcf_qvel_index": 8
     },
     {
       "id": "S11",
@@ -498,7 +528,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 12,
+      "mjcf_qpos_index": 19,
+      "mjcf_qvel_index": 18
     },
     {
       "id": "S12",
@@ -543,7 +576,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 7,
+      "mjcf_qpos_index": 14,
+      "mjcf_qvel_index": 13
     },
     {
       "id": "S13",
@@ -588,7 +624,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 14,
+      "mjcf_qpos_index": 21,
+      "mjcf_qvel_index": 20
     },
     {
       "id": "S14",
@@ -633,7 +672,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 9,
+      "mjcf_qpos_index": 16,
+      "mjcf_qvel_index": 15
     },
     {
       "id": "S15",
@@ -678,7 +720,10 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 15,
+      "mjcf_qpos_index": 22,
+      "mjcf_qvel_index": 21
     },
     {
       "id": "S16",
@@ -723,8 +768,30 @@
       "neutral_count": "REQUIRES_JOG_CALIBRATION",
       "direction_sign": "REQUIRES_JOG_CALIBRATION",
       "hardware_zero_offset_counts": "REQUIRES_PHYSICAL_CALIBRATION",
-      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD"
+      "mount_gate": "CAD_BREP_PASS_PHYSICAL_FIRST_ARTICLE_HOLD",
+      "mjcf_ctrl_index": 10,
+      "mjcf_qpos_index": 17,
+      "mjcf_qvel_index": 16
     }
   ],
+  "mjcf_control_order": [
+    "left_shoulder_yaw",
+    "left_shoulder_pitch",
+    "left_elbow_yaw",
+    "right_shoulder_yaw",
+    "right_shoulder_pitch",
+    "right_elbow_yaw",
+    "left_hip_yaw",
+    "left_hip_roll",
+    "left_hip_pitch",
+    "left_knee_pitch",
+    "left_ankle_pitch",
+    "right_hip_yaw",
+    "right_hip_roll",
+    "right_hip_pitch",
+    "right_knee_pitch",
+    "right_ankle_pitch"
+  ],
+  "mjcf_source_sha256": "145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18",
   "calibration_truth_boundary": "Candidate IDs are non-authoritative history. Bus IDs, neutral counts, direction signs, backlash, torque gain and latency require powered physical calibration."
 }

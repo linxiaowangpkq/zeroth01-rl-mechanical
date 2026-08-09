@@ -14,6 +14,9 @@
     "exact_brep_static_interference": "PASS",
     "urdf_mass_inertia_graph_limits_contacts": "PASS",
     "mujoco_runtime_compile": "PASS",
+    "mjcf_index_contract": "PASS",
+    "gait_neutral_keyframe": "PASS",
+    "foot_site_semantics": "PASS",
     "solidworks_static": "STALE_MANIFEST_RERUN_REQUIRED",
     "solidworks_all_joints_isolated_motion": "PENDING_RERUN"
   },
