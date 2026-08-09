@@ -180,3 +180,56 @@ range 或 `1.2552512 N·m` 连续扭矩上限。机器可读结果位于
 MJCF 与训练时派生 MJCF 的双哈希；它不能改名为步行 checkpoint。下一轮步态训练必须直接
 使用新 canonical MJCF、以 `gait_neutral` 复位，并在新 checkpoint metadata 中记录当前
 MJCF SHA-256、上述 16 维顺序和训练源 commit。
+
+## 2026-08-09 `c5cb2c7` 拉取后独立训练复测
+
+已从远端 fast-forward 到 `c5cb2c7eb892579c273e68f0436e6285e0782b34`。最新 canonical
+MJCF 通过独立编译与 60 s `gait_neutral` 限幅 PD 复测：`nq=23`、`nv=22`、`nu=16`、
+质量 `2.745758514949 kg`，状态有限，base Z 为 `0.410037–0.411528 m`，最大控制扭矩
+`0.497362 N·m`，双脚持续接触。未发现新的 URDF/MJCF 质量、惯量、碰撞、关节顺序、
+reset 或动力学爆炸问题。
+
+新 canonical 模型从头完成 12 次 PPO 更新（128 env，45,057 samples，RTX 4070 Laptop，
+峰值显存约 5.65 GiB）。`N12_gait_neutral_standing` 在 12/12 个确定性 4 s 回合中存活，
+平均 return `1277.595`，随机策略为 `290.932` 且 0/12 存活，故只通过 N（站立）门禁。
+
+从该 N12 warm-start 的步行阶段继续到 update 64（253,954 samples）。13 个 checkpoint
+各做 4 回合外部门禁：最快的 update 20 平均 `0.012538 m/s`，但只存活 3/4；全部存活的
+update 24 只有 `0.003997 m/s`、单脚支撑 `0.75%`。update 44 以后单脚支撑降为 0，策略
+再次收敛到双脚站立。没有 M checkpoint，因而未启动 Z 跑步训练。
+
+### BUG-RL-V5-006（P1）：机器可读文件内嵌的 canonical MJCF SHA-256 不一致
+
+commit `c5cb2c7` 中实际 Git blob、工作树文件和 delivery manifest 对 canonical MJCF 的
+SHA-256 都是：
+
+```text
+1354289e37aabff35d3ceec91412df367e4e4e78d3d5185dcb3624cc38fba0b2
+```
+
+但以下文件仍声明另一个值
+`145f5860e947c23d8ce8f27c9ac3f4ef48b5185b7f6852584c23d2232faaff18`：
+
+- `reports/v5_original_16dof_solidworks_motion/mjcf_compile_gate.json`
+- `generated/config/physical_mount_v5_original_16dof_solidworks_motion_rl_handoff.json`
+- `generated/config/physical_mount_v5_original_16dof_solidworks_motion_actuator_layout.json`
+
+这会让 checkpoint 无法唯一声明机械基线哈希。根因高度疑似生成报告时对工作树 CRLF 字节
+求哈希，而提交后 Git 将 XML 规范化为 LF。修复要求：对 MJCF 强制 `.gitattributes`
+`eol=lf`，在干净 checkout 中重新生成全部派生 JSON，并在 CI 中逐项验证所有内嵌哈希等于
+delivery manifest 和实际 committed bytes；当前 checkpoint metadata 同时记录两值并将
+`source_hash_contract_match` 标为 false，不隐藏不一致。
+
+### RL-TRAIN-V5-001（P0，非 URDF 缺陷）：当前策略观测/奖励不足以打破双脚站立局部最优
+
+当前 38 维 feed-forward actor 只使用 joint position/velocity、projected gravity 和 gyro；
+虽然环境计算了 base linear velocity、feet contact 和 feet velocity，它们没有进入 actor。
+`get_commands()` 为空、没有 gait phase/时间输入，curriculum 又恒为 1.0。策略因此既看不到
+自身前进速度和触地状态，也没有显式交替摆腿相位；本次从有效 `gait_neutral` 重训仍回到
+双脚站立，说明继续堆相同 PPO update 不是有效路径。
+
+下一轮训练前应先修训练任务，而不是再次修改 URDF：将目标速度、base linear velocity、
+双脚接触/速度和 `sin/cos` gait phase 纳入观测；用从站立到 `0.05 m/s` 再到 `0.10 m/s`
+的速度 curriculum，并加入交替支撑、摆脚净空和落脚冲击奖励。修改会改变 observation
+shape，必须从头训练新 checkpoint，旧 N12 只能作为模型/站立回归证据。跑步阶段必须继续
+等待 M 门禁通过。
