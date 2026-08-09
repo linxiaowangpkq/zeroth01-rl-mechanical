@@ -9,12 +9,18 @@ walking distance or convergence.
 | Milestone | PPO update | Status | Evidence |
 | --- | ---: | --- | --- |
 | standing (`N`) | 12 | PASS | 12/12 deterministic 4 s episodes healthy; 10 s replay upright fraction 1.0 |
-| walking (`M`) | — | NOT ACHIEVED | checkpoint 12 mean forward speed is only 0.0021 m/s |
+| walking (`M`) | — | NOT ACHIEVED | warm-start updates 16–64 all failed the gait gate; fastest was update 16 at 0.0057 m/s |
 | running (`Z`) | — | NOT ACHIEVED | walking gate has not been passed |
 
 `N12_standing/ckpt.12.bin` is therefore a standing smoke checkpoint only. It is
 not a walking or running policy and must not be used as evidence of locomotion or
 hardware readiness.
+
+The follow-up walking stage ran through PPO update 64 with 128 environments on
+the same RTX 4070 Laptop GPU. All screened checkpoints survived 4 s, but none
+reached the required 0.05 m/s mean forward speed. Update 64 had zero single-
+support frames and 100% double support, so rejected walk checkpoints are not
+stored in this repository.
 
 The policy action is 16-dimensional: all six arm joints and all ten leg joints
 are policy outputs. MuJoCo actuator torque is clamped to the mechanical baseline
