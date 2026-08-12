@@ -20,6 +20,7 @@
 - 文件校验：`SHA256SUMS.csv`
 - 全部打印件诊断母版：`ZEROTH01_V5_BAMBU_PRINTABLE_PARTS_DIAGNOSTIC.step`
 - 4 个舵机接口样件：`fit_check_only/`
+- 右臂优先首件、X2D/P2S 工艺差异与低电流台架流程：`arm_first_article/`
 
 ## 推荐打印参数
 

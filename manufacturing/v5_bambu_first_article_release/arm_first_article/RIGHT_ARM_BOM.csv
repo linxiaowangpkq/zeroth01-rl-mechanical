@@ -1,0 +1,15 @@
+category,item,quantity,specification,stage,source_or_link,notes
+PRINT,PA6-CF filament,1 spool,1 kg dry spool,RA01-RA03,https://bambulab.cn/zh-cn/filament-guide,Buy one spool for calibration and first-article failures; generated release JSON contains the current mass upper bound
+PRINT,hardened steel nozzle,1,0.6 mm,RA01-RA03,https://bambulab.cn/zh-cn/x2d/specs,Use X2D main nozzle or P2S hardened nozzle
+ACTUATOR,FEETECH STS3250,3,ST-3250-C001 12 V TTL dual-shaft,assembly,https://www.feetechrc.com/en/562636.html,S03 right shoulder yaw; S01 right shoulder pitch; S09 right elbow yaw
+TORQUE_PATH,PCD14 output bridge,3,6061-T6 OD19.95 ID6.2 4x3.2 on PCD14 t2.05 mm,powered test,../fit_check_only/04_sts3250_pcd14_output_bridge_2p05mm.step,FDM version is fit-check only
+TORQUE_PATH,parent thrust ring,3,POM or 6061-T6 OD25 ID20.4 t2 mm,powered test,../fit_check_only/02_sts3250_parent_thrust_ring_2mm.step,FDM version is fit-check only
+FASTENER,PCD14 clamp screws,12,M3 metric socket head; buy M3x6/M3x8/M3x10 assortment,dry fit then power test,,Freeze length only after measuring actual stack and thread engagement
+FASTENER,centre spline screws,3,M3x6,powered test,,One per STS3250 output
+FASTENER,servo case screws,12,M2 metric socket head; buy M2x6/M2x8/M2x10 assortment,dry fit,,Freeze length after real servo and carrier measurement
+ELECTRICAL,TTL serial-bus adapter,1,FEETECH-compatible half-duplex TTL with external power injection,communications,,Do not power three servos from USB
+ELECTRICAL,current-limited bench supply,1,12 V >=5 A with adjustable current limit,powered test,,Use 0.8 A / 1.2 A / 3.0 A staged limits
+ELECTRICAL,inline fuse,1,5 A,powered test,,Place near supply output
+ELECTRICAL,physical emergency cut-off,1,latching switch or accessible supply cut-off,powered test,,Operator must reach it without touching the arm
+ELECTRICAL,servo leads,3,FEETECH TTL daisy-chain leads,assembly,,Route with service loops outside shear planes
+ANCHOR,real torso or rigid metal bench anchor,1,RA00 torso OR 3 mm+ 6061 angle/plate fixed to bench,powered test,,S03 housing must not be hand-held or fixed by cosmetic shell

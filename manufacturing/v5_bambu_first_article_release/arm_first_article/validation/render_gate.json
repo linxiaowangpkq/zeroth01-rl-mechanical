@@ -1,0 +1,77 @@
+{
+  "schema": "zeroth01.v5.right_arm_first_article.render_gate.v1",
+  "source": "manufacturing/v5_bambu_first_article_release/arm_first_article/RIGHT_ARM_NEUTRAL_ASSEMBLY_REFERENCE.glb",
+  "views": [
+    {
+      "view": "iso",
+      "path": "manufacturing/v5_bambu_first_article_release/arm_first_article/validation/snapshots/right_arm_iso.png",
+      "bytes": 31278,
+      "bounds_mm": [
+        -28.868956,
+        13.064967,
+        -180.418001,
+        5.447006,
+        23.255271,
+        121.098511
+      ],
+      "camera_position_m": [
+        0.3264652834422164,
+        -0.42185277530983956,
+        0.2895156212558138
+      ],
+      "camera_target_m": [
+        -0.007901994305905515,
+        -0.08748549756171767,
+        0.07217689071953452
+      ]
+    },
+    {
+      "view": "front",
+      "path": "manufacturing/v5_bambu_first_article_release/arm_first_article/validation/snapshots/right_arm_front.png",
+      "bytes": 28875,
+      "bounds_mm": [
+        -28.868956,
+        13.064967,
+        -180.418001,
+        5.447006,
+        23.255271,
+        121.098511
+      ],
+      "camera_position_m": [
+        0.5125200235301012,
+        -0.08748549756171767,
+        0.07217689071953452
+      ],
+      "camera_target_m": [
+        -0.007901994305905515,
+        -0.08748549756171767,
+        0.07217689071953452
+      ]
+    },
+    {
+      "view": "right",
+      "path": "manufacturing/v5_bambu_first_article_release/arm_first_article/validation/snapshots/right_arm_right.png",
+      "bytes": 14220,
+      "bounds_mm": [
+        -28.868956,
+        13.064967,
+        -180.418001,
+        5.447006,
+        23.255271,
+        121.098511
+      ],
+      "camera_position_m": [
+        -0.007901994305905515,
+        -0.6079075153977244,
+        0.07217689071953452
+      ],
+      "camera_target_m": [
+        -0.007901994305905515,
+        -0.08748549756171767,
+        0.07217689071953452
+      ]
+    }
+  ],
+  "overall": "PASS",
+  "truth_boundary": "off-screen visual QA of the neutral digital subset; not a physical fit or powered-motion certificate"
+}

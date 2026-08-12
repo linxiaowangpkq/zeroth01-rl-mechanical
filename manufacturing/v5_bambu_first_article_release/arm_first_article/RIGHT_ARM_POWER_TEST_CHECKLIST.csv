@@ -1,0 +1,11 @@
+﻿gate_id,category,acceptance,initial_status
+G00,printed parts,FC01 actual STS3250 case/4xM2/shaft fit recorded,HOLD
+G01,printed parts,"RA01-RA03 deburred; no cracks, warp or support residue on servo/axis faces",HOLD
+G02,torque path,three final metal PCD14 bridges and three thrust rings fitted; FDM samples removed,HOLD
+G03,mechanical,S03 housing rigidly fixed to actual torso or metal bench anchor; arm is not hand-held,HOLD
+G04,mechanical,all three joints manually sweep through manifest limits with no hard contact,HOLD
+G05,wiring,TTL/power polarity checked; cable service loops clear every shear plane,HOLD
+G06,power,"12 V current-limited bench supply, 5 A fuse and physical emergency cut-off installed",HOLD
+G07,single servo,"one servo at a time: readback only, then +/-5 deg and +/-15 deg slow jog passes",HOLD
+G08,arm chain,"three servos connected, one commanded at a time, total supply limited to 3 A",HOLD
+G09,telemetry,"position/current/voltage/temperature logged; no reset, abnormal current, click or heating",HOLD

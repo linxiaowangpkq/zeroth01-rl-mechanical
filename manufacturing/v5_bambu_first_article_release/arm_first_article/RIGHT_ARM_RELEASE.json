@@ -1,0 +1,318 @@
+{
+  "schema": "zeroth01.v5.right_arm_first_article.v1",
+  "status": "ARM_PRINT_SUBSET_READY_POWERED_TEST_HOLD",
+  "source_manifest": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/ZEROTH01_V5_ORIGINAL_16DOF_SOLIDWORKS_MOTION_ASSEMBLY_MANIFEST.json",
+  "printer_geometry_policy": {
+    "same_cad_and_3mf_for_x2d_and_p2s": true,
+    "machine_specific_bambu_studio_profile_required": true,
+    "machine_specific_gcode_included": false,
+    "reason": "printer kinematics/process compensation differ; nominal robot geometry must not fork by printer"
+  },
+  "required_printed_parts": [
+    {
+      "arm_id": "RA01",
+      "release_name": "29_z_bot2_master_shoulder2_2_sts3250_clearanced",
+      "robot_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "physical_name_zh": "右肩双轴转接架",
+      "function": "S03 shoulder-yaw child and S01 shoulder-pitch parent interface",
+      "color_hex": "#FFB000",
+      "quantity": 1,
+      "material": "PA6-CF",
+      "nozzle_mm": 0.6,
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "bbox_mm": "[40.64, 29.842, 29.785]",
+      "solid_material_upper_bound_g": 2.986,
+      "category": "required_arm",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/3mf/RA01_29_z_bot2_master_shoulder2_2_sts3250_clearanced.3mf",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/assembly_frame_step/RA01_29_z_bot2_master_shoulder2_2_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/print_oriented_step/RA01_29_z_bot2_master_shoulder2_2_sts3250_clearanced.step"
+    },
+    {
+      "arm_id": "RA02",
+      "release_name": "09_3215_1flange_2_sts3250_clearanced",
+      "robot_link": "3215_1Flange_2",
+      "physical_name_zh": "右上臂承力架",
+      "function": "carries the S01 shoulder-pitch and S09 elbow-yaw servo housings",
+      "color_hex": "#FF6B35",
+      "quantity": 1,
+      "material": "PA6-CF",
+      "nozzle_mm": 0.6,
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "bbox_mm": "[100.015, 35.04, 35.04]",
+      "solid_material_upper_bound_g": 14.329,
+      "category": "required_arm",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/3mf/RA02_09_3215_1flange_2_sts3250_clearanced.3mf",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/assembly_frame_step/RA02_09_3215_1flange_2_sts3250_clearanced.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/print_oriented_step/RA02_09_3215_1flange_2_sts3250_clearanced.step"
+    },
+    {
+      "arm_id": "RA03",
+      "release_name": "20_l_arm_mirror_1_sts3250_wrist_mount",
+      "robot_link": "L_ARM_MIRROR_1",
+      "physical_name_zh": "右前臂/腕端承力架",
+      "function": "S09 elbow-yaw child; legacy mirrored source name is L_ARM_MIRROR_1",
+      "color_hex": "#26A269",
+      "quantity": 1,
+      "material": "PA6-CF",
+      "nozzle_mm": 0.6,
+      "layer_mm": 0.2,
+      "walls": 5,
+      "top_bottom_layers": 6,
+      "infill_percent": 45,
+      "bbox_mm": "[40.12, 83.498, 39.537]",
+      "solid_material_upper_bound_g": 28.625,
+      "category": "required_arm",
+      "three_mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/3mf/RA03_20_l_arm_mirror_1_sts3250_wrist_mount.3mf",
+      "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/assembly_frame_step/RA03_20_l_arm_mirror_1_sts3250_wrist_mount.step",
+      "print_oriented_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/required_arm/print_oriented_step/RA03_20_l_arm_mirror_1_sts3250_wrist_mount.step"
+    }
+  ],
+  "optional_unpowered_wrist_support": {
+    "arm_id": "RA04",
+    "release_name": "24_right_fixed_wrist_support",
+    "robot_link": "L_ARM_MIRROR_1",
+    "physical_name_zh": "右腕固定圆角支撑（可选，暂不上电）",
+    "function": "optional endpoint study; excluded from powered first article until its through-bolt stack is frozen",
+    "color_hex": "#00A6D6",
+    "quantity": 1,
+    "material": "PA6-CF",
+    "nozzle_mm": 0.6,
+    "layer_mm": 0.2,
+    "walls": 5,
+    "top_bottom_layers": 6,
+    "infill_percent": 45,
+    "bbox_mm": "[20.0, 14.0, 7.0]",
+    "solid_material_upper_bound_g": 1.885,
+    "category": "optional_unpowered_wrist_support",
+    "three_mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/optional_unpowered_wrist_support/3mf/RA04_24_right_fixed_wrist_support.3mf",
+    "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/optional_unpowered_wrist_support/assembly_frame_step/RA04_24_right_fixed_wrist_support.step",
+    "print_oriented_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/optional_unpowered_wrist_support/print_oriented_step/RA04_24_right_fixed_wrist_support.step"
+  },
+  "optional_real_torso_anchor": {
+    "arm_id": "RA00",
+    "release_name": "26_torso_mounted_solid",
+    "robot_link": "Z_BOT2_MASTER_BODY_SKELETON",
+    "physical_name_zh": "原机身右肩固定端（可选）",
+    "function": "required only when the real torso is used as the S03 housing anchor; otherwise use a rigid metal bench anchor",
+    "color_hex": "#D0D3D8",
+    "quantity": 1,
+    "material": "PA6-CF",
+    "nozzle_mm": 0.6,
+    "layer_mm": 0.2,
+    "walls": 5,
+    "top_bottom_layers": 6,
+    "infill_percent": 45,
+    "bbox_mm": "[134.605, 127.852, 103.675]",
+    "solid_material_upper_bound_g": 275.306,
+    "category": "optional_real_torso_anchor",
+    "three_mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/optional_real_torso_anchor/3mf/RA00_26_torso_mounted_solid.3mf",
+    "assembly_frame_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/optional_real_torso_anchor/assembly_frame_step/RA00_26_torso_mounted_solid.step",
+    "print_oriented_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/optional_real_torso_anchor/print_oriented_step/RA00_26_torso_mounted_solid.step"
+  },
+  "fit_check_only": [
+    {
+      "fit_id": "FC01",
+      "name": "01_sts3250_4xm2_first_article_face_gauge",
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH",
+      "3mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/fit_check_only/FC01_01_sts3250_4xm2_first_article_face_gauge.3mf",
+      "step": "manufacturing/v5_bambu_first_article_release/arm_first_article/fit_check_only/FC01_01_sts3250_4xm2_first_article_face_gauge.step"
+    },
+    {
+      "fit_id": "FC02",
+      "name": "02_sts3250_parent_thrust_ring_2mm",
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH",
+      "3mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/fit_check_only/FC02_02_sts3250_parent_thrust_ring_2mm.3mf",
+      "step": "manufacturing/v5_bambu_first_article_release/arm_first_article/fit_check_only/FC02_02_sts3250_parent_thrust_ring_2mm.step"
+    },
+    {
+      "fit_id": "FC03",
+      "name": "04_sts3250_pcd14_output_bridge_2p05mm",
+      "status": "FIT_CHECK_ONLY_NOT_FOR_POWERED_TORQUE_PATH",
+      "3mf": "manufacturing/v5_bambu_first_article_release/arm_first_article/fit_check_only/FC03_04_sts3250_pcd14_output_bridge_2p05mm.3mf",
+      "step": "manufacturing/v5_bambu_first_article_release/arm_first_article/fit_check_only/FC03_04_sts3250_pcd14_output_bridge_2p05mm.step"
+    }
+  ],
+  "torque_chain": [
+    {
+      "joint_id": "S03",
+      "joint_name": "right_shoulder_yaw",
+      "parent_link": "Z_BOT2_MASTER_BODY_SKELETON",
+      "child_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "axis": "[0.0, 0.0, 1.0]",
+      "lower_rad": -0.12,
+      "upper_rad": 0.12,
+      "servo_case_fixed_to": "Z_BOT2_MASTER_BODY_SKELETON",
+      "output_bridge_fixed_to": "Z_BOT2_MASTER_SHOULDER2_2",
+      "thrust_ring_fixed_to": "Z_BOT2_MASTER_BODY_SKELETON",
+      "servo_component": "S03_STS3250_right_shoulder_yaw",
+      "bridge_component": "S03_PCD14_OUTPUT_BRIDGE_right_shoulder_yaw",
+      "mounting_note": "purchased-exact STEP; housing fixed to Z_BOT2_MASTER_BODY_SKELETON; fitted 6D residual 3.090 mm"
+    },
+    {
+      "joint_id": "S01",
+      "joint_name": "right_shoulder_pitch",
+      "parent_link": "Z_BOT2_MASTER_SHOULDER2_2",
+      "child_link": "3215_1Flange_2",
+      "axis": "[0.0, 0.0, 1.0]",
+      "lower_rad": -0.47123889,
+      "upper_rad": 0.47123889,
+      "servo_case_fixed_to": "3215_1Flange_2",
+      "output_bridge_fixed_to": "Z_BOT2_MASTER_SHOULDER2_2",
+      "thrust_ring_fixed_to": "3215_1Flange_2",
+      "servo_component": "S01_STS3250_right_shoulder_pitch",
+      "bridge_component": "S01_PCD14_OUTPUT_BRIDGE_right_shoulder_pitch",
+      "mounting_note": "purchased-exact STEP; housing fixed to 3215_1Flange_2; fitted 6D residual 3.149 mm"
+    },
+    {
+      "joint_id": "S09",
+      "joint_name": "right_elbow_yaw",
+      "parent_link": "3215_1Flange_2",
+      "child_link": "L_ARM_MIRROR_1",
+      "axis": "[0.0, 0.0, 1.0]",
+      "lower_rad": -0.24,
+      "upper_rad": 0.34,
+      "servo_case_fixed_to": "3215_1Flange_2",
+      "output_bridge_fixed_to": "L_ARM_MIRROR_1",
+      "thrust_ring_fixed_to": "3215_1Flange_2",
+      "servo_component": "S09_STS3250_right_elbow_yaw",
+      "bridge_component": "S09_PCD14_OUTPUT_BRIDGE_right_elbow_yaw",
+      "mounting_note": "purchased-exact STEP; housing fixed to 3215_1Flange_2; fitted 6D residual 2.611 mm"
+    }
+  ],
+  "digital_reference_gate": {
+    "selected_component_count": 12,
+    "unique_step_source_count": 6,
+    "counts_by_role": {
+      "source_load_bearing_carrier": 3,
+      "purchased_exact_sts3250": 3,
+      "sts3250_parent_axis_and_thrust_mate": 3,
+      "sts3250_pcd14_output_bridge_to_child": 3
+    },
+    "joint_ids": [
+      "S03",
+      "S01",
+      "S09"
+    ],
+    "assembly_reference_step": "manufacturing/v5_bambu_first_article_release/arm_first_article/RIGHT_ARM_NEUTRAL_ASSEMBLY_REFERENCE.step",
+    "assembly_reference_glb": "manufacturing/v5_bambu_first_article_release/arm_first_article/RIGHT_ARM_NEUTRAL_ASSEMBLY_REFERENCE.glb",
+    "glb_export_ok": true,
+    "reimported_step_brep_valid": true,
+    "reimported_step_solid_count": 130,
+    "bbox_mm": [
+      41.931,
+      97.833,
+      185.865
+    ],
+    "source_checks": [
+      {
+        "component_id": "CARRIER_Z_BOT2_MASTER_SHOULDER2_2",
+        "role": "source_load_bearing_carrier",
+        "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/Z_BOT2_MASTER_SHOULDER2_2_STS3250_CLEARANCED.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      },
+      {
+        "component_id": "CARRIER_3215_1Flange_2",
+        "role": "source_load_bearing_carrier",
+        "owner_link": "3215_1Flange_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_clearanced/3215_1Flange_2_STS3250_CLEARANCED.step",
+        "source_brep_valid": true,
+        "source_solid_count": 2
+      },
+      {
+        "component_id": "CARRIER_L_ARM_MIRROR_1",
+        "role": "source_load_bearing_carrier",
+        "owner_link": "L_ARM_MIRROR_1",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/source_carriers_sts3250_wrist_mount/L_ARM_MIRROR_1_STS3250_WRIST_MOUNT.step",
+        "source_brep_valid": true,
+        "source_solid_count": 4
+      },
+      {
+        "component_id": "S01_STS3250_right_shoulder_pitch",
+        "role": "purchased_exact_sts3250",
+        "owner_link": "3215_1Flange_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+        "source_brep_valid": true,
+        "source_solid_count": 13
+      },
+      {
+        "component_id": "S01_PARENT_THRUST_RING_right_shoulder_pitch",
+        "role": "sts3250_parent_axis_and_thrust_mate",
+        "owner_link": "3215_1Flange_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      },
+      {
+        "component_id": "S01_PCD14_OUTPUT_BRIDGE_right_shoulder_pitch",
+        "role": "sts3250_pcd14_output_bridge_to_child",
+        "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      },
+      {
+        "component_id": "S03_STS3250_right_shoulder_yaw",
+        "role": "purchased_exact_sts3250",
+        "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+        "source_brep_valid": true,
+        "source_solid_count": 13
+      },
+      {
+        "component_id": "S03_PARENT_THRUST_RING_right_shoulder_yaw",
+        "role": "sts3250_parent_axis_and_thrust_mate",
+        "owner_link": "Z_BOT2_MASTER_BODY_SKELETON",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      },
+      {
+        "component_id": "S03_PCD14_OUTPUT_BRIDGE_right_shoulder_yaw",
+        "role": "sts3250_pcd14_output_bridge_to_child",
+        "owner_link": "Z_BOT2_MASTER_SHOULDER2_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      },
+      {
+        "component_id": "S09_STS3250_right_elbow_yaw",
+        "role": "purchased_exact_sts3250",
+        "owner_link": "3215_1Flange_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_step_parts_exact_shaft_frame.step",
+        "source_brep_valid": true,
+        "source_solid_count": 13
+      },
+      {
+        "component_id": "S09_PARENT_THRUST_RING_right_elbow_yaw",
+        "role": "sts3250_parent_axis_and_thrust_mate",
+        "owner_link": "3215_1Flange_2",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_parent_thrust_ring_2mm.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      },
+      {
+        "component_id": "S09_PCD14_OUTPUT_BRIDGE_right_elbow_yaw",
+        "role": "sts3250_pcd14_output_bridge_to_child",
+        "owner_link": "L_ARM_MIRROR_1",
+        "source": "generated/cad/physical_mount_v5_original_16dof_solidworks_motion/parts/sts3250_pcd14_output_bridge_2p05mm.step",
+        "source_brep_valid": true,
+        "source_solid_count": 1
+      }
+    ]
+  },
+  "mass_summary": {
+    "required_arm_solid_material_upper_bound_g": 45.94,
+    "scope": "solid PA6-CF volume upper bound, not sliced mass; excludes servos, metal interfaces, fasteners and anchor"
+  },
+  "powered_test_release": "HOLD_UNTIL_G00_TO_G09_ARE_RECORDED_PASS",
+  "truth_boundary": "This package identifies and validates the digital right-arm subset. It cannot certify printer shrinkage, purchased-servo tolerances, fastener engagement, wiring, or powered motion before the physical checklist passes.",
+  "overall": "PASS"
+}
